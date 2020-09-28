@@ -5,6 +5,17 @@
 			<!-- <time>{{ .Date.Format "24/10/1997" }}</time> -->
 			<div>
 				<p>{{ .RenderString .Params.edito }}</p>
+				{{ range .Params.content }}
+					<hr />
+					{{ if eq "section-principal" .template }}
+						{{ partial "sections/principal" . }}
+					{{ else if eq "section-vu-d-ailleurs" .template }}
+						{{ partial "sections/principal" . }}
+					{{ else if eq "section-on-debunke" .template }}
+						{{ partial "sections/principal" . }}
+					{{ end }}
+
+				{{ end }}
 			</div>
 		</article>
 	</main>

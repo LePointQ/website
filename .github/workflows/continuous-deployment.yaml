@@ -1,0 +1,25 @@
+name: Continuous Deployment
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Deploying to Surge
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.63.8'
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install Surge
+        run: npm install -g surge && npm install
+      - name: Build
+        run: hugo --minify
+      - name: Deploy
+        run: surge ./public ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}

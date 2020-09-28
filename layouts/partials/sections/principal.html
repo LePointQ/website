@@ -1,0 +1,4 @@
+{{ $opt := dict "markup" "md" }}
+<h2>{{ .title | markdownify }}</h2>
+<h3>Par {{ delimit .authors ", " " & " }}</h3>
+{{ .text | markdownify }}
