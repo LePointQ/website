@@ -1,4 +1,30 @@
 ---
 label: Article
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Titre
+- name: author
+  type: select
+  default: []
+  config:
+    required: true
+    options:
+    - Juliette
+    - Orianne
+    - Thaïs
+    - Tom
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Auteur·rice
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: Image
