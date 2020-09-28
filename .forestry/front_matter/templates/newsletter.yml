@@ -1,12 +1,14 @@
 ---
 label: Newsletter
 hide_body: true
+display_field: title
 fields:
 - name: title
   type: text
   config:
     required: true
   label: Titre
+  default: Lorem ipsum
 - name: date
   type: datetime
   label: Date
@@ -17,13 +19,16 @@ fields:
     time_format: 
     display_utc: false
   default: now
-- name: content
-  type: blocks
-  label: Contenu
-  template_types:
-  - edito
+- name: edito
+  type: textarea
+  default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis
+    justo sed sem lobortis lacinia sed sed erat. Proin ultrices eleifend sem, id maximus
+    massa fringilla volutpat. Praesent et leo porta arcu bibendum viverra.
   config:
-    min: 
-    max: 
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Edito
 pages:
 - content/sexo-0.md
