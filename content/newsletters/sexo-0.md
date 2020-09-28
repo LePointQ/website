@@ -5,6 +5,7 @@ edito = "Salut à tous et bienvenue dans la newsletter de **Sexo**, un petit bij
 title = "Sexo #0"
 [[content]]
 author = "Juliette"
+authors = ["Juliette", "Orianne"]
 image = ""
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis justo sed sem lobortis lacinia sed sed erat."
 template = "section-principal"
