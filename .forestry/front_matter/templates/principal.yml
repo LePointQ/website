@@ -1,4 +1,9 @@
 ---
 label: Principal
 hide_body: true
-fields: []
+fields:
+- name: article
+  type: include
+  config: {}
+  template: article
+  label: Article
