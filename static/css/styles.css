@@ -5,7 +5,8 @@ body {
 }
 
 hr {
-	margin: 1rem 0;
+	border: 1px solid tomato;
+	margin: 2rem 0;
 }
 
 p {
@@ -13,7 +14,7 @@ p {
 }
 
 h1, h2, h3, h4 {
-	margin: 0.5rem 0;
+	margin: 1rem 0 0.5rem;
 }
 
 h1 {
@@ -21,13 +22,15 @@ h1 {
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: 1.6rem;
 	font-weight: bold;
 }
 
 h3 {
 	font-size: 1.1rem;
 	font-style: italic;
+	font-weight: normal;
+	color: #333333;
 }
 
 h4 {
@@ -54,15 +57,15 @@ li {
 	list-style-type: none;
 }
 
-header div {
+.logo {
 	display: table;
 	margin: 0 auto;
 	background: tomato;
-	padding: 0.5rem;
+	padding: 0 0.5rem;
 	margin-bottom: 2rem;
 }
 
-header div a {
+.logo a {
 	font: 5rem 'Yeseva One', serif;
 	color: white;
 }
@@ -82,6 +85,21 @@ main li p {
 main article {
 	width: 50%;
 	max-width: 50rem;
+}
+
+main article .edito {
+	color: #333333;
+}
+
+main article .fake {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: crimson;
+	padding: 2px 4px;
+	margin: 0 0 0 0.5rem;
+	border: 0.25rem solid crimson;
+	transform: rotate(-5deg);
+	display: inline-block;
 }
 
 @media (max-width: 64rem) {

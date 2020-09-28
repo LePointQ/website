@@ -4,17 +4,17 @@
 			<h1>{{ .Title }}</h1>
 			<!-- <time>{{ .Date.Format "24/10/1997" }}</time> -->
 			<div>
-				<p>{{ .RenderString .Params.edito }}</p>
+				<div class='edito'>
+					{{ .RenderString .Params.edito }}
+				</div>
 				{{ range .Params.content }}
-					<hr />
 					{{ if eq "section-principal" .template }}
 						{{ partial "sections/principal" . }}
 					{{ else if eq "section-vu-d-ailleurs" .template }}
 						{{ partial "sections/principal" . }}
 					{{ else if eq "section-on-debunke" .template }}
-						{{ partial "sections/principal" . }}
+						{{ partial "sections/on-debunke" . }}
 					{{ end }}
-
 				{{ end }}
 			</div>
 		</article>

@@ -3,11 +3,13 @@
 		<h2>Toutes les newsletters</h2>
 		<ul>
 			{{ range .Pages }}
-				<li>
-					<a href='{{ .Permalink }}'>
-						<p>{{ .Title }}</p>
-					</a>
-				</li>
+				{{ if ne .Title "Newsletters" }}
+					<li>
+						<a href='{{ .Permalink }}'>
+							<p>{{ .Title }}</p>
+						</a>
+					</li>
+				{{ end }}
 			{{ end }}
 		</ul>
 	</main>

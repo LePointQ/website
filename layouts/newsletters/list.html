@@ -1,0 +1,14 @@
+{{ define "main" }}
+	<main>
+		<h2>Toutes les newsletters</h2>
+		<ul>
+			{{ range .Pages }}
+				<li>
+					<a href='{{ .Permalink }}'>
+						<p>{{ .Title }}</p>
+					</a>
+				</li>
+			{{ end }}
+		</ul>
+	</main>
+{{ end }}

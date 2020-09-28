@@ -1,0 +1,10 @@
+<div class='section' id='debunk'>
+	<hr />
+	<h2>🔎 On débunke&nbsp;!</h2>
+	<h3>Par {{ delimit .authors ", " " & " }}</h3>
+	<h4>
+		{{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+		<span class='fake'>FAUX</span>
+	</h4>
+	{{ .text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+</div>

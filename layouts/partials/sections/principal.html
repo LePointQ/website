@@ -1,4 +1,6 @@
-{{ $opt := dict "markup" "md" }}
-<h2>{{ .title | markdownify }}</h2>
-<h3>Par {{ delimit .authors ", " " & " }}</h3>
-{{ .text | markdownify }}
+<div class='section' id='principal'>
+	<hr />
+	<h2>💬 {{ .title | markdownify }}</h2>
+	<h3>Par {{ delimit .authors ", " " & " }}</h3>
+	{{ .text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+</div>
