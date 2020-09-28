@@ -1,6 +1,5 @@
 +++
 author = "Tom"
-draft = true
 image = ""
 title = "« Si un mec aime qu’on lui touche l’anus, alors il est forcément gay »"
 
