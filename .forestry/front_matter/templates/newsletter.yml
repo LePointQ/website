@@ -17,11 +17,11 @@ fields:
     time_format: 
     display_utc: false
   default: now
-- name: articles
+- name: content
   type: blocks
-  label: Articles
+  label: Contenu
   template_types:
-  - article
+  - edito
   config:
     min: 
     max: 
