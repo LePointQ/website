@@ -15,8 +15,8 @@ fields:
   description: ''
   config:
     required: false
-    date_format: 
-    time_format: 
+    date_format:
+    time_format:
     display_utc: false
   default: now
 - name: edito
@@ -34,11 +34,9 @@ fields:
   type: blocks
   label: Contenu
   template_types:
-  - principal
-  - vu-d-ailleurs
-  - on-debunke
+  - section-principal
+  - section-vu-d-ailleurs
+  - section-on-debunke
   config:
-    min: 
-    max: 
-pages:
-- content/sexo-0.md
+    min:
+    max:

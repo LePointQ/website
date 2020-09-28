@@ -1,0 +1,12 @@
+{{ define "main" }}
+	<main>
+		<article>
+			<h1>{{ .Title }}</h1>
+			<time>{{ .Date }}</time>
+			<div>
+				{{ .Content }}
+			</div>
+		</article>
+	</main>
+{{ partial "sidebar.html" . }}
+{{ end }}
