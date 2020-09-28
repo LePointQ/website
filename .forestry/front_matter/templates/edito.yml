@@ -1,9 +1,0 @@
----
-label: Edito
-hide_body: true
-fields:
-- name: bla_bla
-  type: include
-  config: {}
-  template: article
-  label: Bla bla
