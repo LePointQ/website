@@ -2,11 +2,10 @@
 	<main>
 		<article>
 			<h1>{{ .Title }}</h1>
-			<time>{{ .Date }}</time>
+			<!-- <time>{{ .Date.Format "24/10/1997" }}</time> -->
 			<div>
-				{{ .Content }}
+				<p>{{ .RenderString .Params.edito }}</p>
 			</div>
 		</article>
 	</main>
-{{ partial "sidebar.html" . }}
 {{ end }}

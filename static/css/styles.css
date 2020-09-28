@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Yeseva+One&display=swap');
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	list-style-type: none;
+}
+
+header div {
+	display: table;
+	margin: 0 auto;
+	background: tomato;
+	padding: 0.5rem;
+}
+
+header div a {
+	font: 5rem 'Yeseva One', serif;
+	color: white;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+
+main h3 {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+main li p {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: tomato;
+	padding: 0.2rem 0.5rem;
+}
+
+main li p:hover {
+	background: tomato;
+	color: white;
+}
+
+main article {
+	width: 50%;
+}
+
+@media (max-width: 64rem) {
+	main article {
+		width: 75%;
+	}
+}
+
+@media (max-width: 32rem) {
+	main article {
+		width: 90%;
+	}
+}
