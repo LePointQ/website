@@ -24,11 +24,16 @@ fields:
       file: 
       path: 
   label: Auteur·rice
-- name: image
-  type: file
+- name: preview
+  type: textarea
+  default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis
+    justo sed sem lobortis lacinia sed sed erat.
   config:
-    maxSize: 64
-  label: Image
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Aperçu
 - name: text
   type: textarea
   default: ''
@@ -38,5 +43,10 @@ fields:
     schema:
       format: markdown
   label: Texte
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: Image
 pages:
 - content/si-un-mec-aime-qu-on-lui-touche-l-anus-alors-il-est-forcement-gay.md
