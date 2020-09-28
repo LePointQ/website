@@ -1,6 +1,7 @@
 ---
-label: Principal
+label: 'Section : Principal'
 hide_body: true
+display_field: title
 fields:
 - name: article
   type: include
