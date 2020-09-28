@@ -23,16 +23,6 @@ fields:
     - Thaïs
     - Tom
   label: Auteur·rice·s
-- name: preview
-  type: textarea
-  default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis
-    justo sed sem lobortis lacinia sed sed erat.
-  config:
-    required: true
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Aperçu
 - name: text
   type: textarea
   default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan
@@ -53,6 +43,16 @@ fields:
     schema:
       format: markdown
   label: Texte
+- name: preview
+  type: textarea
+  default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis
+    justo sed sem lobortis lacinia sed sed erat.
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Aperçu
 - name: image
   type: file
   config:
