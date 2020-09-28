@@ -37,6 +37,7 @@ fields:
   - section-principal
   - section-vu-d-ailleurs
   - section-on-debunke
+  - section-solution
   config:
     min: 
     max: 
