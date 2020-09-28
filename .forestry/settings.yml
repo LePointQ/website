@@ -11,11 +11,6 @@ sections:
   match: "**/*"
   templates:
   - newsletter
-- type: directory
-  path: content
-  label: Pages
-  create: all
-  match: "*"
 upload_dir: static/media
 public_path: "/media"
 front_matter_path: ''

@@ -15,8 +15,8 @@ fields:
   description: ''
   config:
     required: false
-    date_format:
-    time_format:
+    date_format: 
+    time_format: 
     display_utc: false
   default: now
 - name: edito
@@ -38,5 +38,5 @@ fields:
   - section-vu-d-ailleurs
   - section-on-debunke
   config:
-    min:
-    max:
+    min: 
+    max: 
