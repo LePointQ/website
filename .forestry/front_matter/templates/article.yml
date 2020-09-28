@@ -9,22 +9,20 @@ fields:
     required: true
   label: Titre
   default: Lorem ipsum
-- name: author
-  type: select
-  default: []
+- name: authors
+  type: list
   config:
-    required: true
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: simple
     options:
     - Juliette
     - Orianne
     - Thaïs
     - Tom
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Auteur·rice
+  label: Auteur·rice·s
 - name: preview
   type: textarea
   default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis
