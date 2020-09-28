@@ -11,9 +11,11 @@
 					{{ if eq "section-principal" .template }}
 						{{ partial "sections/principal" . }}
 					{{ else if eq "section-vu-d-ailleurs" .template }}
-						{{ partial "sections/principal" . }}
+						{{ partial "sections/vu-d-ailleurs" . }}
 					{{ else if eq "section-on-debunke" .template }}
 						{{ partial "sections/on-debunke" . }}
+					{{ else if eq "section-solution" .template }}
+						{{ partial "sections/solution" . }}
 					{{ end }}
 				{{ end }}
 			</div>

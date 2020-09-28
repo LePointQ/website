@@ -1,7 +1,10 @@
-<div class='section' id='principal'>
+<div class='section' id='solution'>
 	<hr />
 	<img src='{{ .Site.BaseURL }}{{ .image }}' />
-	<h2>💬 {{ .title | markdownify }}</h2>
+	<h2>💡 Solution</h2>
 	<h3>Par {{ delimit .authors ", " " & " }}</h3>
+	<h4>
+		{{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+	</h4>
 	{{ .text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 </div>

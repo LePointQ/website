@@ -43,7 +43,7 @@ a {
 	color: tomato;
 }
 
-a:hover {
+a:hover :not(.logo) {
 	background: tomato;
 	color: white;
 }
@@ -58,16 +58,10 @@ li {
 }
 
 .logo {
-	display: table;
-	margin: 0 auto;
-	background: tomato;
-	padding: 0 0.5rem;
-	margin-bottom: 2rem;
-}
-
-.logo a {
 	font: 5rem 'Yeseva One', serif;
-	color: white;
+	color: tomato;
+	margin: 0 auto;
+	text-align: center;
 }
 
 main {
@@ -85,13 +79,18 @@ main li p {
 main article {
 	width: 50%;
 	max-width: 50rem;
+	margin-bottom: 10rem;
 }
 
 main article .edito {
 	color: #333333;
 }
 
-main article .fake {
+.section img {
+	width: 100%;
+}
+
+.section .fake {
 	font-size: 1.2rem;
 	font-weight: bold;
 	color: crimson;

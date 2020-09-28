@@ -289,7 +289,7 @@
 					<!-- Hero Image, Flush : BEGIN -->
 					<tr>
 						<td style="background-color: #ffffff;">
-							<img src="https://via.placeholder.com/1200x600" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+							<img src="{{ .Site.BaseURL }}{{ .image }}" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
 						</td>
 					</tr>
 					<!-- Hero Image, Flush : END -->
@@ -341,19 +341,19 @@
 	                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 	                    <tr>
 							{{ range .Params.content }}
-								{{ if eq "section-on-debunke" .template }}
+								{{ if eq "section-vu-d-ailleurs" .template }}
 			                        <!-- Column : BEGIN -->
 			                        <th valign="top" width="50%" class="stack-column-center">
 			                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 			                                <tr>
 			                                    <td style="padding: 10px; text-align: center">
-			                                        <img src="https://via.placeholder.com/270" width="270" height="" alt="alt_text" border="0" style="width: 100%; max-width: 270px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+			                                        <img src="{{ .Site.BaseURL }}{{ .image }}" width="270" height="" alt="alt_text" border="0" style="width: 100%; max-width: 270px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
 			                                    </td>
 			                                </tr>
 			                                <tr>
 			                                    <td style="font-family: 'Source Sans Pro', sans-serif; font-size: 16px; line-height: 20px; color: #000000; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
 													<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
-														🔎 On débunke&nbsp;!
+														🌏 Vu d'ailleurs
 													</h2>
 													<h3 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: normal; font-style: italic; font-family: 'Source Sans Pro', sans-serif;">
 														Par {{ delimit .authors ", " " & " }}
@@ -361,19 +361,18 @@
 													<h4 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
 														{{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 													</h4>
-
 			                                        {{ .preview | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 			                                    </td>
 			                                </tr>
 											<tr>
 					                            <td style="padding: 0 20px 20px;">
 					                                <!-- Button : BEGIN -->
-					                                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+					                                <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
 					                                    <tr>
 					                                        <td class="button-td button-td-primary" style="border-radius: 4px; background: tomato;">
 																<a
 																	class="button-a button-a-primary"
-																	href="{{ $url }}#debunk" target="_blank"
+																	href="{{ $url }}#vue-d-ailleurs" target="_blank"
 																	style="background: tomato; font-family: 'Source Sans Pro', sans-serif; font-size: 18px; line-height: 20px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;"
 																>
 																	Lire la suite
@@ -396,13 +395,13 @@
  									   <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
  										   <tr>
  											   <td style="padding: 10px; text-align: center">
- 												   <img src="https://via.placeholder.com/270" width="270" height="" alt="alt_text" border="0" style="width: 100%; max-width: 270px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+ 												   <img src="{{ .Site.BaseURL }}{{ .image }}" width="270" height="" alt="alt_text" border="0" style="width: 100%; max-width: 270px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
  											   </td>
  										   </tr>
  										   <tr>
  											   <td style="font-family: 'Source Sans Pro', sans-serif; font-size: 16px; line-height: 20px; color: #000000; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
  												   <h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
- 													   🔎 On débunke&nbsp;!
+													   🔎 On débunke&nbsp;!
  												   </h2>
  												   <h3 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: normal; font-style: italic; font-family: 'Source Sans Pro', sans-serif;">
  													   Par {{ delimit .authors ", " " & " }}
@@ -410,19 +409,21 @@
  												   <h4 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
  													   {{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
  												   </h4>
-
+												   <p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Source Sans Pro', sans-serif; border: 4px solid crimson; display: table;">
+													   &nbsp;FAUX&nbsp;
+												   </p>
  												   {{ .preview | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
  											   </td>
  										   </tr>
  										   <tr>
  											   <td style="padding: 0 20px 20px;">
  												   <!-- Button : BEGIN -->
- 												   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+ 												   <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
  													   <tr>
  														   <td class="button-td button-td-primary" style="border-radius: 4px; background: tomato;">
  															   <a
  																   class="button-a button-a-primary"
- 																   href="{{ $url }}#debunk" target="_blank"
+ 																   href="{{ $url }}#on-debunke" target="_blank"
  																   style="background: tomato; font-family: 'Source Sans Pro', sans-serif; font-size: 18px; line-height: 20px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;"
  															   >
  																   Lire la suite
@@ -444,150 +445,71 @@
 	        </tr>
 	        <!-- 2 Even Columns : END -->
 
-	        <!-- 3 Even Columns : BEGIN -->
-	        <tr>
-	            <td style="padding: 10px; background-color: #ffffff;">
-	                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-	                    <tr>
-	                        <!-- Column : BEGIN -->
-	                        <th valign="top" width="33.33%" class="stack-column-center">
-	                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-	                                <tr>
-	                                    <td style="padding: 10px; text-align: center">
-	                                        <img src="https://via.placeholder.com/170" width="170" height="" alt="alt_text" border="0" style="width: 100%; max-width: 170px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
-	                                    </td>
-	                                </tr>
-	                                <tr>
-	                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
-	                                        <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-	                                    </td>
-	                                </tr>
-	                            </table>
-	                        </th>
-	                        <!-- Column : END -->
-	                        <!-- Column : BEGIN -->
-	                        <th valign="top" width="33.33%" class="stack-column-center">
-	                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-	                                <tr>
-	                                    <td style="padding: 10px; text-align: center">
-	                                        <img src="https://via.placeholder.com/170" width="170" height="" alt="alt_text" border="0" style="width: 100%; max-width: 170px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
-	                                    </td>
-	                                </tr>
-	                                <tr>
-	                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
-	                                        <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-	                                    </td>
-	                                </tr>
-	                            </table>
-	                        </th>
-	                        <!-- Column : END -->
-	                        <!-- Column : BEGIN -->
-	                        <th valign="top" width="33.33%" class="stack-column-center">
-	                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-	                                <tr>
-	                                    <td style="padding: 10px; text-align: center">
-	                                        <img src="https://via.placeholder.com/170" width="170" height="" alt="alt_text" border="0" style="width: 100%; max-width: 170px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
-	                                    </td>
-	                                </tr>
-	                                <tr>
-	                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
-	                                        <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-	                                    </td>
-	                                </tr>
-	                            </table>
-	                        </th>
-	                        <!-- Column : END -->
-	                    </tr>
-	                </table>
-	            </td>
-	        </tr>
-	        <!-- 3 Even Columns : END -->
+			{{ range .Params.content }}
+				{{ if eq "section-solution" .template }}
+					<!-- Thumbnail Left, Text Right : BEGIN -->
+			        <tr>
+			            <td dir="ltr" width="100%" style="padding: 10px; background-color: #ffffff;">
+			                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+			                    <tr>
+			                        <!-- Column : BEGIN -->
+			                        <th width="33.33%" class="stack-column-center">
+			                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+			                                <tr>
+			                                    <td dir="ltr" valign="top" style="padding: 0 10px;">
+			                                        <img src="{{ .Site.BaseURL }}{{ .image }}" width="170" height="170" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+			                                    </td>
+			                                </tr>
+			                            </table>
+			                        </th>
+			                        <!-- Column : END -->
+			                        <!-- Column : BEGIN -->
+			                        <th width="66.66%" class="stack-column-center">
+			                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+			                                <tr>
+												<td style="font-family: 'Source Sans Pro', sans-serif; font-size: 16px; line-height: 20px; color: #000000; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+													<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
+														💡 Solution
+													</h2>
+													<h3 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: normal; font-style: italic; font-family: 'Source Sans Pro', sans-serif;">
+														Par {{ delimit .authors ", " " & " }}
+													</h3>
+													<h4 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
+														{{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+													</h4>
 
-	        <!-- Thumbnail Left, Text Right : BEGIN -->
-	        <tr>
-	            <td dir="ltr" width="100%" style="padding: 10px; background-color: #ffffff;">
-	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-	                    <tr>
-	                        <!-- Column : BEGIN -->
-	                        <th width="33.33%" class="stack-column-center">
-	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-	                                <tr>
-	                                    <td dir="ltr" valign="top" style="padding: 0 10px;">
-	                                        <img src="https://via.placeholder.com/170" width="170" height="170" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
-	                                    </td>
-	                                </tr>
-	                            </table>
-	                        </th>
-	                        <!-- Column : END -->
-	                        <!-- Column : BEGIN -->
-	                        <th width="66.66%" class="stack-column-center">
-	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-	                                <tr>
-	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px; text-align: left;" class="center-on-narrow">
-	                                        <h2 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 22px; color: #333333; font-weight: bold;">Class aptent taciti sociosqu</h2>
-	                                        <p style="margin: 0 0 10px 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-	                                        <!-- Button : BEGIN -->
-	                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
-	                                            <tr>
-		                                            <td class="button-td button-td-primary" style="border-radius: 4px; background: #222222;">
-														<a class="button-a button-a-primary" href="https://google.com/" style="background: #222222; border: 1px solid #000000; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;">Primary Button</a>
-													</td>
-	                                          </tr>
-	                                      </table>
-	                                      <!-- Button : END -->
-	                                    </td>
-	                                </tr>
-	                            </table>
-	                        </th>
-	                        <!-- Column : END -->
-	                    </tr>
-	                </table>
-	            </td>
-	        </tr>
-	        <!-- Thumbnail Left, Text Right : END -->
-
-	        <!-- Thumbnail Right, Text Left : BEGIN -->
-	        <tr>
-	            <td dir="rtl" width="100%" style="padding: 10px; background-color: #ffffff;">
-	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-	                    <tr>
-	                        <!-- Column : BEGIN -->
-	                        <th width="33.33%" class="stack-column-center">
-	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-	                                <tr>
-	                                    <td dir="ltr" valign="top" style="padding: 0 10px;">
-	                                        <img src="https://via.placeholder.com/170" width="170" height="170" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
-	                                    </td>
-	                                </tr>
-	                            </table>
-	                        </th>
-	                        <!-- Column : END -->
-	                        <!-- Column : BEGIN -->
-	                        <th width="66.66%" class="stack-column-center">
-	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-	                                <tr>
-	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px; text-align: left;" class="center-on-narrow">
-	                                        <h2 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 22px; color: #333333; font-weight: bold;">Class aptent taciti sociosqu</h2>
-	                                        <p style="margin: 0 0 10px 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-	                                        <!-- Button : BEGIN -->
-	                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
-	                                            <tr>
-		                                            <td class="button-td button-td-primary" style="border-radius: 4px; background: #222222;">
-														<a class="button-a button-a-primary" href="https://google.com/" style="background: #222222; border: 1px solid #000000; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;">Primary Button</a>
-													</td>
-	                                            </tr>
-	                                        </table>
-	                                        <!-- Button : END -->
-	                                    </td>
-	                                </tr>
-	                            </table>
-	                        </th>
-	                        <!-- Column : END -->
-	                    </tr>
-	                </table>
-	            </td>
-	        </tr>
-	        <!-- Thumbnail Right, Text Left : END -->
+													{{ .preview | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+			                                    </td>
+			                                </tr>
+											<tr>
+					                            <td style="padding: 0 20px 20px;">
+					                                <!-- Button : BEGIN -->
+					                                <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+					                                    <tr>
+					                                        <td class="button-td button-td-primary" style="border-radius: 4px; background: tomato;">
+																<a
+																	class="button-a button-a-primary"
+																	href="{{ $url }}#vue-d-ailleurs" target="_blank"
+																	style="background: tomato; font-family: 'Source Sans Pro', sans-serif; font-size: 18px; line-height: 20px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;"
+																>
+																	Lire la suite
+																</a>
+															</td>
+					                                    </tr>
+					                                </table>
+					                                <!-- Button : END -->
+					                            </td>
+					                        </tr>
+			                            </table>
+			                        </th>
+			                        <!-- Column : END -->
+			                    </tr>
+			                </table>
+			            </td>
+			        </tr>
+			        <!-- Thumbnail Left, Text Right : END -->
+				{{ end }}
+			{{ end }}
 
 	        <!-- Clear Spacer : BEGIN -->
 	        <tr>
@@ -597,25 +519,11 @@
 	        </tr>
 	        <!-- Clear Spacer : END -->
 
-	        <!-- 1 Column Text : BEGIN -->
-	        <tr>
-	            <td style="background-color: #ffffff;">
-	                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-	                    <tr>
-	                        <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-	                            Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.
-	                        </td>
-	                    </tr>
-	                </table>
-	            </td>
-	        </tr>
-	        <!-- 1 Column Text : END -->
-
 	    </table>
 	    <!-- Email Body : END -->
 
 	    <!-- Email Footer : BEGIN -->
-        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
 	        <tr>
 	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
 	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
@@ -625,36 +533,38 @@
 	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
 	            </td>
 	        </tr>
-	    </table>
+	    </table> -->
 	    <!-- Email Footer : END -->
 
-	    <!-- Full Bleed Background Section : BEGIN -->
-	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: tomato;">
-	        <tr>
-	            <td>
-	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
-	                    <!--[if mso]>
-	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
-	                    <tr>
-	                    <td>
-	                    <![endif]-->
-	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-	                        <tr>
-	                            <td style="padding: 20px; text-align: left; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
-	                                <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</p>
-	                            </td>
-	                        </tr>
-	                    </table>
-	                    <!--[if mso]>
-	                    </td>
-	                    </tr>
-	                    </table>
-	                    <![endif]-->
-	                </div>
-	            </td>
-	        </tr>
-	    </table>
-	    <!-- Full Bleed Background Section : END -->
+		<script type='text/html'>
+		    <!-- Full Bleed Background Section : BEGIN -->
+		    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: tomato;">
+		        <tr>
+		            <td>
+		                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+		                    <!--[if mso]>
+		                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+		                    <tr>
+		                    <td>
+		                    <![endif]-->
+		                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+		                        <tr>
+		                            <td style="padding: 20px; text-align: left; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+		                                <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</p>
+		                            </td>
+		                        </tr>
+		                    </table>
+		                    <!--[if mso]>
+		                    </td>
+		                    </tr>
+		                    </table>
+		                    <![endif]-->
+		                </div>
+		            </td>
+		        </tr>
+		    </table>
+		    <!-- Full Bleed Background Section : END -->
+		</script>
 
     <!--[if mso | IE]>
     </td>
