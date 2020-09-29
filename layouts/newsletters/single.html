@@ -275,7 +275,7 @@
 									{{ .Title }}
 								</h1>
                                 <p style="margin: 0 0 10px; font-size: 16px; line-height: 20px; color: #333333; font-family: 'Source Sans Pro', sans-serif;">
-									{{ .RenderString .Params.edito }}
+									{{ .Params.edito | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 								</p>
                             </td>
                         </tr>
@@ -301,7 +301,7 @@
 								<tr>
 									<td style="padding: 20px 20px 10px 20px; font-family: 'Source Sans Pro', sans-serif; font-size: 16px; line-height: 20px; color: #000000;">
 										<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
-											💬 {{ .title | markdownify }}
+											💬 {{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 										</h2>
 										<h3 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: normal; font-style: italic; font-family: 'Source Sans Pro', sans-serif;">
 											Par {{ delimit .authors ", " " & " }}
