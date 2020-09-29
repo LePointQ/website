@@ -5,7 +5,7 @@
 			<!-- <time>{{ .Date.Format "24/10/1997" }}</time> -->
 			<div>
 				<div class='edito'>
-					{{ .RenderString .Params.edito }}
+					{{ .Params.edito | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 				</div>
 				{{ range .Params.content }}
 					{{ if eq "section-principal" .template }}
