@@ -43,7 +43,7 @@ a {
 	color: tomato;
 }
 
-a:hover :not(.logo) {
+main a:hover {
 	background: tomato;
 	color: white;
 }
@@ -60,7 +60,7 @@ li {
 .logo {
 	font: 5rem 'Yeseva One', serif;
 	color: tomato;
-	margin: 0 auto;
+	margin: 2rem auto;
 	text-align: center;
 }
 
