@@ -41,3 +41,5 @@ fields:
   config:
     min: 
     max: 
+pages:
+- content/raconte-moi-ta-contraception.md
