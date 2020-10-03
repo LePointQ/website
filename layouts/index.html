@@ -2,14 +2,12 @@
 	<main>
 		<h2>Toutes les newsletters</h2>
 		<ul>
-			{{ range .Pages }}
-				{{ if ne .Title "Newsletters" }}
-					<li>
-						<a href='{{ .Permalink }}'>
-							<p>{{ .Title }}</p>
-						</a>
-					</li>
-				{{ end }}
+			{{ range sort .Pages }}
+				<li style="font-size: 1.1rem; margin: 0.5rem;">
+					<a href='{{ .Permalink }}'>
+						{{ .Title }}
+					</a>
+				</li>
 			{{ end }}
 		</ul>
 	</main>

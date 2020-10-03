@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
-      - name: Copy newsletters
-        run: mkdir content/newsletters && cp content/*.md content/newsletters/
+      # - name: Copy newsletters
+      #   run: mkdir content/newsletters && cp content/*.md content/newsletters/
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:

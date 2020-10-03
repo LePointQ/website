@@ -14,9 +14,9 @@ fields:
   label: Date
   description: ''
   config:
-    required: false
-    date_format: 
-    time_format: 
+    required: true
+    date_format: 'DD/MM/YYYY'
+    time_format:
     display_utc: false
   default: now
 - name: edito
@@ -37,16 +37,16 @@ fields:
   - section-principal
   - section-vu-d-ailleurs
   - section-on-debunke
-  - section-solution
+  - section-bonne-nouvelle
   config:
-    min: 
-    max: 
+    min:
+    max:
 - name: outro
   type: textarea
   default: ''
   config:
     required: false
-    wysiwyg: false
+    wysiwyg: true
     schema:
       format: markdown
   label: Conclusion

@@ -3,3 +3,6 @@ languageCode = "fr"
 title = "Le Point Q"
 [params]
 	description = "La newsletter qui vous plonge dans l'univers du sexe et démystifie l'inconnue nommée &laquo;&nbsp;plaisir&nbsp;&raquo;"
+
+[markup.goldmark.renderer]
+unsafe= true

@@ -1,0 +1,23 @@
+{{ define "main" }}
+	<main>
+		<article>
+			<h1>{{ .Title }}</h1>
+			<div>
+				<div class='edito'>
+					{{ .Params.edito | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+				</div>
+				{{ range .Params.content }}
+					{{ if eq "section-principal" .template }}
+						{{ partial "sections/principal" . }}
+					{{ else if eq "section-vu-d-ailleurs" .template }}
+						{{ partial "sections/vu-d-ailleurs" . }}
+					{{ else if eq "section-on-debunke" .template }}
+						{{ partial "sections/on-debunke" . }}
+					{{ else if eq "section-bonne-nouvelle" .template }}
+						{{ partial "sections/bonne-nouvelle" . }}
+					{{ end }}
+				{{ end }}
+			</div>
+		</article>
+	</main>
+{{ end }}

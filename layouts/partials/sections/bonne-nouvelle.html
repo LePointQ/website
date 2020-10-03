@@ -1,7 +1,7 @@
-<div class='section' id='solution'>
+<div class='section' id='bonne-nouvelle'>
 	<hr />
 	<img src='{{ .Site.BaseURL }}{{ .image }}' />
-	<h2>💡 Solution</h2>
+	<h2>💡 La bonne nouvelle</h2>
 	<h3>Par {{ delimit .authors ", " " & " }}</h3>
 	<h4>
 		{{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
