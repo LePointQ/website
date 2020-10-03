@@ -41,5 +41,14 @@ fields:
   config:
     min: 
     max: 
+- name: outro
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Conclusion
 pages:
 - content/raconte-moi-ta-contraception.md
