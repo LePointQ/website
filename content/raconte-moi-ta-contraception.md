@@ -1,6 +1,5 @@
 +++
-date = 2020-10-05T18:00:00Z
-draft = true
+date = "04/10/2020"
 edito = "Pour notre deuxième newsletter, Le Point Q te propose de discuter de la contraception! Pour ton plus grand plaisir, nous avons recueilli plusieurs témoignages. Des jeunes femmes nous exposent leur rapport à la contraception, celle que la société leur a imposée ou celle qu'ont choisie par conviction… Pour les laisser libre de s'exprimer, nous leur avons demandé simplement / dit: raconte-moi ta contraception ( sur assurer la transparence"
 outro = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 title = "Raconte-moi ta contraception"
@@ -24,6 +23,6 @@ image = "/media/uploads/sperm_stained.JPG"
 preview = "Des chercheurs du Conseil Indien de la Recherche Médicale ont mis au point le premier véritable contraceptif masculin. Il consiste en une injection unique sous anesthésie locale, et fournit une protection qui peut durer jusqu'à 13 ans !"
 template = "section-bonne-nouvelle"
 text = "Des chercheurs du Conseil Indien de la Recherche Médicale [ont mis au point le premier véritable contraceptif masculin](https://www.hindustantimes.com/india-news/india-closer-to-world-s-first-male-contraceptive-injection/story-o3lTFLnCkKHpuEDNNqrEnO.html). Il consiste en une injection unique sous anesthésie locale, et fournit une protection qui peut durer jusqu'à 13 ans !\n\nLeur technique, nommée RISUG (inhibition réversible des spermatozoïdes sous surveillance), consiste en l'injection d'un polymère dans les canaux déférents (qui relient les testicules à la prostate), afin de contraindre le mouvement des spermatozoïdes et donc d'empêcher la fécondation. Le processus est totalement réversible, puisqu'une nouvelle injection suffit pour dissoudre le polymère.\n\nLes premiers essais cliniques ont montré un taux d'efficacité de plus de 97 %, similaire à celui du préservatif. De plus aucun effet secondaire n'a été constaté, contrairement aux contraceptions hormonales.\n\nS'il est validé par les autorités indiennes, le traitement pourrait être disponible dans les prochains mois. Un espoir pour l'Inde où, comme dans de nombreux autres pays, le poids de la contraception repose encore presque exclusivement sur les femmes."
-title = "Enfin un contraceptif masculin, réversible et sans effets secondaires ?"
+title = "Enfin un contraceptif masculin, réversible<br />et sans effets secondaires ?"
 
 +++
