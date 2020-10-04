@@ -22,6 +22,6 @@ jobs:
       - name: Install Surge
         run: npm install -g surge
       - name: Build
-        run: hugo --minify
+        run: hugo
       - name: Deploy
         run: surge ./public ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
