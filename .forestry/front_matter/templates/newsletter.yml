@@ -15,8 +15,8 @@ fields:
   description: ''
   config:
     required: true
-    date_format: 'DD/MM/YYYY'
-    time_format:
+    date_format: DD/MM/YYYY
+    time_format: 
     display_utc: false
   default: now
 - name: edito
@@ -39,8 +39,8 @@ fields:
   - section-on-debunke
   - section-bonne-nouvelle
   config:
-    min:
-    max:
+    min: 
+    max: 
 - name: outro
   type: textarea
   default: ''
