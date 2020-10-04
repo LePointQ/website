@@ -1,5 +1,5 @@
 +++
-date = 2020-10-05T18:00:00Z
+date = 2020-10-03T00:00:00Z
 draft = true
 edito = "Pour notre deuxième newsletter, Le Point Q te propose de discuter de la contraception! Pour ton plus grand plaisir, nous avons recueilli plusieurs témoignages. Des jeunes femmes nous exposent leur rapport à la contraception, celle que la société leur a imposée ou celle qu'ont choisie par conviction… Pour les laisser libre de s'exprimer, nous leur avons demandé simplement / dit: raconte-moi ta contraception ( sur assurer la transparence"
 outro = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
