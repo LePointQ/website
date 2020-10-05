@@ -260,7 +260,7 @@
             <tr>
                 <td style="padding: 20px 0; text-align: center">
 					<a href="{{ .Site.BaseURL }}" target="_blank">
-						<img src="/media/logo.png" width="200" style="vertical-align: middle;" />
+						<img src="{{ .Site.BaseURL }}/media/logo.png" width="200" style="vertical-align: middle;" />
 					</a>
                 </td>
             </tr>
@@ -321,7 +321,7 @@
 									</h2>
 									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
 										{{ if eq (len .authors) 1 }}
-											<img src="/media/team/{{ index .authors 0 }}.jpg" width="40" height="40" style="vertical-align: middle; border-radius: 50%; margin-right: 5px;" />
+											<img src="{{ .Site.BaseURL }}/media/team/{{ index .authors 0 }}.jpg" width="40" height="40" style="vertical-align: middle; border-radius: 50%; margin-right: 5px;" />
 										{{ end }}
 										<span style="">Par {{ delimit .authors ", " " & " }}</span>
 									</h3>
