@@ -60,7 +60,7 @@ li {
 .logo {
 	font: 5rem 'Yeseva One', serif;
 	color: tomato;
-	margin: 2rem auto;
+	margin-top: 2rem;
 	text-align: center;
 }
 
@@ -111,4 +111,43 @@ main article .edito {
 	main article {
 		width: 90%;
 	}
+}
+
+#subscribe {
+	display: flex;
+}
+
+#subscribe > input {
+	margin: 0.5rem;
+	outline: none;
+	/* border: 1px solid tomato; */
+}
+
+#subscribe > input[type='submit'] {
+	background: tomato;
+	border: none;
+	border-radius: 2px;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	color: white;
+	font-weight: bold;
+	width: 100%;
+}
+
+#alert {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: tomato;
+	color: white;
+	padding: 0.5rem;
+	opacity: 0;
+	transition: opacity 2s ease;
+	text-align: center;
+}
+
+#alert.active {
+	opacity: 1;
+	transition: opacity 0.3s ease;
 }

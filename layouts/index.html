@@ -1,14 +1,41 @@
-{{ define "main" }}
+{{ define "main"}}
 	<main>
-		<h2>Toutes les newsletters</h2>
+		<h2 style="width: 500px; margin-top: 0; margin-bottom: 2rem;">La newsletter qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée &laquo;&nbsp;plaisir&nbsp;&raquo;.</h2>
+		<form id="subscribe" style="margin-bottom: 2rem;">
+			<input
+				type="email"
+				name="email"
+				placeholder="Entre ton adresse email"
+				required
+			/>
+			<input type="submit" value="Je m’abonne !">
+		</form>
+		<h2>Les dernières newsletters</h2>
 		<ul>
 			{{ range sort .Pages }}
 				<li style="font-size: 1.1rem; margin: 0.5rem;">
-					<a href='{{ .Permalink }}'>
-						{{ .Title }}
+					<a href="{{ .Permalink }}">
+						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 					</a>
 				</li>
 			{{ end }}
 		</ul>
+		<div id='alert'></div>
 	</main>
+{{ end }}
+
+{{ define "page-script" }}
+	<script>
+		const alert = document.querySelector('#alert');
+
+		document.querySelector('form').addEventListener('submit', (e) => {
+			e.preventDefault();
+			fetch("https://europe-west1-le-point-q.cloudfunctions.net/addContact?email=" + e.target.email.value);
+			e.target.email.value = '';
+
+			alert.innerHTML = 'Ton inscription a bien été prise en compte ! Merci ❤️';
+			alert.classList.toggle('active');
+			setTimeout(() => alert.classList.toggle('active'), 5000);
+		});
+	</script>
 {{ end }}
