@@ -9,6 +9,17 @@ fields:
     required: true
   label: Titre
   default: Lorem ipsum
+- name: numero
+  type: number
+  label: Numéro
+  description: ''
+  default: 42
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+    required: true
 - name: date
   type: datetime
   label: Date
