@@ -23,6 +23,26 @@ fields:
     - Thaïs
     - Tom
   label: Auteur·rice·s
+- name: section
+  type: select
+  default: Témoignages
+  config:
+    required: true
+    options:
+    - Témoignages
+    - Vu d'ailleurs
+    - On débunke
+    - La bonne nouvelle
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Rubrique
+- name: tags
+  type: tag_list
+  default: []
+  label: Thèmes
 - name: text
   type: textarea
   default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan
