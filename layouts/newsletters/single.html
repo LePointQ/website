@@ -8,7 +8,6 @@
     <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Yeseva+One&display=swap" rel="stylesheet">
     <title>{{ .Title }}</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
     <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
@@ -38,11 +37,12 @@
     <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
     <!--<![endif]-->
 
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
     <!-- Web Font / @font-face : END -->
 
     <!-- CSS Reset : BEGIN -->
-    <style>
-
+	<style>
         /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
         :root {
           color-scheme: light;
@@ -97,9 +97,9 @@
 
         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
 		a {
-			font-weight: bold;
-			text-decoration: none;
-			color: tomato;
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: tomato !important;
 		}
 
         /* What it does: Uses a better rendering method when resizing images in IE. */
@@ -163,6 +163,7 @@
 
     <!-- Progressive Enhancements : BEGIN -->
     <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
 
         /* What it does: Hover styles for buttons */
         .button-td,
@@ -214,10 +215,10 @@
             }
         }
 
-		.logo  {
-			font: 5rem 'Yeseva One', serif;
-			color: tomato;
-		}
+		/* .logo  {
+			font: 5rem 'Yeseva One', serif !important;
+			color: tomato !important;
+		} */
 
     </style>
     <!-- Progressive Enhancements : END -->
@@ -225,6 +226,7 @@
 </head>
 
 {{ $url := (printf "%s/%s" .Site.BaseURL .File.BaseFileName) }}
+{{ $baseURL := .Site.BaseURL }}
 
 <!--
 	The email background color (#222222) is defined in three places:
@@ -258,239 +260,188 @@
 	        <!-- Email Header : BEGIN -->
             <tr>
                 <td style="padding: 20px 0; text-align: center">
-					<a href="{{ .Site.BaseURL }}" class='logo'>
-						{{ .Site.Title }}
+					<a href="{{ .Site.BaseURL }}" target="_blank">
+						<img src="{{ .Site.BaseURL }}/media/logo.png" width="200" style="vertical-align: middle;" />
 					</a>
                 </td>
             </tr>
 	        <!-- Email Header : END -->
 
-            <!-- 1 Column Text + Button : BEGIN -->
+            <!-- 1 Column Text : BEGIN -->
             <tr>
                 <td style="background-color: #ffffff;">
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
-                            <td style="padding: 20px; font-family: 'Source Sans Pro', sans-serif; font-size: 16px; line-height: 20px; color: #555555;">
-                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
-									{{ .Title }}
+                            <td style="padding: 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+									{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 								</h1>
-                                <p style="margin: 0 0 10px; font-size: 16px; line-height: 20px; color: #333333; font-family: 'Source Sans Pro', sans-serif;">
-									{{ .Params.edito | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-								</p>
+								{{ .Params.edito | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
-            <!-- 1 Column Text + Button : END -->
+            <!-- 1 Column Text : END -->
 
-			{{ range .Params.content }}
-				{{ if eq "section-principal" .template }}
-					<!-- Hero Image, Flush : BEGIN -->
-					<tr>
-						<td style="background-color: #ffffff;">
-							<img src="{{ .Site.BaseURL }}{{ .image }}" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
-						</td>
-					</tr>
-					<!-- Hero Image, Flush : END -->
+			{{ with .Site.GetPage .Params.temoignages }}
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: tomato !important; text-align: center; margin-bottom: 40px;">● ● ●</p>
+						<img src="{{ $baseURL }}{{ .Params.image }}" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
 
-					<!-- 1 Column Text + Button : BEGIN -->
-					<tr>
-						<td style="background-color: #ffffff;">
-							<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-								<tr>
-									<td style="padding: 20px 20px 10px 20px; font-family: 'Source Sans Pro', sans-serif; font-size: 16px; line-height: 20px; color: #000000;">
-										<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
-											💬 {{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-										</h2>
-										<h3 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: normal; font-style: italic; font-family: 'Source Sans Pro', sans-serif;">
-											Par {{ delimit .authors ", " " & " }}
-										</h3>
-										{{ .preview | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-									</td>
-								</tr>
-								<tr>
-		                            <td style="padding: 0 20px 20px;">
-		                                <!-- Button : BEGIN -->
-		                                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
-		                                    <tr>
-		                                        <td class="button-td button-td-primary" style="border-radius: 4px; background: tomato;">
-													<a
-														class="button-a button-a-primary"
-														href="{{ $url }}#principal" target="_blank"
-														style="background: tomato; font-family: 'Source Sans Pro', sans-serif; font-size: 18px; line-height: 24px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;"
-													>
-														Lire la suite
-													</a>
-												</td>
-		                                    </tr>
-		                                </table>
-		                                <!-- Button : END -->
-		                            </td>
-		                        </tr>
-							</table>
-						</td>
-					</tr>
-					<!-- 1 Column Text + Button : END -->
-				{{ end }}
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										💬 {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										{{ if eq (len .Params.authors) 1 }}
+											<img src="{{ $baseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" style="vertical-align: middle; border-radius: 50%; margin-right: 5px;" />
+										{{ end }}
+										<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+									</h3>
+									{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
 			{{ end }}
 
-	        <!-- 2 Even Columns : BEGIN -->
-	        <tr>
-	            <td style="padding: 10px; background-color: #ffffff;">
-	                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-	                    <tr>
-							{{ range .Params.content }}
-								{{ if eq "section-vu-d-ailleurs" .template }}
-			                        <!-- Column : BEGIN -->
-			                        <th valign="top" width="50%" class="stack-column-center">
-			                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-			                                <tr>
-			                                    <td style="padding: 10px; text-align: center">
-			                                        <img src="{{ .Site.BaseURL }}{{ .image }}" width="270" height="" alt="alt_text" border="0" style="width: 100%; max-width: 270px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-			                                    </td>
-			                                </tr>
-			                                <tr>
-			                                    <td style="font-family: 'Source Sans Pro', sans-serif; font-size: 16px; line-height: 20px; color: #000000; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
-													<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
-														🌏 Vu d'ailleurs
-													</h2>
-													<h3 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: normal; font-style: italic; font-family: 'Source Sans Pro', sans-serif;">
-														Par {{ delimit .authors ", " " & " }}
-													</h3>
-													<h4 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
-														{{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-													</h4>
-			                                        {{ .preview | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-			                                    </td>
-			                                </tr>
-											<tr>
-					                            <td style="padding: 0 20px 20px;">
-					                                <!-- Button : BEGIN -->
-					                                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
-					                                    <tr>
-					                                        <td class="button-td button-td-primary" style="border-radius: 4px; background: tomato;">
-																<a
-																	class="button-a button-a-primary"
-																	href="{{ $url }}#vue-d-ailleurs" target="_blank"
-																	style="background: tomato; font-family: 'Source Sans Pro', sans-serif; font-size: 18px; line-height: 20px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;"
-																>
-																	Lire la suite
-																</a>
-															</td>
-					                                    </tr>
-					                                </table>
-					                                <!-- Button : END -->
-					                            </td>
-					                        </tr>
-			                            </table>
-			                        </th>
-									<!-- Column : END -->
-								{{ end }}
-							{{ end }}
-							{{ range .Params.content }}
- 							   {{ if eq "section-on-debunke" .template }}
- 								   <!-- Column : BEGIN -->
- 								   <th valign="top" width="50%" class="stack-column-center">
- 									   <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
- 										   <tr>
- 											   <td style="padding: 10px; text-align: center">
- 												   <img src="{{ .Site.BaseURL }}{{ .image }}" width="270" height="" alt="alt_text" border="0" style="width: 100%; max-width: 270px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
- 											   </td>
- 										   </tr>
- 										   <tr>
- 											   <td style="font-family: 'Source Sans Pro', sans-serif; font-size: 16px; line-height: 20px; color: #000000; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
- 												   <h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
-													   🔎 On débunke&nbsp;!
- 												   </h2>
- 												   <h3 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: normal; font-style: italic; font-family: 'Source Sans Pro', sans-serif;">
- 													   Par {{ delimit .authors ", " " & " }}
- 												   </h3>
- 												   <h4 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
- 													   {{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
- 												   </h4>
-												   <p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Source Sans Pro', sans-serif; border: 4px solid crimson; display: table; text-align:center; margin-left: auto; margin-right: auto;">
-													   &nbsp;FAUX&nbsp;
-												   </p>
- 												   {{ .preview | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
- 											   </td>
- 										   </tr>
- 										   <tr>
- 											   <td style="padding: 0 20px 20px;">
- 												   <!-- Button : BEGIN -->
- 												   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
- 													   <tr>
- 														   <td class="button-td button-td-primary" style="border-radius: 4px; background: tomato;">
- 															   <a
- 																   class="button-a button-a-primary"
- 																   href="{{ $url }}#on-debunke" target="_blank"
- 																   style="background: tomato; font-family: 'Source Sans Pro', sans-serif; font-size: 18px; line-height: 20px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;"
- 															   >
- 																   Lire la suite
- 															   </a>
- 														   </td>
- 													   </tr>
- 												   </table>
- 												   <!-- Button : END -->
- 											   </td>
- 										   </tr>
- 									   </table>
- 								   </th>
- 								   <!-- Column : END -->
- 							   {{ end }}
- 						   {{ end }}
-	                    </tr>
-	                </table>
-	            </td>
-	        </tr>
-	        <!-- 2 Even Columns : END -->
+			{{ with .Site.GetPage .Params.vu_d_ailleurs }}
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: tomato !important; text-align: center; margin-bottom: 40px;">● ● ●</p>
+						<img src="{{ $baseURL }}{{ .Params.image }}" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
 
-			{{ range .Params.content }}
-				{{ if eq "section-solution" .template }}
-					<!-- Thumbnail Left, Text Right : BEGIN -->
-			        <tr>
-			            <td dir="ltr" width="100%" style="padding: 10px; background-color: #ffffff;">
-			                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-			                    <tr>
-			                        <!-- Column : BEGIN -->
-			                        <th width="40%" class="stack-column-center">
-			                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-			                                <tr>
-			                                    <td dir="ltr" valign="top" style="padding: 0 10px;">
-			                                        <img src="{{ .Site.BaseURL }}{{ .image }}" width="212" height="auto" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; max-width: 212px;">
-			                                    </td>
-			                                </tr>
-			                            </table>
-			                        </th>
-			                        <!-- Column : END -->
-			                        <!-- Column : BEGIN -->
-			                        <th width="60%" class="stack-column-center">
-			                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-			                                <tr>
-												<td style="font-family: 'Source Sans Pro', sans-serif; font-size: 16px; line-height: 20px; color: #000000; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
-													<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
-														💡 La bonne nouvelle
-													</h2>
-													<h3 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: normal; font-style: italic; font-family: 'Source Sans Pro', sans-serif;">
-														Par {{ delimit .authors ", " " & " }}
-													</h3>
-													<h4 style="margin: 0 0 10px; font-size: 18px; line-height: 20px; color: #333333; font-weight: bold; font-family: 'Source Sans Pro', sans-serif;">
-														{{ .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-													</h4>
-
-													{{ .text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-			                                    </td>
-			                                </tr>
-			                            </table>
-			                        </th>
-			                        <!-- Column : END -->
-			                    </tr>
-			                </table>
-			            </td>
-			        </tr>
-			        <!-- Thumbnail Left, Text Right : END -->
-				{{ end }}
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										🌏 Vu d'ailleurs
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										{{ if eq (len .Params.authors) 1 }}
+											<img src="{{ $baseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" style="vertical-align: middle; border-radius: 50%; margin-right: 5px;" />
+										{{ end }}
+										<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+									</h3>
+									<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
+										{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+									</h4>
+									{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
 			{{ end }}
+
+			{{ with .Site.GetPage .Params.on_debunke }}
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: tomato !important; text-align: center; margin-bottom: 40px;">● ● ●</p>
+						<img src="{{ $baseURL }}{{ .Params.image }}" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										🔎 On débunke&nbsp;!
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										{{ if eq (len .Params.authors) 1 }}
+											<img src="{{ $baseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" style="vertical-align: middle; border-radius: 50%; margin-right: 5px;" />
+										{{ end }}
+										<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+									</h3>
+									<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
+										{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+									</h4>
+									<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+										&nbsp;FAUX&nbsp;
+									</p>
+									{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			{{ end }}
+
+			{{ with .Site.GetPage .Params.la_bonne_nouvelle }}
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: tomato !important; text-align: center; margin-bottom: 40px;">● ● ●</p>
+						<img src="{{ $baseURL }}{{ .Params.image }}" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										💡 La bonne nouvelle
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										{{ if eq (len .Params.authors) 1 }}
+											<img src="{{ $baseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" style="vertical-align: middle; border-radius: 50%; margin-right: 5px;" />
+										{{ end }}
+										<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+									</h3>
+									<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
+										{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+									</h4>
+									{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			{{ end }}
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: tomato !important; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								{{ .Params.outro | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
 
 	        <!-- Clear Spacer : BEGIN -->
 	        <tr>
@@ -517,35 +468,44 @@
 	    </table> -->
 	    <!-- Email Footer : END -->
 
-		<script type='text/html'>
-		    <!-- Full Bleed Background Section : BEGIN -->
-		    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: tomato;">
-		        <tr>
-		            <td>
-		                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
-		                    <!--[if mso]>
-		                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
-		                    <tr>
-		                    <td>
-		                    <![endif]-->
-		                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-		                        <tr>
-		                            <td style="padding: 20px; text-align: left; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
-		                                <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</p>
-		                            </td>
-		                        </tr>
-		                    </table>
-		                    <!--[if mso]>
-		                    </td>
-		                    </tr>
-		                    </table>
-		                    <![endif]-->
-		                </div>
-		            </td>
-		        </tr>
-		    </table>
-		    <!-- Full Bleed Background Section : END -->
-		</script>
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: tomato;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+	                                <p style="margin: 10px 0 10px;"><b>École de Journalisme de Sciences Po</b></p>
+									<p style="margin: 10px 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
 
     <!--[if mso | IE]>
     </td>

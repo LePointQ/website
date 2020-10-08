@@ -2,7 +2,7 @@
 	<main>
 		<article>
 			<h1>{{ .Title }}</h1>
-			<div>
+			<!-- <div>
 				<div class='edito'>
 					{{ .Params.edito | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 				</div>
@@ -17,7 +17,7 @@
 						{{ partial "sections/bonne-nouvelle" . }}
 					{{ end }}
 				{{ end }}
-			</div>
+			</div> -->
 		</article>
 	</main>
 {{ end }}

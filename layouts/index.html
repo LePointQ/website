@@ -1,6 +1,6 @@
 {{ define "main"}}
-	<main>
-		<h2 style="width: 500px; margin-top: 0; margin-bottom: 2rem;">La newsletter qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée &laquo;&nbsp;plaisir&nbsp;&raquo;.</h2>
+	<main style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin-top: 0;">
+		<h2 style="text-align: center; margin-top: 0; margin-bottom: 2rem;">La newsletter qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée &laquo;&nbsp;plaisir&nbsp;&raquo;.</h2>
 		<form id="subscribe" style="margin-bottom: 2rem;">
 			<input
 				type="email"
@@ -12,10 +12,10 @@
 		</form>
 		<h2>Les dernières newsletters</h2>
 		<ul>
-			{{ range sort .Pages }}
+			{{ range (where .Site.RegularPages.ByDate.Reverse "Section" "newsletters") }}
 				<li style="font-size: 1.1rem; margin: 0.5rem;">
 					<a href="{{ .Permalink }}">
-						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+						#{{ .Params.numero}} &middot; {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 					</a>
 				</li>
 			{{ end }}

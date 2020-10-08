@@ -1,0 +1,14 @@
+{{ define "main" }}
+	<main>
+		<h2>Tous les articles</h2>
+		<ul>
+			{{ range .Pages }}
+				<li>
+					<a href='{{ .Permalink }}'>
+						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
+					</a>
+				</li>
+			{{ end }}
+		</ul>
+	</main>
+{{ end }}

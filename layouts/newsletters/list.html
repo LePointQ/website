@@ -5,7 +5,7 @@
 			{{ range .Pages }}
 				<li>
 					<a href='{{ .Permalink }}'>
-						<p>{{ .Title }}</p>
+						#{{ .Params.numero}} &middot; {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
 					</a>
 				</li>
 			{{ end }}

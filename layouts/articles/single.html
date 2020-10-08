@@ -1,0 +1,36 @@
+{{ define "main" }}
+	<main>
+		<article>
+			<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
+			<h1>
+				{{ if eq .Params.section "Témoignages" }}
+					💬 {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+				{{ else }}
+					{{ if eq .Params.section "Vu d'ailleurs" }}
+						🌏 Vu d'ailleurs
+					{{ else if eq .Params.section "On débunke" }}
+						🔎 On débunke&nbsp;!
+					{{ else if eq .Params.section "La bonne nouvelle" }}
+						💡 La bonne nouvelle
+					{{ end}}
+				{{ end }}
+			</h1>
+			<h3>
+				{{ if eq (len .Params.authors) 1 }}
+					<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" style="vertical-align: middle; border-radius: 50%; margin-right: 5px;" />
+				{{ end }}
+				<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+			</h3>
+			{{ if ne .Params.section "Témoignages" }}
+				<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
+			{{ end }}
+			{{ if eq .Params.section "On débunke" }}
+				<p class='fake'>FAUX</p>
+			{{ end }}
+
+			{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+
+			<p class='separator'>● ● ●</p>
+		</article>
+	</main>
+{{ end }}
