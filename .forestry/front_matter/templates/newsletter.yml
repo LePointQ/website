@@ -88,3 +88,5 @@ fields:
     schema:
       format: markdown
   label: Conclusion
+pages:
+- content/newsletters/le-plaisir-dans-tous-ses-etats.md
