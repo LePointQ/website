@@ -43,6 +43,16 @@ fields:
   type: tag_list
   default: []
   label: Thèmes
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
 - name: text
   type: textarea
   default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan
