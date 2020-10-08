@@ -31,17 +31,54 @@ fields:
     schema:
       format: markdown
   label: Edito
-- name: content
-  type: blocks
-  label: Contenu
-  template_types:
-  - section-principal
-  - section-vu-d-ailleurs
-  - section-on-debunke
-  - section-bonne-nouvelle
+- name: temoignages
+  type: select
+  default: []
   config:
-    min: 
-    max: 
+    required: false
+    options: []
+    source:
+      type: pages
+      section: articles
+      file: 
+      path: 
+  label: Témoignages
+- name: vu_d_ailleurs
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: articles
+      file: 
+      path: 
+  label: Vu d'ailleurs
+- name: on_debunke
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: articles
+      file: 
+      path: 
+  label: On débunke
+- name: la_bonne_nouvelle
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: articles
+      file: 
+      path: 
+  label: La bonne nouvelle
 - name: outro
   type: textarea
   default: ''
