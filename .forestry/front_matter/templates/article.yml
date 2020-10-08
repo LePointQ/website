@@ -13,8 +13,8 @@ fields:
   type: list
   config:
     use_select: true
-    min: 
-    max: 
+    min:
+    max:
     source:
       type: simple
     options:
@@ -35,11 +35,11 @@ fields:
     - La bonne nouvelle
     source:
       type: simple
-      section: 
-      file: 
-      path: 
+      section:
+      file:
+      path:
   label: Rubrique
-- name: tags
+- name: themes
   type: tag_list
   default: []
   label: Thèmes
@@ -49,8 +49,8 @@ fields:
   description: ''
   config:
     required: true
-    date_format: 
-    time_format: 
+    date_format:
+    time_format:
     display_utc: false
   default: now
 - name: text

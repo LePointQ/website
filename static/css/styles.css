@@ -204,3 +204,7 @@ main article .fake {
 	opacity: 1;
 	transition: opacity 0.3s ease;
 }
+
+.anychart-credits {
+	display: none !important;
+}

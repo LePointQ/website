@@ -1,0 +1,17 @@
+{{ define "title" }}
+	<title>{{ cond (eq .Title "ist") "IST" (.Title | humanize) }} : tous les articles</title>
+{{ end }}
+{{ define "main" }}
+	<main>
+		<h2>{{ cond (eq .Title "ist") "IST" (.Title | humanize) }} : Tous les articles</h2>
+		<ul>
+			{{ range .Pages }}
+				<li>
+					<a href='{{ .Permalink }}'>
+						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
+					</a>
+				</li>
+			{{ end }}
+		</ul>
+	</main>
+{{ end }}

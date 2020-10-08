@@ -6,3 +6,6 @@ title = "Le Point Q"
 
 [markup.goldmark.renderer]
 unsafe= true
+
+[taxonomies]
+themes = "themes"
