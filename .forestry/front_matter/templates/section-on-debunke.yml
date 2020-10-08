@@ -1,9 +1,0 @@
----
-label: 'Section : On débunke'
-hide_body: true
-fields:
-- name: article
-  type: include
-  config: {}
-  template: article
-  label: Article
