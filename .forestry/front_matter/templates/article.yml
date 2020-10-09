@@ -13,8 +13,8 @@ fields:
   type: list
   config:
     use_select: true
-    min:
-    max:
+    min: 
+    max: 
     source:
       type: simple
     options:
@@ -35,9 +35,9 @@ fields:
     - La bonne nouvelle
     source:
       type: simple
-      section:
-      file:
-      path:
+      section: 
+      file: 
+      path: 
   label: Rubrique
 - name: themes
   type: tag_list
@@ -49,8 +49,8 @@ fields:
   description: ''
   config:
     required: true
-    date_format:
-    time_format:
+    date_format: 
+    time_format: 
     display_utc: false
   default: now
 - name: text
@@ -95,5 +95,6 @@ pages:
 - content/articles/la-masturbation-feminine-4-questions-a-ines-perrine-et-pauline.md
 - content/articles/la-vasectomie-normalisee-au-canada-br-taboue-en-france.md
 - content/articles/le-sterilet-favorise-la-transmission-br-d-infections-sexuellement-transmissibles.md
+- content/articles/lorem-ipsum.md
 - content/articles/raconte-moi-ta-contraception.md
 - content/articles/si-un-mec-aime-qu-on-lui-touche-l-anus-br-alors-il-est-forcement-gay.md
