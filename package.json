@@ -1,0 +1,30 @@
+{
+	"name": "lepointq-website",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "hugo server",
+		"build": "node _scripts/build.js",
+		"create": "node _scripts/create.js",
+		"test": "node _scripts/send.js --test",
+		"send": "node _scripts/send.js --real"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TomFevrier/lepointq-website.git"
+	},
+	"author": "Tom Février",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/TomFevrier/lepointq-website/issues"
+	},
+	"homepage": "https://github.com/TomFevrier/lepointq-website#readme",
+	"devDependencies": {
+		"html-entities": "^1.3.1",
+		"markdown-it": "^11.0.1",
+		"node-fetch": "^2.6.1",
+		"press-any-key": "^0.1.1",
+		"toml": "^3.0.0"
+	}
+}
