@@ -4,13 +4,12 @@
 
 {{ define "main" }}
 	{{ $data := .Data }}
-	<ul style='display: none;'>
+	<ul style="display: none;">
 		{{ range $key, $value := .Data.Terms.ByCount }}
 			<li>{{ $value.Name }}:{{ $value.Count }}</li>
 		{{ end }}
 	</ul>
-	<div id='container' style='max-width: 600px; height: 600px; margin: 8rem auto 0;'>
-	</div>
+	<div id='container' style='max-width: 600px; height: 600px; margin: 8rem auto 0;'></div>
 {{ end }}
 
 {{ define "page-script" }}
@@ -44,5 +43,7 @@
 			window.open(url, '_self');
 		});
 		chart.draw();
+
+		document.querySelectorAll('text').forEach(e => e.style.cursor = 'pointer');
 	</script>
 {{ end }}
