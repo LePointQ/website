@@ -1,5 +1,5 @@
 {{ define "title" }}
-	<title>{{ cond (eq .Title "ist") "IST" (.Title | humanize) }} : tous les articles</title>
+	<title>{{ cond (eq .Title "IST") "IST" (.Title | humanize) }} : tous les articles</title>
 {{ end }}
 {{ define "main" }}
 	<main>
