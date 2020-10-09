@@ -1,7 +1,6 @@
 +++
 authors = ["Orianne"]
 date = 2020-10-09T12:36:42Z
-draft = true
 image = ""
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis justo sed sem lobortis lacinia sed sed erat."
 section = "La bonne nouvelle"
