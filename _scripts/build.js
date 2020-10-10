@@ -38,7 +38,7 @@ const build = async () => {
 				<!-- Hero Image, Flush : BEGIN -->
 				<tr>
 					<td style="background-color: #ffffff;">
-						<p style="color: tomato !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', sans-serif;">● ● ●</p>
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', sans-serif;">● ● ●</p>
 						<img src="${BASE_URL}${content.image}" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
 					</td>
 				</tr>

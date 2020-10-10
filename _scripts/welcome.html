@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
-    <title>{{ .Title }}</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <title>Bienvenue au Point Q</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
     <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
     <!--[if gte mso 9]>
@@ -99,7 +99,7 @@
 		a {
 			font-weight: bold !important;
 			text-decoration: none !important;
-			color: tomato !important;
+			color: #F47B67 !important;
 		}
 
         /* What it does: Uses a better rendering method when resizing images in IE. */
@@ -214,19 +214,10 @@
                 font-size: 17px !important;
             }
         }
-
-		/* .logo  {
-			font: 5rem 'Yeseva One', serif !important;
-			color: tomato !important;
-		} */
-
     </style>
     <!-- Progressive Enhancements : END -->
 
 </head>
-
-{{ $url := (printf "%s/%s" .Site.BaseURL .File.BaseFileName) }}
-{{ $baseURL := .Site.BaseURL }}
 
 <!--
 	The email background color (#222222) is defined in three places:
@@ -242,12 +233,6 @@
     <td>
     <![endif]-->
 
-        <!-- Visually Hidden Preheader Text : BEGIN -->
-        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
-            (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.
-        </div>
-        <!-- Visually Hidden Preheader Text : END -->
-
         <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
         <!-- Preview Text Spacing Hack : BEGIN -->
         <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
@@ -260,8 +245,8 @@
 	        <!-- Email Header : BEGIN -->
             <tr>
                 <td style="padding: 20px 0; text-align: center">
-					<a href="{{ .Site.BaseURL }}" target="_blank">
-						<img src="{{ .Site.BaseURL }}/media/logo.png" width="200" style="vertical-align: middle;" />
+					<a href="{{ BASE_URL }}" target="_blank">
+						<img src="{{ BASE_URL }}/media/logo.png" width="200" style="vertical-align: middle;" />
 					</a>
                 </td>
             </tr>
@@ -273,92 +258,18 @@
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
                             <td style="padding: 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
-                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
-									{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-								</h1>
-								{{ .Params.edito | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+								<h1 style="text-align: center;">Salut&nbsp;!</h1>
+								<p>Bienvenue chez nous, au <b>Point Q</b>. On est ravis de te compter parmi nous et on espère que cette newsletter te fera le plus grand bien. Comme toi, on pense que c&rsquo;est en levant les tabous qu&rsquo;on développera une sexualité plus épanouie, libre et fun&nbsp;!
+									<p>Chaque lundi, on débarque dans ta boîte mail pour décortiquer un thème lié au sexe. Plaisir, santé sexuelle, culture érotique, sexualité queer... Il y en aura pour tous les goûts&nbsp;!</p>
+									<p>Toi aussi tu peux participer, en nous livrant ton témoignage ou en nous proposant des idées par retour de mail&nbsp;!</p>
+									<p>Pour retrouver les anciens numéros, c'est <a href="https://lepointq.surge.sh/newsletters" target="_blank">par ici</a>. Et n&rsquo;hésite pas à nous suivre sur les réseaux&nbsp;!</p>
+									<p>À lundi dans ta boîte mail,<br />Juliette, Orianne, Thaïs et Tom.</p>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <!-- 1 Column Text : END -->
-
-			{{ range .Params.content }}
-				<!-- Hero Image, Flush : BEGIN -->
-				<tr>
-					<td style="background-color: #ffffff;">
-						<p style="color: tomato !important; text-align: center; margin-bottom: 40px;">● ● ●</p>
-						{{ if eq .template "section-principal" }}
-							<img src="{{ $baseURL }}{{ .image }}" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
-						{{ else }}
-							<img src="{{ $baseURL }}{{ .image }}" width="600" height="" alt="alt_text" border="0" style="width: 80%; max-width: 480px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
-						{{ end }}
-
-					</td>
-				</tr>
-				<!-- Hero Image, Flush : END -->
-
-				<!-- 1 Column Text : BEGIN -->
-				<tr>
-					<td style="background-color: #ffffff;">
-						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-							<tr>
-								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
-									{{ $title := .title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
-										{{ with (eq .template "section-principal") }}
-											💬 {{ $title }}
-										{{ end }}
-										{{ with (eq .template "section-vu-d-ailleurs") }}
-											🌏 Vu d'ailleurs
-										{{ end }}
-										{{ with (eq .template "section-on-debunke") }}
-											🔎 On débunke&nbsp;!
-										{{ end }}
-										{{ with (eq .template "section-bonne-nouvelle") }}
-											💡 La bonne nouvelle
-										{{ end }}
-									</h2>
-									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
-										{{ if eq (len .authors) 1 }}
-											<img src="{{ $baseURL }}/media/team/{{ index .authors 0 }}.jpg" width="40" height="40" style="vertical-align: middle; border-radius: 50%; margin-right: 5px;" />
-										{{ end }}
-										<span style="">Par {{ delimit .authors ", " " & " }}</span>
-									</h3>
-									{{ if ne .template "section-principal" }}
-										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
-											{{ $title }}
-										</h4>
-									{{ end }}
-									{{ if eq .template "section-on-debunke" }}
-										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
-											&nbsp;FAUX&nbsp;
-										</p>
-									{{ end }}
-									{{ .text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<!-- 1 Column Text : END -->
-			{{ end }}
-
-			<!-- 1 Column Text : BEGIN -->
-			<tr>
-				<td style="background-color: #ffffff;">
-					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-						<tr>
-							<td style="padding: 10px 20px 10px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
-								<p style="color: tomato !important; text-align: center; margin-bottom: 40px;">● ● ●</p>
-								{{ .Params.outro | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<!-- 1 Column Text : END -->
 
 	        <!-- Clear Spacer : BEGIN -->
 	        <tr>
@@ -386,7 +297,7 @@
 	    <!-- Email Footer : END -->
 
 	    <!-- Full Bleed Background Section : BEGIN -->
-	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: tomato;">
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
 	        <tr>
 	            <td>
 	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
@@ -398,8 +309,17 @@
 	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 	                        <tr>
 	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
-	                                <p style="margin: 10px 0 10px;"><b>École de Journalisme de Sciences Po</b></p>
-									<p style="margin: 10px 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+									<p>
+										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.surge.sh/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://www.instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.surge.sh/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
 	                            </td>
 	                        </tr>
 	                    </table>
