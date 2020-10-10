@@ -21,6 +21,7 @@
 		{{ partial "footer" . }}
 		{{ block "page-script" . }}{{ end }}
 		{{ block "page-style" . }}{{ end }}
+
 		<script>
 			window.addEventListener('scroll', () => {
 				if (window.scrollY > 100)
@@ -29,5 +30,14 @@
 					document.querySelector('header').classList.remove('minified');
 			});
 		</script>
+
+		<!-- Google Analytics -->
+		<script>
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', 'UA-180273800-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<script async src='https://www.google-analytics.com/analytics.js'></script>
+		<!-- End Google Analytics -->
 	</body>
 </html>
