@@ -64,7 +64,8 @@ header {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	align-items: start;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.8);
 }
 
 header #logo:hover {
@@ -75,16 +76,42 @@ header #logo:hover {
 header #logo img {
 	padding: 1rem 0;
 	width: 8rem;
+	transition: all 0.3s ease;
+}
+
+header.minified #logo img {
+	padding: 0.5rem 0;
+	width: 4rem;
 }
 
 header nav {
+	display: flex;
 	margin-right: 1rem;
-	margin-top: 2rem;
 }
 
 header nav a {
 	font-size: 1.2rem;
 	margin: 0 1rem;
+	display: table;
+}
+
+@media only screen and (max-width: 64rem) {
+	header nav {
+		flex-direction: column;
+		align-items: flex-end;
+		margin-top: 0;
+	}
+
+	header nav a {
+		margin: 0.2rem 0;
+	}
+}
+
+footer {
+	text-align: center;
+	font-size: 0.9rem;
+	color: #555555;
+	margin-bottom: 1rem;
 }
 
 main {
@@ -94,7 +121,24 @@ main {
 	align-items: center;
 	width: 50%;
 	max-width: 600px;
-	margin: 8rem auto 0;
+	height: auto;
+	margin: 10rem auto 4rem;
+}
+
+@media only screen and (max-width: 96rem) {
+	main {
+		width: 75%;
+	}
+}
+
+@media only screen and (max-width: 32rem) {
+	main {
+		width: 90%;
+	}
+}
+
+main ul {
+	width: 100%;
 }
 
 main li {
@@ -106,7 +150,8 @@ main li a {
 }
 
 main article {
-	padding: 1rem;
+	width: 100%;
+	padding: 0 1rem;
 	text-align: justify;
 }
 
@@ -114,7 +159,17 @@ main article .hero {
 	width: 100%;
 }
 
-main article h1 {
+main h1 {
+	font-size: 2rem;
+	text-align: center;
+}
+
+main .edito, main .outro {
+	color: #555555;
+	font-size: 1.1rem;
+}
+
+main article h2 {
 	font-size: 1.6rem;
 	text-align: center;
 }
@@ -134,8 +189,10 @@ main article p {
 	font-size: 1.1rem;
 }
 
-main article .edito {
-	color: #333333;
+main article .author-pic {
+	vertical-align: middle;
+	border-radius: 50%;
+	margin-right: 0.3rem;
 }
 
 main article .fake {
@@ -151,19 +208,7 @@ main article .fake {
 .separator {
 	color: tomato;
 	text-align: center;
-	margin: 2rem 0;
-}
-
-@media (max-width: 64rem) {
-	main article {
-		width: 75%;
-	}
-}
-
-@media (max-width: 32rem) {
-	main article {
-		width: 90%;
-	}
+	margin: 2.5rem 0;
 }
 
 #subscribe {
@@ -184,7 +229,12 @@ main article .fake {
 	cursor: pointer;
 	color: white;
 	font-weight: bold;
-	width: 100%;
+}
+
+@media only screen and (max-width: 32rem) {
+	#subscribe {
+		flex-direction: column;
+	}
 }
 
 #alert {

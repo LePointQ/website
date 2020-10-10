@@ -1,8 +1,60 @@
 {{ define "main" }}
 	<main>
-		<h2>Tous les articles</h2>
+		<h2>Les derniers articles</h2>
 		<ul>
-			{{ range .Pages }}
+			{{ range first 5 .Pages }}
+				<li>
+					<a href='{{ .Permalink }}'>
+						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
+					</a>
+				</li>
+			{{ end }}
+		</ul>
+
+		<p class='separator'>● ● ●</p>
+
+		<h2>💬 Témoignages</h2>
+		<ul>
+			{{ range (where .Pages "Params.section" "Témoignages") }}
+				<li>
+					<a href='{{ .Permalink }}'>
+						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
+					</a>
+				</li>
+			{{ end }}
+		</ul>
+
+		<p class='separator'>● ● ●</p>
+
+		<h2>🌏 Vu d'ailleurs</h2>
+		<ul>
+			{{ range (where .Pages "Params.section" "Vu d'ailleurs") }}
+				<li>
+					<a href='{{ .Permalink }}'>
+						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
+					</a>
+				</li>
+			{{ end }}
+		</ul>
+
+		<p class='separator'>● ● ●</p>
+
+		<h2>🔎 On débunke !</h2>
+		<ul>
+			{{ range (where .Pages "Params.section" "On débunke") }}
+				<li>
+					<a href='{{ .Permalink }}'>
+						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
+					</a>
+				</li>
+			{{ end }}
+		</ul>
+
+		<p class='separator'>● ● ●</p>
+
+		<h2>💡 La bonne nouvelle</h2>
+		<ul>
+			{{ range (where .Pages "Params.section" "La bonne nouvelle") }}
 				<li>
 					<a href='{{ .Permalink }}'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}

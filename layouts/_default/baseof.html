@@ -15,7 +15,16 @@
 	<body>
 		{{ partial "header" . }}
 		{{ block "main" . }}{{ end }}
-		<!-- {{ partial "footer" . }} -->
+		{{ partial "footer" . }}
 		{{ block "page-script" . }}{{ end }}
+		{{ block "page-style" . }}{{ end }}
+		<script>
+			window.addEventListener('scroll', () => {
+				if (window.scrollY > 100)
+					document.querySelector('header').classList.add('minified');
+				else
+					document.querySelector('header').classList.remove('minified');
+			});
+		</script>
 	</body>
 </html>
