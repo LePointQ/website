@@ -274,6 +274,10 @@ main article .fake {
 	text-align: center;
 }
 
+#alert p {
+	width: 80%;
+}
+
 #alert.active {
 	opacity: 1;
 	transition: opacity 0.3s ease;
