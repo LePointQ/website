@@ -26,7 +26,7 @@ const build = async () => {
 
 		let output = html
 			.replace(/{{ BASE_URL }}/g, BASE_URL)
-			.replace(/{{ TITLE }}/g, md.render(typografix(data.title)))
+			.replace(/{{ TITLE }}/g, typografix(data.title))
 			.replace('{{ EDITO }}', md.render(typografix(data.edito)))
 			.replace('{{ OUTRO }}', md.render(typografix(data.outro)));
 
