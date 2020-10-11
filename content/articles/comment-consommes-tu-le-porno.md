@@ -1,5 +1,5 @@
 +++
-authors = ["Juliette"]
+authors = ["Juliette", "Juliette"]
 date = 2020-10-11T21:07:41Z
 draft = true
 image = "/media/uploads/vidar-nordli-mathisen-f4oms_slujc-unsplash.jpg"
