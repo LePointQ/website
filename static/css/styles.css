@@ -336,6 +336,7 @@ main article .fake {
 
 #alert p {
 	width: 80%;
+	margin: 0 auto;
 }
 
 #alert.active {
