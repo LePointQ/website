@@ -1,0 +1,20 @@
+{{ define "main" }}
+	<main>
+		<article>
+			<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
+			<h1>
+				{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+			</h1>
+			<h3>
+				{{ if eq (len .Params.authors) 1 }}
+					<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" style="vertical-align: middle; border-radius: 50%; margin-right: 5px;" />
+				{{ end }}
+				<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+			</h3>
+
+			{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+
+			<p class='separator'>● ● ●</p>
+		</article>
+	</main>
+{{ end }}

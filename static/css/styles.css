@@ -130,7 +130,7 @@ footer .social-icon {
 	margin: 0 0.5rem;
 }
 
-footer .social-icon:hover {
+footer .social-icon:hover, footer a:hover {
 	color: var(--secondary-color);
 	background: inherit;
 }
@@ -154,86 +154,31 @@ main {
 
 @media only screen and (max-width: 32rem) {
 	main {
-		width: 90%;
+		width: 90% !important;
 	}
 }
 
-main ul {
+main.homepage {
+	width: 75%;
+	max-width: 60rem;
+}
+
+main.homepage h2 {
+	max-width: 600px;
+}
+
+main.homepage img.us {
 	width: 100%;
-}
-
-main li {
-	margin: 0.5rem;
-}
-
-main li a {
-	font-size: 1.1rem;
-}
-
-main article {
-	width: 100%;
-	padding: 0 1rem;
-	text-align: justify;
-}
-
-main article .hero {
-	width: 100%;
-}
-
-main h1 {
-	font-size: 2rem;
-	text-align: center;
-}
-
-main .edito, main .outro {
-	color: var(--grey);
-	font-size: 1.1rem;
-}
-
-main article h2 {
-	font-size: 1.6rem;
-	text-align: center;
-}
-
-main article h3 {
-	font-size: 1.2rem;
-	color: var(--grey);
-	text-align: center;
-}
-
-main article h4 {
-	font-size: 1.3rem;
-	text-align: center;
-}
-
-main article p {
-	font-size: 1.1rem;
-}
-
-main article .author-pic {
-	vertical-align: middle;
-	border-radius: 50%;
-	margin-right: 0.3rem;
-}
-
-main article .fake {
-	font-size: 1.2rem;
-	font-weight: bold;
-	color: crimson;
-	padding: 2px 4px;
-	border: 0.25rem solid crimson;
-	display: table;
-	margin: 0 auto;
-}
-
-.separator {
-	color: var(--main-color);
-	text-align: center;
-	margin: 2.5rem 0;
+	border-radius: 100% 100% 0 0;
 }
 
 #subscribe {
+	width: 100%;
+	background: var(--main-color);
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 0;
 }
 
 #subscribe > input {
@@ -244,7 +189,7 @@ main article .fake {
 
 #subscribe > input[type='submit'] {
 	background: var(--main-color);
-	border: 2px solid var(--main-color);
+	border: 2px solid white;
 	border-radius: 0.25rem;
 	padding: 0.5rem 1rem;
 	cursor: pointer;
@@ -259,7 +204,7 @@ main article .fake {
 	color: var(--main-color);
 }
 
-@media only screen and (max-width: 32rem) {
+@media only screen and (max-width: 48rem) {
 	#subscribe {
 		flex-direction: column;
 		align-items: center;
@@ -280,6 +225,14 @@ main article .fake {
 	margin: 2rem auto;
 	text-align: justify;
 	display: inline-block;
+}
+
+.testimonials li:nth-child(2n) {
+	transform: translateX(25%);
+}
+
+.testimonials li:nth-child(2n+1) {
+	transform: translateX(-25%);
 }
 
 .testimonials li .text {
@@ -322,6 +275,12 @@ main article .fake {
 	font-weight: bold;
 }
 
+@media only screen and (max-width: 48rem) {
+	.testimonials li {
+		transform: translateX(0) !important;
+	}
+}
+
 #alert {
 	position: fixed;
 	top: 0;
@@ -343,6 +302,81 @@ main article .fake {
 #alert.active {
 	opacity: 1;
 	transition: opacity 0.3s ease;
+}
+
+main ul {
+	width: 100%;
+}
+
+main li {
+	margin: 0.5rem;
+}
+
+main li a {
+	font-size: 1.1rem;
+}
+
+main article {
+	width: 100%;
+	padding: 0 1rem;
+	text-align: justify;
+}
+
+main article .hero {
+	width: 100%;
+}
+
+main h1 {
+	font-size: 2rem;
+	text-align: center;
+}
+
+main .edito, main .outro {
+	color: var(--grey);
+	font-size: 1.1rem;
+	text-align: justify;
+}
+
+main article h2 {
+	font-size: 1.6rem;
+	text-align: center;
+}
+
+main article h3 {
+	font-size: 1.2rem;
+	color: var(--grey);
+	text-align: center;
+}
+
+main article h4 {
+	font-size: 1.3rem;
+	text-align: center;
+}
+
+main article p {
+	font-size: 1.1rem;
+}
+
+main article .author-pic {
+	vertical-align: middle;
+	border-radius: 50%;
+	margin-right: 0.3rem;
+}
+
+main article .fake {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: crimson;
+	padding: 2px 4px;
+	border: 0.25rem solid crimson;
+	display: table;
+	margin: 0 auto;
+}
+
+.separator {
+	color: var(--main-color);
+	text-align: center;
+	margin: 2.5rem 0;
 }
 
 .anychart-credits {
