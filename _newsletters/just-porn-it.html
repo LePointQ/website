@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>Just porn it&nbsp;?</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.surge.sh" target="_blank">
+						<img src="https://lepointq.surge.sh/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+									Just porn it&nbsp;?
+								</h1>
+								<p>Salut et bienvenue dans <strong>Le Point Q</strong>, un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020.</p>
+<p>Pour ce troisième numéro, on s’est emparé du porno, ce thème immense, panier de tous les plaisirs et qui réveille nos cinq sens. Pour toi, Thaïs a passé une semaine <strong>au Japon avec les fans de Yaoi</strong>, Tom a épluché les enquêtes pour répondre à LA question : <strong>« Les hommes gays sont-ils les seuls à consommer du porno gay ? »</strong> Pas si sûr, réponse plus bas... Et Orianne s’est emparée de <strong>cette nouvelle expérience du porno, celle qui réjouira tes oreilles</strong>.</p>
+<p>Mais avant cela, Juliette a posé une question à plusieurs d’entre vous : <strong>« Comment consommes-tu le porno ? »</strong> Que ce soit sur ce bon vieux Pornhub, sur Xconfessions ou en lisant des livres érotiques... Nous on n’a qu’une chose à vous dire. <strong>Just porn it !</strong> (dans le respect de tous).</p>
+<p>Très belle lecture,
+Ton équipe dévouée du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.surge.sh/media/uploads/vidar-nordli-mathisen-f4oms_slujc-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										💬 &laquo;&nbsp;Comment consommes-tu le porno&nbsp;?&nbsp;&raquo;
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										
+											<img
+												src="https://lepointq.surge.sh/media/team/Juliette.jpg"
+												width="40" height="40"
+												style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+											/>
+										
+										<span>
+											Par Juliette
+										</span>
+									</h3>
+									
+									
+									<p><strong>Kevin, 24 ans, cuisinier :</strong></p>
+<p>« Je regarde des contenus plutôt amateurs, comme le site <em>Voissa</em> par exemple. Au début de la majorité, j’achetais le magazine <em>Union</em> qui m’a permis d’apprendre plein de choses sur la sexualité, c’était rempli de témoignages. Aujourd’hui, je suis en couple et je consomme moins de porno, seulement de temps en temps. J’ai été surpris en apprenant que ma copine en regardait aussi, mais assez content car on a pu en voir ensemble ! Récemment, on a découvert <em>Xconfessions</em>, qui a l’air pas mal du tout, du porno <em>responsable</em> et sans tabou. »</p>
+<p><strong>Diane, 25 ans, étudiante en droit :</strong></p>
+<p>« J’en consomme deux ou trois fois par semaine, j’ai une libido assez forte. Souvent c’est Pornhub, avant c’était YouPorn. Et si je suis dans une situation où je dois être discrète, je lis des livres érotiques. Ça me fait un bien fou. J’aimerais bien tester les réalisatrices qui font du porno féministe, mais c’est presque systématiquement payant et je n’ai pas d’argent à mettre là-dedans. Quand j’en aurai, peut-être que j’essaierai.</p>
+<p>Par contre, j’ai découvert le porno et les sextoys en même temps, et j’ai trop kiffé. Quand à la représentation de la femme sur ces sites...Ca dépend, c’est vraiment au feeling. Des fois ça me plait, et quand ça ne m’intéresse pas j’arrête la vidéo. Quand j’étais en couple, j’en consommais un petit peu moins, mais j’en avais quand même besoin à côté de ma relation. »</p>
+<p><strong>Nicolas, 38 ans, écrivain :</strong></p>
+<p>« Je vais à peu près trois fois par semaine sur Pornhub, ça fait quelques années que ça dure. Maintenant ils connaissent mes préférences, ça aide aussi ! Le porno ça évite d’avoir à produire des efforts d’imagination, qui deviennent de plus en plus difficiles aujourd’hui.</p>
+<p>Il est assez rare que j’ai des orgasmes. Évidemment j’éjacule, je me soulage. Mais c’est pas vraiment d’une intensité folle, c’est répétitif, habituel, c’est plutôt mécanique en fait. J’ai entendu parler de nouvelles formes de porno comme la réalité virtuelle, mais ce n’est pas vraiment mon truc. »</p>
+<p><strong>Marin, 23 ans, journaliste :</strong></p>
+<p>« J’ai choisi de me tourner vers des sites de porno féministe et queer parce que j’essaie de me départir de ce sentiment de saleté que je pouvais avoir en regardant des pornos plus mainstream, comme Youporn ou des caméras en ligne. Les normes mises en places y sont très hétéro-patriarcales. J’ai changé récemment, depuis le confinement, où j’ai eu plus de temps pour regarder et pour chercher du porno éthique. J’en consomme deux à trois fois par semaine.</p>
+<p>Mon rapport au porno est très curieux, sans tabou, dans le sens où j’ai très envie de découvrir de nouvelles formes de porno, comme le <em>post-porn</em>. Je n’y connais pas grand chose, mais je perçois aujourd’hui à quel point c’est politique. Je ne le vois plus seulement comme une distraction mais comme une manière d’agir en consommant un certain type de contenu. C’est un peu comme faire attention à ce qu’on mange ! »</p>
+<p><em>( *Le prénom a été changé. Marin est né.e dans un corps de femme, mais iel ne se définit aujourd’hui ni comme une femme, ni comme un homme.)</em></p>
+<p><strong>Pour retrouver le témoignage en intégralité de Marin, rendez-vous sur <a href="https://lepointq.surge.sh/en-plus/consommer-du-porno-je-percois-desormais-a-quel-point-c-est-politique">notre site web</a> !</strong> Iel raconte sa découverte du porno à l’âge de 12 ans à travers le Hentai (mot japonais qui signifie « pervers » et désigne des mangas à caractère pornographique) dans une bibliothèque municipale. Iel évoque aussi les webcams où iel se montrait à l’adolescence, et comment cette pratique questionne encore son rapport à la sexualité.</p>
+<p><em>La semaine prochaine, on parlera des positions du kamasutra ! Ce qu’elles disent de nous, de notre culture... Si ça te fait penser à une histoire que tu as envie de raconter, n’hésite pas ! Écris-nous en répondant à ce mail.</em></p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.surge.sh/media/uploads/tenor.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										🌏 Vu d&rsquo;ailleurs
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										
+											<img
+												src="https://lepointq.surge.sh/media/team/Thaïs.jpg"
+												width="40" height="40"
+												style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+											/>
+										
+										<span>
+											Par Thaïs
+										</span>
+									</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
+											Le Yaoi&nbsp;: le fantasme féminin<br />des amours érotiques masculines
+										</h4>
+									
+									
+									<p>Encore une fois, désolée, on repart bien à l’Est, mais pour parler d’un fantasme nippon qui dépasse largement les frontières de l’île : celui de la fiction homo-érotique et homo-pornographique. Au Japon, ce genre est connu sous le nom de « Yaoi » ou encore « BL » (Boy’s Love) Ce sont des fictions généralement de type manga, amateures comme publiées, et mettant en scène l’amour entre deux hommes, de la petite tension sexuelle aux scènes de jouissance plus explicites et graphiques.</p>
+<p>Loin d’être un genre niche, le fantasme féminin de la tension amoureuse et/ou sexuelle entre deux hommes est un lieu commun au Japon.</p>
+<p>De fait, le yaoi est un genre conçu par les femmes et pour les femmes. Dans les yaois, la relation se construit quasiment toujours dans une dynamique entre dominant (le « seme », « attaquer » en japonais, celui qui pénètre) et dominé (le « uke », ou « recevoir » en japonais). Ces derniers ont souvent des mimiques et comportements associés, dans l’imaginaire, aux femmes. Deux éléments qui illustrent comment ces fictions érotiques peuvent être perçues comme mimant une relation hétéronormée.</p>
+<p>Mais alors pourquoi le public féminin préférerait ce type de fiction érotique à du Hentai (manga porno) ou même à du porno classique, mettant des femmes en scène ? Il n’y a pas encore de réponse évidente à cette question, qui a même donné naissance à une discipline universitaire : les « BL Studies ». Un élément avancé parmi d’autres : mettre en scène un rapport sexuel entre deux hommes permettrait une médiation « rassurante » ou du moins permettrait d’inscrire définitivement l’acte sexuel dans l’ordre des fantasmes.</p>
+<p>En lisant ou regardant un yaoi, un homme gay ne s’y reconnaitrait donc pas aisément. Le genre tend cependant à se diversifier et insère de plus en plus des réflexions autour de l’identité sexuelle et le vivre gay au Japon. Car si l’homosexualité cartonne dans le monde du fantasme, la société japonaise a encore du mal à l’accepter dans la vraie vie.</p>
+<p>Le fantasme de l’amour homo-érotique dépasse largement les frontières nippones : des œuvres similaires existent en Chine, en Corée du Sud, au Vietnam ou encore en Thaïlande, des pays qui produisent des fictions similaires. Sans oublier que le yaoi s’est ensuite confondu avec un phénomène identifié plutôt aux États-Unis et mettant lui aussi en scène des amours masculines érotiques : le « slash ». Comme pour le yaoi, cet univers est né d’amours fantasmées entre personnage de film/séries ou personnes réelles. Le terme « slash » faisant référence à la barre oblique qui sépare le nom de deux personnes du couple rêvé. Ce serait les amours fantasmes de Spock et du Capitaine Kirk (Star Trek) qui auraient ouvert le bal dans les années soixante-dix. Aujourd’hui, les fanfictions mettant en scène des amours masculines où les avertissements « -18 » fusent. Encore une fois les auteurs sont, pour la plupart, des femmes.</p>
+<p>Les histoires de fans (ou fanfictions) mettant en scène ces couples fantasmés entre deux hommes sont celles qui connaissent le plus grand succès : sur le site de référence en la matière, « Archive of Our Own » (ou AO3 pour les intimes), les 19 premiers couples les plus populaires sont tous des couples slash/yaoi.</p>
+<p>En France, le yaoi a aussi de plus en plus d’adeptes. Un salon y est même consacré : la « <a href="https://y-con-france.com/">Yaoi Yuri Con</a> ». Julie, 24 ans, s’y est déjà rendu plusieurs fois. Elle a très vite accroché au genre, alors adolescente : <em>« Dans le BL, les relations sont plus intéressantes, il y a une tout autre sensibilité et une dynamique que je ne retrouve pas dans les œuvres hétéros classiques. Aujourd’hui, ce type de fiction laisse plus de liberté dans la construction des relations. »</em> Autre explication d’Anouk qui l’a plusieurs fois accompagnée : <em>« On a deux fois plus d’hommes que dans une fiction érotique classique, on gagne au change. Et au moins on est sûr que l’action ne va pas s’attarder sur une paire de seins ou tout ce qu’un regard d’homme valoriserait. »</em></p>
+<p>Les amatrices de yaoi ont cependant du mal à le faire entendre à de non-initiés : <em>« Les gens ont du mal à comprendre que l’amour entre deux mecs puissent m’exciter, alors que personne se pose la question des mecs qui aiment les pornos lesbiens. »</em></p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.surge.sh/media/uploads/porno-gay-femmes.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										🔎 On débunke&nbsp;!
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										
+											<img
+												src="https://lepointq.surge.sh/media/team/Tom.jpg"
+												width="40" height="40"
+												style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+											/>
+										
+										<span>
+											Par Tom
+										</span>
+									</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
+											&laquo;&nbsp;Il n&rsquo;y a que les hommes qui regardent du porno gay&nbsp;&raquo;
+										</h4>
+									
+									
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+									
+									<p>Et oui ! Bien que les films pornographiques gay soient produits à destination des hommes aimant les hommes, un grand nombre de femmes hétérosexuelles sont également séduites par les ébats entre mecs. C’est du moins le résultat de l’étude <a href="https://www.pornhub.com/insights/girls-like-boys-who-like-boys"><em>Girls Who Like Boys Who Like Boys</em>,</a> réalisée par Pornhub en 2017. Parmi les utilisateurs regardant du porno gay sur le site... 37 % sont des femmes ! Et ce alors même que les femmes ne représente qu’un quart des utilisateurs du site.</p>
+<p>Si l’attrait des hommes hétérosexuels pour le porno lesbien est répandu et communément admis, il n’en est pas de même pour la consommation de porno gay chez les femmes. Pourtant, toujours selon Pornhub, une femme a proportionnellement 69 % de chance de plus qu’un homme d’atterrir sur le portail gay du site. Un chiffre encore plus élevé chez les moins de 25 ans, qui représentent 40 % du public féminin de la catégorie.</p>
+<p>Comment expliquer cet intérêt des femmes pour un contenu qui ne leur est pas destiné ? Selon la chercheuse Lucy Neville (Université de Leicester), qui a consacré <a href="https://link.springer.com/book/10.1007/978-3-319-69134-3">un livre à ce sujet</a> en 2018, cela s’explique par le fait que le porno hétéro s’adresse quasi-exclusivement aux hommes et repose en grande partie sur l’objectivisation du corps de la femme. Le porno gay, à l’inverse, se concentre sur le corps masculin sans conditionner la représentation de l’acte sexuel au public visé (puisqu’il s’adresse aussi bien aux hommes se revendiquant « actifs » qu’à ceux se revendiquant « passifs »). Comme pour le yaoi, ces images apparaissent donc plus authentiques (et plus excitantes !) pour un public féminin.</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.surge.sh/media/uploads/095b8fb3-f56f-432a-bef7-19fce878bb7e.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										💡 La bonne nouvelle
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										
+											<img
+												src="https://lepointq.surge.sh/media/team/Orianne.jpg"
+												width="40" height="40"
+												style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+											/>
+										
+										<span>
+											Par Orianne
+										</span>
+									</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
+											Le porno audio&nbsp;? Je crie ouuuui
+										</h4>
+									
+									
+									<p><em>« Oui c’est moi, bon j’ai bien reçu tous tes textos. Manifestement le retour de la chaleur et du soleil t’a bien chauffé les sens.</em> <em>Et puis j’ai compris que ça te manquait que je m’occupe de toi... »</em></p>
+<p>Ça c’est ce qu’on peut entendre avec du porno audio... Et oui, si les stimulations pornographiques visuelles te brûlent la rétine, tu peux te concentrer sur des stimulations auditives ! Tu as juste à tendre l’oreille… et à te laisser bercer par le son de fortes respirations, gémissements, même cris de jouissance… Ces sons sont alors produits par une personne dont le visage t’est inconnu.</p>
+<p>Libre à toi d’imaginer qui tu souhaites : ça peut être ton voisin, ta meilleure amie, ton crush de primaire… peu importe. Ce qui est chouette avec le porno audio c’est que le son te guide, t’excite mais laisse aussi la porte grande ouverte à ton imagination.</p>
+<p>Imagination + sonores excitants = combo gagnant !</p>
+<p>L’ouïe, ce sens si présent pendant l’acte sexuel, est exaltée. Le porno audio te tente mais tu ne sais pas quoi écouter ?</p>
+<p>Pas d’inquiétude, il y en a pour tous les goûts : dialogues qui dérapent en sexe, histoires érotiques, guide masturbatoire… tout est possible ! Au départ ça peut sembler étrange et puis au bout de quelques minutes on peut facilement y prendre goût. Tu peux aller découvrir par exemple les podcast et livres audio <a href="http://ctrlx.fr/">CtrlX</a>, <a href="https://www.audible.fr/series/LAppli-Rose-Livres-Audio/B07DQRD7MV">l’Appli Rose</a>, <a href="https://www.dipseastories.com/">Dipsea</a> ou encore <a href="https://www.coxxx.org/home">Coxxx </a>destiné aux “phallus audiophiles” ou <a href="https://www.voxxx.org/home">Voxxx</a>, plutôt pour les clitos. C’est toi qui choisis !</p>
+<p>A tes écouteurs et n’hésite pas à nous dire ce que tu as pensé de cette expérience en solitaire (ou à plusieurs après tout) ! <em>[Tu as aussi le droit de ne pas aimer, mais au moins tu auras essayé / ou tu es informé.]</em></p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Déjà trois semaines qu’on navigue ensemble. On est ravis que vous soyez de plus en plus nombreux à vous abonner.</p>
+<p>N’hésite pas à nous donner ton avis sur cette newsletter, ça nous permettra de faire encore mieux ensuite. Une petite enquête qui te prendra deux minutes, juste <a href="https://forms.gle/1fyZU6UsDVnEFxDD7">ici</a>. Et si tu n’es pas encore abonné·e, c’est <a href="https://lepointq.surge.sh">là</a> !</p>
+<p>Rendez-vous lundi prochain !</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.surge.sh/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://www.instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.surge.sh/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
