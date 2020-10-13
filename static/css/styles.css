@@ -292,6 +292,7 @@ main.homepage img.us {
 	opacity: 0;
 	transition: opacity 2s ease;
 	text-align: center;
+	z-index: 101;
 }
 
 #alert p {
