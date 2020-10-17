@@ -25,7 +25,13 @@
 				<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 			{{ end }}
 			{{ if eq .Params.section "On débunke" }}
-				<p class='fake'>FAUX</p>
+				{{ if eq .Params.veracity "Faux" }}
+					<p class='veracity fake'>FAUX</p>
+				{{ else if eq .Params.veracity "Vrai" }}
+					<p class='veracity true'>VRAI</p>
+				{{ else }}
+					<p class='veracity trueish'>PAS EXACTEMENT</p>
+				{{ end }}
 			{{ end }}
 
 			{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}

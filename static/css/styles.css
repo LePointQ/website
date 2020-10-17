@@ -364,15 +364,31 @@ main article .author-pic {
 	margin-right: 0.3rem;
 }
 
-main article .fake {
+main article .veracity {
 	font-size: 1.2rem;
 	font-weight: bold;
-	color: crimson;
 	padding: 2px 4px;
-	border: 0.25rem solid crimson;
+	border-width: 0.25rem;
+	border-style: solid;
 	display: table;
 	margin: 0 auto;
 }
+
+main article .veracity.fake {
+	color: crimson;
+	border-color: crimson;
+}
+
+main article .veracity.true {
+	color: forestgreen;
+	border-color: forestgreen;
+}
+
+main article .veracity.trueish {
+	color: var(--main-color);
+	border-color: var(--main-color);
+}
+
 
 .separator {
 	color: var(--main-color);

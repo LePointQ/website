@@ -9,6 +9,12 @@ const TITLES = {
 	la_bonne_nouvelle: '💡 La bonne nouvelle'
 };
 
+const COLORS = {
+	'Vrai': 'forestgreen',
+	'Faux': 'crimson',
+	'Pas exactement': '#F47B67'
+};
+
 const { readFilePromise, writeFilePromise } = require('./utils');
 const { typografix } = require('./typografix');
 
@@ -74,8 +80,8 @@ const build = async () => {
 										</h4>
 									` : ''}
 									${section === 'on_debunke' ? `
-										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
-											&nbsp;FAUX&nbsp;
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: ${COLORS[content.veracity]}; font-weight: bold; font-family: 'Lato', sans-serif; border: 4px solid ${COLORS[content.veracity]}; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;${content.veracity.toUpperCase()}&nbsp;
 										</p>
 									` : ''}
 									${md.render(typografix(content.text))}
