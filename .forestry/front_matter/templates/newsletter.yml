@@ -78,6 +78,21 @@ fields:
       file: 
       path: 
   label: On débunke
+- name: true_false
+  type: select
+  default: Faux
+  config:
+    required: true
+    options:
+    - Vrai
+    - Faux
+    - Pas exactement
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Vrai/faux
 - name: la_bonne_nouvelle
   type: select
   default: []
