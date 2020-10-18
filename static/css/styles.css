@@ -172,7 +172,7 @@ main.homepage img.us {
 	border-radius: 100% 100% 0 0;
 }
 
-#subscribe {
+#subscribe, #unlock {
 	width: 100%;
 	background: var(--main-color);
 	display: flex;
@@ -181,13 +181,13 @@ main.homepage img.us {
 	padding: 2rem 0;
 }
 
-#subscribe > input {
+input {
 	margin: 0.5rem;
 	outline: none;
 	/* border: 1px solid var(--main-color); */
 }
 
-#subscribe > input[type='submit'] {
+input[type='submit'], button {
 	background: var(--main-color);
 	border: 2px solid white;
 	border-radius: 0.25rem;
@@ -199,18 +199,18 @@ main.homepage img.us {
 	width: -moz-fit-content;
 }
 
-#subscribe > input[type='submit']:hover {
+input[type='submit']:hover, button:hover {
 	background: white;
 	color: var(--main-color);
 }
 
 @media only screen and (max-width: 48rem) {
-	#subscribe {
+	#subscribe, #unlock {
 		flex-direction: column;
 		align-items: center;
 	}
 
-	#subscribe > input {
+	input {
 		font-size: 1.1rem;
 	}
 }
@@ -398,4 +398,48 @@ main article .veracity.trueish {
 
 .anychart-credits {
 	display: none !important;
+}
+
+.paywall {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	background: var(--main-color);
+	width: 50%;
+	max-width: 600px;
+	padding: 1rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.1rem;
+	display: flex;
+	visibility: hidden;
+}
+
+@media only screen and (max-width: 96rem) {
+	.paywall {
+		width: 75%;
+	}
+}
+
+@media only screen and (max-width: 32rem) {
+	.paywall {
+		width: 90% !important;
+	}
+}
+
+.paywall.visible {
+	visibility: visible;
+}
+
+.paywall button {
+	margin-top: 1rem;
+}
+
+main.blurred {
+	filter: blur(5px);
+	color: transparent !important;
+	text-shadow: 0 0 5px rgba(0,0,0,0.5) !important;
 }

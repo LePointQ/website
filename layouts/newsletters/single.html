@@ -95,4 +95,35 @@
 		</div>
 
 	</main>
+	{{ partial "paywall" }}
+{{ end }}
+
+{{ define "page-script" }}
+	<script>
+		window.addEventListener('load', () => {
+			if (localStorage.getItem('status') !== 'subscribed') {
+				document.querySelector('.paywall').classList.add('visible');
+				document.querySelector('main').classList.add('blurred');
+			}
+		});
+
+		document.querySelector('#unlock').addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const response = await fetch("https://europe-west1-le-point-q.cloudfunctions.net/isContact?email=" + e.target.email.value);
+			const { status } = await response.json();
+			if (status === 'subscribed') {
+				document.querySelector('main').classList.remove('blurred');
+				document.querySelector('.paywall').classList.remove('visible');
+				localStorage.setItem('status', 'subscribed');
+			}
+		});
+
+		document.querySelector('#subscribe').addEventListener('submit', async (e) => {
+			e.preventDefault();
+			fetch("https://europe-west1-le-point-q.cloudfunctions.net/addContact?email=" + e.target.email.value);
+			document.querySelector('main').classList.remove('blurred');
+			document.querySelector('.paywall').classList.remove('visible');
+			localStorage.setItem('status', 'subscribed');
+		});
+	</script>
 {{ end }}
