@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/kezako.md
   label: Kézako ?
-  match: "**/*"
 - type: directory
   path: content/articles
   label: Articles
