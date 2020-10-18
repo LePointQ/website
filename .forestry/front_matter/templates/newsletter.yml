@@ -100,6 +100,5 @@ fields:
       format: markdown
   label: Conclusion
 pages:
-- content/newsletters/l-amour-entre-6h-et-21h.md
 - content/newsletters/le-plaisir-dans-tous-ses-etats.md
 - content/newsletters/raconte-moi-ta-contraception.md
