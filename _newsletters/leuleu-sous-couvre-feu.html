@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>Leuleu sous couvre-feu</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.surge.sh" target="_blank">
+						<img src="https://lepointq.surge.sh/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+									Leuleu sous couvre-feu
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020.</p>
+<p>Au programme cette semaine, les positions qui vous font sauter au plafond et qui rendent votre quotidien plus beau. En guide d’apéritif, on vous a demandé de nous raconter vos acrobaties favorites... Pour que certain·e·s se reconnaissent, et d’autres trouvent de l’inspiration.</p>
+<p>En amuse-bouche, un débunk croustillant ! <strong>La levrette est-elle vraiment la position préférée des Français·e·s ?</strong> Dans le Vu d’ailleurs, notre globe-trotter Thaïs, que vous commencez à connaître, t’emmène <strong>en Inde, aux origines du kamasutra...</strong> Et c’est Tom qui se charge du dessert, avec une sacré bonne nouvelle. Si tu viens de faire ton <em>coming-out</em>, pas besoin de te poser la question au lit... <strong>Devant ou derrière ? Dominant ou dominé ? Les couples gays font très souvent fi de cette répartition des rôles</strong>, un peu clichée.</p>
+<p>Que cette lecture réchauffe ta matinée. On est avec toi en ce lundi frisquet,
+L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.surge.sh/media/uploads/ferran-feixas-ax4zkm9xlui-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										💬 🤸 Ta position préférée au lit&nbsp;?
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										
+											<img
+												src="https://lepointq.surge.sh/media/team/Juliette.jpg"
+												width="40" height="40"
+												style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+											/>
+										
+										<span>
+											Par Juliette
+										</span>
+									</h3>
+									
+									
+									<p><strong>Thibaut, 24 ans :</strong> « L’union de l’huître (ou W) et pour finir la levrette…. On peut se dévorer du regard et la sensation de domination est agréable. Pour la levrette, c’est plutôt le côté animal, mais c’est plus pour des plans cul. »</p>
+<p><strong>Garance, 23 ans</strong> : « Si je suis d’humeur maîtrise, câlin et pas de prise de risque : l’Amazone qui se transforme parfois en déesse si mon copain se redresse. Si je suis d’humeur laisse- faire, avec limite envie de me faire dominer c’est le missionnaire. Puis en fonction de nous deux et des envies, on invente aussi des trucs très sympas ! »</p>
+<p><strong>Virgil, 24 ans :</strong> « Le lotus. Dans cette position j’ai l’impression d’être en osmose avec ma partenaire. »</p>
+<p><strong>Alice, 20 ans :</strong> « J’apprécie bien la levrette. Après ce qui est cool aussi c’est toutes les positions où il peut y avoir stimulation du clito pas trop difficilement. Au lit, seulement au lit, je préfère être dominée. »</p>
+<h3>🔥 <strong>Positions dangereuses</strong></h3>
+<p><strong>Jo, 22 ans :</strong> « Une levrette endiablée qui a projeté la personne hors de la tente... Oups. »</p>
+<p><strong>Constance, 23 ans :</strong> « En 69 et dans le feu de l’action, j’ai eu un pet de chatte sur son visage. »</p>
+<h3>💬 <strong>Entre nous</strong></h3>
+<p><strong>Elsa, 23 ans :</strong> « Ça me met toujours mal à l’aise car je ne connais ou ne retiens pas tout (ni la disposition, ni les noms). Même quand je les connais, je ne sais pas trop comment aborder le sujet. J’ai peur que ça casse le charme. Par exemple, dans les films ils y vont direct et ça s’enchaîne naturellement. Jamais le mec demande comment la fille veut faire ni inversement. Du coup, quand mon copain me pose la question, je suis souvent prise au dépourvu et je ne sais pas quoi répondre.  »</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.surge.sh/media/uploads/octopuses_and_shell_diver_-_shunga_by_katsushika_hokusai.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										🌏 Vu d&rsquo;ailleurs
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										
+											<img
+												src="https://lepointq.surge.sh/media/team/Thaïs.jpg"
+												width="40" height="40"
+												style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+											/>
+										
+										<span>
+											Par Thaïs
+										</span>
+									</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
+											Au Japon, le fantasme du sexe fait oublier la réalité
+										</h4>
+									
+									
+									<p>C’est le pays du « Bukkake », des sextoys dernier cri et où près de 14 films porno naissent chaque jour. Et pourtant, c’est aussi le pays où un quart des 25-39 ans est encore vierge et où le nombre de rapports sexuels annuels par habitant est le plus bas au monde (45). Au Japon, deux mondes diamétralement opposés coexistent : la sexualité débridée dans le monde du fantasme et le tabou du sexe dans le monde réel.</p>
+<p>En termes de représentation du plaisir sexuel, le pays est pionnier : dès l’ère Edo (17-19e siècle) l’art érotique du Shunga expose l’acte sexuel de façon très explicite via les fameuses estampes japonaises, diffusées en masse et réalisées par les plus grands maîtres (notamment Hokusai). Grande particularité du genre : le plaisir féminin est pour la première fois illustré. Des relations lesbiennes au fameux poulpe qui permettrait d’atteindre l’ultime jouissance pour une femme, ces représentations continuent de hanter l’imaginaire des fictions érotiques aujourd’hui. Mais au 19e siècle, le Japon connaît une vague de puritanisme qui met toute cette sexualité dans le placard du tabou, dans le monde réel comme dans les arts.</p>
+<p>Aujourd’hui pourtant, l’industrie du désir prospère : café d’hôtes et de soubrettes, simulateurs d’histoires érotiques plus que réalistes ou encore mangas pornographiques (Hentai). Dans le royaume du fantasme, presque rien n’est tabou, même les fétichismes les plus étranges. Des magasins de sous-vêtements usagés aux services offrant de se faire fouetter les poignets par des actrices pornographiques, en passant par les poupées en silicone en tenues d’écolières : tout est possible, à condition que cela reste de l’ordre de l’imagination, médiatisé et encadré.</p>
+<p>Le sexe, le vrai, n’est lui jamais considéré comme à la hauteur de ce qu’offre ce monde du fantasme. L’industrie du plaisir est tellement riche et sur mesure qu’il n’y a plus vraiment besoin d’être deux pour être comblé.</p>
+<p>Le sexe, le vrai, est aussi caché, tabou : il a ses temples consacrés, les fameux « love hotels », où on paye la nuit pour voir une maîtresse, tester des sextoys ou tout simplement retrouver son époux sans les enfants.</p>
+<p>L’éducation sexuelle est quasi-inexistante au Japon, que ce soit par la famille ou par l’école. C’est donc souvent via cet univers du fantasme que les jeunes apprennent ce qu’est le sexe. De cela découle, en partie, un nouveau phénomène qui s’intensifie ces dernières années : le désintérêt, voire l’aversion pour le sexe. En 2014, cela concernait 65,8 % des filles de 16 à 19 ans et près de 36,1 % des garçons de la même tranche d’âge. Certains parlent uniquement d’un dégoût pour le sexe réel, mais pour d’autres, c’est bien ce monde extravagant des fantasmes qui est aussi rejeté.</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.surge.sh/media/uploads/womanizer-wow-tech-1e3-lykjsfs-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										🔎 On débunke&nbsp;!
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										
+											<img
+												src="https://lepointq.surge.sh/media/team/Orianne.jpg"
+												width="40" height="40"
+												style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+											/>
+										
+										<span>
+											Par Orianne
+										</span>
+									</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
+											&laquo;&nbsp;La levrette est la position préférée des Français·e·s&nbsp;&raquo;
+										</h4>
+									
+									
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: forestgreen; font-weight: bold; font-family: 'Lato', sans-serif; border: 4px solid forestgreen; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;VRAI&nbsp;
+										</p>
+									
+									<p>La levrette la première sous la couette ? Mythe ou réalité ? Je ne sais pas vous mais ça m’arrive souvent de parler positions avec mes ami·e·s. On se demande mutuellement : Et toi, c’est quoi ta position préférée ? La réponse majoritaire reste la « levrette » plus communément appelée « leuleu ».</p>
+<p>Selon une étude menée en 2017 par <a href="https://www.bustle.com/p/the-sex-positions-millennials-love-the-most-because-were-creatures-of-comfort-36069?utm_source=facebook&amp;utm_medium=partnerships&amp;utm_campaign=elitedaily">Skyn Condoms</a> auprès de 3000 volontaires âgés de 18 à 34 ans, la levrette est la grande gagnante, et la position la plus plébiscitée sous la couette, devant le missionnaire, et la « cowgirl », autrement dit l’Andromaque (aussi Amazone) : la femme est au-dessus et c’est elle qui gère les mouvements. En 2012, déjà, l’étude internationale <a href="https://www.c-dating.fr/sites/c-date/files/attachements/CasualDating-FR_INTL_Study_2012_spring.pdf">CasualDating</a> révélait le succès de la levrette. Elle était d’après ces données, il y a 7 ans, la position favorite pour 37 % des hommes et 31 % des femmes.</p>
+<p>Pour certain·e·s, ce qui caractérise la levrette et ce qui en fait sa singularité dans le rapport sexuel, c’est le rapport dominant/dominé. <em>« En levrette l’angle de pénétration est profond et agréable, quand c’est bien fait. Et après j’aime bien l’effet dominé, dominant. C’est assez bestial comme position. Le mec contrôle le rythme. Il peut te mettre des claques sur les fesses et te prendre les cheveux »,</em> commente Delphine, 24 ans. Pour Maël, cette position est très répandue et appréciée, selon lui, en raison de sa représentation récurrente dans les films pornographiques : <em>« Tu te sens dominant et c’est aussi, je pense, une position tellement mise en avant dans la pornographie que ça en devient normal de passer forcément par là ».</em></p>
+<p>Mais ce rapport de domination peut ne pas être agréable pour certaines femmes. Philippe Brenot, psychiatre et thérapiste de couple, révèle dans un article que la levrette est la position qui <em>« excite le plus les hommes, mais ce n’est pas celle qui est la plus réalisée ».</em> Elle serait en effet très appréciée des hommes notamment car <em>« la vision des fesses de leur partenaire est un signal très excitant pour eux »,</em> explique Philippe Brenot.</p>
+<p><strong>Le savais-tu ?</strong></p>
+<p>À chaque pays, sa position : la levrette en France, la cuillère en Pologne, l’Andromaque en Belgique et en Suisse, « les jambes en l’air » au Portugal et en Hongrie ! <em>Étude Zava réalisée auprès de 2000 Européens.</em></p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.surge.sh/media/uploads/actif-passif.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
+										💡 La bonne nouvelle
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+										
+											<img
+												src="https://lepointq.surge.sh/media/team/Tom.jpg"
+												width="40" height="40"
+												style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+											/>
+										
+										<span>
+											Par Tom
+										</span>
+									</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
+											Sexe gay&nbsp;: et si on en finissait<br />avec &laquo;&nbsp;actif&nbsp;&raquo; et &laquo;&nbsp;passif&nbsp;&raquo;&nbsp;?
+										</h4>
+									
+									
+									<p>Tu en as assez qu’on te demande qui de toi ou de ton copain <em>« fait l’homme »</em> et qui <em>« fait la femme »</em> ? Marre de ces messages cryptiques sur les applis de rencontre, du genre <em>« actif tbm ch passif now »</em> ? À en croire beaucoup, il semblerait que la sexualité gay ne se définisse que par la position sexuelle que l’un occupe, et la relation de domination qui y est associée. Pourtant la réalité est bien plus nuancée.</p>
+<p>Tout d’abord, et contrairement aux apparences, la pénétration ne va pas forcément de soi lors d’un rapport sexuel entre hommes. Dans <a href="https://www.huffpost.com/entry/george-mason-gay-sex-study_n_1017958">une étude réalisée en 2011 sur près de 25 000 hommes gays ou bisexuels</a>, seul un tiers d’entre eux avait eu un rapport anal dernièrement... et certains n’aiment tout simplement pas ça. De plus, si certains hommes préfèrent toujours dominer ou être dominés pendant l’amour, beaucoup alternent et se définissent comme « switch » ou « versa » (pour « versatiles »).</p>
+<p>Les termes « actif » et « passif » (et leurs équivalents anglophones respectifs, « top » et « bottom ») renvoient une image étriquée de la sexualité gay. Ainsi, ce n’est pas parce que l’on est « passif » qu’on fait l’étoile de mer, et ce n’est pas parce qu’on est « top » qu’on aime forcément être au-dessus pendant l’acte. Un homme peut être 100 % passif et aimer dominer au lit — les Américains parlent même de « power bottom » —, un autre peut être actif et laisser son partenaire prendre les devants.</p>
+<p>Alors arrêtons de nous définir uniquement par nos préférences, et de nous conformer à des stéréotypes calqués sur une vision obsolète des couples hétéros. Kiffons et soyons nous-mêmes, tout simplement.</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Ça y est, c’est déjà fini ! On espère que tu as kiffé et appris des choses. Pour le thème de la semaine prochaine, on serait ravi de savoir ce que tu aimerais lire ! N’hésite pas à nous en parler sur <a href="https://www.instagram.com/lepoint.q">Instagram</a> ou sur <a href="https://www.facebook.com/lepointq.news">Facebook</a>.</p>
+<p>Lundi prochain, en plus des rubriques habituelles, on vous réserve une petite surprise... Une histoire d’amour spéciale couvre-feu, en plusieurs épisodes !</p>
+<p>N’hésite pas à nous faire un retour, en remplissant <a href="https://forms.gle/sTobv7ZzGayMLLQ69">ce Google Form</a> (parce que, avoue-le, plus jamais tu ne rempliras un sondage qui s’appelle « Ton avis sur : Leuleu sous couvre-feu » !). Tu peux aussi partager <a href="https://lepointq.surge.sh">notre site web</a> avec tes potes pour qu’ils s’abonnent ! Bientôt, les anciens numéros et articles ne seront plus accessibles qu’aux abonné·e·s par mail 😉</p>
+<p>Belle semaine à toi !</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.surge.sh/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://www.instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.surge.sh/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
