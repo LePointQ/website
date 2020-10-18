@@ -1,0 +1,13 @@
++++
+authors = ["Thaïs"]
+date = 2020-10-18T22:36:17Z
+draft = true
+image = "/media/uploads/1600px-oriental_collection-_nepalese_erotic_ms-_ind_wellcome_l0031441.jpg"
+preview = "Pas besoin de vous faire un dessin : le Kamasutra, ce serait ce livre vaguement indien, avec 64 positions sexuelles plus ou moins audacieuses. Mais ce qu’on vient de décrire ne résume en fait qu’une infime partie de l’ouvrage écrit il y a plus de 2300 par un certain Vâtsyâyana."
+section = "Vu d'ailleurs"
+text = "Pas besoin de vous faire un dessin : le Kamasutra, ce serait ce livre vaguement indien, avec 64 positions sexuelles plus ou moins audacieuses.\n\nMais ce qu’on vient de décrire ne résume en fait qu’une infime partie de l’ouvrage écrit il y a plus de 2300 par un certain Vâtsyâyana. En fait, la partie de la relation sexuelle physique ne constitue qu’un septième de ce recueil censé faire accéder au désir (Kama).\n\nLes premières images reproduisant des positions ne seraient arrivées qu’au VIe siècle tandis que la première traduction occidentale réalisée par Richard Burton et sur laquelle s’appuie la plupart des représentations en France retient surtout sur son aspect subsersif (il est interdit jusqu’en 1963)\n\nLe Kamasutra (कामसूत्र), c’est en fait une sorte de manuel du plaisir partagé, un plaisir qui s’apprend, une science presque. L’ouvrage pousse ainsi certains à considérer l’Inde comme berceau de l’éducation sexuelle.\n\nBeaucoup d’aspects du livre antique semblent résolument modernes. La relation sexuelle y est décrite comme acte de communion à la fois physique et spirituel, qui ne se résume pas à la pénétration : embrasser, presser, mordiller : plusieurs chapitres sont consacrés à ces autres formes de communication avec l’être aimé.\n\nAutres aspect étonnant - et peu connu aujourd’hui : la place des femmes dans l’ouvrage, et de leur plaisir. Avec bien sûr les limites du patriarcat indien antique, l’ouvrage est empli de conseil aux femmes - et cela va de « bien choisir son mari » à « comment le tromper sans qu’il ne s’en rende compte. »\n\nEnfin, le Kamasutra évoque des plaisirs partagés entre personnes du même sexe, à travers des positions de sexe orale, dans ce que l’ouvrage décrit comme une « troisième sexualité. »\n\nLe Kamasutra, c’est donc bien plus que des pages internets plus ou moins bien illustrées, c’est un livre pour bien vivre son plaisir et celui de l’autre. Aujourd’hui encore, les circonstances de publication de l’ouvrage interrogent, de [nouvelles traductions ](https://www.letemps.ch/culture/kamasutra-audela-fantasmes)ont été publiées ces dernières années, tentant de capter l’esprit d’origine de l’'œuvre."
+themes = []
+title = "Le Kamasutra, le vrai"
+veracity = "Faux"
+
++++
