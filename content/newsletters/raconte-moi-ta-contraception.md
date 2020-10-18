@@ -7,7 +7,6 @@ on_debunke = "articles/le-sterilet-favorise-la-transmission-d-infections-sexuell
 outro = "On serait ravi d'avoir ton avis sur cette newsletter, n'hésite pas à nous le donner [ici](). Une petite enquête qui te prendra deux minutes. Et si tu n'es pas encore abonné·e, c'est par [ici](https://forms.gle/8dSqWNbnnD1Jeeyg8) !\n\nRendez-vous lundi prochain pour un numéro dédié à la pornographie. Nous attendons ton témoignage avec impatience, n'hésite pas à nous écrire !"
 temoignages = "articles/raconte-moi-ta-contraception.md"
 title = "\"Raconte-moi ta contraception\""
-true_false = "Faux"
 vu_d_ailleurs = "articles/la-vasectomie-normalisee-au-canada-taboue-en-france.md"
 
 +++

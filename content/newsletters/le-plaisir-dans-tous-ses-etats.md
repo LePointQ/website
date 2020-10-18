@@ -7,7 +7,6 @@ on_debunke = "articles/si-un-mec-aime-qu-on-lui-touche-l-anus-alors-il-est-force
 outro = "On serait ravi d'avoir ton avis sur cette newsletter, n'hésite pas à nous le donner [ici](https://docs.google.com/forms/d/17b246X6StvcQ3r8yTCEOIyYSOXXjHUvdvgBuZxiSXQE/edit?fbclid=IwAR1gBhu2bITKIYnuVlIIpD3Gv2QYq0TRo_mJd5u3WlZ24Qh3RbjH9_aU65Y). Une petite enquête qui te prendra deux minutes. Et pour t'abonner et recevoir le prochain numéro dans ta boîte mail, c'est [ici](https://forms.gle/8dSqWNbnnD1Jeeyg8). Rendez-vous lundi.\n\nSi tu as aimé cette newsletter (ou moins d'ailleurs), n'hésite pas !"
 temoignages = "articles/la-masturbation-feminine-4-questions-a-ines-perrine-et-pauline.md"
 title = "Le plaisir dans tous ses états"
-true_false = "Faux"
 vu_d_ailleurs = "articles/au-japon-le-fantasme-du-sexe-fait-oublier-la-realite.md"
 
 +++
