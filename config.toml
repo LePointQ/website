@@ -1,4 +1,4 @@
-baseURL = "https://lepointq.surge.sh"
+baseURL = "https://lepointq.com"
 languageCode = "fr"
 title = "Le Point Q"
 [params]

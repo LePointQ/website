@@ -1,7 +1,7 @@
 const TOML = require('toml');
 const md = require('markdown-it')();
 
-const BASE_URL = 'https://lepointq.surge.sh';
+const BASE_URL = 'https://lepointq.com';
 
 const TITLES = {
 	vu_d_ailleurs: '🌏 Vu d&rsquo;ailleurs',
