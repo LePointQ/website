@@ -5,7 +5,7 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
 		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 		{{ block "title" . }}
-			<title>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</title>
+			<title>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }} &ndash; Le Point Q</title>
 		{{ end }}
 		{{ with .Site.Params.description }}
 			<meta name='description' content='{{ . }}'>
