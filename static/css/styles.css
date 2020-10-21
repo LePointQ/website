@@ -443,3 +443,22 @@ main.blurred {
 	color: transparent !important;
 	text-shadow: 0 0 5px rgba(0,0,0,0.5) !important;
 }
+
+.separator.animated {
+	animation: pulse 0.6s linear infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	80% {
+		transform: scale(1);
+	}
+	90% {
+		transform: scale(1.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
