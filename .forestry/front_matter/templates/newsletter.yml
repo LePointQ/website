@@ -16,9 +16,9 @@ fields:
   default: 42
   required: true
   config:
-    min: 
-    max: 
-    step: 
+    min:
+    max:
+    step:
     required: true
 - name: date
   type: datetime
@@ -27,7 +27,7 @@ fields:
   config:
     required: true
     date_format: ''
-    time_format: 
+    time_format:
     display_utc: false
     export_format: ''
   default: now
@@ -61,8 +61,8 @@ fields:
     source:
       type: pages
       section: articles
-      file: 
-      path: 
+      file:
+      path:
   label: Témoignages
 - name: vu_d_ailleurs
   type: select
@@ -73,8 +73,8 @@ fields:
     source:
       type: pages
       section: articles
-      file: 
-      path: 
+      file:
+      path:
   label: Vu d'ailleurs
 - name: on_debunke
   type: select
@@ -85,8 +85,8 @@ fields:
     source:
       type: pages
       section: articles
-      file: 
-      path: 
+      file:
+      path:
   label: On débunke
 - name: la_bonne_nouvelle
   type: select
@@ -97,8 +97,8 @@ fields:
     source:
       type: pages
       section: articles
-      file: 
-      path: 
+      file:
+      path:
   label: La bonne nouvelle
 - name: outro
   type: textarea
@@ -113,3 +113,5 @@ pages:
 - content/newsletters/le-plaisir-dans-tous-ses-etats.md
 - content/newsletters/meme-jour-meme-heure-avant-21h.md
 - content/newsletters/raconte-moi-ta-contraception.md
+- content/newsletters/just-porn-it.md
+- content/newsletters/leuleu-sous-couvre-feu.md

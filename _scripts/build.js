@@ -1,7 +1,7 @@
 const TOML = require('toml');
 const md = require('markdown-it')();
 
-const BASE_URL = 'https://lepointq.surge.sh';
+const BASE_URL = 'https://lepointq.com';
 
 const TITLES = {
 	vu_d_ailleurs: '🌏 Vu d&rsquo;ailleurs',
@@ -33,6 +33,7 @@ const build = async () => {
 		let output = html
 			.replace(/{{ BASE_URL }}/g, BASE_URL)
 			.replace(/{{ TITLE }}/g, typografix(data.title))
+			.replace('{{ PREVIEW }}', md.render(typografix(data.preview || '')))
 			.replace('{{ EDITO }}', md.render(typografix(data.edito)))
 			.replace('{{ OUTRO }}', md.render(typografix(data.outro)));
 

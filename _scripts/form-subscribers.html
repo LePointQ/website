@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
-    <title>{{ TITLE }}</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <title>I want to know youuu 🎶</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
     <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
     <!--[if gte mso 9]>
@@ -236,7 +236,7 @@
         <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
         <!-- Preview Text Spacing Hack : BEGIN -->
         <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-			{{ PREVIEW }}
+			Déjà un mois qu&rquo;on navigue ensemble (oh plaisir), et on aimerait te connaître un peu mieux. Comme ça, on pourra te proposer des articles qui ciblent vraiment tes interrogations.
             &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
         </div>
         <!-- Preview Text Spacing Hack : END -->
@@ -246,8 +246,8 @@
 	        <!-- Email Header : BEGIN -->
             <tr>
                 <td style="padding: 20px 0; text-align: center">
-					<a href="{{ BASE_URL }}" target="_blank">
-						<img src="{{ BASE_URL }}/media/logo.png" width="200" style="vertical-align: middle;" />
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
 					</a>
                 </td>
             </tr>
@@ -259,39 +259,123 @@
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
                             <td style="padding: 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
-                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
-									{{ TITLE }}
-								</h1>
-								{{ EDITO }}
+								<p>Salut à toi, membre de la team <b>Point Q&nbsp;!</b></p>
+								<p>Comment ça va le kamasutra cette semaine&nbsp;? On trouve le temps malgré le couvre-feu&nbsp;?</p>
+								<p>Déjà un mois qu&rsquo;on navigue ensemble (oh plaisir), et on aimerait te connaître un peu mieux. Comme ça, on pourra te proposer des articles qui ciblent vraiment tes interrogations.</p>
+                            </td>
+                        </tr>
+						<tr>
+                            <td style="padding: 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: left;">
+								<form action="https://europe-west1-le-point-q.cloudfunctions.net/updateInfo" method="get">
+									<h2>Es-tu...</h2>
+									<label>
+										<input type="radio" id="F" name="gender" value="F" checked>
+										une femme ?
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="M" name="gender" value="M">
+										un homme ?
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="other" name="gender" value="other">
+										Je m'identifie autrement
+									</label>
+									<br />
+									<label>
+										Tu peux préciser (si tu le souhaites) :
+										<input type="text" id="gender_text" name="gender_text" />
+									</label>
+
+									<h2>Ton âge ?</h2>
+									<input type="number" id="age" name="age" style="width: 50px;" />
+
+									<h2>Ton orientation sexuelle ?</h2>
+									<label>
+										<input type="radio" id="hetero" name="sexuality" value="hetero" checked>
+										Hétéro
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="homo" name="sexuality" value="homo">
+										Homo
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="bi" name="sexuality" value="bi">
+										Bi/Pan
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="fluid" name="sexuality" value="fluid">
+										Fluide
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="other" name="sexuality" value="other">
+										Autre
+									</label>
+									<br />
+									<label>
+										Tu peux préciser :
+										<input type="text" id="sexuality_text" name="sexuality_text" />
+									</label>
+
+									<h2>Te considères-tu comme faisant partie de la communauté LGBTQIA+ ?</h2>
+									<label>
+										Oui
+										<input type="radio" id="yes" name="lgbt" value="yes">
+									</label>
+									<label>
+										Non
+										<input type="radio" id="no" name="lgbt" value="no" checked>
+									</label>
+
+									<h2>C&rsquo;était quoi ta newsletter préférée&nbsp;?</h2>
+									<label>
+										<input type="checkbox" name="favorite" value="1" />
+										#1 · Le plaisir dans tous ses états
+									</label>
+									<br />
+									<label>
+										<input type="checkbox" name="favorite" value="2" />
+										#2 · «&nbsp;Raconte-moi ta contraception&nbsp;»
+									</label>
+									<br />
+									<label>
+										<input type="checkbox" name="favorite" value="3" />
+										#3 · Just porn it&nbsp;?
+									</label>
+									<br />
+									<label>
+										<input type="checkbox" name="favorite" value="4" />
+										#4 · Leuleu sous couvre-feu
+									</label>
+
+									<h2>Un message à nous faire passer&nbsp;? 😊</h2>
+									<textarea name="message" rows="5" maxlength="500" placeholder="Continuez comme ça, c'est génial !" style="width: 100%;"></textarea>
+
+									<br />
+									<br />
+
+									<input type="hidden" name="email" value="{{ contact.EMAIL }}" />
+
+									<input type="submit" value="Envoyer" style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;" />
+								</form>
+                            </td>
+                        </tr>
+						<tr>
+                            <td style="padding: 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p>Merci beaucoup, on espère partager ce bout de chemin avec toi encore longtemps&nbsp;! Pour retrouver les anciens numéros, c'est <a href="https://lepointq.com/newsletters" target="_blank">par ici</a>.</p>
+								<p>Une dernière chose, certain·e·s d&rsquo;entre vous nous ont dit que Le Point Q tombait régulièrement dans les spams ou dans les &laquo;&nbsp;promotions&nbsp;&raquo;. Voici <a href="https://lepointq.com/spam" target="_blank">une méthode très simple</a> pour que ça n&rsquo;arrive plus.</p>
+								<p>Comme d&rsquo;habitude, on te dit à lundi dans ta boîte mail&nbsp;!<br />Juliette, Orianne, Thaïs et Tom.</p>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <!-- 1 Column Text : END -->
-
-			{{ TEMOIGNAGES }}
-
-			{{ VU_D_AILLEURS }}
-
-			{{ ON_DEBUNKE }}
-
-			{{ LA_BONNE_NOUVELLE }}
-
-			<!-- 1 Column Text : BEGIN -->
-			<tr>
-				<td style="background-color: #ffffff;">
-					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-						<tr>
-							<td style="padding: 10px 20px 10px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
-								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
-								{{ OUTRO }}
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<!-- 1 Column Text : END -->
 
 	        <!-- Clear Spacer : BEGIN -->
 	        <tr>
