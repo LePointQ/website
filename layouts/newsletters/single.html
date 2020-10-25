@@ -12,12 +12,14 @@
 
 				<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
 				<h2>💬 {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h2>
-				<h3>
-					{{ if eq (len .Params.authors) 1 }}
-						<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
-					{{ end }}
-					<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
-				</h3>
+				{{ if gt (len .Params.authors) 0 }}
+					<h3>
+						{{ if eq (len .Params.authors) 1 }}
+							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
+						{{ end }}
+						<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+					</h3>
+				{{ end }}
 
 				{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 			</article>
@@ -30,12 +32,14 @@
 				<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
 
 				<h2>🌏 Vu d'ailleurs</h2>
-				<h3>
-					{{ if eq (len .Params.authors) 1 }}
-						<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
-					{{ end }}
-					<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
-				</h3>
+				{{ if gt (len .Params.authors) 0 }}
+					<h3>
+						{{ if eq (len .Params.authors) 1 }}
+							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
+						{{ end }}
+						<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+					</h3>
+				{{ end }}
 				<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 
 				{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
@@ -49,12 +53,14 @@
 				<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
 
 				<h2>🔎 On débunke&nbsp;!</h2>
-				<h3>
-					{{ if eq (len .Params.authors) 1 }}
-						<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
-					{{ end }}
-					<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
-				</h3>
+				{{ if gt (len .Params.authors) 0 }}
+					<h3>
+						{{ if eq (len .Params.authors) 1 }}
+							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
+						{{ end }}
+						<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+					</h3>
+				{{ end }}
 				<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 
 				{{ if eq .Params.veracity "Faux" }}
@@ -76,12 +82,14 @@
 				<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
 
 				<h2>💡 La bonne nouvelle</h2>
-				<h3>
-					{{ if eq (len .Params.authors) 1 }}
-						<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
-					{{ end }}
-					<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
-				</h3>
+				{{ if gt (len .Params.authors) 0 }}
+					<h3>
+						{{ if eq (len .Params.authors) 1 }}
+							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
+						{{ end }}
+						<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+					</h3>
+				{{ end }}
 				<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 
 				{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}

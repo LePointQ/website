@@ -60,21 +60,23 @@ const build = async () => {
 									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
 										${section === 'temoignages' ? `💬 ${typografix(content.title)}` : TITLES[section]}
 									</h2>
-									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
-										${content.authors.length === 1 ? `
-											<img
-												src="${BASE_URL}/media/team/${content.authors[0]}.jpg"
-												width="40" height="40"
-												style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
-											/>
-										` : ''}
-										<span>
-											Par ${content.authors.length === 1
-												? content.authors[0]
-												: content.authors.slice(0, -1).join(', ') + ' & ' + content.authors[content.authors.length - 1]
-											}
-										</span>
-									</h3>
+									${content.authors && content.authors.length > 0 ?
+										`<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', sans-serif; text-align: center;">
+											${content.authors.length === 1 ? `
+												<img
+													src="${BASE_URL}/media/team/${content.authors[0]}.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											` : ''}
+											<span>
+												Par ${content.authors.length === 1
+													? content.authors[0]
+													: content.authors.slice(0, -1).join(', ') + ' & ' + content.authors[content.authors.length - 1]
+												}
+											</span>
+										</h3>` : ''
+									}
 									${section !== 'temoignages' ? `
 										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', sans-serif; text-align: center;">
 											${typografix(content.title)}
