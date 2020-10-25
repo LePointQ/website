@@ -7,7 +7,7 @@ preview = "  "
 section = "La bonne nouvelle"
 text = "  "
 themes = ["dating"]
-title = "Morgan fait son strip "
+title = "Sous la plume de Morgan"
 veracity = "Faux"
 
 +++
