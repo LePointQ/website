@@ -31,6 +31,16 @@ fields:
     display_utc: false
     export_format: ''
   default: now
+- name: preview
+  type: textarea
+  default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend
+    blandit fermentum. In quis mauris turpis.
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Aperçu
 - name: edito
   type: textarea
   default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis
