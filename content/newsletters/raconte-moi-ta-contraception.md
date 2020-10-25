@@ -5,6 +5,7 @@ la_bonne_nouvelle = "articles/enfin-un-contraceptif-masculin-reversible-br-et-sa
 numero = 2
 on_debunke = "articles/le-sterilet-favorise-la-transmission-d-infections-sexuellement-transmissibles.md"
 outro = "On serait ravi d'avoir ton avis sur cette newsletter, n'hésite pas à nous le donner. Et si tu n'es pas encore abonné·e, c'est par [ici](https://forms.gle/8dSqWNbnnD1Jeeyg8) !\n\nRendez-vous lundi prochain pour un numéro dédié à la pornographie. Nous attendons ton témoignage avec impatience, n'hésite pas à nous écrire !"
+preview = "Pour ce deuxième numéro, Le Point Q te propose de discuter de la contraception !"
 temoignages = "articles/raconte-moi-ta-contraception.md"
 title = "\"Raconte-moi ta contraception\""
 vu_d_ailleurs = "articles/la-vasectomie-normalisee-au-canada-taboue-en-france.md"

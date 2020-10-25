@@ -33,6 +33,7 @@ const build = async () => {
 		let output = html
 			.replace(/{{ BASE_URL }}/g, BASE_URL)
 			.replace(/{{ TITLE }}/g, typografix(data.title))
+			.replace('{{ PREVIEW }}', md.render(typografix(data.preview || '')))
 			.replace('{{ EDITO }}', md.render(typografix(data.edito)))
 			.replace('{{ OUTRO }}', md.render(typografix(data.outro)));
 

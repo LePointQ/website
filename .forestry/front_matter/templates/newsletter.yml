@@ -31,6 +31,16 @@ fields:
     display_utc: false
     export_format: ''
   default: now
+- name: preview
+  type: textarea
+  default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend
+    blandit fermentum. In quis mauris turpis.
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Aperçu
 - name: edito
   type: textarea
   default: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis
@@ -101,6 +111,7 @@ fields:
   label: Conclusion
 pages:
 - content/newsletters/le-plaisir-dans-tous-ses-etats.md
+- content/newsletters/meme-jour-meme-heure-avant-21h.md
 - content/newsletters/raconte-moi-ta-contraception.md
 - content/newsletters/just-porn-it.md
 - content/newsletters/leuleu-sous-couvre-feu.md

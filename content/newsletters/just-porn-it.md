@@ -5,6 +5,7 @@ la_bonne_nouvelle = "articles/le-porno-audio-je-crie-ouuuui.md"
 numero = 3
 on_debunke = "articles/il-n-y-a-que-les-hommes-qui-regardent-du-porno-gay.md"
 outro = "Déjà trois semaines qu'on navigue ensemble. On est ravis que vous soyez de plus en plus nombreux à vous abonner.\n\nN'hésite pas à nous donner ton avis sur cette newsletter, ça nous permettra de faire encore mieux ensuite. Une petite enquête qui te prendra deux minutes, juste [ici](https://forms.gle/1fyZU6UsDVnEFxDD7). Et si tu n’es pas encore abonné·e, c’est [là](https://lepointq.com) !\n\nRendez-vous lundi prochain !"
+preview = "Pour ce troisième numéro, on s'est emparé du porno, ce thème immense, panier de tous les plaisirs et qui réveille nos cinq sens."
 temoignages = "articles/comment-consommes-tu-le-porno.md"
 title = "Just porn it ?"
 vu_d_ailleurs = "articles/le-yaoi-le-fantasme-feminin-des-amours-erotiques-masculines.md"
