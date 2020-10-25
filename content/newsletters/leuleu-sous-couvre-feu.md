@@ -5,6 +5,7 @@ la_bonne_nouvelle = "articles/sexe-gay-et-si-on-en-finissait-avec-actif-et-passi
 numero = 4
 on_debunke = "articles/la-levrette-la-position-preferee-des-francais.e.s.md"
 outro = "Ça y est, c'est déjà fini ! On espère que tu as kiffé et appris des choses. Pour le thème de la semaine prochaine, on serait ravi de savoir ce que tu aimerais lire ! N'hésite pas à nous en parler sur [Instagram](https://www.instagram.com/lepoint.q) ou sur [Facebook](https://www.facebook.com/lepointq.news).\n\nLundi prochain, en plus des rubriques habituelles, on te réserve une petite surprise... Une histoire d'amour spéciale couvre-feu, en plusieurs épisodes !\n\nN'hésite pas à nous faire un retour, en remplissant [ce Google Form](https://forms.gle/sTobv7ZzGayMLLQ69) (parce que, avoue-le, plus jamais tu ne rempliras un sondage qui s'appelle \"Ton avis sur : Leuleu sous couvre-feu\" !). Tu peux aussi partager [notre site web](https://lepointq.surge.sh) à tes potes pour qu'ils s'abonnent ! Bientôt, les anciens numéros et articles ne seront plus accessibles qu'aux abonné·e·s par mail 😉\n\nBelle semaine à toi !"
+preview = "Au programme cette semaine, les positions qui vous font sauter au plafond et qui rendent votre quotidien plus beau."
 temoignages = "articles/ta-position-preferee-au-lit.md"
 title = "Leuleu sous couvre-feu"
 vu_d_ailleurs = "articles/le-kamasutra-le-vrai.md"
