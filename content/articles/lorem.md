@@ -6,7 +6,7 @@ image = "/media/uploads/strip-morgan-ok.jpg"
 preview = "  "
 section = "La bonne nouvelle"
 text = "  "
-themes = ["dating"]
+themes = ["dating", "dessin"]
 title = "Sous la plume de Morgan"
 veracity = "Faux"
 
