@@ -323,6 +323,15 @@ main article {
 	text-align: justify;
 }
 
+main article ul {
+	margin-left: 0.5rem;
+}
+
+main article li {
+	list-style-type: disc;
+	font-size: 1.1rem;
+}
+
 main article .hero {
 	width: 100%;
 }

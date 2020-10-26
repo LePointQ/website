@@ -1,7 +1,6 @@
 +++
 authors = ["Tom"]
 date = 2020-10-25T16:29:55Z
-draft = true
 image = "/media/uploads/applis.png"
 preview = "S'il est possible de trouver l'amour sur l'application de rencontres jaune et noir, elle n'est pas vraiment réputée pour cela. Grindr te fait perdre foi en l'humanité ? Voici une liste d'autres applis à tester pendant le couvre-feu."
 section = "On débunke"
