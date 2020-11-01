@@ -53,7 +53,7 @@ a:hover {
 	color: white;
 }
 
-ul {
+ul, ol {
 	margin: 0;
 	padding: 0;
 }
@@ -323,12 +323,17 @@ main article {
 	text-align: justify;
 }
 
-main article ul {
-	margin-left: 0.5rem;
+main article ul, main article ol {
+	margin-left: 1rem;
 }
 
-main article li {
+main article ul > li {
 	list-style-type: disc;
+	font-size: 1.1rem;
+}
+
+main article ol > li {
+	list-style-type: decimal;
 	font-size: 1.1rem;
 }
 

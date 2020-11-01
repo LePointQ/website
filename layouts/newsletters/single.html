@@ -93,10 +93,22 @@
 				<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 
 				{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-
-				<p class='separator'>● ● ●</p>
 			</article>
 		{{ end }}
+
+		{{ if .Params.plume_morgan }}
+			<article>
+				<p class='separator'>● ● ●</p>
+
+				<h2>🖌️ Sous la plume de Morgan</h2>
+
+				<br />
+
+				<img src="{{ .Site.BaseURL }}{{ .Params.plume_morgan }}" class='hero' />
+			</article>
+		{{ end }}
+
+		<p class='separator'>● ● ●</p>
 
 		<div class='outro'>
 			{{ .Params.outro | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}

@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
-    <title>{{ TITLE }}</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <title>I want to know youuu (again) 🎶</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
     <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
     <!--[if gte mso 9]>
@@ -236,7 +236,6 @@
         <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
         <!-- Preview Text Spacing Hack : BEGIN -->
         <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-			{{ PREVIEW }}
             &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
         </div>
         <!-- Preview Text Spacing Hack : END -->
@@ -246,8 +245,8 @@
 	        <!-- Email Header : BEGIN -->
             <tr>
                 <td style="padding: 20px 0; text-align: center">
-					<a href="{{ BASE_URL }}" target="_blank">
-						<img src="{{ BASE_URL }}/media/logo.png" width="200" style="vertical-align: middle;" />
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
 					</a>
                 </td>
             </tr>
@@ -258,40 +257,133 @@
                 <td style="background-color: #ffffff;">
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
-                            <td style="padding: 20px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
-                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', sans-serif; text-align: center;">
-									{{ TITLE }}
-								</h1>
-								{{ EDITO }}
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p>Hello&nbsp;! Comment ça va aujourd&rsquo;hui&nbsp;?</p>
+								<p>Où que tu sois confiné·e, on va continuer à t&rsquo;accompagner durant ces quatre semaines. On sera là pour te divertir, t&rsquo;informer, te faire réfléchir sur de multiples thèmes liés à la sexualité.</p>
+								<p>Mais avant cela, on a besoin de ton aide. Tu es à deux doigts de faire pleinement partie de l&rsquo;équipe du Point Q. Pour cela, nous avons besoin de connaître quelques infos à ton sujet&nbsp;:</p>
+                            </td>
+                        </tr>
+						<tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: left;">
+								<form action="https://europe-west1-le-point-q.cloudfunctions.net/updateInfo" method="get">
+									<h2>Es-tu...</h2>
+									<label>
+										<input type="radio" id="F" name="gender" value="F" checked>
+										une femme ?
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="M" name="gender" value="M">
+										un homme ?
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="other" name="gender" value="other">
+										Je m'identifie autrement
+									</label>
+									<br />
+									<label>
+										Tu peux préciser (si tu le souhaites) :
+										<input type="text" id="gender_text" name="gender_text" />
+									</label>
+
+									<h2>Ton âge ?</h2>
+									<input type="number" id="age" name="age" style="width: 50px;" placeholder="18" />
+
+									<h2>Ton orientation sexuelle ?</h2>
+									<label>
+										<input type="radio" id="hetero" name="sexuality" value="hetero" checked>
+										Hétéro
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="homo" name="sexuality" value="homo">
+										Homo
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="bi" name="sexuality" value="bi">
+										Bi/Pan
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="fluid" name="sexuality" value="fluid">
+										Fluide
+									</label>
+									<br />
+									<label>
+										<input type="radio" id="other" name="sexuality" value="other">
+										Autre
+									</label>
+									<br />
+									<label>
+										Tu peux préciser :
+										<input type="text" id="sexuality_text" name="sexuality_text" />
+									</label>
+
+									<h2>Te considères-tu comme faisant partie de la communauté LGBTQIA+ ?</h2>
+									<label>
+										Oui
+										<input type="radio" id="yes" name="lgbt" value="yes">
+									</label>
+									<label>
+										Non
+										<input type="radio" id="no" name="lgbt" value="no" checked>
+									</label>
+
+									<h2>C&rsquo;était quoi ta newsletter préférée&nbsp;?</h2>
+									<label>
+										<input type="checkbox" name="favorite" value="1" />
+										#1 · Le plaisir dans tous ses états
+									</label>
+									<br />
+									<label>
+										<input type="checkbox" name="favorite" value="2" />
+										#2 · «&nbsp;Raconte-moi ta contraception&nbsp;»
+									</label>
+									<br />
+									<label>
+										<input type="checkbox" name="favorite" value="3" />
+										#3 · Just porn it&nbsp;?
+									</label>
+									<br />
+									<label>
+										<input type="checkbox" name="favorite" value="4" />
+										#4 · Leuleu sous couvre-feu
+									</label>
+									<br />
+									<label>
+										<input type="checkbox" name="favorite" value="5" />
+										#5 · Même jour, même heure, avant 21h&nbsp;?
+									</label>
+
+									<h2>Un message à nous faire passer&nbsp;? 😊</h2>
+									<textarea name="message" rows="5" maxlength="500" placeholder="Continuez comme ça, c'est génial !" style="width: 100%;"></textarea>
+
+									<br />
+									<br />
+
+									<input type="hidden" name="email" value="{{ contact.EMAIL }}" />
+
+									<input type="submit" value="Envoyer" style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;" />
+								</form>
+                            </td>
+                        </tr>
+						<tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p>Merci pour ta réponse&nbsp;!</p>
+								<p>On est à l&rsquo;écoute de tous les sujets que tu aurais envie d&rsquo;aborder sur les relations en période de confinement. N&rsquo;hésite pas à nous écrire par retour de mail ou sur les réseaux sociaux&nbsp;!</p>
+								<p>
+									Passe une belle journée et à très vite dans ta boîte mail,
+									<br />
+									Juliette, Orianne, Thaïs et Tom.
+								</p>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <!-- 1 Column Text : END -->
-
-			{{ TEMOIGNAGES }}
-
-			{{ VU_D_AILLEURS }}
-
-			{{ ON_DEBUNKE }}
-
-			{{ LA_BONNE_NOUVELLE }}
-
-			<!-- 1 Column Text : BEGIN -->
-			<tr>
-				<td style="background-color: #ffffff;">
-					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-						<tr>
-							<td style="padding: 10px 20px 10px; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
-								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
-								{{ OUTRO }}
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<!-- 1 Column Text : END -->
 
 	        <!-- Clear Spacer : BEGIN -->
 	        <tr>
@@ -330,7 +422,7 @@
 	                    <![endif]-->
 	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 	                        <tr>
-	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
 									<p>
 										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
 											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
