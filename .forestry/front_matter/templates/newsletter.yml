@@ -100,6 +100,11 @@ fields:
       file: 
       path: 
   label: La bonne nouvelle
+- name: plume_morgan
+  type: file
+  config:
+    maxSize: 64
+  label: Sous la plume de Morgan
 - name: outro
   type: textarea
   default: ''
