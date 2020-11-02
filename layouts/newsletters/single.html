@@ -13,7 +13,7 @@
 				<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
 				<h2>💬 {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h2>
 				{{ if gt (len .Params.authors) 0 }}
-					<h3>
+					<h3 class='authors'>
 						{{ if eq (len .Params.authors) 1 }}
 							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
 						{{ end }}
@@ -33,7 +33,7 @@
 
 				<h2>🌏 Vu d'ailleurs</h2>
 				{{ if gt (len .Params.authors) 0 }}
-					<h3>
+					<h3 class='authors'>
 						{{ if eq (len .Params.authors) 1 }}
 							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
 						{{ end }}
@@ -54,7 +54,7 @@
 
 				<h2>🔎 On débunke&nbsp;!</h2>
 				{{ if gt (len .Params.authors) 0 }}
-					<h3>
+					<h3 class='authors'>
 						{{ if eq (len .Params.authors) 1 }}
 							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
 						{{ end }}
@@ -83,7 +83,7 @@
 
 				<h2>💡 La bonne nouvelle</h2>
 				{{ if gt (len .Params.authors) 0 }}
-					<h3>
+					<h3 class='authors'>
 						{{ if eq (len .Params.authors) 1 }}
 							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
 						{{ end }}

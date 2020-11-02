@@ -359,8 +359,6 @@ main article h2 {
 
 main article h3 {
 	font-size: 1.2rem;
-	color: var(--grey);
-	text-align: center;
 }
 
 main article h4 {
@@ -370,6 +368,12 @@ main article h4 {
 
 main article p {
 	font-size: 1.1rem;
+}
+
+main article .authors {
+	font-size: 1.2rem;
+	color: var(--grey);
+	text-align: center;
 }
 
 main article .author-pic {
