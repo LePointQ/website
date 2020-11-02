@@ -1,7 +1,6 @@
 +++
 authors = ["Tom"]
 date = 2020-10-31T22:54:15Z
-draft = true
 image = "/media/uploads/pompeya_erotica5.jpg"
 preview = "Depuis l'aube de la civilisation, le sexe masculin et l'érection (ou l'absence d'érection) sont au cœur des représentations de l'humanité. Mais si la verge fascine comme signe de fécondité, elle n'est pas forcément synonyme de virilité."
 section = "Vu d'ailleurs"
