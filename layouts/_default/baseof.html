@@ -7,9 +7,20 @@
 		{{ block "title" . }}
 			<title>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }} &ndash; Le Point Q</title>
 		{{ end }}
+		<meta property='og:title' content='Le Point Q'>
+		<meta property='twitter:title' content='Le Point Q'>
 		{{ with .Site.Params.description }}
 			<meta name='description' content='{{ . }}'>
+			<meta property='og:description' content='{{ . }}'>
+			<meta property='twitter:description' content='{{ . }}'>
 		{{ end }}
+		{{ with .Site.BaseURL }}
+			<meta property='og:url' content='{{ . }}'>
+			<meta property='twitter:url' content='{{ . }}'>
+		{{ end }}
+		<meta property='twitter:card' content='summary_large_image'>
+		<meta property='og:image' content='{{ .Site.BaseURL }}/media/illu1-01.png'>
+		<meta property='twitter:image' content='{{ .Site.BaseURL }}/media/illu1-01.png'>
 
 		<script src='https://use.fontawesome.com/23a22e79ae.js'></script>
 		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css' integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp' crossorigin='anonymous'>
