@@ -4,14 +4,18 @@
 			<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
 			<h1>
 				{{ if eq .Params.section "Témoignages" }}
-					💬 {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+					<img src="{{ .Site.BaseURL }}/media/icons/temoignages.svg" width="40" class='icon' />
+					{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 				{{ else }}
 					{{ if eq .Params.section "Vu d'ailleurs" }}
-						🌏 Vu d'ailleurs
+						<img src="{{ .Site.BaseURL }}/media/icons/vu_d_ailleurs.svg" width="40" class='icon' />
+						Vu d'ailleurs
 					{{ else if eq .Params.section "On débunke" }}
-						🔎 On débunke&nbsp;!
+						<img src="{{ .Site.BaseURL }}/media/icons/on_debunke.svg" width="40" class='icon' />
+						On débunke&nbsp;!
 					{{ else if eq .Params.section "La bonne nouvelle" }}
-						💡 La bonne nouvelle
+						<img src="{{ .Site.BaseURL }}/media/icons/la_bonne_nouvelle.svg" width="40" class='icon' />
+						La bonne nouvelle
 					{{ end}}
 				{{ end }}
 			</h1>

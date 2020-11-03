@@ -317,6 +317,10 @@ main li a {
 	font-size: 1.1rem;
 }
 
+main .icon {
+	vertical-align: middle;
+}
+
 main article {
 	width: 100%;
 	padding: 0 1rem;

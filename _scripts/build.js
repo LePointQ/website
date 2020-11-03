@@ -4,9 +4,9 @@ const md = require('markdown-it')();
 const BASE_URL = 'https://lepointq.com';
 
 const TITLES = {
-	vu_d_ailleurs: '🌏 Vu d&rsquo;ailleurs',
-	on_debunke: '🔎 On débunke&nbsp;!',
-	la_bonne_nouvelle: '💡 La bonne nouvelle',
+	vu_d_ailleurs: 'Vu d&rsquo;ailleurs',
+	on_debunke: 'On débunke&nbsp;!',
+	la_bonne_nouvelle: 'La bonne nouvelle',
 };
 
 const COLORS = {
@@ -63,7 +63,12 @@ const build = async () => {
 							<tr>
 								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
 									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
-										${section === 'temoignages' ? `💬 ${typografix(content.title)}` : TITLES[section]}
+										<img
+											src="${BASE_URL}/media/icons/${section}.svg"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										${section === 'temoignages' ? `${typografix(content.title)}` : TITLES[section]}
 									</h2>
 									${content.authors && content.authors.length > 0 ?
 										`<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
@@ -110,7 +115,12 @@ const build = async () => {
 							<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
 								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
 								<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
-									🖌️ Sous la plume de Morgan
+									<img
+										src="${BASE_URL}/media/icons/plume_morgan.svg"
+										width="40" height="40"
+										style="vertical-align: middle;"
+									/>
+									Sous la plume de Morgan
 								</h2>
 							</td>
 						</tr>

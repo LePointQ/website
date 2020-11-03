@@ -2,7 +2,7 @@
 	<main>
 		<h2>Les derniers articles</h2>
 		<ul>
-			{{ range first 5 .Pages }}
+			{{ range first 10 .Pages }}
 				<li>
 					<a href='{{ .Permalink }}'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
@@ -13,7 +13,10 @@
 
 		<p class='separator'>● ● ●</p>
 
-		<h2>💬 Témoignages</h2>
+		<h2>
+			<img src="{{ .Site.BaseURL }}/media/icons/temoignages.svg" width="40" class='icon' />
+			Témoignages
+		</h2>
 		<ul>
 			{{ range (where .Pages "Params.section" "Témoignages") }}
 				<li>
@@ -26,7 +29,10 @@
 
 		<p class='separator'>● ● ●</p>
 
-		<h2>🌏 Vu d'ailleurs</h2>
+		<h2>
+			<img src="{{ .Site.BaseURL }}/media/icons/vu_d_ailleurs.svg" width="40" class='icon' />
+			Vu d'ailleurs
+		</h2>
 		<ul>
 			{{ range (where .Pages "Params.section" "Vu d'ailleurs") }}
 				<li>
@@ -39,7 +45,10 @@
 
 		<p class='separator'>● ● ●</p>
 
-		<h2>🔎 On débunke !</h2>
+		<h2>
+			<img src="{{ .Site.BaseURL }}/media/icons/on_debunke.svg" width="40" class='icon' />
+			On débunke&nbsp;!
+		</h2>
 		<ul>
 			{{ range (where .Pages "Params.section" "On débunke") }}
 				<li>
@@ -52,7 +61,10 @@
 
 		<p class='separator'>● ● ●</p>
 
-		<h2>💡 La bonne nouvelle</h2>
+		<h2>
+			<img src="{{ .Site.BaseURL }}/media/icons/la_bonne_nouvelle.svg" width="40" class='icon' />
+			La bonne nouvelle
+		</h2>
 		<ul>
 			{{ range (where .Pages "Params.section" "La bonne nouvelle") }}
 				<li>

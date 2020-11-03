@@ -6,101 +6,124 @@
 			{{ .Params.edito | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 		</div>
 
-		{{ with .Site.GetPage .Params.temoignages }}
-			<article>
-				<p class='separator'>● ● ●</p>
+		{{ if gt (len .Params.temoignages) 0 }}
+			{{ with .Site.GetPage .Params.temoignages }}
+				<article>
+					<p class='separator'>● ● ●</p>
 
-				<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
-				<h2>💬 {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h2>
-				{{ if gt (len .Params.authors) 0 }}
-					<h3 class='authors'>
-						{{ if eq (len .Params.authors) 1 }}
-							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
-						{{ end }}
-						<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
-					</h3>
-				{{ end }}
+					<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
+					<h2>
+						<img src="{{ .Site.BaseURL }}/media/icons/temoignages.svg" width="40" class='icon' />
+						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+					</h2>
+					{{ if gt (len .Params.authors) 0 }}
+						<h3 class='authors'>
+							{{ if eq (len .Params.authors) 1 }}
+								<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
+							{{ end }}
+							<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+						</h3>
+					{{ end }}
 
-				{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-			</article>
+					{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+				</article>
+			{{ end }}
 		{{ end }}
 
-		{{ with .Site.GetPage .Params.vu_d_ailleurs }}
-			<article>
-				<p class='separator'>● ● ●</p>
+		{{ if gt (len .Params.vu_d_ailleurs) 0 }}
+			{{ with .Site.GetPage .Params.vu_d_ailleurs }}
+				<article>
+					<p class='separator'>● ● ●</p>
 
-				<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
+					<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
 
-				<h2>🌏 Vu d'ailleurs</h2>
-				{{ if gt (len .Params.authors) 0 }}
-					<h3 class='authors'>
-						{{ if eq (len .Params.authors) 1 }}
-							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
-						{{ end }}
-						<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
-					</h3>
-				{{ end }}
-				<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
+					<h2>
+						<img src="{{ .Site.BaseURL }}/media/icons/vu_d_ailleurs.svg" width="40" class='icon' />
+						Vu d'ailleurs
+					</h2>
+					{{ if gt (len .Params.authors) 0 }}
+						<h3 class='authors'>
+							{{ if eq (len .Params.authors) 1 }}
+								<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
+							{{ end }}
+							<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+						</h3>
+					{{ end }}
+					<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 
-				{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-			</article>
+					{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+				</article>
+			{{ end }}
 		{{ end }}
 
-		{{ with .Site.GetPage .Params.on_debunke }}
-			<article>
-				<p class='separator'>● ● ●</p>
+		{{ if gt (len .Params.on_debunke) 0 }}
+			{{ with .Site.GetPage .Params.on_debunke }}
+				<article>
+					<p class='separator'>● ● ●</p>
 
-				<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
+					<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
 
-				<h2>🔎 On débunke&nbsp;!</h2>
-				{{ if gt (len .Params.authors) 0 }}
-					<h3 class='authors'>
-						{{ if eq (len .Params.authors) 1 }}
-							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
-						{{ end }}
-						<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
-					</h3>
-				{{ end }}
-				<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
+					<h2>
+						<img src="{{ .Site.BaseURL }}/media/icons/on_debunke.svg" width="40" class='icon' />
+						On débunke&nbsp;!
+					</h2>
+					{{ if gt (len .Params.authors) 0 }}
+						<h3 class='authors'>
+							{{ if eq (len .Params.authors) 1 }}
+								<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
+							{{ end }}
+							<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+						</h3>
+					{{ end }}
+					<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 
-				{{ if eq .Params.veracity "Faux" }}
-					<p class='veracity fake'>FAUX</p>
-				{{ else if eq .Params.veracity "Vrai" }}
-					<p class='veracity true'>VRAI</p>
-				{{ else }}
-					<p class='veracity trueish'>PAS EXACTEMENT</p>
-				{{ end }}
+					{{ if eq .Params.veracity "Faux" }}
+						<p class='veracity fake'>FAUX</p>
+					{{ else if eq .Params.veracity "Vrai" }}
+						<p class='veracity true'>VRAI</p>
+					{{ else }}
+						<p class='veracity trueish'>PAS EXACTEMENT</p>
+					{{ end }}
 
-				{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-			</article>
+					{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+				</article>
+			{{ end }}
 		{{ end }}
 
-		{{ with .Site.GetPage .Params.la_bonne_nouvelle }}
-			<article>
-				<p class='separator'>● ● ●</p>
+		{{ if gt (len .Params.la_bonne_nouvelle) 0 }}
+			{{ with .Site.GetPage .Params.la_bonne_nouvelle }}
+				<article>
+					<p class='separator'>● ● ●</p>
 
-				<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
+					<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
 
-				<h2>💡 La bonne nouvelle</h2>
-				{{ if gt (len .Params.authors) 0 }}
-					<h3 class='authors'>
-						{{ if eq (len .Params.authors) 1 }}
-							<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
-						{{ end }}
-						<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
-					</h3>
-				{{ end }}
-				<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
+					<h2>
+						<img src="{{ .Site.BaseURL }}/media/icons/la_bonne_nouvelle.svg" width="40" class='icon' />
+						La bonne nouvelle
+					</h2>
+					{{ if gt (len .Params.authors) 0 }}
+						<h3 class='authors'>
+							{{ if eq (len .Params.authors) 1 }}
+								<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
+							{{ end }}
+							<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
+						</h3>
+					{{ end }}
+					<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 
-				{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
-			</article>
+					{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
+				</article>
+			{{ end }}
 		{{ end }}
 
 		{{ if .Params.plume_morgan }}
 			<article>
 				<p class='separator'>● ● ●</p>
 
-				<h2>🖌️ Sous la plume de Morgan</h2>
+				<h2>
+					<img src="{{ .Site.BaseURL }}/media/icons/plume_morgan.svg" width="40" class='icon' />
+					Sous la plume de Morgan
+				</h2>
 
 				<br />
 
