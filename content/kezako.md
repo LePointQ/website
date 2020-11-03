@@ -14,6 +14,6 @@ Tu l'as peut-être remarqué en discutant (une fois ?) avec ta famille, les rep
 
 ## Et les petites mains du Point Q, c'est qui ?
 
-Orianne, Thaïs, Juliette et Tom. On a entre 21 et 24 ans et comme vous, on se pose mille questions sur nos sexualités. On est aussi étudiant·e·s en journalisme, et on aime bien poser se poser des questions et tenter de trouver des réponses !
+Orianne, Thaïs, Juliette et Tom. On a entre 21 et 24 ans et comme vous, on se pose mille questions sur nos sexualités. On est aussi étudiant·e·s en journalisme, et on aime bien poser se poser des questions (et tenter de trouver des réponses !)
 
-Le Point Q c'est aussi vous toutes et tous, vous qui nous suivez, répondez à nos sondages et à nos témoignages. Ensemble, on fait vivre un espace _safe_ on libère la parole et on partage un bon moment, chaque lundi dans vos boîtes mail. Merci d'être là et de faire vivre ce média, on n'existe que par vos belles voix.
+Le Point Q c'est aussi vous toutes et tous, vous qui nous suivez, répondez à nos sondages et à nos témoignages. Ensemble, on fait vivre un espace _safe_, on libère la parole et on partage un bon moment, chaque lundi dans vos boîtes mail. Merci d'être là et de faire vivre ce média, on n'existe que par vos belles voix.
