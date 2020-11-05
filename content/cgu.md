@@ -1,8 +1,7 @@
 +++
-title = "Conditions générales d&rsquo;utilisation"
+title = "Conditions générales d’utilisation"
 
 +++
-
 ## Préambule
 
 Le site, services et contenus sous l&rsquo;appellation &laquo;&nbsp;Le Point Q&nbsp;&raquo; (ci-après &laquo;&nbsp;Le Site&nbsp;&raquo;) sont édités par Juliette Geay, Orianne Gicqueau, Thaïs Chaigne et Tom Février. Ils sont établis à l&rsquo;École de Journalisme de Sciences Po, située à l&rsquo;adresse suivante&nbsp;: 117 Boulevard Saint-Germain 75&nbsp;006 PARIS.

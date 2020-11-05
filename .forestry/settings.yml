@@ -24,7 +24,6 @@ sections:
 - type: document
   path: content/cgu.md
   label: CGU
-  match: "**/*"
 upload_dir: static/media/uploads
 public_path: "/media/uploads"
 front_matter_path: ''
