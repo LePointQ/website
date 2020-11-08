@@ -1,5 +1,5 @@
 const TOML = require('toml');
-const md = require('markdown-it')();
+const md = require('markdown-it')({ html: true });
 
 const BASE_URL = 'https://lepointq.com';
 
@@ -38,7 +38,7 @@ const build = async () => {
 			.replace('{{ OUTRO }}', md.render(typografix(data.outro)));
 
 		for (const section of ['temoignages', 'vu_d_ailleurs', 'on_debunke', 'la_bonne_nouvelle']) {
-			if (!data[section]) {
+			if (!data[section] || data[section].length === 0) {
 				output = output.replace(`{{ ${section.toUpperCase()} }}`, '');
 				continue;
 			}

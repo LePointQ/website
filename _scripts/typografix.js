@@ -4,7 +4,9 @@ exports.typografix = (html) => {
 	// Guillemets français et espaces non sécables
 	const matchesGuillemets = output.match(/"[^\"]*"/g);
 	matchesGuillemets && matchesGuillemets.forEach(match => {
-		output = output.replace(match, `&laquo;&nbsp;${match.slice(1, -1)}&nbsp;&raquo;`);
+		const content = match.slice(1, -1);
+		if (!content.startsWith('http') && content !== '100%')
+			output = output.replace(match, `&laquo;&nbsp;${content}&nbsp;&raquo;`);
 	});
 
 	output = output
