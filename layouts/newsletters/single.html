@@ -8,7 +8,7 @@
 
 		{{ if gt (len .Params.temoignages) 0 }}
 			{{ with .Site.GetPage .Params.temoignages }}
-				<article>
+				<article id='temoignages'>
 					<p class='separator'>● ● ●</p>
 
 					<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
@@ -32,7 +32,7 @@
 
 		{{ if gt (len .Params.vu_d_ailleurs) 0 }}
 			{{ with .Site.GetPage .Params.vu_d_ailleurs }}
-				<article>
+				<article id='vu-d-ailleurs'>
 					<p class='separator'>● ● ●</p>
 
 					<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
@@ -58,7 +58,7 @@
 
 		{{ if gt (len .Params.on_debunke) 0 }}
 			{{ with .Site.GetPage .Params.on_debunke }}
-				<article>
+				<article id='on-debunke'>
 					<p class='separator'>● ● ●</p>
 
 					<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
@@ -92,7 +92,7 @@
 
 		{{ if gt (len .Params.la_bonne_nouvelle) 0 }}
 			{{ with .Site.GetPage .Params.la_bonne_nouvelle }}
-				<article>
+				<article id='la-bonne-nouvelle'>
 					<p class='separator'>● ● ●</p>
 
 					<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
@@ -117,7 +117,7 @@
 		{{ end }}
 
 		{{ if .Params.plume_morgan }}
-			<article>
+			<article id='plume-morgan'>
 				<p class='separator'>● ● ●</p>
 
 				<h2>

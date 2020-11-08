@@ -74,5 +74,23 @@
 				</li>
 			{{ end }}
 		</ul>
+
+		<p class='separator'>● ● ●</p>
+
+		<h2>
+			<img src="{{ .Site.BaseURL }}/media/icons/plume_morgan.svg" width="40" class='icon' />
+			Sous la plume de Morgan
+		</h2>
+		<ul>
+			{{ range (where .Site.Pages "Section" "newsletters") }}
+				{{ if .Params.plume_morgan }}
+					<li>
+						<a href='{{ .Permalink }}#plume-morgan'>
+							{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
+						</a>
+					</li>
+				{{ end }}
+			{{ end }}
+		</ul>
 	</main>
 {{ end }}
