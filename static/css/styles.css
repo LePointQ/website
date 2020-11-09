@@ -361,8 +361,10 @@ main article h2 {
 	text-align: center;
 }
 
-main article h3 {
+main article h3, main .edito h3 {
 	font-size: 1.2rem;
+	font-style: normal;
+	font-weight: bold;
 }
 
 main article h4 {
