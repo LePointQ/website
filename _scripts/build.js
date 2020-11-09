@@ -64,7 +64,7 @@ const build = async () => {
 								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
 									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
 										<img
-											src="${BASE_URL}/media/icons/${section}.svg"
+											src="${BASE_URL}/media/icons/${section}.png"
 											width="40" height="40"
 											style="vertical-align: middle;"
 										/>
@@ -116,7 +116,7 @@ const build = async () => {
 								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
 								<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
 									<img
-										src="${BASE_URL}/media/icons/plume_morgan.svg"
+										src="${BASE_URL}/media/icons/plume_morgan.png"
 										width="40" height="40"
 										style="vertical-align: middle;"
 									/>
