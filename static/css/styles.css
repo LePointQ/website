@@ -125,12 +125,14 @@ footer {
 	margin-bottom: 1rem;
 }
 
-footer .social-icon {
+.social-icon {
 	font-size: 1.5rem;
 	margin: 0 0.5rem;
+	color: var(--main-color);
+	cursor: pointer;
 }
 
-footer .social-icon:hover, footer a:hover {
+.social-icon:hover, footer a:hover {
 	color: var(--secondary-color);
 	background: inherit;
 }
@@ -202,6 +204,17 @@ input[type='submit'], button {
 input[type='submit']:hover, button:hover {
 	background: white;
 	color: var(--main-color);
+}
+
+input[type='submit'].inverted, button.inverted {
+	background: white;
+	border: 2px solid var(--main-color);
+	color: var(--main-color);
+}
+
+input[type='submit'].inverted:hover, button.inverted:hover {
+	background: var(--main-color);
+	color: white;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -485,4 +498,14 @@ main.blurred {
 	100% {
 		transform: scale(1);
 	}
+}
+
+.share-block {
+	display: flex;
+	justify-content: center;
+}
+
+.share-block .social-icon {
+	font-size: 2rem;
+	margin: 1rem;
 }
