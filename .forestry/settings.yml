@@ -10,7 +10,6 @@ sections:
 - type: document
   path: content/merci.md
   label: Merci
-  match: "**/*"
 - type: document
   path: content/cgu.md
   label: CGU
