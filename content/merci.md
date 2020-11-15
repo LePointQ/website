@@ -5,7 +5,7 @@ type = "merci"
 +++
 Tu fais désormais pleinement partie de la communauté du Point Q.
 
-Tu as également accès [aux newsletters passées](https://lepointq.com/newsletters) ainsi qu'aux [archives des articles](https://lepointq.com/articles).
+Tu as maintenant accès [aux newsletters passées](https://lepointq.com/newsletters) ainsi qu'aux [archives des articles](https://lepointq.com/articles).
 
 <p class='separator'>● ● ●</p>
 
