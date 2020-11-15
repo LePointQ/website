@@ -8,7 +8,7 @@ on_debunke = "articles/un-rapport-sexuel-se-termine-forcement-par-une-penetratio
 outro = "Un jour, on parlera ensemble des violences gynécologiques, une source possible de vaginisme (oui oui, c'est le comble des combles).\n\nC'est fini pour cette semaine ! Si tu as aimé cette newsletter, n'hésite pas à nous le dire sur [Facebook](https://www.facebook.com/lepointq.news) ou [Instagram](https://www.instagram.com). Si tu veux nous contacter, c'est désormais possible sur notre [site](https://lepointq.com/kezako/).\n\nEt surtout, partage cette newsletter avec tes ami·e·s (en leur envoyant [ce lien](https://lepointq.com) par exemple), plus on est dans la communauté, plus on pourra grandir à vos côtés !\n\nÀ lundi pour de nouvelles aventures,\n\nJuliette, Orianne, Tom et Thaïs aka Le Point Q."
 plume_morgan = "/media/uploads/strip-morgan-vaginisme.jpg"
 preview = "Les pénis ragaillardis, on voudrait leur passer un mot doux : la \"panne\" existe aussi chez les femmes. Ça s'appelle le vaginisme, la dyspareunie, ou tout simplement le manque d'envie."
-temoignages = "articles/comment-vis-tu-ton-vaginisme.md"
+temoignages = "articles/comment-vis-tu-ton-blocage.md"
 title = "À double tour"
 vu_d_ailleurs = []
 

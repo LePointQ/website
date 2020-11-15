@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>À double tour</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Les pénis ragaillardis, on voudrait leur passer un mot doux : la « panne » existe aussi chez les femmes. Ça s’appelle le vaginisme, la dyspareunie, ou tout simplement le manque d’envie.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									À double tour
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020.</p>
+<p>Il y a deux semaines, on vous parlait des troubles érectiles chez les hommes, et on vous donnait des conseils pour les soigner. Cette fois, on s’empare du vaginisme* et de la dyspareunie**. À l’origine de ces maux, souvent des traumatismes et des pathologies (comme l’endométriose). On commence donc par faire un gros câlin à toutes les femmes dont le vagin a déjà dit « non » à un ou une partenaire. Encore une fois, ce n’est pas grave et ça se soigne.</p>
+<p>Au programme cette semaine, <strong>les témoignages d’Emma (et Sacha, son copain), Aurore et Manon qui nous parlent de leurs blocages vaginaux</strong>, survenus pour différentes raisons : harcèlement, viol, ou changement de partenaire. On retrouve nos sexperts débunk et vu d’ailleurs. Tom se demande : <strong>« Un rapport sexuel se termine-t-il forcément par une pénétration ? »</strong> Réponse avec notre sexologue Céline Vendé, qui officie aussi sur Instagram (<a href="https://www.instagram.com/sexologue_therapeute/">@sexologue_therapeute</a>). Thaïs file aux États-Unis, nous parler des <strong>vagins... à dents</strong> ! Et Juliette vous transmet <strong>des conseils pour soigner le vaginisme</strong>, toujours sous l’œil avisé de notre sexologue.</p>
+<p>Enfin, Morgan notre dessinateur est en charge de vous faire rire... et réagir, parce que les pénétrations violentes, ce n’est pas qu’au lit !</p>
+<p>On espère que votre confinement se passe bien et on vous envoie plein de courage,</p>
+<p>Le Point Q.</p>
+<p><em>*vaginisme : contractions involontaires et incontrôlables des muscles du vagin, qui rendent la pénétration impossible.</em></p>
+<p><em>**dyspareunie : douleurs lors des rapports sexuels qui rendent la pénétration difficile voire impossible.</em></p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/tim-mossholder-y0_je0dhs78-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/temoignages.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										Comment vis-tu ton blocage&nbsp;? 
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+											<span>
+												Par Orianne & Juliette
+											</span>
+										</h3>
+									
+									
+									<p><em><strong>Emma* et Sacha* sont en couple depuis 3 ans et demi. Depuis un an, Emma souffre de dyspareunie de manière quasi permanente.</strong></em></p>
+<h3><strong>Comment ça se manifeste ?</strong></h3>
+<p><strong>Emma :</strong> « Je suis très stressée en ce moment, et je ne peux pas avoir de pénétration. Ç’est éprouvant et ça me fait mal. En plus, j’ai des mycoses à répétition, qui sont aussi liées au stress. »</p>
+<p><strong>Sacha :</strong> « Des fois c’est frustrant, mais ça ne heurte pas notre relation. Ce n’est pas la seule manière d’être intime avec quelqu’un, et on s’est rapprochés malgré cela. A un moment je me suis demandé si c’était de ma faute, mais elle m’a assuré que ce n’était pas le cas. »</p>
+<h3><strong>Comment cela impacte ton quotidien ?</strong></h3>
+<p><strong>Emma :</strong> « C’est de la culpabilité et de l’incompréhension... Pourquoi je n’arrive pas à avoir envie ? Pourquoi ça me fait mal ? J’ai un copain super, qui me comprend et ne me met pas la pression. Mais il y a des jours où j’ai moins de mycoses et je me dis : <em>là tu pourrais, pourquoi tu ne le fais pas ?</em> Avant j’aimais ces moments-là. »</p>
+<p><strong>Sacha :</strong> « Je veux qu’elle soit dans un environnement qui l’aidera à surmonter ça. Qu’elle soit à l’aise, détendue et joyeuse. J’apprécie autant le temps passé avec elle (sinon plus) en dehors du lit. »</p>
+<h3><strong>À quoi c’est lié ?</strong></h3>
+<p><strong>Emma :</strong> « J’ai eu une révélation hier. Je fais une thérapie psychologique en ce moment, un travail sur les traumatismes. J’ai été harcelée au collège, avec des violences physiques. Je me rends compte aujourd’hui que ça vient de là. On m’a fait tellement de mal que j’ai peur de la douleur, donc je mets en place des stratégies d’évitement. »</p>
+<p><strong>Sacha</strong> : « J’étais au courant de ces violences avant même qu’on sorte ensemble. Je savais que le harcèlement posait des problèmes à long terme aux victimes, mais je n’avais jamais imaginé que c’était aussi grave. »</p>
+<h3><strong>Vous essayez de le soigner ?</strong></h3>
+<p><strong>Emma :</strong> « Oui, mais c’est une catastrophe le corps médical. La première fois, je suis allée voir une gynéco qui a été violente avec moi. Elle m’a dit : <em>Putain mais il faut vous détendre, c’est que vous n’êtes pas prête... Allongez-vous</em>. Et là, elle m’a mis un doigt. Même pas un instrument, un doigt pour savoir si ça passait. Quelle connasse.</p>
+<p>Là je viens d’aller voir cinq gynécos différents. Ils me donnent tous la même crème, qui ne marche pas. Personne ne s’intéresse à l’aspect psychologique du blocage et les soins sont très chers. »</p>
+<p><strong>Sacha :</strong> « C’est difficile de trouver des médecins, d’obtenir des rendez-vous et les traitements sont encore en cours de développement. Il y a beaucoup de travail à faire. »
+<br /><br /><br />
+<em><strong>Aurore*, 22 ans, en couple depuis 4 ans, a connu un blocage sexuel lors de sa deuxième relation amoureuse. Ça ne lui était jamais arrivé.</strong></em></p>
+<p>« Quand j’ai commencé à sortir avec mon copain actuel, je sortais d’une relation compliquée. Je n’arrivais pas à oublier cette histoire et c’était compliqué de donner mon cœur et mon corps à quelqu’un d’autre, d’accorder ma confiance de nouveau. Dès le départ on a eu une très bonne alchimie au niveau personnalité. Mais on s’est lancé un peu vite je pense dans l’alchimie des corps. Quand on a essayé de le faire ça ne rentrait pas. C’était fermé. Lui ça fonctionnait, mais moi j’ai eu un gros blocage. Au début on s’est dit qu’il fallait prendre le temps, faire des préliminaires un peu plus longs. On a réessayé mais ça bloquait toujours. À partir de là j’ai compris que je n’étais pas prête à le faire, qu’il me fallait du temps pour accepter que quelqu’un d’autre entre dans ma vie. »</p>
+<h3><strong>Comment as-tu réussi à débloquer la situation ?</strong></h3>
+<p>« Simplement, j’ai écouté mon corps. On l’a refait deux mois plus tard et ça s’est fait tout naturellement, parce qu’on a pris le temps d’en parler. On s’est accordé du temps, le temps dont on avait besoin. Maintenant quand on en reparle on en rigole. On se dit que ça peut arriver encore d’autres fois. Quand le corps ne veut pas, il ne veut pas et il ne faut pas forcer. »
+<br /><br /><br />
+<em><strong>Manon* a 22 ans et c’est à la suite d’un traumatisme que son blocage est apparu.</strong></em></p>
+<p>« Moi c’est plutôt un blocage psychologique depuis que j’ai été violée par mon tout premier copain. Maintenant, j’ai du mal à faire confiance sexuellement parlant. C’est impossible pour moi d’avoir un partenaire d’un soir par exemple. »</p>
+<h3><strong>Comment se manifeste ce blocage aujourd’hui ?</strong></h3>
+<p>« Au début tout se passe bien et il y a un moment avant qu’il y ait pénétration où j’ai un gros blocage. Je pense que psychologiquement c’est aussi pour que dans ma tête je puisse me dire : <em>oui tu as encore le choix de dire non</em>. Le blocage est aussi devenu physique. Dans l’année qui vient de passer, j’ai eu une phase où c’était totalement mon corps qui bloquait. Niveau lubrification, y a rien qui se passait et j’étais toute coincée dans mon corps, mes épaules étaient fermées, j’étais un peu en boule. Il y a une sorte de système physique où tu veux te protéger de l’extérieur. La seule fois où j’ai réussi à sortir de cette dynamique-là ça été avec des partenaires sexuels que je connaissais depuis très longtemps, en qui j’avais vraiment confiance. »</p>
+<p><em>*Les prénoms ont été modifiés</em></p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/deon-black-wenxdxnts0o-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/on_debunke.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										On débunke&nbsp;!
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Tom
+											</span>
+										</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Un rapport sexuel se termine forcément par une pénétration&nbsp;&raquo;
+										</h4>
+									
+									
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+									
+									<p>Dans beaucoup d’esprits, un rapport sexuel n’en est pas vraiment un s’il ne comporte pas de pénétration. Et pourtant, en se renseignant un peu, deux chiffres sautent immédiatement à la figure. Seules 20 à 30 % des femmes atteignent l’orgasme par une stimulation uniquement vaginale, contre 75 % par une stimulation clitoridienne (et donc potentiellement externe). Par ailleurs, une femme sur deux souhaiterait qu’on accorde plus de place à d’autres pratiques sexuelles, plus sensuelles (Ifop).</p>
+<p>Le rapport phallocentré peut entraîner un mal-être chez les femmes atteintes de vaginisme ou de douleurs pendant la pénétration, qui peuvent avoir l’impression de ne pas pouvoir mener une vie sexuelle épanouie.</p>
+<p>C’est pourtant faux, comme l’explique Céline Vendé, sexologue thérapeute à Bordeaux (<a href="https://www.instagram.com/sexologue_therapeute">@sexologue_therapeute</a> sur Instagram) et qui ne mâche pas ses mots. <em>« La pénétration, dans beaucoup de couples hétéro, c’est une sexualité de fainéants</em>, dénonce-t-elle. <em>On va au plus simple, au plus rapide, sans aucun effort d’imagination et sans partir à la recherche de nouvelles sensations. »</em></p>
+<p>Mais pourquoi cette importance démesurée de la pénétration ? <em>« C’est le fruit de notre société patriarcale et hétéronormative</em>, explique Céline Vendé. <em>La sexualité a longtemps été tournée vers la procréation, qui implique forcément la pénétration et l’éjaculation... Et on ne peut pas nier non plus l’influence du porno, qui fait de la pénétration un passage obligé. »</em></p>
+<p>En cas de blocage, la sexologue conseille de se tourner vers les mal-nommés préliminaires (caresses, masturbation...), qui ne précèdent pas forcément la pénétration. <em>« Quand je reçois des couples en consultation, je discute avec eux de comment trouver l’épanouissement dans d’autres pratiques</em>, raconte-t-elle. <em>Avant de reprendre plus tard une sexualité pénétrative une fois les blocages résolus, si tel est leur souhait. »</em></p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/raphael-nast-l7ikhhmp7u4-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										La bonne nouvelle
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+											<span>
+												Par Juliette & Tom
+											</span>
+										</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Comment soigner le vaginisme&nbsp;? 
+										</h4>
+									
+									
+									<p>Le vaginisme nécessite souvent une prise en charge à la fois psychologique (avec un sexologue) et physique (avec un kiné ou une sage-femme). Notre sexologue Céline Vendé (<a href="https://www.instagram.com/sexologue_therapeute">@sexologue_therapeute</a>) explique : <em>« Le vagin n’est pas fermé de manière physiologique, c’est une construction mentale d’une fermeture du vagin. Par ailleurs, il faut détendre la zone pelvienne, pour pallier à cette fermeture. »</em></p>
+<p><strong>Elle vous donne quelques petits conseils :</strong></p>
+<ol>
+<li><strong>Se reconnecter avec son corps.</strong> Il s’agit avant tout de détendre la zone pelvienne, hyper tonique. On peut pratiquer la sophrologie, la méditation ou le yoga. Voici deux exercices simples :</li>
+</ol>
+<ul>
+<li>mettre ses mains sur son bas-ventre, de chaque côté de la vulve, pour ressentir cette zone-là, et se reconnecter avec ses sensations.</li>
+<li>regarder sa vulve : prendre un miroir et s’asseoir en tailleur. Se répéter <em>« cette partie du corps m’appartient »</em>, <em>« je me réapproprie ma vulve »</em>.</li>
+</ul>
+<ol start="2">
+<li><strong>En parler avec son partenaire.</strong> C’est primordial d’avoir une communication fluide avec celui-ci. En consultation, je reçois toujours le partenaire quand je reçois une patiente, il faut qu’il soit impliqué dans le trio que constituent les deux individus et le vaginisme. C’est plus facile d’en parler en dehors du lit conjugal, où, sur le moment, on est vite submergé par l’émotion. Ça permet aussi de déculpabiliser la personne, et de s’épanouir avec d’autres pratiques sexuelles avant de revenir éventuellement à la pénétration !</li>
+<li><strong>Trouver une méthode adaptée.</strong> On peut consulter un professionnel de santé : sexologue pour la partie psychologique, kiné ou sage-femme pour la partie physique. C’est important de ne pas rester seule, car cela peut avoir des conséquences (comme la dépression). Il y a des groupes Facebook sur la pénétration, et des comptes Instagram comme <a href="https://www.instagram.com/orgasme_et_moi/">@orgasme_et_moi</a> et <a href="https://www.instagram.com/mashasexplique/">@mashasexplique</a> qui en parlent.</li>
+</ol>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+								<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									<img
+										src="https://lepointq.com/media/icons/plume_morgan.png"
+										width="40" height="40"
+										style="vertical-align: middle;"
+									/>
+									Sous la plume de Morgan
+								</h2>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<img src="https://lepointq.com/media/uploads/strip-morgan-vaginisme.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+				</td>
+			</tr>
+			<!-- Hero Image, Flush : END -->
+		
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Un jour, on parlera ensemble des violences gynécologiques, une source possible de vaginisme (oui oui, c’est le comble des combles).</p>
+<p>C’est fini pour cette semaine ! Si tu as aimé cette newsletter, n’hésite pas à nous le dire sur <a href="https://www.facebook.com/lepointq.news">Facebook</a> ou <a href="https://www.instagram.com">Instagram</a>. Si tu veux nous contacter, c’est désormais possible sur notre <a href="https://lepointq.com/kezako/">site</a>.</p>
+<p>Et surtout, partage cette newsletter avec tes ami·e·s (en leur envoyant <a href="https://lepointq.com">ce lien</a> par exemple), plus on est dans la communauté, plus on pourra grandir à vos côtés !</p>
+<p>À lundi pour de nouvelles aventures,</p>
+<p>Juliette, Orianne, Tom et Thaïs aka Le Point Q.</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://www.instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
