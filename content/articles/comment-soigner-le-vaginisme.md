@@ -1,13 +1,12 @@
 +++
 authors = ["Juliette", "Tom"]
 date = 2020-11-15T21:22:37Z
-draft = true
 image = "/media/uploads/raphael-nast-l7ikhhmp7u4-unsplash.jpg"
 preview = "Le vaginisme nécessite souvent une prise en charge à la fois psychologique et physique. Notre sexologue Céline Vendé vous donne quelques petits conseils."
 section = "La bonne nouvelle"
 text = "Le vaginisme nécessite souvent une prise en charge à la fois psychologique (avec un sexologue) et physique (avec un kiné ou une sage-femme). Notre sexologue Céline Vendé ([@sexologue_therapeute](https://www.instagram.com/sexologue_therapeute)) explique : _\"Le vagin n’est pas fermé de manière physiologique, c’est une construction mentale d’une fermeture du vagin. Par ailleurs, il faut détendre la zone pelvienne, pour pallier à cette fermeture.\"_\n\n**Elle vous donne quelques petits conseils :**\n\n1. **Se reconnecter avec son corps.** Il s'agit avant tout de détendre la zone pelvienne, hyper tonique. On peut pratiquer la sophrologie, la méditation ou le yoga. Voici deux exercices simples :\n   * mettre ses mains sur son bas-ventre, de chaque côté de la vulve, pour ressentir cette zone-là, et se reconnecter avec ses sensations.\n   * regarder sa vulve : prendre un miroir et s'asseoir en tailleur. Se répéter _\"cette partie du corps m'appartient\"_, _\"je me réapproprie ma vulve\"_.\n2. **En parler avec son partenaire.** C'est primordial d'avoir une communication fluide avec celui-ci. En consultation, je reçois toujours le partenaire quand je reçois une patiente, il faut qu'il soit impliqué dans le trio que constituent les deux individus et le vaginisme. C'est plus facile d'en parler en dehors du lit conjugal, où, sur le moment, on est vite submergé par l'émotion. Ça permet aussi de déculpabiliser la personne, et de s'épanouir avec d'autres pratiques sexuelles avant de revenir éventuellement à la pénétration !\n3. **Trouver une méthode adaptée.** On peut consulter un professionnel de santé : sexologue pour la partie psychologique, kiné ou sage-femme pour la partie physique. C'est important de ne pas rester seule, car cela peut avoir des conséquences (comme la dépression). Il y a des groupes Facebook sur la pénétration, et des comptes Instagram comme [@orgasme_et_moi](https://www.instagram.com/orgasme_et_moi/) et [@mashasexplique](https://www.instagram.com/mashasexplique/) qui en parlent."
-themes = ["vaginisme", "dyspareunie"]
-title = "Comment soigner le vaginisme ? "
+themes = ["vaginisme", "dyspareunie", "vagin"]
+title = "Comment soigner le vaginisme ?"
 veracity = "Faux"
 
 +++
