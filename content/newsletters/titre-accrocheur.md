@@ -5,7 +5,7 @@ edito = "Bienvenue dans ce nouveau numéro du Point Q !\n\nUn petit bijou qui te
 la_bonne_nouvelle = []
 numero = 9
 on_debunke = []
-outro = ""
+outro = "Que vous soyez plutôt gourdin, plug ou satisfyer, on espère que vous avez pris votre pied à nous lire. Et que vous êtes bien équipés pour un hiver douillet (que dis-je, orgasmiiiique). \n\nSi tu as passé un bon moment et aimé ce contenu, tu peux le partager à tes amis avec ton lien de partage unique : https://lepointq.com?referrer={{ contact.EMAIL }}\n\n(Faut le sélectionner avec le curseur et le copier/coller sur Whatapps et Messenger, à l'ancienne Lucienne.)\n\nN'hésite pas à nous faire des retours, on transmettra aussi le SAV à Manon et Camille ;) Si tu veux nous suggérer un thème ou nous conseiller quelque chose, tu peux le faire sur notre [site](https://lepointq.com), sur [Facebook](https://www.facebook.com/lepointq.news/) ou sur [Instagram](). \n\nLa bise et à lundi prochain,\n\nJuliette, Orianne, Tom et Thaïs aka Le Point Q."
 plume_morgan = ""
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
 temoignages = []
