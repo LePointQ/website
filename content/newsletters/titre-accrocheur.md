@@ -1,0 +1,15 @@
++++
+date = 2020-11-22T15:45:39Z
+draft = true
+edito = "Bienvenue dans ce nouveau numéro du Point Q !\n\nUn petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée \"plaisir\". Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020.\n\nA 30 jours de Noël, on a eu envie de vous ravir les papilles et les sens ! On a donc choisi Les Sextoys, comme thème de cette 9ème newsletter. Et on a une sacré _Bonne Nouvelle_ ! En partenariat avec TalQUnivers, le premier Concept store du plaisir, on vous guide dans le choix de sextoys adaptés à votre anatomie, à vos pratiques et à vos envies. \n\nOn partage les valeurs des deux fondatrices, Manon et Camille, qui prônent une sexualité inclusive, ludique et positive. Ensemble, on lève les tabous sur le plaisir ! Et comme on vous aime vraiment beaucoup, vous avez 10% de réduction sur toute la boutique, avec le Code Promo [LEPOINTQ](https://talq-univers.com/discount/LEPOINTQ) ! (jusqu'au 10 décembre). \n\nMais avant cela, vos fidèles journalistes du Point Q sont sur le pont, parce que le lundi à 11h, c'est pas souvent l'horaire pour tester des jouets. Comme chaque semaine, Orianne recueilli vos témoignages, drôles et touchants, sur votre utilisation des sextoys ! Vous nous avez répondu sur Instagram, la plateforme où on échange le plus ensemble. Côté Debunk, cette semaine c'est Thaïs qui s'empare d'une idée reçue : les femmes se doigtent-elles durant la masturbation ? Et pour le Vue D'ailleurs, Tom s'est donné à fond, pour retrouver, dans l'histoire, l'origine du vibromasseur. Il a même regardé un film (très très drôle) sur le sujet. \n\nMais là où on s'amuse le plus finalement, c'est toujours avec Morgan, notre dessinateur  ! Lui aussi fait un saut dans le temps cette semaine...A la préhistoire, on ne fabriquait pas que des silex...\n\nRiez, souriez, aimez, et partagez la newsletter autour de vous,\n\nLe Point Q, qui vous veut beaucoup de bien. "
+la_bonne_nouvelle = []
+numero = 9
+on_debunke = []
+outro = ""
+plume_morgan = ""
+preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
+temoignages = []
+title = "Titre accrocheur"
+vu_d_ailleurs = []
+
++++
