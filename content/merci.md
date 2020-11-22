@@ -9,4 +9,4 @@ Tu as maintenant accès [aux newsletters passées](https://lepointq.com/newslett
 
 <p class='separator'>● ● ●</p>
 
-Tes ami·e·s ne sont pas encore abonné·e·s au Point Q ? N’hésite pas à faire passer le mot autour de toi !
+Tes ami·e·s ne sont pas encore abonné·e·s au Point Q ? N’hésite pas à faire passer le mot autour de toi ! Voici ton lien de partage unique&nbsp;:

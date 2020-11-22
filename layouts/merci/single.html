@@ -7,6 +7,11 @@
 
 			{{ .Content | markdownify }}
 
+			<div class='referral-link'>
+				<input type='text'  />
+				<span class='far fa-clipboard'></span>
+			</div>
+
 			<div class='share-block'>
 				<a
 					href='https://www.facebook.com/sharer/sharer.php?u={{ .Site.BaseURL }}'
@@ -33,4 +38,19 @@
 			<img src="{{ .Site.BaseURL }}/media/illu1-01.png" class='hero' style='margin: 1rem auto;' />
 		</article>
 	</main>
+{{ end }}
+
+{{ define "page-script" }}
+	<script>
+		const referrer = new URLSearchParams(window.location.search).get('referrer');
+		document.querySelector('.referral-link input').value = 'https://lepointq.com' + (referrer ? '?referrer=' + referrer : '');
+
+		document.querySelector('.referral-link span').addEventListener('click', (e) => {
+			document.querySelector('.referral-link input').select();
+			document.execCommand('copy');
+			e.target.className = 'fas fa-check';
+			setTimeout(() => e.target.className = 'far fa-clipboard', 1000);
+
+		});
+	</script>
 {{ end }}

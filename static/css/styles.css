@@ -500,6 +500,36 @@ main.blurred {
 	}
 }
 
+.referral-link {
+	display: table;
+	max-width: 90%;
+	margin: 1rem auto 0;
+	border-radius: 0.25rem;
+	border: 2px solid var(--main-color);
+	white-space: nowrap;
+}
+
+.referral-link input {
+	color: var(--grey);
+	font-size: 0.9rem !important;
+	border: none;
+	margin: 0 0.5rem;
+}
+
+@media only screen and (max-width: 32rem) {
+	.referral-link input {
+		width: 150px;
+	}
+}
+
+.referral-link span {
+	height: 100%;
+	padding: 0.5rem 1rem;
+	color: white;
+	background: var(--main-color);
+	cursor: pointer;
+}
+
 .share-block {
 	display: flex;
 	justify-content: center;
