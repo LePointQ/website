@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🍑 Sextoy, quand je te tiens</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>À 30 jours de Noël, on a eu envie de vous ravir les papilles et les sens ! On a donc choisi Les Sextoys comme thème de cette 9ème newsletter.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Sextoy, quand je te tiens
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020.</p>
+<p>Vous êtes 300 abonné·e·s, on danse de plaisir !</p>
+<p>À 30 jours de Noël, on a eu envie de vous ravir les papilles et les sens ! On a donc choisi <strong>Les Sextoys</strong> comme thème de cette 9ème newsletter. Et on a une sacré « bonne nouvelle » ! En partenariat avec <a href="https://talq-univers.com">TalQ Univers</a>, le premier « Concept store » du plaisir, on vous guide dans le choix de sextoys adaptés à votre anatomie, à vos pratiques et à vos envies.</p>
+<p>On partage les valeurs des deux fondatrices, Manon et Camille, qui prônent une sexualité inclusive, ludique et positive. Ensemble, on lève les tabous sur le plaisir ! Et comme on vous aime vraiment beaucoup, vous avez 10 % de réduction sur toute la boutique, avec le code promo <a href="https://talq-univers.com/discount/LEPOINTQ">LEPOINTQ</a> ! (jusqu’au 10 décembre).</p>
+<p>Mais avant cela, vos fidèles chroniqueurs du Point Q sont sur le pont, parce que le lundi à 11h ça n’est pas souvent l’horaire pour tester des jouets. Comme chaque semaine, Orianne a recueilli <strong>vos témoignages, drôles et touchants, sur votre utilisation des sextoys !</strong> Vous nous avez répondu sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, la plateforme où on échange le plus ensemble. Côté débunk, cette semaine c’est Thaïs qui s’empare d’une idée reçue : <strong>les femmes se doigtent-elles durant la masturbation ?</strong> Et pour le vu d’ailleurs, Tom s’est donné à fond pour retrouver, dans l’histoire, <strong>l’origine du vibromasseur</strong>. Il a même regardé un film (très très drôle) sur le sujet.</p>
+<p>Mais là où on s’amuse le plus finalement, c’est toujours avec <strong>Morgan, notre dessinateur ! Lui aussi fait un saut dans le temps cette semaine...</strong> À la préhistoire, on ne fabriquait pas que des silex...</p>
+<p>Riez, souriez, aimez, et partagez la newsletter autour de vous,</p>
+<p>Le Point Q, qui vous veut beaucoup de bien.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/we-vibe-wow-tech-j39qg9mxcz0-unsplash-1.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/temoignages.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										Tous ces beaux joujoux que je vois en rêve...
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+											<span>
+												Par Tom & Orianne
+											</span>
+										</h3>
+									
+									
+									<p><strong><em>Agathe*, 23 ans, célibataire</em></strong></p>
+<ul>
+<li><strong>Quand as-tu commencé à utiliser des sextoys ?</strong></li>
+</ul>
+<p>« Comme beaucoup de monde, lors du premier confinement. J’en accumule de plus en plus ! J’ai commencé avec un vibromasseur classique puis je suis passée à l’œuf vibrant. Là, j’attends une autre commande. Un stimulateur clitoridien, c’est le fameux truc du moment, ça me tente bien je dois dire ! »</p>
+<ul>
+<li><strong>Qu’est-ce que ça t’apporte ?</strong></li>
+</ul>
+<p>« Ça me permet de découvrir mon corps, parce qu’en duo c’est pas forcément évident. On a tous déjà vu l’anatomie du corps en photo, on se regarde, mais on ne sait pas forcément ce qui nous plaît ou où se trouvent nos zones sensibles. C’est toujours mieux de le savoir. »</p>
+<p><strong>Pour savoir ce qu’est l’œuf vibrant (ou le Flamingo) rendez-vous dans « La bonne nouvelle » !</strong></p>
+<p><strong>Le conseil d’Agathe</strong> : « le lubrifiant c’est la base ».
+<br /><br /><br />
+<strong><em>Pauline, 22 ans, en couple</em></strong></p>
+<ul>
+<li><strong>Comment ça a commencé ?</strong></li>
+</ul>
+<p>« Mon premier sextoy, je l’ai eu à mes 18 ans. Ce sont mes meilleurs potes qui me l’ont offert. J’avais eu le canard cliché avec la moumoute autour du cou. Au départ je n’avais pas vraiment l’intention de l’utiliser. »</p>
+<ul>
+<li><strong>Quand as-tu eu le déclic ?</strong></li>
+</ul>
+<p>« On a commencé à l’utiliser avec mon ex au bout d’un an de relation. C’est venu après la phase où on a appris à se connaître, à savoir ce qu’aimait l’autre. On s’est dit : pourquoi ne pas pimenter nos rapports ! J’ai aussi testé l’anneau pénien avec lui et c’était vraiment super cool. Maintenant j’ai le <strong><em>rabbit</em></strong> et c’est aussi très sympa ! Avec mon nouveau copain, on en achète ensemble. Ça crée un lien et on peut même se conseiller. Bon, des fois ça marche super bien et des fois c’est un flop. Il faut en discuter. Ce n’est pas la fin du monde ! »</p>
+<ul>
+<li><strong>C’est quoi le « rabbit » ?</strong></li>
+</ul>
+<p>« C’est un vibromasseur qui comporte à la fois une tige phallique pour la stimulation vaginale, et un stimulateur clitoridien externe, attaché à la tige. »</p>
+<p><strong>Le conseil de Pauline</strong> : « acheter un nettoyant avec le sextoy ».
+<br /><br /><br />
+<strong><em>Marie*, 23 ans, en couple depuis 5 ans</em></strong></p>
+<ul>
+<li><strong>Raconte-nous l’histoire de ton premier sextoy ?</strong></li>
+</ul>
+<p>« Avant d’être avec mon copain, je n’avais jamais eu de relation sexuelle et jamais pratiqué la masturbation, ou très peu. J’ai vécu trois ans en internat donc je n’ai jamais eu beaucoup d’intimité. Avec lui, je me suis rendue compte de ce qu’était un orgasme, et je voulais y parvenir toute seule.</p>
+<p>On est parti en Erasmus, chacun dans un pays différent. On se voyait tous les deux mois donc j’ai commencé à me dire <em>va peut être falloir s’y mettre</em>. Mais ça ne fonctionnait pas, et j’étais un peu gênée.</p>
+<p>Mon copain a fini par m’acheter un sextoy pour Noël, le <em>satisfyer.</em> Il est incroyable, il ne stimule que le clitoris. Maintenant, c’est notre partenaire de sexe. Je le sors très régulièrement quand on couche ensemble. C’est une sorte d’assurance que je vais avoir un orgasme. Quand j’ai du mal à venir je le prends, et ça nous permets de finir ensemble. »
+<br /><br /><br />
+<strong><em>Luka, 20 ans, célibataire</em></strong></p>
+<p><strong>Et pour toi ça se passe comment ?</strong></p>
+<p>« J’ai déjà utilisé un plug. Mon ex voulait absolument que j’essaye, je l’ai fait avec lui et c’était assez excitant. Mais quand j’ai tenté en solo c’était bof, je n’ai pris aucun plaisir : je me sens seul et je n’aime pas. Après je suis assez serré, donc si je n’ai personne pour me mettre à l’aise, j’ai du mal. »</p>
+<p><em>*Les prénoms ont été changés.</em></p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/p06r251c.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										Vu d&rsquo;ailleurs
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Tom
+											</span>
+										</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											L&rsquo;histoire obscure du vibromasseur&nbsp;:<br />entre Cléopâtre et hystérie
+										</h4>
+									
+									
+									<p>Le premier vibromasseur de l’histoire aurait été inventé en l’an 40 avant notre ère par ni plus ni moins que... Cléopâtre, qui aurait utilisé pour son plaisir personnel un rouleau de papyrus dans lequel étaient enfermées des abeilles. Mais il faut attendre la fin du XIXe siècle pour que le premier vibromasseur moderne soit conçu par un certain Joseph Mortimer Granville.</p>
+<p>Ce médecin britannique n’avait pourtant pas le plaisir féminin en tête quand il déposa le brevet du « marteau de Granville », un « percuteur mécanique à ressort » destiné à soulager par le massage les douleurs musculaires ou la constipation. Mais son invention fut déviée de son usage initial quand certains médecins l’utilisèrent pour « soigner » par la masturbation des patientes atteintes d’hystérie.</p>
+<p>Toute sa vie, Granville s’opposera à une telle utilisation de son appareil. Dans un de ses livres, il écrit : <em>« J’ai toujours évité, et j’éviterai toujours de traiter les femmes par percussion, simplement parce que je ne souhaite pas être trompé par les contradictions de l’état hystérique. »</em> Il faut dire que l’hystérie féminine, considérée comme une maladie mentale jusqu’en 1952, était en réalité un diagnostic « fourre-tout » recouvrant de nombreuses pathologies réelles (épilepsie, troubles de la personnalité...) ou fantasmées (désir sexuel « excessif »...), souvent liées à une sexualité féminine encore très réprimée.</p>
+<p>Pourtant, ces deux histoires — celle selon laquelle le vibromasseur de Granville aurait servi à soigner l’hystérie, et le godemichet bourdonnant de Cléopâtre —, pourraient n’être que des mythes. Popularisée par l’historienne Rachel Maines dans son ouvrage de 1999 <em>The Technology of Orgasm: Hysteria, the Vibrator, and Women’s Sexual Satisfaction</em>, cette théorie concernant Granville est en tout cas <a href="">remise en cause par de nombreux historiens depuis</a>, qui pointent le manque de sources attestant de telles pratiques.</p>
+<p>Ce qui est certain, c’est qu’à partir des années 1920 le vibromasseur électrique portatif s’installe dans les foyers, à grand renfort de réclames vantant les mérites de l’appareil pour se masser le front ou la nuque — même s’il ne fait aucun doute que certaines femmes l’aient utilisé pour masser d’autres endroits. Avec la révolution sexuelle des années 1960, le vibromasseur ne cache plus son usage réel, et continuera à être amélioré jusqu’à aujourd’hui.</p>
+<p>Si cette vraie-fausse histoire des origines du vibromasseur vous intéresse ou vous amuse, je vous conseille la comédie romantique <em>Oh My God !</em> (<em>Hysteria</em> dans son titre original, sortie en 2011). Prenant encore plus ses distances avec la réalité historique — puisqu’il fait de Mortimer Granville un jeune médecin « soignant » les femmes hystériques et inventant l’appareil pour soulager les crampes de ses propres doigts — le film n’en est pas moins très drôle et aborde avec une certaine justesse (et beaucoup d’humour) la condition des femmes dans l’Angleterre victorienne. Car parfois, comme avec Cléopâtre, le mythe est tout simplement plus amusant que la vérité...</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/giphy-3.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/on_debunke.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										On débunke&nbsp;!
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Pour se masturber, la majorité des filles<br />se doigtent ou utilisent un gode&nbsp;&raquo;
+										</h4>
+									
+									
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+									
+									<p>Cette idée reçue chez de nombreux hommes mais aussi de femmes, doit sûrement beaucoup au porno et au tabou de la masturbation féminine.</p>
+<p>Frottement du clitoris, coussin serré entre les cuisses, pommeau de douche ou sextoy... Il existe bien d’autres façons de se faire du bien en solitaire pour une femme. Et ces alternatives seraient d’ailleurs bien plus répandues que celle qui consiste à s’insérer un doigt ou autre chose dans le vagin.</p>
+<p>Tabou oblige, très peu de données existent aujourd’hui sur la masturbation féminine. En octobre dernier, une internaute avait fait sa petite enquête sur Twitter : parmi 63 625 personnes ayant une vulve, seules 7,4 % disaient se masturber via la pénétration. Dans les rares études plus formelles sur le sujet, ce chiffre plafonne maximum à 21 %. Pour les autres cas, c’est en majorité le clitoris qui est stimulé, mais pas que : les seins, l’imagination... Il existe autant de façons de se masturber qu’il y a de corps : <em>« la réalité [de la masturbation féminine] n’a rien à voir avec le narratif culturel qui en est fait, elle est bien plus variée et intéressante »</em>, résume l’éducatrice sexuelle américaine Emily Nagoski, <a href="https://medium.com/@enagoski/what-60-years-of-research-says-about-womens-masturbation-f3b842343454">à l’origine d’un papier résumant les quatre études les plus abouties</a> entre 1953 et 2013. Il y a 60 ans déjà, le doigt n’avait pas la cote.</p>
+<p>Donc en bref : comme pour l’acte sexuel, la masturbation féminine n’est pas qu’une histoire de pénétration.</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/capture-d-ecran-2020-11-22-a-18-22-30.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										La bonne nouvelle
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Juliette.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Juliette
+											</span>
+										</h3>
+									
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Dis moi qui tu es, je te propose un sextoy&nbsp;&raquo;,<br />avec TalQ Univers, premier Concept store du plaisir
+										</h4>
+									
+									
+									<p>Comme promis, cette semaine on prend soin de votre plaisir avec Manon, 25 ans, l’une des fondatrices du Concept Store <a href="https://talq-univers.com">TalQ Univers</a>. Elle vous conseille cinq objets à mettre sous le sapin :</p>
+<h3><strong>Que choisir pour mon premier sextoy ?</strong></h3>
+<p><strong><em>Le vibro My first — 29 €</em>.</strong> Comme son nom l’indique, il a été pensé comme un premier sextoy vaginal. On peut stimuler par vibration à la fois son clitoris, en le posant dessus, ou bien son vagin, par pénétration. On peut aussi l’utiliser sur un gland, particulièrement sensible aux vibrations. Il est waterproof, discret et rechargeable par USB ! <a href="https://talq-univers.com/collections/vibromasseurs/products/my-first-pour-un-premier-vibro-vaginal">Tu peux l’acheter ici</a>, et tu as 10 % avec le code promo <a href="https://talq-univers.com/discount/LEPOINTQ">LEPOINTQ</a> (valable sur toute la boutique de TalQ Univers — l’indiquer en validant le panier —, jusqu’au 10 décembre).</p>
+<h3><strong>Je suis en relation à distance, qu’est-ce que tu me conseilles ?</strong></h3>
+<p><strong><em>Le flamingo de Magic Motion — 80 €.</em></strong> C’est le sextoy à distance le plus multi-fonctions ! C’est un œuf, avec une tête de flamant-rose (pour le clitoris), télécommandé avec son smartphone via une appli (mini-jeux, musique…). On peut l’utiliser seul ou avec un partenaire. Il permet d’ouvrir la discussion sur ce que chacun ressent, et pour les femmes c’est aussi un moyen de s’exercer à la musculation du périnée. Si tu es charmé·e, <a href="https://talq-univers.com/collections/vaginaux/products/le-flamingo-le-flamand-rose-a-sortir">commande ici</a> ! Code promo : LEPOINTQ.</p>
+<h3><strong>Et si j’ai un pénis ?</strong></h3>
+<p><strong><em>L’œuf de Tenga — 9 €.</em></strong> Un objet sympa pour pimper sa masturbation, ce que les hommes n’osent pas toujours faire. À l’intérieur, c’est une matière gélifiée, qui permet de découvrir de nouvelles sensations. Niveau taille, il est adapté à tous les pénis. Et pour ceux qui auraient une petite appréhension, c’est un accessoire simple, sans technologie et non allergène. Pour pimenter ton confifi, choisis l’un des <a href="https://talq-univers.com/collections/masturbateurs-et-autres-accessoires-peniens">trois modèles juste ici</a> ! Code promo : LEPOINTQ.</p>
+<h3><strong>J’ai déjà utilisé plein de sextoys, surprend-moi !</strong></h3>
+<p><strong><em>Le kit Clone-A-Pussy ou Clone-A-Willy, de 24 à 47,95 €.</em></strong> Et oui, tu peux désormais réaliser un moulage de ta vulve, ou de ton pénis. Si tu veux un sextoy personnalisé, ou si tu vis loin de ta moitié, c’est un cadeau idéal. Le kit permet de se rappeler que la sexualité, ça peut aussi être drôle, et donc de dédramatiser le sujet. Si comme nous, tu es assez fan de l’idée, <a href="https://talq-univers.com/collections/clone-a-willy">c’est ici</a> ! Code promo : LEPOINTQ.</p>
+<p>Y avait plus de place, mais comme on pense à tout le monde, on ne pouvait pas vous laisser sans vous conseiller le <a href="https://talq-univers.com/collections/sextoys-clitoridiens/products/stimulateur-satisfyer-pro-traveler">Satysfier Pro Traveler</a> (<em>40 €</em>), pour les clitos qui veulent kiffer en tout lieu, et le <a href="https://talq-univers.com/collections/plugs-anal-chapelets/products/le-plug-bijoux-le-rosebud-classique">Rosebud Classique</a>, le plug anal bijoux (<em>59 €</em>), pour un moment de plaisir élégant.</p>
+<p>Un petit rappel aussi : pour tout ce qui implique une pénétration, on n’oublie pas d’utiliser un lubrifiant. Et c’est très important de bien nettoyer les sextoys, voici un <a href="https://shop.aids.ch/shop-uploads/1641-02-guide-entretien-sex-toys.pdf">petit guide très complet</a> de l’association Les Klamydia’s.</p>
+<p>Merci Manon pour tes conseils ! Pour suivre l’actu de TalQ Univers, retrouvez-les <a href="https://www.instagram.com/talq_univers/">sur Instagram</a>.</p>
+<p><em>Grâce à cet article sponsorisé, Le Point Q peut financer les petits mails que vous recevez et voir l’avenir sans nuages...</em></p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+
+			
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+								<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									<img
+										src="https://lepointq.com/media/icons/plume_morgan.png"
+										width="40" height="40"
+										style="vertical-align: middle;"
+									/>
+									Sous la plume de Morgan
+								</h2>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<img src="https://lepointq.com/media/uploads/strip-morgan-sextoy.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+				</td>
+			</tr>
+			<!-- Hero Image, Flush : END -->
+		
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Que tu sois plutôt gourdin, plug ou satisfyer, on espère que tu as pris ton pied à nous lire. Et que tu es bien équipé·e pour un hiver douillet (que dis-je, orgasmiiiique).</p>
+<p>Si tu as passé un bon moment et aimé ce contenu, tu peux le partager à tes amis avec ton lien de partage unique : https://lepointq.com?referrer={{ contact.EMAIL }} <em>(faut le sélectionner avec le curseur et le copier/coller sur WhatsApp et Messenger, à l’ancienne Lucienne)</em></p>
+<p>N’hésite pas à nous faire des retours, on transmettra aussi les plaintes et histoires drôles à Manon et Camille ;) Si tu veux nous suggérer un thème ou nous conseiller quelque chose, tu peux le faire sur <a href="https://lepointq.com">notre site</a>, sur <a href="https://www.facebook.com/lepointq.news/">Facebook</a> ou sur <a href="">Instagram</a>.</p>
+<p>La bise et à lundi prochain,</p>
+<p>Juliette, Orianne, Tom et Thaïs aka Le Point Q.</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://www.instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
