@@ -1,7 +1,6 @@
 +++
 authors = ["Juliette"]
 date = 2020-11-29T22:09:26Z
-draft = true
 image = "/media/uploads/capture-d-ecran-2020-11-29-a-15-38-36.png"
 preview = "Maintenant que vous êtes les rois et reines de la Chupa Chups, il nous reste un conseil à vous donner : protégez-vous les petits Points Q !"
 section = "La bonne nouvelle"
