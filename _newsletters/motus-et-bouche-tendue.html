@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🍭 Motus et bouche tendue</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Bienvenue dans ce nouveau numéro du Point Q !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Motus et bouche tendue
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020.</p>
+<p>Selon un petit sondage, réalisé par nos soins sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, vous seriez 85 % (sur 59 répondant·e·s) à pratiquer le sexe oral. Ce n’est pas rien et c’est pour ça qu’on a décidé d’en parler cette semaine (également parce que vous nous aviez déjà suggéré ce thème). On s’est plongé dans les méandres (théoriques) de la fellation, du cunnilingus et de l’anulingus, pour vous éclairer sur l’essentiel, lever vos peurs, et peut-être faire naître de nouveaux moments de plaisir.</p>
+<p><strong>Orianne a recueilli vos témoignages (inclusifs comme on les aime) sur vos expériences du sexe oral.</strong> On en a tiré deux leçons, qu’on vous partage : tout d’abord, « tous les goûts sont dans la nature » jusqu’au fond du lit, et ensuite, on a tout a fait le droit de ne pas aimer déguster ou être dégusté·e, c’est assez courant aussi finalement. Dans ce cas, on communique (comme toujouuuuurs) — et on rappelle que la pénétration non consentie, même avec une langue, c’est un viol. Dans le débunk, <strong>Tom lève les tabous sur l’anulingus</strong>, tant sur son aspect hygiénique que sur ses pratiquant·e·s. Et enfin, dans la bonne nouvelle, Juliette joue au docteur Maboul, <strong>c’est la minute prévention</strong> ! La chlamydia, les gonorrhées et la syphilis aiment aussi vos petites gencives.</p>
+<p>Et enfin, celui qui étire nos paumettes et nos consciences, avec sa dose de transgression bien sentie, c’est Morgan, notre dessinateur ! <strong>Avis aux hétéro-curieux, en bas de cette newsletter !</strong></p>
+<p>On vous souhaite tout plein de bonheur, et de trouver des partenaires dans les 20 km à la ronde,</p>
+<p>Le Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/illu_oralsex.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/temoignages.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										Et toi, le sexe oral&nbsp;?
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+
+
+									<ul>
+<li><strong>Diane, 25 ans, bisexuelle, célibataire</strong></li>
+</ul>
+<p>« J’aime beaucoup l’idée de donner du plaisir à mon/ma partenaire de manière générale. C’est hyper important pour moi parce que ça m’excite de savoir que l’autre prend du plaisir. C’est aussi une histoire de pouvoir que tu as sur la personne. Pour le cunni, je n’en ai jamais fait. En tout cas, il y a une personne avec qui j’aimerais bien essayer. J’ai assez hâte d’apprendre et de voir comment on fait. Je suis sûre que ce sera similaire à une fellation. J’ai envie de donner du plaisir à la fille en question. »</p>
+<ul>
+<li><strong><em>Nox*</em>, 27 ans, pansexuelle**, célibataire</strong></li>
+</ul>
+<p>« Ce qui me plait, c’est donner du plaisir sans forcément en recevoir en retour. C’est vraiment un don, un moment où l’on s’occupe de son/sa partenaire. C’est important que ce ne soit pas toujours donnant-donnant. Il y a cette sensation où on a la main sur ce qui se passe : la rapidité, la lenteur avec laquelle on veut que ça se passe. Je trouve ça assez gratifiant qu’on me confie cette partie de l’anatomie sensible, précieuse un peu dans la pudeur. Du point de vue de l’échange c’est important, on peut dire ce qu’on aime, ce qu’on n’aime pas. Ça permet de se rapprocher et de mieux connaitre la personne. Après il faut toujours que ce soit dans le respect de l’autre. »</p>
+<ul>
+<li><strong>Julien, 24 ans, hétérosexuel, en couple</strong></li>
+</ul>
+<p>« La fellation, ce n’est pas quelque chose qui me fait vraiment kiffer. On va dire que c’est bon à prendre mais je ne suis pas en demande. À chaque fois que j’ai des rapports, il y a toujours un moment où j’ai l’impression qu’une fois que j’ai donné, c’est à son tour de le faire. Mais moi je m’en fiche que ma partenaire me fasse une fellation ou pas. Ça arrive que la fille se mette en position et que je lui dise <em>non t’inquiète</em> et je l’embrasse. Spontanément, j’essaie d’éviter. Sinon, moi, j’aime bien faire des cunnis. J’aime vraiment sentir l’excitation monter chez ma partenaire. En ce moment je suis avec une fille, et de son côté elle n’a pas eu de bonnes expériences donc je ne lui en fais pas. Les rapports deviennent un peu <em>pénétration-centrés</em>. Résultat, j’ai une petite frustration parce que j’adore en faire. »</p>
+<ul>
+<li><strong>Delphine, 24 ans, hétérosexuelle, célibataire</strong></li>
+</ul>
+<p>« Quand c’est bien fait, j’aime bien les cunnilingus. Mais c’est peu souvent que je trouve un partenaire qui me fait du bien, parce que j’ai un clitoris sensible. J’ai l’impression que parmi toutes mes relations, il n’y en a eu qu’un seul qui a réussi à me faire plaisir comme ça. Sinon, j’aime réellement faire des fellations. C’est un acte tout à fait spontané, et parfois ça peut surprendre mon partenaire car il peut être habitué au cliché fellation = corvée. Pour moi c’est normal. J’aime sentir mon partenaire tressaillir et pousser des soupirs lorsque je lui fais plaisir. »</p>
+<p><em>*Ce prénom a été modifié</em></p>
+<p><em>** Qui est attiré·e par une personne peu importe son sexe ou son identité de genre</em></p>
+<p>Illustration : <a href="https://www.instagram.com/camillejoblin/">Camille Joblin</a></p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+
+
+
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/kenny-timmer-imkv1cb3a-y-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/on_debunke.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										On débunke&nbsp;!
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Tom
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Anulingus&nbsp;: vous avez dit tabou&nbsp;?
+										</h4>
+
+
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: #F47B67; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid #F47B67; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;PAS EXACTEMENT&nbsp;
+										</p>
+
+									<p>Parmi les diverses pratiques sexuelles orales, l’anulingus est sûrement la plus taboue. Et on peut comprendre pourquoi : au premier abord, stimuler avec sa langue le rectum de son ou sa partenaire peut sembler incongru, voire carrément dégoûtant. Pourtant, l’anus est une zone très érogène et il serait dommage de passer à côté de ses plaisirs !</p>
+<p>Premier blocage : la saleté. Qu’on le veuille ou non, l’anus reste associé au 💩, et cela peut entraîner une réaction de rejet pour la personne pratiquant l’anulingus, et une difficulté à se détendre pour celle le recevant. Pourtant, avec une bonne hygiène, l’anus n’est pas plus sale qu’une vulve ou qu’un pénis. Et si cette question te préoccupe, alors pourquoi ne pas prendre une douche avec ton ou ta partenaire juste avant d’essayer ? En plus de vous rassurer tous les deux, cela peut être l’occasion de faire monter l’excitation avec des caresses sous l’eau chaude.</p>
+<p>Autre préjugé : l’anulingus reste une pratique associée aux hommes gay. Cependant de plus en plus d’hétéros, hommes comme femmes, admettent avoir déjà léché l’anus de leur partenaire. Selon <a href="https://www.ifop.com/wp-content/uploads/2019/02/Analyse_ELLE_FK_2019.02.14.pdf">un sondage IFOP</a> réalisé en février 2019 pour le magazine <em>Elle</em>, 26 % des femmes interrogées avaient déjà reçu un anulingus, mais seulement 15 % l’avaient déjà pratiqué sur leur partenaire. Un chiffre faible à mettre sur le compte du tabou du plaisir anal chez l’homme hétéro, dont je vous parlais <a href="https://lepointq.com/newsletters/le-plaisir-dans-tous-ses-etats/">dans notre tout premier numéro</a>.</p>
+<p>Malgré tout, selon le même sondage, l’anulingus reste deux fois moins pratiqué que la sodomie par exemple. Pourtant, en complément avec du lubrifiant, il peut être un excellent préliminaire avant une pénétration anale. Attention toutefois : mieux vaut éviter d’enchaîner un anulingus et un cunnilingus, afin de ne pas contaminer la flore vaginale avec des germes intestinaux.</p>
+<p>Alors si tu as envie de tenter l’expérience avec ton ou ta partenaire, vous pourriez découvrir des plaisirs insoupçonnés...</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/capture-d-ecran-2020-11-29-a-15-38-36.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										La bonne nouvelle
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Juliette.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Juliette
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Chupa Chups&nbsp;? Oui mais jamais sans son emballage
+										</h4>
+
+
+									<p>Maintenant que vous êtes les rois et reines de la Chupa Chups, il nous reste un conseil à vous donner : protégez-vous les petits Points Q !</p>
+<p><strong>Herpès génital</strong>, <strong>gonorrhées</strong>, <strong>hépatite B</strong>, <strong>chlamydia</strong>... Ce sont quatre des Infections Sexuellement Transmissibles (IST) par des pratiques de sexe oral (fellation, cunnilingus ou anulingus), de même que la <strong>syphilis</strong> (en recrudescence), le <strong>VIH</strong> et le <strong>papillomavirus humain (HPV)</strong>. Si la plupart se soignent avec des antibiotiques, certaines peuvent avoir des conséquences à long terme (une chlamydia mal soignée peut entrainer l’infertilité, un papillomavirus provoquer un cancer du col de l’utérus ou de la gorge).</p>
+<p>Les risques d’infection sont moins importants que lors d’une pénétration, mais ils sont non négligeables. Et les IST de manière générale <a href="https://www.lemonde.fr/medecine/article/2018/07/18/tres-forte-hausse-des-infections-sexuellement-transmissibles-en-france_5333342_1650718.html">sont en forte hausse en France, notamment chez les 15-24 ans</a>. En 2017, les infections à gonocoque ont progressé de 70 % par rapport à 2015, et les infections à chlamydia de 15 %, selon <a href="https://www.santepubliquefrance.fr/determinants-de-sante/sante-sexuelle/donnees/epidemiologie-des-infections-sexuellement-transmissibles">Santé Publique France</a>.</p>
+<p>Lors du sexe oral, les infections ne se transmettent pas directement par la salive ou la bouche, mais lorsqu’il y a échange de muqueuses. C’est notamment le cas lorsqu’un partenaire a des lésions buccales, et c’est plus fréquent si on se lave fortement les dents avant un rapport ! Par exemple, si une personne a de l’herpès génital, elle peut le transmettre à la lèvre de son partenaire (herpès labial), et inversement.</p>
+<p>Alors comment se protéger ? Il y a quatre outils :</p>
+<p>1. <strong>Le vaccin</strong>. Mais il n’existe que pour l’hépatite B et le papillomavirus. Vérifiez vos carnets.</p>
+<p>2. <strong>Le préservatif</strong>. Votre ami fellation, il évite l’échange de muqueuses.</p>
+<p>3. <strong>La digue dentaire</strong>. Très méconnue, c’est un carré de latex qui permet de protéger les deux partenaires durant le cunnilingus et l’anulingus, à poser sur le sexe de ton ou ta partenaire. On n’en trouve pas toujours en pharmacie, tournez-vous donc plutôt sur des sites spécialisés sur Internet. Et pour savoir comment l’installer, c’est <a href="https://www.huffingtonpost.fr/entry/quand-on-pratique-le-sexe-oral-voici-comment-se-proteger-des-ist_fr_5cc2dd85e4b08846403cd06e">par ici</a> (dans la vidéo).</p>
+<p>4. <strong>Le dépistage.</strong> C’est le roi de ce top du sexe oral. Il n’existe aucun autre moyen d’être sûr que toi ou ton/ta partenaire (même vierge) n’est pas porteur (parfois sain) d’une IST. Si le dépistage est plus fréquent chez les couples gay, il est parfois oublié lors de pratiques de sexe oral entre personnes hétérosexuelles ou lesbiennes.</p>
+<p>On peut se faire dépister gratuitement dans les Centre de Dépistage Anonymes et Gratuits (CDAG) et les Centres d’Information, de Dépistage et de Diagnostique des Infections Sexuellement Transmissibles (CIDDIST), et sinon une ordonnance chez le médecin remboursera une bonne partie de votre voyage au Laboratoire d’Analyse Médicale.</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+								<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									<img
+										src="https://lepointq.com/media/icons/plume_morgan.png"
+										width="40" height="40"
+										style="vertical-align: middle;"
+									/>
+									Sous la plume de Morgan
+								</h2>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<img src="https://lepointq.com/media/uploads/strip-morgan-oral.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+				</td>
+			</tr>
+			<!-- Hero Image, Flush : END -->
+
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Merci Morgan ! On n’a pas parlé plus haut d’avaler ou non, ni de gorge profonde... Parce qu’on sait à quel point ton temps est précieux, le lundi matin. Et on en garde pour la suite ! Le plaisir, c’est bouchée par bouchée.</p>
+<p>D’ici là, si tu veux nous faire des retours, c’est toujours avec grand plaisir (on est même très reconnaissants de cette démarche), sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, <a href="%22https://www.facebook.com/lepointq.news%22">Facebook</a> ou sur notre<a href="https://lepointq.com"> site</a> !</p>
+<p>Si tu veux abonner les copains et copines, tu peux leur partager ton lien de parrainage : https://lepointq.com?referrer={{ contact.EMAIL }} (<em>en le sélectionnant avec le curseur et en faisant copier/coller sur WhatsApp et Messenger</em>). Ça nous permettra de savoir que c’est grâce à toi que Didier s’est abonné, et peut-être qu’un jour, avec ce lien, tu gagneras des petites choses... On y réfléchit.</p>
+<p>On te souhaite une super belle semaine,</p>
+<p>Juliette, Orianne, Tom et Thaïs aka Le Point Q.</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://www.instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

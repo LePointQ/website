@@ -35,7 +35,7 @@ const createCampaign = async () => {
 					name: 'Le Point Q',
 					email: 'lepointq.newsletter@gmail.com'
 				},
-				subject: `🍑 ${entities.decode(typografix(data.title))} - Le Point Q #${data.numero}`,
+				subject: `🍭 ${entities.decode(typografix(data.title))} - Le Point Q #${data.numero}`,
 				htmlContent: html,
 				recipients: { listIds: [listId] }
 			})
