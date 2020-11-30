@@ -9,7 +9,7 @@ outro = "Merci Morgan ! On n'a pas parlé plus haut d'avaler ou non, ni de gorge
 plume_morgan = "/media/uploads/strip-morgan-oral.jpg"
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
 temoignages = "articles/motus-et-bouche-ouverte.md"
-title = "Lorem ipsum"
+title = "Motus et bouche tendue"
 vu_d_ailleurs = []
 
 +++
