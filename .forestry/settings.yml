@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/partage.md
   label: Partage
-  match: "**/*"
 - type: document
   path: content/kezako.md
   label: Kézako ?
