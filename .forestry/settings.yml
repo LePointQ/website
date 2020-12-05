@@ -5,6 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: content/partage.md
+  label: Partage
+  match: "**/*"
+- type: document
   path: content/kezako.md
   label: Kézako ?
 - type: document
