@@ -1,6 +1,6 @@
 +++
 title = "Merci !"
-type = "merci"
+type = "partage"
 
 +++
 Tu fais désormais pleinement partie de la communauté du Point Q.
