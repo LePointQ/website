@@ -5,14 +5,14 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
-  path: content/partage.md
-  label: Partage
-- type: document
   path: content/kezako.md
   label: Kézako ?
 - type: document
   path: content/merci.md
   label: Merci
+- type: document
+  path: content/partage.md
+  label: Partage
 - type: document
   path: content/cgu.md
   label: CGU
