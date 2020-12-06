@@ -141,6 +141,14 @@
 	{{ partial "paywall" }}
 {{ end }}
 
+{{ define "page-style" }}
+	<style>
+		h1 {
+			margin-bottom: 2rem;
+		}
+	</style>
+{{ end }}
+
 {{ define "page-script" }}
 	<script>
 		window.addEventListener('load', () => {

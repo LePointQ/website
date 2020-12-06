@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>💬 Je consens, tu consens, nous consentons...</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Cette semaine, on a choisi le consentement, le thème le plus difficile qu’on ait eu à traiter pour l’instant. Il nous tenait particulièrement à cœur, car comme vous nous l’indiquez dans vos retours, l’essence de cette newsletter c’est de « démystifier » le sexe et de parler de tout, de manière simple et sans tabou.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Je consens, tu consens, nous consentons...
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020.</p>
+<p>Un grand merci tout d’abord à nos abonné·e·s qui ont répondu au questionnaire de satisfaction ! Plus on en sait sur vos goûts, plus on vous enchante le lundi matin. Globalement, vous lisez la newsletter entièrement, et vous avez une petite préférence pour les rubriques Témoignages, On débunke et Sous la plume de Morgan. <strong>Si vous n’avez pas encore complété le questionnaire,</strong> <a href="https://forms.gle/436zsccLdWtYpgY69"><strong>c’est possible ici</strong></a> <strong>! (3 min)</strong>. Ça nous aidera beaucoup.</p>
+<p>Cette semaine, on a choisi le consentement, le thème le plus difficile qu’on ait eu à traiter pour l’instant. Le titre de notre première interview, sortie dans la Péniche (le journal de Sciences Po) mercredi, y faisait d’ailleurs référence : « <a href="http://www.lapeniche.net/interview-le-point-q-tant-que-le-consentement-existe-tous-les-plaisirs-sont-permis/">Tant que le consentement existe, tous les plaisirs sont permis</a>. » Il nous tenait particulièrement à cœur, car comme vous nous l’indiquez dans vos retours, l’essence de cette newsletter c’est de « démystifier » le sexe et de parler de tout, de manière simple et sans tabou.</p>
+<p><strong>Dans les témoignages, Orianne a recueilli vos expériences, souvent évolutives, du consentement.</strong> D’Instagram à WhatsApp, on vous remercie vraiment de nous avoir fait confiance, et on vous rappelle que vous pouvez témoigner de manière anonyme (en changeant votre prénom), en nous envoyant un message sur <a href="https://www.instagram.com">Instagram</a>, sur <a href="https://www.facebook.com/lepointq.news">Facebook</a> ou en écrivant à <a href="mailto:lepointq.newsletter@gmail.com">lepointq.newsletter@gmail.com</a>. Une fois le contact établi, on discute ensemble.</p>
+<p><strong>Dans le Vu d’ailleurs, Tom fait un tour d’Europe du consentement</strong> : dans certains pays, il est au cœur de la législation sur le viol, et dans d’autres non. Et la France alors ? <strong>Thaïs poursuit, avec un débunk de haut niveau et courageux : si j’aime être dominée par un homme, suis-je antiféministe ?</strong> Réponse ci-dessous. <strong>Dans la bonne nouvelle, un petit cadeau, BDSM ! Juliette interview Alexis Himeros, le créateur du podcast</strong> <a href="https://www.lesondudesir.fr/lsdd_instagram"><strong>Le Son du Désir</strong></a><strong>.</strong> L’épisode de la semaine s’intitule « Le maître des fessées », et on parle ensemble porno féministe et jouissance des oreilles ! C’est chaud et quuuuuuoi ? <strong>Oui, vous avez bien lu, on vous offre un mois d’abonnement gratuit si vous partagez la newsletter à cinq de vos amis !</strong> Le règlement du concours est en bas... Et vous avez 37 épisodes à rattraper...</p>
+<p>On espère que cette lecture vous fera le même effet que le chocolat du 7 décembre sur le palais,</p>
+<p>Le Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/33d8b66f-dbb3-4eb9-9bc3-6e6aef7456a4.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/temoignages.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										Consentement sur l&rsquo;oreiller
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+
+
+									<ul>
+<li><strong>Béatrice* — 22 ans, bisexuelle, en couple</strong></li>
+</ul>
+<p>« C’était lors de ma première expérience sexuelle il y a 5 ans. Au début j’avais envie, on s’est fait des caresses avec nos mains et avec nos bouches et c’était très bien. Il a voulu continuer mais j’hésitais. Il a tenté de m’exciter en me caressant, en m’embrassant. À un moment, il m’a redemandé, mais je ne le sentais pas. Il s’est énervé et m’a dit que je voulais. Il m’a pénétré brutalement. Je me souviens de ma tête qui heurte le mur violemment et de cette douleur à la tête sur laquelle je me suis concentrée tout en me détachant de la situation présente. J’ai compris un an après que c’était un viol. J’ai mis deux ans avant de pouvoir coucher avec un·e partenaire à nouveau. La fois d’après, j’ai eu une relation avec une femme et j’étais vraiment en confiance. C’est ça qui m’a rouvert la porte du plaisir partagé. »</p>
+<ul>
+<li><strong>Émilie — 22 ans, pansexuelle, célibataire</strong></li>
+</ul>
+<p>« En parler ouvertement permet de débloquer des peurs ou des appréhensions vis-à-vis de certaines envies. Mais ça n’a pas toujours été aussi facile... Avec mon premier copain, la notion de consentement n’existait pas et généralement on couchait ensemble pour lui faire <em>plaisir</em>. On ne parlait pas du tout du consentement. On couchait ensemble parce que c’est la vision que nous avions d’un couple, c’est-à-dire on se met en couple, on couche ensemble, même si je n’en avais pas envie. Avec du recul, je pense que pour ma part c’est plus de la non-information que du non-consentement. On ne parlait pas autant de consentement qu’aujourd’hui, auprès des jeunes. »</p>
+<ul>
+<li><strong>Virgil — 24 ans, hétérosexuel, célibataire</strong></li>
+</ul>
+<p>« Pour aborder le consentement en général, je glisse des questions dans le jeu de la séduction, du style : <em>Ca te tente ça ? Qu’est-ce que tu aimes ? Qu’est-ce que tu as envie que je te fasse ?</em> Et de fil en aiguille on arrive à des questions du style : <em>Et qu’est-ce que tu n’aimes pas ? Qu’est-ce que tu n’as pas envie de faire ?.</em> De là, on échange sur la notion de consentement. Toujours est-il que même après avoir échangé sur la question, si l’on ne se connaît pas encore parfaitement avec ma partenaire, j’aime bien glisser un petit <em>S’il y a quoi que ce soit, surtout tu m’arrêtes.</em> »</p>
+<ul>
+<li><strong>Emma* — 23 ans, bisexuelle, en couple</strong></li>
+</ul>
+<p>« J’ai eu une période dans ma vie, de mes 19 à 21 ans, où je voulais beaucoup explorer ma sexualité. J’ai eu des rencontres éphémères. Souvent on ne se connaissait pas bien, mais on partait sur plein de choses, sans trop en parler. On se disait que l’autre était OK... et ça crée beaucoup d’espace pour cette zone grise entre le consentement et le viol. Plein de fois, j’ai ressenti que je n’étais pas à 100 % dans ce qui se passait, mais je me laissais porter parce que c’était plus facile. À l’époque je ne savais pas vraiment dire non, ni poser mes limites. Maintenant je suis beaucoup plus directe et j’ai l’impression que je reçois plus de respect en retour. »</p>
+<p><em>* Les prénoms ont été modifiés</em></p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/legislation-viol-legende.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										Vu d&rsquo;ailleurs
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Tom
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Consentement&nbsp;: que dit la loi en Europe&nbsp;?
+										</h4>
+
+
+									<p><em>« Tout acte de pénétration sexuelle, de quelque nature qu’il soit, commis sur la personne d’autrui ou sur la personne de l’auteur par violence, contrainte, menace ou surprise ».</em> C’est ainsi que la loi française définit le viol (article 222-23 du Code pénal). Mais qu’en est-il du consentement, cette notion au centre de tout rapport sexuel ?</p>
+<p>En novembre 2019, <a href="https://www.lemonde.fr/societe/article/2019/11/19/violences-faites-aux-femmes-le-conseil-de-l-europe-epingle-la-france_6019684_3224.html">le Conseil de l’Europe a épinglé la France</a> pour ce flou juridique, lui reprochant de fonder sa définition du viol sur la contrainte et non sur le consentement. Traditionnellement, la plupart des États européens possèdent une législation similaire à celle de la France : le viol y est puni comme un acte de violence et non comme un acte sexuel non consenti. Rappelons d’ailleurs que jusqu’à très récemment (1992 en France), le viol conjugal n’était pas reconnu dans la loi.</p>
+<p>Mais les choses commencent à changer. De nombreux pays ont d’ores et déjà modifié leur législation pour intégrer la notion de consentement dans leur définition du viol et des agressions sexuelles : c’est le cas de l’Irlande, dès 1981, de la Belgique en 1989, ou encore du Royaume-Uni au début des annéees 2000. L’article 375 du Code pénal belge est par ailleurs très proche de la loi française, puisqu’il dispose que « <em>tout acte de pénétration sexuelle, de quelque nature qu’il soit et par quelque moyen que ce soit, commis sur une personne qui n’y consent pas, constitue le crime de viol (...) notamment lorsque l’acte a été imposé par violence, contrainte, menace, surprise ou ruse ».</em></p>
+<p>En 2003, la Cour Européenne des Droits de l’Homme ordonne aux 47 États membres du Conseil de l’Europe de changer leur législation ; dix ans plus tard, la Convention d’Istambul (sur la prévention et la lutte contre la violence à l’égard des femmes) enfonce le clou, en obligeant les États signataires à faire de même. Plusieurs pays européens font alors évoluer leur définition des violences sexuelles, en particulier l’Allemagne et la Suède, tandis que plusieurs autres — l’Espagne, le Portugal, les Pays-Bas, le Danemark, la Finlande et la Grèce — examinent actuellement des projets de loi dans ce sens. Mais en 2020, la majorité des signataires de la Convention d’Istambul (dont la France, donc) ne s’y sont toujours pas pliés.</p>
+<p>Pourquoi cette frilosité ? Tout d’abord car l’idée reçue selon laquelle un viol est forcément commis dans une ruelle sombre par un inconnu violent a la peau dure. Pourtant, dans 9 cas sur 10 en France, la victime connaît son agresseur, et dans un tiers des cas il s’agit de son conjoint. Ensuite, parce que le consentement est difficile à définir et à prouver d’un point de vue légal, contrairement à la violence ou la menace ; en effet, la qualification des faits repose alors en grande partie sur la parole des victimes. Intégrer le consentement dans la loi, sans en avoir une définition précise, peut parfois se retourner contre ces dernières, comme en 2018 où la justice irlandaise avait acquitté un homme accusé de viol car... <a href="https://www.theguardian.com/uk-news/2018/nov/15/thong-protest-in-belfast-raises-concerns-over-trials">le string porté par la plaignante était vu comme un signe de consentement</a>.</p>
+<p>Bref, si le droit en Europe (et dans le reste du monde) évolue peu à peu en direction d’une approche fondée sur le consentement, cette notion reste encore relativement récente et il faudra encore plusieurs années pour que la justice s’en empare véritablement.</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/barbie-458618_1280.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/on_debunke.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										On débunke&nbsp;!
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Si j&rsquo;aime être dominée par un homme au lit,<br />suis-je antiféministe&nbsp;?&nbsp;&raquo;
+										</h4>
+
+
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: #F47B67; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid #F47B67; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;PAS EXACTEMENT&nbsp;
+										</p>
+
+									<p><em>« Tu sais, moi ça m’excite d’être plaquée contre un mur, ou qu’un mec m’étrangle… Et pourtant je me considère vraiment comme féministe. »</em> Vous aussi, vous avez peut-être déjà entendu ces propos de la part d’amies proches — souvent hésitantes : car avouons-le, ce sujet reste encore extrêmement tabou. Tabou vu le contexte actuel, où l’heure est plutôt à la déconstruction de ces images de femmes soumises et obéissantes. Tabou aussi parce que paradoxal à première vue : peut-on à la fois refuser la soumission de la femme construite par la société mais la fantasmer et l’apprécier sous les draps ?</p>
+<p>Avant toute chose, posons l’essentiel. La question se pose dans le cadre d’une soumission sexuelle consentie, qui repose sur une confiance envers le partenaire. C’est d’ailleurs le premier élément qui permet, aux femmes qui le souhaitent, de résoudre la potentielle incompatibilité entre être féministe et aimer être dominée au lit.</p>
+<p>On peut cependant argumenter que ce désir de soumission est hérité de milliers d’années de rapports dominants/dominées entre les hommes et les femmes, qui auraient façonné nos préférences sexuelles. Dans <em>On ne naît pas soumise, on le devient</em>, <a href="%22https://www.binge.audio/podcast/les-couilles-sur-la-table/ce-que-la-soumission-feminine-fait-aux-hommes/?uri=ce-que-la-soumission-feminine-fait-aux-hommes%2F%22">Manon Garcia</a> s’intéresse plus largement au sujet très peu traité du « consentement des femmes à leur propre soumission envers les hommes ». Elle y détaille — pour faire court — comment le concept de féminité construit par la société façonne les préférences des femmes.</p>
+<p>Aimer être dominée au lit en tant que femme, c’est <em>« à la fois une dimension de choix et des normes sociales qui ont un impact sur nos préférences »</em>, résume-t-elle au micro de Claire Richard pour le podcast d’Arte Radio <a href="https://www.arteradio.com/son/61661572/soumission_impossible?fbclid=IwAR3HGEQQiv83XOocYRFNlabchHnny9leu5IwDrF2fFqsOg8BJjDLlpnUmY0%20u"><strong>Soumission impossible</strong></a>. Nous ne saurions que vous le conseiller, si vous voulez explorer ce sujet plus en profondeur.</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<img src="https://lepointq.com/media/uploads/capture-d-ecran-2020-12-06-a-13-57-40.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										<img
+											src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+											width="40" height="40"
+											style="vertical-align: middle;"
+										/>
+										La bonne nouvelle
+									</h2>
+									<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Juliette.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Juliette
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Le Son du Désir&nbsp;: un podcast porno féministe<br />qui va faire jouir vos oreilles
+										</h4>
+
+
+									<p>Et pour finir, on est allé chercher le consentement, dans le BDSM* ! Là où il est peut-être le plus essentiel, mais aussi le plus facile à formuler... On pose trois questions à Alexis Himeros, créateur du podcast <a href="https://www.lesondudesir.fr/"><strong>Le Son du Désir</strong></a>. Son 37e épisode, sorti samedi, s’intitule « Le maître des fessées ». Pour gagner un mois d’abonnement et de plaisir, c’est juste en dessous...</p>
+<p><strong>Le Son du Désir, en quelques mots, c’est quoi ?</strong></p>
+<p>« C’est une fiction érotique immersive, aux valeurs féministes. Un podcast qui traite de sexualité, d’aide à la masturbation, féminine principalement. C’est basé sur une idée d’égalité entre l’homme et la femme et des valeurs de bienveillance. Au-delà de l’aspect masturbatoire, c’est un support qui permet à des personnes de se sentir désirées, aimées, valorisées par une voix, celle d’un amant qui n’a pas de visage, ni de corps. Tu écoutes un message sur ta messagerie et c’est ton amant qui t’emmène dans plein d’aventures, dans un avion en partance pour le Japon ou sur un voilier en Sardaigne... »</p>
+<p><strong>Pourquoi as-tu eu envie de faire ce podcast ?</strong></p>
+<p>« Par opposition à ce qui existe déjà : tout l’univers pornographique visuel que je trouvais abject. C’est avilissant pour la femme, comme pour l’homme. Je voyais des publicités pour des élargisseurs de pénis ou pour rencontrer des jeunes filles... C’est très perturbant comme image. En discutant avec des copines, elles étaient horrifiées. Or, le porno tout le monde en consomme, homme comme femme. Je trouvais ça intéressant et justifié, grâce à l’avènement du podcast, de proposer une plateforme avec un contenu différent. Avant, j’étais producteur de disques et auteur, donc j’avais les compétences pour ce format. »</p>
+<p><strong>Le 37e épisode de ton podcast, sorti samedi, s’intitule « Le maître des fessées ». Comment fait-on du porno SM féministe ?</strong></p>
+<p>« C’est surtout dans les messages. Dans cet épisode, il y a le portier, le maître des lieux, qui dit une phrase assez importante : <em>Ici, c’est uniquement pour le plaisir, si vous ne vous sentez pas confortable, vous pouvez partir à tout moment.</em> C’est vraiment un jeu de rôle, comme tous les kinks** BDSM, et c’est important de le signaler de manière très explicite. Certaines paroles, qui peuvent être rabaissantes, ne peuvent êtres dites que quand il y a acceptation, une sorte de contrat oral. Et il y a toute l’attention que le personnage veut donner à la personne qui écoute le message. Une douceur qui en émane, même dans la fessée. Des mots de valorisation du corps… On n’est pas du tout dans un fantasme qui consisterait à être humiliée. D’ailleurs, je ne pourrais pas écrire un podcast sur ce fantasme. »</p>
+<p><em>* Initiales de <strong>B</strong>ondage et <strong>D</strong>iscipline, <strong>D</strong>omination et <strong>S</strong>oumission, <strong>S</strong>adisme et <strong>M</strong>asochisme</em></p>
+<p><em>** Le kink sex en anglais, qui signifie littéralement « sexualité tordue », désigne une sexualité hors des normes conventionnelles.</em></p>
+<p>Comme c’est bientôt Noël et qu’on avait envie de vous faire plaisir, <strong>on vous offre un mois d’abonnement gratuit au Son du Désir</strong> ! Avec un accès à tous les anciens contenus et les bonus VIP. <strong>Pour participer au concours, parraine 5 de tes ami·e·s pour qu’ils s’abonnent à la newsletter !</strong> Comment ? En leur envoyant ton lien de partage unique juste en-dessous, on saura qu’ils ont rejoint la communauté grâce à toi. Le ou la gagnante sera tiré·e au sort dimanche !</p>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+								<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									<img
+										src="https://lepointq.com/media/icons/plume_morgan.png"
+										width="40" height="40"
+										style="vertical-align: middle;"
+									/>
+									Sous la plume de Morgan
+								</h2>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<img src="https://lepointq.com/media/uploads/strip-morgan-consentement.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+				</td>
+			</tr>
+			<!-- Hero Image, Flush : END -->
+
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Et toi, tu as déjà évoqué le Point Q avec tes grands-parents ? Si c’est le cas, on te tire notre chapeau ! Nous on attend le réveillon de Noël pour leur montrer ce qu’on te concocte depuis deux mois.</p>
+<p>On espère que tu termines cette onzième newsletter avec un sentiment de réconfort, quelle qu’ait été ton expérience du consentement. On a travaillé dur pour trouver un équilibre entre du contenu riche, sérieux, des conseils, et du plaisir. Tu nous diras ? Pour nous écrire : <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, <a href="%22https://www.facebook.com/lepointq.news%22">Facebook</a> ou <a href="https://lepointq.com">notre site</a> !</p>
+<p>Et donc, pour peut-être gagner le fameux mois d’abonnement au Son du Désir, il te suffit de partager la newsletter avec 5 de tes ami·e·s ! Clique sur le bouton ci-dessous, copie-colle ton lien de partage unique et envoie-le à tes potes ! Si cinq d’entre eux s’abonnent par mail, tu participes au tirage au sort. Le ou la gagnante sera annoncé·e dimanche !</p>
+<p>Passe une très belle semaine,</p>
+<p>Juliette, Orianne, Tom et Thaïs aka Le Point Q.</p>
+							</td>
+						</tr>
+						<tr>
+                            <td style="padding: 0 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: left;">
+									<button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+										<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+											Je parraine mes potes !
+										</a>
+									</button>
+									<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p>
+								</form>
+                            </td>
+                        </tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://www.instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
