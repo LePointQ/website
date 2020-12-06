@@ -1,5 +1,5 @@
 +++
-title = "Partage le Q avec tes ami·e·s !"
+title = "Partage Le Point Q avec tes ami·e·s !"
 type = "partage"
 
 +++
