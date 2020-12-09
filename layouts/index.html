@@ -50,7 +50,7 @@
 	<script>
 		window.addEventListener('load', () => {
 			const referrer = new URLSearchParams(window.location.search).get('referrer');
-			if (!sessionStorage.getItem('referrer') && referrer !== 'null') {
+			if (!sessionStorage.getItem('referrer') && referrer) {
 				sessionStorage.setItem('referrer', referrer);
 			}
 		});
