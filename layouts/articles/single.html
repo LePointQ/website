@@ -76,7 +76,8 @@
 
 		document.querySelector('#subscribe').addEventListener('submit', async (e) => {
 			e.preventDefault();
-			fetch("https://europe-west1-le-point-q.cloudfunctions.net/addContact?email=" + e.target.email.value);
+			const referrer = sessionStorage.getItem('referrer');
+			fetch('https://europe-west1-le-point-q.cloudfunctions.net/addContact?email=' + e.target.email.value + '&referrer=' + referrer);
 			document.querySelector('main').classList.remove('blurred');
 			document.querySelector('.paywall').classList.remove('visible');
 			sessionStorage.setItem('status', 'subscribed');

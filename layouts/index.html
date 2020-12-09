@@ -48,12 +48,19 @@
 
 {{ define "page-script" }}
 	<script>
+		window.addEventListener('load', () => {
+			const referrer = new URLSearchParams(window.location.search).get('referrer');
+			if (!sessionStorage.getItem('referrer') && referrer !== 'null') {
+				sessionStorage.setItem('referrer', referrer);
+			}
+		});
+
 		const alert = document.querySelector('#alert');
 
 		document.querySelector('form').addEventListener('submit', (e) => {
 			e.preventDefault();
 			const email = e.target.email.value;
-			const referrer = new URLSearchParams(window.location.search).get('referrer');
+			const referrer = sessionStorage.getItem('referrer');
 			fetch('https://europe-west1-le-point-q.cloudfunctions.net/addContact?email=' + email + '&referrer=' + referrer);
 			e.target.email.value = '';
 
