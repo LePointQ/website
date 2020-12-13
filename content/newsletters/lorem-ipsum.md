@@ -9,7 +9,7 @@ outro = "\"Cette demande de nude a été réalisée dans un cadre fictif, n'essa
 plume_morgan = ""
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
 temoignages = []
-title = "Lorem ipsum"
+title = "Send nudes ?"
 vu_d_ailleurs = []
 
 +++
