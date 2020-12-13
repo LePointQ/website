@@ -1,0 +1,13 @@
++++
+authors = ["Tom"]
+date = 2020-12-13T17:12:45Z
+draft = true
+image = ""
+preview = "Certes, le premier risque quand tu envoies une image dénudée, c'est toujours la personne à qui elle est adressée. Mais même si tu as une confiance absolue dans ton ou ta partenaire, cela ne signifie pas pour autant que tes nudes resteront entre vous."
+section = "On débunke"
+text = "Certes, comme en Corée du Sud, le premier risque quand tu envoies une image dénudée c'est toujours la personne à qui elle est adressée. Si Snapchat ou Instagram permettent l'envoi de photos qui \"s'auto-détruisent\" une fois vues et détectent si le destinataire en fait une capture d'écran, il existe malheureusement des applis permettant d'enregistrer une photo éphémère sans en informer l'émetteur.\n\nMais même si tu as une confiance absolue dans ton ou ta partenaire, cela ne signifie pas pour autant que tes nudes resteront entre vous. En 2014, lors d'un événement connu sous le nom de _\"fappening\"_, plus de 500 photos dénudées de célébrités, principalement des actrices ou des chanteuses, ont été publiées sur le forum 4chan. Parmi les victimes : Jennifer Lawrence, Kirsten Dunst, Ariana Grande ou encore Emily Ratajkowski. La cause de ce leak : une faille de sécurité du service iCloud d'Apple, qui a permis à des hackers d'accéder aux photos sauvegardées automatiquement depuis l'iPhone des victimes.\n\nS'il s'agit de la plus connue, ce n'est pas la seule affaire de ce genre. En 2019, une vulnérabilité dans l'appli de rencontre gay Jack'd avait entraîné une fuite de plusieurs millions de photos d'utilisateurs, dont certaines bien entendu explicites.\n\nPour se prémunir contre ces risques de sécurité, mieux vaut privilégier pour sexter des applis utilisant un chiffrement de bout en bout, comme WhatsApp, Signal ou Telegram (avec le mode \"chat secret\"). Contrairement à Snapchat par exemple, où les photos même éphémères sont stockées en clair sur leurs serveurs, les images sont alors chiffrées et seul le ou la destinataire de ton nude peut le décoder.\n\nMais la meilleure manière de se protéger contre les fuites, qu'elles proviennent d'un ex peu respectueux ou bien d'une faille de sécurité informatique, est d'éviter d'être reconnaissable. Mieux vaut donc ne pas montrer son visage, et éviter certains éléments qui pourraient t'identifier : tatouages, tache de naissance, grain de beauté, ou simplement le décor de la photo. Pour les plus paranos, il est également possible de supprimer les métadonnées EXIF des photos, qui révèlent la date, l'heure et le lieu de la prise de vue, ainsi que le modèle du téléphone."
+themes = ["nudes"]
+title = "\"Quand j'envoie un nude, seul mon ou ma partenaire peut le voir\""
+veracity = "Faux"
+
++++
