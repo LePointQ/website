@@ -1,5 +1,5 @@
 +++
-authors = ["Thaïs"]
+authors = ["Thaïs", "Thaïs"]
 date = 2020-12-14T06:50:58Z
 draft = true
 image = ""
