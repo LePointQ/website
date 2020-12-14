@@ -1,5 +1,6 @@
 const TOML = require('toml');
 const md = require('markdown-it')({ html: true });
+const outdent = require('outdent');
 
 const BASE_URL = 'https://lepointq.com';
 
@@ -14,6 +15,15 @@ const COLORS = {
 	'Faux': 'crimson',
 	'Pas exactement': '#F47B67'
 };
+
+const SHARE_BUTTON = outdent`
+	<button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+		<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+			Je parraine mes potes !
+		</a>
+	</button>
+	<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p>
+`;
 
 const { readFilePromise, writeFilePromise } = require('./utils');
 const { typografix } = require('./typografix');
@@ -35,7 +45,8 @@ const build = async () => {
 			.replace(/{{ TITLE }}/g, typografix(data.title))
 			.replace('{{ PREVIEW }}', md.render(typografix(data.preview || '')))
 			.replace('{{ EDITO }}', md.render(typografix(data.edito)))
-			.replace('{{ OUTRO }}', md.render(typografix(data.outro)));
+			.replace('{{ OUTRO }}', md.render(typografix(data.outro)))
+			.replace('{{ SHARE }}', SHARE_BUTTON);
 
 		for (const section of ['temoignages', 'vu_d_ailleurs', 'on_debunke', 'la_bonne_nouvelle']) {
 			if (!data[section] || data[section].length === 0) {
@@ -46,7 +57,7 @@ const build = async () => {
 			const { text: markdown } = await readFilePromise(`./content/${data[section]}`);
 			const content = TOML.parse(markdown.replace(/\+\+\+/g, ''));
 
-			output = output.replace(`{{ ${section.toUpperCase()} }}`, `
+			output = output.replace(`{{ ${section.toUpperCase()} }}`, outdent`
 				<!-- Hero Image, Flush : BEGIN -->
 				<tr>
 					<td style="background-color: #ffffff;">
@@ -106,7 +117,7 @@ const build = async () => {
 			`);
 		}
 
-		output = output.replace('{{ PLUME_MORGAN }}', data.plume_morgan ? `
+		output = output.replace('{{ PLUME_MORGAN }}', data.plume_morgan ? outdent`
 			<!-- 1 Column Text : BEGIN -->
 			<tr>
 				<td style="background-color: #ffffff;">

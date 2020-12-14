@@ -26,5 +26,8 @@
 		"node-fetch": "^2.6.1",
 		"press-any-key": "^0.1.1",
 		"toml": "^3.0.0"
+	},
+	"dependencies": {
+		"outdent": "^0.7.1"
 	}
 }

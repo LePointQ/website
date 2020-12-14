@@ -12,7 +12,7 @@
 					<p class='separator'>● ● ●</p>
 
 					<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
-					<h2>
+					<h2 class='balance-text'>
 						<img src="{{ .Site.BaseURL }}/media/icons/temoignages.svg" width="40" class='icon' />
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 					</h2>
@@ -49,7 +49,7 @@
 							<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
 						</h3>
 					{{ end }}
-					<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
+					<h4 class='balance-text'>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 
 					{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 				</article>
@@ -75,7 +75,7 @@
 							<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
 						</h3>
 					{{ end }}
-					<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
+					<h4 class='balance-text'>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 
 					{{ if eq .Params.veracity "Faux" }}
 						<p class='veracity fake'>FAUX</p>
@@ -109,7 +109,7 @@
 							<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>
 						</h3>
 					{{ end }}
-					<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
+					<h4 class='balance-text'>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 
 					{{ .Params.text | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 				</article>

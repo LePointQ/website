@@ -2,7 +2,7 @@
 	<main>
 		<article>
 			<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
-			<h1>
+			<h1 class='balance-text'>
 				{{ if eq .Params.section "Témoignages" }}
 					<img src="{{ .Site.BaseURL }}/media/icons/temoignages.svg" width="40" class='icon' />
 					{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
@@ -28,7 +28,7 @@
 				</h3>
 			{{ end }}
 			{{ if ne .Params.section "Témoignages" }}
-				<h4>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
+				<h4 class='balance-text'>{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}</h4>
 			{{ end }}
 			{{ if eq .Params.section "On débunke" }}
 				{{ if eq .Params.veracity "Faux" }}

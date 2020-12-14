@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>📱 Send nudes&nbsp;?</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Pour ce douzième numéro, on a envie de vous parler des petites photos et vidéos envoyées à votre âme sœur pour susciter le désir, ou entretenir le plaisir. J’ai nommé... les nudes !</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Send nudes&nbsp;?
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020.</p>
+<p>On commence par un shoutout à cette incroyable communauté du Point Q ! <strong>On est 400 les ami·e·s !</strong> 400 ! En moins de trois mois ! Rendez-vous compte. Un second shoutout à Florine, notre abonnée qui a gagné le concours du Point Q ✕ <a href="https://www.lesondudesir.fr">Le Son du Désir</a>, en partageant <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}">la newsletter</a> avec ses ami·e·s (bouton tout en bas). Elle remporte un mois d’abonnement à ce podcast érotique féministe ! Pour toujours plus de cadeaux, faites comme Florine, soyez Florine !</p>
+<p>Pour ce douzième numéro, on a envie de vous parler des petites photos et vidéos envoyées à votre âme sœur pour susciter le désir, ou entretenir le plaisir. J’ai nommé... les nudes ! Selon un sondage <a href="%22https://www.instagram.com/lepoint.q/%22">Instagram</a> réalisé cette semaine, vous êtes 67 % (sur 46 répondant·e·s) à pratiquer via votre caméra de smartphone ou d’ordinateur, un pourcentage certainement encouragé par les deux confinements. N’ayez crainte, demain on peut sortir (jusqu’à 20h).</p>
+<p>Malheureusement, le confinement a aussi été propice à la recrudescence du <em>revenge porn</em>, cette pratique venue des États-Unis qui consiste à diffuser du contenu sexuel explicite d’une personne sur Internet, sans son consentement et souvent dans le but de se venger. En mars dernier, des dizaines de comptes « fisha » ont émergé en France, « affichant » des photos dénudées de collégiennes et lycéennes sur Snapchat et Telegram. Les conséquences psychologiques sont désastreuses : l’une d’entre elles s’est suicidée au Havre le 1er avril.</p>
+<p>On s’est donc emparé de ces deux axes, qui constituent le fondement du Point Q : le plaisir, et la prévention. Dans la rubrique Témoignages, <strong>vous racontez à Orianne vos expériences, vos envies, vos meilleurs gags !</strong> Thaïs poursuit avec <strong>un voyage en Corée du Sud, où les femmes descendent dans la rue en clamant « My life is not your porn »</strong>. L’objectif ? Dénoncer le <em>molka</em>, pratique qui consiste à filmer une femme à son insu, dans une cabine d’essayage ou lors d’un rapport sexuel. Dans le débunk, Tom, notre spécialiste numérique, enquête : <strong>« Quand j’envoie un nude, seul mon partenaire peut le voir ? »</strong> Pour terminer, <strong>Juliette revient sur le <em>revenge porn</em> en France et vous donne quelques conseils si vous y êtes confronté·e·s</strong>.</p>
+<p>Morgan ? Bien sûr que notre dessinateur est là, comme chaque semaine, pour vous faire rire en quelques coups de crayons ! Et Camille, notre graphiste, a réalisé la belle illustration qui suit. Pour suivre leurs travaux sur Instagram, c’est <a href="https://www.instagram.com/morgan.comicstrip/">@morgan.comicstrip</a> et <a href="https://www.instagram.com/camillejoblin/">@camillejoblin</a>.</p>
+<p>On vous souhaite un excellent lundi, prenez soin de vous et de vos clichés,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/illu_nude.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Nudes&nbsp;: le désir 2.0
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+					
+					<ul>
+<li><strong>Eva — 37 ans, en couple, hétérosexuelle (attirée par les femmes)</strong></li>
+</ul>
+<p>« J’adore envoyer des nudes j’avoue, ça me plaît de m’exhiber, de savoir que je plais aux hommes et d’avoir leurs compliments en retour. Je ne cherche pas la drague pour coucher par contre... J’ai juste envie d’être désirée, mais d’être inaccessible un peu comme une star. C’est peut-être prétentieux, je ne sais pas. Dans la vraie vie, je suis très timide et très peu vantarde de mon apparence (je rougis d’ailleurs au moindre compliment ou quand un homme s’intéresse à moi), je pense que le téléphone et les réseaux sociaux me permettent de compenser cette distance sociale que je mets avec les hommes dans le réel. Avoir un compte juste pour dévoiler mon corps est pour moi un terrain de jeu très satisfaisant. »</p>
+<ul>
+<li><strong>Charles — 24 ans, célibataire, hétérosexuel</strong></li>
+</ul>
+<p>« J’avais l’habitude d’envoyer des nudes à l’une de mes ex, elle aussi. On avait un groupe de travail sur Facebook, où elle était également. Un jour, j’ai envoyé une photo, et je me suis planté de conversation parce que sur la photo miniature du groupe où on bossait, il y avait aussi sa tête. C’était à une époque où on ne pouvait pas supprimer les messages. J’ai vu le message s’envoyer et je me suis dit... <em>oh merde.</em> J’étais assez mal à l’aise mais c’était drôle. Et ils l’ont mise en photo de conversation pendant trois mois. À chaque fois, que je l’enlevais, ils la remettaient. »</p>
+<ul>
+<li><strong>Pauline — 24 ans, en couple</strong></li>
+</ul>
+<p>« Les premières fois que j’ai envoyé des nudes, <em>très gentils mignons</em>, c’était avec un plan cul pas du tout régulier donc ça aurait pu être risqué : pas une relation sérieuse, on voyait mes tatouages... Mais j’utilisais une messagerie où les messages s’effacent (même si les captures d’écran étaient possibles). Aujourd’hui, je ne saurais pas dire si elles sont sur son téléphone, voire dans le world wide web ou simplement dans sa mémoire... Mais c’était juste trop bien. Peut-être le moment de la relation que j’ai préféré. J’ai gagné en <em>self esteem</em>, en confiance en moi, je me sentais sexy. Je ne pense pas que ces nudes pourraient devenir publics un jour, mais si c’était le cas je crois que je m’en ficherais, que je l’assumerais et que je mettrais tout simplement la misère à ce mec. »</p>
+<ul>
+<li><strong>Julien — 25 ans, en couple, gay</strong></li>
+</ul>
+<p>« Sur Grindr, j’ai reçu de la part de parfaits inconnus un nombre incalculable de <em>dick pics</em> toutes plus laides les unes que les autres. Y compris quand je n’étais inscrit sur Grindr qu’en <em>sous-marin</em>, sans photo ni rien. Je me demande vraiment qui a la bonne idée d’envoyer des horreurs pareilles. Très souvent, rien ne va : le phallus qui rend tant fier notre expéditeur n’est pas très appétissant, la pose laisse à désirer, le cadrage est entièrement à jeter (et déforme le saint-Phallus pour le faire paraître pharaonique ou juste encore moins beau), et une chambre en bazar se laisse deviner en arrière-plan, ce qui donne encore plus envie d’accourir... Tout ça, de but en blanc, sans n’avoir rien demandé. Comme si ça allait me convaincre de répondre. Évidemment, c’est next direct ! Mais attention, ça ne m’empêche pas d’en envoyer moi-même, bien sûr ! Dans ce cas, c’est consenti (et mieux fait ?) »</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/maru-lombardo-72gw8gwp_ve-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Ma vie n’est pas ton porno&nbsp;&raquo;&nbsp;: en Corée du Sud, la guerre contre le voyeurisme numérique
+										</h4>
+									
+					
+					<p>Vous voyez ce bruit fort et assez gênant du déclencheur d’appareil photo de votre smartphone ? En Corée du Sud, il est impossible de le désactiver : c’est tout simplement interdit depuis 2003, notamment pour empêcher de prendre des photos de femmes à la dérobée, dans la rue ou dans leur intimité.</p>
+<p>C’était sans compter sur les dizaines de caméras cachées de pointe qu’on peut se procurer dans le pays : installées derrière les miroirs des cabines d’essayage, dans les portes des toilettes ou même incrustés sur des lunettes ou dans des stylos posées sur des bureaux... Des images intimes du quotidien sont ainsi volées par milliers puis vendues en ligne.</p>
+<p>Elles tournent sur des « chatrooms » privées et sur des sites pornographiques dédiés, sans que les personnes y figurant — pour la grande majorité, des femmes — ne soient au courant. Près de 18 images intimes seraient ainsi volées chaque jour en Corée du Sud.</p>
+<p>Cette pratique est si répandue qu’elle porte un nom : le <em>« molka »</em>. Mais il n’y a pas que ces images volées qui participent au sombre paysage du voyeurisme numérique sud-coréen. Sex-tapes, nudes... Certains n’hésitent pas à afficher leur petite amie, et encore plus souvent, leur ex.</p>
+<p>La perspective d’être victime de <em>revenge porn</em> plane sur les ruptures amoureuses, au point que les femmes craignent de rompre avec leur partenaire, de peur qu’il diffuse des photos et vidéos (prises avec leur consentement ou via les fameuses caméras cachées).</p>
+<p>Parmi les chatrooms, il y a celle où plusieurs chanteurs de K-pop mondialement connus se sont échangés des images volées de femmes avec qui ils ont eu des rapports. L’affaire est révélée en 2018, dans un scandale connu sous le nom de « Burning Sun », difficile à résumer car marqué par de multiples rebondissements sur un an, en plein cœur de la vague #MeToo en Corée du Sud (si cela vous intéresse, <a href="https://www.billboard.com/articles/columns/k-town/8503818/burning-sun-scandal-timeline-seungri-jung-joon-young">cet article de Billboard,</a> en anglais, résume bien l’ensemble).</p>
+<p>L’affaire fait beaucoup de bruit et met la question du <em>molka</em> au cœur du débat public. Il devient, avec le <em>revenge porn</em>, le principal enjeu de la lutte féministe en Corée du Sud. Des associations se consacrent à faire fermer tous les sites complices. En 2016, elles avaient déjà obtenu la fermeture de Sora.net, un site illégal vieux de 17 ans et au million d’utilisateurs, qui diffusaient des milliers de vidéos intimes et nudes volés.</p>
+<p>Au niveau juridique, les personnes reconnues coupables de <em>molka</em> encourent des peines allant jusqu’à cinq ans de prison, mais dans les faits, très peu sont condamnées (2 % en 2017). Par ailleurs, <a href="https://www.koreatimes.co.kr/www/nation/2018/08/251_253883.html">selon le Korean Times</a>, il existe une zone grise dans la loi coréenne qui n’évoque que les photos prises « contre le gré de la personne », et permet à quelqu’un qui diffuse des nudes de sa conjointe de s’en sortir sans poursuite judiciaire (ce qui n’est pas le cas en France).</p>
+<p>En 2018, 70 000 femmes sortent dans les rues de Séoul et clament « My life is not your porn » (« ma vie n’est pas ton film porno »). Lors de cette manifestation, le plus grand rassemblement féministe du pays, elles émettent une demande claire : une législation plus forte pour encadrer cette « violence sexuelle numérique ».</p>
+<p>Depuis, à Séoul, des groupes de femmes « inspectrices » sont chargées de débusquer quotidiennement des caméras dans près de 20 000 toilettes de la capitale. Une cellule consacrée à la lutte contre la diffusion non consentie d’images intimes et à l’assistance, juridique et psychologique, des victimes est également financée par le gouvernement. Selon une étude de 2019 réalisée par la <em>Korea Women’s Development Institute,</em> 45,6 % des femmes ayant été victimes de <em>molka</em> ont déjà eu des pensées suicidaires... dans un pays où il s’agit de la première cause de mortalité chez les jeunes.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/09a.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Tom
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Quand j&rsquo;envoie un nude, seul mon ou ma partenaire peut le voir&nbsp;&raquo;
+										</h4>
+									
+					
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+									
+					<p>Certes, comme en Corée du Sud, le premier risque quand tu envoies une image dénudée c’est toujours la personne à qui elle est adressée. Si Snapchat ou Instagram permettent l’envoi de photos qui « s’auto-détruisent » une fois vues et détectent si le destinataire en fait une capture d’écran, il existe malheureusement des applis permettant d’enregistrer une photo éphémère sans en informer l’émetteur.</p>
+<p>Mais même si tu as une confiance absolue dans ton ou ta partenaire, cela ne signifie pas pour autant que tes nudes resteront entre vous. En 2014, lors d’un événement connu sous le nom de <em>« fappening » (fap : se masturber et happening : évènement en direct)</em>, plus de 500 photos dénudées de célébrités, principalement des actrices ou des chanteuses, ont été publiées sur le forum 4chan. Parmi les victimes : Jennifer Lawrence, Kirsten Dunst, Ariana Grande ou encore Emily Ratajkowski. La cause de ce leak : une faille de sécurité du service iCloud d’Apple, qui a permis à des hackers d’accéder aux photos sauvegardées automatiquement depuis l’iPhone des victimes.</p>
+<p>S’il s’agit de la plus connue, ce n’est pas la seule affaire de ce genre. En 2019, une vulnérabilité dans l’appli de rencontre gay Jack’d avait entraîné une fuite de plusieurs millions de photos d’utilisateurs, dont certaines bien entendu explicites.</p>
+<p>Pour se prémunir contre ces risques de sécurité, mieux vaut privilégier pour sexter des applis utilisant un chiffrement de bout en bout, comme WhatsApp, Signal ou Telegram (avec le mode « chat secret »). Dans ce cas, seul le ou la destinataire de ton nude peut le décoder. Sur Snapchat et Instagram en revanche, les photos, même éphémères, sont stockées en clair sur leurs serveurs.</p>
+<p>La meilleure manière de se protéger contre les fuites, qu’elles proviennent d’un ex peu respectueux ou d’une faille de sécurité informatique, est donc d’éviter d’être reconnaissable. Mieux vaut ne pas montrer son visage, et éviter certains éléments qui pourraient t’identifier : tatouages, tache de naissance, grain de beauté, ou simplement le décor de la photo. Pour les plus paranos, il est également possible de supprimer les métadonnées EXIF des photos, qui révèlent la date, l’heure et le lieu de la prise de vue, ainsi que le modèle du téléphone.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/mika-baumeister-mvnahx-yrqy-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Juliette.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Juliette
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Le revenge porn en France&nbsp;: que faire si j&rsquo;y suis confronté·e&nbsp;?
+										</h4>
+									
+					
+					<p>C’est une pratique de plus en plus répandue, revenue sur le devant de la scène mi-février, lorsqu’une vidéo à caractère sexuel présentée comme celle de Benjamin Griveaux a été diffusée sur Internet, contraignant le candidat à la mairie de Paris à démissionner. Selon <a href="https://www.zavamed.com/fr/etude-zava-2018-sextos-et-nudes.html">une enquête Zava de 2018</a>, 19 % des hommes et 15 % des femmes en Europe ont vu certains de leurs nudes « fuiter ».</p>
+<p>Dans le même temps, le phénomène s’amplifie dans les cours de collèges, de lycées et sur les réseaux sociaux. <a href="https://www.lemonde.fr/pixels/article/2020/04/07/harcelement-sexuel-avec-le-confinement-le-retour-en-force-des-comptes-fisha-sur-les-reseaux-sociaux_6035853_4408996.html">Les comptes « fisha »</a> (organisés par quartier ou par département) sur lesquels des ados diffusent des images dénudées d’autres ados (principalement des filles) ont explosé durant le premier confinement. Les signalements à l’association E-Enfance, qui aide les mineurs victimes de cyber-harcèlement, ont doublé entre mars et mai 2020.</p>
+<p>Si tu es confronté·e à du <em>revenge porn</em>, il y a plusieurs choses à faire :</p>
+<p>Tout d’abord, <strong>une loi te protège</strong>. L’article 67 de la loi du 7 mars 2016 pour une « République numérique » a renforcé le délit d’atteinte volontaire à la vie privée (régi par les articles 226-1 et 226-2 du Code Pénal), ajoutant une circonstance aggravante s’il s’agit de la diffusion non consentie d’images à caractère sexuel (article 226-2-1). Le <em>revenge porn</em> est donc puni de deux ans de prison ferme et de 60 000 euros d’amende.</p>
+<p><strong>Entoure-toi</strong>. Parles-en à une personne de confiance. Pour discuter et obtenir une aide juridique, tu peux appeler Net-Écoute au 0800 200 000, ou te connecter sur<a href="https://www.netecoute.fr/#"> leur plateforme</a> (chat en ligne et chat Messenger). L’association <em>En Avant Toutes</em> a également mis en place <a href="https://enavanttoutes.fr/">un chat</a> pour t’orienter. Si tu es victime de comptes « fisha », rapproche-toi de <a href="https://twitter.com/StopFisha">@stopfisha</a>, le collectif contre le cybersexisme qui s’est mobilisé durant le confinement.</p>
+<p><strong>Recueille des preuves,</strong> prends un maximum de captures d’écran. <strong>Signale le profil</strong>, sur les réseaux sociaux concernés, et bloque la personne. Double éventuellement avec un signalement sur <a href="https://www.internet-signalement.gouv.fr/PortailWeb/planets/Accueil!input.action">le site dédié</a> du ministère de l’Intérieur. <strong>Ensuite, porte plainte si tu le souhaites</strong>. La police te guidera dans les démarches (une procédure pénale et/ou civile est possible).</p>
+<p>Enfin, si tu vois passer des nudes volés, signale-les et tente d’accompagner la victime. Si tu as envie de repartager une image, garde à l’esprit que c’est la diffusion qui est un délit, et donc que tu es passible des mêmes peines que celles énoncées ci-dessus.</p>
+<p>Ce petit guide pratique de la team Point Q sera là en cas de besoin, pour toi ou pour tes proches !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-nudes.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>« Cette demande de nude interne a été réalisée dans un cadre fictif, n’essayez pas de la reproduire chez vous. » C’est dit. Qu’as-tu pensé de ce numéro sur le sexe en images ? On en refera d’autres, plus spécialisés sur la sextape, OnlyFans, ou encore sur le plaisir en réalité virtuelle... Si tu as des idées ou des remarques, n’hésite pas à nous en faire part, sur <a href="https://www.facebook.com/lepointq.news">Facebook</a>, sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a> (où Le Point Q est très actif) ou bien par mail : <a href="mailto:lepointq.newsletter@gmail.com">lepointq.newsletter@gmail.com</a>.</p>
+<p>Si tu es une nouvelle recrue, tu peux retrouver les anciens contenus sur <a href="https://lepointq.com">notre site</a>, comme par exemple <a href="https://lepointq.com/articles/la-levrette-la-position-preferee-des-francais.e.s/">ce débunk d’Orianne sur la position préférée des Français</a> (parie avant de cliquer).</p>
+<p>Enfin, si comme nous, tu penses qu’il faut faire partager le kiff, clique sur le bouton juste en dessous !</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Passe une bonne semaine, et n’oublie pas de faire plaisir à tes proches pour Noël,</p>
+<p>Juliette, Orianne, Tom et Thaïs aka Le Point Q.</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://www.instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
