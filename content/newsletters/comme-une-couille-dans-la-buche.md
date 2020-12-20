@@ -8,7 +8,7 @@ on_debunke = []
 outro = ""
 plume_morgan = ""
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
-temoignages = []
+temoignages = "articles/comme-une-couille-dans-la-buche-mon-beau-noel-roi-du-plaisir.md"
 title = "Comme une couille dans la bûche"
 vu_d_ailleurs = []
 
