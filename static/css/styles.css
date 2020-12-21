@@ -539,3 +539,7 @@ main.blurred {
 	font-size: 2rem;
 	margin: 1rem;
 }
+
+.tipeee-plugins-widget-wrapper {
+	justify-content: center !important;
+}
