@@ -115,6 +115,7 @@ fields:
       format: markdown
   label: Conclusion
 pages:
+- content/newsletters/2021-a-poil.md
 - content/newsletters/a-double-tour.md
 - content/newsletters/comme-une-couille-dans-la-buche.md
 - content/newsletters/just-porn-it.md
