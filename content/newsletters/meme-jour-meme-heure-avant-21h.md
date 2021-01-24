@@ -1,13 +1,13 @@
 +++
 date = 2020-10-25T09:43:09Z
 edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nUn petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée \"plaisir\". Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020.\n\nAu programme cette semaine, un numéro spécial vacances et nouvelles rencontres, en période de pandémie. Vous le savez sûrement, une bonne partie de la France (54 départements) est sous couvre-feu. Adieu aux apéros après le travail, aux cinés, aux soirées et même aux dates Tinder ? Pas si sûr...\n\nOrianne et Juliette ont recueilli **vos meilleures astuces et anecdotes pour continuer à faire des rencontres malgré le couvre-feu**. Thaïs, à l'étroit dans son studio parisien, a fait un petit tour du monde : **quelles sont les pires recommandations des États pour faire l'amour en respectant les gestes barrières ?** Fou-rire garanti. Du côté de chez Tom, **il y a Grindr, mais pas que !** Des applis, des applis et encore des applis... Vous pouvez les tester, on attend vos retours. Et enfin on inaugure l'arrivée de notre petit nouveau : **Morgan ! Dessinateur hors-pair**, ce responsable de bar à Bruxelles a sorti sa plume pour faire vivre vos histoires, et rendre cette newsletter encore plus belle. On lui dit un grand bravo, on espère que vous aimerez.\n\nVous pouvez nous lire dans la file d'attente du laboratoire de tests, ou avant d'ouvrir vos résultats dans le mail juste en dessous. Décompression assurée.\n\nBisous à vous et tenez le coup,\n\nL'équipe du Point Q."
-la_bonne_nouvelle = "articles/sous-la-plume-de-morgan.md"
+la_bonne_nouvelle = "articles/20-10/sous-la-plume-de-morgan.md"
 numero = 5
-on_debunke = "articles/pour-faire-des-rencontres-entre-mecs-il-n-y-a-que-grindr.md"
+on_debunke = "articles/20-10/pour-faire-des-rencontres-entre-mecs-il-n-y-a-que-grindr.md"
 outro = "En attendant lundi prochain, tu peux retrouver les dessins de Morgan sur son compte Instagram, [morgan.comicstrip](https://www.instagram.com/morgan.comicstrip/) !\n\nQu'as-tu préféré cette semaine ? N'hésite pas à nous envoyer le titre de l'article par retour de mail. Et si tu as encore quelques minutes, envoie-nous un petit message avec tes commentaires sur Facebook ou Instagram ! On prend les compliments, les retours, les coups de gueule, tout ce qui nous permettra de concevoir une newsletter qui te correspond encore mieux à l'avenir.\n\nLa semaine prochaine, on parlera des blocages sexuels, et notamment des pannes ! Si tu as une histoire drôle à nous raconter, une réflexion ou un témoignage, nos oreilles sont là pour t'écouter.\n\nEnfin, tu peux partager [notre site web](https://lepointq.com) à tes potes pour qu'ils s'abonnent ! Et retrouver les [anciens numéros](https://lepointq.com/newsletters) bien sûr. Tu y as accès avec ton adresse mail d'abonnement.\n\nBelle semaine à toi !\n\nJuliette, Orianne, Tom et Thaïs aka Le Point Q."
 preview = "Au programme cette semaine, un numéro spécial vacances et nouvelles rencontres, en période de pandémie. "
-temoignages = "articles/comment-dater-sous-couvre-feu.md"
+temoignages = "articles/20-10/comment-dater-sous-couvre-feu.md"
 title = "Même jour, même heure, avant 21h ?"
-vu_d_ailleurs = "articles/quarantine-and-chill-conseils-et-astuces-d-ailleurs-pour-un-rapport-covid-free.md"
+vu_d_ailleurs = "articles/20-10/quarantine-and-chill-conseils-et-astuces-d-ailleurs-pour-un-rapport-covid-free.md"
 
 +++

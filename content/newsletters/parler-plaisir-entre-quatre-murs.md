@@ -7,7 +7,7 @@ on_debunke = []
 outro = "Que ce confinement soit, pour toutes et tous, un moment pour apprendre, explorer, découvrir votre sexualité, seul·e ou à plusieurs. On suit les conseils d'Aïcha. On lève la voix et, comme le suggère Morgan, on s'exprime au prochain dîner de famille. Comment on lance le sujet ? \"_D'ailleurs, y a un bon documentaire, sur le site web de France TV...\"_ (vous nous direz comment ça c'est passé 😘).\n\nPour nous joindre, c'est toujours au même endroit&nbsp;: par retour de mail, sur [Facebook](https://www.facebook.com/lepointq.news) ou sur [Instagram](https://www.instagram.com/lepoint.q/). Et surtout, si tu as aimé ce numéro 7, partage [notre site web](https://lepointq.com) à tes ami·e·s !\n\nIls pourront s'abonner sur la page d'accueil, et découvrir nos anciens contenus. Toi même d'ailleurs, qui a envie de prendre du temps pour lire en ce moment, retrouve [ici](https://lepointq.com/articles/le-kamasutra-le-vrai/) un article de Thaïs sur les origines du kamasutra.\n\nHâte de vous retrouver lundi prochain. D'ici là, prenez soin de vous,\n\nJuliette, Orianne, Tom et Thaïs aka Le Point Q."
 plume_morgan = "/media/uploads/strip-morgan-confinement.jpg"
 preview = "Bienvenue dans ce nouveau numéro du Point Q !\n\nUn petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée \"plaisir\". Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2020."
-temoignages = "articles/rencontre-avec-aicha-abbadi.md"
+temoignages = "articles/20-11/rencontre-avec-aicha-abbadi.md"
 title = "Parler plaisir entre quatre murs"
 vu_d_ailleurs = []
 
