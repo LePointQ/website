@@ -1,7 +1,6 @@
 +++
 authors = ["Tom"]
 date = 2021-01-24T15:43:07Z
-draft = true
 image = "/media/uploads/kiwi-fruit-shaving-blade-pink-background-hair-removal-concept_2221-5636.jpeg"
 preview = "Non, les poils ne sont pas sales ! Au contraire, ils sont là pour une bonne raison (et même plusieurs bonnes raisons)."
 section = "On débunke"

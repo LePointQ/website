@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🪒 2021 à poil</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Une année au poil ! Voilà ce que Le Point Q vous souhaite pour 2021 ! Nous sommes de retour, prêt·e·s à brandir et à faire grandir la plus sexy des newsletters.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									2021 à poil
+								</h1>
+								<p>Une année au poil ! Voilà ce que Le Point Q vous souhaite pour 2021 ! Nous sommes de retour, prêt·e·s à brandir et à faire grandir la plus sexy des newsletters.</p>
+<p>Meilleurs vœux, chères lectrices et chers lecteurs du Point Q. Que vos plus beaux fantasmes prennent vie... Des poils hérissés, des regards qui vrillent, des rouleaux de sopalin, des rendez-vous chez le médecin... On sera là chaque semaine, pour vous accompagner dans vos moments de plaisir, pour le meilleur et pour le pire.</p>
+<p>À tous les petits nouveaux, qui se sont abonnés discretos depuis la dernière newsletter, MERCI. Vous êtes désormais 479 abonné·e·s par mail et 416 à nous suivre sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>. Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en... 2021.</p>
+<p>Et pour ce premier numéro de l’année, on a pensé au poil. Pour vous mettre dans l’ambiance, <a href="https://www.youtube.com/watch?v=cVLBFpg8rrg">cette chanson</a>. <strong>Elle fera écho à vos témoignages et histoires d’épiderme, recueillis par Orianne</strong>, le lutin de la story Insta avec son pull rouge... Dans le débunk, <strong>Tom s’est interrogé sur le sens du poil : est-il vraiment peu hygiénique ?</strong> Dans le Vu d’ailleurs, <strong>notre chroniqueuse Thaïs fait un tour du monde des clichés poilus</strong>.</p>
+<p>Ça, c’est pour l’essentiel. Mais cette année s’annonce folle ! Trois bonnes nouvelles en cette fin janvier. La première, c’est que Morgan, notre marin et dessinateur de BD, rempile pour une saison ! <strong>Scrollez tout en bas, son histoire de la semaine est toute rebelle</strong>. La deuxième, c’est que Le Point Q s’agrandit ! Julien et Valentin, deux jeunes journalistes, rejoignent l’équipe. Big-up à vous les copains.</p>
+<p>Et enfin, nos abonné·e·s sont incroyables ! <strong>MERCI infiniment à Alice, Clara, Guy, Katy, Léonore, Renaud et Zoé qui ont fait des dons sur</strong> <a href="https://fr.tipeee.com/le-point-q"><strong>notre compte Tipeee</strong></a>. Cela nous permet de financer la newsletter jusqu’à fin février, et ce n’est pas rien. Les cartes de vœux avec nos mots doux personnalisés sont en chemin.</p>
+<p>On vous souhaite à toutes et à tous une semaine avec du sexe, du vrai ! Libre, consenti, sincère, épanoui. Du sexe qui rend heureux.</p>
+<p>Prenez soin de vous,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/news-poils.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						À fleur de poil
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+
+
+					<p><em>« Est-ce que je rase ? Est-ce que je m’épile ? »</em> Quelle est votre perception des poils ? On vous a posé la question.</p>
+<ul>
+<li><strong>Bérénice — 28 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p>« J’ai commencé le rasoir au collège : aisselles, maillot. Mon rapport aux poils est avant tout pour les autres. Quand j’étais à la fac à Paris, je sortais beaucoup. C’était indispensable que je sois rasée “ticket de métro”, aisselles clean, jambes nickel. J’avais trop peur qu’un mec me stoppe en me disant que j’avais trop de poils. Un jour, je vivais en Chine et je devais retrouver mon copain à Canton (une ville moins occidentale que Pékin, où j’allais dans des centres esthétiques). Quand j’ai demandé aux employées des instituts si je pouvais m’épiler le maillot, elles m’ont ri au nez. J’ai compris que ça ne se faisait pas.</p>
+<p>Ensuite, la relation avec mon copain a évolué et j’ai décidé de ne pas m’épiler parfaitement, mais que ce soit OK au toucher. Aujourd’hui, je ne m’épile plus, je coupe. J’ai des poils qui font bien 3 cm de long. J’avoue avoir un peu honte, même si quelque part je m’en fous. Je suis encore avec mon mec et ça ne change rien. J’ai limite l’impression que le poil procure plus de plaisir. Même quand je me touche, j’adore me toucher avec des poils. Plus jamais je ne m’épilerai comme avant. »</p>
+<ul>
+<li><strong>Nicolas — 25 ans, célibataire, hétérosexuel</strong></li>
+</ul>
+<p>« Pour moi ce n’est pas dérangeant tant que ma partenaire est bien dans son corps et épanouie. Les poils sous les aisselles et sur les jambes, ça ne me dérange pas tant que ça reste dans le privé, entre nous. Sinon, je ne suis pas un grand fan. En fait, je trouve que les poils sur les jambes et les aisselles de. ma partenaire, ça fait un peu “laisser-aller”. Je le prends comme si elle s’en foutait de moi... En privé, ça passe parce que je sais qu’on s’aime. Mais en public ou autre ça me dérange plus, avec le regard des autres. Pour mon corps, je préfère les enlever. »</p>
+<ul>
+<li><strong>Audrey — 24 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p>« Pour moi, les poils font partie de l’anatomie, comme toutes les autres parties du corps. À aucun moment on ne se couperait la jambe par exemple <em>(rires)</em>. J’ai du mal avec le fait de me séparer de mes poils. En plus c’est un acte douloureux, après ça gratte. Très vite, je me suis rendue compte que je ne le faisais pas pour moi, alors que j’avais le choix. Maintenant, j’accepte mon corps comme il est, avec ses poils. Je suis avec un garçon qui a la même vision que moi. Il accepte que je sois poilue, et je l’accepte tel qu’il est. D’avoir son approbation par rapport à mon corps fait que je n’ai pas envie de le changer. Je lui plais telle que je suis. »</p>
+<ul>
+<li><strong>Thibaut — 23 ans, célibataire, bi-curieux</strong></li>
+</ul>
+<p>« Je considère les poils comme naturels. Je ne les trouve pas dégueulasses, moches, sales, non esthétiques. Je ne m’épile pas, sauf quand je trouve que mes poils pubiens sont trop longs, je les taille au ciseau. Je n’ai jamais comparé mon corps à ceux que je vois dehors dans les publicités, qui sont souvent trop épilés. Chez mon/ma partenaire je m’en fiche, car cela le/la regarde. Dans la sexualité, la seule chose qui compte pour moi c’est d’avoir une bonne hygiène globale. »</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/culotte.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Qui a déclaré la guerre aux poils pubiens&nbsp;?
+										</h4>
+
+
+					<p><em>« Dessine-moi comme une de tes françaises »</em>, lance Rose à Jack alors qu’elle dévoile son corps vierge de tout poil — contrairement aux fameuses françaises dessinées dans le carnet. Ce passage de <em>Titanic</em> m’a toujours rappelé ce cliché tenace aux États-Unis : les femmes françaises ne s’épileraient pas.</p>
+<p>Chez nous, c’est un cliché qu’on a sur d’autres pays : <em>« non plutôt les Allemandes »</em> m’a-t-on dit ici, ou encore <em>« ah ça c’est les Portugaises »</em>.</p>
+<p>Pour l’anecdote, ce cliché sur la France remonterait à la 2nde Guerre mondiale (comme beaucoup de préconçus outre-Manche). Les soldats américains auraient remarqué que beaucoup de femmes n’étaient pas épilées sous les bras.</p>
+<p>Anglaises, Allemandes, Françaises, Italiennes… Dans toute l’Europe, s’épiler une partie voire tout le pubis est assez répandu. Ce n’est pas le cas partout dans le monde, où l’on parle parfois d’une pratique « occidentale ».</p>
+<p><strong>Petit tour du monde des poils</strong></p>
+<p>Dans une grande partie de l’Asie de l’Est, l’épilation du pubis n’est pas fréquente. En Chine ou en Corée du Sud, vous ne trouverez pas d’esthéticienne pour vous épiler le maillot aussi facilement qu’en France, surtout en dehors des capitales. En Inde, c’est déjà plus simple : la chasse aux poils va avec l’esthétique bollywoodienne d’une peau lisse et sans défauts. Mais l’épilation du bas du corps reste une pratique moderne associée aux populations urbaines.</p>
+<p>Les différentes « coupes » disponibles chez l’esthéticienne ont gravé certains préconçus. Aux États-Unis, vous pouvez opter pour un « French Wax » (notre ticket de métro), ou encore la « brésilienne » qu’on connait aussi ici — on retire tout (sauf une petite ligne au-dessus). Cette pratique serait-elle donc née au Brésil ? Pas vraiment. Elle a été <a href="https://www.bbc.com/news/magazine-37896963">inventée à New York</a> dans une famille d’esthéticiennes, certes brésiliennes, mais aux clientes américaines qui ont répandu cette mode de l’intégrale dans les années 90.</p>
+<p><strong>Mais qui donc a initié cette guerre aux poils pubiens ?</strong></p>
+<p>L’ouverture des hostilités se situerait dans le bassin méditerranéen. Dans l’Antiquité déjà, les femmes faisaient la guerre aux poils — à commencer par les notables Égyptiennes qui utilisaient des sortes de pinces à épiler, de la cire ou encore un mélange de sucre, eau et citron pour s’en débarasser. Dans l’Empire romain, certaines femmes (et hommes) ôtaient tous leur poils, y compris pubiens. Jusqu’au XXe siècle en Europe, l’épilation féminine se pratiquait mais restait cantonnée à l’aristocratie.</p>
+<p>En 1915, la marque américaine Gillette sort son premier rasoir féminin, destiné au grand public. Il est créé avant tout pour se débarrasser des poils sous les aisselles, que la mode du XIXe siècle cachait. Plus le corps se libère et se dévoile, plus les poils deviennent des cibles. En 1946, à la piscine Molitor à Paris, le monde découvre le bikini. L’épilation du maillot se démocratise dans la foulée.</p>
+<p>Aujourd’hui, beaucoup de femmes ne se limitent pas aux quelques poils qui dépassent. Au Royaume-Uni par exemple, <a href="https://www.cosmopolitan.com/uk/body/news/a42147/half-young-women-uk-removing-all-pubic-hair/">50% des jeunes femmes s’épileraient intégralement</a>.</p>
+<p>Depuis le début des années 90, l’épilation intégrale ou quasi-intégrale s’est largement répandue. La représentation des sexes féminins dans les films pornographiques a joué un rôle important dans l’imaginaire collectif. Au delà de l’aspect purement esthétique, des arguments liés à « l’hygiène », « la sensation lors d’un rapport oral », ou encore la préférence du conjoint voient le jour. Toutefois, ceux-ci n’ont souvent aucun fondement scientifique ! C’est Tom qui vous l’explique.</p>
+<p>Ces dernières années, les poils commencent à s’affranchir des clichés pour pousser ou disparaître, en toute individualité.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/kiwi-fruit-shaving-blade-pink-background-hair-removal-concept_2221-5636.jpeg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Tom
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Les poils, c&rsquo;est pas hygiénique&nbsp;&raquo;
+										</h4>
+
+
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+
+					<p>Non, les poils ne sont pas sales ! Au contraire, ils sont là pour une bonne raison (et même plusieurs bonnes raisons).</p>
+<p>On croit souvent que les poils favoriseraient l’accumulation de bactéries, voire la transmission de maladies sexuellement transmissibles. Pourtant, la toison pubienne est un rempart naturel contre les agressions extérieures, qu’il s’agisse de microbes ou simplement de poussières. À l’inverse, se débarasser de ses poils peut même favoriser les infections, à cause des micro-coupures laissées par le rasoir ou l’épilateur. À noter que les poils protègent également des irritations liées aux frottements (lors d’un rapport sexuel ou simplement contre les vêtements), et chez la femme ils permettent de limiter les risques de sécheresse vaginale.</p>
+<p>Autre idée reçue : ne pas se raser ou s’épiler ferait transpirer davantage. Pourtant, c’est plutôt l’inverse ! Les poils ont une fonction de régulation de la température du corps. En hiver, ils retiennent la chaleur en se dressant afin de créer une couche d’air tiède contre la peau ; en été, ils retiennent les gouttes de sueur sur l’épiderme afin de nous rafraîchir. Enlever ses poils aurait donc tendance à faire davantage transpirer.</p>
+<p>Quant aux odeurs, il s’agit là encore d’un préjugé. Celles-ci sont dues à des bactéries qui se nourrissent de notre transpiration et dégagent des effluves caractéristiques, qui peuvent varier d’une personne à l’autre en fonction de l’alimentation, de l’hygiène ou du stress — rien à voir avec la présence ou l’absence de poils.</p>
+<p>Au final, se raser ou garder ses poils est donc une question d’esthétique et de confort, et un choix personnel. Comme d’habitude, l’important est de se sentir bien dans sa peau et d’avoir une bonne hygiène de vie. En plus les poils ça peut être sexy : la toison du pubis retient notamment les phéromones, ces hormones inodores qui attisent le désir sexuel de ton ou ta partenaire 🔥</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-poils.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Ça y est, les poils c’est fini ! Prêt·e à entamer la révolution pubienne ? Peu importe la réponse, tant qu’elle est tienne.</p>
+								<p>La newsletter t’a plu ? Pour la partager avec tes ami·e·s, envoie-leur <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}">ton lien personnalisé</a>&nbsp;:</p>
+								<p style="margin-bottom: 0; font-size: 12px;">
+									<button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+										<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+											Je parraine mes potes !
+										</a>
+									</button>
+								</p>
+								<p>Via <a href="https://forms.gle/ZoyiEjoiMkbsM59S9">ce formulaire</a>, qui ne te prendra que le temps d’un café à la machine, tu peux nous en dire un peu plus sur ce que tu as aimé.</p>
+								<p>Pour retrouver toutes les anciennes newsletters, c’est <a href="https://lepointq.com/newsletters/">ici, sur notre site</a> ! Si tu es plutôt <a href="https://www.instagram.com/lepoint.q/">Instagram</a> ou <a href="https://www.facebook.com/lepointq.news">Facebook</a>, on est sur tous les canaux. À l’adresse <a href="mailto:lepointq.newsletter@gmail.com">lepointq.newsletter@gmail.com</a>, nous accueillons tes mots d’amour, coups de gueule, suggestions de thèmes...</p>
+								<p>On est vraiment ravi de poursuivre cette aventure à tes côtés en 2021 et on te dit à la semaine prochaine,</p>
+								<p>Julien, Juliette, Orianne, Tom, Thaïs et Valentin, aka Le Point Q 2.0 !</p>
+								<p style="margin-top: 0; margin-bottom: 0;"><a href="https://fr.tipeee.com/le-point-q/">
+									<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+								</a></p>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://www.instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
