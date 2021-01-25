@@ -10,6 +10,6 @@ plume_morgan = "/media/uploads/strip-morgan-poils.jpg"
 preview = "Une année au poil ! Voilà ce que Le Point Q vous souhaite pour 2021 ! Nous sommes de retour, prêt·e·s à brandir et à faire grandir la plus sexy des newsletters."
 temoignages = "articles/21-01/une-sexualite-au-poil.md"
 title = "2021 à poil"
-vu_d_ailleurs = []
+vu_d_ailleurs = "articles/21-01/la-guerre-pas-si-mondiale-contre-les-poils.md"
 
 +++
