@@ -1,7 +1,6 @@
 +++
 authors = ["Thaïs"]
 date = 2021-01-31T13:57:58Z
-draft = true
 image = "/media/uploads/illustre_pq.png"
 preview = "Imaginer qu'un inconnu prenne le contrôle d’Alexia ou Google Home à distance, c’est déjà inquiétant. Alors quand cela concerne des objets aussi intimes que des sextoys connectés, on pourrait s’attendre à ce que la cybersécurité soit absolument irréprochable. Et pourtant, on en est loin..."
 section = "On débunke"

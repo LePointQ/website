@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🪒 Et toi, tu rêves erotech&nbsp;? </title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Cette semaine, enfile tes lunettes et on t’emmène avec nous dans le monde de la sextech !</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Et toi, tu rêves erotech&nbsp;? 
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en... 2021 !</p>
+<p>Cette semaine, enfile tes lunettes et on t’emmène avec nous dans le monde de la sextech ! « Sexe et technologie » : face à la rugosité d’un thème encore méconnu, <strong>Orianne a imaginé un nouveau format de témoignages qu’on adore !</strong> Je te laisse t’installer à table, elle vous explique. Dans le Vu d’ailleurs, <strong>Valentin te transporte dans le futur des relations sexuelles, version VR</strong>. Enfin futur... sur Pornhub ils sont déjà dans le coup. <strong>Au menu du débunk, des hackers peuvent-ils pirater ton sextoy connecté ?</strong> Thaïs te répond. Et en guise de bonne nouvelle, c’est Tom qui met à l’honneur <strong>le documentaire de 8 minutes de nos copines Élise et Jade, sur le sexe dans les jeux vidéo !</strong> C’est ultra cool, ça vaut le détour.</p>
+<p>Pour terminer la pause café, <strong>la BD en couleur de notre flambant dessinateur <a href="https://www.instagram.com/morgan.comicstrip/">Morgan</a> !</strong> Rendez-vous en 2098, dans une autre galaxie...</p>
+<p>Que la force soit avec vous, les orgasmes aussi. Avec ou sans écran, prenez votre pied et racontez-nous,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/we-vibe-wow-tech-rjdd8cfchdk-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sexe et technologie&nbsp;: il y a débat 
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+					
+					<p>Cette semaine, nouveau format pour les témoignages ! Pour ce thème « sexe et technologie », j’ai invité des ami·e·s à répondre à différentes questions. Léa* a 24 ans et est en couple avec William (25 ans) depuis maintenant 3 ans et demi. Arthur a 23 ans et est célibataire.</p>
+<p>Tous les quatre on s’est mis autour de la table. J’ai posé mon téléphone pour enregistrer ces quelques minutes avec leur accord et nous avons commencé notre discussion... En voici quelques bribes :</p>
+<ul>
+<li><strong>Quand je vous dis sexe et technologie, vous pensez à quoi ?</strong></li>
+</ul>
+<p><strong>Arthur :</strong> « Je pense aux sextoys, tout ce qui est vidéo porno ou même sextape. »</p>
+<p><strong>William :</strong> « Quand j’ai vu le sujet au départ, il n’y a vraiment rien qui me venait à l’esprit. Après j’ai vu votre story sur Instagram qui évoquait la réalité virtuelle. J’ai constaté qu’il y avait ça aussi et j’ai commencé à réfléchir aux robots qui sont en train d’être créés. Sinon, instinctivement je pense aux sextoys. »</p>
+<p><strong>Léa* :</strong> « Oui, pareil. Je suis pas du tout inspirée quand je réfléchis au lien entre sexe et technologie ! »</p>
+<ul>
+<li><strong>En parlant des sextoys connectés, vous en pensez quoi ? Imaginez, si vous pouviez contrôler le sextoy de votre partenaire à l’autre bout du monde...</strong></li>
+</ul>
+<p><strong>William :</strong> « Nous on y avait pensé quand je suis parti au Canada pendant deux mois, mais j’avoue que le coût nous a freinés. 150 euros ! Ce qui était sympa c’est qu’on pouvait le contrôler avec une application. »</p>
+<p><strong>Léa* :</strong> « Oui, on aurait bien aimé tester mais c’est vraiment un budget. Maintenant on habite ensemble, donc il n’y a pas de problème de distance. On utilise quand même des sextoys, mais des simples pas des connectés. »</p>
+<ul>
+<li><strong>Et la réalité virtuelle ?</strong></li>
+</ul>
+<p><strong>Léa* :</strong> « Alors ça, ça ne m’intéresse pas du tout. Je ne vois pas l’intérêt. Déjà je ne m’imagine pas mettre un casque... »</p>
+<p><strong>William :</strong> « Moi ça me ferait marrer d’essayer une fois. Regarder un film porno en réalité virtuelle par exemple. Je pense que tu pourrais changer les points de vue, être observateur ou l’un des personnages. Après comme t’es dans l’action, est-ce que tu te masturbes de la même façon ou est-ce que tu regardes ? Ça doit être bizarre. »</p>
+<ul>
+<li><strong>Est-ce que la technologie c’est vraiment utile à la stimulation sexuelle ? Ou c’est gadget ?</strong></li>
+</ul>
+<p><strong>Arthur :</strong> « Je pense que ça peut aider quand il s’agit d’un couple vieux de quinze ans, et que c’est un peu la routine côté intimité. Grâce à la technologie, aux sextoys, aux vidéos pornos ou avec la réalité virtuelle, tu peux découvrir autre chose. Ça peut pimenter le couple. Mais si la technologie dépasse le réel et que tu en deviens dépendant, c’est chaud. »</p>
+<p><strong>William :</strong> « C’est un peu comme le porno. Beaucoup de mecs en regardent et ensuite ils ont des attentes derrière qui ne sont pas en phase avec la réalité. Le danger c’est que tu finis par trouver ça tellement bien qu’après la réalité peut te paraître nulle. »</p>
+<p><strong>Léa* :</strong> « C’est vrai, quand tu regardes un porno en vidéo tu dis <em>“oh putain mais comment il fait ça”</em> alors que c’est que du fake. Par exemple, la femme crie beaucoup et ce n’est pas ce qui se passe dans la vraie vie. »</p>
+<p><strong>Arthur :</strong> « Trop de technologie je pense que ça casse un peu ton imagination. On dépend de plus en plus de ça et on imagine de moins en moins. Je pense que si on demandait à des jeunes des années 80, <em>“quel serait ton scénario sexuel idéal ?”,</em> ils auraient plus de facilités à répondre. Nous, on dépend un peu trop de la technologie. »</p>
+<p><em>* Le prénom a été modifié</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/giphy-4.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Se voir autrement... avec un casque VR
+										</h4>
+									
+					
+					<p>En ces temps de confinement et de restriction des déplacements, maintenir une vie sexuelle épanouie peut être ardu. Confiné·e·s ensemble ou à distance, seul·e ou à plusieurs, comment continuer de prendre son pied en solo ou avec son/sa partenaire ?</p>
+<p>On vous propose une solution innovante et vidéoludique : la réalité virtuelle ! (VR en anglais)</p>
+<p>Le principe de la VR est de transporter l’utilisateur·rice, par le biais d’un casque qu’iel porte sur les yeux, dans un monde virtuel, plus ou moins réaliste, qui s’adapte à ses mouvements (se baisser, sauter, tourner la tête, etc.)</p>
+<p>Vous voyez où je veux en venir...</p>
+<p>Si l’on en croit les statistiques annuelles de Pornhub, la catégorie « POV » (<em>point of view</em>, en vue subjective) connaît un succès croissant, au point d’avoir atteint la troisième place du contenu visualisé sur le site en 2019.</p>
+<p>Surtout, durant les périodes de Noëls de 2016 et 2017 — années de sortie des premiers casques — la recherche de contenu pornographique en VR a bondi sur les moteurs de recherche. <a href="https://www.pornhub.com/insights/virtual-reality">Jusqu’à 900.000 vidéos en VR ont pu être visionnées chaque jour sur Pornhub</a> fin décembre 2017, avant de se stabiliser à 500.000 vues en moyenne.</p>
+<p>Il y a donc un véritable marché potentiel du sexe en VR. La compétition des producteurs autour de ce qui apparaît comme le futur du jeu vidéo, comme du porno, tend à faire baisser les prix des casques. D’autre part, une majorité des possesseurs de casques l’a déjà utilisé pour regarder du porno.</p>
+<p>Ainsi, si la VR peut révolutionner notre manière de consommer ce type de contenus, elle offre aussi de nouvelles possibilités de jeu et de fantasmes au lit. Qui n’a jamais rêvé, par exemple, de changer de sexe pour une journée ?</p>
+<p>Imaginez alors seulement les possibilités qui s’ouvrent à deux ou plus. Vous êtes physiquement ensemble, mentalement et visuellement ailleurs. C’est un peu l’étape supérieure du « penser à un·e autre pendant l’acte », une manière de renouveler son plaisir, ou d’avoir plus confiance en soi pour expérimenter de nouvelles pratiques. Vous n’osez pas tester le BDSM avec votre partenaire ? Peut-être qu’avec le casque, vous aimeriez franchir le pas.</p>
+<p>Cela nécessite, évidemment, un peu de coordination et une bonne dose de communication. Enfin, on vous conseille de ne jamais oublier que vous êtes devant une fiction, qui, à plusieurs égards, ne remplacera pas la réalité humaine.</p>
+<p>Casque sur les yeux ou non, un seul mot d’ordre : jou(iss)ez !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/illustre_pq.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Des hackers piratent les sextoys connectés&nbsp;&raquo;
+										</h4>
+									
+					
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: #F47B67; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid #F47B67; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;PAS EXACTEMENT&nbsp;
+										</p>
+									
+					<p>Imaginer qu’un inconnu prenne le contrôle d’Alexia ou Google Home à distance, c’est déjà inquiétant. Alors quand cela concerne des objets aussi intimes que des sextoys connectés, on pourrait s’attendre à ce que la cybersécurité soit absolument irréprochable.</p>
+<p>Et pourtant, on en est loin : ces dernières années, on recense plusieurs produits « hackés » avec succès par des développeurs qui voulaient en montrer les limites en matière de sécurité. Il y a par exemple <a href="https://www.lemonde.fr/pixels/article/2018/12/30/pirater-des-sextoys-connectes-une-partie-de-plaisir_5403696_4408996.html">le cas du « Vibratissimo Panty Buster »</a>, un sextoy vendu en Allemagne : le chercheur Werner Schober a réussi à montrer qu’il pouvait accéder très facilement à la connexion Bluetooth pour activer l’objet, ou encore qu’il pouvait en faire vibrer un au hasard en modifiant un lien envoyé au partenaire pour l’activer à distance.</p>
+<p>Plus récemment, de nombreux médias <a href="https://techno.konbini.com/fr/societe/un-appareil-connecte-de-chastete-masculine-vulnerable-aux-hackers/">ont relayé le cas « Cellmate »</a>, un objet permettant d’emprisonner le pénis de son partenaire à distance et qui se déverrouille via Bluetooth. <em>« Nous avons découvert qu’à distance, des hackers peuvent empêcher l’ouverture du verrou Bluetooth, laissant ainsi [le sexe] de l’utilisateur coincé dans l’appareil. Il n’y a pas de déverrouillage physique »,</em> explique à l’AFP Pen Test Partners (PTP), une société britannique spécialisée dans la sécurité.</p>
+<p>Dans ces deux cas, le producteur a affirmé avoir corrigé les failles mais n’a pas rappelé les produits identifiés comme défectueux déjà vendus. Et le problème est loin de ne concerner que quelques sextoys à la marge.</p>
+<p><strong>Pas de victimes identifiées</strong></p>
+<p>À ce jour, il n’y a aucune victime connue de contrôle de sextoys par un pirate, seulement des démonstrations de développeurs pour mettre en garde. Dans les faits, les hackers mal intentionnés se heurteraient à des obstacles. Il faudrait par exemple connaître le moment précis où la personne va utiliser le sextoy connecté, ce qui à distance n’est pas évident. Sauf pour certains travailleurs du sexe, notamment les camgirl et boy.</p>
+<p>Enfin, la protection des données personnelles des utilisateurs de sextoys connectés est l’autre faille majeure observée par les spécialistes de cybersécurité et pourrait faciliter une prise de contrôle ciblée d’un sextoy. Comme de nombreux objets connectés, ces sextoys recueillent, via les applications associées, de nombreuses données intimes. La localisation des utilisateurs, <a href="https://www.generation-nt.com/hack-faille-piratage-sextoy-connecte-camera-actualite-1941292.html">l’accès à la caméra</a> ou encore des données personelles<a href="%22https://www.wired.com/story/internet-connected-sex-toys-security/%22"> liées à l’utilisation du sextoy</a> sont autant d’éléments accessibles.</p>
+<p>Mais comment expliquer que si peu de précautions aient été prises pour des produits au plus proche de l’intimité ? La cybersécurité des sextoys connectés serait souvent négligée et les développeurs manqueraient d’expérience, notamment parce que l’industrie du sexe ne serait pas suffisamment prise au sérieux, estiment de nombreux spécialistes. C’est le cas du développeur Brad Haines, qui a créé le projet « Internet Of Dongs » relate le <a href="https://www.elle.com/culture/tech/a28846210/smart-sex-toy-dildo-butt-plug-hacking/">magazine Elle (US)</a>. <em>« Nous voulons travailler avec les fabricants pour nous assurer que leurs dispositifs [soient] aussi sûrs et privés qu’on pourrait s’y attendre »</em>, explique <a href="https://internetofdon.gs/about/">leur site internet</a>, qui recense plusieurs démonstrations de hacking réussis.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/how-to-woohoo.jpeg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Tom
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Du sexe dans les jeux vidéo&nbsp;?
+										</h4>
+									
+					
+					<p>Draguer sur <em>Second Life</em> ou faire la bête à deux dos sur <em>World of Warcraft</em>, c’est désormais possible. Élise et Jade, étudiantes en école de journalisme et fidèles lectrices du Point Q, se sont penchées sur ce sujet méconnu. Dans un documentaire passionnant, elles sont allées à la rencontre de ces <em>gamers</em> qui laissent libre court à leurs fantasmes dans les univers pixellisés du jeu vidéo.</p>
+<p>Pour les adeptes du sexe virtuel, <em>« cela permet de briser les tabous et d’explorer d’autres formes de sexualité, mal perçues voire interdites »</em>, explique Élise. <em>« J’ai été étonnée que nos interlocuteur·rice·s en parlent de manière aussi ouverte »</em>, ajoute Jade. Les deux journalistes se sont notamment intéressées aux « sex mods », ces modifications du code d’un jeu permettant de le rendre plus explicite, mais également au sujet plus grave du harcèlement sexuel des avatars.</p>
+<p>Alors qu’un troisième confinement pointe le bout de ton nez, te laisseras-tu tenter par cette sexualité virtuelle ? Pour te faire ton propre avis, le documentaire complet (8 min) est à retrouver <a href="https://www.instagram.com/tv/CJrSTsxiysz/">sur le compte Instagram d’Élise</a>.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-robot.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Quinze semaines qu’on traîne ensemble et cette newsletter est l’une des plus innovantes et belles que nous ayons réalisées. Ça tombe bien car vous êtes désormais 577 à nous lire ! En quelques jours, nous avons accueilli près d’une centaine de nouveaux adeptes du Point Q ! Pour retrouver toutes nos anciennes newsletters, c’est sur notre site <a href="https://lepointq.com">lepointq.com</a>.</p>
+<p>Pour vous, et même pour les abonné·e·s de la première heure, sachez qu’on prend un plaisir fou chaque semaine à révolutionner nos sexualités, en utilisant des mots simples et libérés. On se réunit, on pense à vous, et on fait le meilleur taf possible pour faire un peu changer les choses.</p>
+<p>Pour nous soutenir, tu peux contribuer de manière ponctuelle ou régulière sur <a href="https://fr.tipeee.com/le-point-q">notre compte Tipeee</a> ! Ça nous permettra aussi à l’avenir de rémunérer nos deux talentueux illustrateurs, <a href="https://www.instagram.com/morgan.comicstrip/">@morgancomicstrip</a> et <a href="https://www.instagram.com/camillejoblin/">@camillejoblin</a>.</p>
+<p>Tu peux aussi nous suivre sur <a href="https://twitter.com/LePointQ">TWITTER</a> ! Ça y est on envahit la planète bleue ! Si tu y es, on veut tes likes, tes retweets ! C’est Julien, un copain incroyable avec qui tu feras connaissance dès la semaine prochaine, qui est aux manettes. Sinon, on est toujours sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a> avec Orianne, et sur <a href="https://www.facebook.com/lepointq.news">Facebook</a> avec Valentin.</p>
+<p>Si tu es toujours là, partage la newsletter avec tes ami·e·s ! Plus on est, mieux on vit !</p>
+<p>Bouton partager</p>
+<p>N’hésite jamais à nous écrire, on se nourrit de vos témoignages et de vos questions. C’est par là : <a href="mailto:lepointq.newsletter@gmail.com">lepointq.newsletter@gmail.com</a>.</p>
+<p>Pour toujours plus de lundis matins à vos côtés ! Belle semaine !</p>
+<p>Julien, Juliette, Orianne, Tom, Thaïs et Valentin, aka Le Point Q 2.0.</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://www.facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://www.instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
