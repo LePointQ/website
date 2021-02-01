@@ -4,7 +4,7 @@
 		<ul style="width: auto;">
 			{{ range .Pages }}
 				<li>
-					<a href='{{ .Permalink }}'>
+					<a href='{{ .Permalink }}' target='_self'>
 						#{{ .Params.numero}} &middot; {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
 					</a>
 				</li>

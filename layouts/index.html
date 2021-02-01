@@ -35,7 +35,7 @@
 		<ul style="width: auto;">
 			{{ range (where .Site.RegularPages.ByDate.Reverse "Section" "newsletters") }}
 				<li style="font-size: 1.1rem; margin: 0.5rem;">
-					<a href="{{ .Permalink }}">
+					<a href="{{ .Permalink }}" target='_self'>
 						#{{ .Params.numero}} &middot; {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 					</a>
 				</li>

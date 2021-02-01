@@ -4,7 +4,7 @@
 		<ul>
 			{{ range first 10 .Pages }}
 				<li>
-					<a href='{{ .Permalink }}'>
+					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
 					</a>
 				</li>
@@ -20,7 +20,7 @@
 		<ul>
 			{{ range (where .Pages "Params.section" "Témoignages") }}
 				<li>
-					<a href='{{ .Permalink }}'>
+					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
 					</a>
 				</li>
@@ -36,7 +36,7 @@
 		<ul>
 			{{ range (where .Pages "Params.section" "Vu d'ailleurs") }}
 				<li>
-					<a href='{{ .Permalink }}'>
+					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
 					</a>
 				</li>
@@ -52,7 +52,7 @@
 		<ul>
 			{{ range (where .Pages "Params.section" "On débunke") }}
 				<li>
-					<a href='{{ .Permalink }}'>
+					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
 					</a>
 				</li>
@@ -68,7 +68,7 @@
 		<ul>
 			{{ range (where .Pages "Params.section" "La bonne nouvelle") }}
 				<li>
-					<a href='{{ .Permalink }}'>
+					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
 					</a>
 				</li>
@@ -85,7 +85,7 @@
 			{{ range (where .Site.Pages "Section" "newsletters") }}
 				{{ if .Params.plume_morgan }}
 					<li>
-						<a href='{{ .Permalink }}#plume-morgan'>
+						<a href='{{ .Permalink }}#plume-morgan' target='_self'>
 							{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
 						</a>
 					</li>
