@@ -17,7 +17,7 @@ sections:
   path: content/cgu.md
   label: CGU
 - type: directory
-  path: content/articles/21-01
+  path: content/articles/21-02
   label: Articles
   create: documents
   match: "**/*"
