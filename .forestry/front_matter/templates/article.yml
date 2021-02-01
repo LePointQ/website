@@ -13,8 +13,8 @@ fields:
   type: list
   config:
     use_select: true
-    min:
-    max:
+    min: 
+    max: 
     source:
       type: simple
     options:
@@ -37,9 +37,9 @@ fields:
     - La bonne nouvelle
     source:
       type: simple
-      section:
-      file:
-      path:
+      section: 
+      file: 
+      path: 
   label: Rubrique
 - name: themes
   type: tag_list
@@ -51,8 +51,8 @@ fields:
   description: ''
   config:
     required: true
-    date_format:
-    time_format:
+    date_format: 
+    time_format: 
     display_utc: false
   default: now
 - name: veracity
@@ -66,9 +66,9 @@ fields:
     - Pas exactement
     source:
       type: simple
-      section:
-      file:
-      path:
+      section: 
+      file: 
+      path: 
   label: Vrai/faux
   showOnly:
     field: section
@@ -110,6 +110,6 @@ fields:
   label: Image
 pages:
 - content/articles/21-01/des-hackers-piratent-les-sextoys-connectes.md
-- content/articles/21-01/du-sexe...dans-les-jeux-videos.md
+- content/articles/21-01/des-hackers-piratent-les-sextoys-connectes.md
 - content/articles/21-01/sexe-et-technologie-il-y-a-debat.md
-- content/articles/21-01/voir-autrement...avec-un-casque-vr.md
+- content/articles/21-01/sexe-et-technologie-il-y-a-debat.md
