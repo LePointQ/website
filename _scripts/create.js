@@ -10,12 +10,11 @@ const API_KEY = 'xkeysib-a1ca1f747f99be3a352eec875b7a2db3ec46b83f2f8bc9cd445b99a
 
 const createCampaign = async () => {
 	return await new Promise(async (resolve, reject) => {
-		if (process.argv.length < 3)
-			reject('No slug specified');
+		if (process.argv.length < 4)
+			reject('No slug or emoji specified');
 
 		const slug = process.argv[2];
-
-		const listId = process.argv.length > 3 ? process.argv[3] : 3;
+		const emoji = process.argv[3];
 
 		const { text: markdown } = await readFilePromise(`./content/newsletters/${slug}.md`);
 		const data = TOML.parse(markdown.replace(/\+\+\+/g, ''));
@@ -35,9 +34,9 @@ const createCampaign = async () => {
 					name: 'Le Point Q',
 					email: 'lepointq.newsletter@gmail.com'
 				},
-				subject: `🍭 ${entities.decode(typografix(data.title))} - Le Point Q #${data.numero}`,
+				subject: `${emoji} ${entities.decode(typografix(data.title))} - Le Point Q #${data.numero}`,
 				htmlContent: html,
-				recipients: { listIds: [listId] }
+				recipients: { listIds: [2, 7] }
 			})
 		});
 		const {id } = await response.json();

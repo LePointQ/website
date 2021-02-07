@@ -426,6 +426,22 @@ main article .veracity.trueish {
 	border-color: var(--main-color);
 }
 
+main article blockquote {
+	margin: 2rem auto;
+	padding: 0.25rem 0.5rem;
+	width: 80%;
+	font-size: 1.3rem;
+	font-weight: bold;
+	font-style: italic;
+	color: white;
+	background: var(--main-color);
+}
+
+main article blockquote p {
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: white;
+}
 
 .separator {
 	color: var(--main-color);

@@ -25,15 +25,22 @@ const SHARE_BUTTON = outdent`
 	<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p>
 `;
 
+const TIPEEE_BUTTON = outdent`
+	<p style="margin-top: 0; margin-bottom: 0;"><a href="https://fr.tipeee.com/le-point-q/">
+		<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+	</a></p>
+`;
+
 const { readFilePromise, writeFilePromise } = require('./utils');
 const { typografix } = require('./typografix');
 
 const build = async () => {
 	return await new Promise(async (resolve, reject) => {
-		if (process.argv.length < 3)
-			reject("No slug specified");
+		if (process.argv.length < 4)
+			reject("No slug or emoji specified");
 
 		const slug = process.argv[2];
+		const emoji = process.argv[3];
 
 		const { text: markdown } = await readFilePromise(`./content/newsletters/${slug}.md`);
 		const data = TOML.parse(markdown.replace(/\+\+\+/g, ''));
@@ -43,10 +50,12 @@ const build = async () => {
 		let output = html
 			.replace(/{{ BASE_URL }}/g, BASE_URL)
 			.replace(/{{ TITLE }}/g, typografix(data.title))
+			.replace('{{ EMOJI }}', emoji)
 			.replace('{{ PREVIEW }}', md.render(typografix(data.preview || '')))
 			.replace('{{ EDITO }}', md.render(typografix(data.edito)))
 			.replace('{{ OUTRO }}', md.render(typografix(data.outro)))
-			.replace('{{ SHARE }}', SHARE_BUTTON);
+			.replace('{{ SHARE }}', SHARE_BUTTON)
+			.replace('{{ TIPEEE }}', TIPEEE_BUTTON);
 
 		for (const section of ['temoignages', 'vu_d_ailleurs', 'on_debunke', 'la_bonne_nouvelle']) {
 			if (!data[section] || data[section].length === 0) {
