@@ -26,9 +26,9 @@ const SHARE_BUTTON = outdent`
 `;
 
 const TIPEEE_BUTTON = outdent`
-	<p style="margin-top: 0; margin-bottom: 0;"><a href="https://fr.tipeee.com/le-point-q/">
+	<a href="https://fr.tipeee.com/le-point-q/">
 		<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
-	</a></p>
+	</a>
 `;
 
 const { readFilePromise, writeFilePromise } = require('./utils');

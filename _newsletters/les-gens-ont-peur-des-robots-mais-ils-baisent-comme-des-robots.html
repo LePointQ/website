@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🤖 &laquo;&nbsp;Les gens ont peur des robots, mais ils baisent comme des robots&nbsp;!&nbsp;&raquo;</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Faire l’amour à l’Océan ? Cathline Smoos l’a fait, avec un vibromasseur. Cathline qui ? La plus aventureuse des sexologues, aussi connue comme « the VR Sexologist ».</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									&laquo;&nbsp;Les gens ont peur des robots, mais ils baisent comme des robots&nbsp;!&nbsp;&raquo;
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en... 2021 !</p>
+<p>Faire l’amour à l’Océan ? Cathline Smoos l’a fait, avec un vibromasseur. Cathline qui ? La plus aventureuse des sexologues, aussi connue comme « the VR Sexologist ». Personne n’a été aussi loin que cette jeune Lyonnaise dans l’expérimentation du cybersexe et de l’amour en réalité virtuelle. Prendre son pied avec des avatars, changer de genre le temps d’un orgasme, <a href="https://lepointq.com/articles/21-02/voir-autrement-avec-un-casque-vr/">Valentin vous en parlait déjà la semaine dernière</a>.</p>
+<p>La période étant ce qu’elle est, on s’est dit qu’on n’avait jamais autant eu besoin de découvrir le sexe à distance, et de booster nos libidos. Alors Tom a pris son courage à deux mains, et il a appelé Cathline... Autant vous dire qu’il n’a pas été déçu du voyage. Accrochez vos ceintures, on vous emmène une dizaine de minutes aux côtés de celle qui invente le sexe du futur !</p>
+<p>À tout en bas,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/in-bed-with-ocean.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Rencontre avec Cathline Smoos,<br />&laquo;&nbsp;the VR Sexologist&nbsp;&raquo;
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Tom
+											</span>
+										</h3>
+
+
+					<p>Cathline Smoos est psychologue et sexologue de formation. Depuis son cabinet à Lyon, cette exploratrice du cyberespace défriche les nouveaux horizons virtuels de la sexualité. Faire l’amour à l’Océan, échanger son corps avec celui de son/sa partenaire... elle nous raconte le sexe du futur.</p>
+<h3><strong>Bonjour Cathline. Tu te définis comme « VR Sexologist », qu’est-ce que ça veut dire ?</strong></h3>
+<p>Ça fait plusieurs années que j’utilise la réalité virtuelle dans mon travail. Par exemple, j’ai un « cabinet virtuel » dans lequel je recois certain·e·s patient·e·s. Contrairement à une consultation en visio-conférence, la VR permet de mieux sentir la présence de la personne, et le fait d’être caché·e derrière un avatar aide à libérer la parole.</p>
+<p>J’ai également créé une thérapeute virtuelle, ce qui permet à mes patient·e·s d’extérioser des choses difficiles à dire devant un·e sexologue, et au final de devenir leur propre thérapeute.</p>
+<p><img src="https://lepointq.com/media/uploads/cathline-smoos.jpg" width="100%" /></p>
+<h3><strong>La cyber-sexualité, qu’est-ce que c’est ?</strong></h3>
+<p>Tout ce qui touche à l’utilisation de la technologie au sein de la sexualité. Les sextoys ou le sexe par téléphone, c’est déjà de la cyber-sexualité. Mais bien sûr on pense surtout à la réalité virtuelle.</p>
+<p>Dans tous les cas, le plus important c’est le storytelling. On le voit bien avec le sexe par téléphone : si on se contente de se masturber à distance, rapidement on se fait chier. Avec un avatar dans un monde virtuel, il y a un vrai sentiment de présence qui doit être couplé à une histoire pour se plonger complètement dans un fantasme.</p>
+<p>Pour mon travail, j’utilise beaucoup le logiciel <a href="https://hub.virtamate.com">Virt-a-Mate</a> qui permet de créer des scènes en 3D pour la réalité virtuelle. Il y a une communauté de plus de 12 000 membres qui se partagent des modèles de personnages. Mais attention, ce n’est pas pour les novices : il y a un tutoriel de 18 heures pour apprendre à maîtriser le logiciel !</p>
+<p>À part ces quelques initiatives, il y a malheureusement encore peu d’offre. <a href="https://lepointq.com/articles/21-02/voir-autrement-avec-un-casque-vr/">Il existe du porno en VR</a> mais il reproduit souvent les mêmes codes sexistes que le porno mainstream. C’est pour ça que je suis en train de développer <a href="https://www.imbuevr.com/">ImbueVR, un jeu érotique pour les couples</a>, avec plusieurs histoires mêlant réalité virtuelle et sensualité réelle (caresses, nourriture, etc.)</p>
+<p>Mais les technologies de VR sont encore balbutiantes et il faut accepter que ça ne soit pas forcément parfait au début. Parfois les avatars buguent : crois-moi, quand tu es à fond dedans et que l’avatar de ton partenaire commence à avoir un bras qui lui passe à travers la tête, ça fait bizarre ! <em>(rires)</em></p>
+<p><img src="https://lepointq.com/media/uploads/OKA-CEL-scaled.jpg" width="100%" /></p>
+<h3><strong>Comment en es-tu venue à expérimenter avec les nouvelles technologies ?</strong></h3>
+<p>Je n’étais pas du tout branchée tech à la base. Un jour j’ai lu <em>Les robots font-ils l’amour ?,</em> un très mauvais livre d’une des personnes que je déteste le plus au monde, à savoir Laurent Alexandre <em>[médecin créateur du site Doctissimo, polémiste et futurologue].</em> La vision du futur de la sexualité qu’il véhicule m’a donné envie de vomir et c’est pour ça que j’ai eu envie d’aborder la cyber-sexualité de manière plus positive.</p>
+<p>J’ai ensuite rencontré Aurélien Fache, qui est développeur et <em>« API artist »</em>. Avec lui j’ai travaillé sur le projet <a href="https://futureofsex.net/remote-sex/sea-of-love-innovative-project-mixes-sex-and-the-ocean/">« In Bed With Ocean »</a>, qui utilise les données en temps réel des courants marins pour contrôler un sextoy et à l’aide de la réalité virtuelle, donner l’impression de faire l’amour à l’Océan. Toutes ces expérimentations que l’on fait ensemble, c’est un hobby pour nous. Dans le milieu de la VR, tout le monde est super enthousiaste et vraiment passionné : on est une bande de gamins qui aime se raconter des histoires !</p>
+<p><img src="https://lepointq.com/media/uploads/virtamate.png" width="100%" /></p>
+<h3><strong>La pandémie et le confinement ont-ils suscité un regain d’intérêt pour le sexe virtuel ?</strong></h3>
+<p>On ne m’a jamais autant demandé d’interviews qu’en 2020 ! <em>(rires)</em> Il y a quelques années, la cyber-sexualité ça n’intéressait personne en dehors de notre petite communauté de « chelous ». Mais avec la crise sanitaire, tout le monde commence à réaliser que la technologie et plus spécifiquement la réalité virtuelle, permet d’établir une connexion avec des gens même en étant seul·e chez soi.</p>
+<p>Cela ne concerne pas que le sexe. La VR permet également de jouer à des jeux, de voir des films ou d’assister à des concerts. Par exemple, l’édition 2020 du <em>Burning Man</em> <a href="https://www.ladn.eu/mondes-creatifs/burning-man-2020-festival-version-virtuelle/">a eu lieu en VR</a> et Jean-Michel Jarre a donné un concert virtuel à Notre-Dame pour le Nouvel An. Dans mon travail, on fait souvent des réunions dans des mondes virtuels, avec des avatars fantaisistes. Il y a un sentiment de présence et de proximité qu’on ne retrouve pas avec Zoom : la technologie permet de rompre ce sentiment d’isolement que nous connaissons toutes et tous.</p>
+<blockquote>
+<p>« Les gens ont peur des robots, mais ils baisent comme des robots ! »</p>
+</blockquote>
+<h3><strong>Comprends-tu que certain·e·s puissent être réticent·e·s face à ces nouvelles manières de faire l’amour ? Y a-t-il un risque de déshumanisation ?</strong></h3>
+<p>Il y a toujours eu des inquiétudes face au progrès technologique. Mais il faut dépasser ces peurs primaires et le voir comme un moyen d’ouvrir sa sexualité. La technologie offre une possibilité de communier avec l’autre et d’amplifier ses relations sexuelles, souvent limitées par la routine ou les tabous. Les gens ont peur des robots, mais ils baisent comme des robots ! <em>(rires)</em></p>
+<p>La cyber-sexualité répond également au besoin d’affection de personnes qui ne se sentiraient pas à l’aise dans le monde réel, parce qu’elles y subissent du harcèlement ou bien que leur corps n’est pas conforme aux normes de la société. À travers un avatar, on peut être qui l’on veut. Ces <em>« no life »</em> ont au contraire une vie sociale très riche <a href="https://lepointq.com/articles/21-02/du-sexe-dans-les-jeux-video/">dans les mondes virtuels où ils peuvent explorer l’amour ou la sexualité</a>.</p>
+<blockquote>
+<p>« La réalité virtuelle a ouvert une porte dans ma sexualité que je n’ai pas envie de refermer. »</p>
+</blockquote>
+<h3><strong>Une fois qu’on y a goûté, est-ce qu’on peut s’en passer ?</strong></h3>
+<p>Honnêtement non ! <em>(rires)</em> La réalité virtuelle a ouvert une porte dans ma sexualité que je n’ai pas envie de refermer. Elle m’a permis de découvrir des sensations que je n’avais jamais connues auparavant, de développer mon imaginaire. Dans mon couple, c’est un espace d’expérimentation où l’on peut jouer autrement, sans chercher à tout prix l’orgasme ou la performance. L’artiste Chris Milk a dit que la réalité virtuelle était <a href="https://www.ted.com/talks/chris_milk_how_virtual_reality_can_create_the_ultimate_empathy_machine?language=fr">une « machine à empathie »</a> : en inversant son corps avec celui de son ou sa partenaire, en explorant la fluidité des genres, on peut mieux comprendre l’autre.</p>
+<p>Tout est possible en VR : tu peux faire l’amour dans un aquarium avec des raies mantas qui ont six pénis, ou bien dans un lit au milieu de l’espace avec un crocodile comme animal de compagnie ! Difficile d’en revenir ! <em>(rires)</em> Mais la cyber-sexualité ne remplacera jamais la sexualité réelle : le contact avec le corps, c’est important. Ce qui rend si spécial le sexe virtuel, c’est son côté exceptionnel et extraordinaire.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>On sait, Morgan n’est pas là cette semaine et il te manque ! Si tu as quand même envie de le lire sur un autre thème, <a href="https://www.instagram.com/p/CK1jt2OBJaD/">c’est par ici</a>. Si tu veux plus de contenu sur le sexe et la technologie, (re)lis <a href="https://lepointq.com/newsletters/et-toi-tu-reves-erotech/">la newsletter de la semaine passée</a> (on ne le répète pas assez mais toutes nos anciennes newsletters sont dispos <a href="https://lepointq.com">sur notre site</a>, avec ton mail d’abonnement).</p>
+<p>Comment c’était, cette séance avec notre thérapeute du futur ? Prêt·e à commander ton casque VR sur Amazon ? Dis-le nous sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, <a href="https://www.facebook.com/lepointq.news">Facebook</a>, <a href="https://twitter.com/LePointQ">Twitter</a> (ET OUI, on est team bleue depuis une semaine), ou par mail !</p>
+<p><strong>Sur</strong> <a href="https://www.instagram.com/lepoint.q/"><strong>Instagram</strong></a><strong>, vous êtes plus de 500 à nous suivre, c’est ouf !</strong> Presque autant que de lecteur·rice·s de cette newsletter... La semaine prochaine on passe la barre des 600 les ami·e·s ! Chaque semaine sur Insta, Orianne te propose des citations clés de nos témoins, des sondages sur vos <em>sex habits</em> et la BD de Morgan. Sur <a href="https://twitter.com/LePointQ">Twitter</a>, Julien reprend nos punchlines du Q et revient sur le meilleur de nos anciens numéros (top si tu es nouveau).</p>
+<p><strong>Mais si tu n’as qu’un clic à ton arc,</strong> <a href="https://fr.tipeee.com/le-point-q"><strong>c’est sur Tipeee que ça se passe</strong></a> <strong>!</strong> Nous sommes à donf pour vous faire connaître le meilleur du Q de 2021, mais pour ça nous avons actuellement besoin de sousous. Un petit don de 5 euros de ta part (ou 2 euros tous les mois par exemple) nous aiderait infiniment à être présent le mois prochain. À l’heure actuelle, il nous faudrait récolter 40 euros d’ici le 28 février : tu crois c’est jouable ?</p>
+<p>Merci beaucoup à toi, cher tipeur, on t’aime beaucoup et on te promet que dans quelques mois Le Point Q ça va tout casser... On y croit aussi dur que toi.</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Bonne semaine et à lundi prochain,</p>
+<p>Julien, Juliette, Orianne, Thaïs, Tom et Valentin aka Le Point Q !</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
