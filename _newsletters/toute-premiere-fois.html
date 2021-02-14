@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>📅 Toute première fois</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Ce matin, nous sommes près de 600 à nous retrouver pour discuter, dans l’intimité de nos boîtes mails, de la première fois.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Toute première fois
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.</p>
+<p>Ce matin nous sommes près de 600 à nous retrouver pour discuter, dans l’intimité de nos boîtes mails, de <strong>la première fois</strong>. Spoiler alert : le Point Q c’est la team du partage, les adeptes du <em>poly</em> et nous sommes plutôt partisans de conjuguer ce concept au pluriel ! Pour se mettre en selle, <strong>Juliette a recueilli vos histoires insolites et vos réflexions sur la première fois</strong>. Julien, notre petit nouveau, a fait tourner son globe d’un doigt, pour vérifier <strong>à quel âge moyen on débute sa vie sexuelle sur la planète</strong>. Dans le débunk, Valentin fait le point : « <strong>Y a-t-il vraiment une seule première fois ?</strong> » Et pour conclure, c’est Orianne qui <strong>vous réchauffe les oreilles avec sa playlist</strong>... Parce qu’il nous reste tous une première fois (et même plusieurs) au fond du sac.</p>
+<p>C’est chaud, nostalgique et ça fait du BIEN d’entendre tout haut ce qu’on chuchotte tous très bas. J’oubliais, la newsletter est en zone rouge (bancaire, pas Covid ni crues), <a href="https://fr.tipeee.com/le-point-q">faites vivre le Point Q sur Tipeee</a> cher·e·s abonné·e·s !</p>
+<p>Délicieuse lecture à vous,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/connor-jalbert-ax6dazfreyq-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Première(s) fois
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Juliette.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Juliette
+											</span>
+										</h3>
+					
+					
+					<ul>
+<li><strong>Zoé, 22 ans</strong></li>
+</ul>
+<p>« J’avais 14 ans et demi, j’étais avec mon copain depuis un mois et quelques. Je me souviens de discussions dans mon groupe d’ami·e·s où on disait qu’on allait le faire, on allait être les premiers de la bande. Je n’en avais pas vraiment envie, j’étais tétanisée, même si je n’ai pas eu les mots. Je ne voulais pas passer pour une fille coincée, et j’avais trop peur qu’il me quitte.</p>
+<p>On l’a fait : c’était assez classique, pas fou. Ça a duré longtemps, ça ne marchait pas vraiment. Le lendemain j’avais super mal mais j’étais trop fière. Pour moi à l’époque, c’était normal que la première fois se résume à la pénétration. Or aujourd’hui je ne fais quasiment plus l’amour avec pénétration. Je regrette un peu, ça aurait pu mieux se passer si j’avais attendu. J’étais heureuse, mais corporellement jeune. »</p>
+<ul>
+<li><strong>Luka, 23 ans</strong></li>
+</ul>
+<p>« Je considère que j’ai eu deux premières fois. D’abord avec une fille, ma “première” première fois, avec ma copine en terminale. Et puis ma première fois avec un mec, l’année d’après. J’avais la chance d’être amoureux. Mais j’en garde quand même un souvenir horrible : j’étais hyper gêné, je posais plein de questions. J’étais plus à l’aise avec mon copain, d’abord car je connaissais le corps d’un homme, et puis il y avait déjà eu des câlins, de la masturbation... Alors qu’avec la fille c’était directement pénétration. Clairement, j’avais l’impression d’être en Safari <em>(rires)</em>, je n’avais aucune idée de ce que je faisais.</p>
+<p>Aujourd’hui en tant qu’homme queer, même si j’essaie de me déconstruire, j’associe encore mes premières fois aux premières pénétrations. En revanche, j’essaie d’éduquer mes petits frères, pour dédramatiser. Je leur ai offert le livre de Jouissance Club. Il y a clairement un manque d’éducation, encore plus pour les personnes LGBTQIA+. J’aurais aimé qu’on me mette un bouquin entre les mains, savoir comment les corps fonctionnent... »</p>
+<ul>
+<li><strong>Léonore, 23 ans</strong></li>
+</ul>
+<p>« Je m’étais toujours dit que je ferais ma première fois avec quelqu’un dont je serais amoureuse et en couple. Au final pas du tout, je l’ai fait avec quelqu’un que j’avais rencontré une semaine avant. On n’était pas ensemble, on s’était juste embrassé une fois. J’en garde un très bon souvenir, en plus c’était dans un lieu insolite.</p>
+<p>Avant l’acte j’avais peur... peur d’avoir mal et surtout de ne pas savoir combien j’allais perdre de sang, quand l’hymen se perce. Et puis toutes mes peurs se sont dissipées : je n’ai pas du tout saigné et je n’ai pas eu mal. Et d’ailleurs à la fin je me suis posée la question : tout ça pour ça ? Ça n’était pas désagréable, mais pas ouf non plus. C’est seulement les fois d’après où j’ai eu un orgasme. En revanche, c’est vrai que je ne l’oublierai jamais, je pourrais même ressortir la date ! »</p>
+<ul>
+<li><strong>Marie*, 23 ans</strong></li>
+</ul>
+<p>« Je n’ai jamais eu de partenaire sexuel mais je me considère comme sexuellement active (masturbation, sextoys) depuis l’âge de 14 ans. Donc je regarde ce concept de première fois avec beaucoup de distance... J’ai découvert la masturbation par hasard en 4e, mais ça ne fait que quelques mois que je ressens du désir pour quelqu’un.</p>
+<p>À 18 ans, en entrant à l’université, j’ai subi une agression sexuelle. Ça m’a traumatisée dans mon rapport aux garçons, j’avais l’impression d’être une proie. Il m’a fallu un long travail pour surmonter ça, me rendre compte qu’il n’y a pas que des chasseurs... À cette époque j’ai ressenti une grosse pression : à 22 ans il y a un vrai stigmate sur la virginité.</p>
+<p>Paradoxalement, le fait d’être encore vierge me rend plus sereine. Je sais que quand je le ferai, c’est que je l’aurai choisi. Pour moi la première fois c’est un mythe, qu’on fabrique en te faisant croire que c’est ce qui va te permettre de devenir adulte. Mais on ne t’arme pas pour ça. Je me suis armée toute seule et mes copines aussi. »</p>
+<p><em>* Le prénom a été modifié</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/tracey-hocking-gpbtg5afhb0-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Julien
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Quel est l&rsquo;âge moyen de la première fois&nbsp;?
+										</h4>
+									
+					
+					<p>Sur la planète, à quel âge vit-on en moyenne sa première fois, et que signifie-t-elle réellement ?</p>
+<p>17 ans pour les garçons, 17,6 pour les filles. En France, l’âge moyen au premier rapport sexuel est stable depuis quinze ans, selon le dernier baromètre de <a href="https://www.santepubliquefrance.fr/determinants-de-sante/sante-sexuelle/documents/enquetes-etudes/barometre-sante-2016.-genre-et-sexualite">Santé publique France</a>. Mais sommes-nous plus précoces que nos voisins ?</p>
+<p>Pas facile de répondre : les comparaisons internationales manquent. Mais heureusement, la marque de capotes Durex (oui, Durex) s’est penchée sur la question. <a href="http://durexnetwork.org/SiteCollectionDocuments/Research%20-%20Face%20Of%20Global%20Sex%202005.pdf">En 2005</a>, les Islandais·e·s étaient les plus jeunes à connaître leur premier rapport sexuel sur 40 pays, avec 15,6 ans en moyenne lors de leur première fois. La majorité sexuelle y est, comme en France, de 15 ans.</p>
+<p>À l’opposé du classement, les Indien·ne·s, avec 19,8 ans. Et <a href="https://www.drfelix.co.uk/wp-content/uploads/2018/01/Global%20face%20of%20sex%202012%20report.pdf">en 2012</a>, d’après une nouvelle étude de la marque, le seuil des 23 ans aurait même été dépassé en Malaisie et en Indonésie.</p>
+<p>Mais ces chiffres sont à prendre avec des pincettes : la dernière enquête de 2012 n’a concerné que 500 à 2000 personnes par pays et ne se veut pas représentative. Et puis, ces réponses sont-elles vraiment fiables ? <a href="https://www.ined.fr/fichier/s_rubrique/18835/pop_et_soc_francais_391.fr.pdf">En 2003</a>, déjà, une tentative de comparaison internationale par l’Institut national des études démographiques (Ined) postulait que des répondants avaient tendance à répondre <em>« en fonction des attentes sociales »</em>.</p>
+<p>Mais le plus gros problème, le voici : qu’entend-on par « première rapport sexuel » ? Y a-t-il pénétration ou pas ? De ce côté-là, les comparaisons internationales restent très floues : d’ailleurs, Durex ne précise pas quelle question a été posée. Difficile de conclure...</p>
+<p>Se pose enfin le problème central du consentement, car la « première fois » peut recouper des réalités bien différentes.</p>
+<p>En France, 10,7 % des femmes auraient <em>« accepté »</em> leur premier rapport sans le souhaiter <em>« vraiment »</em> [sic] – une réalité que connaissent également 6,9 % des hommes. Pire, selon <a href="https://www.santepubliquefrance.fr/determinants-de-sante/sante-sexuelle/documents/enquetes-etudes/barometre-sante-2016.-genre-et-sexualite">Santé publique France</a>, pour 1,7 % des femmes et 0,3 % des hommes, le premier rapport sexuel se serait traduit par un viol, révèle Santé publique France. En 2019, une étude américaine avait d’ailleurs fait grand bruit en affirmant que 6,5 % des Américaines n’avaient pas été consentantes lors de leur premier rapport sexuel, relate <a href="https://www.nouvelobs.com/societe/20190917.OBS18578/une-statistique-glacante-sur-le-premier-rapport-sexuel-des-americaines.html">L’Obs</a>.</p>
+<p>Et de ce point de vue-là, l’âge moyen reste une notion très vague : d’après Santé publique France, ce sont ainsi 16,9 % des garçons et 6,9 % des filles qui connaîtraient leur premier rapport sexuel avant l’âge de 15 ans — soit avant leur majorité sexuelle. En particulier, selon l’association <a href="https://facealinceste.fr/blog/actualites/le-nouveau-chiffre-de-l-inceste-en-france">Face à l’inceste</a>, un·e Français·e sur 10 aurait été victime d’inceste.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/first-time.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Y a-t-il une seule première fois&nbsp;?
+										</h4>
+									
+					
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+									
+					<p>Soyons clairs et concis : non, il n’y a pas « une » première fois, mais « des » premières fois.</p>
+<p>Pour la majorité des gens, la « première fois » correspond au premier rapport avec pénétration : « pénis-dans-vagin », <a href="https://www.lemonde.fr/m-le-mag/article/2020/11/29/et-si-la-premiere-fois-s-ecrivait-au-pluriel_6061519_4500055.html">comme l’écrit Maïa Mazaurette</a>.</p>
+<p>Or, restreindre ce concept aux seules relations hétérosexuelles, c’est non seulement invisibiliser les autres orientations sexuelles, mais aussi oublier les pratiques qui font que le sexe est agréable et fun, quand il n’est pas seulement phallocentré.</p>
+<p><strong>Pourquoi réduit-on la première fois à la pénétration ?</strong></p>
+<p>À l’origine de ce raccourci : la virginité des femmes. Notre héritage chrétien a ancré la solidité de la structure familiale dans la femme. Sa virginité — <a href="https://www.publicsenat.fr/article/societe/le-saviez-vous-la-virginite-feminine-ne-correspond-a-aucune-realite-anatomique">qui n’a aucune réalité anatomique</a> — est ce qui garantit sa bonne conduite sexuelle et morale. La rupture de l’hymen et le saignement en seraient la preuve.</p>
+<p>Pour rappel, chez les personnes à vagin, l’hymen peut se déchirer sans pénétration, en cas de choc par exemple, ou par pénétration autre que par un pénis, comme pendant la masturbation, et surtout ne saigne pas toujours lors du premier rapport. Sans oublier que certaines personnes naissent sans !</p>
+<p>Il n’y a donc pas de « signes » reconnaissables de virginité, tant chez les femmes que chez les hommes.</p>
+<p><strong>Un concept inapplicable aux couples LGBTQIA+</strong></p>
+<p>Par ailleurs, qu’en est-il des couples où il n’y a pas de pénétration pénis-vagin ? Si on se limite à cette vision du sexe, le lesbianisme n’entraînerait aucune perte de virginité, car il n’y a pas pénétration par un homme : il n’y aurait donc pas de « première fois » à proprement parler... Et entre deux hommes, y a-t-il perte de virginité ? <a href="https://www.lemonde.fr/m-perso/article/2016/12/31/vierges-un-jour-vierges-toujours_5055953_4497916.html">La question se pose</a>.</p>
+<p>Il y a bien UNE première fois pour chacun·e d’entre nous, un moment qui nous a marqué (en bien ou en mal) : mais elle est absolument personnelle. Si on se libère un peu du cliché de la première pénétration, on peut la resituer à un moment différent : les premiers jeux oraux, le premier orgasme, etc.</p>
+<p><strong>Les premières fois</strong></p>
+<p>Qui n’a jamais pensé à une « vraie » première fois, plus réussie que la première chronologique ? Et n’a-t-on pas autant de premières fois que de nouvelles expériences au lit ? Première fois avec un homme, une femme, seul·e, à plusieurs, dans un lieu particulier, dans une position donnée, avec un jouet... Il existe une multitude de possibilités pour prendre son pied et ainsi, vivre de nombreuses premières fois.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/daniele-colucci-poiwigch6ty-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Du love dans tes oreilles
+										</h4>
+									
+					
+					<p>La première fois, c’est souvent le sujet de discussion des bancs du lycée... Tu te souviens peut-être de ta/ton pote qui te raconte ce moment si particulier, déjà si jouissif ou simplement tout pourri. Maintenant, c’est peut-être quelque chose qui te semble à des années lumière ou ça ne t’est peut-être pas encore arrivé.e (et c’est carrément OK en fait). En ces temps de Saint-Valentin, on a pensé que c’était le bon moment pour se plonger dans les petites pépites musicales dédiées à cette <em>« first time »</em>. Attention les oreilles...</p>
+<ul>
+<li><strong>Avoue, à coup sûr, tu y as pensé :</strong></li>
+</ul>
+<p><em>« Des gouttes salées ont déchiré l’étrange pâleur d’un secret... Toute première fois, toute, toute première fois, toute, toute première fois »</em>. Ce refrain des 80’s tu le connais sûrement. En quelques mots, Jeanne Mas fait vibrer ton cœur. <a href="https://www.youtube.com/watch?v=wMuOLH-oQKs&amp;ab_channel=BrunoFortin"><em>Toute première fois</em></a>, un classique qui transpire le sexe !</p>
+<p><em>Warning : On n’est pas certain·e·s que ce son sera apprécié pour le jour J, mais tu peux tester. Et puis sinon tu l’écoutes quand tu prends ta douche. Tu pourras chanter à corps perdu. Tes voisins seront ravis.</em></p>
+<ul>
+<li><strong>Dans un tout autre style, enivre-toi avec la chanson <a href="https://www.youtube.com/watch?v=4pxdGNVqwnA&amp;ab_channel=TroyeSivan-Topic"><em>Seventeen</em></a> de Troye Sivan :</strong></li>
+</ul>
+<p>À travers ce texte, cette icône gay raconte sa première fois avec un homme plus âgé... Un tournant dans la vie du jeune chanteur australien : <em>« le garçon devient un homme maintenant »</em>.</p>
+<p><strong>Tu connais The Weeknd, tu connais son titre <em>I Feel It Coming</em></strong> ?</p>
+<p>Et bien je te propose d’écouter <a href="https://www.youtube.com/watch?v=YDI5RoGQsAs&amp;ab_channel=aurianrt">sa reprise française</a> interprétée par Juliette Armanet. Tout simplement des ondes sensuelles à portée de vos oreilles. Sans vulgarité, on est en plein dedans (dans le thème, je veux dire). C’est bien écrit, mélodieux, direct. Quoi de mieux pour faire passer le message ?</p>
+<p><strong>OK, j’ai craqué… Cette chanson ne parle par explicitement de caresses sous les draps...</strong></p>
+<p>Mais c’est l’hymne d’un film romantique (que je suis sûre beaucoup ont vu, à plusieurs reprises) intitulé <em>Ma première fois</em>. Impossible de passer à côté. Ce long-métrage nous fait rêver et sa musique aussi. Si tu ne connais pas le son, je t’invite à aller l’écouter. Personnellement, je suis tombée amoureuse de la voix de <a href="https://www.youtube.com/watch?v=qmQNzZ3GR4I&amp;ab_channel=ryco93700">John West</a> : <em>« I don’t think you know, I don’t think you know ohoho ehehe »</em>. Ça y est je suis partie pour un solo karaoké. Je vous lâche !</p>
+<p>Musicalement vôtre.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.commedia/uploads/strip-morgan-1erefois.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>« A 15-16 ans, j’étais entouré de types qui prétendaient avoir perdu leur pucelage et se la jouaient grands sexologues... Donc petite dédicace à tous les mythos de ma jeunesse ! » Ça, ce sont les petits mots de <a href="https://www.instagram.com/morgan.comicstrip/">Morgan</a>, qu’il nous a écrits en guise de légende à cette BD, toujours aussi intelligente et croustillante. On tenait à vous les partager !</p>
+<p>Vous aussi vous pouvez nous partager avec vos potes, si vous trouvez qu’on est cool :</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Pour suivre toute notre actualité, c’est sur <a href="https://www.facebook.com/lepointq.news">Facebook</a>, <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, <a href="https://twitter.com/LePointQ">TWITTER</a> (le nouveau, allez vous abonner pour nous soutenir !) et même <a href="mailto:lepointq.newsletter@gmail.com">par mail</a>, pour nous envoyer vos plus belles copies de remarques et suggestions.</p>
+<p>Si on vous plaît bien, <a href="https://fr.tipeee.com/le-point-q">vous pouvez nous faire un petit don sur Tipeee</a>, qui nous permettra de passer l’hiver. Quelques euros par-ci par-là nous aident à faire de vous des <em>experts éclairés du Q</em> (pas rien ce titre).</p>
+<p>Petit défi avant de vous quitter : si vous deviez choisir votre première fois, en oubliant la pénétration, ce serait laquelle ?</p>
+<p>À méditer d’ici la semaine prochaine !</p>
+<p>Julien, Juliette, Orianne, Thaïs, Tom et Valentin, aka le Point Q.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
