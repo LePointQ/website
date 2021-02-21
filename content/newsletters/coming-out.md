@@ -6,9 +6,9 @@ la_bonne_nouvelle = "articles/21-02/sortir-du-vestiaire.md"
 numero = 18
 on_debunke = "articles/21-02/on-ne-fait-son-coming-out-qu-une-seule-fois.md"
 outro = ""
-plume_morgan = ""
+plume_morgan = "/media/uploads/strip-morgan-comingout.jpg"
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
-temoignages = []
+temoignages = "articles/21-02/choses-a-dire.md"
 title = "Coming out"
 vu_d_ailleurs = "articles/21-02/des-coming-out-dans-chaque-hemisphere.md"
 
