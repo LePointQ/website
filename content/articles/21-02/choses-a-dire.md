@@ -1,5 +1,5 @@
 +++
-authors = ["Orianne"]
+authors = ["Orianne", "Juliette", "Tom"]
 date = 2021-02-21T21:12:40Z
 draft = true
 image = "/media/uploads/jiroe-b9kh72kocdm-unsplash.jpg"
