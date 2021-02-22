@@ -1,7 +1,6 @@
 +++
 authors = ["Tom"]
 date = 2021-02-21T17:47:52Z
-draft = true
 image = "/media/uploads/love-simon.gif"
 preview = "Si on garde généralement à l'esprit la toute première fois qu'on a annoncé son homosexualité, beaucoup de jeunes LGBTQ+ ont plutôt l'impression d'avoir fait leur coming out une centaine de fois ! Car sortir du placard se fait généralement en plusieurs étapes."
 section = "On débunke"

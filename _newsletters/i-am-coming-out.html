@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🏃🚪 I am coming out</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>« Je voudrais que chaque médecin gay, chaque avocat gay, chaque architecte gay sorte du placard, se lève et dise au monde son homosexualité. Cela permettrait de mettre fin aux préjugés du jour au lendemain, plus que quiconque ne peut l’imaginer. »</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									I am coming out
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.</p>
+<p><em>« Je voudrais que chaque médecin gay, chaque avocat gay, chaque architecte gay sorte du placard, se lève et dise au monde son homosexualité. Cela permettrait de mettre fin aux préjugés du jour au lendemain, plus que quiconque ne peut l’imaginer. »</em></p>
+<p>Ce sont les mots d’Harvey Milk, premier homme politique ouvertement gay élu aux États-Unis. Ça y est, cette matinée est lancée, reboostée par ce shot d’inspiration... Qu’on soit gay ou non.</p>
+<p>Le coming out, littéralement <em>« coming out of the closet »</em> (sortir du placard) est un concept inventé en 1869 par l’allemand Karl Heinrich Ulrichs, comme un moyen d’émancipation. Ce défenseur des droits des homosexuels recommande de faire son coming out pour visibiliser la communauté homosexuelle et ainsi changer l’opinion publique.</p>
+<p>En cette fin février 2021, on est encore loin du compte... Mais petit à petit, les langues se délient, les tabous se lèvent et l’inclusion de la communauté LGBTQIA+ dans notre société s’améliore. Évidemment que le Point Q veut participer à cette révolution. Nous sommes environ un tiers ici à être gay, lesbien, bi, pan, ou trans. Cette semaine, on fait donc notre coming out !</p>
+<p>Orianne mène la barque, <strong>elle a recueilli vos témoignages sur ce grand chambardement de la vie romantique et sexuelle</strong>. Dans le Vu d’ailleurs, Julien et Thaïs font le tour de la planète : <strong>quels sont les derniers coming out médiatiques qui nous inspirent</strong> ? Dans le débunk, Tom s’interroge : <strong>y a-t-il vraiment un seul coming out</strong> ? (vous aurez remarqué <a href="">qu’on aime mettre nos concepts au pluriel</a>). Et pour la bonne nouvelle, <strong>Valentin nous parle d’un grand bond dans le football allemand... pour la visibilisation des coéquipier·e·s LGBTQIA+</strong>.</p>
+<p>Quel est le point commun entre le coming out et l’ananas ? <strong>À Morgan, notre dessinateur fétiche, de vous le dire !</strong></p>
+<p>On est désormais 600 abonnés ici... Champagne !!!!</p>
+<p>Excellente lecture,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/jiroe-b9kh72kocdm-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Choses à dire 
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+											<span>
+												Par Orianne & Tom
+											</span>
+										</h3>
+					
+					
+					<ul>
+<li><strong>Sacha*</strong> — <strong>20 ans, gay, célibataire</strong></li>
+</ul>
+<p>« C’était pas vraiment un coming out mais c’est comme ça qu’on en a parlé. Depuis tout petit je correspond à plein de clichés : j’aime pas le foot, j’adorais jouer aux poupées, j’avais plein d’amies filles, j’étais fan de Lady Gaga, du coup ils s’en doutaient.</p>
+<p>Un jour j’ai tout simplement dit à ma mère que j’aimais un garçon, et voilà. Il n’y a pas eu de réaction bizarre. Deux ou trois ans plus tard, mon père est venu un jour toquer à la porte de ma chambre à 7h du matin. Il s’est assis sur mon lit et il m’a demandé si j’étais homosexuel. Je lui ai répondu qu’en effet j’aimais bien les hommes.</p>
+<p>Il m’a dit qu’il n’avait aucun problème avec ça mais qu’il ne voulait pas que je mène une vie “d’homosexuel” (drogues, bars gay, plans cul...), que je sois dans le milieu et qu’il voulait que je reste le plus “normal” possible. Il m’a aussi dit que ça ne lui posait aucun problème qu’un jour je ramène un mec à la maison, mais qu’il ne voulait pas me voir dans Le Marais, ou des lieux comme ça. »</p>
+<ul>
+<li><strong>Eva</strong> — <strong>23 ans, lesbienne, en couple</strong></li>
+</ul>
+<p>« J’ai commencé à faire mon coming out quand j’avais 19 ans. Je n’ai pas l’impression d’en avoir fait un mais plutôt d’en avoir fait 100 ! Je sortais avec une fille, et je n’ai pas fait d’annonce générale mais quand des ami·e·s me demandaient si je voyais quelqu’un, je leur disais que c’était une fille. Ça s’est fait comme ça, pas en mode <em>“j’ai quelque chose à te dire”</em>. J’ai eu beaucoup de chance parce que je suis dans un milieu marqué à gauche avec des ami·e·s plutôt ouvert·e·s sur ce genre de questions.</p>
+<p>Ce qui a été pénible, ça a été les réactions de gens qui pensaient que c’était juste un passage, et qui ne voyaient pas ça comme quelque chose de définitif. Mais je n’ai pas eu de réflexions violentes.</p>
+<p>Avec mes parents ça a été un peu plus compliqué. Ils ont mis plusieurs années avant d’accepter de rencontrer une de mes copines. Ma mère se disait : <em>“Ah mais qu’est-ce que j’ai fait, est-ce que c’est de ma faute ?”</em> Mais on en a discuté et maintenant tout se passe bien : je vis avec ma copine et quand ils m’appellent ils me demandent comment elle va. »</p>
+<ul>
+<li><strong>Emie</strong> — <strong>23 ans, pansexuelle, célibataire</strong></li>
+</ul>
+<p>« Je n’ai jamais vraiment parlé de coming out parce que je n’avais pas l’impression que c’en était un, et il n’y a pas eu de jour J non plus. J’étais avec un copain au lycée et à cette époque-là j’étais déjà très proche de ma meilleure amie. Sans parler de sentiments, on flirtait avec des mecs et on en discutait toutes les deux. Moi, j’avais déjà des sentiments pour elle, mais on n’en a jamais vraiment parlé. Donc je me suis mis en couple et elle continuait de flirter.</p>
+<p>Jusqu’au jour où ça nous a rendu jalouses, je racontais mes histoires et elles les siennes et ça nous a saoulées. Au bout d’un moment on s’est posé la question et on a parlé de nos sentiments qui étaient réciproques. Donc j’en ai parlé à mon copain : je lui ai expliqué que je ne pouvais plus être avec lui parce que j’aimais quelqu’un d’autre. Il a tout de suite compris qui c’était, il a fait la gueule… Mais il n’y a pas vraiment eu d’annonce grandiose.</p>
+<p>Du côté de mes proches, certaines de mes meilleurs amies n’ont pas compris et m’ont lâchée parce qu’elles se disaient : <em>“Comme t’aimes les filles, ça se trouve tu m’as regardée”</em>. Globalement c’était compliqué à vivre. Tout le monde ne le prend pas de la même manière. Une fois en repas de famille on m’a demandé si j’étais en couple. J’ai répondu oui. Ma tante m’a demandé : <em>“Il s’appelle comment ?”</em> alors je lui ai répondu <em>“Elle s’appelle…”</em>. C’était un peu gênant… »</p>
+<ul>
+<li><strong>Louis</strong> — <strong>22 ans, gay, en couple</strong></li>
+</ul>
+<p>« Je ne sais pas si j’ai réellement eu ou fait mon coming out. Je sais seulement qu’après une longue période sans chercher ni trouver (plutôt des femmes du coup), je m’en suis remis aux applis de rencontres mais cette fois en cochant la case “bi” puisqu’il faut rentrer dans des “cases”. J’avais très peur mais en fin de compte, ça a été libérateur. Et aujourd’hui je suis en couple avec un garçon.</p>
+<p>L’étape qui m’a permis d’avancer sans me préoccuper d’autre chose que de moi et de ce que je voulais a été d’en parler à quelques ami·e·s. Ma famille n’est pas encore au courant, mais sûrement parce que j’ai peur. J’attends d’avoir une relation forte et d’y croire vraiment pour en parler, ce qui devrait arriver bientôt car je commence à en ressentir le besoin. »</p>
+<ul>
+<li><strong>Tony</strong> — <strong>26 ans, gay, célibataire</strong></li>
+</ul>
+<p>« Je n’ai pas choisi mon coming out. J’avais 15 ans, et j’avais rencontré sur un site de rencontre pour adolescents gays un garçon de mon âge... sauf qu’il habitait en Belgique. On s’appelait tout le temps et on s’envoyait des lettres.</p>
+<p>J’ai fini par dire à mes parents que j’allais dormir chez une amie pour son anniversaire, mais en fait je suis allé le voir en train en Belgique. J’avais promis à ma mère de l’appeler le matin, sauf qu’à l’époque j’avais un téléphone prépayé avec un forfait qui ne fonctionnait pas à l’étranger. Mais j’étais amoureux de ce garçon, je me suis dit <em>“tant pis”</em>.</p>
+<p>Quand je suis revenu en France le lendemain, j’ai vu que j’avais 30 appels manqués et 40 messages de mes parents qui s’inquiétaient... jusqu’au moment où ils me disaient qu’ils avaient fouillé ma chambre et qu’ils avaient lu les lettres que ce garçon m’avait envoyées. Et c’est comme ça que mes parents ont su que j’étais gay. »</p>
+<p><em>* Les prénoms ont été modifiés</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/140704396_158277769188161_7305462724895108471_n.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+											<span>
+												Par Julien & Thaïs
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Des coming out dans chaque hémisphère
+										</h4>
+									
+					
+					<p>À l’étranger, de nombreuses personnalités ont récemment fait leur coming out. De nouveaux modèles pour inspirer les jeunes LGBTQ+. Voici un petit tour du monde arc-en-ciel, loin d’être exhaustif.</p>
+<p>Direction le Nigéria pour commencer, avec deux annonces qui ont fait parler d’elles. Le 1er février, l’acteur Uche Maduagwu a fait part <a href="https://tetu.com/2021/02/01/lacteur-nigerian-uche-maguagwu-fait-son-coming-out-gay/">publiquement</a> de son orientation sexuelle, expliquant : <em>« Ne laisse personne t’intimider. Je suis gay […] et je suis fier. »</em> Le 21 janvier précédent, c’est par une photo publiée sur <a href="https://www.instagram.com/p/CKREamUs0y5/">Instagram</a> que Bolu Okupe, un drapeau arc-en-ciel sur les épaules, a fait son coming out gay à l’âge de 27 ans. Un coming out très commenté car son père est un politicien ouvertement homophobe.</p>
+<p>En Allemagne, c’est sur le même réseau social que le comédien Jannick Schümann est sorti du placard le 26 décembre dernier, exposant <a href="https://tetu.com/2020/12/29/cet-acteur-allemand-vient-de-faire-son-coming-out-de-la-plus-jolie-des-facons/">une photo</a> de lui et de son compagnon légendée par un simple cœur. L’acteur est notamment à l’affiche de <em>Monster Hunter</em>, sorti en 2020.</p>
+<p>En Amérique du Nord, le coming out le plus marquant de ces derniers mois reste celui d’Elliot Page. L’acteur de X-Men et de Juno a annoncé <a href="https://www.huffingtonpost.fr/entry/elliot-page-juno-coming-out-trans_fr_5fc67ebfc5b6e4b1ea4f3b2d">sa transidentité</a> le 1er décembre. <em>« Je ne peux exprimer à quel point il est remarquable d’aimer enfin la personne que je suis et d’atteindre ma véritable identité »</em>, a déclaré l’acteur canadien que l’on avait aussi vu dans la série documentaire <em>Gaycation</em> (à voir !). Une déclaration qui rappelle le premier coming-out de l’acteur pour son orientation sexuelle, réalisé il y a 7 ans <a href="https://www.youtube.com/watch?v=1hlCEIUATzg&amp;fbclid=IwAR2Y_tqOqAAlnQYBQbfk3iGyMUAv01EYh2hKKfI0vA_Q_NhWJJTlGOHNX88">lors d’un discours à Las Vegas</a>.</p>
+<p>Chez leurs voisins de la catholique Amérique Latine, c’est le monde du basket qui a été marqué par deux coming out, ceux du Chilien <a href="https://www.instagram.com/p/B_EAt9cJVm4/?utm_source=ig_embed">Daniel Arcos</a> et de l’Argentin Sebastian Vega. Et dans le milieu sportif toujours, un autre coming out a fait parler de lui en Inde : Dutee Chandy, première Indienne médaillée de bronze en athlétisme depuis 10 ans, a annoncé <a href="https://www.franceinter.fr/emissions/les-histoires-du-monde/les-histoires-du-monde-30-mai-2019">en 2019</a> qu’elle vivait avec sa compagne et qu’elle l’avait demandée en mariage. Une première pour une personnalité originaire de « l’Inde rurale » aux codes matrimoniaux très traditionnels.</p>
+<p>Direction plus à l’Est encore, en Corée du Sud, où la représentation des LGBTQ+ gagne du terrain, même si l’homosexualité reste encore très taboue. Dans un pays où 20 ans plus tôt, un présentateur TV célèbre <a href="https://abcnews.go.com/International/story?id=7351116&amp;page=1">avait été viré</a> et blacklisté pour avoir fait son coming out en direct, le chanteur Holland s’est lancé en 2018 dans l’industrie de la K-pop en révélant qu’il était gay. <em>« Personne ne voulait être ouvertement gay, donc je me suis lancé »,</em> confie-t-il à <a href="https://www.vogue.co.uk/arts-and-lifestyle/article/k-pop-holland-on-coming-out">Vogue</a>. Si plus récemment, le chanteur Kwon Do Woon a révélé son homosexualité après 10 ans de carrière, aucune célébrité de premier plan n’a fait de coming out explicite ces dernières années. Suga, membre du groupe-phare BTS, a cependant affirmé qu’il <em>« ne se limitait pas aux filles »</em>, un coming out pansexuel ambigu.</p>
+<p>Rappelons que dans le monde, les droits des personnes LGBTQ+ restent très inégaux. 69 pays criminalisent encore les rapports homosexuels, selon l’Association internationale des personnes lesbiennes, gays, bisexuelles, trans et intersexuées (<a href="https://ilga.org/sites/default/files/downloads/FRA_ILGA_World_map_sexual_orientation_laws_dec2020.png">ILGA</a>) en 2020.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/love-simon.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Tom
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;On ne fait son coming out qu&rsquo;une seule fois&nbsp;&raquo;
+										</h4>
+									
+					
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+									
+					<p>Si on garde généralement à l’esprit la toute première fois qu’on a annoncé son homosexualité, ou bien le moment où on s’est ouvert à ses parents, beaucoup de jeunes LGBTQ+ ont plutôt l’impression, comme Eva (qui témoigne juste au-dessus), d’avoir fait leur coming out une centaine de fois ! Car sortir du placard se fait généralement en plusieurs étapes.</p>
+<p>Le coming out auprès de la famille est souvent le plus compliqué. Outre la fracture générationnelle qui peut entraîner hostilité ou homophobie, il y a parfois une certaine appréhension voire une forme de culpabilité à l’idée de révéler quelque chose que l’on avait caché pendant de nombreuses années — même avec l’entourage familial le plus ouvert du monde.</p>
+<p>Pour beaucoup, il est alors plus facile de s’ouvrir auprès de ses ami·e·s, en particulier si l’amitié est récente, par crainte que celle-ci se trouve perturbée par l’annonce. Dans le film <em>Love, Simon</em> (2018), le personnage principal fait son coming out pour la première fois à son amie Abby, qu’il ne connaît que depuis quelques mois. Quand sa meilleure amie Leah apprend son homosexualité, elle se vexe qu’il ne lui en ait pas parlé en premier. Simon lui répond alors : <em>« Je connais Abby depuis six mois, toi depuis 13 ans. Je savais que si je te le disais les choses ne seraient plus jamais comme avant. Je voulais vraiment que tout reste comme avant. »</em></p>
+<p>Mais une fois la famille et les ami·e·s proches au courant, le coming out n’est pas pour autant derrière soi. <em>« Quand tu commences un nouveau travail par exemple, il y a toujours la question de si tu le dis ou pas</em>, explique Eva. <em>Je me suis rendu compte pendant mon premier stage que le fait de ne pas en parler c’était vraiment compliqué, parce que je devais mentir tout le temps sur avec qui j’habitais ou ce que je faisais le week-end. Maintenant, j’essaye de le caser le plus vite possible, sans dire directement “je suis lesbienne”. »</em></p>
+<p>Il faut dire que dans la société, la « présomption d’hétérosexualité » reste forte, de l’enfance jusqu’à l’âge adulte. <em>« Cela me semble injuste que seules les personnes gays aient à faire leur coming out »</em>, se lamente Simon dans le film, avant d’imaginer ses ami·e·s annonçant leur hétérosexualité à leurs parents dévastés — une situation impensable. « <em>Pourquoi être hétéro serait-il l’option par défaut ? »</em>, questionne-t-il. C’est vrai ça, pourquoi ?</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/giphy-5.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Sortir du vestiaire
+										</h4>
+									
+					
+					<p>Après avoir appris, dans l’édito, que le coming out est une idée allemande, vous ne serez peut-être pas surpris·es d’apprendre que, le 17 février, 800 professionnel·le·s du football allemand ont signé <a href="https://11freunde.de/artikel/liebe-darf-nicht-diskriminiert-werden/3332570">une tribune en soutien aux personnes qui voudraient faire leur coming out dans le milieu.</a></p>
+<p>Partant du constat qu’il <em>« n’y a toujours pas un seul professionnel ouvertement gay dans le football masculin en Allemagne »</em>, cette tribune, intitulée <em>« L’amour ne doit pas être discriminé »</em> et parue dans le <em>11 Freunde</em>, un mensuel sportif allemand, réunit plusieurs personnalités du football allemand autour d’un hashtag commun : <em>« Vous pouvez compter sur nous »</em> (#ihrkönntaufunszählen).</p>
+<p>Des joueur·euse·s du Borussia Dortmund, de Fribourg, de Hoffenheim, et d’autres à titre individuel, affichent ainsi leur <em>« soutien total »</em> à leurs camarades qui décideraient de franchir le pas du coming out, <a href="https://france3-regions.francetvinfo.fr/normandie/sites/regions_france3/files/assets/documents/compte-rendu-court-a.mette-pfg_1.pdf">dans un milieu footballistique généralement considéré comme homophobe.</a></p>
+<p>Cette initiative prend place deux semaines après le <a href="https://sz-magazin.sueddeutsche.de/kunst/schauspielerinnen-schauspieler-coming-out-89811?reduced=true">coming out commun de 185 acteur·rice·s allemand·e·s dans la <em>Süddeutsche Zeitung</em></a> (l’un des principaux journaux du pays), pour une meilleure représentation de la diversité dans le monde de la culture.</p>
+<p>Si c’est pas une bonne nouvelle ça !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-comingout.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>On l’avoue, nous non plus la pizza à l’ananas ce n’est pas trop ça... Mais après tout, l’inclusion c’est aussi dans les goûts. Alors si un jour, dans un monde post-covid, on parvient à organiser un pique-nique du Point Q, eh bien on attend la pizz...</p>
+<p>On espère de tout cœur que ce numéro t’a plu. Pour nous soutenir, tu peux contribuer de manière ponctuelle ou régulière sur <a href="https://fr.tipeee.com/le-point-q">notre compte Tipeee</a> !</p>
+<p>Tu peux aussi nous suivre sur les réseaux sociaux : <a href="https://twitter.com/LePointQ">Twitter</a>, <a href="instagram.com/lepoint.q">Instagram</a>, <a href="https://www.facebook.com/lepointq.news">Facebook</a>... ou si tu préfères, nous joindre <a href="mailto:lepointq.newsletter@gmail.com">par mail</a>.</p>
+<p>Avant cela, partage la newsletter avec tes ami·e·s ! Plus on est, mieux on vit !</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Que cette semaine soit pleine d’amour, de révolution et de mots criés hauts et forts... À lundi prochain,</p>
+<p>Julien, Juliette, Orianne, Tom, Thaïs et Valentin, aka Le Point Q 2.0.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
