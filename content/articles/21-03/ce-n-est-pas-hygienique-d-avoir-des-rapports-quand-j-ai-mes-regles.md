@@ -1,7 +1,6 @@
 +++
 authors = ["Thaïs"]
 date = 2021-02-28T21:17:33Z
-draft = true
 image = "/media/uploads/sex.jpeg"
 preview = "J'en ai discuté avec la gynécologue Françoise Thonnet de Vaublanc, qui a trop entendu dans son cabinet ces idées reçues sur les règles et les rapports sexuels. Et elle est formelle : _\"Il n’y a aucun danger, pour les deux parties.\"_"
 section = "On débunke"

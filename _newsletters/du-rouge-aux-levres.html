@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🩸 Du rouge aux lèvres</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>On va parler ragnanas, protections périodiques... On va surtout parler « règles » et ne plus jamais avoir honte ou peur de prononcer ce mot sur l’oreiller.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Du rouge aux lèvres
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021 !</p>
+<p>Cette semaine, pour ses 600 fidèles abonné.e.s, la newsletter enfile la couleur du désir, du Père-Noël et des tomates. On va parler ragnanas, protections périodiques... On va surtout parler « règles » et ne plus jamais avoir honte ou peur de prononcer ce mot sur l’oreiller. Selon un sondage réalisé sur notre compte <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, pour 70 % d’entre vous, le sexe pendant les règles c’est cool !</p>
+<p>Dans les témoignages, <strong>Orianne et Valentin ont pris soin d’illustrer vos différents points de vue sur ce sujet</strong>. Thaïs poursuit avec un débunk savonné : <strong>le sexe pendant les règles, c’est hygiénique ?</strong> Vous n’avez pas pu le rater : les protections périodiques seront distribuées gratuitement aux étudiantes à partir de septembre, dans les facs et dans les Crous ! Mais on n’est pas les premiers sur le coup. Dans le Vu d’ailleurs, <strong>Julien nous emmène en Écosse et en Nouvelle-Zélande, deux pays précurseurs dans la distribution de protections périodiques aux personnes menstruées.</strong></p>
+<p><strong>Et pour la bonne nouvelle, on crie Weeeek’Up !</strong> <a href="https://laweekup.com">C’est le nom de la marque de Corinne</a>, une Sarthoise ultra cool qui a lancé sa boutique de cups et de serviettes lavables... Elles sont belles, pratiques (cup pliable), bon marché (15 à 30 euros pour 5 ans de vie), écolos et saines pour le corps. <strong>Comme on aime vous faire plaisir,</strong> <a href="https://laweekup.com/shop/"><strong>c’est -10 % sur toute la boutique avec le code promo POINTQ10</strong></a> <strong>!</strong></p>
+<p>On a mis le paquet cette semaine, et on pense à vous tou·te·s qui lirez ces quelques lignes une main sur le ventre,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/ava-sol-azwpl_drq0i-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Règles et sexe&nbsp;: incompatible&nbsp;?
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+											<span>
+												Par Valentin & Orianne
+											</span>
+										</h3>
+
+
+					<ul>
+<li><strong>Marine</strong> — <strong>22 ans, célibataire, bisexuelle</strong></li>
+</ul>
+<p>« J’ai été en couple aussi bien avec des filles que des garçons et j’ai remarqué que les règles posaient beaucoup plus de soucis avec mon ex-copine qu’avec les garçons. Avec elle, on ne faisait rien du tout pendant les règles alors qu’avec les garçons ça n’a jamais posé problème, on gardait quasiment la même sexualité. Je trouve ça marrant comme phénomène, paradoxalement on pourrait se dire qu’entre filles ça gêne moins. Je pense que c’est lié à la nature des pratiques. Comme ce qu’on pouvait faire entre filles engageait beaucoup plus la bouche et de toucher les parties avec les mains, c’était plus un frein. Le contact avec le sang est beaucoup plus direct que dans le rapport hétéro “tradi” où même en temps de règles, tu peux t’en sortir sans trop de contact rapproché avec le sang. Avec les garçons, j’ai l’impression que la différence de sexe créait une sorte de curiosité qui entraînait un dialogue. Du coup, il n’y avait pas de blocage. »</p>
+<ul>
+<li><strong>Maëlys</strong> — <strong>21 ans, en couple libre, bisexuelle</strong></li>
+</ul>
+<p>« J’ai essayé plusieurs fois et ça m’a fait mal, je ne ressentais vraiment pas autant de plaisir que normalement. Je pense que mon copain était un peu dégoûté. Ça ne le gênait pas tellement, mais ça le sortait un peu du <em>mood</em>. Donc maintenant quand j’ai mes règles, on ne fait tout simplement pas l’amour. On se fixe par rapport à mes règles, on ne le fait pas à ce moment-là car mon plaisir change complètement. »</p>
+<ul>
+<li><strong>Élodie</strong> — <strong>36 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p>« Pendant très longtemps je ne voulais pas faire l’amour pendant mes règles parce que je trouvais ça dégueulasse, gênant, je n’avais pas de libido. Puis j’ai arrêté la contraception et et ma libido a beaucoup augmenté. J’ai essayé et je me suis rendue compte que lorsque je faisais l’amour ça stoppait mes règles. Maintenant, je prends grave mon pied, c’est hyper bien et pas de stress avec le sang. C’est très compatible. Il faut aussi avoir le bon partenaire et se sentir bien, que la personne ne soit pas dégoutée. Parce que oui, il y a des hommes que ça dégoute. Ça dépend aussi pour les femmes, qui peuvent avoir des règles hyper abondantes. Moi j’ai la chance que ce ne soit pas le cas. Je ne me dis plus : c’est “code rouge”, il va falloir attendre. »</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/natracare-mvfws7v7noc-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Julien
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											L&rsquo;Écosse et la Nouvelle-Zélande, précurseuses des protections périodiques gratuites
+										</h4>
+
+
+					<p>Enfin gratuites pour les jeunes. Dans les prochaines semaines, des protections périodiques <a href="https://www.francetvinfo.fr/sante/des-protections-periodiques-seront-distribuees-gratuitement-dans-les-universites-et-les-residences-des-crous-a-la-rentree-prochaine_4308037.html">seront mises à disposition librement</a> dans les résidences Crous et les services de santé universitaires français.</p>
+<p>Jusque-là, seules des actions sur le plan local avaient eu lieu, alors même que 33 % des jeunes personnes menstruées* auraient besoin d’aide financière <a href="https://www.francetvinfo.fr/sante/hygiene/precarite-33-des-etudiantes-ont-besoin-d-une-aide-financiere-pour-acheter-des-protections-hygieniques-selon-la-fage_4287523.html">pour s’en procurer</a>.</p>
+<p>Une première dans le monde ? Pas vraiment. C’est en Écosse que l’impulsion a été donnée, et à plus grande échelle : une loi votée à l’unanimité du parlement national le 24 novembre 2020 a rendu <a href="https://beta.parliament.scot/-/media/files/legislation/bills/current-bills/period-products-free-provision-scotland-bill/introduced/policy-memorandum-period-products-scotland-bill.pdf">gratuites</a> les protections périodiques pour toutes <em>« les femmes, les jeunes filles et les personnes trans »</em> du pays. Un succès retentissant après quatre années d’une campagne portée par la députée travailliste Monica Lennon, qui a salué <em>« un jour de fierté pour l’Écosse »</em>.</p>
+<p>Le coût des protections menstruelles, le manque d’éducation et la honte liée aux règles : tel serait le <em>« trio toxique »</em> qui provoquerait cette précarité menstruelle, contre laquelle s’est battue la députée. Au Royaume-Uni, une jeune femme sur 10 serait victime de cette situation, relate <a href="https://www.franceinter.fr/societe/l-ecosse-rend-les-protections-periodiques-accessibles-gratuitement-une-premiere-mondiale">France Inter</a>.</p>
+<p>Autre pays précurseur, cette fois-ci dans l’hémisphère Sud : la Nouvelle-Zélande, où des protections périodiques gratuites vont être distribuées dans les écoles du pays, pour un coût de 15 millions d’euros sur trois ans.</p>
+<p>La Première ministre travailliste Jacinda Ardern a souligné que des jeunes en précarité menstruelle ne se rendaient pas à l’école faute de protections. Cette mesure permettrait selon elle <em>« de s’attaquer directement à la pauvreté, d’aider à accroître le taux de fréquentation scolaire et d’avoir un effet bénéfique sur le bien-être des enfants »</em>, <a href="https://www.francetvinfo.fr/sante/environnement-et-sante/nouvelle-zelande-distribution-gratuite-de-protections-periodiques-dans-les-ecoles-du-pays_4301795.html">a-t-elle déclaré</a> le 18 février 2021.</p>
+<p>Des exemples inspirants, alors que 500 millions de personnes dans le monde souffriraient d’un manque de protections menstruelles, selon la <a href="https://www.worldbank.org/en/news/feature/2018/05/25/menstrual-hygiene-management">Banque mondiale</a>. Et 1,7 million en France, d’après une étude de <a href="https://www.ifop.com/publication/hygiene-et-precarite-en-france/">l’Ifop</a>.</p>
+<p><em>* Par « personnes menstruées », on désigne toutes celles et ceux qui ont leurs règles, femmes et hommes trans. Le gouvernement a parlé de gratuité pour les « étudiantes », espérons qu’elle soit mise en place pour toutes les personnes qui en ont besoin !</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/sex.jpeg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Ce n’est pas hygiénique d’avoir des rapports quand j’ai mes règles.&nbsp;&raquo;
+										</h4>
+
+
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+
+					<p>J’en ai discuté avec la gynécologue Françoise Thonnet de Vaublanc, qui a trop entendu dans son cabinet ces idées reçues sur les règles et les rapports sexuels. Et elle est formelle : <em>« Il n’y a aucun danger, pour les deux parties. »</em></p>
+<p>Déjà, parce que le sang des règles n’est pas sale — et d’ailleurs « sang » n’est pas le terme le plus juste : <em>« Ce n’est pas un écoulement d’une artère, mais d’une muqueuse préparée à la nidation (à accueillir un ovule fécondé), qui meurt et se décompose : c’est parfaitement naturel et ça vient de notre corps, donc rien de pathogène là-dedans. »</em> En clair, ce n’est pas le corps qui est blessé.</p>
+<p>Beaucoup pensent par ailleurs que la pénétration n’est pas recommandée pendant les règles : après tout, l’organe féminin semble « saigner ». Mais là aussi, la gynécologue explique qu’il n’y a aucun souci à se faire : « <em>Les “règles” ne font que transiter dans le vagin, avec qui le pénis est en contact. Et il y a une grosse barrière de plusieurs centimètres entre le vagin et l’utérus : c’est le col de l’utérus. »</em></p>
+<p>Des inquiétudes qu’elle associe à celles au sujet des stérilets, certains hommes craignant de « se piquer » ou sur la question des rapports pendant la grossesse. <em>« À chaque fois, je fais des dessins aux partenaires de mes patientes pour leur montrer qu’on est dans deux mondes séparés : le monde intra-utérin et intra-vaginal. »</em> Le passage de quelques millimètres de passage vers le vagin ne s’agrandit qu’à une seule occasion : pour laisser passer un bébé.</p>
+<p>Pourquoi toutes ces inquiétudes autour des rapports pendant les règles ? <em>« Des millénaires de sociétés et religions qui considèrent les femmes réglées comme “impures” »</em>, poursuit Françoise Thonnet de Vaublanc.</p>
+<p>Selon la gynécologue, la seule chose qu’une femme puisse redouter dans un rapport pendant ses règles, c’est qu’un orgasme entraîne une contraction utérine douloureuse, <em>« mais c’est vraiment très rare et la plupart des contractions ne font pas mal. »</em></p>
+<p>En somme, faites comme vous voulez, mais sachez qu’à part des taches sur les draps qui ne partent pas au lavage, les règles ne sont pas sales. En revanche, vous gardez tous les risques liés à un rapport normal. Car oui on peut tomber enceinte même en ayant ses règles, et les IST et les MST ne disparaissent pas, au contraire : <a href="https://www.huffingtonpost.fr/2017/05/13/8-choses-a-savoir-sur-les-rapports-sexuels-pendant-les-regles_a_22056515/">le risque de transmission serait accru pour plusieurs d’entre elles</a>, dont le VIH — donc sortez couverts !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/weekup.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Tom
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Des protections périodiques écolos et made in France avec La Week’Up
+										</h4>
+
+
+					<p>Outre leur coût et leur nocivité pour la santé, les protections périodiques classiques sont régulièrement pointées du doigt pour leur impact environnemental. Chaque année, <a href="https://www.terrafemina.com/article/protections-hygieniques-ecologiques-3-alternatives-pour-des-regles-ecolo_a347945/1">plus de 100 milliards de tampons et de serviettes sont jetés dans le monde</a> et deviennent autant de déchets plastiques.</p>
+<p>Alors on s’est dit qu’on avait à cœur de vous présenter quelqu’un qui propose une alternative saine pour le corps, éthique, sympa et bonne pour la planète ! <strong>Avec</strong> <a href="https://laweekup.com"><strong>La Week’Up, sa propre marque de protections périodiques écoresponsables</strong></a><strong>, Corinne Boulay coche clairement toutes les cases.</strong> Elle a d’abord lancé sa boutique pour ses raisons écologiques...</p>
+<p><em>« Je me promenais avec mes enfants sur la plage, quand mon petit dernier est tombé sur plusieurs applicateurs de tampon échoués sur le sable</em>, raconte la maman-entrepreneure. <em>Moi j</em>’<em>utilisais déjà la cup depuis plusieurs années parce que je ne supportais plus les tampons. Mon fils m</em>’<em>a alors demandé : “Mais pourquoi toutes les femmes ne font pas comme toi ?” Alors je me suis lancée. »</em></p>
+<p>Le résultat ? <a href="https://laweekup.com/coupe-menstruelle-2/"><strong>Une cup 100 % <em>made in France</em>, durable... et surtout pliable !</strong></a> <em>« Je voyage souvent, et je voulais qu</em>’<em>elle soit facilement transportable dans une trousse de toilette. »</em> La Week’Up est livrée avec sa petite boîte en bioplastique végétal, issu d’épluchures de pommes de terre — écolo jusqu’au bout !</p>
+<p>Mais Corinne ne s’est pas arrêtée là. Avec Annelise Morin, une autre entrepreneure sarthoise, elle a lancé en décembre dernier <a href="https://laweekup.com/serviettes-hygieniques-lavables/"><strong>une gamme de serviettes périodiques lavables</strong></a>. Fabriquées en coton bio, elles ont comme les cups une durée de vie de cinq ans et se lavent très facilement en machine.</p>
+<p>Engagée contre la précarité menstruelle, Corinne a reçu une commande de plus de 9000 serviettes du département de la Sarthe pour fournir les collèges du territoire. Elle anime également chaque semaine <a href="https://www.ouest-france.fr/leditiondusoir/2021-02-24/cet-atelier-permet-aux-femmes-de-parler-regles-coupes-menstruelles-et-perinee-sans-tabou-f2bbf2fe-45fe-4304-b7a3-fd557aa9b7a0">des ateliers</a> dans une épicerie solidaire près du Mans, pour sensibiliser les femmes en situation de précarité à ces protections alternatives, <strong>plus écologiques et économiques</strong>.</p>
+<p>Alors, cup ou serviette lavable, nous on foooonce acheter chez La Week’Up ! <strong>Avec le code promo POINTQ10 tu bénéficies d</strong>’<strong>une réduction de 10 % sur</strong> <a href="https://laweekup.com/shop/"><strong>toute la boutique</strong></a> <strong>!</strong> Pour suivre l’actualité de Corinne, tu peux également retrouver La Week’Up sur <a href="https://www.facebook.com/laweekup">Facebook</a> et <a href="https://www.instagram.com/laweekup/">Instagram</a>.</p>
+<p><em>Grâce à cet article sponsorisé, Le Point Q peut financer les petits mails que vous recevez... et préparer l’avenir.</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Tu cherches la BD de Morgan ? Il est actuellement en train de la griffonner dans son appartement bruxellois ! Il nous glisse dans l’oreillette que si tu es sage, elle apparaîtra mercredi sur le compte <a href="https://twitter.com/LePointQ">Twitter</a>, et jeudi sur le compte <a href="https://www.instagram.com/lepoint.q/">Instagram</a> du Point Q... Parfois, délayer le plaisir ça fait du bien.</p>
+<p><strong>La Week’Up t’as séduit·e mais tu as déjà oublié le code promo ? C’est POINTQ10 : avec, tu as</strong> <a href="https://laweekup.com/shop/"><strong>-10 % sur toute la boutique</strong></a> <strong>!</strong> De quoi faire de sacrées économies... <a href="https://www.lemonde.fr/les-decodeurs/article/2019/07/02/precarite-menstruelle-combien-coutent-ses-regles-dans-la-vie-d-une-femme_5484140_4355770.html">En moyenne, une femme dépense 7,50 euros par cycle menstruel</a> (seulement pour les protections et antidouleurs), soit 90 euros l’année... La cup c’est 30 euros et ça dure 5 à 8 ans ! Si tu veux savoir combien te coûtent tes règles (ou pour ta copine), <a href="https://www.lemonde.fr/les-decodeurs/article/2019/07/02/precarite-menstruelle-combien-coutent-ses-regles-dans-la-vie-d-une-femme_5484140_4355770.html">utilise cette calculatrice du Monde</a> !</p>
+<p>Si tu n’as pas tout lu sur les poils au lit, <a href="https://lepointq.com/newsletters/2021-a-poil/">ce numéro de janvier</a> est fait pour toi. Toutes les autres newsletters sont à retrouver sur notre site : <a href="https://lepointq.com/newsletters/">lepointq.com</a>.</p>
+<p>Quant à notre présence au quotidien, c’est sur <a href="https://twitter.com/LePointQ">Twitter,</a> <a href="https://www.instagram.com/lepoint.q/">Instagram</a> et <a href="https://www.facebook.com/lepointq.news">Facebook</a>. On y partage du contenu exclusif et on échange avec vous ! Si tu as 2 euros dans ta poche, il y a toujours moyen de nous soutenir <a href="https://fr.tipeee.com/le-point-q">sur Tipeee</a>. On remercie chaleureusement Delphine, Alexandre, Aurélien et Sélène pour leurs tips le mois dernier&nbsp;!</p>
+<p>Enfin, si cette newsletter t’a plu, partage-la avec tes ami·e·s ! Envoie-leur par mail, donne-leur le lien de notre site <a href="https://lepointq.com">lepointq.com</a>, ou encore clique sur ce gros bouton :</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Excellente semaine et au lundi 8 mars, pour fêter toutes les femmes de cette newsletter !</p>
+<p>Julien, Juliette, Orianne, Tom, Thaïs et Valentin, aka Le Point Q 2.0.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
