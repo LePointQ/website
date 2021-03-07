@@ -18,6 +18,4 @@ Orianne, Thaïs, Juliette et Tom, et depuis peu Julien et Valentin. On a entre 2
 
 Le Point Q c’est aussi vous toutes et tous, vous qui nous suivez, répondez à nos sondages et à nos témoignages. Ensemble, on fait vivre un espace _safe_, on libère la parole et on partage un bon moment, chaque lundi dans vos boîtes mail. Merci d’être là et de faire vivre ce média, on n’existe que par vos belles voix.
 
-<a href='mailto:lepointq.newsletter@gmail.com'>
-<button class='inverted' style='display: block; margin: 1rem auto;'>Nous contacter</button>
-</a>
+<a href='mailto:contact@lepointq.com'> <button class='inverted' style='display: block; margin: 1rem auto;'>Nous contacter</button> </a>
