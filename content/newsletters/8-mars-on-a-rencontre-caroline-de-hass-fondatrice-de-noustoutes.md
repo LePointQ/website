@@ -9,7 +9,7 @@ outro = "Manif’ au Panthéon l’année prochaine ? Pourquoi pas. On est sûr�
 plume_morgan = "/media/uploads/strip-morgan-8mars.jpg"
 preview = "En cette journée mondiale de lutte pour l’égalité des droits, on rend hommage aux femmes et on vous propose une interview exclusive avec l’une des femmes les plus calées sur le sujet"
 temoignages = []
-title = "8 mars : on a rencontré Caroline De Hass, fondatrice de #NousToutes"
+title = "8 mars : Rencontre avec Caroline De Hass, fondatrice de #NousToutes"
 vu_d_ailleurs = []
 
 +++
