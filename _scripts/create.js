@@ -21,6 +21,8 @@ const createCampaign = async () => {
 
 		const { text: html } = await readFilePromise(`./_newsletters/${slug}.html`);
 
+		console.log(data, html)
+
 		const response = await fetch('https://api.sendinblue.com/v3/emailCampaigns', {
 			method: 'POST',
 			headers: {
@@ -32,7 +34,7 @@ const createCampaign = async () => {
 				name: `Le Point Q #${data.numero}`,
 				sender: {
 					name: 'Le Point Q',
-					email: 'lepointq.newsletter@gmail.com'
+					email: 'contact@lepointq.com'
 				},
 				subject: `${emoji} ${entities.decode(typografix(data.title))} - Le Point Q #${data.numero}`,
 				htmlContent: html,
