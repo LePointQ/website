@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>💃 Femmes de 2021</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Pour cette 21e édition, on a choisi de donner la parole à nos lectrices ! Nous aussi, on pense que le 8 mars c’est tous les jours de l’année... et on s’est dit qu’il était temps de faire un point sur la sexualité de celles qui sont, à leur grand désespoir, « toujours en dessous ! » dans les rapports hétéros.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Femmes de 2021
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021 !</p>
+<p>Pour cette 21e édition, on a choisi de prolonger l’interview de la militante féministe Caroline de Haas, sur ce que signifie <a href="https://lepointq.com/newsletters/8-mars-on-a-rencontre-caroline-de-haas-fondatrice-de-noustoutes/">être une jeune femme de 25 ans à notre époque</a>, en donnant la parole à nos lectrices ! Nous aussi, on pense que le 8 mars c’est tous les jours de l’année... et on s’est dit qu’il était temps de faire un point sur la sexualité de celles qui sont, à leur grand désespoir, « toujours en dessous ! » dans les rapports hétéros.</p>
+<p><strong>Orianne et Thaïs ont recueilli les témoignages de ces 4 femmes aux 4 sexualités</strong>. Elles vous offrent une longue interview croisée, écrite à quatre mains donc... Merci à Alicia, Marie, Alice et Lola de nous avoir fait confiance et d’avoir dit tout haut ce qu’elles pensent tout bas ! C’est pour ça qu’on existe et c’est ainsi qu’on fait bouger les lignes.</p>
+<p>Comme chaque semaine, <strong>notre illustrateur Morgan est au rendez-vous... Il fait taire les bruits de couloir entre femmes de 2021 !</strong> Si tu veux toujours plus de Point Q, ouvre <a href="https://forms.gle/5qzgVnWV4AXFaVqD9">ce lien</a> et reviens-y une fois en bas. <a href="https://fr.tipeee.com/le-point-q">Celui-ci</a>, ne le ferme pas.</p>
+<p>Excellente lecture à toutes et à tous,</p>
+<p>Le Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/le-point-q.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						4 femmes, 4 sexualités
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+											<span>
+												Par Thaïs & Orianne
+											</span>
+										</h3>
+					
+					
+					<p><strong>Alicia</strong> est une jeune femme de 26 ans, célibataire, hétérosexuelle. Depuis une relation amoureuse adolescente compliquée, elle ne fréquente que des « coups d’un soir », ou presque. Et elle se sent très bien avec ça.</p>
+<p><strong>Marie</strong> aussi a 26 ans, est hétérosexuelle et <em>« célibatante comme Bridget Jones »</em>. Coups d’un soir ou partenaire régulier, elle est devenue à l’aise avec sa sexualité au fil de ses relations.</p>
+<p><strong>Alice</strong>, 24 ans, hétérosexuelle et célibataire, a délaissé les applis de dating et espère une relation plus sérieuse. Elle n’a pas spécialement envie de sexe et considère que tout le monde devrait se sentir libre avec ses désirs.</p>
+<p><strong>Lola*</strong> est la benjamine de la semaine. Elle a 23 ans et est bisexuelle. Après deux ans de relation avec une femme, elle souhaite explorer sa sexualité et mieux comprendre ses désirs.</p>
+<h3>Tu dirais que tu es une femme libre et épanouie sexuellement ?</h3>
+<p><strong>Alicia :</strong> « Je me sens à la fois libre et pas libre. Je choisis avec qui je couche, on ne me force à rien. Mais je pense que je suis influencée par les diktats de la société. Parfois je suis bloquée parce que je me dis “ça ne se fait pas”. Souvent je ne prends pas trop d’initiatives. Je me laisse aller, je ne dis rien, surtout quand je ne connais pas mon partenaire. Pourtant je n’ai pas de pratiques “bizarres” ou originales et j’aimerais m’imposer. Mais j’ai un problème avec la communication et peur d’être jugée. Je n’ose pas dire <em>“j’aimerais bien ci ou ça”.</em> Donc je me sens libre mais je m’auto-censure. »</p>
+<p><strong>Marie :</strong> « J’ai la maitrise de ma sexualité. Mon partenaire sait ce que j’aime. Il n’a pas peur de demander et vice versa. Ca n’a pas toujours été comme ça. Au début, on était moins à l’aise, on avait peur de ne pas bien faire les choses. »</p>
+<p><strong>Lola :</strong> « J’ai bientôt 24 ans et je regrette de ne pas me sentir libre sexuellement. Je pense avoir été épanouie avec mes partenaires, mais pas totalement libre. J’ai toujours une censure par rapport à certaines pratiques, que ce soit avec des hommes ou avec des femmes, alors que je peux très bien les fantasmer. J’ai besoin d’avoir pleinement confiance en moi et en mon partenaire pour explorer ma sexualité, ce qui arrive rarement avant d’être en couple sur une longue période. »</p>
+<h3><strong>Comment se caractérise ta sexualité ?</strong></h3>
+<p><strong>Alicia :</strong> « Je n’ai jamais eu une sexualité tendre, puisque je couche avec différentes personnes. Sauf durant ma dernière relation où c’était plus posé. On a appris à mieux se connaitre, donc c’était naturellement moins bestial. Mais je suis moins à l’aise avec les relations plus “sérieuses”. Je n’ai pas l’habitude. »</p>
+<p><strong>Marie :</strong> « Je suis très libérée, je couche le premier soir. J’ai eu beaucoup de partenaires et je n’ai pas peur du jugement. Il n’y a que moi qui peux me juger là-dessus. »</p>
+<p><strong>Alice :</strong> « Je ne pense pas avoir beaucoup de tabous sur le sexe. Pour moi, ça doit avant tout être un moment de partage de plaisir (ou de plaisir solitaire) ! Je me questionne pas mal, par exemple sur <em>“Est-ce qu’un jour je pourrais coucher avec une personne du même sexe que moi pour voir si ça me plaît ?”</em> Je pense que c’est important de se poser plein de questions. »</p>
+<p><strong>Lola :</strong> « Je dirais que ma sexualité est plutôt simple, même en étant bisexuelle. Je n’utilise pas de sextoys ou autres accessoires, je n’ai jamais joué de rôle, etc. J’ai rarement eu des rapports purement sexuels et durant lesquels je me suis sentie totalement libre dans mon plaisir. Vanille donc, classique. »</p>
+<h3><strong>Mais c’est quoi que tu aurais envie de faire ?</strong></h3>
+<p><strong>Alicia :</strong> « Par exemple les jeux de rôle, mais je me dis <em>“Non pas avec un coup d’un soir”.</em> Je pense qu’il faut construire une relation pour être à l’aise et vraiment exprimer ce que l’on veut au lit. »</p>
+<h3><strong>C’est quoi le diktat selon toi le plus prégnant ?</strong></h3>
+<p><strong>Alicia :</strong> « La femme doit souvent occuper la place de soumise. Le mec est systématiquement au-dessus, dominant. Quand l’acte sexuel commence, dans mon cas, le mec va directement se positionner sur moi. Ça m’est arrivée plusieurs fois de dire : <em>“Non j’aimerais bien être au-dessus cette fois”</em>. Mais ça dure deux secondes… Et on retourne dans la position initiale. C’est un rôle ancré en eux qui n’est, je pense, pas conscientisé. »</p>
+<p><strong>Marie :</strong> « Je pense surtout aux termes qui collent à la peau de certaines femmes, comme “pute” et “salope”, notamment de la part des autres femmes. Il y a aussi les barrières qu’on s’impose à nous-mêmes. Et pour qualifier certains actes sexuels qui nous dérangent, on utilise des mots comme “sale”, “dégoûtant”. »</p>
+<p><strong>Lola :</strong> « J’ai encore l’impression qu’une fille qui prend l’initiative avec un mec c’est peu apprécié ou ça relève de l’exceptionnel. Je crois surtout que les clichés sont très prégnants lors du premier rapport. Souvent, on n’ose pas communiquer. Peut-être que je me trompe, mais quand j’en parle en dehors de Paris c’est ce qui ressort. »</p>
+<h3><strong>Est-ce que tu as le sentiment que ton plaisir sexuel est pris en compte par tes partenaires ?</strong></h3>
+<p><strong>Alicia :</strong> « Ah non <em>(rires)</em>. Ça m’arrive rarement de prendre du plaisir ou alors il faut que je décide, que je mène la danse. Les mecs ne savent pas comment faire... Ils ne savent pas ce qu’est un clitoris. Ils pensent souvent que la pénétration suffit. Je crois que c’est aussi lié à l’usage du porno, souvent les hommes en regardent et s’y fient. Pour y échapper et parce que je m’ennuyais, plein de fois j’ai simulé. Je voyais bien que la communication était impossible.</p>
+<p>Ce sont des coups d’un soir donc souvent ils s’en fichent. Avec ma dernière relation plus sérieuse, c’était un peu différent. Je lui ai dit et expliqué comment je fonctionnais. Un jour il a compris et j’ai senti la différence. Il l’a fait une fois et après il est reparti dans ses pratiques pénétro-centrées. »</p>
+<p><strong>Alice :</strong> « Ça dépend vraiment des cas. Je suis déjà tombée sur un <em>“fuck boy”</em> qui avait fini en 2 minutes et qui, en résumé, voyait ça juste comme une branlette améliorée pour lui. À l’inverse, je suis tombée sur des mecs qui étaient beaucoup plus attentifs à mes envies et à mon ressenti. »</p>
+<h3><strong>Est-ce que tu te fais plaisir toute seule ?</strong></h3>
+<p><strong>Alicia :</strong> « Oui, et je prends limite plus de plaisir toute seule. Je le fais depuis très jeune. Au début j’en parlais pas, je trouvais ça gênant. Quand tu es jeune, tu n’en parles pas à tes copines, alors que je suis sûre qu’elles devaient faire la même chose. Maintenant, je n’ai aucun problème avec ça. Une fois que t’as couché, les langues se délient. En tout cas ça été ça pour moi.</p>
+<p>Les réseaux sociaux nous aident aussi à nous libérer. En lisant les commentaires, on s’aperçoit que nous sommes plusieurs à penser pareil, à vivre la même chose. Ailleurs, la sexualité, on en parle peu. Même à la télé. Ça se développe mais selon moi c’est encore trop rare. Ça reste tabou. »</p>
+<p><strong>Marie :</strong> « Me masturber ? Non je préfère avec un partenaire, même avec un coup d’un soir. Je préfère ces moments, la chaleur humaine. »</p>
+<h3><strong>Est-ce que le fait que tu ne sois pas en couple et que tu couches avec des partenaires différents, c’est bien vu selon toi ?</strong></h3>
+<p><strong>Alicia :</strong> « Je me fais juger par certains de mes proches. Mes amis comprennent, ils ne m’ont jamais rien dit. C’est vrai que c’est pas le premier truc que je dis sur moi <em>(rires)</em>. C’est encore très mal vu. Très vite avec cette sexualité, nous sommes perçues comme des salopes, alors que les mecs eux, sont des héros. C’est comme la pratique du sexe oral, le cunni c’est sale mais la fellation c’est normal. »</p>
+<p><strong>Marie :</strong> « C’est de moins en moins mal vu, surtout chez les femmes je trouve. On passe d’un moment ou c’était mal vu de ne pas coucher ou de coucher beaucoup, à un moment où on laisse ça au “regard des autres”. Mais on nous juge toujours beaucoup. Une fille qui couche le premier soir ou qui a plusieurs partenaires, c’est une pute. Alors qu’un homme qui a des conquêtes, ce n’est pas grave. »</p>
+<p><strong>Lola :</strong> « Tout dépend de qui sont les autres. Mes parents préfèrent sûrement ne pas y penser. Mes amis proches ne doivent pas en penser grand chose. Seuls mes potes d’université pensent que j’ai une vie sexuelle trépidante (ce qui est peut-être vrai par rapport à la leur). Ce n’est pas important ce que l’on pense de moi tant que ça n’a pas d’incidence sur ma vie perso ou pro. »</p>
+<h3><strong>Plein de femmes ne sont pas épanouies sexuellement, ne prennent pas de plaisir. Toi pour avoir du plaisir, t’as besoin d’avoir le contrôle ?</strong></h3>
+<p><strong>Alicia :</strong> « Oui sinon il ne se passe rien. Si je me laisse aller je sais que je ne vais pas jouir. Donc je gère le rythme. Après, j’aime bien être soumise au lit mais de temps en temps et pour que ça mène au plaisir réciproque. »</p>
+<h3><strong>Qu’est-ce que t’aimerais changer dans ta sexualité pour être totalement épanouie ?</strong></h3>
+<p><strong>Alicia :</strong> « Il faudrait que je communique plus même si avec un coup d’un soir c’est compliqué… Remarque c’est ce qu’elle fait Samantha Jones (dans la série <em>Sex and the City</em>). Il faudrait qu’on me laisse davantage faire, et pas tout le temps sur le même schéma que dans les pornos.</p>
+<p><strong>La différence avec les mecs c’est qu’ils viennent au lit comme au McDo, comme ils sont… Alors que moi par exemple je suis sans cesse en train de me dire <em>“Est-ce que j’ai pas oublié un poil ?”</em>.</strong> C’est une vraie charge mentale… Comment tu veux jouir si tu demandes si ton eyeliner n’est pas en train de couler ? C’est bête de penser ça. Mais est-ce que les mecs ont autant de pression ?</p>
+<p>C’est encore à cause de la société, la femme doit être belle et apprêtée. Alors qu’on pourrait très bien se présenter en survêt et avec des poils ! Parfois j’ai la flemme mais je me dis : <em>“il faut ce soit lisse !”</em> »</p>
+<p><strong>Marie :</strong> « J’aimerais essayer de nouvelles choses et trouver un partenaire avec qui le faire. Beaucoup d’hommes ont des idées préconçues sur ce qu’ils veulent essayer. Tout ça provient du porno. Par exemple, souvent ils ne sont pas prêts à essayer les sextoys. »</p>
+<p><strong>Alice :</strong> « J’aimerais arriver à communiquer à 100 % sans tabou. J’aimerais changer mon côté parfois un peu <em>“control freak”</em> qui rend difficile le fait de s’abandonner à l’autre. C’est compliqué de jouir tout en se concentrant sur son propre plaisir. Je n’ai joui avec quasi aucun mec en partie pour ça, même si la relation était plaisante. »</p>
+<p><strong>Lola :</strong> « J’aimerais avoir tellement confiance en moi que je pourrais me barrer à tout moment si jamais je ne prends pas mon pied. <em>“Ah en fait je m’ennuie, ciao !”</em> et claquer la porte. J’aimerais aussi savoir si je peux m’épanouir sexuellement sans sentiment amoureux derrière. »</p>
+<h3><strong>Et ton mot de la fin ?</strong></h3>
+<p><strong>Alicia :</strong> « Il faut vraiment que j’arrête de réfléchir à mes poils. Et surtout, pour toutes les femmes, il faut arrêter de faire semblant. Si c’est nul, il faut le dire et penser aussi à soi. Une relation c’est à deux, donc les deux doivent prendre du plaisir. On est en 2021 ! Il faut plus de cul, et du meilleur cul ! »</p>
+<p><strong>Marie :</strong> « Ce que j’aimerais dire aux femmes, c’est surtout de ne pas se forcer. D’avoir un regard bienveillant sur soi ! »</p>
+<p><em>* Le prénom a été changé.</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			
+
+			
+
+			
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-femmes2021.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Tu t’es reconnu·e dans l’un des témoignages ? Il t’as permis d’avancer dans ta sexualité ou d’entamer une discussion avec des ami·e·s, un ou une partenaire ? <a href="https://docs.google.com/forms/d/1wgQgC-RiTgysc_8FEphl-nh2o1MjPRJtXH1TFpzkhE4/edit?fbclid=IwAR2PwopkQa0HfBzjj7D5SRCxM3iMxRws0dTfu0J90qV-7-u9NQsznyjLhxI">On serait ravi·e·s de le savoir</a>.</p>
+<p>On relance un sondage, pour savoir en détail ce qui te plaît et te plaît moins dans Le Point Q ! Si tu as 40 secondes devant toi, offre-les nous, ces réponses nous permettront de continuer à nous améliorer.</p>
+<p>Si c’est pour une idée ou un mot d’amour, tu peux aussi nous joindre <a href="mailto:contact@lepointq.com">par mail</a> ou sur les réseaux sociaux. <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, <a href="https://twitter.com/LePointQ">Twitter</a>, <a href="https://www.facebook.com/lepointq.news">Facebook</a>... Chaque semaine les mêmes adresses pour répondre aux appels à témoignages et découvrir du contenu exclusif.</p>
+<p>Enfin, tu peux nous soutenir financièrement <a href="https://fr.tipeee.com/le-point-q">sur Tipeee</a>. Ne serait-ce qu’un euro par mois nous fait beaucoup de bien pour l’avenir.</p>
+<p>Et si tu n’as plus une seconde devant toi mais que tu as quand même kiffé ce numéro « Femmes de 2021 », alors partage le plaisir !</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Nous te souhaitons une chaleureuse semaine. À lundi pour un plongeon dans nos imaginaires !</p>
+<p>Julien, Juliette, Orianne, Thaïs, Tom et Valentin, aka Le Point Q.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

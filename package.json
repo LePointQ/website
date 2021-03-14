@@ -7,6 +7,7 @@
 		"dev": "hugo server",
 		"build": "node _scripts/build.js",
 		"create": "node _scripts/create.js",
+		"fix": "node _scripts/fix.js",
 		"test": "node _scripts/send.js --test",
 		"send": "node _scripts/send.js --real"
 	},

@@ -2,9 +2,9 @@
 authors = []
 date = 2020-10-25T18:13:12Z
 image = "/media/uploads/strip-morgan-ok.jpg"
-preview = "  "
+preview = " "
 section = "La bonne nouvelle"
-text = "  "
+text = " "
 themes = ["dating", "dessin"]
 title = "Sous la plume de Morgan"
 veracity = "Faux"
