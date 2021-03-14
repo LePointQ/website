@@ -21,8 +21,6 @@ const createCampaign = async () => {
 
 		const { text: html } = await readFilePromise(`./_newsletters/${slug}.html`);
 
-		console.log(data, html)
-
 		const response = await fetch('https://api.sendinblue.com/v3/emailCampaigns', {
 			method: 'POST',
 			headers: {
