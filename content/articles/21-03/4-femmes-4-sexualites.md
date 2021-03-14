@@ -1,7 +1,6 @@
 +++
 authors = ["Thaïs", "Orianne"]
 date = 2021-03-06T17:07:50Z
-draft = true
 image = "/media/uploads/le-point-q.jpg"
 preview = "**Alicia** est une jeune femme de 26 ans, célibataire, hétérosexuelle. Depuis une relation amoureuse adolescente compliquée, elle ne fréquente que des \"coups d’un soir\", ou presque. Et elle se sent très bien avec ça."
 section = "Témoignages"
