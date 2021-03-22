@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>✨ Au bout de nos rêves</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Le fantasme, c’est un désir refoulé, une passion secrète, dont on ne sait jamais si elle se réalisera un jour. Étymologiquement parlant, c’est un irréel : un spectre qui nous hante et qui nous réveille la nuit. Voici donc ce à quoi s’attelle l’équipe du Point Q ce matin : les fantasmes !</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Au bout de nos rêves
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021 !</p>
+<p>Le fantasme, c’est un désir refoulé, une passion secrète, dont on ne sait jamais si elle se réalisera un jour. Étymologiquement parlant, c’est un irréel : un spectre qui nous hante et qui nous réveille la nuit. <strong>Voici donc ce à quoi s’attelle l’équipe du Point Q ce matin : les fantasmes !</strong></p>
+<p>Quels sont-ils ? Est-ce que les réaliser les fait disparaitre ? C’est Orianne qui mène la danse avec <strong>les témoignages de Toni, Perrine, Virgil et Ronny.</strong> Thaïs suit avec <strong>un Vu d’ailleurs depuis son pays favori, le Japon : les fantasmes prennent la forme de tentacules et de petites écolières, et c’est parfois problématique</strong>. Dans le débunk (sucré), Julien se demande : <strong>le plan à trois a-t-il vraiment la cote ?</strong> Alain Héril, sexothérapeute et psychanalyste, répond à cette question à 1000 euros. Et pour quelques sources d’inspiration, <strong>Valentin nous parle des comptes Instagram qui illustrent ou photographient nos fantasmes</strong>. C’est dans la bonne nouvelle !</p>
+<p>Enfin, cette newsletter ne serait pas si belle sans sa plume maison. <strong>Ça swinge au bord du lit dans la BD de Morgan</strong>. De quoi décomplexer la communauté, et se rappeler qu’il y a un monde entre un rêve érotique et la réalité !</p>
+<p>Nous vous souhaitons une délicieuse lecture sans embrasement des neurones,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/artem-labunsky-57jkux8bz9o-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Fantasmes au grand jour 
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+					
+					<ul>
+<li><strong>Toni</strong> — <strong>37 ans, marié, hétérosexuel</strong></li>
+</ul>
+<p><strong><em>Quel est ton fantasme ?</em></strong></p>
+<p>« Le sexe façon jeu, comme le <em>strip quizz (à chaque question, on enlève un vêtement)</em>. Ou des jeux de rôles, peut-être une manière déformée d’un jeu très soft de domination. Souvent je fantasme sur des scénarios classiques : maître-élève, infirmière-patient, etc. »</p>
+<p><strong><em>Est ce que tu penses qu’une fois le fantasme réalisé, c’est toujours un fantasme ?</em></strong></p>
+<p>« Bonne question. Difficile de répondre de manière binaire. Je dirais non la plupart du temps, si toutes les caractéristiques du fantasme sont exaucées. D’un autre côté, force est de constater que ce qu’on imagine ne correspond pas à ce qu’on vit. Et je pense que c’est ce qui permet aux fantasmes de perdurer. »</p>
+<ul>
+<li><strong>Perrine</strong> — <strong>24 ans, célibataire, hétérosexuelle</strong></li>
+</ul>
+<p><strong><em>Quel est ton fantasme ?</em></strong></p>
+<p>« J’aimerais vraiment coucher avec un inconnu. Je serais simplement allongée sur le lit, les yeux bandés et un mec vient, je ne le vois pas, je ne l’entends pas et je ne sais pas qui c’est. Ce serait oufissime. Une fois, j’étais dans le train et assis à côté de moi il y avait un mec, 1 mètre 90, trop charismatique. Pendant tout le trajet je me disais : <em>“J’ai envie de me taper ce mec”</em>. Il y a eu un regard et une tension sexuelle. J’ai vraiment fantasmé sur lui. J’attendais juste qu’il me fasse un clin d’œil pour qu’on aille aux toilettes et que ce soit fait. Je n’aurais jamais su comment il s’appelle, ni rien de lui. Je fantasme aussi sur un plan à plusieurs. »</p>
+<p><strong><em>Est ce que tu penses qu’une fois le fantasme réalisé, c’est toujours un fantasme ?</em></strong></p>
+<p>« Une fois que c’est fait, ce n’est plus un fantasme. Ça rentre simplement dans mes pratiques. Le fantasme c’est quelque chose que je veux réaliser... une aspiration. Beaucoup disent qu’il ne faut pas réaliser ses fantasmes sinon ça devient moins excitant. Au contraire c’est quelque chose qui m’excite beaucoup, dans mon imaginaire. C’est vraiment fort, ça vaut le coup de passer à l ’action. »</p>
+<ul>
+<li><strong>Virgil</strong> — <strong>24 ans, célibataire, hétérosexuel</strong></li>
+</ul>
+<p><strong><em>Quel est ton fantasme ?</em></strong></p>
+<p>« Mon fantasme, ce serait de coucher avec une inconnue, et le fait qu’une femme porte des bas. J’ai déjà réalisé le second mais pas le premier. Je suis assez libéré par rapport à ça. Je pense que c’est important d’en parler avec son ou sa partenaire parce que si jamais tu ne réalises pas tes fantasmes, ça peut être une source de frustration. Et puis ça montre que tu es épanoui dans ta sexualité, que tu n’as pas de tabous. Pour moi c’est super important. »</p>
+<p><strong><em>Est ce que tu penses qu’une fois le fantasme réalisé, c’est toujours un fantasme ?</em></strong></p>
+<p>« En tout cas, ça ne s’applique pas à mes fantasmes. Même réalisé, je fantasme toujours sur une femme qui porte des bas. Mais je peux concevoir qu’un fantasme, une fois la case cochée, ne fasse plus rêver. Un fantasme c’est une représentation de l’imaginaire donc à partir de là, il n’y a pas de limites. Il n’est jamais vraiment acquis. »</p>
+<ul>
+<li><strong>Ronny</strong> — <strong>22 ans, célibataire, hétérosexuel</strong></li>
+</ul>
+<p><strong><em>Quel est ton fantasme ?</em></strong></p>
+<p>« Je n’ai pas tant de fantasmes que ça, à part le plan à trois, comme la plupart des mecs à mon avis <em>(eh oui, voir ci-dessous)</em> ! Je n’en discute pas énormément, même en relation. Je n’ai pas l’habitude. Ce n’est que depuis récemment que j’essaie de comprendre le point de vue opposé, celui de ma partenaire. Ah si j’ai un fantasme assez spécial. J’aimerais bien avoir une relation où parfois c’est moi qui fais tout, qui décide de tout ce que je veux, et parfois c’est la meuf. Ce serait de la domination partagée, des deux côtés. »</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/painting-_handscroll-_shunga_-bm_1980-0325-0-4_3.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Tentacules, écolières et belles endormies&nbsp;: petit décryptage des fantasmes japonais 
+										</h4>
+									
+					
+					<p>Au Japon, où 40 % des 18-35 ans sont encore vierges, la sexualité reste cantonnée à l’imagination. Et une fois entré·e·s dans l’univers du fantasme, tout semble possible, surtout avec l’aide de l’industrie du sexe japonaise, taillée pour assouvir toutes les envies (enfin surtout celles des hommes), même les plus problématiques.</p>
+<p>Retour sur trois célèbres fantasmes japonais et ce qu’ils disent de la sexualité dans le Japon contemporain.</p>
+<h3><strong>« Tentacules »</strong></h3>
+<p><strong>Le <em>shokushu</em>,</strong> du japonais « tentacules », désigne un genre pornographique (souvent sous forme de dessin animé) dans lequel une femme prend son pied grâce à une créature munie de tentacules qui atteignent toutes ses zones érogènes.</p>
+<p>Si le fameux <em>« tentacle porn »</em> japonais semble être un lieu de fantasme « de niche » pour les hommes, leurs ancêtres, des estampes érotiques japonaises (comme <a href="https://fr.wikipedia.org/wiki/Le_R%C3%AAve_de_la_femme_du_p%C3%AAcheur"><em>Le Rêve de la femme du pêcheur</em></a> du célèbre Hokusai) sont aussi les premières œuvres à représenter le plaisir féminin.</p>
+<h3><strong>Les « belles endormies »</strong></h3>
+<p>Dans le célèbre roman <em>Les belles endormies</em> de Kawabata, un vieil homme se rend dans une maison close pour passer la nuit auprès de jeunes femmes vierges nues endormies — qu’il n’a pas le droit de défleurer.</p>
+<p>Aujourd’hui l’industrie japonaise du fantasme propose des belles endormies plus « accessibles », mais 100 % silicone : les <strong><em>« love dolls »</em></strong>, des poupées au corps très réaliste pour lesquelles certains Japonais (mais pas que) dépensent des dizaines de milliers d’euros. Que ce soit pour assouvir des fantasmes inavouables ou simplement comme remède à la solitude : les <em>loves dolls</em> sont littéralement des « objets femmes » à la merci de l’homme.</p>
+<h3><strong>Écolières</strong></h3>
+<p>Un <strong><em>« Lolicon »</em></strong>, contraction de « Lolita » (du roman de Nabokov) et de « complexe », désigne une personne attirée par de très jeunes femmes. Son équivalent pour les jeunes hommes : <em>« shotacon »</em>.</p>
+<p>Des costumes d’écolière sexy aux dessins animés érotiques ou pornographiques (<em>hentai</em>) mettant en scène de très jeunes filles (ou garçons) : ce fantasme a la dent dure au Japon.</p>
+<p>Bien que les fantasmes soient dans le champ de l’imaginaire, certains comme ceux des <em>Lolicon</em> sont particulièrement problématiques et de plus en plus encadrés par les autorités.</p>
+<h3><strong>Une industrie du fantasme problématique ?</strong></h3>
+<p>Plusieurs pays, dont la France, interdisent la vente ou même la possession d’œuvres <em>Lolicon</em> et <em>Shotacon</em>, assimilées à de la pornographie infantile. Au Japon, on argue que comme il s’agit d’un dessin, cela relève de la liberté d’expression et ne met en danger aucun mineur.</p>
+<p>Les <em>« Burusera shops »</em> qui vendent des sous-vêtements ou autres vêtements féminins déjà utilisés ont également fait l’objet de plusieurs régulations, les préfectures interdisant par exemple depuis 2004 la vente de sous-vêtements de mineures.</p>
+<p><a href="https://www.neonmag.fr/des-poupees-enfants-en-silicone-pour-lutter-contre-la-pedophilie-creent-la-polemique-471221.html">Des voix se sont également levées</a> contre les <em>love dolls</em> aux traits enfantins, notamment à l’étranger : en 2016, une pétition lancée en Australie contre l’exportation des poupées-enfants de la marque japonaise Trotlla a recueilli près de 60 000 signatures. La marque s’est défendue en disant qu’elle permettait aux pédophiles d’assouvir leurs pulsions avec un objet plutôt que de faire une victime dans la vraie vie...</p>
+<p>L’industrie du sexe japonaise banalise en outre l’image de la « femme objet », renforçant la « geishaisation » des femmes (de « geisha », courtisane). Les rares voix qui s’élèvent au Japon pour dénoncer cette culture se heurtent souvent à un mur : en témoignent les critiques envers la journaliste Shiori Ito, qui a révélé en 2017 avoir été violée par un homme célèbre. Un épisode qui marque néanmoins la naissance d’un #MeToo au Japon, #WeTooJapan.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/dainis-graveris-f3vrzdhgfgi-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Julien
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Le plan à trois a-t-il vraiment la cote&nbsp;?
+										</h4>
+									
+					
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: #F47B67; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid #F47B67; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;PAS EXACTEMENT&nbsp;
+										</p>
+									
+					<p>S’il est un fantasme qui semble très partagé aujourd’hui, c’est bien <strong>le plan à trois</strong>. Ou plus précisément le triolisme (trois personnes participent au rapport sexuel) et son acolyte, le candolisme (deux personnes ont des rapports sexuels et une autre les observe). Que se cache-t-il derrière ? Réponse avec <strong>Alain Héril</strong>, sexothérapeute et psychanalyste spécialiste des fantasmes.</p>
+<h3><strong>LE POINT Q — Le plan à trois est-il vraiment le fantasme le plus courant ?</strong></h3>
+<p>ALAIN HÉRIL — Chez les hommes oui, on le trouve en numéro 1 dans les études faites sur les fantasmes préférés des Français, gays ou non. Le plus souvent, pour les hétérosexuels, la configuration choisie est « un homme, deux femmes ». C’est souvent pour eux une idée d’« augmentation » de la libido qui domine avec la possibilité de faire jouir deux personnes.</p>
+<p>Chez les femmes hétérosexuelles, en revanche, le plan à trois n’arrive qu’en deuxième voire troisième position derrière « faire l’amour avec un inconnu » et le fantasme de l’aventure lesbienne. Des fantasmes assez communs.</p>
+<h3><strong>Cet engouement autour du plan à trois, est-ce très actuel ?</strong></h3>
+<p>Ce fantasme a de plus en plus la cote, et cela a à voir avec cette banalisation actuelle de tous les registres de la sexualité. Beaucoup de jeunes autour de 25-30 ans vont aujourd’hui dans des clubs échangistes. C’est de l’ordre de l’expérimentation sexuelle, comme une check-list. Et les applications de rencontres ouvertement sexuelles jouent aussi là-dedans. Même chose avec les films pornographiques qui inscrivent le plan à trois dans l’inconscient collectif masculin.</p>
+<h3><strong>Pourquoi fantasme-t-on tant autour du plan à trois au sein des couples ?</strong></h3>
+<p>Tout dépend des couples. Ce peut être une manière de redonner du pep’s, de jouer avec l’extraconjugalité et de la vivre de manière consentie en invitant quelqu’un dans le couple. Il est important de dédramatiser le fantasme : en avoir, ce n’est pas être pervers ou malsain. C’est comme les rêves : on ne décide pas des rêves qu’on fait la nuit. L’imagination est preuve de bonne santé, et c’est pour cela que j’ai appelé mon livre « Je fantasme donc je suis ». Et fantasmer, c’est aussi un rêve éveillé de ce que l’on ne vit pas.</p>
+<h3><strong>Combien le vivent, alors, ce rêve éveillé ?</strong></h3>
+<p>Je pense que 50 % des couples ont ce fantasme autour du plan à trois à un moment donné, ou en tout cas en parlent au moins une fois. Mais pour passer à l’acte, je dirais comme ça, à vue de nez, qu’ils ne sont pas plus de 5 % à le faire !</p>
+<h3><strong>Proposer un plan à trois à sa ou son partenaire, ça peut poser problème dans un couple ?</strong></h3>
+<p>Tout dépend des valeurs partagées dans le couple. Si la fidélité est une valeur très forte pour son·sa partenaire, cela peut engendrer de la jalousie voire de la souffrance chez lui·elle. À mon avis, il est bien de partager ses fantasmes à condition que l’autre personne soit apte à les entendre. Et tout dépend du but recherché : on peut en parler pour créer de l’excitation ou pour passer à l’acte. Ce qui est important enfin si on concrétise le plan à trois, c’est de fixer des règles. C’est une question de contrat, c’est toujours pareil.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/lavi-perchik-jlb1frqkp-i-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Dessine-moi un fantasme
+										</h4>
+									
+					
+					<p>On ne parle pas, a priori, du fantasme. Il faut une grande confiance (et une grande responsabilité) pour en discuter, plus encore pour le réaliser.</p>
+<p>Alors, dissimulé dans nos esprits, le fantasme s’illustre : si l’on connaît bien <a href="https://fr.wikipedia.org/wiki/Le_R%C3%AAve_de_la_femme_du_p%C3%AAcheur"><em>Le Rêve de la femme du pêcheur</em></a>, d’Hokusai, nombreux·ses sont les artistes qui, sur les réseaux sociaux, se sont spécialisé·e·s dans l’illustration érotique. Et avec eux·elles, c’est tout un univers qui prend forme devant nos yeux curieux. Sur Instagram, plans à trois (ou plus !), BDSM, <em>breath play</em> <em>(bloquer l’oxygène pour amplifier l’orgasme — attention)</em>, <em>food play</em>, se dessinent sous les traits de <a href="https://www.instagram.com/la_jolie_minoise/">La Jolie Minoise</a>, <a href="https://www.instagram.com/la_moustache_de_la_dame/">La Moustache de la dame</a> ou <a href="https://www.instagram.com/wishyouwerehere.art/">Wish You Were Here</a>, pour n’en citer que quelques uns.</p>
+<p>Des dessins qui parlent de nos pratiques et de nos envies, au milieu d’illustrations de couples de tous types : preuve, s’il en est, que ce dont nous parlons se cache dans la normalité de nos vies.</p>
+<p>Mais la simplicité d’un trait peut sembler une idéalisation de la réalisation d’un fantasme. Intéressons-nous alors à la photographie, car si le dessin rompt avec le « vrai », la photographie, elle, donne à voir et nous projette dans une situation.</p>
+<p>Sur Instagram, on trouve en particulier des images d’un domaine précis : le <em>kinbaku</em>.</p>
+<p>Le <a href="https://www.lemonde.fr/blog/sexologie/2016/06/12/lart-du-kinbaku/"><em>kinbaku</em></a>, plus connu sous le nom <em>« shibari »</em>, consiste à attacher une personne avec des cordes destinées à cet usage, de manière à la fois érotique et esthétique. Un art de l’assemblage corporel, qui se superbe par la photographie, voire se sublime quand il se combine à une suspension.</p>
+<p>Une pratique réservée aux personnes expérimentées donc, mais qui, c’est certain, créera des envies de bondage <em>(ligotage de son ou sa partenaire)</em> chez plus d’un·e.</p>
+<p>Illustrer des désirs, c’est contribuer à les populariser, à les rendre moins invisibles, plus acceptables, voire à susciter des passions (et ça, c’est toujours sympa). Quoi de mieux pour lancer une discussion sur nos envies, que de partager l’une de ces images avec un emoji clin d’œil ?</p>
+<p>Après tout, parler de ses fantasmes, c’est le premier pas pour les concrétiser.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-fantasmes.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Allez, le plan à trois ce sera pour une prochaine fois ! L’un des grands avantages du fantasme c’est que le raconter est diablement excitant et qu’il permet de libérer la parole au sein d’un couple. À toi de jouer !</p>
+<p>Tu nous racontes ? <a href="mailto:contact@lepointq.com">Par mail</a>, ou sur les réseaux sociaux : <a href="https://twitter.com/LePointQ">Twitter</a>, <a href="instagram.com/lepoint.q">Instagram</a> et <a href="https://www.facebook.com/lepointq.news">Facebook</a>. Nous sommes partout à ton écoute, prêt·e·s à en découdre avec les tabous sur la sexualité.</p>
+<p>Si ce numéro t’a plu, tu peux nous donner quelques euros sur <a href="https://fr.tipeee.com/le-point-q">notre cagnotte Tipeee</a>, qui nous permet de continuer à publier. Si tu n’a pas trouvé fantasme à ton pied, le service des réclamations (des <em>feedbacks</em> plutôt), c’est <a href="https://forms.gle/SN9wk7zaDRj2ThkR8">par ici</a>. Et enfin, pour partager la meilleure des newsletters avec tes potes, c’est là :</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Pour toujours plus de rêves érotiques et de plaisirs partagés,</p>
+<p>Nous se souhaitons une excellente semaine,</p>
+<p>Julien, Juliette, Orianne, Thaïs, Tom et Valentin, aka Le Point Q.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

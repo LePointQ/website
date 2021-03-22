@@ -31,10 +31,10 @@
 
 		<h2>
 			<img src="{{ .Site.BaseURL }}/media/icons/vu_d_ailleurs.svg" width="40" class='icon' />
-			Vu d'ailleurs
+			Vu d’ailleurs
 		</h2>
 		<ul>
-			{{ range (where .Pages "Params.section" "Vu d'ailleurs") }}
+			{{ range (where .Pages "Params.section" "Vu d’ailleurs") }}
 				<li>
 					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
