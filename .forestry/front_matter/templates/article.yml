@@ -24,6 +24,7 @@ fields:
     - Tom
     - Julien
     - Valentin
+    - Ophélie
   label: Auteur·rice·s
 - name: section
   type: select
