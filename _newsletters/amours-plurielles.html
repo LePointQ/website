@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>💗 Amours plurielles</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Cette semaine, on parle du polyamour. C’est avant tout une philosophie, selon laquelle on peut aimer plusieurs personnes à la fois, ceci nous rendant plus heureux. En pratique, le polyamour consiste à avoir différentes relations sentimentales et/ou sexuelles en même temps, de manière honnête, libre et consentie.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Amours plurielles
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021 !</p>
+<p>Plus de 700 sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a> ! Vous avez parlé de nous à vos potes et ça fait chaud au cœur. On remplit déjà la deuxième plus grande salle du Grand Rex ! Big up à Orianne, qui a rassemblé cette communauté.</p>
+<p>Cette semaine, on parle du polyamour. C’est avant tout une philosophie, selon laquelle on peut aimer plusieurs personnes à la fois, ceci nous rendant plus heureux. En pratique, le polyamour consiste à avoir différentes relations sentimentales et/ou sexuelles en même temps, de manière honnête, libre et consentie.</p>
+<p><a href="https://www.lemonde.fr/festival/article/2018/10/05/le-polyamour-c-est-oublier-le-couple-et-inventer-ses-propres-valeurs-d-amour_5365161_4415198.html"><em>« Le polyamour, c’est oublier le couple et inventer ses propres valeurs d’amour »</em></a>, arguait Françoise Simpère, l’experte sur le sujet en France, au journal <em>Le Monde</em> en 2018. Le sexe n’est pas forcément au centre des relations, et les polyamoureux·ses parlent de compersion (le fait d’être heureux du bonheur affectif de l’autre) comme ingrédient nécessaire à la recette. Les critiques, eux, insistent sur le fait que ce type de relation met à mal la fidélité — quelque chose qui c’est vrai, nous fait à toutes et tous beaucoup de bien.</p>
+<p>Éloge de la liberté pour certain·e·s, utopie woodstockienne pour d’autres, pour sûr le polyamour déconstruit le modèle du couple sur lequel notre société est fondée.</p>
+<p><strong>Avis aux premier·e·s intéressé·e·s dans les témoignages</strong>, qu’Orianne a recueillis comme chaque semaine. Dans le Vu d’ailleurs, on a passé l’Équateur : <strong>en Colombie, le premier trouple d’hommes s’est marié en 2017.</strong> Et dans la bonne nouvelle, une septième plume nous rejoint : <strong>celle d’Ophélie, amatrice de la newsletter et amie de la team, qui nous fait profiter de son immeeense culture du cinéma !</strong> Un film (dispo sur Netflix) a parlé de polyamour de manière totalement avant-gardiste... Rendez-vous en bas !</p>
+<p>Tu as scrollé vite fait la partie définitions du polyamour à la vue de ton ou ta chef·fe ? <strong>Morgan, notre dessinateur, te réserve le plus beau des résumés.</strong></p>
+<p>On vous souhaite d’aimer, un peu, beaucoup, passionnément ou pas du tout... En toute liberté.</p>
+<p>Plein de bonheur,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/hamtaro.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						&laquo;&nbsp;Le polyamour m’a fait réaliser à quel point aimer d’autres personnes ne remettait pas en cause tous nos sentiments&nbsp;&raquo;
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+					
+					<ul>
+<li><strong>Léa — 23 ans, célibataire, hétérosexuelle</strong></li>
+</ul>
+<p>« À 22 ans, je suis sortie avec un mec qui était polyamoureux. Au début je trouvais ça bizarre mais en même temps, intellectuellement, j’étais fascinée. Dans mes anciennes relations, ce qui me faisait peur, c’était l’engagement. Là avec le polyamour, je pouvais me lâcher et être moi-même, et je savais qu’il y aurait une fin.</p>
+<p>En plus, je trouvais ça flatteur, parce que malgré le fait qu’il ait d’autres meufs à côté, il avait quand même envie de me voir moi. Ses copines, il les appellait ses amantes. Parfois, il me parlait de certaines d’entre elles. On m’a souvent demandé si ça me dérangeait qu’il couche avec d’autres filles mais non puisque je l’ai su dès le départ. C’est une vraie honnêteté, une sincérité qui s’installe. Ça instaure un climat de confiance.</p>
+<p>Ce qui a fini par me poser problème ce n’était pas les autres filles mais qu’il y avait un déséquilibre. Il a fini par me quitter pour passer en couple presque exclusif, en tout cas exclusif sentimentalement. Je pense que je n’adopterai pas ce mode de vie parce que c’est trop d’organisation. Pourtant lui m’encourageait aussi à en avoir plusieurs de mon côté. Seulement, je commençais à tomber amoureuse de lui... »</p>
+<ul>
+<li><strong>Julien — 27 ans, en couple polyamoureux, hétérosexuel</strong></li>
+</ul>
+<p>« Je suis avec ma conjointe depuis 2013 environ, mais on ne s’est vu qu’une fois. On s’est échangé nos Facebooks et ensuite je me suis fait des ami·e·s. Au fur et à mesure, les copines d’un ami me demandaient si je voulais également être avec elles. Ma copine est sur l’île de la Réunion, d’autres en Italie, en Espagne, en Russie, en Angleterre.</p>
+<p>Au départ, j’ai demandé à ma copine si elle était OK d’ouvrir notre relation à d’autres femmes. Elle a accepté qu’on forme un grand couple tous ensemble. Tout le monde le sait et est OK avec ça. Je n’ai pas de classement ni de préférence. Par contre je ne vis pas avec elles... On s’écrit par Facebook et on se fait plaisir par messages. On fait comme si on faisait l’amour en s’écrivant, avec des images ou sinon par mail. »</p>
+<ul>
+<li><strong>Alex* — 24 ans, agenre, en couple polyamoureux, bisexuel·le</strong></li>
+</ul>
+<p><em>Alex* ne se définit ni comme homme ni comme femme, donc nous utiliserons l’écriture inclusive pour son témoignage.</em></p>
+<p>« Je suis dans une relation polyamoureuse depuis très récemment. Je suis en couple avec un monsieur depuis 8 mois maintenant. À l’origine, on était dans une démarche complètement monogame. Je me suis longtemps interdit d’explorer cette dimension du couple parce que j’avais toujours été dans des relations longues, disons “classiques” et très hétéronormées, et c’était un peu impensable de songer à ouvrir le couple à l’époque.</p>
+<p>Cette fois, ça a été très surprenant à quel point ça s’est mis en place facilement et dans la bienveillance la plus totale. Actuellement, je sors avec quelqu’un d’autre en parallèle de notre relation et ça se passe extrêmement bien. J’ai vraiment l’impression que ça me fait une grande bouffée d’air par rapport aux relations monos où je me sentais vraiment enfermé·e. L’un est une relation à distance et l’autre est un collègue de mon école.</p>
+<p>Ils se sont déjà rencontrés une fois. J’avais peur au début d’être un peu jaloux·se ou quelque chose dans ce goût-là. Finalement, les conversations qu’on a eues et le fait d’être vraiment dans l’expérience, m’a fait réaliser à quel point aimer d’autres personnes ne remettait pas en cause tous nos sentiments.</p>
+<p>Ça m’a paradoxalement permis d’avoir plus confiance en mon copain et même en moi. Il y a encore quelques semaines, j’étais cloîtré·e dans l’idée qu’éprouver de l’attirance pour un autre, c’était mal, et que j’étais une “mauvaise copine”. Je me torturais tout·e seul·e à me dire que je ne devais pas éprouver ces sentiments ambigus pour d’autres personnes. »</p>
+<p><em>* Le prénom a été modifié</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/tenor-1.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Ménages à trois
+										</h4>
+									
+					
+					<p>Changeons d’hémisphère pour cette semaine et partons, non pas en Asie, mais de l’autre côté du monde, en Amérique du Sud. Plus précisément en Colombie où, en 2017, trois hommes ont pu s’unir officiellement, devenant <em>de facto</em> la première union polyamoureuse du pays — et du monde.</p>
+<p>Deux des membres de ce trouple s’étaient déjà fait connaître en 2000, en devenant le premier couple homosexuel à s’unir devant un notaire, alors qu’en Colombie, le mariage de personnes du même sexe n’a été reconnu officiellement qu’en 2016 (en France, c’était en 2013).</p>
+<p>L’union de ce ménage à trois, un événement dans un pays traditionnellement catholique et conservateur, a été rendue possible par la définition de la famille dans <a href="https://www.constitucioncolombia.com/titulo-2/capitulo-2/articulo-42">l’article 42 de la Constitution colombienne</a>, <em>« formée par une décision libre d’un homme et d’une femme ou par la volonté responsable d’y être conforme »</em>. C’est sur ce dernier point que se sont appuyés les trois hommes pour être reconnus officiellement comme famille.</p>
+<p><a href="">C’est le décès, en 2013, du quatrième membre de cette famille</a>, et les complications liées à son héritage, qui ont poussé les trois amants à régulariser leur situation. Ils sont désormais désignés légalement par le terme <em>« trieja »</em>, une contraction du mot <em>« pareja »</em> pour « couple » associée au préfixe « tri », que l’on pourrait traduire par « trouple ».</p>
+<p>D’autres unions à plusieurs auraient, semble-t-il, eu lieu <a href="https://www.bbc.com/news/world-40655103">au Brésil ou en Thaïlande</a>. En France, le mariage ne peut explicitement avoir lieu qu’entre <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027431993">« deux personnes »</a> aujourd’hui, mais la justice n’a pas encore été confrontée à des demandes d’union à trois ou plus. Chez nos voisins européens, une quasi-union à plusieurs a été célébrée lorsque trois personnes ont signé un contrat de cohabitation, <a href="https://www.rd.nl/artikel/131500-huwelijk-wordt-steeds-verder-opgerekt">en 2005 aux Pays-Bas</a>.</p>
+<p>Si le polyamour remet en cause la vision du couple, il s’en accommode parfois aussi !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/nola_darling_n_en_fait_qu_a_sa_tete.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Ophélie.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Ophélie
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Nola Darling n’en fait qu’à sa tête
+										</h4>
+									
+					
+					<p>À tou·te·s les amoureux·ses de Netflix, je vous ai déniché une pépite ! Dans <em>Nola Darling n’en fait qu’à sa tête</em>, réalisé en 1986, Spike Lee fait le portrait d’une femme polyamoureuse vivant à Brooklyn dans les années 1980... Autant vous dire qu’on est à l’avant-garde !</p>
+<p><em>« Je suis une polyamoureuse pansexuelle »</em>, confie Nola face caméra. Peintre, intellectuelle et anticonformiste, elle vit une relation amoureuse avec trois hommes en même temps. Chacun lui apporte des plaisirs différents : elle aime l’attention de Jamie, rire avec Mars et l’univers déjanté de Greer.</p>
+<p>Cette femme libre, qui refuse la relation exclusive, affronte avec chic et humour les jugements désobligeants sur les femmes au fort appétit sexuel, considérées comme « dangereuses ».</p>
+<p>Cette comédie réjouissante, toujours d’actualité 30 ans après, offre une réflexion sur les différentes manières d’aimer, la séduction et la manière d’assumer une sexualité hors du commun. À voir !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-polyamour.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Chapeau l’artiste ! Au Point Q on est polytalent : on vous fait rire, on vous informe et on vous fait réfléchir ! D’ailleurs, si tu as encore faim d’amour à plusieurs, on a un article sous la main pour toi : <a href="https://www.lemonde.fr/m-le-mag/article/2019/02/17/echangisme-candaulisme-polyamour-la-fidelite-s-ecrit-aussi-au-pluriel_5424516_4500055.html"><em>« Échangisme, candaulisme, polyamour : la fidélité s’écrit (aussi) au pluriel »</em></a>. Maïa Mazaurette y questionne notre rapport à la fidélité. De quoi creuser une future newsletter !</p>
+<p>Ce numéro 23 du Point Q t’a plu ? N’hésite pas à le partager autour de toi ! Tu peux envoyer à tes ami·e·s cette publication <a href="https://www.facebook.com/lepointq.news/photos/a.137269331479096/233739068498788/">Facebook</a>, ce post <a href="https://www.instagram.com/p/CLXaWOOnQrw/">Instagram</a> ou encore ce <a href="https://twitter.com/LePointQ/status/1356187077218623492">tweet</a>. Il ou elle n’a aucun réseau social ? Et bien appuie ci-dessous :</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Même sur le mail du travail, c’est jouissif de recevoir Le Point Q. Si tu as des questions, des idées ou des remarques à nous envoyer, on t’écoute sur toutes les plateformes, ou par mail à <a href="mailto:contact@lepointq.com">contact@lepointq.com</a>.</p>
+<p>On doit être un peu polyamoureux·se·s, pour avoir envie de diffuser chaque semaine autant d’amour et de connaissance gratuitement à autant de gens. Peut-être qu’on est compersif·ve (tu l’as ?). Malheureusement, on n’en vit pas encore (qu’est-ce qu’on aimerait), alors si tu penses que ce travail mérite reconnaissance, tu peux nous faire un don ponctuel ou régulier <a href="">sur Tipeee</a> !</p>
+<p>Excellente semaine, et dis-nous si tu oses tenter le double-crush sans crash !</p>
+<p>Julien, Juliette, Orianne, Ophélie, Thaïs, Tom et Valentin, aka Le Point Q.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
