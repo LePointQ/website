@@ -65,6 +65,7 @@ fields:
     - Vrai
     - Faux
     - Pas exactement
+    - Aucun
     source:
       type: simple
       section: 
