@@ -378,6 +378,7 @@ main article h3, main .edito h3 {
 	font-size: 1.2rem;
 	font-style: normal;
 	font-weight: bold;
+	text-align: left;
 }
 
 main article h4 {

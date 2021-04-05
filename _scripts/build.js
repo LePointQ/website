@@ -112,7 +112,7 @@ const build = async () => {
 											${typografix(content.title)}
 										</h4>
 									` : ''}
-									${section === 'on_debunke' ? `
+									${section === 'on_debunke' && content.veracity !== 'Aucun' ? `
 										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: ${COLORS[content.veracity]}; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid ${COLORS[content.veracity]}; display: table; text-align: left; margin-left: auto; margin-right: auto;">
 											&nbsp;${content.veracity.toUpperCase()}&nbsp;
 										</p>

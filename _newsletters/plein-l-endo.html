@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🔻 Plein l’endo</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Cette semaine, on parle d’une maladie qui touche 40 % des femmes qui ont des règles douloureuses : l’endométriose.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Plein l’endo
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.</p>
+<p>Cette semaine, on parle d’une maladie qui touche 40 % des femmes qui ont des règles douloureuses : l’endométriose. Elle apparaît lorsque des fragments de tissu qui protègent l’utérus (la muqueuse utérine) migrent et se greffent sur des organes voisins, comme les ovaires ou l’intestin. Sous l’effet des hormones, les cellules de la muqueuse se multiplient, saignent pendant les menstruations et provoquent des lésions, à l’origine de douleurs. Rien de mieux qu’un petit schéma, comme celui-ci de l’ARS Hauts-de-France, pour comprendre :</p>
+<img src="https://lepointq.com/media/uploads/schema-endometriose.png" width="100%" />
+<p>À mesure que les langues se délient sur les douleurs menstruelles, on commence à parler de cette maladie. Tant mieux car plus elle est diagnostiquée tôt, mieux on la soulage. On a enquêté pour vous et on vous transmet l’essentiel à savoir sur ce fléau des bas-ventres.</p>
+<p>Dans les témoignages, <strong>Thaïs a interrogé trois jeunes femmes en couple sur leur quotidien avec de l’endométriose</strong>. Julien poursuit avec le Vu d’ailleurs : cette semaine, il a posé sa montgolfière <strong>en Écosse, pour y rencontrer des chercheurs·ses sur la piste d’un traitement miracle</strong>. Et oui, on ne guérit pas de l’endométriose aujourd’hui. <strong>C’est l’une des trois idées reçues que Tom débunke, grâce à l’expertise de Céline Vendé</strong>, sexologue et spécialiste de l’endométriose. On essaye toujours de vous laisser avec une solution, et cette semaine Orianne et Valentin sont vos anges-gardiens. Dans la bonne nouvelle, <strong>ils explorent toutes les pistes qui existent pour soulager les douleurs liées à l’endométriose</strong> : huiles essentielles et lubrifiant au CBD notamment.</p>
+<p>Enfin, <strong>Morgan et sa plume délicate rendent hommage en BD à... la bouillotte</strong>.</p>
+<p>À celles qui ont accepté de témoigner et à toutes nos lectrices atteintes d’endométriose, cette newsletter vous est dédiée.</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/photo-1516362543167-b3a9f77a89df.jpeg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						&laquo;&nbsp;J’ai l’impression d’être victime de mon corps&nbsp;&raquo;
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+					
+					
+					<p><strong>Manon</strong> (23 ans), <strong>Julia</strong> (25) et <strong>Morgane</strong> (27) sont hétérosexuelles et en couple, et toutes concernées par l’endométriose.</p>
+<p>Dans leurs échanges avec Le Point Q, toutes les trois ont insisté sur le fait que chaque endométriose peut-être vécue différemment, que ce soit au niveau des symptômes ou du ressenti.</p>
+<h3>Comment as-tu appris que tu avais l’endométriose ?</h3>
+<p><strong>Manon :</strong> « L’année dernière, pour la première fois, j’ai eu mal pendant un rapport. C’était une grosse douleur, comme deux coups de couteau, qui ne passait pas. C’était une première alors que je suis avec mon copain depuis 4 ans. Comme c’était pendant le confinement, j’avais le temps de penser à moi, et après des saignements anormaux, j’ai fait une batterie de tests dont une échographie. La gynécologue, en visio, m’a confirmé que j’avais bien de l’endométriose. D’avoir été diagnostiquée, de mettre un mot dessus, ça m’a beaucoup soulagée, je me suis dit que je n’étais pas folle quoi. Avant de le dire les gens ne te comprennent pas, on pense que tu exagères, pour louper les cours de sport au collège par exemple. »</p>
+<p><strong>Julia :</strong> « Je l’ai su assez tôt, car j’ai eu mal dès mes premiers rapports. À 19 ans ma gynécologue m’a fait faire une échographie et j’étais diagnostiquée. De mon côté, ça se manifeste par une vive douleur à l’ovaire gauche, comme un point de côté, et ça durait parfois même une semaine après le rapport. Avant de savoir, j’avais toujours super peur, je croyais être enceinte ou que j’avais des MST, je faisais vraiment tous les tests possibles. »</p>
+<p><strong>Morgane :</strong> « J’ai toujours eu de très fortes douleurs quand j’avais mes règles, mais bon on entend toujours le fameux <em>“c’est normal”</em>, <em>“toutes les filles ont mal”</em>, donc je ne me suis pas posé trop de questions. Jusqu’au moment où ça a commencé à plus m’handicaper, au point de faire des malaises vagaux pendant mes règles. Pour l’instant, j’ai eu plusieurs diagnostics à l’oral, mais je dois encore faire une IRM du bassin. Si j’appréhende un peu, j’ai hâte de pouvoir réellement avoir une réponse. Comme si ça me donnait une “légitimité à avoir mal” face à toutes ces contraintes sociales, comme au travail, où on te fait sentir que tu “en fais des caisses”. Même si sans cette maladie, on peut aussi avoir des règles très douloureuses sans avoir à se justifier. »</p>
+<h3>Comment cette maladie affecte ton rapport à ton corps et à ta sexualité ?</h3>
+<p><strong>Manon</strong> : « Moi, comme j’ai été diagnostiquée après un rapport sexuel douloureux, j’ai cette association entre les deux en tête, même si je n’ai plus eu cette douleur pendant un rapport. Donc, parfois je vais être moins épanouie, et je pense que ça va prendre du temps avant de penser à autre chose. Mais heureusement mon partenaire est vraiment à l’écoute. »</p>
+<p><strong>Julia</strong> : « J’ai l’impression que je ne contrôle rien, que je suis victime de mon corps. Par exemple quand je suis de bonne humeur en soirée et que d’un coup j’ai mes règles, c’est fini : j’ai vraiment l’impression de me faire manipuler par mon propre corps. Et surtout de ne pas me faire comprendre par les autres, les gens vont se dire que <em>“je fais des caprices”</em>. Même si la maladie commence à être connue, elle ne l’est pas encore de façon tout à fait légitime.</p>
+<p>Jusqu’à ce qu’on me diagnostique je n’avais aucun plaisir sexuellement. Et je pensais que c’était de ma faute, que c’était moi qui étais mal à l’aise. Aujourd’hui, je n’ai plus mal parce que j’ai un traitement, qui pour moi prend la forme d’une pilule en continu. Mon partenaire est compréhensif. Mais les mecs que je fréquentais avant, je ne leur en parlais pas : je n’allais pas leur dire que je ne kiffais pas avec eux quoi. »</p>
+<p><strong>Morgane</strong> : « Je n’ai jamais eu de douleur associée à la maladie pendant un rapport. Mais j’ai tous ces syndromes post-menstruels très fort : jambes fragiles, gonflements, et surtout une fatigue constante. À chaque période de règles, c’est comme si une machine énorme se mettait en route pour m’épuiser. C’est plutôt handicapant à ce niveau-là, mais mon partenaire est très attentif. J’ai d’ailleurs mis du temps avant d’en faire une question de couple, je ne le vivais que pour moi. »</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/photo-1614935151651-0bea6508db6b.jpeg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Julien
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											L’endométriose bientôt vaincue par les Écossais·e·s&nbsp;?
+										</h4>
+									
+					
+					<p>Dichloroacétate : derrière ces six syllabes obscures se cache peut-être une révolution pour les personnes atteintes d’endométriose. C’est ce qu’ont découvert en 2019 des chercheurs·ses de l’université d’Édimbourg. Une piste toujours suivie aujourd’hui.</p>
+<p>Employée pour traiter certaines pathologies, notamment chez les enfants, cette molécule permet de réduire le taux d’acide lactique (ou lactate) dans l’organisme — vous savez, la substance qui provoque les fameux points de côté !</p>
+<p>Et c’est là tout son intérêt, car l’organisme des femmes atteintes d’endométriose en produirait des quantités plus importantes que la normale. D’après <a href="https://www.pnas.org/content/116/51/25389">cette étude écossaise</a> menée sur des souris, le composé chimique régulerait le niveau de lactate et stopperait la croissance des lésions d’endométriose.</p>
+<p>30 femmes ont depuis pris part à un essai clinique de 12 semaines à Édimbourg. Et les résultats sont encourageants, <a href="https://www.bbc.com/news/health-56245521">a révélé la BBC</a> le mois dernier. Une Britannique de 24 ans du nom de Jessica Rafferty, atteinte d’endométriose, a vu ses symptômes diminuer significativement. <em>« Ça a vraiment changé ma vie jusqu’à maintenant, après que tant de traitements, de médicaments et d’opérations n’aient rien donné »</em>, a-t-elle affirmé à la BBC.</p>
+<p>Pour le professeur Andrew Horne à la tête des travaux de recherche, le dichloroacétate représenterait une <em>« approche très différente »</em> et nouvelle puisque cette molécule n’agit pas au niveau hormonal, contrairement aux seules options aujourd’hui offertes aux personnes atteintes d’endométriose, en plus des opérations chirurgicales et des antidouleurs.</p>
+<p>L’équipe de chercheurs·ses espère maintenant obtenir des financements pour prolonger ses travaux en conduisant une étude sur 400 volontaires.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/endometriosis.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Tom
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											3 idées reçues sur l’endométriose
+										</h4>
+									
+					
+					<p>L’endométriose touche une femme sur dix en France, mais cette maladie est encore très peu connue et de nombreuses idées reçues circulent à son sujet. On démêle le vrai du faux avec Céline Vendé (<a href="https://5k0n3.r.a.d.sendibm1.com/mk/cl/f/nWpEd6dZNozaYsE9-_0da9K1B99adZTRwAj1P-o-v3P3Tp9NdlGGOE8ELMD3JgJxqmsFTlEK5g1ZI-5DpSNSrIZVDuXfsgd6tJuWl2yvwPDXbxAJtZT9ypQWygq_sKeZR2rCwxOzHjPiEMzWhuqeE630iJ9m5QPprxu2vU13K8koeN3CXNffj4Qp8UiPtlb4gbA">@sexologue_therapeute</a> sur Instagram).</p>
+<h3>« Il est impossible de tomber enceinte avec de l’endométriose. » — FAUX</h3>
+<p><em>« Moins d’une femme sur deux atteinte d’endométriose rencontre des problèmes de fertilité</em>, explique la sexothérapeute. <em>Cela reste l’un des principaux motifs de consultation, mais c’est loin d’être une fatalité. »</em> Pour les femmes ayant des difficultés à concevoir, des solutions existent : il est possible de prendre des traitements hormonaux de stimulation ovarienne, ou de procéder à une FIV (fécondation <em>in vitro</em>).</p>
+<p>A contrario, tomber enceinte ne permet pas de guérir de l’endométriose. <em>« On entend parfois des gynécologues dire à leurs patientes : “Faites un bébé, ça ira mieux...” C’est faux : pendant la grossesse et la période de post-partum, les symptômes sont souvent diminués, mais une fois les hormones revenues à leur niveau normal, l’endométriose se manifeste de nouveau. »</em> De la même façon, la ménopause ne met pas fin à la maladie non plus.</p>
+<h3>« On peut guérir de l’endométriose » — FAUX</h3>
+<p><em>« L’endométriose, on naît avec et on meurt avec : on n’en guérit pas. »</em> Les traitements, qu’ils soient hormonaux, chirurgicaux ou en médecine douce (voir ci-dessous), permettent de masquer les symptômes ou d’entrer en rémission, mais pas de guérir. Pour le moment aucun traitement définitif n’existe, même si certaines recherches sont plutôt prometteuses (voir ci-dessus).</p>
+<p><em>« On désigne souvent l’endométriose comme “le cancer dont on ne meurt pas” : comme pour le cancer, plus la maladie est prise en charge tôt mieux c’est. Mais les patientes ne sont pas encore toujours prises au sérieux, y compris par des gynécologues femmes : en moyenne, <strong>une femme met plus de sept ans à être diagnostiquée</strong>. »</em></p>
+<h3>« Il est impossible de prendre son pied avec de l’endométriose. » — FAUX</h3>
+<p><em>« Ce n’est pas parce qu’on a une endométriose qu’on a une sexualité pourrie ! »</em> Certes, l’endométriose entraîne souvent une <a href="https://www.endofrance.org/la-maladie-endometriose/symptomes-endometriose/dyspareunie-douleurs-rapports-sexuels/">dyspareunie</a>, c’est-à-dire des douleurs lors d’un rapport, mais celle-ci n’est pas une fatalité. Autre aspect souvent négligé : l’impact émotionnel et psychologique de la maladie sur les patientes. <em>« À force de subir des examens gynécologiques très intrusifs, une femme atteinte d’endométriose peut se sentir déconnectée de ses parties intimes perçues comme “malades”, et développer une forme de</em> <a href="https://lepointq.com/newsletters/a-double-tour/"><em>vaginisme</em></a><em>. »</em></p>
+<p>D’où l’importance de sortir sa sexualité du schéma classique centré sur la pénétration, pour qu’une femme atteinte d’endométriose puisse retrouver une libido et jouir sans douleur (Céline t’en parlait déjà <a href="https://lepointq.com/articles/20-11/un-rapport-sexuel-se-termine-forcement-par-une-penetration/">dans le numéro 8 du Point Q</a> !)</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/le-point-q-23.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+											<span>
+												Par Valentin & Orianne
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Pour soulager la douleur
+										</h4>
+									
+					
+					<p>Même s’il n’y a pas encore de traitement contre l’endométriose, des solutions existent pour l’atténuer et parvenir à vivre avec au quotidien. Ce qu’il est important de faire, avant toute chose, c’est de se rapprocher de médecins afin qu’un diagnostic précis soit posé (IRM, échographie...). Cette maladie chronique est très gênante et peut causer, tout au long du cycle menstruel, <a href="https://www.endofrance.org/la-maladie-endometriose/symptomes-endometriose/">des douleurs abdomino-pelviennes intenses</a>. Dans l’intimité, les rapports sexuels peuvent eux aussi être source de souffrance : c’est la <a href="https://www.endofrance.org/la-maladie-endometriose/symptomes-endometriose/dyspareunie-douleurs-rapports-sexuels/">dyspareunie</a>. Mais alors que faire ?</p>
+<p>En <strong>médecine traditionnelle</strong>, <a href="https://www.inserm.fr/information-en-sante/dossiers-information/endometriose">trois possibilités sont à ta portée</a> :</p>
+<ul>
+<li>Un traitement symptomatique avec des anti-inflammatoires et des antidouleurs.</li>
+<li>Un traitement hormonal pour supprimer les règles.</li>
+<li>Éventuellement, une opération chirurgicale destinée à éliminer les lésions causées par la maladie.</li>
+</ul>
+<p>Ensuite, des solutions pour <strong>traiter les symptômes de manière locale et temporaire</strong> :</p>
+<ul>
+<li>Les médecines douces et alternatives ont fait leurs preuves. Ces alternatives non médicamenteuses sont même <a href="https://www.has-sante.fr/jcms/c_2819733/fr/prise-en-charge-de-l-endometriose">recommandées par la Haute Autorité de Santé</a>. Avec la <strong>sophrologie</strong>, la relaxation est immédiate : ce moment de détente, de respiration, permet de se reconnecter avec son corps. Et on n’oublie pas l’<strong>ostéopathie</strong>. L’endométriose provoque souvent un manque de mobilité des organes du petit bassin et de l’abdomen ; par des manipulations précises, un ostéopathe peut apaiser les douleurs, en relançant la circulation sanguine et en levant les tensions.</li>
+<li>La <strong>naturopathie</strong> est aussi un bon moyen de supporter les douleurs. Avec des huiles essentielles, par exemple, comme l’estragon que tu masses sur le bas-ventre, en complément d’une huile végétale (jojoba, amande douce ou avocat).</li>
+<li>À ne pas zapper sous la couette : le <strong>lubrifiant au CBD</strong>. Si cette maladie t’empêche d’avoir des rapports sexuels agréables, avec cet antalgique naturel tu seras soulagée !</li>
+<li>Il existe aussi de petits appareils électroniques pour atténuer les douleurs. Parce qu’on le sait toutes, la bouillotte c’est un outil efficace, tout comme l’<strong>électrothérapie</strong>. Il suffit de poser deux électrodes sur le bas ventre et le tour est joué !</li>
+<li>Enfin, <a href="https://sante.journaldesfemmes.fr/fiches-sante-du-quotidien/2518141-endometriose-nutrition-alimentation-anti-inflammatoire/">attention à l’alimentation</a>. Si elle n’est pas très équilibrée, cela peut aggraver l’inflammation. Certains aliments sont donc à éviter, comme la viande rouge, le lait de vache, le sucre, les graisses saturées, la caféine et l’alcool... Mieux vaut opter pour les légumes, les céréales complètes et les oléagineux (noix, noisette, amande).</li>
+</ul>
+<p>Bien sûr, l’expertise d’un gynécologue, naturopathe, nutrithérapeute ou autre, n’est pas à négliger. Ce sont les premières personnes vers qui tu peux te tourner. Elles te donneront le bon diagnostic et le traitement adapté à ta situation.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-endometriose.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Tu as des amies qui te parlent souvent de grosses douleurs menstruelles ? Ou quand elles sont à la selle (un symptôme encore tabou) ? Tu peux leur envoyer cette newsletter pour les mettre sur la piste d’un éventuel diagnostic. Une échographie ou une IRM, qui pourrait économiser de nombreuses années de souffrance, ça vaut le coup !</p>
+<p>Transfère ce mail, ou clique sur le bouton juste en dessous :</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>La newsletter est aussi disponible <a href="https://lepointq.com/newsletters/">ici, sur notre site web</a>, avec toutes les archives. D’ailleurs, il y a un mois, on parlait règles et sexualité dans la newsletter <a href="https://lepointq.com/newsletters/du-rouge-aux-levres/">« Du rouge aux lèvres »</a><em>.</em> Si tu es plutôt <a href="https://lepointq.com/newsletters/au-bout-de-nos-reves/">fantasmes</a> ou <a href="https://lepointq.com/newsletters/amours-plurielles/">polyamour</a>, tu as été gâté·e les dernières semaines.</p>
+<p>Le Point Q te plaît ? Rejoins-nous sur les réseaux sociaux, <a href="https://www.facebook.com/lepointq.news">Facebook</a>, <a href="https://twitter.com/LePointQ">Twitter</a> et <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, où on poste des choses sympas notamment des appels à témoignages. Si tu ne sais pas comment t’y prendre pour parler de nous à tes potes, <a href="https://www.instagram.com/p/CMc82LpgR-w/">les posts Insta</a> sont de bons points d’entrée.</p>
+<p>Des choses à nous dire, des envies de partenariat ? Écris-nous sur <a href="mailto:contact@lepointq.com">contact@lepointq.com</a>. Envie de nous offrir un paquet de chocolats ? C’est possible <a href="https://fr.tipeee.com/le-point-q">avec un petit don sur Tipeee</a>.</p>
+<p>On espère que ce contenu t’a enrichi·e et on te dit à la semaine prochaine,</p>
+<p>Julien, Juliette, Orianne, Thaïs, Tom et Valentin, aka le Point Q.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

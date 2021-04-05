@@ -35,7 +35,7 @@
 					<p class='veracity fake'>FAUX</p>
 				{{ else if eq .Params.veracity "Vrai" }}
 					<p class='veracity true'>VRAI</p>
-				{{ else }}
+				{{ else if eq .Params.veracity "Pas exactement" }}
 					<p class='veracity trueish'>PAS EXACTEMENT</p>
 				{{ end }}
 			{{ end }}
