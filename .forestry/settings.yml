@@ -17,6 +17,13 @@ sections:
   path: content/cgu.md
   label: CGU
 - type: directory
+  path: content/en-plus
+  label: En plus
+  create: documents
+  match: "**/*"
+  templates:
+  - article
+- type: directory
   path: content/articles/21-04
   label: Articles
   create: documents
