@@ -12,6 +12,12 @@ exports.typografix = (html, options) => {
 		});
 	}
 
+	const matchesQuotes = output.match(/''[^\']*''/g);
+	matchesQuotes && matchesQuotes.forEach(match => {
+		const content = match.slice(2, -2);
+		output = output.replace(match, `&ldquo;${content}&rdquo;`);
+	});
+
 	output = output
 		.replace(/  /g, " ")						// Doubles espaces
 		.replace(/'/g, "’")							// Apostrophes
@@ -20,6 +26,7 @@ exports.typografix = (html, options) => {
 		.replace(/ !/g, "&nbsp;!")
 		.replace(/ \?/g, "&nbsp;?")
 		.replace(/ %/g, "&nbsp;%")
+		.replace(/ €/g, "&nbsp;€")
 		.replace(/ - /g, "&nbsp;&mdash;&nbsp;");	// Tirets cadratins
 
 	return output;

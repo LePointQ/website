@@ -2,7 +2,7 @@
 	<main>
 		<article>
 			<img src="{{ .Site.BaseURL }}{{ .Params.image }}" class='hero' />
-			<h1>
+			<h1 class='balance-text'>
 				{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 			</h1>
 			{{ if gt (len .Params.authors) 0 }}
