@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🎙  &laquo;&nbsp;Le BDSM ce n’est pas que des pratiques sexuelles, pour certain·e·s c’est un art de vivre&nbsp;&raquo;</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Vous vous apprêtez à lire une interview inédite sur le BDSM... Quelque chose qu’on ne lit qu’au Point Q, parce qu’ici justement, on pose toutes les questions qu’on n’ose pas soulever ailleurs. Le BDSM, c’est forcément du sexe ? Je suis féministe, est-ce que je peux aimer être dominée au lit ? J’aimerais bien tester le BDSM, je trouve où du contenu safe pour m’informer ?</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									 &laquo;&nbsp;Le BDSM ce n’est pas que des pratiques sexuelles, pour certain·e·s c’est un art de vivre&nbsp;&raquo;
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.</p>
+<p>Comme Renaud Lavillenie à la perche, on a passé la barre des 800 abonné·e·s <a href="https://www.instagram.com/lepoint.q/"><strong>sur Instagram</strong></a>. Champagne ! Autant vous dire qu’on a déjà mis le cap sur les 1000... C’est l’objectif d’ici l’été et pour ça on a besoin de vous ! Partagez, likez, abonnez vos ami·e·s...</p>
+<p><strong>Vous vous apprêtez à lire une interview inédite sur le BDSM...</strong> Quelque chose qu’on ne lit qu’au Point Q, parce qu’ici justement, on pose toutes les questions qu’on n’ose pas soulever ailleurs. Le BDSM, c’est forcément du sexe ? Je suis féministe, est-ce que je peux aimer être dominée au lit ? J’aimerais bien tester le BDSM, je trouve où du contenu <em>safe</em> pour m’informer ?</p>
+<p><strong>Tom et Valentin ont interrogé <a href="https://www.instagram.com/clairealquier/">Claire Alquier</a>, une sexologue spécialiste du sujet, qui répond sans langue de bois et fourmille de conseils.</strong> On la remercie infiniment d’avoir voulu comme « poser des mots », utiliser le langage pour faire fleurir nos sexualités. Et si vous n’êtes pas rassasié·e·s, la semaine dernière <a href="https://lepointq.com/newsletters/bdsm-entrons-dans-le-donjon/">on avait déjà disséqué le BDSM</a> à travers de fantastiques témoignages, <a href="https://lepointq.com/en-plus/morgane-raconte-sa-premiere-soiree-bdsm/">dont celui de Morgane</a>...</p>
+<p>Profitez à fond de cette lecture, c’est la dernière du mois d’avril. On vous explique pourquoi juste en bas (scrolle paaaaas).</p>
+<p>À toi Claire,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/illustration-bdsm.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Tout sur le BDSM avec la sexologue Claire Alquier
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+											<span>
+												Par Valentin & Tom
+											</span>
+										</h3>
+
+
+					<h3>C’est quoi le BDSM pour vous ?</h3>
+<p>Le BDSM, c’est un ensemble de pratiques sexuelles qui se traduisent par les termes de Bondage, Discipline, Domination, Soumission et Sado-Masochisme. Ce sont des pratiques sexuelles contractualisées entre les participant·e·s. Pour certain·e·s, ce ne sont pas que des pratiques sexuelles, c’est aussi un art de vivre. Ce sont des échanges qui sont posés, avec un cadre.</p>
+<h3>Le BDSM, ce n’est donc pas forcément sexuel ?</h3>
+<p>Dans l’imaginaire commun, on fait souvent un raccourci en disant que le BDSM, ce sont des gens qui aiment, dans leurs rapports sexuels, utiliser des pratiques douloureuses ou brutales. Mais j’ai rencontré des couples qui pratiquaient le BDSM et qui vivaient BDSM, sans qu’il y ait de sexualité active par ailleurs. Il pouvait y avoir des jeux érotiques mais ce sont plutôt des enjeux de pouvoir, des pratiques diverses qui ne sont pas forcément sexualisées.</p>
+<p><a href="https://lepointq.com/articles/21-03/dessine-moi-un-fantasme/">Le <em>shibari</em></a>, par exemple, n’est pas forcément sexuel. On n’est pas obligé de jouer avec les zones génitales, il n’y a pas forcément de pénétration, pour autant c’est considéré comme une sorte d’érotisme, comme un art de faire à deux. Cela peut être considéré comme du BDSM non sexuel. Il y a aussi des couples qui évoluent dans une relation de dominé·e/dominant·e mais où le propre de la relation n’est pas la sexualité — ce qui ne les empêche pas de se qualifier de BDSM.</p>
+<h3>Quelles sont les règles de base pour aborder sereinement ce monde ?</h3>
+<p>Cela passe beaucoup par la parole. Il faut que les limites soient posées : jusqu’où on va, qu’est-ce qu’on fait, de quoi on parle. Dans le BDSM, les pratiques sont extrêmement variées : il faut donc se mettre d’accord, en particulier sur la terminologie et le sens des mots. Si on parle d’une relation dominé·e/dominant·e par exemple, que signifie être dominé·e, que signifie être dominant·e ? Et dans quel cadre : est-ce qu’on est dans une pratique contractualisée dans le quotidien (c’est le cas de certains couples), où toute l’organisation du quotidien va être codifiée et organisée autour de ces règles-là ? Est-ce que c’est une pratique plus orientée sur la sexualité, sur l’intime ? Comment on entre dans la bulle et comment on en sort ?</p>
+<p>Certains pratiquants parlent de <em>« sub-space »</em>, pour signifier ce qui se passe dans le moment repéré comme étant dans la bulle de jeu, dans la pratique BDSM. C’est un moment où on est dans la conscience, mais où il y a aussi énormément de lâcher-prise. Ce lâcher-prise est permis parce que les règles, le cadre et les limites sont posés. On parle souvent de <em>« safe word »</em>, de « geste <em>safe</em> », qui permettent de réguler jusqu’où on peut aller.</p>
+<p>La communication est vraiment l’ingrédient numéro un pour des pratiques BDSM réussies : la communication, le consentement et le fait de s’aligner sur la signification des termes. C’est une co-construction avec les espaces de chacun·e, afin de respecter au mieux les envies et les limites de son ou sa partenaire.<br /></p>
+<p><img src="https://lepointq.com/media/uploads/photo-claire-alquier.jpeg" width="100%" /><br /></p>
+<h3>Pourrait-on s’inspirer de cette contractualisation du consentement, même pour du sexe dit « vanille » ?</h3>
+<p>Dans le BSDM, il y a cette communication en amont, mais souvent ce que qu’on recommande aux gens qui commencent à pratiquer, c’est qu’il y ait aussi un espace après, où on débriefe ce qui vient de se passer.</p>
+<p>Cette force du débrief, cette communication en amont et en aval, tout le monde devrait s’en inspirer. L’intime, qu’il soit vanille ou pas, nécessite qu’on pose des mots, qu’on reprécise certaines choses. Cela peut permettre d’ouvrir d’autres perspectives, de se dire ce qui était bien, ce qui était bon, et ça a une grande valeur dans la communication érotique. On devrait tous s’en inspirer, clairement.</p>
+<p>Si les milieux BDSM sont plus attentifs à ces questions, c’est, je pense, parce que quand on a des pratiques qui sont « hors normes », il y a plus de choses à déconstruire pour aller vers une sexualité différente de ce qu’on apprend. Parce qu’on peut être stigmatisé·e ou jugé·e par certaines personnes, on est déjà plus outillé·e et armé·e sur le fait de parler de ces choses-là.</p>
+<p>On n’a pas trop l’habitude, quand on est jeune, de remettre en question la sexualité dite « normale », qu’on considère comme un rapport entre un homme et une femme, avec des préliminaires, une pénétration et une éjaculation qui signe la fin du rapport. On arrive tout·e·s à une forme de déconstruction au fil de ses expériences et de ses rencontres, mais c’est ça la norme. Donc des pratiques sexuelles différentes ou plus marginales, comme le BDSM, vont impliquer, chez des personnes qui s’en saisissent, des espaces de réflexion plus développés en amont.</p>
+<h3>Paradoxalement, le BSDM peut-il être une forme de féminisme ?</h3>
+<p>C’est une question compliquée et qui revient souvent. Beaucoup de femmes s’interrogent : <a href="https://lepointq.com/articles/20-12/si-j-aime-etre-dominee-par-un-homme-au-lit-suis-je-antifeministe/"><em>« J’aime être dominée au lit, et pourtant je suis féministe... »</em></a> Pour moi, ça ne s’oppose pas. Encore une fois, si c’est parlé, c’est consenti. Et si c’est consenti, alors on n’est pas écartelée entre ses convictions et le fait de prendre du plaisir. Comme le sexe c’est aussi du jeu, on peut jouer des codes sociaux et sociétaux dans un espace intime... à partir du moment où c’est formalisé. Poser des mots, ça apaise ce qui semble être des contradictions alors que ça n’en est pas.</p>
+<h3>Y a-t-il une libération de la parole et des corps autour des pratiques BDSM ?</h3>
+<p>Dans les milieux initiés, il y a toujours eu des espaces de rencontre et de discussion entre gens qui pratiquent, justement pour faire les choses bien et être attentif·ve à la question du consentement. Dans le milieu un peu plus <em>mainstream</em>, il y a eu un « effet <em>Fifty Shades of Grey</em> ». Même si tout le monde s’accorde à dire que ce n’est pas ça le BDSM, ça a rendu plus visibles, et peut-être plus admises, certaines pratiques qui pourraient être associées à du BDSM. Mais je crois que c’est très réducteur pour la communauté, et les gens qui pratiquent ne se reconnaissent pas vraiment là-dedans.</p>
+<p>Car le BDSM, c’est toute une culture qui est beaucoup plus ancienne. Il y a <em>Histoire d’O</em> de Pauline Réage (1954), ou encore <em>La Vénus à la Fourrure</em> de Sacher-Masoch (1870). Et bien sûr on peut remonter jusqu’à Sade. Rien que la littérature montre que ce sont des pratiques et des rapports qui existent depuis très longtemps. Ce sont des univers qui ne sont pas inintéressants à aller explorer, car on y rencontre des personnes intéressantes, qui nous parlent de leur parcours, de leurs désirs, de leur couple...</p>
+<h3>Recevez-vous en consultation des couples qui ont envie de se lancer dans le BDSM ?</h3>
+<p>J’ai surtout affaire aux interrogations de certaines femmes, qui se surprennent à être attirées par des pratiques plus <em>hard</em> dans leur consommation de porno et qui se demandent si elles sont « normales ». Je les rassure et je travaille avec elles sur cette question de la norme. Parfois on me demande aussi comment communiquer à l’autre ses envies de pratiques BDSM. C’est difficile de parler de ses fantasmes, surtout quand on en a honte ou que c’est un peu tabou.</p>
+<p>J’invite toute personne qui aimerait aller vers ces pratiques à bien réfléchir à ses envies et à ce qui lui plaît à elle, afin de pouvoir exprimer son ressenti et ses besoins à l’autre. La communication peut prendre plusieurs formes : verbale, non verbale, par écrit, en lisant ou en écoutant des choses ensemble pour se sensibilier à certains sujets... Inviter son ou sa partenaire dans son monde fantasmatique, ça permet parfois de faire naître un intérêt. Il y a beaucoup de ressources sur Internet : des blogs, <a href="https://www.arteradio.com/son/615936/la_bande_sm">des podcasts</a>, des espaces d’échange... Donc on peut tout à fait se lancer de manière autonome si on est prêt·e à faire des recherches.</p>
+<p>La représentation qu’on a de la sexualité joue. On nous dit que la sexualité c’est bien, c’est beau, c’est rose... On ne nous apprend pas que l’humiliation ou la contrainte, si c’est bien encadré, ça peut être excitant. Parce qu’a priori ça ne l’est pas, sauf si c’est encadré et que c’est un jeu. Car le BDSM, et la sexualité en général, c’est avant tout un jeu.</p>
+<p><em>Illustration : Camille Joblin (<a href="https://www.instagram.com/camillejoblin/">@camillejoblin</a>)</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Le sexe est un jeu, le BDSM aussi, et Le Point Q... c’est mieux qu’un jeu. Faire bouillir nos neurones chaque semaine en pensant clito, fantasmes... rien que pour vous : c’est, et il faut le préciser, un travail de rêve.</p>
+<p>On ne vous raconte jamais les recherches incongrues et les trouvailles olé olé, les fous rires du dimanche soir parce que tout est deuxième sens, les propositions folles que vous nous faites sur les applis (dont nous tairons le nom, chut !)...</p>
+<p>Merci d’être si nombreux·ses dans cette aventure, merci pour vos témoignages, vos marques d’affection, vos dons (<a href="https://fr.tipeee.com/le-point-q">c’est lààààà</a>, on est presque dans le rouge donc on remercie tout·e·s les nouveaux donneurs et donneuses). Merci de nous permettre d’aimer chaque jour un peu plus notre métier, quand il est fait avec empathie, rigueur et un souffle d’avant-garde.</p>
+<p>Le Point Q part voyager (au Japon, un petit mois tranquille on revient), le temps de permettre à ses rédacteur·rice·s et parents dévoué·e·s de valider leurs exams (et dire au revoir à l’Université).</p>
+<p>D’ici là, on vous a préparé un programme de folie !</p>
+<ol>
+<li>Relire la toute première newsletter <a href="https://lepointq.com/newsletters/le-plaisir-dans-tous-ses-etats/"><strong>« Le plaisir dans tous ses états »</strong></a>, qui parlait notamment de masturbation féminiiiine.</li>
+<li>Surfer sur les <a href="https://lepointq.com/articles/20-11/et-toi-le-sexe-oral/"><strong>témoignages</strong></a> d’Orianne la Queen.</li>
+<li>Croquer ces trois débunks : <a href="https://lepointq.com/articles/20-11/en-france-les-troubles-erectiles-touchent-de-plus-en-plus-les-jeunes/"><strong>« En France, les troubles érectiles touchent de plus en plus les jeunes »</strong></a><strong>,</strong> <a href="https://lepointq.com/articles/21-01/les-poils-c-est-pas-hygienique/"><strong>« Les poils, c’est pas hygiénique »</strong></a><strong>,</strong> <a href="https://lepointq.com/articles/21-02/des-hackers-piratent-les-sextoys-connectes/"><strong>« Des hackers piratent les sextoys connectés »</strong></a><strong>.</strong></li>
+<li>Nous écrire un mot d’amour <a href="https://www.facebook.com/lepointq.news"><strong>sur Facebook</strong></a>, nous suivre <a href="https://twitter.com/LePointQ"><strong>sur Twitter</strong></a>.</li>
+<li>Aller vérifier <a href="https://lepointq.com/kezako/"><strong>qui on est et pourquoi on a créé Le Point Q</strong></a>.</li>
+<li>Faire un tour du monde avec Thaïs, Julien et Valentin : <a href="https://lepointq.com/articles/20-10/le-kamasutra-le-vrai/"><strong>« Le Kamasutra, le vrai »</strong></a>, <a href="https://lepointq.com/articles/21-02/quel-est-l-age-moyen-de-la-premiere-fois/"><strong>« Quel est l’âge moyen de la première fois ? »</strong></a>, <a href="https://lepointq.com/articles/21-03/en-colombie-mariage-a-trois"><strong>« En Colombie, mariage à trois »</strong></a>.</li>
+<li>Relire cette interview de Tom avec <a href="https://lepointq.com/newsletters/les-gens-ont-peur-des-robots-mais-ils-baisent-comme-des-robots/"><strong>Caroline Smooth, sur le sexe à l’ère des robots</strong></a><strong>.</strong></li>
+<li>Découvrir <a href="https://lepointq.com/articles/20-11/dis-moi-qui-tu-es-je-te-propose-un-sextoy/"><strong>ton meilleur sextoy</strong></a> du printemps ou <a href="https://lepointq.com/articles/21-04/dis-moi-tout-bas-tout-c-que-t-aimerais-de-moi/"><strong>ton meilleur film érotique/BDSM</strong></a> avec Juliette et Ophélie.</li>
+<li>Cliquer <a href="https://fr.tipeee.com/le-point-q">ici par hasard</a>.</li>
+<li>Relire <a href="https://lepointq.com/articles/">toutes les BD fantastiiiiques de Morgan</a>.</li>
+<li>Scroller un coup <a href="https://www.instagram.com/lepoint.q/"><strong>le compte Instagram</strong></a> du Point Q.</li>
+<li>Cliquer sur le bouton en-dessous pardi !</li>
+</ol>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>On a pour vous, cher·e·s lecteur·ice·s, une sincère affection et une irrésistible envie de partage. Dans l’attente de vous retrouver, on vous envoie beaucoup d’amour,</p>
+<p>Julien, Juliette, Ophélie, Orianne, Thaïs, Tom et Valentin, aka Le Point Q.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

@@ -340,16 +340,17 @@ main article {
 	text-align: justify;
 }
 
-main article ul, main article ol {
-	margin-left: 1rem;
+main article ul, main .outro ul,
+main article ol, main .outro ol {
+	margin-left: 2rem;
 }
 
-main article ul > li {
+main article ul, main .outro ul > li {
 	list-style-type: disc;
 	font-size: 1.1rem;
 }
 
-main article ol > li {
+main article ol, main .outro ol > li {
 	list-style-type: decimal;
 	font-size: 1.1rem;
 }
