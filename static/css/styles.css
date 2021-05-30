@@ -445,6 +445,10 @@ main article blockquote p {
 	color: white;
 }
 
+main article li {
+	list-style-type: disc;
+}
+
 .separator {
 	color: var(--main-color);
 	text-align: center;
