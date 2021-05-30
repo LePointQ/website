@@ -1,7 +1,7 @@
 +++
 date = 2021-05-30T22:06:31Z
 draft = true
-edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nUn petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée \"plaisir\". Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en... 2021 !\n\nVous êtes ... à nous suivre sur Instagram et ... à recevoir cette newsletter par mail tous les lundis. Merci, c'est vertigineux ! On explose ensemble la barre des 1.000 ? "
+edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nUn petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée \"plaisir\". Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en... 2021 !\n\nVous êtes ... à nous suivre sur Instagram et ... à recevoir cette newsletter par mail tous les lundis. Merci, c'est vertigineux ! On explose ensemble la barre des 1.000 ?\n\nPour cette reprise ensoleillée, on vous devait au moins une double dose de plaisir ! Promesse tenue, "
 la_bonne_nouvelle = []
 numero = 27
 on_debunke = []
