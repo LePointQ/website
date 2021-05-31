@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🍦 &laquo;&nbsp;Mangez-moi, mangez-moi...&nbsp;&raquo;</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Pour cette reprise ensoleillée, on vous devait au moins une double dose de plaisir ! Promesse tenue, on vous a concocté un numéro sexe et nourriture, pour allier deux de nos activités favorites.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									&laquo;&nbsp;Mangez-moi, mangez-moi...&nbsp;&raquo;
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en... 2021 !</p>
+<p>Vous êtes 930 à nous suivre sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a> et 800 à recevoir cette newsletter par mail tous les lundis. Merci, c’est vertigineux ! On explose ensemble la barre des 1.000 ?</p>
+<p>Pour cette reprise ensoleillée, on vous devait au moins une double dose de plaisir ! Promesse tenue, on vous a concocté <strong>un numéro sexe et nourriture</strong>, pour allier deux de nos activités favorites. Et on n’est pas les seul·e·s, un tiers des Français·e·s sont incapables de choisir entre les deux ! Selon un sondage IFOP pour Just Eat, 30 % préfèrent manger plutôt que faire l’amour, et autant préfèrent les mets du lit. Et vous ?</p>
+<p>Dans les témoignages, <strong>Orianne a recueilli vos meilleures expériences avec des aliments incongrus</strong>... comme l’huître ! Valentin prend soin de votre santé : <strong>est-ce dangereux de faire l’amour sucré/salé ?</strong> Réponse dans le débunk. Pour le Vu d’ailleurs, direction <strong>le Japon... où l’on déguste des sushis sur le corps des femmes</strong>. Thaïs nous présente le <em>Nyotaimori</em> ! Et la quéquetterie, ça vous dit quelque chose ? Il paraît qu’il existe une boutique où on peut manger <strong>des gaufres en forme de quéquettes et de foufounes</strong>, nappées de tout ce que vous voulez. C’est Tom qui fait la visite, et c’est la bonne nouvelle de la semaine : Le Point Q vous offre désormais des reportages !</p>
+<p>Morgan, notre dessinateur adoré, reprend sa plume... <strong>Entre deux bières belges déconfinées, il vend des hot-dogs !</strong></p>
+<p>Nous sommes ravi·e·s de vous retrouver, et nous souhaitons aux plus chanceux·ses d’entre vous de déguster cette newsletter en terrasse !</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/eiliv-sonas-aceron-fjmofbucfrg-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Plaisirs gourmands
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+
+
+					<ul>
+<li><strong>Amarante — 28 ans, célibataire, pansexuelle</strong></li>
+</ul>
+<p>« Moi j’ai déjà testé avec des glaçons. C’est venu comme ça sur le vif. On était en train de boire l’apéro et dans mon cocktail il y avait un glaçon. C’est parti un peu en vrille. Et puis il y a un moment où j’ai bu une gorgée de mon verre et je me suis dit que j’allais lui faire une fellation en gardant le glaçon dans la bouche sans qu’il soit préparé. Ça l’a surpris.</p>
+<p>C’était vraiment un jeu par la suite. Entre le côté chaud de la bouche, froid du glaçon, jouer avec, le déposer à une endroit au niveau de l’aine et partir avec la langue d’un autre côté, le garder et le remonter le long du torse puis le laisser glisser... Ce n’était pas calculé et complètement freestyle. On s’est embrassés avec le glaçon en bouche mais c’était plutôt moi la maîtresse du jeu et il a aimé se laisser faire donc c’était vraiment un moment plaisant pour les deux. »</p>
+<ul>
+<li><strong><em>Stéphane*</em> — 24 ans, célibataire, bisexuel</strong></li>
+</ul>
+<p>« C’était lors d’un dîner de Noël à deux et avec une très grosse dose d’alcool. Quelques pas de danse dans un appartement et des baisers langoureux. On en vient à passer à l’action. Comme des enfants, on jouait avec les restes de notre dîner dont une huître fraîche. Dans un élan de plaisir, malgré une chaleur étouffante dans la pièce, j’ai coupé le pied de l’huître et l’ai posée dans le nombril de ma partenaire. Je l’ai mangée et j’ai ensuite épongé au maximum avec la langue et avec un coup d’essuie-tout. »</p>
+<ul>
+<li><strong><em>Cristina*</em> — 17 ans, en couple, pansexuelle</strong></li>
+</ul>
+<p>« J’ai déjà essayé avec de la chantilly, et pour l’instant c’est le seul aliment que j’ai utilisé. Pour nous deux c’était super cool. On en a mis seulement sur nos zones érogènes et selon nos envies. Ce n’était pas du tout désagréable et ça ne piquait pas. C’était seulement légèrement frais mais vraiment pas dérangeant. C’est venu d’un délire qu’on avait eu en début de relation. Si c’était à refaire je le referais. Notre relation était déjà pimentée mais avec cette expérience, ça a rajouté un petit plus. Pourquoi ne pas tester d’autre choses maintenant... »</p>
+<ul>
+<li><strong>Sandrine — 26 ans, en couple, pansexuelle</strong></li>
+</ul>
+<p>« J’ai déjà testé avec du Nutella. J’avais mis le pot à côté de mon lit et je l’avais plus ou moins étalé sur ma chérie de l’époque (ventre et poitrine) pour ensuite lécher son corps. Mais... vous avez déjà essayé de lécher une cuillère de pâte à tartiner ? Il faut s’y prendre à 12 fois avant qu’il n’y en ait plus ! Du coup, ça collait beaucoup et j’avais la bouche pâteuse.</p>
+<p>Il faut prévoir un grand verre d’eau à côté. En réalité, ça devient presque écœurant de lécher de grandes quantités de chocolat fondu. En plus ça laisse une odeur pas vraiment agréable. Je n’ai jamais réitéré. J’ai de la confiture à la maison alors j’en parlerai à mon copain. Je ne sais pas si une pipe confiture serait géniale avec le sucre qui va se coller dans les poils... J’ai hâte de galérer et d’avoir des fous rires ! »</p>
+<p><em>* Les prénoms ont été modifiés</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/nyotaimori.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Le Nyotaimori ou déguster des sushis sur le corps d’une femme
+										</h4>
+
+
+					<p>Des sushis et sashimis soigneusement disposés sur les courbes d’un corps de femme nue, parfaitement épilée et inerte pendant des heures... Voilà en quoi consiste l’art du <em>« nyotaimori »</em>, né au Japon féodal, mais largement revisité par l’imaginaire occidental.</p>
+<p>Cette forme de dégustation serait apparue dans les maisons closes japonaises, où les samouraïs célébraient leur bataille en dégustant des mets sur le corps de geïshas — femmes qui consacrent leur vie aux arts traditionnels japonais —, ou encore en se délectant de saké versé sur le vagin. Le corps féminin emplirait alors les mets d’énergies vitales.</p>
+<p>Aujourd’hui, le <em>nyotaimori</em> est surtout associé à un art culinaire plus qu’à une pratique érotique. C’est un art très codifié : les sushis sont généralement séparés du corps par des feuilles de bambous ou un film plastique, notamment pour des raisons d’hygiène. Les clients doivent attraper les sushis avec des baguettes et ne doivent pas toucher le corps de la femme ; les gestes inappropriés sont interdits.</p>
+<p>Par ailleurs, l’exercice n’est pas aisé pour celles qui prêtent leur corps : elles se lavent au savon neutre pour ne pas dégager d’odeur, et s’aspergent d’eau froide pour faire descendre leur température corporelle (afin de ne pas réchauffer la nourriture). Enfin, il faut être capable de rester immobile pendant parfois 6 à 7 heures.</p>
+<p>Cet art culinaire s’est exporté dans le monde entier, à tel point que les États-Unis proposent par exemple bien plus de <em>nyotaimori</em> que le Japon où est née la tradition — et pas forcément dans les formes japonaises. Pour des raisons d’hygiène, la Chine a interdit la pratique.</p>
+<p>Au Japon comme ailleurs, le <em>nyotaimori</em> est loin de faire l’unanimité. Déjà, parce que le corps de la femme est complètement objectifié, réduit à l’état de présentoir à nourriture. Une chroniqueuse du <em>Guardian</em>, qui en a fait l’expérience en tant que cliente, <a href="https://www.theguardian.com/lifeandstyle/2010/feb/12/nyotaimori-eating-sushi-naked-woman">explique ainsi avoir eu l’impression</a> de voir un cadavre dans une morgue, face à ce corps de femme immobile. L’hypersexualisation de la femme qui va de pair est aussi souvent dénoncée. La pratique a son pendant masculin, le <em>« nantaimori »</em>, qui reste bien plus marginal.</p>
+<p>Les femmes qui le pratiquent assurent cependant faire cela par passion et elles prennent très à cœur leur travail. L’une d’elle a par exemple répondu aux curieux sur <a href="https://www.reddit.com/r/IAmA/comments/o0zpl/iama_body_sushi_model_nyotaimori_ama_about_being/">ce post Reddit</a>.</p>
+<p>Si la pratique mercantile et publique interroge, le <em>nyotaimori</em> peut être dans la sphère privée une nouvelle façon d’explorer le corps de son ou sa partenaire tout en dégustant de délicieux mets.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/thumbnail.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Il n’y a pas de risque à mélanger sexe et nourriture&nbsp;&raquo;
+										</h4>
+
+
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+
+					<p><a href="https://www.20minutes.fr/production/2717135-20200212-food-sexe-plaisirs-partager">Selon un sondage IFOP réalisé en février 2020 pour Just Eat</a>, 38 % des Français·e·s ont déjà introduit de la nourriture dans leur sexualité. Mais pour près d’une personne sur 10, cette expérience s’est mal terminée.</p>
+<p>La <a href="https://www.passeportsante.net/fr/Maux/Problemes/Fiche.aspx?doc=vaginite_pm">vaginite</a>, ça vous parle ? Cette infection bénigne mais désagréable des parties génitales concerne 75 % de la population féminine. Elle peut être causée par de nombreux facteurs, comme une IST ou une opération, mais aussi, et plus généralement, par une perturbation de la flore intime. Celle-ci est en effet très sensible aux changements d’acidité (pH) du vagin. Un contact prolongé avec du sucre (glucose) peut favoriser un développement anormal des levures et bactéries naturellement présentes dans le corps, déclenchant cette infection.</p>
+<p>Le conseil du Point Q : <strong>on évite de mettre des aliments directement en contact avec les parties intimes</strong>. Le miel et la pâte à tartiner seront très bien autour des lèvres et de la verge, à condition de bien rincer le tout (à l’eau seulement !) après le rapport.</p>
+<p>Par ailleurs, si vous êtes attiré·e·s par les concombres, <strong>pensez à utiliser un préservatif</strong>, pour limiter l’introduction d’agents pathogènes ou de pesticides.</p>
+<p>Concernant ces aliments aux formes suggestives, il faut bien reconnaître qu’ils ne sont <a href="https://www.passeportsante.net/fr/Actualites/Dossiers/DossierComplexe.aspx?doc=5-accidents-sexuels-communs">pas tout à fait adaptés à notre anatomie</a>. Si vous ne risquez pas de perdre un concombre dans votre vagin, <strong>le problème est tout autre concernant l’anus</strong>. Les urgences regorgent de patient·e·s ayant « glissé » sur un légume. Sans base évasée comme certains sextoys, un effet de succion peut le conduire directement dans votre rectum, et là, direction l’hôpital !</p>
+<p>Enfin, <strong>attention aux différences de température</strong> ! Avec l’arrivée des beaux jours, vous aurez peut-être envie de vous rafraîchir et de jouer avec des glaçons, comme dans le témoignage d’Amarante. Si leur usage n’est en général pas risqué, évitez le contact direct avec les parties sensibles, qui pourraient s’en retrouver brûlées. Idem pour les aliments chauds : la gynécologue Shree Datta alertait récemment sur le danger du <a href="https://www.businesstelegraph.co.uk/doctor-warns-women-not-to-put-melted-chocolate-inside-their-vagina-during-foreplay/">chocolat fondu</a> pour les organes génitaux.</p>
+<p>En somme, prenez soin de vos parties intimes, qui sont bien plus fragiles que le reste de votre corps. Et bon appétit bien sûr !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/quequetterie.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Tom
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											On a testé pour vous&nbsp;: des quéquettes et des foufounes au chocolat&nbsp;!
+										</h4>
+
+
+					<p><em>« Je sais pas comment tenir la quéquette, elle a l’air grosse ! »</em> Rassurez-vous, le pénis dont il est question ici est fait de farine, de sucre et d’œufs. Nous sommes allés à « la quéquetterie », une boutique du 2e arrondissement de Paris proposant <a href="https://www.instagram.com/laquequetterie/">des gaufres coquines aux formes plus que suggestives</a>.</p>
+<p>Lycéennes et jeunes étudiantes, Jade, Thaïs, Houda et Clara sont venues entre amies pour tester le concept — qu’elles ont découvert sur TikTok. Elles ne sont pas seules : sur le trottoir de la rue d’Aboukir, une petite foule d’une cinquantaine de personnes déborde jusqu’au carrefour. Toutes et tous se pressent autour d’une pancarte pour faire leur choix parmi la douzaine de « quéquettes » et de « foufounes » gourmandes à la carte.</p>
+<p>Chocolat blanc, caramel, banane, et même vermicelles arc-en-ciel, il y en a pour tous les goûts. Pour Thaïs ce sera coco vanille, <em>« pour la sauce blanche »</em>. Houda, elle, est plutôt caramel. Clara, que ses potes ont invitée pour son vingtième anniversaire, n’a pas encore fait son choix entre foufoune ou quéquette.</p>
+<p>À l’intérieur de la pâtisserie, où les client·e·s rentrent par petits groupes pour respecter les règles sanitaires, l’ambiance est tamisée, avec néons et plantes tropicales. Derrière le comptoir, les employées s’interpellent en espagnol et s’affairent pour préparer les commandes, trempant vulves et phallus dans des bains de chocolat fondu et de <em>milk-shake</em> à la fraise.</p>
+<p>Adaptée d’un concept venu de Thaïlande, la quéquetterie voit le jour en juin 2020, entre les deux confinements. À l’origine du projet : Taziana Jurdi, une jeune pâtissière et entrepreneure d’origine vénézuélienne, qui installe sa boutique dans un coin de son restaurant Fuumi, servant d’ordinaire des sushis-burritos. Avec la fermeture des restaurants en octobre, la quéquetterie lui permet de continuer à faire de la vente à emporter. Grâce à son succès, elle garde la tête hors de l’eau — malgré une baisse de chiffre d’affaires.</p>
+<p>On ne peut s’empêcher de le remarquer : dans la queue, quasiment que des filles. La quéquette à déguster, encore un tabou pour les hommes ? <em>« J’ai demandé à un pote s’il voulait venir aujourd’hui</em>, raconte Jade. <em>Il n’a pas voulu : il m’a dit qu’il n’était pas gay ! »</em> Les lycéennes, elles, s’en fichent. <em>« C’est juste une gaufre, il n’y a rien de bizarre</em>, assure Houda. <em>Le plus important pour nous c’est le goût... et la taille ! »</em></p>
+<p>Alors, quéquette ou foufoune ? Avec Juliette, <a href="https://lepointq.com/media/uploads/quequetterie-tom-juliette.jpg">on a testé les deux</a>, et on vous recommande ! Et si vous venez de la part du Point Q, vous avez droit à un <strong>topping gratuit</strong> : Nutella, chantilly, Oreo ou confiture, à vous de décider !</p>
+<p><strong><em>La quéquetterie</em></strong><em>, 28 rue d’Aboukir (75002 PARIS). À partir de 5 € pour une quéquette ou une foufoune.</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-hotdog.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Le sandwich, on valide pas... Mais il y a encore des tas de recettes à inventer sur la table de nuit, on compte sur ton imagination ! On espère que tu as autant souri à nous lire, que nous avons ri à la quéquetterie. Si tu veux y faire un saut, c’est ouvert de 11h à 21h tous les jours ! Et on le rappelle, <strong>tu as droit à un topping offert si tu viens de notre part</strong>.</p>
+<p>Pour retrouver <a href="https://lepointq.com/newsletters/">nos vingt-six précédentes newsletters</a> (whaouuu), c’est sur le site <a href="https://lepointq.com">lepointq.com</a>. Si tu veux échanger avec nous cette semaine, on te répondra sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, <a href="https://www.facebook.com/lepointq.news">Facebook</a> et <a href="https://twitter.com/LePointQ">Twitter</a> ! Si tu veux répondre à nos appels à témoignages, privilégie Insta. Pour les demandes pro (et les mots d’amour) on a un mail : <a href="mailto:contact@lepointq.com">contact@lepointq.com</a>.</p>
+<p>Le Point Q est encore pour quelques temps une aventure bénévole, celle d’un groupe d’ami·e·s qui prend un plaisir fou à écrire pour toi chaque semaine. Tu peux nous soutenir grâce à un petit don ponctuel ou régulier <a href="https://fr.tipeee.com/le-point-q">sur Tipeee</a>.</p>
+<p>Le Point Q c’est aussi une rencontre filante entre un projet innovant et une communauté fidèle, exaltante, qui change nos manières de vivre nos sexualités. Si tu veux qu’on grandisse ensemble, partage la newsletter à tes ami·e·s, en cliquant juste en dessous !</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>On te souhaite une excellente semaine, pour toujours plus de lundis matin à tes côtés !</p>
+<p>Délicieusement,</p>
+<p>Julien, Juliette, Orianne, Tom, Thaïs et Valentin, aka Le Point Q.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

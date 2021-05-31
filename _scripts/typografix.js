@@ -27,7 +27,8 @@ exports.typografix = (html, options) => {
 		.replace(/ \?/g, "&nbsp;?")
 		.replace(/ %/g, "&nbsp;%")
 		.replace(/ €/g, "&nbsp;€")
-		.replace(/ - /g, "&nbsp;&mdash;&nbsp;");	// Tirets cadratins
+		.replace(/ - /g, "&nbsp;&mdash;&nbsp;")	// Tirets cadratins
+		.replace(/ -,/g, "&nbsp;&mdash;,");
 
 	return output;
 }
