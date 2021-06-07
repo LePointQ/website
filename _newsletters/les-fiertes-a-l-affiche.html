@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🏳️‍🌈 📺 Les fiertés à l’affiche&nbsp;?</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Jusqu’à fin juin, on célèbre les fiertés, et on visibilise la communauté LGBTQ+. Cette semaine, on se questionne sur la représentation de l’homosexualité et de la transidentité à l’écran.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Les fiertés à l’affiche&nbsp;?
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021 !</p>
+<p>Vous les avez peut-être remarqués dans des boutiques, sur des passages piétons ou sur des logos de marques... Des drapeaux arc-en-ciel partout autour de vous, car c’est le mois de la Pride ! Jusqu’à fin juin, on célèbre les fiertés, et on visibilise la communauté LGBTQ+ (Lesbiennes, Gays, Bisexuel·le·s, Transgenres, Queers — et toute autre personne non cisgenre et hétérosexuelle). Au Point Q cette semaine, on se questionne sur la représentation de l’homosexualité et de la transidentité à l’écran.</p>
+<p>« Vous sentez-vous représenté·e·s au cinéma et dans les séries ? » <strong>Orianne a posé cette question à nos quatre témoins</strong> : Juliette, Léo, Benjamin et Axel, qui appartiennent à la communauté LGBTQ+. Ils répondent avec une fine analyse. Ophélie poursuit avec <strong>un Vu d’ailleurs au Kenya, où un film censuré a bousculé les points de vue sur l’homosexualité</strong> : <em>Rafiki</em>, c’est à découvrir juste en dessous ! <strong>« Les personnes LGBTQ+ sont-elles encore sous-représentées à l’écran ? »</strong> Tom répond dans le débunk. Enfin, Julien dresse, dans la bonne nouvelle, une longue liste de recommandations de <strong>séries qui mettent en scène des personnages queer</strong>. À déguster, il y en a pour toutes les plateformes !</p>
+<p>On vous souhaite une agréable lecture,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/lgbt.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Fièrement représenté·e·s&nbsp;?
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+
+
+					<ul>
+<li><strong>Juliette — 22 ans, bisexuelle, célibataire</strong></li>
+</ul>
+<p>« La représentation des personnes LGBT+ à l’écran, c’est quelque chose qui est en train de se développer mais qui n’était pas présent il y a encore une dizaine d’années — ou alors c’était complètement caricatural. Quand j’étais petite, je regardais des dessins animés japonais ou français, et autant il y avait des personnages féminins cool, autant il y avait zéro personnages queer*. C’était des aliens ou bien des monstres mais pas des personnes queer. Ce n’était pas des humains.</p>
+<p>Récemment un ami m’a fait découvrir <em>Steven Universe</em> et là je suis en train de regarder <em>The Owl House</em>. Ce sont des dessins animés qui ont tous des personnages queer, des personnages que j’aurais vraiment aimé voir parce que je ne pouvais pas m’identifier. Ça a été un peu compliqué d’être légitime dans ce que j’étais parce que je ne voyais pas d’autres personnes comme moi. Ce qui est bien c’est que maintenant les séries sont aussi dans cette mouvance. Comme <em>Sense8,</em> qui a fait beaucoup de bruit. Il y avait une grande variété de représentations <em>queer</em> et c’était les personnages principaux, avec de vrais rôles. Ça c’était nouveau ! »</p>
+<ul>
+<li><strong>Léo — 20 ans, non-binaire, bisexuel·le, en couple</strong></li>
+</ul>
+<p>« Je pense que ça permet de faire connaître (pas reconnaître vu que la représentation est souvent mal faite) les thématiques LGBTQ+ qu’on n’aborde pas forcément. Par exemple, il y a eu un personnage transgenre dans <em>Plus belle la vie</em> et j’ai trouvé ça super cool. Le public qui regarde ça ce sont des familles et des anciens, donc c’est super qu’iels soient exposé·e·s à ces identités-là de manière bienveillante. Je sais que ce personnage a aidé plusieurs personnes de mon entourage à faire leur coming out trans à leurs grands-parents.</p>
+<p>Pour la représentation non-binaire, à laquelle je m’identifie, elle est inexistante... Je crois n’avoir jamais croisé de personne non-binaire à l’écran et j’avoue que ça me rend triste... Avec la représentation bie, ça me saoule qu’on tombe souvent dans des clichés super blessants. Comme la meuf bie qui se cherche et qui finit par tromper son mec avec une nana, ou celle qui a beaucoup de relations sexuelles, une vie assez “freestyle” et tout. On est aussi des personnes posées dans leur vie qui aiment les relations calmes et pas forcément aller voir ailleurs. Je trouve que ça avait été bien fait par exemple dans <em>Sex Education</em>, avec le personnage d’Ola. On commence à avoir une représentation plus “chill” et réaliste des personnes gays et lesbiennes mais pas de toutes les autres identités qui sortent de la binarité : bisexuel·le·s, pansexuel·le·s, personnes non-binaires. C’est super dommage. »</p>
+<ul>
+<li><strong>Benjamin — 30 ans, pansexuel, en couple</strong></li>
+</ul>
+<p>« Je suis de manière générale pour des mesures de discriminations positives et dans ce cadre je trouve par exemple la démarche de Netflix assez intéressante. Les minorités de tous types sont représentées, Netflix présente des personnages à l’intersection de plusieurs catégories (femme + lesbienne + racisée** par exemple) : c’est intéressant car cela montre la complexité de la réalité.</p>
+<p>On peut ensuite s’interroger sur le type de représentation qui en est faite. Il s’agit pour le moment beaucoup plus de “LG” que de “BT+”. J’ai l’impression que petit à petit les personnages sont un peu moins caricaturaux et que l’on confond moins sexualité et genre. En dehors de Netflix, je trouve que France Télévisions mène des actions aussi très intéressantes avec <a href="https://www.france.tv/slash/">de nombreux documentaires plutôt bien faits</a> sur la trajectoire d’individus faisant partie de minorités. Pour ce qui est de l’effet immédiat des médias sur l’acceptation dans les familles ou l’entourage, c’est possible que cela aide même si je ne pense pas que cela seul puisse régler le problème. Il faut rajouter à cela l’éducation, le droit et l’action politique pour finir de régler le problème. On n’y est pas encore mais on y croit ! »</p>
+<ul>
+<li><strong>Axel — 23 ans, gay, célibataire</strong></li>
+</ul>
+<p>« À vrai dire je ne regarde pas tant de films et de séries que ça, mais de ce que j’ai vu je pense qu’il y a deux représentations majeures qui s’opposent : d’un côté la relation impossible qui se termine de façon plus ou moins tragique, comme dans <em>Call Me By Your Name</em> par exemple ; de l’autre côté, une représentation calquée sur les relations hétérosexuelles, avec des films comme <em>Love, Simon.</em> Dans tous les cas, ça tourne toujours autour du même trope : une relation avec des obstacles à surmonter, façon <em>Roméo et Juliette</em>. Ça reste très édulcoré… Beaucoup de séries actuelles qui mettent en scène des relations hétérosexuelles explorent de nouvelles façons de vivre son couple ou sa sexualité, ou bien parlent de problématiques comme les relations abusives par exemple. Je n’ai pas l’impression que l’on voit beaucoup ça dans les films ou séries mettant en scène des relations homosexuelles.</p>
+<p>Cette volonté d’édulcorer pour se faire accepter par les hétérosexuels ne peut mener qu’à une impasse. Il faut savoir ce que l’on veut : se faire accepter des autres ou participer au développement de sa propre communauté. Un film n’a pas forcément pour but de plaire au public mais plutôt de faire émerger des idées auxquelles on n’avait pas pensé ou qu’on ne voulait parfois pas voir. Si notre seul objectif c’est de constamment plaire aux personnes hétérosexuelles, alors on ne va jamais être considéré·e·s comme des égaux puisqu’on reste sur un rapport de dominant·e·s/dominé·e·s. Au bout d’un moment, il faut arrêter de chercher à plaire et se concentrer sur ce qui est important pour nous, car c’est comme ça que l’on pourra véritablement se faire accepter selon moi. »</p>
+<p><em>* Mot anglais signifiant « bizarre » ou « tordu », « queer » désigne l’ensemble des orientations sexuelles et identités de genre qui sortent de la norme de l’hétérosexualité cisgenre</em></p>
+<p><em>** Une personne racisée est une personne subissant du racisme systémique, et donc par extension une personne non-blanche</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/rafiki.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Ophélie.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Ophélie
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Rafiki&nbsp;&raquo;&nbsp;: de la censure aux Oscars, le film kényan qui a changé la donne
+										</h4>
+
+
+					<p>C’est l’histoire de deux étudiantes, Kena (Samantha Mugatsia) et Ziki (Sheila Munyiva), dont les parents sont des opposants politiques et qui s’éprennent l’une de l’autre. En avril 2018, Wanuri Kahui secoue la filmographie traditionnelle kényane avec son long-métrage <em>Rafiki</em>. La réalisatrice transcende l’écran avec une histoire d’amour lesbienne, dans un pays où l’homosexualité est encore condamnée par la loi et passible de 14 ans de prison.</p>
+<p>Consciente du difficile accueil qu’allait recevoir son film, elle choisit de centrer son récit sur l’éclosion des sentiments amoureux et limite les scènes sensuelles, en ne montrant que quelques baisers. Malgré ses efforts, le comité national de classification des films censure <em>Rafiki</em>, à cause de <em>« son thème homosexuel et de son but évident de promouvoir le lesbianisme au Kenya »</em>. Par ailleurs, selon le comité, le film <em>« heurte la culture et les valeurs morales du peuple kényan »</em>.</p>
+<p>Face à ce verdict, la réalisatrice saisit la Haute Cour de Nairobi, et elle obtient finalement une sortie nationale d’une semaine, pour que son film puisse concourir aux Oscars. En quelques jours, elle passe en tête du box-office et de nombreuses salles se mettent à diffuser la production, interdite aux moins de 18 ans. C’est un immense succès sur les réseaux sociaux.</p>
+<p><em>Rafiki</em> est un film charnière dans l’histoire du cinéma kényan. En plus d’aborder un thème inédit et tabou, il a connu un parcours international inégalé puisqu’il s’agit du premier film kényan projeté au festival de Cannes, dans la catégorie « Un certain regard ».</p>
+<p>Grâce à son combat, Wanuri Kahui a inspiré d’autres cinéastes africain·e·s à faire avancer les droits des personnes LGBTQ+. En 2020, Peter Murimi, également kényan, projette à Londres un documentaire baptisé <em>I Am Samuel</em>. Il y raconte l’histoire d’un jeune homme homosexuel, confronté au conservatisme religieux et culturel de sa famille.</p>
+<p>À voir : <a href="https://www.youtube.com/watch?v=OShd8rnUvig">la bande-annonce de <em>Rafiki</em></a>, pour les curieux·ses.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/star-wars-rise-skywalke-gay-kiss.webp" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Tom
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Il y a beaucoup de personnages LGBTQ+ à l’écran&nbsp;&raquo;
+										</h4>
+
+
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+
+					<p>Si les progrès de ces dernières années en matière de représentation peuvent donner l’impression d’une profusion de personnages LGBTQ+ au cinéma et dans les séries, nous sommes pourtant toujours loin d’une représentation régulière.</p>
+<p>Selon <a href="https://www.glaad.org/blog/glaads-studio-responsibility-index-sees-highest-recorded-percentage-lgbtq-films-racial">un rapport de l’association américaine GLAAD</a>, qui œuvre pour la représentation des personnes queer dans les médias, <strong>seuls 22 des 118 films</strong> sortis en 2019 et issus des plus gros studios hollywoodiens mettaient en scène des personnages LGBTQ+. Et près de la moitié d’entre eux apparaissent à l’écran pour moins d’une minute.</p>
+<p>Parmi ces personnages, on compte <strong>une majorité d’hommes, gays... et blancs</strong>. En effet, près de 70 % des films concernés comptaient un personnage gay, alors que seul un tiers mettait en scène des lesbiennes — aucun personnage transgenre ou non-binaire à l’horizon. Par ailleurs, les personnes racisées restent largement invisibilisées : elles ne représentent qu’un tiers de l’ensemble des personnages LGBTQ+.</p>
+<p>Du côté des séries, on compte plus de diversité mais une représentation tout aussi limitée, avec <a href="https://www.glaad.org/releases/glaads-where-we-are-tv-2020-2021-report-despite-tumultuous-year-television-lgbtq">moins de 10 % de personnages queer à l’écran</a>. À noter que seul·e·s quatre créateur·rice·s sont à l’origine de près d’un cinquième de ces rôles : Greg Berlanti, Lena Waithe, Shonda Rhimes et Ryan Murphy (showrunner de <em>Pose,</em> dont Julien vous dit le plus grand bien ci-dessous).</p>
+<h3><strong>Disney, champion du « <em>queerbaiting »</em></strong></h3>
+<p>Représentation ne signifie pas inclusion. Pour surfer sur cette tendance progressiste et conquérir un nouveau public, certains producteurs font parfois de l’apparition d’un personnage ou d’un couple LGBTQ+ <strong>un argument marketing</strong> — quand bien même son importance dans l’œuvre reste plus qu’anecdotique.</p>
+<p>Disney, notamment, est passé maître dans cet art du <em>« queerbaiting ».</em> Le premier personnage ouvertement gay dans l’univers Marvel ? Un caméo de quelques secondes dans <strong><em>Avengers Endgame</em></strong>, où le réalisateur Joe Russo évoque la mort de son mari lors du claquement de doigts de Thanos. Le premier baiser <em>queer</em> de la saga dans <strong>Star Wars IX</strong> ? Alors que les fans s’attendaient à une <em>love story</em> entre le pilote Poe et le stormtrooper repenti Finn, dont l’alchimie était manifeste depuis l’épisode VII, ils se contenteront d’un rapide smack entre deux femmes pilotes de la Résistance. Donner une petite amie à Elsa dans <strong><em>La Reine des Neiges 2</em></strong> ? Certainement pas, malgré un sous-texte sur le coming out assez évident dans le premier opus.</p>
+<p>Au-delà des grands discours, la firme aux grandes oreilles tient à son image « familiale » et reste frileuse à l’idée d’inclure des personnages LGBTQ+ dans ses productions, surtout dans un rôle principal. La série <strong><em>Love, Victor</em></strong> — dont la saison 2 débute vendredi prochain —, initialement prévue pour Disney+, est jugée trop « mature » et atterrit finalement sur Hulu puis sur Star, la plateforme pour adultes de Disney.</p>
+<p>Il faut dire que pour Hollywood, l’enjeu est avant tout économique. Outre le risque de s’aliéner une audience conservatrice, le marché chinois représente une part de plus en plus importante des recettes d’un film. Dans ces circonstances, difficile pour les studios d’imposer des personnages LGBTQ+ — au risque de voir leurs productions censurées par le gouvernement chinois, comme les quelques scènes évoquées plus haut.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/glenn-carstens-peters-eoqhsffbhrk-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Julien
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Des séries, en veux-tu en voilà&nbsp;!
+										</h4>
+
+
+					<p>Tes partiels sont terminés, tu peux enfin chiller devant ton écran mais tu ne sais pas quoi regarder ? La bonne nouvelle, c’est qu’on a tout un programme de séries cool LGBTQ+ à te proposer !</p>
+<p>New York, les 80s, du <em>voguing</em> : notre coup de cœur, c’est indubitablement <strong><em>Pose</em></strong> (disponible <a href="https://www.canalplus.com/series/pose/h/9955380_50001">sur Canal +</a>). Blanca Rodriguez (jouée par Mj Rodriguez) devient la mère d’un jeune danseur de talent, Damon, mis à la porte par ses parents. L’occasion de lui faire découvrir la <em>ball</em> culture de la scène queer noire et latino. Amours et quêtes d’identité s’y mêlent tandis que le sida décime la communauté. Une série de Ryan Murphy incarnée par de formidables acteur·ice·s racisé·e·s et une proportion inégalée de femmes trans. Pour quiconque aime passer du rire aux larmes.</p>
+<p>Si vous avez aimé le film <em>Love, Simon</em>, voici son spin-off <strong><em>Love, Victor</em></strong> (à voir sur <a href="https://www.disneyplus.com/series/love-victor/3tV91pQuQk2K">sur Disney+ Star</a>) ! Lycéen aux alentours d’Atlanta, Victor Salazar (Michael Cimino) est en pleine introspection sur son orientation sexuelle. Pour y voir plus clair, il contacte Simon Spier, un ancien élève passé, lui aussi, par les mêmes interrogations. Mignon, attachant, bref, on a hâte de la deuxième saison.</p>
+<p>Bon, et on ne pouvait pas passer outre <strong>Sense8</strong> (à regarder <a href="https://www.netflix.com/title/80025744">sur Netflix</a>), ce monument des Wachowski. De la Corée à l’Allemagne en passant par les États-Unis, huit personnages entrent étrangement en connexion sur tous les plans, y compris sensoriels. Sexualité, enquête, conflits familiaux… Chacun·e se fait acteur·ice de la vie des autres, comme l’incroyable Nomi Marks (Jamie Clayton). Un feu d’artifice pour les yeux et le cœur où l’hétéronormativité n’est qu’un mauvais souvenir. Et on adore.</p>
+<p><strong>Et si tu n’as pas le temps de t’enfiler plusieurs saisons, voici deux idées de mini-séries.</strong></p>
+<p>D’abord un bijou en cinq épisodes sorti en 2021, <strong><em>It’s a Sin</em></strong> (s’en délecter <a href="https://www.canalplus.com/series/it-s-a-sin/h/15746876_50001">sur Canal+</a>). Cinq jeunes et fabuleux·ses Londonien·ne·s, dont le magnifique Ritchie Tozer (Olly Alexander), vivent les années 1980 avec autant de fougue que de projets en tête quand vient s’abattre la pandémie de sida. Et on regrette que la série n’ait pas duré plus longtemps.</p>
+<p>Avec <strong><em>When We Rise</em></strong> (à voir <a href="https://www.disneyplus.com/fr-fr/series/when-we-rise/4ofUf6ipTkV5">sur Disney+ Star</a>), en revanche, direction les <em>states</em> et une fresque détonante des années 1970 aux années 2010 autour des mouvements militants LGBTQ+, des émeutes de Stonewall à l’adoption du mariage pour tou·te·s. Indispensable pour savoir d’où l’on vient.</p>
+<p>Bon, bien sûr, cette liste n’a absolument rien d’exhaustif et reste très personnelle — dis-nous d’ailleurs les noms des chefs d’œuvre qu’on a pu oublier !</p>
+<p>En guise de prolongement, et si tu veux en savoir plus sur l’évolution des représentations LGBTQ+ à l’écran, un super plan : regarde le docu <strong><em>Visible: Out on Television</em></strong> (<a href="https://tv.apple.com/fr/show/visible-out-on-television/umc.cmc.1zkna505r4jre6fh7mjcncio0">sur Apple TV +</a>) pour faire le plein d’idées de séries, récentes ou non, notamment d’un point de vue intersectionnel. Et puis parce qu’on aime aussi les longs-métrages, il reste bien sûr l’indétrônable <strong><em>The Celluloid Closet</em></strong> (sorti en 1996, en VOD <a href="https://video-a-la-demande.orange.fr/film/THECELLULOIW0095798/the-celluloid-closet">chez Orange</a>), pour se donner une idée du chemin parcouru — et qui reste à parcourir.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Et toi, tu en penses quoi des personnages queer à l’écran ? Tu peux nous en dire plus sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, <a href="https://www.facebook.com/lepointq.news">Facebook</a>, <a href="https://twitter.com/LePointQ">Twitter</a> ou par mail à <a href="mailto:contact@lepointq.com">contact@lepointq.com</a>.</p>
+<p>Si tu as des questions, ou besoin d’aide, c’est également sur ces réseaux que tu peux nous joindre... à moins que tu ne trouves ta réponse dans l’une de nos vingt-sept précédentes newsletters, disponibles sur <a href="https://lepointq.com/newsletters/">lepointq.com</a>. Pour découvrir en exclusivité la BD de Morgan de la semaine, c’est aussi sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a> ! Peut-être même que tu peux devenir notre millième abonné·e...</p>
+<p>Quel que soit ton genre et ton orientation sexuelle, sache que tu trouveras toujours ici une oreille, un témoignage qui te ressemble ou un conseil utile. Décomplexer pour aider un maximum d’entre nous à être pleinement soi-même, c’est notre raison d’être.</p>
+<p>Pour nous partager avec tes ami·e·s, c’est en-dessous :</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>(et glisse-leur de s’abonner à la newsletter !)</p>
+<p>Enfin, s’il te reste un clic, il sera <a href="https://fr.tipeee.com/le-point-q">pour Tipeee</a>. Sans lui, nous ne serions rien ! C’est notre tirelire de financement participatif. En échange d’un petit don, tu reçois une carte personnalisée, illustrée par notre graphiste Camille, écrite de notre main et pleine de mots doux. Au Point Q, les cartes de vœux c’est toute l’année.</p>
+<p>On te souhaite un excellent mois des fiertés. Si tu veux défiler sous l’arc-en ciel, voici <a href="https://tetu.com/2021/06/01/marche-fiertes-calendrier-gay-pride-2021/">le calendrier national de la Pride</a>, par villes.</p>
+<p>Que cette seconde semaine de juin soit pleine de bourgeons amoureux,</p>
+<p>Julien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q 2.0.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
