@@ -25,6 +25,7 @@ fields:
     - Julien
     - Valentin
     - Ophélie
+    - Le Point Q
   label: Auteur·rice·s
 - name: section
   type: select
