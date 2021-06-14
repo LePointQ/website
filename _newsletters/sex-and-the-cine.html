@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🎥 Sex and the Ciné</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Cette semaine, le sexe sous les projecteurs ! À trois semaines de l’ouverture du festival de Cannes, on a analysé, pour vous et avec vous, la manière dont le sexe est représenté dans le Septième Art.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Sex and the Ciné
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.</p>
+<p>Cette semaine, le sexe sous les projecteurs ! À trois semaines de l’ouverture du festival de Cannes, on a analysé, pour vous et avec vous, la manière dont le sexe est représenté dans le Septième Art. <strong>Pour les témoignages, toute l’équipe a retroussé ses manches : que pensez-vous des scènes d’intimité à l’écran ?</strong> Gontran, Clarisse, Maëliss et Zoé répondent, avec systématiquement une référence ciné à l’appui ! Big up à vous nos fidèles abonné·e·s ! Le Vu d’ailleurs fait un saut dans l’histoire : <strong>direction les dernières heures du XIXème siècle, où l’invention des caméras a coïncidé avec celle du ciné érotique !</strong> C’est signé Valentin. <strong>Les rapports sexuels sont-ils réels sur un tournage ?</strong> Julien décrypte cette info, croustillant ! Et pour terminer cette séance Qulture, Ophélie jette un œil avisé sur <strong>la classification des films interdits au moins de 16 ans. Bonne nouvelle, ça a l’air de bouger !</strong></p>
+<p>Un peu de lecture et beaucoup d’humour (ou l’inverse), notre combo gagnant du lundi matin. <strong>Dans la BD de la semaine, Morgan nous emmène sur un plateau... où tout ne se passe pas comme prévu !</strong> À découvrir tout en bas...</p>
+<p>Moteur et... action !</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/felipe-bustillo-4VDRCoNuvE0-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Le sexe au ciné&nbsp;? Cliché&nbsp;?
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+											<span>
+												Par Le Point Q
+											</span>
+										</h3>
+
+
+					<ul>
+<li><strong><em>Gontran</em>* — 22 ans, hétérosexuel, célibataire</strong></li>
+</ul>
+<p>« Je trouve que ce sont des scènes qui, la plupart du temps, ne sont pas très utiles. Parfois on a l’impression que ça ne rend pas vraiment service à l’histoire et que c’est une sorte de routine. Souvent, ce sont des scènes qu’on oublie facilement. J’imagine, pour avoir vu quelques interviews, que c’est rarement quelque chose d’agréable pour les réalisateurs et pour les acteurs ; et comme elles sont faites un peu par obligation, elles sont tournées de manière caricaturale.</p>
+<p>Surtout dans la manière dont c’est filmé : on n’est pas dans un film pornographique donc on ne peut rien montrer, mais il y a quelque chose de très stéréotypé. Si bien que quand avec ma mère on regarde un film ensemble, c’est devenu un réflexe de passer les scènes de sexe. Non pas parce qu’on est géné·e·s, même si ce n’est jamais très agréable de voir ça avec ses parents, mais parce qu’on sait que de toute façon ça ne mènera à rien.</p>
+<p>L’exception qui confirme la règle, c’est quand une scène de sexe dit vraiment quelque chose des personnages. Un exemple qui me vient en tête, c’est <em>Homeland.</em> Au début de la série, il y a un personnage parti à la guerre depuis des années qu’on croyait mort et qui revient ; il retrouve sa femme, et il y a une scène de sexe (qui pour le coup se justifie totalement) où le gars est très brutal et animal. Ça montre bien que pendant qu’il était en train de combattre, enfermé ou torturé, il a perdu un peu de son humanité. »</p>
+<ul>
+<li><strong>Clarisse — 22 ans, hétérosexuelle, en couple</strong></li>
+</ul>
+<p>« C’est très classique, les préliminaires sont assez inexistants, et les représentations très centrées sur les hétérosexuel·le·s. Quand on parle d’autres orientations sexuelles, c’est très cliché (les gays/lesbiennes qui, forcément, aiment les plans à plusieurs, les bi·e·s qui rêvent de plans à trois, etc.)</p>
+<p>J’ai été assez gênée devant une scène de sexe dans <em>Game of Thrones</em>, au moment où Littlefinger vient de recruter de nouvelles femmes pour un de ses bordels. L’une des prostituées, plus expérimentée, leur apprend à simuler quand elles font l’amour à des clients. Donc ce sont deux femmes qui font semblant de coucher ensemble, mais comme s’il s’agissait d’un homme et d’une femme. C’est super dérangeant comme scène, parce que Littlefinger regarde ça normalement, et on a ces deux femmes qui simulent vraiment, qui hurlent, comme des actrices, qu’elles doivent être y compris dans la série.</p>
+<p>Aucun film ni série n’est représentatif de ce qu’il se passe en vrai. C’est poussé à l’extrême à chaque fois. Dans une autre scène, quand Khal Drogo viole Daenerys, il n’y a aucun plaisir, c’est totalement animal, et on les voit en levrette alors qu’il n’y a aucun bruit, aucun mouvement autour. Là aussi, c’est très gênant.</p>
+<p>Pour conclure, quand je pense “sexe au cinéma”, je penche tout de suite pour une représentation très vanille/classique, avec le plaisir de l’homme au-dessus du reste, car la pénétration est toujours présente, alors que dans la vraie vie ça ne suffit souvent pas à l’orgasme féminin. En somme : sexe au cinéma = sexe vanille hétérocentré ! »</p>
+<ul>
+<li><strong>Maëliss — 23 ans, lesbienne, célibataire</strong></li>
+</ul>
+<p>« À mes yeux, les scènes de sexe sont toujours représentées au cinéma de manière similaire, sans montrer la diversité. C’est notamment le cas du sexe homosexuel qui est toujours représenté de façon identique : deux femmes sont montrées comme très douces, a contrario de deux hommes. C’est très classique parce que comme il y a un tabou autour de ça, le sexe est vu comme quelque chose de différent de leurs relations ; or si on considère que tout ce qui est sexuel est dans la continuité et dans la communication du corps, ça ne devrait pas être mis à part. Aujourd’hui, il y a tout un travail à faire autour de ça.</p>
+<p>Ça m’est déjà arrivé d’être gênée devant une scène de sexe avec ma mère, notamment quand ça sortait un peu des sentiers battus. Par exemple dans le film <em>Mademoiselle</em>, où il y a des scènes assez particulières et justement beaucoup plus représentatives de ce que peut être la réalité <em>[du sexe lesbien]</em>. Enfin, ces moments intimes sont très personnels et ça peut être compliqué de les retranscrire dans un film. »</p>
+<ul>
+<li><strong>Zoé — 22 ans, hétérosexuelle, en couple</strong></li>
+</ul>
+<p>« Quand je regardais la série <em>Glee</em>, ça m’avait un peu choquée de voir qu’on filmait souvent les couples hétérosexuels s’emballer, alors que pour les couples gays, il n’y avait jamais de scène explicite. Je me suis rendue compte que c’était pareil dans tous les films que j’ai vus... À part <em>La vie d’Adèle</em>, où il y a de longues scènes de sexe lesbien... mais c’est tourné bizarrement. Tu sens le <em>male gaze</em>** du réalisateur, dans la manière dont c’est mis en scène.</p>
+<p>Sinon, évidemment que j’ai déjà été gênée (<em>rires</em>) quand je regardais des films avec mes parents ou mes frères. J’avais très envie de changer de chaîne, je regardais ailleurs ou je faisais des toussotements : <em>“hum hum, ah dis donc, ouh làààà...”</em> »</p>
+<p><em>* Le prénom a été modifié</em></p>
+<p>** <em>Le « regard masculin », désigne le fait que la culture visuelle dominante imposerait au public d’adopter une perspective d’homme hétérosexuel, par exemple en faisant s’attarder la caméra sur les formes du corps féminin. Il s’agit d’un concept théorisé par une critique de cinéma en 1975.</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/serpentine-dance.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											L’histoire des films érotiques et pornographiques
+										</h4>
+
+
+					<p>Très vite, les caméras, créées à la fin du XIXème siècle, incitent à s’intéresser aux corps. Les premiers films « érotiques » voient le jour : en 1895, <a href="https://www.youtube.com/watch?v=8zkXb4aWVZs"><strong><em>The Serpentine Dance</em></strong></a> met en scène une chorégraphie de voiles légers, et <a href="https://www.youtube.com/watch?v=IUyTcpvTPu0"><strong><em>The Kiss</em></strong></a> le premier baiser du cinéma. En France, l’année suivante, <a href="https://www.youtube.com/watch?v=gpLbQY-aycE"><em><strong>Le Coucher de la mariée</strong></em></a> est considéré comme le premier strip-tease. Ne vous emballez pas toutefois : seules deux minutes nous en sont parvenues.</p>
+<p>Il faut attendre quelques années pour que le porno tel qu’on le connaît aujourd’hui apparaisse ; en 1904, <em><strong>Sœur Vaseline</strong></em> présente déjà les « codes » du porno <em>mainstream</em> : sexe oral, pénétration, plan à trois, rapports homosexuels. À partir de là, les films deviennent plus « hardcore » : ils présentent des gros plans de pénétration, comme dans <a href="https://commons.wikimedia.org/wiki/File:A_Free_Ride_(1915).ogv"><strong><em>A Free Ride</em></strong></a>, premier film du genre aux États-Unis (1915). On les appelle des <strong><em>« stag films »</em></strong> : brefs, produits en secret, souvent anonymement, ils sont diffusés dans des bordels (la plupart des actrices sont des prostituées), ou chez les rares possesseurs d’un projecteur personnel.</p>
+<p>Parallèlement, la distribution est contrôlée : la création du <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000020908699/">visa d’exploitation</a>, en 1916, permet de refuser la diffusion, et donc de censurer les films pour des questions de dignité humaine ou de protection de l’enfance et de la jeunesse. Soixante ans plus tard, <strong>l’étiquette « X » est créée. Elle est destinée aux films pornographiques, mais aussi à ceux très violents</strong>, ou portant atteinte à la dignité humaine.</p>
+<p>Les années 70 correspondent à l’explosion du genre pornographique : ces films représentent jusqu’à <strong>25 % de la fréquentation de certaines salles obscures</strong> ! C’est l’époque où paraît <a href="https://www.youtube.com/watch?v=dDlk2BrZXuk"><em><strong>Emmanuelle</strong></em></a> (1974), véritable carton français. Des stars émergent alors, comme Linda Lovelace pour son rôle dans <em>Gorge profonde</em> (1971), premier film avec un budget un peu conséquent (25.000 $), et fondateur du <a href="https://www.nytimes.com/1973/01/21/archives/pornochic-hardcore-grows-fashionableand-very-profitable.html">« <strong><em>porno chic »</em></strong></a>, très populaire.</p>
+<p>La suite, on la connaît : l’invention de la cassette vidéo, puis du DVD, permettent un accès toujours plus facile à ce type de contenu, alors qu’en 1985, Canal+ diffuse, un samedi par mois à minuit, un film en crypté. L’émergence d’Internet offrira par la suite <strong>un accès gratuit et illimité à du contenu toujours plus hard</strong>, pour des conditions d’emploi de plus en plus précaires. Mais la prise de conscience de ce phénomène permet l’émergence d’une <a href="https://lepointq.com/articles/20-12/le-son-du-desir-un-podcast-porno-feministe-qui-va-faire-jouir-vos-oreilles/">contre-culture pornographique, féministe</a>, qui vient s’opposer à une histoire à sens unique, qui se déroule depuis plus d’un siècle.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/mason-kimbarovsky-e5bgchzjpr8-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Julien
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Le sexe à l’écran&nbsp;: est-ce toujours du cinéma&nbsp;?
+										</h4>
+
+
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: #F47B67; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid #F47B67; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;PAS EXACTEMENT&nbsp;
+										</p>
+
+					<p>Des caresses, des corps nus entrelacés et une intimité révélée à l’écran… Les mises en scène de rapports sexuels sont nombreuses au cinéma, avec des degrés de pudeur certes variables, entre visuels suggestifs et gros plans. Mais ne t’es-tu jamais demandé si tout ce qu’on voyait à l’écran était vrai ?</p>
+<p>Souvent, ce ne sont pas les corps des acteur·rice·s qui sont filmés, même si tout porte à le croire. Pour une raison simple : bon nombre de comédien·ne·s ne sont pas consentant·es à jouer entre elleux des rapports charnels à l’instar du cinéma pornographique. Mais grâce aux effets spéciaux, on n’y voit souvent que du feu.</p>
+<p>Dans la besace du septième art tout d’abord, des prothèses de sexes. Métal, silicone, latex… Les spécialistes des scènes torrides de longs-métrages regorgent de techniques en tout genre.</p>
+<p>Souviens-toi de <em>La Vie d’Adèle</em> et des (très) longues minutes d’ébats entre Emma (Léa Seydoux) et Adèle (Adèle Exarchopolous) : malgré les apparences, les entrejambes des actrices se révèlent être <a href="https://www.liberation.fr/cinema/2016/09/30/la-vie-d-adele-le-conseil-d-etat-donne-raison-au-ministere-de-la-culture_1516072/">des prothèses en silicone</a> affublées de faux poils pubiens et aux tons chair. Quant à l’acteur Jonah Hill, alias l’associé Donnie Azoff dans <em>Le Loup de Wall Street</em>, c’est une prothèse de pénis qu’il a revêtu <a href="http://www.slate.fr/story/103077/protheses-penis-films-americains">durant le tournage</a> – un objet d’une valeur d’environ 5.000 euros.</p>
+<p>Toutefois, il arrive que les rapports ne soient pas simulés.</p>
+<p>Il y a en général deux cas de figure. Si les acteur·rice·s ne souhaitent pas voir leur intimité apparaître à l’écran, les ébats sont filmés avec la même technique que toutes les cascades (sauf celles de Tom Cruise) : l’emploi de doublures. Alain Guiraudie, le réalisateur de <em>L’inconnu du lac</em>, a par exemple trouvé de quoi tourner ses plans les plus osés, dont une éjaculation face caméra, par deux hommes trouvés <a href="https://www.lesinrocks.com/cinema/histoire-de-faux-culs-1757-30-07-2013/">sur un site de rencontres</a>. Du côté de Lars von Trier et de son <em>Nymphomaniac</em>, des acteur·rice·s porno <a href="https://www.wired.co.uk/article/nymphomaniac">ont été filmé·e·s</a> puis ont vu leurs visages être remplacés numériquement par ceux des comédien·ne·s originaux·les. Habile.</p>
+<p>Enfin, eh bien oui, certain·e·s acteur·rice·s passent outre les prothèses et les doublures et se laissent filmer <a href="https://fr.wikipedia.org/wiki/Liste_de_films_non_pornographiques_contenant_des_actes_sexuels_non_simul%C3%A9s">en pleins ébats</a>. C’était le parti pris réaliste adopté par Jean-Marc Barr (l’ancien Jacques Mayol du <em>Grand Bleu</em>) dans ses <em>Chroniques sexuelles d’une famille d’aujourd’hui</em>, où les comédien·ne·s sont bel et bien filmé·e·s lors de rapports <a href="https://www.allocine.fr/article/fichearticle_gen_carticle=18635909.html?page=11">non simulés</a>. Ou par Gaspard Noë dans de nombreuses scènes de <a href="https://www.allocine.fr/article/fichearticle_gen_carticle=18691333.html">son sulfureux <em>Love</em></a>.</p>
+<p>Deux choses néanmoins. Comme le rappelait en 2013 le magazine <a href="https://www.lesinrocks.com/cinema/histoire-de-faux-culs-1757-30-07-2013/"><em>Les Inrocks</em></a>, les scènes de sexe — simulées ou non — ne sont parfois pas sans conséquences pour les acteur·rice·s, qui plus est lorsque la réalisation décide volontairement d’être floue quant aux détails (prothèse ou pas prothèse ? doublure ou pas doublure ?). <em>« Tout le monde voulait savoir ce que j’avais fait sur le tournage, je recevais des remarques salaces (…) Ensuite, il y a eu l’arrivée d’internet, la récupération des images de sexe du film, sorties de leur contexte. J’ai eu l’impression de perdre mon intimité »</em>, expliquait le premier rôle Caroline Ducey après la sortie de <em>Romance</em> (1999), avec l’acteur X Rocco Siffredi.</p>
+<p>Enfin, qu’il s’agisse ou non de cinéma, le respect du consentement de chacun·e, acteur·rice ou non, est indiscutablement nécessaire, et on ne se privera pas de le rappeler.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/classification-cnc.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Ophélie.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Ophélie
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Films interdits aux moins de 16 ans&nbsp;: les ados, des âmes si sensibles&nbsp;?
+										</h4>
+
+
+					<p>On a tou·te·s déjà remarqué un avertissement du type « interdit aux mineur·e·s de moins de 12, 16 ou 18 ans » au début d’un film. Cette signalétique, réalisée par la commission spéciale du Centre National du Cinéma (CNC), classe les œuvres en fonction de l’impact des scènes à caractère sexuel ou violent. Nécessaire pour la protection des mineur·e·s, la classification fait aujourd’hui débat, à mesure qu’elle doit se moderniser et se calquer sur les nouvelles réalités.</p>
+<p>Censurer les films avec des scènes érotiques, c’est le combat mené depuis une dizaine d’années par l’association conservatrice « Promouvoir ». Parmi les œuvres visées : <em>Love</em> de Gaspard Noé, <em>L’inconnu du lac</em> d’Alain Guiraudie ou encore <em>La vie d’Adèle</em> d’Abdellatif Kechiche. Après plusieurs procès gagnés par l’association, la classification des films a été modifiée par le Ministère de la Culture en 2016.</p>
+<p>Néanmoins, le CNC a désormais tendance à assouplir les restrictions d’âge dans le but d’en finir avec « <a href="https://www.liberation.fr/debats/2017/01/17/censure-au-cinema-pas-de-clap-de-fin_1542072/">l’infantilisation du spectateur</a> ». Le débat est vif pour la limitation aux moins de 16 et 18 ans. Après plusieurs réunions avec la commission de classification de l’institution, la plupart des pédopsychiatres en charge des dossiers de la protection de l’enfance ont reconnu qu’à cet âge, la majorité des adolescent·e·s ont la maturité suffisante pour visionner des images de sexe au cinéma. Aujourd’hui, la plupart des jeunes regardent des séries avec des scène de sexe explicites, qu’ils peuvent trouver plus facilement qu’un film sur Internet.</p>
+<p>Enfin, la simple censure peut cacher une partie du problème. Pour certains cinéastes comme Gaspard Noé, les scènes érotiques sont une manifestation de leur liberté d’expression, et elles rendent le cinéma un peu moins lisse. Elles peuvent faire naître le débat chez les adolescent·e·s qui sont confrontés tôt à des contenus et des propos sexuels. <a href="https://www.cairn.info/petit-traite-de-la-liberte-de-creation--9782707159823-page-53.htm?fbclid=IwAR1iVMyD1MnDWuRDvMk6cHPUlCwDTNgFT-D3_T95SZ6Ysx7h36B6Tdfi89U">Selon la sociologue Agnès Tricore</a>, il est <em>« hypocrite »</em> d’interdire des représentations d’actes sexuels explicites aux mineur·e·s de moins de 18 ans, alors que la majorité sexuelle est fixée à 15 ans.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-cinema.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>On sent qu’on t’a donné des idées pour ton prochain court-métrage. Attention tout de même, le concombre dans un collant chair, c’est un peu gros...</p>
+<p>Tu as pris ton pied ? Presque autant qu’installé·e dans le fauteuil rouge d’une salle obscure ? Retrouve plus de contenu sur <a href="https://lepointq.com">notre site web</a>, dans la rubrique <a href="https://lepointq.com/newsletters/">Newsletters</a> notamment. La semaine dernière déjà, on s’intéressait à la représentation de la communauté LGBTQ+ à l’écran ! « <a href="https://lepointq.com/newsletters/les-fiertes-a-l-affiche/">Les fiertés à l’affiche</a> », à lire avant d’enfiler ton drapeau pour la Pride, dans 10 jours à Paris ! Et paraître un poil plus cool face à ton crush.</p>
+<p>Tu nous connais déjà sur le net ? Viens donc nous suivre sur les réseaux sociaux ! On est plus de 900 sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, et on compte sur toi pour t’abonner, ainsi que tes potes... Le cap fantastique approche.</p>
+<p><a href="https://www.instagram.com/lepoint.q/">Instagram</a>, c’est la façon la plus simple de répondre à nos appels à témoignages, et de lire <a href="https://www.instagram.com/p/CQDJ1dCA5ps/">les BD de la star au crayon aiguisé</a>, Morgan ! Sur <a href="https://www.facebook.com/lepointq.news">Facebook</a> aussi, on récolte tes expériences et ton avis. Et avant de partir, retweete-nous un coup <a href="https://twitter.com/LePointQ">chez l’oiseau bleu</a> ! Montrer son amour pour Le Point Q, on trouve ça, objectivement, assez badass. On y va de ce pas.</p>
+<p>Enfin, si tu es en période de déconnexion, il reste un moyen d’envoyer cette newsletter à tes proches :</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Tu l’as envoyée à ton oncle ? Il est mécène ? Ça tombe au poil, on recherche du soutien pour financer notre projet <a href="https://fr.tipeee.com/le-point-q">sur Tipeee</a> !</p>
+<p>Que cette semaine soit douce et cinéphile, et à lundi prochain cher·e·s abonné·e·s !</p>
+<p>Julien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

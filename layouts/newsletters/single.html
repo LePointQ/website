@@ -18,7 +18,7 @@
 					</h2>
 					{{ if gt (len .Params.authors) 0 }}
 						<h3 class='authors'>
-							{{ if eq (len .Params.authors) 1 }}
+							{{ if and (eq (len .Params.authors) 1) (ne (index .Params.authors 0) "Le Point Q") }}
 								<img src="{{ .Site.BaseURL }}/media/team/{{ index .Params.authors 0 }}.jpg" width="40" height="40" class="author-pic" />
 							{{ end }}
 							<span style="">Par {{ delimit .Params.authors ", " " & " }}</span>

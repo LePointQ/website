@@ -92,7 +92,7 @@ const build = async () => {
 									</h2>
 									${content.authors && content.authors.length > 0 ?
 										`<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
-											${content.authors.length === 1 ? `
+											${content.authors.length === 1 && content.authors[0] !== 'Le Point Q' ? `
 												<img
 													src="${BASE_URL}/media/team/${content.authors[0]}.jpg"
 													width="40" height="40"
