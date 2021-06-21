@@ -30,5 +30,13 @@ exports.typografix = (html, options) => {
 		.replace(/ - /g, "&nbsp;&mdash;&nbsp;")	// Tirets cadratins
 		.replace(/ -,/g, "&nbsp;&mdash;,");
 
+	const imgTags = output.match(/’https:\/\/[^\s]+’/g);
+	imgTags && imgTags.forEach(url => {
+		console.log(url)
+		output = output.replace(url, `'${url.slice(1, -1)}'`)
+	});
+
+	output = output.replace(/’100%’/g, `'100%'`);
+
 	return output;
 }

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🎬 &laquo;&nbsp;Plus les acteur·rice·s en savent sur une scène de sexe, plus ils sont en confiance&nbsp;&raquo;</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Elle gère le tournage des scènes de sexe sur les plateaux de Gossip Girl et de Steven Spielberg... Rencontre avec Claire Warden, une coordinatrice d’intimité.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									&laquo;&nbsp;Plus les acteur·rice·s en savent sur une scène de sexe, plus ils sont en confiance&nbsp;&raquo;
+								</h1>
+								<p>Bienvenue dans ce trentième numéro du <strong>Point Q</strong> !</p>
+<p>Et oui, déjà trente lundis matin que nous passons ensemble, dans l’univers du sexe <em>safe</em> et du plaisir partagé. On échange <a href="https://lepointq.com/articles/#temoignages">des témoignages</a>, on débusque <a href="https://lepointq.com/articles/#on-debunke">des fake news</a> cachées sous la couette, et on fait même régulièrement <a href="https://lepointq.com/articles/#vu-d-ailleurs">le tour du monde</a>... à la recherche de nouvelles positions ou traditions érotiques. <a href="https://lepointq.com/articles/#la-bonne-nouvelle">Bonnes nouvelles</a>, conseils... et <a href="https://lepointq.com/articles/#plume-morgan">humour dépilatoire</a> avec Morgan, notre dessinateur adoré (et belge, comme tout média français qui se respecte).</p>
+<p>Pour cette semaine de fête, un numéro archi spécial ! On vous emmène dans les coulisses des plateaux de tournage américains, pour savoir comment on y réalise les scènes d’amour et de sexe.</p>
+<p><strong>Tom a rencontré Claire Warden (</strong><a href="https://www.instagram.com/clairewarden_"><strong>@clairewarden_</strong></a> <strong>sur Instagram), l’une des figures du mouvement des coordinateur·rices d’intimité aux États-Unis</strong>. Son rôle, né avec l’ère #MeToo : superviser la mise en scène des relations sexuelles à l’écran. Elle met à l’aise et protège les comédien·ne·s, tout en épaulant les cinéastes pour des prises de vue de haut niveau.</p>
+<p>Claire a notamment travaillé sur les séries <em>Mrs Fletcher</em> et <em>Your Honor</em> (toutes deux disponibles <a href="https://www.canalplus.com/series/">sur MyCanal)</a>, ainsi que sur le futur reboot de <em>Gossip Girl</em> et la prochaine adaptation de <a href="https://www.youtube.com/watch?v=CbUM27qw6a8"><em>West Side Story</em> par Steven Spielberg</a> ! Elle est membre d’<a href="https://www.idcprofessionals.com/">Intimacy Directors and Coordinators</a>, la première agence spécialisée dans le domaine.</p>
+<p>Combien de personnes sur le plateau pour une scène de sexe ? Qui décide si un sein ou une paire de fesses apparaît à l’écran ? Verra-t-on bientôt des coordinateur·rice·s d’intimité dans le cinéma français ? Direction tout de suite New York, où réside cette femme fantastique.</p>
+<p>Cher·e·s presque 1000 abonné·e·s sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, un check d’amour à chacun·e d’entre vous. On est infiniment reconnaissant de votre soutien, et on a hâte de rencontrer vos potes.</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/claire-warden.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Rencontre avec Claire Warden, &laquo;&nbsp;coordinatrice d’intimité&nbsp;&raquo; pour le cinéma et la télévision
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Tom
+											</span>
+										</h3>
+					
+					
+					<h3>C’est quoi une coordinatrice d’intimité ?</h3>
+<p>C’est un travail qui se décompose en plusieurs parties. La première concerne les comédiennes et comédiens. Je m’assure de leur <strong>consentement</strong> lors des scènes de sexe ou de nudité, et qu’ils ont un sentiment de contrôle sur leur corps et leur mot à dire sur ce qui leur arrive. S’ils ne souhaitent pas faire quelque chose ou qu’ils ont certaines limites, c’est mon rôle de les faire respecter lors du tournage.</p>
+<p>Mais je travaille également avec les réalisateur·rice·s, pour les aider à <strong>chorégraphier les scènes de sexe</strong> qu’ils ont envie de montrer et qui racontent l’histoire qu’ils ont envie de proposer... tout en ayant l’air authentiques, même si les actes sexuels sont toujours simulés.</p>
+<p><em>NDLR : En dehors des États-Unis, ce n’est pas toujours le cas,</em> <a href="https://lepointq.com/articles/21-06/le-sexe-a-l-ecran-est-ce-toujours-du-cinema/"><em>comme le racontait Julien</em></a> <em>dans le numéro de la semaine dernière.</em></p>
+<p>Parfois, il peut y avoir des conflits entre ce que les réalisateur·rice·s veulent et ce que les comédien·ne·s sont prêt·e·s à accepter. Pour moi, cela se résume à entendre la vision du metteur en scène, et en cas de désaccord à se poser la question de l’histoire que l’on veut raconter. En se concentrant sur l’histoire et les motivations des personnages, on arrive toujours à trouver une solution qui respecte les limites de chacun·e. Parfois les réalisateurs sont très ouverts sur le sujet, parfois il est plus compliqué d’avoir cette conversation avec eux, mais j’ai l’impression qu’ils sont de plus en plus nombreux à apprécier cette aide que je leur apporte pour donner vie à ces scènes.</p>
+<p><br /><img src='https://lepointq.com/media/uploads/claire-warden-tessa-flannery-chris-fayne.png' width='100%' /><br /> <em>Claire répète une scène avec les acteur·rice·s Tessa Flannery et Chris Fayne.</em> <br /></p>
+<h3>Ton métier n’existe que depuis quelques années, depuis l’émergence du mouvement #MeToo. Comment tournait-on les scènes de sexe avant les coordinateur·rice·s d’intimité ?</h3>
+<p>C’était très variable, mais malheureusement ça se passait souvent comme ça : <em>« Bon, là c’est une scène de sexe... allez-y, faites-le ! »</em> La plupart du temps il n’y avait aucune discussion, et les réalisateur·rice·s comme les comédien·ne·s ne savaient pas comment en parler. <strong>Cela laissait beaucoup de place à des abus, et beaucoup de personnes ont pu être blessées ou agressées</strong> — sans forcément en avoir conscience.</p>
+<p>J’ai été actrice pendant plus de 25 ans, et je m’estime chanceuse puisque je n’ai eu qu’une seule mauvaise expérience où mon consentement n’avait pas été respecté. Mais j’ai eu l’occasion de travailler avec de nombreux·ses comédien·ne·s qui ont vécu des traumatismes et qui malgré tout ont toujours envie de tourner. C’est ce qui m’a convaincue de faire ce métier, tout d’abord pour des pièces de théâtre à Broadway, puis pour le cinéma et les séries TV.</p>
+<p>Maintenant, nous avons des protocoles qui protègent les acteur·rice·s contre le harcèlement et les agressions sexuels sur leur lieu de travail. Ils peuvent désormais se sentir en sécurité et être certain·e·s que ce qu’ils font sur un plateau ne leur causera pas de mal. Et cela veut aussi dire que nous avons de meilleures histoires, puisque nous pouvons vraiment décider en avance d’une scène et de ce qu’elle raconte... au lieu d’avoir deux comédien·ne·s un peu gêné·e·s qui essayent des choses à l’improviste.</p>
+<h3>Concrètement, comment se passe le tournage d’une scène de sexe aujourd’hui ? Quel est ton rôle sur le plateau ?</h3>
+<p>Tout d’abord, il y a certaines règles qui sont établies. S’il y a le moindre contact entre une main ou toute autre partie du corps avec les organes génitaux, <strong>il doit y avoir une « barrière » entre les deux</strong> (comme un cache-sexe en mousse ou <a href="https://lepointq.com/articles/21-06/le-sexe-a-l-ecran-est-ce-toujours-du-cinema/">une prothèse</a>, par exemple s’il y a besoin de montrer un pénis en érection). Ensuite, la manière dont le sexe est montré dépend vraiment de la scène et du diffuseur de la série ; certaines chaînes comme HBO peuvent montrer plus de nudité que les autres, par exemple.</p>
+<p>Sur le tournage, je commence par discuter avec les comédien·ne·s pour voir comment ils se sentent, et je m’assure avec le premier assistant réalisateur que le plateau est bien fermé et que seul·e·s les membres de l’équipe les plus essentiel·le·s sont présent·e·s. Il peut y avoir <strong>entre 7 et 12 personnes</strong> : le réalisateur, le directeur de la photographie, un cadreur, un perchman, une maquilleuse, et moi-même. Alors que d’habitude, il y a plutôt entre 30 et 70 personnes sur un plateau !</p>
+<blockquote>
+<p>« On établit un “conducteur”, qui est un contrat qui précise les modalités de la scène en termes de nudité et d’actes sexuels simulés. »</p>
+</blockquote>
+<p>Quand le tournage à proprement parler commence, il y a une discussion entre le réalisateur, les comédien·ne·s et moi pour vérifier le contenu de la scène, les angles de caméra... afin de s’assurer que l’on s’en tient à ce que les acteur·rice·s ont accepté. Généralement, deux semaines avant la prise de vue, j’organise une rencontre et on établit un « conducteur », qui est un contrat qui précise les modalités de la scène en termes de nudité et d’actes sexuels simulés. Peut-on montrer les seins ? Avec ou sans téton ? Peut-on faire un plan de face sur les fesses ou bien seulement de trois-quarts ?</p>
+<p>C’est très spécifique, et cela dépend de la chaîne, des comédien·ne·s et de la scène. Ce n’est pas parce qu’une actrice a accepté quelque chose pour une scène qu’elle doit automatiquement l’accepter pour toutes les autres, c’est vraiment du cas par cas. Ensuite, le tournage peut durer <strong>entre 40 minutes et 4 heures</strong>, en fonction de la complexité de la scène et du nombre de plans et de prises nécessaires.</p>
+<p><br /><img src='https://lepointq.com/media/uploads/claire-warden-james-cusati-moyer-ato-blankson-wood.jpg' width='100%' /><br /> <em>Claire en pleine répétition avec les acteurs Ato Blankson-Wood (debout) et James Cusati-Moyer, pour la pièce de théâtre</em> Slave Play. <br /></p>
+<h3>Comment fais-tu pour mettre à l’aise les comédien·ne·s avant une scène de sexe ?</h3>
+<p>Je pense que le confort vient surtout de l’information. Plus les acteur·rice·s en savent sur la scène et ce qui va s’y passer, plus ils sont en confiance. Il suffit de les traiter comme des êtres humains, comme des artistes, et de leur donner le plus tôt possible toutes les informations nécessaires pour qu’ils aient le sentiment de faire partie intégrante du projet.</p>
+<p>Une fois ces structures mises en place et tout le monde en confiance, <strong>on peut commencer à s’amuser</strong>. Je me souviens d’une scène lors du tournage de <em>Mrs Fletcher</em>, où le personnage éponyme interprété par Kathryn Hahn découvre le porno et s’essaye à la fessée sur elle-même. C’était tellement amusant que le réalisateur, le chef-opérateur et moi avons dû mettre notre poing dans notre bouche pour éviter d’éclater de rire et de ruiner la scène. Je crois que c’est un des plus gros fous rires que j’ai jamais eus, et c’est parce que la comédienne était tellement à l’aise qu’elle pouvait se permettre d’y aller à fond.</p>
+<h3>Tu as également travaillé comme coordinatrice de scènes de combat. Chorégraphie-t-on une scène de sexe comme on chorégraphie une baston ?</h3>
+<p>La violence et le sexe sont intimement liés. Dans les deux cas, il s’agit de raconter une histoire par la physicalité des corps — et de « faire semblant ». On ne se donne pas <em>vraiment</em> de coups de poing, de la même manière que l’on n’a pas <em>vraiment</em> de relation sexuelle ; mais on essaye de le faire croire aux spectateur·rice·s. Les deux situations représentent le plus profond de la nature humaine, de notre animalité. Comme je le dis souvent, <strong>on en vient à la violence ou au sexe quand les mots ne suffisent plus.</strong> C’est cet espace que j’ai envie d’explorer.</p>
+<h3>Le métier de coordinateur·rice d’intimité est pour l’instant cantonné aux États-Unis et au Royaume-Uni. Penses-tu qu’il est amené à s’exporter en France et ailleurs dans le monde ?</h3>
+<p>Je l’espère sincèrement. En tout cas, notre objectif est que cela devienne une discipline internationale. Je pense que pour chaque pays, cela commence par une conversation sur la question du consentement, dans l’industrie du divertissement et dans la société en général. <strong>C’est une conversation difficile, qui met mal à l’aise, mais elle doit avoir lieu.</strong></p>
+<p>Je suis en contact avec plusieurs acteur·rice·s de l’industrie en France, qui aimeraient beaucoup amener ce métier dans votre pays, et je pense que nous pouvons apprendre les un·e·s des autres. Cette conversation, elle doit impliquer à la fois les personnes de pouvoir (les producteurs, les réalisateurs) qui doivent engager le dialogue, et les comédien·ne·s qui doivent exprimer leurs ressentis et leurs envies — de bas en haut et de haut en bas. Il faut continuer à se battre et à le clamer haut et fort, pour que cette conversation ait lieu et que les choses changent.</p>
+<p><em>Peu avant le bouclage de ce numéro, nous avons été contacté·e·s par Monia Aït El Hadj (<a href="https://www.instagram.com/monia.aitelhadj/">@monia.aitelhadj</a> sur Instagram), la première coordinatrice d’intimité française. Comme quoi, les choses commencent à bouger chez nous !</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			
+
+			
+
+			
+
+			
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Un grand merci à Claire pour cette interview, et à Tom le showrunner... On espère qu’ils ont suscité des vocations. Si un jour, cher·e abonné·e du Point Q, tu passes les portes d’Hollywood, tu nous écris !</p>
+<p>Pour abonner tes ami·e·s, tu peux leur envoyer le lien de notre site <a href="https://lepointq.com">lepointq.com</a> ou de notre compte <a href="https://www.instagram.com/lepoint.q/">Instagram</a>. Toute la semaine, on est aussi sur <a href="https://www.facebook.com/lepointq.news">Facebook</a> et <a href="https://twitter.com/LePointQ">Twitter</a> pour échanger avec toi. Par mail (<a href="mailto:contact@lepointq.com">contact@lepointq.com</a>), on reçoit avec plaisir des idées de thèmes et de formats !</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Si tu es un·e lecteur·rice régulier.e, tu peux nous donner un coup de pouce financier, grâce à un petit don <a href="https://fr.tipeee.com/le-point-q">sur Tipeee</a>. Cela nous permet de continuer à t’envoyer la newsletter (ce qui nous coûte environ 30 euros par mois), tout en restant gratuit !</p>
+<p>On espère que ce trentième numéro a mis du soleil dans ta pause café ou déj’. On a le sourire aux lèvres quand on pense aux milliers de mots qu’on a écrits pour vous depuis octobre 2020 (si tu viens de nous rejoindre, tu peux tout rattraper <a href="https://lepointq.com/newsletters/">ici</a>). Cet article est le 99e d’une incroyable aventure à vos côtés. On vous le promet, elle n’est pas terminée.</p>
+<p>La semaine prochaine, une newsletter spéciale VIH, le virus responsable du sida. Nous sommes à la recherche de personnes séropositives qui souhaiteraient témoigner, ainsi que leurs proches ! Tu peux nous écrire <a href="mailto:contact@lepointq.com">par retour de mail</a>, ou en DM <a href="https://www.instagram.com/lepoint.q/">sur Instagram</a>.</p>
+<p>Excellente semaine à toutes et à tous, des bisous des US,</p>
+<p>Julien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q 2.0 !</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
