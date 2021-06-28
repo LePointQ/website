@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🎗️ Séropositivité, parlons-en</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Cette semaine, on s’empare du VIH, responsable du sida. Être séropositif·ve c’est donc être porteur du VIH, pas nécessairement atteint·e du sida.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Séropositivité, parlons-en
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.</p>
+<p>Tout d’abord, on espère que vous avez bien profité de la Pride, si vous étiez sur Paris ou ailleurs ce week-end !</p>
+<p>Cette semaine, on s’empare du <strong>VIH</strong> (virus de l’immunodéficience humaine), responsable du <strong>sida</strong> (syndrome d’immunodéficience acquise). Ça y est vous l’avez : le sida n’est pas un virus mais le stade avancé de la maladie, qui se développe si le virus n’est pas contré par un traitement. Être <strong>séropositif·ve</strong> c’est donc être porteur du VIH, pas nécessairement atteint·e du sida (surtout aujourd’hui, où les médicaments rendent la charge virale indétectable). Ces définitions sont essentielles pour lever les tabous sur le sida, n’hésitez pas à les partager ce matin à la pause café !</p>
+<p>Dans les témoignages, <strong>Thaïs a interviewé Florence, 54 ans, séropositive depuis 22 ans. Son fils complète ! Nicolas, séropositif depuis 11 ans, s’attaque aux idées reçues, pour changer la vision sur les personnes atteintes du VIH</strong>. Il a lancé <a href="https://www.supersero.org">son site web</a>, et on le suit sur Instagram, c’est lui <a href="https://www.instagram.com/supersero_/">@supersero_</a> !</p>
+<p><strong>Vu d’ailleurs avec Valentin... direction le Pakistan, où on observe une explosion de la maladie chez les enfants.</strong> Dans le débunk, <strong>Julien vous éclaire sur une question qu’on s’est tou·te·s déjà posée : peut-on guérir du VIH ?</strong> Dans la bonne nouvelle, <strong>Ophélie nous parle de la PrEP</strong>, un antibiotique fantastique (pour la prévention, on n’a pas d’action dans les labos), pour se protéger avant ou après un rapport sexuel à risque.</p>
+<p>Cette semaine, c’est une nouvelle plume qui nous fait l’honneur d’illustrer cette newsletter ! <strong>Nicolas (</strong><a href="https://www.instagram.com/supersero_/"><strong>@supersero_</strong></a><strong>) dessine pour lever les tabous sur le sida, on est fan !</strong> Merci à toi, et bises à Morgan, il revient vite des montagnes.</p>
+<p>Belle lecture,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/two-hands-hold-each-end-of-pink-ribbon.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						&laquo;&nbsp;Je suis porteuse d’un virus, mais je reste quelqu’un de normal&nbsp;&raquo;
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+
+
+					<h3><strong>Florence a appris qu’elle était infectée par le VIH en 2003, à l’âge de 32 ans. Elle était alors mère de deux enfants. À 54 ans aujourd’hui, elle raconte son quotidien.</strong></h3>
+<p>« J’ai été contaminée par mon compagnon. On avait une histoire passionnelle et je ne comprenais pas pourquoi il ne voulait absolument pas qu’on enlève la capote. Lui était séropositif depuis 18 ans. Mais il n’osait pas me le dire, il pensait que je le quitterais immédiatement. Quand il a fini par le faire, il a étéf très surpris quand je lui ai dit que ça ne changerait rien. Mais entre-temps, on avait parfois retiré le préservatif.</p>
+<p>J’ai appris ma séropositivité après de gros problèmes de santé, ça avait déjà progressé au stade sida.</p>
+<p>Et là, j’ai fait un déni de cette maladie. Malgré les symptômes, les horribles démangeaisons... Pour moi, c’était quelque chose qui arrivait aux autres, pas à moi, avec ma super santé et ma patate d’enfer. J’ai fini par reconnaitre mon état et j’ai pris différents traitements très lourds, avant de trouver le bon, avec lequel je n’ai quasiment pas d’effets secondaires. Et aujourd’hui, je ne me sens pas du tout malade. »</p>
+<p><strong><em>À côté de ce traitement et des problèmes de santé de Florence, c’est surtout à travers le regard des autres que la séropositivité l’a transformée.</em></strong></p>
+<p>« On est tellement des pestiféré·e·s que personne n’ose dire qu’iel est séropositif·ve. Certain·e·s ont tellement peur d’avouer et de perdre leur compagnon·e, qu’il y a des personnes qui ne savent même pas qu’elles le sont. Moi-même j’ai peut-être contaminé d’autres hommes avant de savoir que j’étais séropositive.</p>
+<p>Après avoir mis fin à cette relation (pour d’autres raisons), ma sexualité s’est quasiment arrêtée. Quand une occasion se présentait, je prévenais mon partenaire que j’étais séropositive. Quand ils étaient partants, impossible d’aller jusqu’au bout, car ils faisaient un blocage psychologique, malgré le préservatif. Je n‘ai d’ailleurs compris que récemment que je n’étais pas contagieuse avec mon traitement.</p>
+<p>J’ai aussi eu beaucoup de mal à en parler à certains proches, et, quand je l’ai fait, ça a suscité des réactions très différentes : de très bon·ne·s ami·e·s, du jour au lendemain, ne m’ont plus adressé la parole parce que j’étais séropositive ; un autre s’est effondré en larmes et m’a prise en pitié. Je n’ai pas aimé ça non plus : je suis porteuse d’un virus, mais je reste quelqu’un de normal. Aujourd’hui, si on a un traitement qui nous convient, on n’est même pas malade.</p>
+<p>Il m’a fallu près de 4 ans pour l’avouer à mes deux enfants plus âgés, bien préparer le terrain et leur expliquer que leur maman n’allait pas mourir. Et je leur ai dit de garder le secret, surtout dans leur école : <em>’’J’ai trop peur que vos copains et leurs parents vous rejettent à cause de ma maladie“</em>, leur ai-je dit. Les gens pensent être tolérants, comprendre la maladie et ce que vivent les séropositifs, mais quand ils sont confrontés à nous, tout peut changer. »</p>
+<p><strong>Le fils de Florence :</strong> « On vivait dans un univers où dans les cours de récré, on jouait à ”se donner le sida’’, sans savoir vraiment ce que c’était. Quand elle nous l’a dit, j’ai bien sûr d’abord eu peur pour elle. Mais comme elle n’était pas paniquée et nous expliquait bien tout, ça a été. Elle voulait absolument qu’on le garde pour nous : parce que dans la tête des gens, surtout des enfants, tu devenais un·e pestiféré·e. Avant, c’était un secret trop lourd à garder, mais aujourd’hui j’en parle beaucoup plus facilement, et je pense que les gens comprennent mieux. »</p>
+<h3><strong>Nicolas, 32 ans, a appris sa séropositivité il y a 11 ans. Il a lancé l’association</strong> <a href="https://www.supersero.org"><strong>Supersero</strong></a> <strong>et le compte Instagram</strong> <a href="https://www.instagram.com/supersero_/"><strong>@supersero_</strong></a> <strong>qui luttent pour la visibilité des personnes séropositives.</strong></h3>
+<p>« Quand tu es séropositif, les gens te posent souvent cette question très indiscrète : <em>“comment tu l’as attrapé ?”</em>. Question que je trouve hyper violente, car dans la tête des gens, c’est souvent le même schéma : soit par ta mère, soit parce que tu es toxico, soit un abus sexuel. En dehors de ça, c’est souvent <em>’’que tu l’as bien cherché’’</em>. En fait, on te responsabilise d’emblée là où c’est un accident.</p>
+<p>La question qu’on ne te pose pas, c’est comment le corps médical a réagi et comment on nous impose de réagir. Car même si tu fais tout pour le vivre bien, on ne te laisse pas le choix.</p>
+<p>J’ai appris ma séropositivité en voyage à Montréal. J’avais attrapé une connerie lors d’une primo-infection : je n’arrivais plus à marcher. J’ai été rapatrié en France, testé. Le laboratoire m’a simplement dit <em>“c’est très grave”</em> mais il refusait de prendre la responsabilité de m’en parler, idem pour le médecin remplaçant. À part le docteur qui me l’a annoncé, à l’hôpital, on ne m’a jamais donné les bonnes informations. On te parle de termes techniques mais on oublie de te dire l’essentiel : <em>’’Vous n’allez pas mourir ; aujourd’hui, sous traitement, vous pouvez avoir des enfants sans danger et vous ne mettez pas les gens en danger.’’</em> »</p>
+<p><strong><em>Il y a 3 mois, Nicolas a lancé l’association Supersero. Il organise des apéros ouverts où tout le monde peut témoigner, fait des interviews sur le sujet, des vidéos sur TikTok. Enfin, il dessine des BD pour chasser les idées reçues (voir ci-dessous !)</em></strong></p>
+<p>« J’ai plusieurs objectifs : permettre de penser différemment le VIH, dire que c’est possible d’en parler, et montrer aux gens qu’ils ne sont pas seuls. Parce que quand tu es séropositif·ve, tu es tellement isolé·e. On associe ça à la mort, à quelque chose qu’on ne connaît pas, alors quand tu apprends que tu l’es, tu tombes dans un trou noir, un espace ou il n’y a aucune information.</p>
+<p>Dès le début, c’était important pour moi d’en parler ouvertement. J’ai annoncé ma séropositivité sur Facebook six mois après l’avoir appris. Des messages de soutien ont suivi, mais aussi des insultes et des menaces de mort... Je pense que tout ça peut changer si on se rencontre, et si on se soutient.</p>
+<p>En à peine deux mois avec Supersero, 10 personnes ont fait leur coming out séropositif. Je reçois des dizaines de messages, certain·e·s m’expliquent être à bout, et n’avoir jamais rencontré d’autres séropositif·ve·s.</p>
+<p>Pour moi, ce qui est essentiel, c’est de donner aux séropositif·ve·s plus de représentations. Il faudrait nous voir et nous entendre bien plus dans les médias, avoir des personnages séropositifs dans les séries ou dans les films. Surtout, il faudrait que des célébrités séropositives prennent la parole, des séropositif·ve·s d’aujourd’hui qui le vivent bien et vont bien, pour montrer notre vrai quotidien. »</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/kelly-ann-tan-rtg8r7wszbm-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Les enfants, premières victimes d’une explosion du VIH au Pakistan
+										</h4>
+
+
+					<p>1500. C’est le nombre estimé d’enfants testés séropositifs dans la province du Sindh, au sud du Pakistan. Une explosion soudaine et anormale du nombre de cas, qui remonte à 2019.</p>
+<p>À l’origine de cette flambée : un médecin, lui-même séropositif, accusé <strong>d’avoir réutilisé une seringue contaminée</strong> sur ces enfants. Une pratique répandue dans cette région du monde, où les coûts d’équipement médical sont élevés.</p>
+<p>80 % des nouveaux cas détectés avaient alors moins de 15 ans, et une grande partie, moins de 5 ans. Bien que sans antécédents familiaux de la maladie, <a href="https://www.france24.com/en/live-news/20210614-children-pay-the-price-in-pakistan-s-mass-hiv-outbreak">au moins 50 enfants sont décédés des suites de cette contamination.</a></p>
+<p>Car si le gouvernement pakistanais fournit gratuitement des médicaments contre le VIH, la plupart des familles n’ont pas les moyens de traiter les <a href="https://www.sidaction.org/glossaire/maladies-opportunistes">infections dites « opportunistes »</a>, qui se déclarent parce que le système immunitaire est plus faible. Celles-ci, même bénignes en temps normal, peuvent s’avérer fatales pour un·e patient·e sidéen·ne (atteint·e du sida, phase finale de l’infection au VIH).</p>
+<p>Longtemps considéré comme un pays où la prévalence du VIH était faible, le Pakistan est désormais le <strong>deuxième pays d’Asie-Pacifique où l’épidémie de sida croît le plus vite</strong> (<a href="https://www.unaids.org/fr/resources/presscentre/featurestories/2019/june/20190618_pakistan">20.000 nouvelles contaminations par an en 2017</a>), selon l’ONUSIDA, la branche des Nations Unies chargée de la lutte contre cette pandémie. <a href="https://www.unaids.org/sites/default/files/country/documents/PAK_2019_countryreport.pdf">Près de 170.000 personnes vivaient avec le virus en 2019 dans le pays</a>.</p>
+<p>En 2020, on observait 1,5 million de nouvelles contaminations par an au VIH, pour un total de <strong>37,6 millions de personnes vivant avec le VIH</strong> la même année. 690.000 personnes ont perdu la vie d’une maladie opportuniste liée au sida en 2020.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/altin-ferreira-2wzsahx9vle-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Julien
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Peut-on guérir du VIH&nbsp;?
+										</h4>
+
+
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+
+					<p>C’est une question cruciale. Malheureusement, il n’existe aujourd’hui aucun moyen permettant de se débarrasser définitivement de l’infection par le virus de l’immunodéficience humaine (VIH) — cette infection qui peut aboutir au syndrome de l’immunodéficience acquise (sida). <strong>Une personne séropositive le reste donc toute sa vie.</strong></p>
+<p>Cependant, tout un arsenal de traitements s’est développé depuis l’identification du virus en 1983 autour de ce qu’on appelle les « antirétroviraux ». Ces médicaments, souvent utilisés dans le cadre des « trithérapies » autorisées en France en 1996, permettent de réduire la « charge virale », la quantité de virus dans le sang, jusqu’à le rendre indétectable.</p>
+<p>Grâce aux antirétroviraux, une personne séropositive peut donc mener une vie presque normale. Ce qui est d’autant plus vrai lorsque la prise d’antirétroviraux se fait peu de temps après l’infection, explique l’association <a href="https://www.aides.org/traitement-vih-sida">Aides</a>.</p>
+<p>L’autre point important à retenir, c’est qu’<strong>une personne aujourd’hui sous traitement</strong>, avec donc une charge virale indétectable, <strong>ne peut pas transmettre le VIH à ses partenaires sexuels</strong>. Une avancée majeure pour la vie des personnes séropositives qui est aujourd’hui le mantra des associations de prévention et de lutte contre le VIH, à l’image de <a href="https://www.unaids.org/fr/resources/presscentre/featurestories/2018/july/undetectable-untransmittable">l’ONUSIDA</a>, pour informer et lutter contre les discriminations envers les personnes atteintes du VIH.</p>
+<p>Des espoirs ont cependant émergé ces dernières années avec l’identification de très rares guérisons du VIH ou de patient·e·s chez qui le virus ne se reproduit pas, comme le rapporte <a href="https://www.liberation.fr/france/2019/03/05/sida-peut-on-guerir-du-vih_1713126/"><strong><em>Libération</em></strong></a>. Mais aucun « traitement miracle » ou médicament généralisable n’en est encore né.</p>
+<p>C’est pour cela qu’aujourd’hui, le meilleur moyen de lutte contre le VIH lors des rapports sexuels reste le <strong>préservatif</strong>, interne ou externe, rappelle <a href="https://www.aides.org/les-outils-de-prevention-vih-sida">Aides</a>. Le <strong>traitement post-exposition</strong>, aussi, accessible auprès des professionnel·le·s de santé et à utiliser de préférence dans les 24 heures qui suivent une pratique à risque (rupture de la capote, absence de préservatif…). Ou encore la <a href="https://www.aides.org/prep">PrEP</a> (pour Prophylaxie Pré-Exposition), dont vous parle Ophélie juste en dessous. Ce médicament révolutionnaire protège de l’infection au VIH lorsqu’il est pris régulièrement ou à l’occasion de rapports sexuels selon un schéma précis. Un traitement remboursé à 100 % par l’Assurance maladie et accessible sur ordonnance.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/image.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Ophélie.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Ophélie
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											La PrEP&nbsp;: un traitement plus accessible pour un dépistage plus massif
+										</h4>
+
+
+					<p>Depuis le 1er juin, plus besoin de se rendre à l’hôpital pour obtenir la PrEP (la prophylaxie pré-exposition), un traitement permettant d’éviter d’être contaminé·e par le VIH, par la prise quotidienne d’antibiotiques avant et/ou après l’acte sexuel.</p>
+<p>Une avancée majeure dans la lutte contre le sida, qui s’inscrit dans le programme de la stratégie nationale de santé sexuelle 2017-2030. Jusqu’à maintenant, les patient·e·s devaient passer des tests dans un centre de dépistage et de diagnostic, ou alors se rendre à l’hôpital pour obtenir le traitement. Un parcours long et complexe qui décourageait les patient·e·s : seules 30.000 personnes avaient pu bénéficier de ce traitement pourtant disponible depuis 2016. Avec le début de l’épidémie de Covid-19, l’accès à la PrEP a été rendu encore plus difficile, à cause de la saturation des centres de dépistage, monopolisés par les tests anti-Covid.</p>
+<p>Désormais, les patient·e·s peuvent obtenir leurs médicaments directement auprès de médecins généralistes. Un espoir dans la lutte contre la maladie, puisque l’utilisation de la PrEP réduit les risques de contamination de près de 90 %.</p>
+<p>Pour former un maximum de médecins généralistes à la démarche, la Société française de lutte contre le sida (SFLS) et ses partenaires ont mis au point <a href="https://www.formaprep.org/">une plateforme gratuite ouverte à distance</a>.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de... Nico
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-vih.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Alors ce nouveau trait de crayon, il te plaît ? N’hésite pas à nous le dire sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, <a href="https://www.facebook.com/lepointq.news">Facebook</a> ou <a href="https://twitter.com/LePointQ">Twitter</a> ! On recueille avec plaisir tes retours sur ce 31e numéro, délicat mais essentiel à écrire. Si tu penses à d’autres sujets que tu aimerais voir ici, tu peux nous écrire à <a href="mailto:contact@lepointq.com">contact@lepointq.com</a>.</p>
+<p>Tu sais quoi ? On est 988 potes sur Insta. Tu aurais bien 12 copain·ine·s dans ton panier ? On compte sur toi pour surfer ensemble sur la vague des 1000 lecteur·rice·s à l’été ! Pour les abonner, envoie-leur le lien de notre site web : <a href="https://lepointq.com">lepointq.com</a>. Sinon, ce bouton est très ludique :</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>La semaine prochaine sonnera la dernière d’une année incroyable... Pas encore l’heure des snifs et des yeux qui brillent. D’ici lundi, tu peux relire <a href="https://lepointq.com/articles/21-06/rencontre-avec-claire-warden-coordinatrice-d-intimite-pour-le-cinema-et-la-television/">l’interview de Claire Warden</a>, qui coordonne les scènes de sexe sur les tournages hollywoodiens !</p>
+<p>À ton retour de cette lecture formidable, tu peux avoir envie de nous faire un petit don, pour nous soutenir ! <a href="https://fr.tipeee.com/le-point-q">Tipeee permet de donner le montant que tu souhaites, de manière ponctuelle ou régulière</a>.</p>
+<p>Yihaaa, courage les ami·e·s pour cette dernière ligne droite avant la plage, l’eau turquoise, ou les révisions pour l’examen de votre vie. On pense à vous tou·te·s !</p>
+<p>Julien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q 2.0.</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
