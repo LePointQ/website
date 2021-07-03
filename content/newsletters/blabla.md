@@ -9,7 +9,7 @@ outro = ""
 plume_morgan = ""
 preview = "Cette semaine, c'est toi notre journaliste sexy ! On veut tes mots, ton ressenti, savoir pourquoi le Point Q te fait vibrer. Grâce à tes retours, on proposera l'an prochain une newsletter encore plus éclairante. "
 temoignages = []
-title = "Le Point Q : l'heure du bilan"
+title = "Le Point Q : t'en penses quoi ?"
 vu_d_ailleurs = []
 
 +++
