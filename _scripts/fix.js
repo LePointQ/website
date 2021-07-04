@@ -2,6 +2,8 @@ const process = require('process');
 const fs = require('fs');
 const path = require('path');
 
+const md = require('markdown-it')({ html: true });
+
 const { typografix } = require('./typografix');
 
 const folder = process.argv[2];

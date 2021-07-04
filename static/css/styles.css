@@ -429,18 +429,15 @@ main article .veracity.trueish {
 	border-color: var(--main-color);
 }
 
-main article blockquote {
+main article blockquote:not(.tiktok-embed) {
 	margin: 2rem auto;
 	padding: 0.25rem 0.5rem;
-	width: 80%;
-	font-size: 1.3rem;
-	font-weight: bold;
-	font-style: italic;
-	color: white;
 	background: var(--main-color);
+	width: 80%;
 }
 
-main article blockquote p {
+main article blockquote:not(.tiktok-embed) p {
+	text-align: left;
 	font-size: 1.3rem;
 	font-weight: bold;
 	color: white;

@@ -12,7 +12,7 @@ exports.typografix = (html, options) => {
 		});
 	}
 
-	const matchesQuotes = output.match(/''[^\']*''/g);
+	const matchesQuotes = output.match(/''[^\']{2,}''/g);
 	matchesQuotes && matchesQuotes.forEach(match => {
 		const content = match.slice(2, -2);
 		output = output.replace(match, `&ldquo;${content}&rdquo;`);
