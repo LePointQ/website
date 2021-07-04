@@ -1,7 +1,6 @@
 +++
 authors = ["Thaïs"]
 date = 2021-06-27T22:00:55Z
-draft = true
 image = "/media/uploads/two-hands-hold-each-end-of-pink-ribbon.jpg"
 preview = "Florence a appris qu’elle était infectée par le VIH en 2003, à l’âge de 32 ans. Elle était alors mère de deux enfants. À 54 ans aujourd’hui, elle raconte son quotidien. Nicolas, 32 ans, a appris sa séropositivité il y a 11 ans. Il a lancé une association et un compte Instagram qui luttent pour la visibilité des personnes séropositives."
 section = "Témoignages"
