@@ -52,7 +52,11 @@
 {{ define "page-script" }}
 	<script>
 		window.addEventListener('load', () => {
-			if (window.location.hostname !== 'localhost' && sessionStorage.getItem('status') !== 'subscribed') {
+			localStorage.setItem('nbFreeContent', +localStorage.getItem('nbFreeContent') + 1);
+
+			if (window.location.hostname !== 'localhost' &&
+				sessionStorage.getItem('status') !== 'subscribed' &&
+				+localStorage.getItem('nbFreeContent') > 4) {
 				document.querySelector('.paywall').classList.add('visible');
 				document.querySelector('main').classList.add('blurred');
 			}
