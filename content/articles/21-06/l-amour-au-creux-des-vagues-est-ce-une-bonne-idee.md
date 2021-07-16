@@ -1,5 +1,5 @@
 +++
-authors = ["Valentin", "Julien"]
+authors = ["Valentin"]
 date = 2021-07-14T12:58:51Z
 draft = true
 image = ""
