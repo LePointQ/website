@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🏖 L’été sera beau, l’été sera chaud</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			margin: 2rem auto;
+			padding: 0.25rem 0.5rem;
+			width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Avant de vous quitter pour les vacances, nous vous avons préparé un numéro spécial sur cet incontournable : l’amour à la plage...</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									L’été sera beau, l’été sera chaud
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.</p>
+<p>9 mois déjà que nous naviguons ensemble dans l’univers des nouvelles relations amoureuses et sexuelles. Avant de vous quitter pour les vacances, nous vous avons préparé un numéro spécial sur cet incontournable : l’amour à la plage...</p>
+<p>Dans les témoignages, des fesses ensablées qui grattent, mais pas que ! <strong>Paul, Perrine et Romane ont confié à Orianne leurs meilleures anecdotes de <em>summer love</em></strong>. Tom, notre reporter, est actuellement à quelques kilomètres de la Polynésie française ! Dans le Vu d’ailleurs, <strong>il nous raconte l’histoire de Mangaia, l’île « sex-positive » du Pacifique</strong>. L’éducation sexuelle y est enseignée dès l’enfance. <strong>L’amour au creux des vagues, est-ce une bonne idée ?</strong> Mieux vaut suivre les conseils de notre fact-checkeur Valentin avant de vous lancer... Dans la bonne nouvelle de la semaine, <strong>nous publions les mots d’amour que vous nous avez envoyés</strong>. Le Point Q rougit, il vous fait des bisous salés !</p>
+<p>Pour conclure cette année, <strong>rien de tel qu’une BD soleil et noix de coco de Morgan</strong>. Exilé dans le sud de la France, il a ressorti ses crayons de couleur !</p>
+<p>Sur la plage ou caché derrière votre écran d’open space, on vous souhaite une exquise lecture. Profitez, c’est la dernière de la saison !</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/photo-article.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vacances sous haute excitation
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+											<span>
+												Par Orianne & Tom
+											</span>
+										</h3>
+
+
+					<ul>
+<li><strong><em>Paul*</em> — 20 ans, célibataire, gay</strong></li>
+</ul>
+<p>« Quand j’étais ado, j’allais chaque été une ou deux semaines en Corse, et j’adorais la photo. Une fois, j’étais sur la plage de Porticcio, je m’aventurais en quête de beaux paysages et je tombe sur un bout de plage abandonné. J’y vais, et naïvement je me dis que les gens sont stupides de ne pas venir là, c’est super beau ! En fait... Je me retourne, et je vois une flopée de mecs à poil. Quand je reviens sur mes pas, je me rends compte que derrière certains buissons, des rendez-vous <em>“caliente”</em> sont en cours ! En Corse c’est assez <em>complicado</em> l’homosexualité, donc cette plage, c’était un coin de drague homo. Bilan : avec mon appareil, de beaux clichés des plages corses ; et avec mes yeux, la capture des beaux derrières de ces messieurs vivant leur vie comme si chaque jour était le dernier. »</p>
+<ul>
+<li><strong>Perrine — 24 ans, célibataire, hétérosexuelle ouverte</strong></li>
+</ul>
+<p>« C’était il y a deux ans, je faisais un séjour adapté en Normandie et il y avait un animateur avec qui je m’entendais bien. Un jour où ça allait moins bien, il a été là pour moi. On s’est beaucoup rapproché. Après c’était compliqué, parce qu’il y avait les jeunes, les autres animateurs, la directrice, et on ne voulait pas que ça se sache. On n’arrêtait pas de se tourner autour, mais il ne se passait rien de plus. Et puis, l’avant-dernier soir, on fait le bilan du séjour avec tout le monde, et on boit un peu de bières. Je vais jeter les bières au container, et il m’accompagne. Tous les deux, on ne se sentait pas très bien, ç’avait été une journée hyper dure émotionnellement. On en discute, il me prend dans ses bras, on s’embrasse. Après ça, on est reparti chacun de notre côté. Le lendemain, on a fait comme si de rien n’était, comme si on était potes.</p>
+<p>Le dernier soir, c’était ouf. On était trop attiré l’un par l’autre, et c’était impossible à gérer. Il y avait une tension affective, mais pas vraiment sexuelle. Pendant tout ce temps, on s’échangeait des regards. Bien sûr, il y avait une grosse attirance physique. On s’attirait mutuellement, et on se le disait. On se glissait des compliments quand l’un passait près de l’autre... C’était évident qu’on avait envie de se retrouver seul·e·s. Le lendemain, quand tout le monde est rentré, je suis allée dormir chez lui. On a couché ensemble pour la première fois et c’était vraiment cool. C’était une histoire d’été, mais ces trois jours qu’on a passé ensemble, c’était trop bien. »</p>
+<ul>
+<li><strong><em>Romane*</em> — 23 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p>« Je suis une grande romantique, alors sur la liste des lieux à tester, il y avait bien sûr la plage. Je m’étais toujours dit <em>“Ça doit être vachement cool et excitant !”</em>, mais en même temps j’étais consciente que le sable c’était pas génial, ça gratte, ça se faufile partout... Il y a quelques semaines, je suis partie en vacances au soleil, sur une île. Pendant ce séjour, on a décidé avec mon amoureux de visiter un village assez touristique du coin. On prend le quad, on y va, et en fin de journée on quitte les lieux. Avant de rentrer à l’appartement, je lui dis que ce serait bien de longer un peu la côte pour voir du paysage. Au bout de quelques minutes de route, on aperçoit une plage sympa. Ni une ni deux, on stationne le quad, et hop, on descend. C’était la fin de journée, le soleil tapait encore. C’était magnifique et en plus… presque vide. On avait la plage pour nous tout seul·e·s. Il y avait 2-3 personnes au loin, mais c’est tout.</p>
+<p>Évidemment, avec ce cadre de fou et le fait d’être collé·e·s sur notre serviette, on a eu envie de poursuivre. Moi j’étais en mode <em>“Yes c’est trop bien, c’est fabuleux, youhou”</em> et en même temps j’avais hyper peur que quelqu’un nous surprenne. Même si en soi on ne pouvait pas vraiment voir, puisque nous étions resté·e·s habillé·e·s par précaution (d’où l’utilité d’être en robe l’été !). On savoure le moment, et là je lève la tête (un peu stressée) et je vois que les personnes au fond s’avancent. On arrête tout et on fait comme si de rien n’était…. allongé·e·s sur les galets. Parce que oui, bien pratique, ce n’était pas du sable ! Tout ça pour dire que ça me paraissait impensable de faire ça, et pourtant on l’a fait et c’était carrément beau et excitant ! Ça restera un souvenir gravé. »</p>
+<p><em>* Les prénoms ont été modifiés</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/pareu_haka.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Tom
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Mangaia, l’île &laquo;&nbsp;sex-positive&nbsp;&raquo; du Pacifique
+										</h4>
+
+
+					<p>Située à environ 700 km de Tahiti, c’est la plus méridionale des Îles Cook. Son nom ne te dit sûrement rien, et pourtant cet îlot polynésien abrite l’une des sociétés les plus libérées sexuellement sur notre planète, où le plaisir — notamment féminin — s’est érigé au rang d’art.</p>
+<p>On doit cette découverte à un certain Donald S. Marshall. Dans les années 1960, cet anthropologue américain a passé plus d’un an sur ce petit caillou d’à peine 50 km², à étudier la culture et les pratiques sexuelles des quelque 2000 habitant·e·s de l’île.</p>
+<p>À Mangaia, la pudeur n’existe pratiquement pas puisque toute la famille vit et dort dans une même hutte, ne contenant qu’une seule pièce. À partir de la puberté, les enfants — garçons comme filles — sont encouragé·e·s à ramener leurs partenaires sous le toit familial et à leur faire amour, en présence de leurs parents et de leurs frères et sœurs endormi·e·s.</p>
+<p>Dès leurs 7 ou 8 ans, les garçons se voient enseigner la masturbation. À l’âge de 13 ans, ils se soumettent à une superincision rituelle (découpe d’une fente sur le dessus du prépuce) et reçoivent des conseils de la part des hommes de la tribu. Une fois remis de l’opération, le jeune homme vit alors sa première fois avec une femme plus âgée, qui lui apprend comment satisfaire ses futures partenaires. Au programme : stimulation clitoridienne, cunnilingus et les différentes positions sexuelles. Le plaisir féminin est placé au centre de cet apprentissage, et les adolescents s’entraînent à synchroniser leurs orgasmes avec ceux de leurs partenaires.</p>
+<p>De leur côté, les filles reçoivent une éducation sexuelle similaire de la part des femmes plus expérimentées, et sont incitées à multiplier les partenaires sexuels au cours de leur adolescence afin de trouver leur futur mari idéal.</p>
+<p>Aujourd’hui, Mangaia ne compte plus que 499 habitant·e·s, et nul ne sait si cette éducation sexuelle subsiste toujours. Mais de telles pratiques se retrouvent dans de nombreuses cultures polynésiennes, où l’acte sexuel n’est pas aussi tabou qu’en Occident... et où homosexualité, transidentité ou non-binarité sont reconnues et acceptées depuis des siècles (<a href="https://takatapui.nz/definition-of-takatapui">à l’image du <em>takat&lt;span style=’font-family: Source Sans Pro;’&gt;ā</span>pui</em> m&lt;span style=’font-family: Source Sans Pro;’&gt;ā</span>ori</a>, par exemple). Une « sex-positivité » malheureusement souvent estompée par des siècles de colonisation et de puritanisme religieux, venant des missionnaires chrétiens.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/dirtydancing.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											L’amour au creux des vagues, est-ce une bonne idée&nbsp;?
+										</h4>
+
+
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: #F47B67; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid #F47B67; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;PAS EXACTEMENT&nbsp;
+										</p>
+
+					<p>Ah, les vacances à la mer ! Le soleil, la chaleur, et la libido qui décolle... Et quelle meilleure idée, pour éviter de se retrouver tout·e collant·e et poisseux·se, que de laisser libre cours à ses envies dans l’eau ?</p>
+<p>Alors, <a href="https://lepointq.com/articles/21-02/rencontre-avec-cathline-smoos-the-vrsexologist/">l’amour dans l’océan</a>, bonne ou mauvaise idée ? Disons que l’eau de mer n’est pas tout à fait destinée à accueillir ce type d’activités.</p>
+<p>Tout d’abord, celles et ceux qui ont déjà tenté l’expérience <a href="https://www.madmoizelle.com/faire-amour-sous-douche-892833">sous la douche</a> savent sûrement qu’eau et pénétration ne font pas bon ménage. L’eau ne lubrifie pas. Elle chasse, même, les fluides naturels, ce qui risque de rendre la pénétration désagréable, voire dangereuse ! Les risques d’irritation, voire de fissure des muqueuses intimes augmentent à cause des frottements, du sel et du sable. Par ailleurs, s’il est <a href="https://www.ameli.fr/assure/sante/bons-gestes/quotidien/faire-toilette-intime">déconseillé de nettoyer ses parties intimes avec des produits</a>, on imagine bien qu’un contact prolongé avec de l’eau de mer ne peut pas être bénéfique, et risque de causer des infections, favorisées en cas de lésion. Comme le disait Renaud, <a href="https://www.youtube.com/watch?v=YbrjsjEaOVg">« la mer, c’est dégueulasse »</a>.</p>
+<p>Et contrairement à ce que l’on pourrait croire, <a href="https://madame.lefigaro.fr/bien-etre/faire-lamour-dans-leau-la-mer-ou-une-piscine-les-risques-que-vous-encourez-conseils-et-avis-de-medecins-120718-149744">le constat n’est pas meilleur du côté du jacuzzi</a>. Par sa température, c’est un milieu propice à la prolifération des bactéries, et sa composition en chlore le rend susceptible de causer <a href="https://www.inserm.fr/information-en-sante/c-est-quoi/faudrait-pas-en-tamponner-c-est-quoi-choc-toxique">un choc toxique</a>.</p>
+<p>Dernier risque, et pas des moindres : <a href="https://www.20minutes.fr/insolite/1463243-20141017-cause-effet-ventouse-couple-reste-coince-faisant-amour-eau">l’effet ventouse</a>. Sorte de cousin du <a href="https://www.20minutes.fr/sante/340875-20090804-accidents-sexuels-syndrome-penis-captif">« syndrome du pénis captif »</a>, il n’est pas dangereux, mais nécessite souvent l’intervention d’un professionnel médical pour séparer les deux parties, unies par les lois de la physique.</p>
+<p>En somme, si le temps estival peut inviter à expérimenter, quelques précautions sont à prendre en amont. Un lubrifiant au silicone, par exemple, non miscible avec l’eau, sera probablement votre meilleur allié. Sinon, vous pouvez toujours rester sur le bord de mer, comme Romane plus haut (toujours en faisant attention au sable !). Mais favorisez alors l’isolement de fin de journée ; vous risqueriez un an de prison, et 15.000 euros d’amende, pour <a href="https://www.legifrance.gouv.fr/codes/id/LEGISCTA000021796946/">exhibition sexuelle</a>.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/kelly-sikkema-NU_rR7TgE-M-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+
+											<span>
+												Par Le Point Q
+											</span>
+										</h3>
+
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Quelques mots d’amour...
+										</h4>
+
+
+					<p>Tout au long de ces neuf mois, Le Point Q a beaucoup compté pour nous... et on sait que pour vous aussi. Pour ce dernier numéro avant les vacances, vous nous avez envoyé du love :</p>
+<p><em>« Le Point Q c’est facile à lire, sans jugement, ça fait du bien au moral ! »</em></p>
+<p><em>« La seule newsletter que je lis, et pourtant je suis abonnée à plusieurs. »</em></p>
+<p><em>« Feel good et informatif, sans jugement, et avec des profils d’interviewé·e·s et des sujets très diversifiés. »</em></p>
+<p><em>« FORMIDABLE ! Vous êtes à la fois clair·e·s, factuel·le·s, vous ne tombez ni dans la bienpensance ni dans la vulgarité. J’apprécie le ton (joyeux) et l’énergie positive qui émane de votre publication. Indispensable et bien fait... vous en voulez encore ? Merci ! »</em></p>
+<p>Et enfin Katy, qui nous dédie ces quelques vers :</p>
+<p><em>« Point Q, Point Q... Quelle belle année nous avons vécu !<br />Aux pauses café du boulot, tu m’a accompagné de tes mots ;<br />Pour commencer la semaine, dans le bonheur et sans haine.<br />Une question reste en suspens : comment passer l’été sans tes romans ?<br />Pour te garder en mémoire, je continuerai de récolter des savoirs ;<br />Et d’ouvrir mon esprit vers des horizons infinis.<br />J’attendrais avec patience ton retour, sexe et bienveillance, toujours &lt;3 »</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-plage.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>L’amour discrètement sous la serviette en pleine foule, on sait que certains d’entre vous se reconnaîtront... Enfin un petit coup d’eau dans la nuque tout de même... L’été sera moins sexe que prévu et nous ne vivrons pas tou·te·s le <em>Hot Vax Summer</em>, <a href="https://www.ifop.com/publication/lete-2021-le-summer-of-love-de-la-generation-covid/">selon un sondage de l’IFOP CAM4 et Hot Vidéo</a>. Et oui, on sort d’une pandémie, ce n’est pas facile d’enlever ses sous-vêtements avant son masque. 37 % des célibataires seront plus ouvert·e·s sexuellement, mais 83 % chercheront avant tout le grand amour.</p>
+<p>S’il t’arrive des aventures, n’hésite pas à nous les raconter sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>. Pour toute autre histoire ou proposition de thème, c’est aussi le moment ! <a href="https://www.facebook.com">Facebook</a>, <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, <a href="https://twitter.com/LePointQ">Twitter</a> et notre boîte mail restent ouverts durant l’été...</p>
+<p><strong>Ça y est, Le Point Q saison 1, c’est fini.</strong> Que de chemin parcouru, depuis le premier numéro sur la <a href="https://lepointq.com/newsletters/le-plaisir-dans-tous-ses-etats/">masturbation féminine</a>, sorti le 30 septembre ! Merci à vous, cher·e·s 820 lecteurs et lectrices, de nous avoir été si fidèles. Vous avez été les premier·e·s à nous suivre, à répondre à nos appels à témoignages, à nous donner de votre temps. Le Point Q s’est construit à votre image. Nous n’oublierons jamais cette année exaltante passée à vos côtés... Beaucoup de kiff et de soirées de réflexions sur ce qu’on allait vous écrire, et sur nos propres sexualités. Merci d’avoir été là pour cet échange.</p>
+<p>Merci à vous toutes et tous, membres de notre communauté <a href="https://www.instagram.com/lepoint.q/">Instagram</a> ! Plus de 1000 personnes, on est assez pour une manif du Q ! « Se-xua-li-té dé-com-ple-xée ! »</p>
+<p>Un petit mot pour nos ami·e·s, qui depuis le premier jour nous écoutent, nous soutiennent et nous balancent leurs idées de rubriques sur Messenger à deux heures du mat’ ! Sans vous, les témoignages n’auraient jamais vu le jour. Merci à nos parents de s’être abonné·e·s discrètement au bout du troisième numéro, parce que c’est gênant mais qu’on reste vos enfants.</p>
+<p>Un énorme big up enfin à l’équipe des rédacteur·rice·s du Point Q. <strong>Orianne</strong> (miss Instagram), <strong>Thaïs</strong> et <strong>Tom</strong> (mister codeur), fondateur·rice·s de cette newsletter. <strong>Julien</strong> et <strong>Valentin</strong>, qui nous ont rejoint au Nouvel An, et <strong>Ophélie</strong>, plus récemment. <strong>Morgan</strong>, notre dessinateur de BD et <strong>Camille</strong>, notre graphiste. <em>[Et surtout <strong>Juliette</strong>, qui rédige ces quelques lignes toutes les semaines et sans qui Le Point Q n’existerait tout simplement pas. Tu es trop modeste pour te citer, mais nous ne t’oublions pas.]</em> Merci pour vos idées formidables, votre talent, votre empathie et votre courage du dimanche soir. J’espère que nous poursuivrons longtemps l’aventure ensemble. Si vous souhaitez rejoindre l’équipe l’an prochain, on recrute ! Faites-nous un petit mail et on vous répondra.</p>
+<p>Si c’est dur de dire au revoir, tu peux relire nos 31 précédents numéros sur <a href="https://lepointq.com/">lepointq.com</a>. Tu peux aussi partager notre newsletter avec tes ami·e·s, pour continuer à en parler pendant les séances de bronzage.</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Si Le Point Q t’a fait plaisir cette année, tu peux nous faire <a href="https://fr.tipeee.com/le-point-q">un petit don sur Tipeee</a>, du montant que tu souhaites. Combien de glaces deux boules tu penses qu’on vaut ?</p>
+<p><a href="https://fr.tipeee.com/le-point-q/">
+	<img src="https://lepointq.com/media/uploads/Bocal_SoutenezNous_Tipeee.gif" style="max-width: 300px; margin: 0 auto; display: block;" />
+</a></p>
+<p>Tu peux aussi répondre à <a href="https://forms.gle/jk4UxArCYFooH4UQ6">notre questionnaire de satisfaction</a> (comme sur Booking mais en mieux), pour nous expliquer ce que tu as aimé ou non cette saison. 5 minutes montre en main, ça nous aide énormément ! Il nous manque des retours pour dessiner l’avenir du Point Q.</p>
+<p>On a déjà hâte de vous retrouver,</p>
+<p>Julien, Juliette, Ophélie, Orianne, Thaïs, Tom et Valentin, aka Le Point Q.</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+	                                <p style="margin: 10px 0 0;">École de Journalisme de Sciences Po</p>
+									<p style="margin: 0 0 10px;">117 Boulevard Saint-Germain<br />75 006 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
