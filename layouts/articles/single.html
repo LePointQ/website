@@ -7,7 +7,7 @@
 					<img src="{{ .Site.BaseURL }}/media/icons/temoignages.svg" width="40" class='icon' />
 					{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 				{{ else }}
-					{{ if eq .Params.section "Vu d'ailleurs" }}
+					{{ if eq .Params.section "Vu d’ailleurs" }}
 						<img src="{{ .Site.BaseURL }}/media/icons/vu_d_ailleurs.svg" width="40" class='icon' />
 						Vu d'ailleurs
 					{{ else if eq .Params.section "On débunke" }}
