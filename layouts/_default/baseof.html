@@ -38,8 +38,6 @@
 		{{ partial "header" . }}
 		{{ block "main" . }}{{ end }}
 		{{ partial "footer" . }}
-		{{ block "page-script" . }}{{ end }}
-		{{ block "page-style" . }}{{ end }}
 
 		<script>
 			window.addEventListener('scroll', () => {
@@ -58,6 +56,9 @@
 		</script>
 		<script async src='https://www.google-analytics.com/analytics.js'></script>
 		<!-- End Google Analytics -->
+
+		{{ block "page-script" . }}{{ end }}
+		{{ block "page-style" . }}{{ end }}
 
 		<script>
 			balanceText();
