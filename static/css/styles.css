@@ -447,6 +447,10 @@ main article li {
 	list-style-type: disc;
 }
 
+main article label {
+	display: block;
+}
+
 .separator {
 	color: var(--main-color);
 	text-align: center;
