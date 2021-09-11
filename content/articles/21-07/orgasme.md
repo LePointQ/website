@@ -1,0 +1,13 @@
++++
+authors = ["Orianne"]
+date = 2021-09-11T10:21:54Z
+draft = true
+image = ""
+preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis justo sed sem lobortis lacinia sed sed erat."
+section = "Témoignages"
+text = "A l'occasion de ce numéro spécial \"Orgasme\" nous vous avons posé la question : Qu'est-ce que l'orgasme pour vous ? Vous avez été très inspiré.e.s et avez été nombreux.ses à vous confier  : \n\n«**J'aimerais bien savoir. J'ai 40 ans, 15 ans de relation et c'est un mystère.**»\n\n«**Une perte de température fulgurante et un plaisir proche de l'évanouissement.**»\n\n« **Le climax du plaisir sexuel.**»\n\n«**Un moment de lâcher prise, de détente extrême et beaucoup d'humidité...**»\n\n«**Une vague qui submerge et qui explose tant j'oscille entre sanglots et rires, en tremblant de partout.**»\n\n« **La plénitude.**»\n\n«**Une déconnexion psychique et en même temps une connexion totale à son corps.**»\n\nRentrons un peu dans les détails avec vos témoignages ! \n\n* **Flavie - 20 ans, en couple, bi-sexuelle** \n\n«Personnellement l'orgasme je ne l'ai vécu qu'une seule fois, lors de ma première fois avec mon premier copain qui est toujours présent dans ma vie. J'ai fait ma première fois à 18 ans, au bout de 6 mois de relation avec mon copain. On s'écoulait juste, on voulait encore se découvrir avant de la faire. Notre première fois s'est faite naturellement et aucun des deux n'était entièrement nu. A un moment je suis passé au dessus de lui. Et au fur et à mesure ses caresses passaient sous mes vêtements. On frottait nos sexes l'un contre l'autre. Et plus l'excitation montait plus ça me faisait du bien. Et je sais qu'à un moment j'ai pensé faite qu'il mette ses mains sur mes fesses\" et au moment où il l'a fait sans que je ne demande rien j'ai décrocher totalement. Et j'ai eu un orgasme. Je ne m'y attendait pas. Lui non plus. Mais je sais que quand je l'ai eu sur le coup je n'arrivais plus à respirer. Et la sensation que j'ai eu était magique. C'était comme une explosion. Au final je n'ai jamais été si déconnecté mentalement et si connecté à mon corps en même temps... mais c'était incroyable !»\n\n* **David - ....**\n\n«C'est une perte de conscience. C'est un ressenti de plaisir tellement fort qu'au final tu perds toute notion de temps et d'espace. C'est une énergie qui est très vibratoire. C'est comme une déflagration. Un tsunami de plaisir comme tu n'as jamais pu ressentir. Et au  niveau hormonal il doit certainement y avoir un pic de sérotonine, d'adrénaline. Après tu es un peu explosé, comme si tu venais de faire un semi marathon.»"
+themes = ["orgasme", "plaisir", "jouissance"]
+title = "Orgasme"
+veracity = "Faux"
+
++++
