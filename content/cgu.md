@@ -4,7 +4,7 @@ title = "Conditions générales d’utilisation"
 +++
 ## Préambule
 
-Le site, services et contenus sous l’appellation « Le Point Q » (ci-après « Le Site ») sont édités par Juliette Geay, Orianne Gicqueau, Thaïs Chaigne et Tom Février. Ils sont établis à l’École de Journalisme de Sciences Po, située à l’adresse suivante : 117 Boulevard Saint-Germain 75 006 PARIS.
+Le site, services et contenus sous l’appellation « Le Point Q » (ci-après « Le Site ») sont édités par Juliette Geay, Orianne Gicqueau, Thaïs Chaigne et Tom Février. Ils sont établis à l’adresse suivante : 211 rue de la Convention 75015 PARIS.
 
 « L’Utilisateur » désigne toute personne physique ou morale faisant usage des services du Site.
 
