@@ -1,15 +1,15 @@
 +++
 date = 2021-09-12T15:45:12Z
 draft = true
-edito = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis justo sed sem lobortis lacinia sed sed erat. Proin ultrices eleifend sem, id maximus massa fringilla volutpat. Praesent et leo porta arcu bibendum viverra."
-la_bonne_nouvelle = []
+edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nUn petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.\n\nBonne rentrée à tou·te·s ! On espère que cette nouvelle année sera riche en émotions, en amour, et même (soyons fous) en orgasmes !\n\nC’est bien le mieux qu’on puisse vous souhaiter, alors plongeons-nous dans le vif du sujet pour bien commencer l’année. Et ça tombe bien : l’orgasme vous inspire ! **Vous avez été nombreux·ses à répondre à Orianne, sur Instagram, sur ce que vous ressentez quand vous en avez un.** Ça donne envie… **De son côté, Ophélie vous propose de voir comment mettre l’orgasme à profit, en luttant pour la paix dans le monde.** Si cela vous intrigue, retrouvez son article dans le Vu d’ailleurs ! **Thaïs, elle, a constaté que l’orgasme soulève beaucoup de questions.** Elle débunke trois (oui, trois !) idées reçues sur le sujet ! Pour finir, si vous aimez les orgasmes (et on est presque sûr·e·s que c’est le cas), **vous les aimerez encore plus après la bonne nouvelle de Julien, qui vous explique pourquoi les orgasmes, c’est la santé !**\n\nC’est le retour de notre dessinateur préféré ! Morgan revient avec ses BDs et son humour acide, et cette semaine, il dénonce les publicités mensongères (ou pas ?) : à découvrir à la fin de la newsletter, comme d’habitude.\n\nVaste programme pour la rentrée ! Profitez bien, on est de retour.\n\nA la semaine prochaine dans vos boîtes mail,\n\nL’équipe du Point Q."
+la_bonne_nouvelle = "articles/21-07/les-orgasmes-c-est-la-sante.md"
 numero = 33
-on_debunke = []
-outro = ""
+on_debunke = "articles/21-07/trois-idees-repandues-sur-l-orgasme-a-la-loupe.md"
+outro = "Le Point Q, c’est fini pour aujourd’hui !\n\nOn espère que vous avez pris autant de plaisir à lire ce numéro de rentrée que nous à l’écrire. Vous l’avez vu, Le Point Q revient plus motivé que jamais, pour tout exploser dans le game de la sexualité !\n\nPour continuer à libérer la parole sur le sujet, vous pouvez toujours nous rejoindre sur nos réseaux sociaux : [Facebook](https://www.facebook.com/lepointq.news/?ref=pages_you_manage), [Twitter](https://twitter.com/LePointQ), [Instagram](https://www.instagram.com/lepoint.q/?hl=fr). Vous avez explosé le compteur d’abonné·e·s cet été, on est désormais près de 1200 sur Insta, c’est fou ! Merci à vous ! Côté newsletter, Le Point Q soufflera bientôt sa première bougie (le 30 septembre précisément), wouhou ! Petit Point Q deviendra grand...\n\nSi vous voulez nous donner un petit coup de pouce pour la rentrée, vous pouvez même nous faire un don sur [Tipeee](https://fr.tipeee.com/le-point-q), qui nous permettra de financer l’envoi des newsletters, ainsi que notre site web, lepointq.com !\n\nA la semaine prochaine pour de nouvelles aventures,\n\nJulien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q 2.0."
 plume_morgan = ""
-preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
-temoignages = []
+preview = "Pour ce numéro de rentrée, on rentre tout de suite dans le vif du sujet : on parle d'orgasme."
+temoignages = "articles/21-07/orgasme.md"
 title = "Grimpons au 7ème ciel"
-vu_d_ailleurs = []
+vu_d_ailleurs = "articles/21-07/faites-l-amour-pas-la-guerre-le-global-orgasm-for-peace.md"
 
 +++
