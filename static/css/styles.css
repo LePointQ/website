@@ -428,10 +428,16 @@ main article .veracity.trueish {
 }
 
 main article blockquote:not(.tiktok-embed) {
-	margin: 2rem auto;
+	display: table;
+	border-collapse: separate;
+	margin: 2rem auto 2rem 2rem;
 	padding: 0.25rem 0.5rem;
 	background: var(--main-color);
-	width: 80%;
+	max-width: 80%;
+}
+
+main article blockquote:not(.tiktok-embed):nth-child(2n) {
+	margin: 2rem 2rem 2rem auto;
 }
 
 main article blockquote:not(.tiktok-embed) p {
@@ -439,6 +445,10 @@ main article blockquote:not(.tiktok-embed) p {
 	font-size: 1.3rem;
 	font-weight: bold;
 	color: white;
+}
+
+main article blockquote:not(.tiktok-embed):nth-child(2n) p {
+	text-align: right;
 }
 
 main article li {

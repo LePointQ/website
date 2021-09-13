@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🍾 Grimpons au 7ème ciel</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			display: table;
+			border-collapse: separate;
+			margin: 2rem auto 2rem 2rem;
+			padding: 0.25rem 0.5rem !important;
+			max-width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote:nth-child(2n) {
+			margin: 2rem 2rem 2rem auto;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+		blockquote:nth-child(2n) p {
+			text-align: right;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Pour ce numéro de rentrée, on rentre tout de suite dans le vif du sujet : on parle orgasme.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Grimpons au 7ème ciel
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.</p>
+<p>Bonne rentrée à tou·te·s ! On espère que cette nouvelle année sera riche en émotions, en amour, et même (soyons fous) en orgasmes !</p>
+<p>C’est bien le mieux qu’on puisse vous souhaiter, alors plongeons-nous dans le vif du sujet pour bien commencer l’année. Et ça tombe bien : l’orgasme vous inspire ! <strong>Vous avez été nombreux·ses à répondre à Orianne, sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, sur ce que vous ressentez quand vous en avez un (ou pas).</strong> Ça donne envie... <strong>De son côté, Ophélie vous propose de voir comment mettre l’orgasme à profit, en luttant pour la paix dans le monde.</strong> Si cela vous intrigue, retrouvez son article dans le Vu d’ailleurs ! <strong>Thaïs, elle, a constaté que l’orgasme soulève beaucoup de questions.</strong> Elle débunke trois (oui, trois !) idées reçues sur le sujet ! Si vous aimez les orgasmes (ce n’est pas une obligation), <strong>vous les aimerez encore plus après la bonne nouvelle de Julien, qui vous explique pourquoi les orgasmes, c’est bon pour la santé !</strong></p>
+<p>Enfin, c’est le retour de notre dessinateur préféré ! <strong>Morgan revient avec ses BDs et son humour acide</strong>. Cette semaine, il dénonce les publicités mensongères (ou pas ?). À découvrir à la fin de la newsletter, comme d’habitude.</p>
+<p>Vaste programme pour la rentrée ! Profitez bien, on est de retour.</p>
+<p>Très belle lecture,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/emiliano-vittoriosi-7z5tlmcfaq-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Racontons l’orgasme 
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+					
+					<p><em>À l’occasion de ce numéro spécial « orgasme », nous vous avons posé la question : Qu’est-ce que l’orgasme pour vous ? Vous avez été très inspiré·e·s et nombreux·ses à vous confier :</em></p>
+<blockquote>
+<p><em>« <strong>J’aimerais bien savoir. J’ai 40 ans, 15 ans de relation et c’est un mystère.</strong> »</em></p>
+</blockquote>
+<blockquote>
+<p><em>« <strong>Une perte de température fulgurante et un plaisir proche de l’évanouissement.</strong> »</em></p>
+</blockquote>
+<blockquote>
+<p><em>« <strong>Le climax du plaisir sexuel.</strong> »</em></p>
+</blockquote>
+<blockquote>
+<p><em>« <strong>Un moment de lâcher-prise, de détente extrême et beaucoup d’humidité...</strong> »</em></p>
+</blockquote>
+<blockquote>
+<p><em>« <strong>Une vague qui submerge et qui explose tant j’oscille entre sanglots et rires, en tremblant de partout.</strong> »</em></p>
+</blockquote>
+<blockquote>
+<p><em>« <strong>La plénitude.</strong> »</em></p>
+</blockquote>
+<blockquote>
+<p><em>« <strong>Une déconnexion psychique et en même temps une connexion totale à son corps.</strong> »</em></p>
+</blockquote>
+<p><em>Rentrons un peu dans les détails avec vos témoignages !</em></p>
+<ul>
+<li><strong>Samuel — 27 ans, célibataire, hétérosexuel</strong></li>
+</ul>
+<p>« L’orgasme c’est un truc de ouf ! Comme un Pokémon rare, un trésor de pirate qu’on découvre, un billet de loto gagnant... On sent que l’excitation est à son comble, le cœur arrête de compter logiquement, les nerfs se mettent à vriller et paf ! Dans un feu d’artifice, on se perd... plus de masse, plus de corps, plus de nom, plus rien que l’intensité d’un moment d’éternité. Chaque orgasme a le goût du premier... Comme un mets unique qu’on a peur de ne jamais retrouver mais qu’on a eu la joie de goûter. »</p>
+<ul>
+<li><strong>Flavie — 20 ans, en couple, bisexuelle</strong></li>
+</ul>
+<p>« Personnellement, l’orgasme je ne l’ai vécu qu’une seule fois, lors de ma première fois avec mon premier copain qui est toujours présent dans ma vie. J’ai fait ma première fois à 18 ans, au bout de 6 mois de relation avec mon copain.</p>
+<p>Cela s’est fait naturellement et aucun des deux n’était entièrement nu·e. À un moment je suis passée au dessus de lui. Au fur et à mesure, ses caresses passaient sous mes vêtements. On frottait nos sexes l’un contre l’autre. Et plus l’excitation montait, plus ça me faisait du bien. Et je sais qu’à un moment j’ai pensé <em>“faites qu’il mette ses mains sur mes fesses”</em>, et au moment où il l’a fait, sans que je ne demande rien, j’ai décroché totalement. Et j’ai eu un orgasme.</p>
+<p>Je ne m’y attendais pas. Lui non plus. Mais je sais que quand je l’ai eu, sur le coup je n’arrivais plus à respirer. La sensation était magique, c’était comme une explosion. Au final je n’ai jamais été si déconnectée mentalement et si connectée à mon corps en même temps... mais c’était incroyable ! »</p>
+<ul>
+<li><strong>David — 51 ans, en couple, gay</strong></li>
+</ul>
+<p>« L’orgasme, c’est une perte de conscience. Un ressenti de plaisir tellement fort qu’au final tu perds toute notion de temps et d’espace. Une énergie qui est très vibratoire, comme une déflagration. Un tsunami de plaisir comme tu n’as jamais pu en ressentir ailleurs. Et au niveau hormonal, il doit certainement y avoir un pic de sérotonine, d’adrénaline. Après tu es un peu explosé, comme si tu venais de faire un semi-marathon. »</p>
+<ul>
+<li><strong>Marie — 36 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p>« C’est une sensation libératrice, qui se diffuse dans le corps, dans le cœur. Un instant magique où notre corps est plus fort que notre mental, où l’on peut dire qu’on lâche prise... La chaleur du corps et l’énergie qui se diffusent font ressentir de la plénitude. Pour moi ce n’est ni du sexe, ni un état physiologique mais bien une sensation qui relie mon corps et mon esprit. L’orgasme n’est en rien systématique et il n’est en rien validateur d’une relation. Par contre, il est le résultat de la confiance, d’une déconnexion de mes pensées pour écouter mon corps. »</p>
+<ul>
+<li><strong>Thibault — 21 ans, célibataire, gay</strong></li>
+</ul>
+<p>« L’orgasme, c’est l’apothéose de l’excitation et du désir. C’est comme un feu d’artifice. Et <a href="https://lepointq.com/articles/20-09/si-un-mec-aime-qu-on-lui-touche-l-anus-alors-il-est-forcement-gay/">l’orgasme prostatique</a>, c’est dix fois plus intense ! Tu as l’impression que tu vas tomber, tes jambes tremblent et tu ressens un truc hyper chaud dans tout le corps.</p>
+<p>L’orgasme, c’est tellement bon à vivre mais aussi à observer : voir que l’autre est en pleine extase peut mener à l’orgasme ! C’est tellement plaisant de ressentir qu’on a joui grâce à toi, et c’est un moment d’une grande complicité. Parfois on n’a pas envie de recevoir mais juste de donner : par exemple, ça m’arrive de sucer mon partenaire sans rien attendre en retour, en ne voulant que sa jouissance... »</p>
+<ul>
+<li><strong>Élie — 43 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p>« À 17 ans, j’ai rencontré celui qui serait mon mari. Vierge, n’ayant aucune expérience, et étant un peu coincée, j’ai pris les choses en main si je puis dire. Pendant des années, j’ai trouvé moins énergivore de me concentrer sur son plaisir... en abandonnant le mien. Ça a duré des années. Et puis un jour, avec mon mari, on a eu une dispute au cours de laquelle je lui ai reproché de ne pas chercher à répondre à mes désirs, à comprendre mon corps...</p>
+<p>Après lui avoir dit ce que j’aimais, il a fait des efforts. J’ai donc pu avoir cinq orgasmes. Cinq en 25 ans de vie commune, c’est trop peu. Mais cinq orgasmes qui m’ont laissée pantelante à chaque fois. Toujours cette sensation de boule de chaleur qui grossissait dans mon ventre, de ma vulve et de mon clitoris qui palpitaient, et sans que je comprenne pourquoi ou comment, une espèce de vague qui me submergeait, l’impression que mon cœur, mon corps et ma tête ne pouvaient plus supporter ce qui arrivait... Et j’éclatais en sanglots. Fort. Avec mes jambes qui se tendaient, mes pieds qui se crispaient, mes mains qui cherchaient à agripper je ne sais quoi... Quelques longues secondes à ne plus savoir qui j’étais, ce qui se passait, où j’étais, et une retombée soudaine, une sorte d’apaisement, de joie qui me prenait... Et les sourires, les tremblements, finalement les petits rires étonnés...</p>
+<p>J’ai recherché à reproduire souvent cet état, en vain. Je ne me laissais plus aller, concentrée et donc frustrée. Jusqu’à ce que je rencontre mon ami actuel. Nous vivons un grand amour très très <em>hot</em>, explorant nos désirs, nos fantasmes, nous permettant l’un et l’autre d’être libres dans nos paroles, nos expressions, nos souhaits. Ensemble, nous effaçons nos années de frustration. »</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/sans-titre.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Ophélie.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Ophélie
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Faites l’amour, pas la guerre&nbsp;: le &laquo;&nbsp;Global Orgasm for Peace&nbsp;&raquo;
+										</h4>
+									
+					
+					<p>Grâce au « Global Orgasm for Peace », chacun·e peut participer à la pacification du monde et appeler à la fin de la violence guerrière par un moyen qui fait et fera sûrement des adeptes : un orgasme.</p>
+<p>Créée en 2006 par Donna Sheehan et Paul Reffell, chercheurs à l’université américaine de Princeton, Global Orgasm for Peace est une association invitant le monde entier à se procurer un orgasme en faveur de la paix dans le monde. Le concept est le suivant : chaque année, le jour du solstice d’hiver soit le 21 ou 22 décembre, les femmes et les hommes sont convié·e·s à avoir un orgasme de la manière dont iels le souhaitent, seul·e ou à plusieurs. Le but de cette initiative est de <em>« modifier le champ d’énergie de la Terre »</em> par le plaisir des corps et de <em>« réduire le niveau de violence »</em> partout sur la planète, en particulier dans les pays détenant des armes de destruction massive.</p>
+<p>En plus de l’aspect pacifique, cette journée a également pour objectif de sensibiliser le grand public à la dysorgasmie, c’est-à-dire l’absence d’orgasme dans les relations sexuelles. Rappelons tout de même que l’orgasme n’est ni une fin ni un but de chaque rapport, et que l’important est d’avoir des relations de plaisir, toujours avec bienveillance.</p>
+<p>Alors si vous voulez faire un petit geste pour la paix et vous réchauffer cet hiver, toutes les « règles » sont disponibles sur le site officiel de <a href="https://noosphere.princeton.edu/globalorgasm.html">Global Orgasm for Peace</a>. On vous rappellera la date !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/mysl1jg.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											L’orgasme à la loupe
+										</h4>
+									
+					
+					<h3><strong>« L’éjaculation équivaut à un orgasme »</strong></h3>
+<p><strong>PAS EXACTEMENT.</strong> L’éjaculation est souvent associée chez l’homme à l’apogée du rapport sexuel. Pourtant, l’équation « éjaculation = orgasme » n’est pas toujours vérifiée. Pour comprendre pourquoi, il faut se pencher sur ce qui distingue ces deux éléments quasi concomitants.</p>
+<p>ll y a d’une part le phénomène physiologique : le sperme va être expulsé après une érection, elle-même provoquée par une stimulation sexuelle. Et d’autre part « la réponse sensorielle et cérébrale » de ce mécanisme, à savoir l’orgasme, comme l’explique le docteur Faix dans <a href="https://www.allodocteurs.fr/sexo-homme-sperme-tout-savoir-sur-lejaculation-12452.html">cet article très complet sur l’éjaculation</a>.</p>
+<p><strong>C’est rare, mais l’un peut exister sans l’autre.</strong> Déjà, la réponse sensorielle peut être plus ou moins forte, altérée par exemple par le stress dans certains cas. Exemple répandu : l’éjaculation précoce, rarement accompagnée d’un orgasme.</p>
+<p>Il est également possible d’avoir un orgasme sans éjaculer. C’est ce qu’on appelle un <a href="https://www.francetvinfo.fr/sante/sexo/l-orgasme-sec-le-plaisir-sans-l-ejaculation_3202801.html">« orgasme sec »</a>. Cela peut se produire par exemple quand, entre deux érections rapprochées, le corps n’a pas réussi à régénérer suffisamment de sperme pour éjaculer, ou encore en raison d’opérations ou de maladies. Dans certains cas, il peut également s’agir d’éjaculation rétrograde (éjaculation vers l’intérieur). Il y a enfin certains hommes qui parviennent à retenir leur éjaculation pour faire durer le plaisir plus longtemps.</p>
+<h3><strong>« Il faut 13 minutes 30 pour atteindre l’orgasme chez une femme »</strong></h3>
+<p><strong>VRAI.</strong> Ce chiffre, c’est celui calculé <a href="https://www.jsm.jsexmed.org/article/S1743-6095(20)30030-8/fulltext">dans une étude du <em>Journal of Sexual Medecine</em></a>. 645 femmes ont été interrogées dans 20 pays différents. Mais comme le souligne <a href="https://www.letemps.ch/societe/plaisir-feminin-startingblocks">Maïa Mazaurette</a>, cette moyenne doit être remise en perspective dans un monde où le rapport sexuel est centré sur la jouissance masculine. Il est possible que ce temps soit raccourci par exemple en se concentrant sur la stimulation du plaisir féminin.</p>
+<p>D’ailleurs, la durée moyenne d’un rapport sexuel se situe entre 5 et 7 minutes, et 85 % des hommes affirment avoir un orgasme à chaque fois, contre 61 % des femmes hétérosexuelles. <a href="https://www.huffingtonpost.fr/2014/08/21/sexualite-lesbiennes-orgasmes-hetero_n_5697179.html">Un chiffre qui grimpe à 74 % chez les femmes lesbiennes.</a></p>
+<h3><strong>« Contrairement aux femmes, les hommes ne peuvent pas avoir plusieurs orgasmes en un rapport »</strong></h3>
+<p><strong>VRAI.</strong> Lors d’un rapport sexuel, les femmes peuvent avoir plusieurs orgasmes à la suite, alors que pour les hommes, c’est plus compliqué : une fois l’érection terminée, on observe une « phase réfractaire » — soit le laps de temps entre deux érections — qui dure de 30 minutes (minimum) à plusieurs heures, voire plusieurs jours.</p>
+<p>Il est pourtant possible pour un homme d’avoir plusieurs orgasmes de façon rapprochée, notamment en retenant son éjaculation pour provoquer un orgasme sec. Mais cela demande de l’entraînement <a href="https://www.gqmagazine.fr/sexe/article/les-hommes-peuvent-avoir-des-orgasmes-multiples-voici-comment">« physique et mental »</a>. C’est plus débattu, mais certains considèrent qu’un multi-orgasme est possible en enchaînant orgasme éjaculatoire et <a href="https://www.rtl.fr/actu/bien-etre/sexe-qu-est-ce-qu-un-orgasme-prostatique-7800845451">orgasme prostatique </a>.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/ava-sol-oreidapknaa-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Julien
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Les orgasmes, c’est bon pour la santé&nbsp;!
+										</h4>
+									
+					
+					<p>Ocytocine : ce nom te dit peut-être quelque chose, il s’agit de la bien connue « hormone du plaisir » ou « de l’attachement ». Libérée abondamment pendant l’orgasme, elle permet notamment de lutter contre l’anxiété et le stress : grâce à elle, place à la relaxation.</p>
+<p>L’orgasme est aussi un moyen de mieux dormir, en particulier chez les hommes : une réponse biologique naturelle <a href="https://www.cosmopolitan.fr/,pourquoi-les-hommes-s-endorment-ils-apres-le-sexe,2510864,1769323.asp">qui a lieu dans le cerveau</a>. Les endorphines sécrétées agissent aussi comme une sorte de morphine dans l’organisme : <a href="https://madame.lefigaro.fr/bien-etre/vous-sous-estimez-probablement-les-pouvoirs-de-lorgasme-bienfaits-sante-livre-alain-heril-240720-181850">un anti-douleur naturel</a>, qui peut d’ailleurs soulager les règles éprouvantes.</p>
+<p>Mais les orgasmes ont aussi des effets à long terme : une étude a révélé que les hommes éjaculant plus de 21 fois par mois (tout un programme) avaient moins de chance <a href="https://www.prnewswire.com/news-releases/new-study-one-orgasm-a-day-could-reduce-prostate-cancer-risk-300197464.html">de développer un cancer de la prostate que les autres</a>. Chez les femmes, l’ocytocine permet, elle, de lutter contre les risques de cancer du sein.</p>
+<p>Et puis, côté cœur, le rapport sexuel précédant l’orgasme est un gros plus : trois orgasmes par semaine permettraient de diviser par deux (oui, par deux !) <a href="https://www.20minutes.fr/societe/1266003-20131220-20131220-pourquoi-orgasme-bon-sante">le risque de maladies cardiovasculaires</a>. Encore mieux qu’une séance à la salle.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-orgasme.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Le Point Q, c’est fini pour aujourd’hui !</p>
+<p>On espère que vous avez pris autant de plaisir à lire ce numéro de rentrée que nous à l’écrire. Vous l’avez vu, Le Point Q revient plus motivé que jamais, pour tout exploser dans le <em>game</em> de la sexualité !</p>
+<p>Pour continuer à libérer la parole sur le sujet, vous pouvez nous rejoindre sur les réseaux sociaux : <a href="https://www.facebook.com/lepointq.news/">Facebook</a>, <a href="https://twitter.com/LePointQ">Twitter</a>, <a href="https://www.instagram.com/lepoint.q/">Instagram</a>. Vous avez explosé le compteur d’abonné·e·s cet été, on est désormais près de 1200 sur Insta, c’est fou ! Merci à vous ! Côté newsletter, Le Point Q soufflera bientôt sa première bougie (le 30 septembre précisément), wouhou ! Petit Point Q devient grand...</p>
+<button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; margin-bottom: 8px; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center; margin-top: 0;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p>
+<p>Si vous voulez nous donner un coup de pouce pour la rentrée, vous pouvez nous faire un don sur <a href="https://fr.tipeee.com/le-point-q">sur Tipeee</a>, ce qui nous permettra de financer l’envoi des newsletters, ainsi que notre site web <a href="https://lepointq.com/">lepointq.com</a> !</p>
+<p>À la semaine prochaine pour de nouvelles aventures,</p>
+<p>Julien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q.</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
