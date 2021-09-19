@@ -2,9 +2,10 @@
 	<main>
 		<h2>Toutes les newsletters</h2>
 		<ul style="width: auto;">
-			{{ range .Pages }}
+			{{ range where .Pages "Params.lang" "!=" "en" }}
 				<li>
 					<a href='{{ .Permalink }}' target='_self'>
+						
 						#{{ .Params.numero}} &middot; {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
 					</a>
 				</li>

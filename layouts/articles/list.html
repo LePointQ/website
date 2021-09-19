@@ -2,7 +2,7 @@
 	<main>
 		<h2>Les derniers articles</h2>
 		<ul>
-			{{ range first 10 .Pages }}
+			{{ range first 10 (where .Pages "Params.lang" "!=" "en") }}
 				<li>
 					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
@@ -18,7 +18,7 @@
 			Témoignages
 		</h2>
 		<ul>
-			{{ range (where .Pages "Params.section" "Témoignages") }}
+			{{ range (where (where .Pages "Params.section" "Témoignages") "Params.lang" "!=" "en") }}
 				<li>
 					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
@@ -34,7 +34,7 @@
 			Vu d’ailleurs
 		</h2>
 		<ul>
-			{{ range (where .Pages "Params.section" "Vu d’ailleurs") }}
+			{{ range (where (where .Pages "Params.section" "Vu d’ailleurs") "Params.lang" "!=" "en") }}
 				<li>
 					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
@@ -50,7 +50,7 @@
 			On débunke&nbsp;!
 		</h2>
 		<ul>
-			{{ range (where .Pages "Params.section" "On débunke") }}
+			{{ range (where (where .Pages "Params.section" "On débunke") "Params.lang" "!=" "en") }}
 				<li>
 					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
@@ -66,7 +66,7 @@
 			La bonne nouvelle
 		</h2>
 		<ul>
-			{{ range (where .Pages "Params.section" "La bonne nouvelle") }}
+			{{ range (where (where .Pages "Params.section" "La bonne nouvelle") "Params.lang" "!=" "en") }}
 				<li>
 					<a href='{{ .Permalink }}' target='_self'>
 						{{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | replaceRE "<br />" " " | markdownify }}
@@ -82,7 +82,7 @@
 			Sous la plume de Morgan
 		</h2>
 		<ul>
-			{{ range (where .Site.Pages "Section" "newsletters") }}
+			{{ range (where (where .Site.Pages "Section" "newsletters") "Params.lang" "!=" "en") }}
 				{{ if .Params.plume_morgan }}
 					<li>
 						<a href='{{ .Permalink }}#plume-morgan' target='_self'>
