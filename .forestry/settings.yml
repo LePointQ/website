@@ -42,6 +42,8 @@ sections:
   label: Archives
   create: none
   match: "**/*"
+  templates:
+  - article
 upload_dir: static/media/uploads
 public_path: "/media/uploads"
 front_matter_path: ''
