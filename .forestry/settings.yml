@@ -24,7 +24,7 @@ sections:
   templates:
   - article
 - type: directory
-  path: content/articles/21-07
+  path: content/articles/21-09
   label: Articles
   create: documents
   match: "**/*"
