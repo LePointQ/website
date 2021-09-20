@@ -8,7 +8,7 @@ on_debunke = "articles/en/when-i-send-nudes-only-my-partner-can-see-them.md"
 outro = "Well that’s all folks, what did you think of this issue on nude pictures? We'll be doing more, more specialized ones on sex tapes, OnlyFans, or even virtual reality pleasure... If you have any ideas or remarks, let us know on [Facebook](https://www.facebook.com/lepointq.news), [Instagram](https://www.instagram.com/lepoint.q/) (where we are most active) or by email: [contact@lepointq.com](mailto:contact@lepointq.com).\n\nIf you're a newcomer, you can find all our old content on our website, like for example this story by Orianne on [the favorite sex position in France](https://lepointq.com/articles/20-10/la-levrette-la-position-preferee-des-francais.e.s/) (bet before clicking). Finally, share the fun and tell your friends about us!\n\nHave a good week, and don't forget to make your loved ones happy for Christmas,\n\nJuliette, Orianne, Tom and Thaïs aka Le Point Q."
 plume_morgan = "/media/uploads/strip-morgan-nudes.jpg"
 preview = "In this latest issue of our newsletter, we want to talk about pictures and videos sent to your soulmate to stimulate their sexual desire: NUDES! "
-temoignages = "articles/en/nudes-2.0.md"
+temoignages = "articles/en/nudes-desire-2.0.md"
 title = "Send Nudes?"
 vu_d_ailleurs = "articles/en/my-life-is-not-your-porn-in-south-korea.md"
 
