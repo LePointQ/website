@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🌺 Tout, tout, tout, vous saurez tout sur le clito</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			display: table;
+			border-collapse: separate;
+			margin: 2rem auto 2rem 2rem;
+			padding: 0.25rem 0.5rem !important;
+			max-width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote:nth-child(2n) {
+			margin: 2rem 2rem 2rem auto;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+		blockquote:nth-child(2n) p {
+			text-align: right;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>8000 terminaisons nerveuses à lui seul ! Mais le seul organe humain uniquement dédié au plaisir reste pourtant mystérieux pour énormément de femmes.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Tout, tout, tout, vous saurez tout sur le clito
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.</p>
+<p>Ah, le clitoris... Un organe exceptionnel, n’est-ce pas ? 8000 terminaisons nerveuses à lui seul, 2000 de plus que le pénis ! C’est le seul organe humain uniquement dédié au plaisir, et pourtant il reste mystérieux pour énormément de femmes. Un rapport du Haut Conseil à l’Égalité, paru en 2016, indique <a href="https://www.haut-conseil-egalite.gouv.fr/sante-droits-sexuels-et-reproductifs/travaux-du-hce/article/rapport-relatif-a-l-education-a-la#top">qu’une fille sur quatre de moins de 15 ans n’est pas au courant de l’existence de son clitoris</a> !</p>
+<p>Le fait que sa représentation complète ait été exclue des manuels scolaires jusqu’en 2017 n’aide probablement pas. C’est pourquoi, face à cette <em>« excision culturelle »</em> (Maïa Mazaurette et Damien Mascret, <em>La revanche du clitoris</em>), il envahit l’espace public et devient un symbole politique.</p>
+<p>Dans la sphère intime, <strong>le clitoris reste à découvrir, comme l’ont confié Léonore, Louise et Mickael à Ophélie et Orianne.</strong> À 20 comme à 35 ans, il est toujours temps d’en apprendre sur son corps. Dans le Vu d’ailleurs, <strong>Valentin vous retrace toute l’histoire du clitoris, depuis l’Antiquité jusqu’à nos jours.</strong> Étrangement, mieux on le connaît, moins on peut le voir en peinture... De son côté, <strong>Orianne vous pose une simple question : « vaginale ou clitoridienne ? »</strong> Vous pensez avoir la réponse ? N’en soyez pas si sûr·e·s... C’est le débunk de la semaine. On termine cette newsletter avec une bonne nouvelle rien que pour vous : <strong>Le Point Q s’est associé à CLOTI, une boutique qui fabrique des clitos en tissu. On vous fait gagner trois de leurs réalisations !</strong> Rendez-vous sur <a href="https://www.instagram.com/lepoint.q/?hl=fr">notre compte Instagram</a> au moment où vous recevez cette newsletter !</p>
+<p>C’est parti pour un numéro plein de plaisir, entre vos lèvres !</p>
+<p>Bonne lecture,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/maria-talks-lzmkbsvezde-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Ta rencontre avec le clitoris
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+											<span>
+												Par Ophélie & Orianne
+											</span>
+										</h3>
+					
+					
+					<ul>
+<li><strong>Léonore — 24 ans, hétérosexuelle, en couple</strong></li>
+</ul>
+<p>« J’ai découvert sa définition au collège je pense… Mais je ne savais pas qu’il était si grand et que la plus grande partie était à l’intérieur ! D’ailleurs à cette période, je n’avais pas forcément envie de découvrir le mien. Les premières fois où je l’ai touché, c’était peut-être à la fin du collège ou au début du lycée. Je me souviens que c’était agréable, même si je n’ai jamais atteint l’orgasme. Je ne savais pas ce que c’était l’orgasme d’ailleurs, et peut-être que je m’y prenais mal à l’époque ! (<em>rires</em>)</p>
+<p>Donc je dirais que je l’ai vraiment découvert après ma première fois. Une fois que j’étais active sexuellement, j’ai découvert l’orgasme et l’utilité du clito. Mais ça m’a pris du temps avant de réussir à atteindre l’orgasme par moi-même en le touchant. Dans les rapports amoureux, je préfère parfois la stimulation du clito à la pénétration. Je l’explore soit avec mes doigts, soit avec ceux de mon partenaire (mais on n’est jamais mieux servi que par soi-même, <em>rires</em>) ou même encore mieux : un sextoy ! »</p>
+<ul>
+<li><strong><em>Louise*</em> — 24 ans, hétérosexuelle, célibataire</strong></li>
+</ul>
+<p>« Je pense que j’ai découvert le clitoris en parlant avec des amies qui avaient plus d’expérience sexuelle que moi. Sur le moment, j’ai prétendu que je savais ce que c’était et j’ai fait des recherches en secret en rentrant chez moi. Je me suis sentie un peu bête de penser que le plaisir féminin ne venait que du vagin qui, au final, ne sert pas du tout à ça. J’ai été un peu énervée parce que j’étais complètement ignorante sur un sujet qui me concernait directement. Quand j’ai appris que le clitoris était uniquement là pour le plaisir de la femme, ce qui n’existe pas chez les hommes, <strong>je me suis dit qu’on s’était bien fait avoir de ne pas en avoir entendu parler en classe.</strong></p>
+<p>J’ai donc découvert son nom (le clitoris) en même temps que son schéma. Mais je trouve ça lamentable qu’on n’en entende pas plus parler en cours, et que les programmes ne soient pas encore mis à jour avec tout ce qu’on entend dans les médias. J’ai pu me renseigner avec des comptes comme celui de Camille Aumont (<a href="https://www.instagram.com/jemenbatsleclito/"><em>@jemenbatsleclito</em></a>) et je trouve qu’elle a une façon rafraîchissante et décomplexée de parler de sa sexualité. Elle permet aux femmes de se sentir moins gênées et je trouve qu’elle a un côté pédagogique et non-moralisateur envers les hommes.</p>
+<p>Pour les relations intimes, je pense que le clitoris est un incontournable : si on est plus sensible à une stimulation externe et qu’on se retrouve au final à ne recevoir que du sexe pénétratif, ça risque de casser l’ambiance dans la chambre. »</p>
+<ul>
+<li><strong><em>Mickael*</em> — 37 ans, hétérosexuel, marié</strong></li>
+</ul>
+<p>« Je connaissais le clitoris depuis l’âge de 20 ans mais dans une configuration bien plus restreinte que ce qu’il n’est vraiment… Je ne le connaissais que pour son gland, sa représentation n’était pour moi que ce bouton enfoui et il était très énigmatique, juste cité dans un cours en biologie niveau post-bac. Le clitoris global et complet, dans toute sa richesse et ses subtilités, je ne l’ai connu qu’avec les comptes sexo d’Insta, type <a href="https://www.instagram.com/orgasme_et_moi/"><em>@orgasme_et_moi</em></a> ou <a href="https://www.instagram.com/jouissance.club/"><em>@jouissance.club</em></a>. À ce moment-là, j’avais 34-35 ans, c’est récent. <strong>Et je suis curieux d’en apprendre encore plus car je suis convaincu qu’il n’a pas livré tous ses secrets</strong>. »</p>
+<p><em>* Les prénoms ont été modifiés</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/canvas2.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											 À la conquête du clitoris
+										</h4>
+									
+					
+					<h3>Des nymphes au clitoris</h3>
+<p>Dans l’Antiquité grecque, <a href="https://journals.openedition.org/chrhc/2483">le clitoris n’est pas différencié des lèvres de la vulve</a>. On appelle cet ensemble les « nymphes ». Les auteurs sont alors plus préoccupés par la procréation que par le plaisir. C’est donc la partie interne du sexe féminin qui les intéresse le plus. Seule utilité de la partie externe : stimuler la fertilité. Hippocrate, dont les enseignements seront suivis jusqu’au XIXème siècle, considère que la stimulation des <em>« parties honteuses »</em> de la femme émet une semence qui favorise la fécondation.</p>
+<p>Pourtant, des lèvres et un clitoris trop développés sont considérés comme le symbole de pulsions sexuelles féminines déviantes. Les médecins pratiquent alors l’excision, pour recadrer la moralité des jeunes femmes.</p>
+<h3>La découverte du clitoris</h3>
+<p>À partir de la Renaissance, le développement de la dissection permet de mieux connaître le corps humain. <a href="https://www.francetvinfo.fr/sante/maladie/le-clitoris-histoire-dune-omerta_2350657.html">Le clitoris apparaît en 1558 dans les manuels d’anatomie</a>. Les auteurs se disputent sa découverte, parmi lesquels Gabriel Fallope, connu pour avoir donné son nom aux canaux utérins, qui le nomme <em>kleitoris</em>. On découvre par exemple qu’il est érectile : on le surnomme alors <a href="https://www.francetvinfo.fr/sante/sexo/video-cinq-points-communs-entre-le-clitoris-et-le-penis_4328923.html">« verge de la femme »</a>. Plusieurs auteurs évoquent le « plaisir » qui est suscité par sa stimulation. L’un deux, constatant qu’il y a bien plus de nerfs dans le clitoris que dans le vagin, avance même <em>« qu’on ne peut accorder au vagin aucune participation à la production du sentiment voluptueux dans l’organisme féminin »</em> !</p>
+<p>Mais cette meilleure connaissance du corps féminin est aussi source de dérives. Organe du plaisir, le clitoris est accusé de pousser les femmes à la masturbation. Il est surnommé <em>« mépris de l’homme »</em>, car il se suffit à lui-même, et n’entre pas dans le système phallocentré de la pénétration. L’excision devient donc plus précise, on ne coupe que le clitoris (ce qu’on appelle une clitoridectomie).</p>
+<h3>À la conquête du clitoris</h3>
+<p>Au XIXème siècle, la découverte du cycle menstruel (donc de l’ovulation) amène l’Église à condamner la masturbation de couple, qu’elle pense être un moyen de contraception, puisque ne servant pas dans la fécondation.</p>
+<p>Freud ajoute sa pierre à l’édifice en déclarant que la femme, connaissant le clitoris dès son enfance, doit découvrir le vagin à la puberté. Selon lui, continuer d’utiliser son clitoris à l’âge adulte, c’est rester dans l’enfance.</p>
+<p>L’anatomie complète du clitoris n’est produite qu’en 1998, <a href="https://vimeo.com/32783601">année de la commercialisation du Viagra.</a></p>
+<p>Mais les choses changent : il y a dix ans, les moteurs de recherche donnaient jusqu’à cinq fois moins de résultats pour le mot « clitoris » que pour « pénis ». Aujourd’hui, c’est l’inverse ! <a href="https://www.ouest-france.fr/sciences/un-manuel-scolaire-represente-enfin-le-clitoris-correctement-5209851">Le clitoris trouve aussi sa place dans les manuels scolaires français</a> à partir de 2017. Longtemps dissimulé, caché, effacé volontairement de la mémoire collective, <a href="https://www.lepoint.fr/societe/un-clitoris-geant-installe-au-trocadero-08-03-2021-2416873_23.php">il s’expose au grand jour</a> et devient un symbole féministe de taille, pour remettre la femme et son plaisir au centre de la vie publique.</p>
+<p>Comme tous les symboles, il est exposé à des critiques : soit il desservirait la cause féministe en ramenant le combat au bas-corporel (critique qui est aussi celle des antiféministes mécontents de la libération sexuelle des femmes), soit <a href="https://charliehebdo.fr/2020/01/societe/feminisme/enquete-transactivisme-ca-devient-impossible-parler-vagin-regles-clitoris/">il excluerait les personnes transgenres de la lutte</a>.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/clito.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;L’orgasme féminin est vaginal ou clitoridien&nbsp;&raquo;
+										</h4>
+									
+					
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+									
+					<p><em>« Et toi, t’es clitoridienne ou vaginale ? »</em> Avoue, toi non plus tu n’as pas échappé à cette question. Quand ton ami·e ouvre le débat, tu rentres dans une introspection profonde et tu réponds peut-être <em>« je ne sais pas »</em>. Et oui, pourquoi faire cette différence entre orgasme vaginal et clitoridien ?</p>
+<p>En réalité, cette scission du plaisir n’a pas lieu d’être. Après une longue période d’ignorance, en 1998, l’australienne Helen O’Connell et son équipe décrivent précisément l’organe du clitoris. On comprend qu’il a deux composantes : une partie externe, avec le gland, et une partie interne, constituée de deux corps caverneux latéraux d’une quinzaine de centimètres et d’une arche bulbaire encerclant partiellement le vagin.</p>
+<p>Le clitoris, unique organe dédié exclusivement au plaisir, est donc bien plus qu’un petit bouton magique. En réalité, l’orgasme féminin peut survenir avec une stimulation externe, en frottant le clitoris de l’extérieur, mais aussi par le biais d’une stimulation interne, avec la pénétration. Les va-et-vient du pénis, de tes doigts ou de ton jouet dans le vagin vont engendrer un frottement du clitoris qui l’entoure. Et là ça peut-être l’extase.</p>
+<p>Si tu ne ressens pas de plaisir par pénétration, c’est sûrement que tu es moins sensible à la stimulation interne. Ça ne veut pas dire que tu es <a href="https://www.cairn.info/revue-nouvelles-questions-feministes-2010-3-page-14.htm">frigide</a> ! Pense à varier les plaisirs, <a href="https://lepointq.com/quizz/generateur-kamasutra/">à tester des positions</a> qui favorisent les frottements (en missionnaire, ou andromaque : lorsque la femme est au-dessus). Pas de panique, le clitoris est bien fait et avec ses 8000 terminaisons nerveuses <a href="https://lepointq.com/newsletters/grimpons-au-7eme-ciel/">il te fera monter, sans problème, au 7ème ciel</a>.</p>
+<p><em>Simulation 3D :</em> <a href="https://www.instagram.com/stories/highlights/17979422683098761/"><em>@gangduclito</em></a> <em>sur Instagram</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/img_20210918_144328076_hdr.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Des poupées et des porte-clés clito, pour l’avoir toujours sous la main !
+										</h4>
+									
+					
+					<p>Au Point Q, on aime ce qui est beau, et ce qui permet de parler de sexualité de manière décomplexée.</p>
+<p>Et c’est exactement le principe de la <a href="https://www.etsy.com/fr/shop/CLOTIparTAMANDUA?ref=seller-platform-mcnav&amp;sort_order=price_asc">boutique CLOTI</a>. <strong>Des clitos en tissu coloré, faits main, et en France qui plus est, qu’on a envie de garder près de nous comme un doudou.</strong> Autant vous dire qu’un clito sur un trousseau de clés, ça risque de faire parler !</p>
+<p>Bonne nouvelle : <strong>il y en a trois à gagner sur</strong> <a href="https://www.instagram.com/lepoint.q/?hl=fr"><strong>notre compte Instagram</strong></a> <strong>!</strong> Pour participer, c’est super simple : il suffit de s’abonner à nos deux comptes, d’aimer notre publication, et de taguer deux copain·ine·s en commentaire.</p>
+<p>Bonne chance à tou·te·s !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>On espère que vous vous êtes régalé·e·s à la lecture de cette newsletter 100 % clito ! Pas de BD de Morgan cette semaine, mais ne vous en faites pas, votre dessinateur préféré revient très vite avec ses dessins et son humour décalé !</p>
+<p>Si vous avez encore des histoires à nous raconter au sujet de cet organe incroyable, vous pouvez toujours nous envoyer un message sur nos réseaux sociaux ! Le Point Q est sur <a href="https://www.instagram.com/lepoint.q/?hl=fr">Instagram</a>, <a href="https://twitter.com/LePointQ">Twitter</a> et <a href="https://www.facebook.com/lepointq.news/">Facebook</a>.</p>
+<p>Et comme toujours, vous pouvez retrouver tous nos anciens numéros sur <a href="https://lepointq.com">lepointq.com</a>, et nous faire un don (ponctuel ou mensuel) sur <a href="https://fr.tipeee.com/le-point-q">Tipeee</a>. Pour partager le plaisir, c’est juste en dessous :</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; margin-bottom: 8px; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center; margin-top: 0;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>À la semaine prochaine,</p>
+<p>Julien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q.</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
