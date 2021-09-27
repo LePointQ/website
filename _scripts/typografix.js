@@ -5,6 +5,7 @@ exports.typografix = (html, { omitGuillemets = false } = {}) => {
 		// Guillemets français et espaces non sécables
 		const matchesGuillemets = output.match(/"[^\"]*"/g);
 		matchesGuillemets && matchesGuillemets.forEach(match => {
+			if (match.slice(1).startsWith('https') || match.slice(1).startsWith('width')) return;
 			output = output.replace(match, `&laquo;&nbsp;${match.slice(1, -1)}&nbsp;&raquo;`);
 		});
 	}
@@ -22,6 +23,7 @@ exports.typografix = (html, { omitGuillemets = false } = {}) => {
 		.replace(/ !/g, "&nbsp;!")
 		.replace(/ \?/g, "&nbsp;?")
 		.replace(/ - /g, "&nbsp;&mdash;&nbsp;")		// Tirets cadratins
+		.replace(/ -,/g, "&nbsp;&mdash;,")
 		.replace(/ \%/g, "&nbsp;%");				// Pourcentages
 
 	return output;

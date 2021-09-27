@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🧠 Décomplexons&nbsp;!</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			display: table;
+			border-collapse: separate;
+			margin: 2rem auto 2rem 2rem;
+			padding: 0.25rem 0.5rem !important;
+			max-width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			background: #F47B67;
+		}
+
+		blockquote:nth-child(2n) {
+			margin: 2rem 2rem 2rem auto;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: white;
+			text-align: left;
+		}
+
+		blockquote:nth-child(2n) p {
+			text-align: right;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Ce n’est jamais facile de s’aimer à 100 %, mais c’est en apprenant à connaître son corps et ses spécificités qu’on finit par l’adorer !</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Décomplexons&nbsp;!
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>Un petit bijou qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée « plaisir ». Tous les lundis, on débusque ensemble des fake news, on parle santé sexuelle, culture érotique, sexualité queer. On échange sur les nouvelles manières de faire l’amour en 2021.</p>
+<p><strong><em>« Rajeunir son vagin »</em></strong>. Vous avez peut-être entendu cette expression surprenante dans les médias, il y a quelques semaines. Cette trouvaille nous vient de Maeva Ghennam, une star de la téléréalité qui, sur les réseaux, a fait la promotion d’un traitement lui ayant permis de retrouver le sexe de ses <em>« douze ans »</em>.</p>
+<p>Au-delà de la confusion entre vagin et vulve et de la sexualisation d’un corps «&nbsp;d’enfant&nbsp;», c’est le fait de proposer un « rajeunissement » de cette partie du corps qui a fait polémique. Comme si, pour être désirable, il était essentiel d’avoir un sexe symétrique, « sans rien qui dépasse », épargné par le temps. Cette polémique n’est que l’une des expressions du carcan patriarcal qui impose des normes aux femmes (et aux hommes !), et qui nous angoisse tou·te·s malgré nous.</p>
+<p><br /><img src="https://lepointq.com/media/uploads/illustration-complexes.jpeg" style="width: 100%;" /></p>
+<p style="text-align: left;"><em>Illustration : Camille Joblin (<a href="https://www.instagram.com/camillejoblin/">@camillejoblin</a>)</em></p>
+<p><br />Comme vous l’aurez compris, Le Point Q s’intéresse aujourd’hui aux complexes. <strong>Virilité, féminité, pilosité, forme... Laure, Zacharie et Alicia ont parlé de leurs complexes à Orianne.</strong> Personne n’est épargné par ces règles intériorisées, mais heureusement, les normes changent ! <strong>Malgré tout, les opérations génitales restent très répandues, particulièrement en Allemagne et au Brésil, comme vous le raconte Julien.</strong> Mais attention, tout n’est pas blanc ou noir : vous le découvrirez dans le Vu d’ailleurs ! Trop grand·e·s, trop petit·e·s... ou trop courbé ? Et oui, si on parle souvent de la taille des organes génitaux, on oublie souvent leur courbure ! <strong>Tom a échangé avec l’urologue Nazim Gherabi sur la courbure des pénis.</strong> Si cela vous intrigue, rendez-vous dans le débunk ! <strong>Et après les pénis, Ophélie vous parle des vulves, et de l’artiste Hilde Atlanta, que vous connaissez peut-être sous le pseudo « The Vulva Gallery ».</strong> Sur <a href="https://www.instagram.com/the.vulva.gallery/">sa page Instagram</a> (et désormais en livre !), elle dessine des vulves pour montrer qu’elles sont toutes uniques !</p>
+<p>Enfin, <strong>Morgan est de retour, et il dénonce !</strong> Sa BD de la semaine est à découvrir en bas de la newsletter.</p>
+<p>Un numéro (encore) plein de diversité et de beauté !</p>
+<p>Bonne lecture,</p>
+<p>L’équipe du Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/vergetures.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Et toi, t’es complexé·e au lit&nbsp;? 
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+					
+					<ul>
+<li><strong>Laure — 24 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p>« Moi je suis complexée par mon ventre et mes fesses. C’est bête car je sais qu’objectivement je ne suis pas grosse. Mais j’ai grandi dans une famille très stricte sur l’apparence, qui plébiscitait la minceur. Ma grande sœur était anorexique, et moi, comme j’avais plus de rondeurs, je passais pour la grosse de service. J’ai mis des années à déconstruire cette image de moi, à me dire que non, ce n’est pas en pesant 39 kg que j’étais grosse. Et puis forcément, là où ça a été compliqué, c’est quand je me suis trouvée nue devant quelqu’un pour la première fois, qu’il voyait tout, mon ventre, ma cellulite, mes vergetures…</p>
+<p>Encore aujourd’hui, alors que je suis avec un super gars, dans certaines positions (type la cuillère), je ne suis pas à l’aise car elles s’accentuent ou forment des bourrelets sur le ventre. C’est quelque chose qui me met assez mal à l’aise, à tel point que je me sens mieux quand je fais l’amour la lumière éteinte. C’est très compliqué pour moi avec une lumière allumée de lâcher prise. »</p>
+<ul>
+<li><strong>Zacharie — 23 ans, en couple, en questionnement</strong></li>
+</ul>
+<p>« Au début de ma vie sexuelle, j’ai pas mal complexé sur ma manière d’exprimer mon plaisir. J’étais un peu perdu, je ne savais pas si on attendait de moi un râle rauque au moment de l’orgasme (comme dans les pornos), un comportement viril (je ne sais même pas ce que ça veut dire) ou une attitude stoïque pendant l’acte. J’ai beaucoup essayé de coller à ce que je pensais qu’on attendait de moi, parce que je me disais que ma manière d’exprimer les choses spontanément risquait de ne pas plaire. J’avais peur de briser une forme de “crédibilité masculine” en gémissant ou en faisant du bruit. Du coup, pour ne pas prendre de risques, j’étais assez peu expressif.</p>
+<p>Petit à petit, en discutant avec des partenaires, j’ai pu me rendre compte que le fait d’exprimer mon plaisir pouvait être une source de plaisir pour l’autre. Ça aurait dû me paraître évident vu que j’adore voir que l’autre prend du plaisir, mais ce n’est pas si simple de transposer la réflexion à soi. Cette manière de voir les choses m’a aidé à me “débloquer” et à trouver mes formes d’expression en tâtonnant : gémissements, soupirs, hoquets, et parfois râles rauques aussi. Aujourd’hui, extérioriser mon plaisir m’aide à en prendre, et je me rends compte que surjouer peut aussi être intéressant pour indiquer à l’autre que quelque chose me plaît ou simplement pour intensifier l’acte. Mes voisins m’apprécient moins mais ça vaut le coup ! »</p>
+<ul>
+<li><strong>Alicia — 27 ans, célibataire, hétérosexuelle</strong></li>
+</ul>
+<p>« Il y a des moments, comme tout le monde je pense, où j’ai des hauts et des bas : il y a des jours où je ne vais pas m’aimer du tout et d’autres où je m’accepte un peu plus comme je suis — ces derniers temps, je suis dans une <em>good vibe</em> de ce côté là.</p>
+<p>Mais mon plus gros complexe, ça doit être les poils, parce que même si je m’épile intégralement et qu’on ne voit rien, j’ai peur de piquer. J’ai des poils épais et foncés, donc déjà de base c’est la croix et la bannière pour tous les retirer. Que j’utilise cire, épilateur, rasoir, j’ai l’impression que je pique toujours un petit peu après et ça me rend dingue. Je passe des heures à gommer ma peau et à me mettre des crèmes pour avoir la peau douce. Je passe plus de temps à faire ça que tout le reste. Pourtant, on ne m’a jamais dit que je piquais. Mais par contre, il y a longtemps, ça m’est déjà arrivé qu’on me dise : <em>“Fais gaffe, ça commence à repousser. J’aime pas ça...”</em> Du coup je préfère être dans le noir, parce que je me dis que si ça se trouve j’ai oublié d’enlever un poil là ou là, ou alors à cet endroit je sais que j’ai un poil incarné que je n’ai pas réussi à enlever, etc. »</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/jafar-ahmed-e285pjbc4ue-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Julien
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Allemagne/Brésil&nbsp;: championnes du monde… de la chirurgie génitale
+										</h4>
+									
+					
+					<p>La chirurgie esthétique serait-elle la solution ? Pour être satisfait·e·s de leur corps, se sentir mieux dans leur peau ou passer outre d’éventuels complexes, de plus en plus de personnes recourent à la chirurgie esthétique. Et les parties intimes n’y font pas exception : certains pays en sont même leaders.</p>
+<p>Et notamment notre voisin d’outre-Rhin : en 2013, l’Allemagne était sur la première place… pour l’allongement du pénis. L’idée : augmenter la longueur de la verge jusqu’à 6 cm ou gagner 3 cm de circonférence, pour la modique somme de 9.600 euros, relate <a href="https://www.topsante.com/couple-et-sexualite/sexualite/troubles-sexuels-chez-l-homme/allongement-du-penis-les-allemands-multiplient-les-operations-63511"><em>Top Santé</em></a>.</p>
+<p>Et en Allemagne, justement, 2.786 phalloplasties avaient alors eu lieu en une seule année pour augmenter la longueur ou la circonférence du phallus, selon les données de la Société internationale de chirurgie esthétique et plastique (Isaps). Soit 18 % des phalloplasties du monde. Et aujourd’hui, le <a href="https://www.deutsches-zentrum-urologie.com/de/behandlungen/penisvergroesserung/eckdaten-zu-unserer-arbeit-ergebnisse/">Centre allemand d’urologie et de phalloplastie</a> revendique plus de 10.000 opérations réussies.</p>
+<p>Mais l’Isaps va plus loin : <em>« Les demandeurs [avaient] pourtant un pénis de dimension normale et fonctionnant correctement »</em>, rapporte <a href="https://www.lemonde.fr/blog/realitesbiomedicales/2014/08/17/lallemagne-championne-du-monde-de-la-chirurgie-dallongement-du-penis/">le blog Réalités biomédicales</a> du <em>Monde</em>. Ce qui pourrait être la conséquence, pour certains d’entre eux, d’une dysmorphophobie pénienne. Un trouble psychologique capable d’affecter durablement la vie des hommes concernés, qui <em>« ont tendance à se mesurer de façon compulsive et répétée, et à éviter les relations amoureuses »</em>, détaille le sexologue Stephen Snyder au <a href="https://www.huffingtonpost.fr/entry/arretez-rire-taille-penis-complexe_fr_5d6fd599e4b09bbc9ef87b80"><em>HuffPost</em></a>. Ce qui expliquerait le recours à la chirurgie.</p>
+<p>Du côté des vulves, la labiaplastie (ou nymphoplastie) devient également de plus en plus courante ces dernières années. Pour réduire la taille de leurs petites lèvres ou les remodeler, un nombre croissant de jeunes femmes y ont recours, parfois dès l’adolescence, rapporte <a href="https://well.blogs.nytimes.com/2016/04/25/increase-in-teenage-genital-surgery-prompts-guidelines-for-doctors/">le blog Well du <em>New York Times</em></a>.</p>
+<p>Et un pays, là aussi, fait figure de leader dans le domaine : le Brésil, dans lequel plus de 30.000 opérations de ce type ont été réalisées en 2019, <a href="https://www.isaps.org/wp-content/uploads/2020/12/Global-Survey-2019.pdf">toujours selon l’Isaps</a>.</p>
+<p>Pour les un·e·s, il faut rejeter la faute sur la pornographie et à l’épilation répandue du pubis qui auraient induit un nouvel imaginaire du sexe féminin. Pour les autres, et notamment les chirurgiens, il s’agirait là d’un moyen pour les femmes de s’approprier leur corps, <a href="https://www.reuters.com/article/us-brazil-plasticsurgery-idUSKBN1FL6B1">explique Reuters</a>.</p>
+<p>Une pratique sur laquelle la présidente du Collège américain des gynécologues et obstétriciens Julie Strickland alertait en 2016 <a href="https://madame.lefigaro.fr/beaute/nez-seins-fesses-le-culte-de-la-chirurgie-esthetique-au-bresil-030616-114547">dans Madame Figaro</a> : <em>« Les lèvres ont beaucoup de terminaisons nerveuses. Il pourrait donc y avoir une diminution de la sensation sexuelle après l’opération, un engourdissement, une douleur ou des cicatrices. »</em></p>
+<p>En France, cette opération reste cependant moins fréquente qu’au Brésil : moins de 5.000 nymphoplasties ont eu lieu en 2019. Bien loin, par exemple, des 54.000 augmentations mammaires, l’opération la plus courante selon l’Isaps.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/charles-deluvio-0v_1tpz1uxw-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Tom
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Mon pénis est courbé, je ne suis pas normal&nbsp;&raquo;
+										</h4>
+									
+					
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+									
+					<p>La dysmorphophobie pénienne, plus connue sous le nom de <strong>« syndrome du vestiaire »</strong>, touche une grande partie des hommes à partir de l’adolescence. Le pénis, pourtant normal et fonctionnel, est ainsi vu par son propriétaire comme trop petit, trop courbé ou plus généralement d’une forme étrange.</p>
+<p><em>« La taille, en particulier, est un motif de consultation récurrent »</em>, explique le docteur Nazim Gherabi, urologue à Alger. <em>« Il s’agit souvent de jeunes hommes, adolescents ou de moins de 30 ans, qui développent un complexe en se comparant aux autres hommes. »</em> À l’origine de ce mal-être ? <em>« Une image fausse véhiculée par la pornographie, qui instaure un standard très élevé pour les adolescents. »</em> Mais aussi <a href="https://lepointq.com/articles/20-11/dans-l-antiquite-le-phallus-omnipresent-mais-au-repos/">le mythe du <em>« phallus tout puissant »</em></a> comme source de la virilité — à déconstruire de toute urgence.</p>
+<p>Et pour celles et ceux d’entre vous qui se posent la question : l’une des dernières études sérieuses en date, <a href="https://bjui-journals.onlinelibrary.wiley.com/doi/10.1111/bju.13010">une méta-analyse portant sur plus de 50.000 hommes</a>, avance une moyenne de <strong>13,12 cm en érection</strong>, pour 11,66 cm de circonférence. Des chiffres bien inférieurs aux conclusions des études précédentes — souvent biaisées par le fait que les hommes reportaient eux-mêmes le résultat. <em>« On parle de micropénis en dessous de 6 à 8 cm en érection »,</em> détaille l’urologue. Dans ce cas, un traitement chirurgical est possible pour allonger la verge de quelques centimètres. <em>« Cela peut paraître peu, mais pour reprendre l’expression du chirurgien Marc Abecassis : “un centimètre dans le pénis, c’est souvent un kilomètre dans la tête.” »</em></p>
+<p>Quid des pénis courbés ? <strong><em>« Les verges peuvent être de différentes formes et avoir différentes courbures, c’est tout à fait normal »</em></strong>, rassure le docteur Gherabi. Attention toutefois : si la courbure tend à s’accentuer avec le temps, il peut s’agir de la <a href="https://www.urofrance.org/base-bibliographique/la-maladie-de-lapeyronie">maladie de Lapeyronie</a>. Cette pathologie, qui touche entre 3 et 9 % des hommes — plutôt à partir de 50 ans —, est due à un traumatisme lors d’un rapport sexuel et se manifeste par une courbure très importante du pénis (jusqu’à 90 degrés), souvent accompagnée de douleurs lors de l’érection ou de la pénétration. Dans ce cas, il est essentiel de consulter un urologue qui saura conseiller un traitement adapté, médicamenteux ou chirurgical.</p>
+<p><em>« Le laid, le beau / Le dur, le mou / Qui a un grand cou / Le gros touffu / Le p’tit joufflu / Le grand ridé / Le mont pelé »</em>, <a href="https://www.youtube.com/watch?v=KbKvDkLlluo">chantait Pierre Perret en 1974</a>. Comme les vulves (voir ci-dessous), on trouve des zizis de toutes tailles, de toutes couleurs et de toutes formes : droit ou courbé, lisse ou veineux, poilu ou rasé, circoncis ou non... Comme toujours, <strong>l’important est d’ouvrir le dialogue avec sa ou son partenaire</strong>, et de se rappeler que <a href="https://lepointq.com/articles/20-11/un-rapport-sexuel-se-termine-forcement-par-une-penetration/">la pénétration n’est pas l’alpha et l’oméga d’un rapport sexuel</a>.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/the-vulva-gallery.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Ophélie.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Ophélie
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Chères vulves, vous êtes toutes belles
+										</h4>
+									
+					
+					<p>Petites, grandes, parallèles, asymétriques, poilues ou lisses…. Toutes les vulves sont différentes. On a toutes et tous déjà croisé les dessins en biologie représentant des vulves aux lèvres parfaitement symétriques et harmonieuses. Or il y autant de formes de sexe différentes qu’il y a d’êtres humains et c’est ce que montre le compte Instagram <a href="https://www.instagram.com/the.vulva.gallery/">The Vulva Gallery</a>, créé par l’artiste Hilde Atlanta.</p>
+<p>Ses dessins d’organes génitaux féminins sont accompagnés de témoignages de diverses personnes. L’artiste raconte que tout a commencé lorsqu’elle a réalisé qu’elle avait une vulve différente de celles qu’elle avait vues dans les dictionnaires — donnant une illustration du sexe féminin homogène et unique. À l’âge de 16 ans, elle avoue avoir développé des complexes sur la forme de sa vulve, allant jusqu’à ne pas vouloir commencer sa vie sexuelle de peur qu’on la juge. Plusieurs années plus tard, Hilde poursuit ses recherches en ligne sur les différentes formes de vulves et se rend compte qu’elle n’est pas la seule, lui donnant ainsi la confiance nécessaire pour pouvoir commencer une vie intime avec une autre personne.</p>
+<p>Depuis cette révélation qui lui a permis de vivre en harmonie avec son corps, Hilde Atlanta veut célébrer la diversité des vulves et offrir à tou·te·s un regard déconstruit sur les dessins de biologie. En présentant plusieurs formes, couleurs, longueurs, etc. l’artiste espère engager les discussions autour des corps et contribuer à l’acceptation de soi.</p>
+<p>Déjà riche de ses 710.000 followers et <a href="https://www.toutes-les-vulves-sont-belles.com">récemment mentionnée dans la saison 3 de <em>Sex Education</em></a><em>,</em> The Vulva Gallery accueille encore de nombreuses histoires — dont la tienne si tu le souhaites. Pour cela, il te suffit d’envoyer un message sur le compte pour échanger avec l’artiste et apporter ton témoignage. Des livres, des badges et des sacs sont également disponibles <a href="https://www.thevulvagallery.com/webshop">sur son site</a>, pour soutenir le mouvement et arborer fièrement la diversité des vulves.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-complexes.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>On espère que ce numéro vous aura fait autant de bien qu’à nous !</p>
+<p>Ce n’est jamais facile de s’aimer à 100 %, mais c’est en apprenant à connaître son corps et ses spécificités qu’on finit par l’adorer ! Le physique, c’est d’abord dans la tête ! Et puis, qui sait, on peut même trouver quelqu’un pour nous aimer <a href="https://www.youtube.com/watch?v=y4c0HF8hkoA"><em>« totalement, tendrement, tragiquement »</em></a> sur le chemin.</p>
+<p>Si vous voulez échanger quelques mots avec nous, vous pouvez toujours nous envoyer un message sur nos réseaux sociaux ! Le Point Q est sur <a href="https://www.instagram.com/lepoint.q/?hl=fr">Instagram</a>, <a href="https://twitter.com/LePointQ">Twitter</a> et <a href="https://www.facebook.com/lepointq.news/">Facebook</a>.</p>
+<p>Vous pouvez aussi retrouver tous nos anciens numéros sur <a href="https://lepointq.com">lepointq.com</a>, et nous faire un don (ponctuel ou mensuel) sur <a href="https://fr.tipeee.com/le-point-q">Tipeee</a>. Et si tu connais quelqu’un qui a envie de décomplexer, tu peux cliquer ici :</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; margin-bottom: 8px; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center; margin-top: 0;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>À la semaine prochaine,</p>
+<p>Julien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q.</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
