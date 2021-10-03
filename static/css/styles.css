@@ -427,7 +427,7 @@ main article .veracity.trueish {
 	border-color: var(--main-color);
 }
 
-main article blockquote:not(.tiktok-embed) {
+main article blockquote:not(.tiktok-embed):not(.instagram-media) {
 	display: table;
 	border-collapse: separate;
 	margin: 2rem auto 2rem 2rem;
@@ -436,18 +436,18 @@ main article blockquote:not(.tiktok-embed) {
 	max-width: 80%;
 }
 
-main article blockquote:not(.tiktok-embed):nth-child(2n) {
+main article blockquote:not(.tiktok-embed):not(.instagram-media):nth-child(2n+1) {
 	margin: 2rem 2rem 2rem auto;
 }
 
-main article blockquote:not(.tiktok-embed) p {
+main article blockquote:not(.tiktok-embed):not(.instagram-media) p {
 	text-align: left;
 	font-size: 1.3rem;
 	font-weight: bold;
 	color: white;
 }
 
-main article blockquote:not(.tiktok-embed):nth-child(2n) p {
+main article blockquote:not(.tiktok-embed):not(.instagram-media):nth-child(2n+1) p {
 	text-align: right;
 }
 
