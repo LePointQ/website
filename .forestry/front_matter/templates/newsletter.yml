@@ -60,7 +60,7 @@ fields:
     options: []
     source:
       type: pages
-      section: articles
+      section: articles-b6fb09a1-01fd-4a88-b56b-e30c84c440ef
       file: 
       path: 
   label: Témoignages
@@ -72,7 +72,7 @@ fields:
     options: []
     source:
       type: pages
-      section: articles
+      section: articles-b6fb09a1-01fd-4a88-b56b-e30c84c440ef
       file: 
       path: 
   label: Vu d'ailleurs
@@ -84,7 +84,7 @@ fields:
     options: []
     source:
       type: pages
-      section: articles
+      section: articles-b6fb09a1-01fd-4a88-b56b-e30c84c440ef
       file: 
       path: 
   label: On débunke
@@ -96,7 +96,7 @@ fields:
     options: []
     source:
       type: pages
-      section: articles
+      section: articles-b6fb09a1-01fd-4a88-b56b-e30c84c440ef
       file: 
       path: 
   label: La bonne nouvelle
