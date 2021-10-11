@@ -1,7 +1,6 @@
 +++
 authors = ["Orianne"]
 date = 2021-10-09T08:36:29Z
-draft = true
 image = "/media/uploads/bougie.jpg"
 preview = "Le sexe tantrique qu’est-ce que c’est&nbsp;? Pour la plupart, on ne sait pas et on donne notre au chat&nbsp;! Éléments de réponse avec Didier Cos, organisateur d’ateliers sur le sujet."
 section = "Vu d’ailleurs"

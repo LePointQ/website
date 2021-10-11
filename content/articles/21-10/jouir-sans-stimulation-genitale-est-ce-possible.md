@@ -1,7 +1,6 @@
 +++
 authors = ["Julien"]
 date = 2021-10-09T14:24:49Z
-draft = true
 image = "/media/uploads/ira-vishnevskaya-8dqavdcby1i-unsplash.jpg"
 preview = "D’autres parties du corps, et même la pensée, permettent de supplanter le tout-génital lors des rapports intimes. Cela se voit dans le cerveau."
 section = "On débunke"

@@ -1,7 +1,6 @@
 +++
 authors = ["Thaïs"]
 date = 2021-10-10T14:06:18Z
-draft = true
 image = "/media/uploads/couple-g32aafb10c_1920.jpg"
 preview = "\"Pour moi, c’est un plaisir sexuel à part entière, un moment partagé à deux. Je trouve ça même plus intime, car on peut plus se concentrer vraiment sur son plaisir, et sur le plaisir de l’autre, surtout quand on retire la finalité que représente la pénétration.\""
 section = "Témoignages"

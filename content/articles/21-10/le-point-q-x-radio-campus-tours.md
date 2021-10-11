@@ -1,7 +1,6 @@
 +++
 authors = ["Le Point Q"]
 date = 2021-10-10T13:45:30Z
-draft = true
 image = "/media/uploads/800px-logo_de_radio_campus_tours.png"
 preview = "Ce numéro (ainsi que d’autres à venir) a été réalisé en partenariat avec Radio Campus Tours, la radio des étudiant⋅e⋅s de l’IUT de Tours. Pour continuer à parler de sensualité, rendez-vous ce vendredi à 7h15."
 section = "La bonne nouvelle"
