@@ -1,0 +1,13 @@
++++
+authors = ["Ophélie"]
+date = 2021-10-17T21:09:32Z
+draft = true
+image = "/media/uploads/taboob.jpg"
+preview = "À l’occasion d’Octobre Rose, Le Point Q te propose une sélection de comptes Instagram abordant les seins sous toutes leurs facettes."
+section = "La bonne nouvelle"
+text = "À l’occasion d’Octobre Rose, le mois de l’année en faveur de la recherche pour lutter contre le cancer du sein, Le Point Q a fait des petites recherches sur les comptes Instagram abordant les seins sous toutes leurs facettes. Voici sa sélection :\n\n* [**The Body Optimist**](https://www.instagram.com/thebodyoptimist) **: un recueil des plusieurs comptes féministes et engagés célébrant tous les corps**\n\nLe compte a notamment partagé les illustrations du graphiste pop Alexsandro Palombo avec [des personnages de Disney arborant un sein ablaté](https://www.instagram.com/p/CUzuBGPI8YD/) et un ruban rose sur l’autre. Tu peux aussi y trouver un long témoignage de Sara Puhto sur la diversité des poitrines intitulé [\"Tous les seins sont différents et c’est normal !\"](https://www.instagram.com/p/CU6qm8JtbMY/). Son récit est accompagné d’une petite vidéo dynamique. En clair, ce compte est une mosaïque de confiance en soi et d’amour de son corps.\n\n* [**Slow Bra**](https://www.instagram.com/slowbra.fr) **_:_ un compte pour les fortes poitrines**\n\nCe compte réunit des témoignages et des anecdotes de femmes dont les seins sont généralement au-dessus du bonnet D. Le but est de déconstruire les idées reçues sur les gros seins.\n\n* [**Taboob**](https://www.instagram.com/taboobofficial/) **: des seins de toute beauté**\n\nUn mamelon recouvert de pétales de roses, un autre recouvert de plumes, ou encore pris dans un sandwich... Le compte Taboob met au défi la censure des seins sur Instagram. Créé le 1er juillet par deux artistes belges, Jasper Decklercq et Noortje Palmers, leurs mises en scène de différents tétons réunissent près de 14.000 followers.\n\nEt puis pour finir, une recommandation d’application. Comme tu le sais, l’autopalpation des seins est importante pour essayer de détecter les anomalies. **Keep A Breast** (disponible sur [Android](https://play.google.com/store/apps/details?id=org.keep_a_breast.kabapp&hl=fr&gl=US) et [iPhone](https://apps.apple.com/us/app/keep-a-breast/id1518953075)) te permet de t'auto-diagnotiquer en te montrant les bons gestes."
+themes = ["sein", "art"]
+title = "         Ne couvrez pas ce corps que nous voulons voir (et surtout apprendre à aimer)"
+veracity = "Faux"
+
++++
