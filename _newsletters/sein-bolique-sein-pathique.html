@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html
+	lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:v="urn:schemas-microsoft-com:vml"
+	xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+	<head>
+		<meta charset="utf-8" />
+		<!-- utf-8 works for most cases -->
+		<meta name="viewport" content="width=device-width" />
+		<!-- Forcing initial-scale shouldn't be necessary -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- Use the latest (edge) version of IE rendering engine -->
+		<meta name="x-apple-disable-message-reformatting" />
+		<!-- Disable auto-scale in iOS 10 Mail entirely -->
+		<meta
+			name="format-detection"
+			content="telephone=no,address=no,email=no,date=no,url=no"
+		/>
+		<!-- Tell iOS not to automatically link certain text strings. -->
+		<meta name="color-scheme" content="light" />
+		<meta name="supported-color-schemes" content="light" />
+		<title>🍈 Sein-bolique, sein-pathique</title>
+		<!-- The title tag shows in email notifications, like Android 4.4. -->
+
+		<!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+		<!--[if gte mso 9]>
+			<xml>
+				<o:OfficeDocumentSettings>
+					<o:AllowPNG />
+					<o:PixelsPerInch>96</o:PixelsPerInch>
+				</o:OfficeDocumentSettings>
+			</xml>
+		<![endif]-->
+
+		<!-- Web Font / @font-face : BEGIN -->
+		<!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+		<!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+		<!--[if mso]>
+			<style>
+				* {
+					font-family: sans-serif !important;
+				}
+			</style>
+		<![endif]-->
+
+		<!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+		<!--[if !mso]><!-->
+		<!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+		<!--<![endif]-->
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700"
+			rel="stylesheet"
+			type="text/css"
+		/>
+
+		<!-- Web Font / @font-face : END -->
+
+		<!-- CSS Reset : BEGIN -->
+		<style>
+			/* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+			:root {
+				color-scheme: light;
+				supported-color-schemes: light;
+			}
+
+			/* What it does: Remove spaces around the email design added by some email clients. */
+			/* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+			html,
+			body {
+				margin: 0 auto !important;
+				padding: 0 !important;
+				height: 100% !important;
+				width: 100% !important;
+			}
+
+			/* What it does: Stops email clients resizing small text. */
+			* {
+				-ms-text-size-adjust: 100%;
+				-webkit-text-size-adjust: 100%;
+			}
+
+			ul {
+				margin: 8px 0 8px 16px !important;
+				padding: 0;
+			}
+
+			blockquote {
+				display: table;
+				border-collapse: separate;
+				margin: 2rem auto 2rem 2rem;
+				padding: 0.25rem 0.5rem !important;
+				max-width: 80%;
+				font-size: 1.3rem;
+				font-weight: bold;
+				font-style: italic;
+				color: white;
+				background: #f47b67;
+			}
+
+			blockquote:nth-child(2n) {
+				margin: 2rem 2rem 2rem auto;
+			}
+
+			blockquote p {
+				margin: 8px 0;
+				font-size: 1.3rem;
+				font-weight: bold;
+				color: white;
+				text-align: left;
+			}
+
+			blockquote:nth-child(2n) p {
+				text-align: right;
+			}
+
+			/* What it does: Centers email on Android 4.4 */
+			div[style*='margin: 16px 0'] {
+				margin: 0 !important;
+			}
+
+			/* What it does: forces Samsung Android mail clients to use the entire viewport */
+			#MessageViewBody,
+			#MessageWebViewDiv {
+				width: 100% !important;
+			}
+
+			/* What it does: Stops Outlook from adding extra spacing to tables. */
+			table,
+			td {
+				mso-table-lspace: 0pt !important;
+				mso-table-rspace: 0pt !important;
+			}
+
+			/* What it does: Replaces default bold style. */
+			th {
+				font-weight: normal;
+			}
+
+			/* What it does: Fixes webkit padding issue. */
+			table {
+				border-spacing: 0 !important;
+				border-collapse: collapse !important;
+				table-layout: fixed !important;
+				margin: 0 auto !important;
+			}
+
+			/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+			a {
+				font-weight: bold !important;
+				text-decoration: none !important;
+				color: #f47b67 !important;
+			}
+
+			/* What it does: Uses a better rendering method when resizing images in IE. */
+			img {
+				-ms-interpolation-mode: bicubic;
+			}
+
+			/* What it does: A work-around for email clients meddling in triggered links. */
+			a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+				border-bottom: 0 !important;
+				cursor: default !important;
+				color: inherit !important;
+				text-decoration: none !important;
+				font-size: inherit !important;
+				font-family: inherit !important;
+				font-weight: inherit !important;
+				line-height: inherit !important;
+			}
+
+			h3 {
+				text-align: left;
+			}
+
+			/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+			.im {
+				color: inherit !important;
+			}
+
+			/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+			.a6S {
+				display: none !important;
+				opacity: 0.01 !important;
+			}
+			/* If the above doesn't work, add a .g-img class to any image in question. */
+			img.g-img + div {
+				display: none !important;
+			}
+
+			/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+			/* Create one of these media queries for each additional viewport size you'd like to fix */
+
+			/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+			@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+				u ~ div .email-container {
+					min-width: 320px !important;
+				}
+			}
+			/* iPhone 6, 6S, 7, 8, and X */
+			@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+				u ~ div .email-container {
+					min-width: 375px !important;
+				}
+			}
+			/* iPhone 6+, 7+, and 8+ */
+			@media only screen and (min-device-width: 414px) {
+				u ~ div .email-container {
+					min-width: 414px !important;
+				}
+			}
+		</style>
+		<!-- CSS Reset : END -->
+
+		<!-- Progressive Enhancements : BEGIN -->
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700');
+
+			/* What it does: Hover styles for buttons */
+			.button-td,
+			.button-a {
+				transition: all 100ms ease-in;
+			}
+			.button-td-primary:hover,
+			.button-a-primary:hover {
+				background: coral !important;
+				border-color: coral !important;
+			}
+
+			/* Media Queries */
+			@media screen and (max-width: 600px) {
+				.email-container {
+					width: 100% !important;
+					margin: auto !important;
+				}
+
+				/* What it does: Forces table cells into full-width rows. */
+				.stack-column,
+				.stack-column-center {
+					display: block !important;
+					width: 100% !important;
+					max-width: 100% !important;
+					direction: ltr !important;
+				}
+				/* And center justify these ones. */
+				.stack-column-center {
+					text-align: center !important;
+				}
+
+				/* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+				.center-on-narrow {
+					text-align: center !important;
+					display: block !important;
+					margin-left: auto !important;
+					margin-right: auto !important;
+					float: none !important;
+				}
+				table.center-on-narrow {
+					display: inline-block !important;
+				}
+
+				/* What it does: Adjust typography on small screens to improve readability */
+				.email-container p {
+					font-size: 17px !important;
+				}
+			}
+		</style>
+		<!-- Progressive Enhancements : END -->
+	</head>
+
+	<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+	<body
+		width="100%"
+		style="
+			margin: 0;
+			padding: 0 !important;
+			mso-line-height-rule: exactly;
+			background-color: #ffffff;
+		"
+	>
+		<center
+			role="article"
+			aria-roledescription="email"
+			lang="en"
+			style="width: 100%; background-color: #ffffff"
+		>
+			<!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+			<!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+			<!-- Preview Text Spacing Hack : BEGIN -->
+			<div
+				style="
+					display: none;
+					font-size: 1px;
+					line-height: 1px;
+					max-height: 0px;
+					max-width: 0px;
+					opacity: 0;
+					overflow: hidden;
+					mso-hide: all;
+					font-family: sans-serif;
+				"
+			>
+				<p>
+					À l’occasion d’Octobre Rose, Le Point Q s’attaque à un
+					monument de notre culture sexuelle : le sein ! Dans les
+					films, dans les pubs, et même dans nos relations, le sein
+					est au centre de l’attention...
+				</p>
+
+				&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+			</div>
+			<!-- Preview Text Spacing Hack : END -->
+
+			<!-- Email Body : BEGIN -->
+			<table
+				align="center"
+				role="presentation"
+				cellspacing="0"
+				cellpadding="0"
+				border="0"
+				width="600"
+				style="margin: auto"
+				class="email-container"
+			>
+				<!-- Email Header : BEGIN -->
+				<tr>
+					<td style="padding: 20px 0; text-align: center">
+						<a href="https://lepointq.com" target="_blank">
+							<img
+								src="https://lepointq.com/media/logo.png"
+								width="200"
+								style="vertical-align: middle"
+							/>
+						</a>
+					</td>
+				</tr>
+				<!-- Email Header : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<table
+							role="presentation"
+							cellspacing="0"
+							cellpadding="0"
+							border="0"
+							width="100%"
+						>
+							<tr>
+								<td
+									style="
+										padding: 20px;
+										font-family: 'Lato', 'Roboto',
+											sans-serif;
+										font-size: 16px;
+										line-height: 20px;
+										color: #555555;
+										text-align: justify;
+									"
+								>
+									<h1
+										style="
+											margin: 0 0 10px;
+											font-size: 25px;
+											line-height: 30px;
+											color: #000000;
+											font-weight: 900;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										Sein-bolique, sein-pathique
+									</h1>
+									<p>
+										Bienvenue dans ce nouveau numéro du
+										<strong>Point Q</strong> !
+									</p>
+									<p>
+										Ce mois-ci, c’est Octobre Rose, une
+										immense campagne de communication pour
+										la prévention et le traitement du
+										<a
+											href="https://www.ameli.fr/assure/sante/themes/cancer-sein/comprendre-cancer-sein"
+											>cancer du sein</a
+										>. C’est le cancer le plus répandu — et
+										le plus mortel — chez les femmes, mais
+										1 % des cas touche les hommes.
+									</p>
+									<p>
+										À cette occasion, Le Point Q s’attaque à
+										un monument de notre culture sexuelle :
+										le sein !
+									</p>
+									<p>
+										Dans les films, dans les pubs, et même
+										dans nos relations, le sein est au
+										centre de l’attention. « Argument de
+										vente », « provocation », le sein joue
+										sur les deux tableaux, selon le public
+										et le contexte. Vous le savez sûrement :
+										la poitrine féminine doit encore trouver
+										sa place dans un monde parfois trop
+										puritain, comme sur les réseaux sociaux.
+										Ce n’est pas pour rien que les Femen
+										l’utilisent comme vecteur de messages.
+									</p>
+									<p>
+										Vous êtes d’ailleurs 83 % (sur 76
+										répondant·e·s) à considérer les seins
+										comme une zone érotique, selon un
+										sondage effectué sur
+										<a
+											href="https://www.instagram.com/lepoint.q/?hl=fr"
+											>notre compte Instagram</a
+										>.
+										<strong
+											>Et les témoignages recueillis par
+											Juliette, Orianne et Thaïs le
+											montrent !</strong
+										>
+										Quant à leur sexualisation, ça n’a pas
+										toujours — ni partout — été le cas.
+										<strong
+											>Thaïs retrace l’histoire de la
+											sexualisation des seins dans le Vu
+											d’ailleurs !</strong
+										>
+										De son côté, Valentin revient sur le
+										cancer du sein à travers une légende
+										urbaine.
+										<strong
+											>Le soutif augmente-t-il le risque
+											d’en attraper un ?</strong
+										>
+										Découvrez-le dans le débunk.
+										<strong
+											>Enfin, Ophélie nous parle de la
+											censure des seins sur les réseaux
+											sociaux... et des initiatives qui
+											existent pour la contrer !</strong
+										>
+										Ou du moins, pour se jouer d’elle, tant
+										qu’elle existera.
+									</p>
+									<p>
+										Et pour finir,
+										<strong
+											>Morgan nous raconte l’histoire
+											d’une célèbre héroïne de jeu
+											vidéo... Lara Croft !</strong
+										>
+									</p>
+									<p>
+										Le Point Q vous souhaite une bonne
+										lecture !
+									</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<!-- 1 Column Text : END -->
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<p
+							style="
+								color: #f47b67 !important;
+								font-size: 16px;
+								text-align: center;
+								margin-bottom: 40px;
+								font-family: 'Lato', 'Roboto', sans-serif;
+							"
+						>
+							● ● ●
+						</p>
+						<img
+							src="https://lepointq.com/media/uploads/boobs.jpg"
+							width="600"
+							height=""
+							alt="alt_text"
+							border="0"
+							style="
+								width: 100%;
+								max-width: 600px;
+								height: auto;
+								background: #dddddd;
+								margin: auto;
+								display: block;
+							"
+							class="g-img"
+						/>
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<table
+							role="presentation"
+							cellspacing="0"
+							cellpadding="0"
+							border="0"
+							width="100%"
+						>
+							<tr>
+								<td
+									style="
+										padding: 20px 20px 10px 20px;
+										font-family: 'Lato', 'Roboto',
+											sans-serif;
+										font-size: 16px;
+										line-height: 20px;
+										color: #000000;
+										text-align: justify;
+									"
+								>
+									<h2
+										style="
+											margin: 0 0 10px;
+											font-size: 24px;
+											line-height: 28px;
+											color: #000000;
+											font-weight: 900;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										<img
+											src="https://lepointq.com/media/icons/temoignages.png"
+											width="40"
+											height="40"
+											style="vertical-align: middle"
+										/>
+										&laquo;&nbsp;Quand le téton se dévoile,
+										c’est ultra excitant&nbsp;&raquo;
+									</h2>
+									<h3
+										style="
+											margin: 10px 0 10px;
+											font-size: 18px;
+											line-height: 20px;
+											color: #555555;
+											font-weight: normal;
+											font-style: italic;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										<span>
+											Par Orianne, Juliette & Thaïs
+										</span>
+									</h3>
+
+									<h3>
+										<strong
+											>Quelle place ont tes seins lors
+											d’un rapport sexuel ?</strong
+										>
+									</h3>
+									<blockquote>
+										<p>
+											<em
+												>« Excitant pour l’autre
+												personne. »</em
+											>
+											<br />
+										</p>
+									</blockquote>
+									<blockquote>
+										<p>
+											<em
+												>« Importante . Je n’imagine pas
+												un rapport sans attention(s)
+												particulière(s) pour mes seins.
+												En tant que femme, j’aime jouer
+												avec les mamelons de mon
+												partenaire. Et si j’avais une
+												partenaire femme, je les
+												chérirais comme les miens. »</em
+											>
+											<br />
+										</p>
+									</blockquote>
+									<blockquote>
+										<p>
+											<em
+												>« Ils sont là pour exciter,
+												faire chauffer l’ambiance, mais
+												aussi pour être stimulés du
+												début à la fin. »</em
+											>
+											<br />
+										</p>
+									</blockquote>
+									<blockquote>
+										<p>
+											<em
+												>« Même en tant qu’homme, j’aime
+												qu’on me les prenne, les
+												caresse. »</em
+											>
+											<br />
+										</p>
+									</blockquote>
+									<ul>
+										<li>
+											<strong
+												><em>Juliette*</em> — 24 ans,
+												bisexuelle</strong
+											>
+										</li>
+									</ul>
+									<p>
+										« Quand j’étais petite, je voulais faire
+										une ablation. Jusqu’à mes 10 ans
+										peut-être, je les détestais. Aujourd’hui
+										je n’en suis pas fan et ils me font
+										parfois mal au dos, mais ils m’apportent
+										du plaisir de temps à autre.
+									</p>
+									<p>
+										Je considère les seins comme une zone
+										érogène, mais comme pour l’excitation
+										sexuelle, je pense que c’est parce
+										qu’une partie non négligeable du plaisir
+										est psychique. Avec mon ex-partenaire
+										(femme), il y avait clairement des
+										écarts dans la place que j’accordais à
+										mes seins. J’aime beaucoup stimuler
+										cette zone, alors qu’elle aimait
+										beaucoup moins le faire. »
+									</p>
+									<ul>
+										<li>
+											<strong
+												><em>Gérôme*</em> — 24 ans, en
+												couple, hétérosexuel (mais pas
+												fermé à l’idée de tomber
+												amoureux d’un autre)</strong
+											>
+										</li>
+									</ul>
+									<p>
+										« Quand le téton se dévoile, c’est ultra
+										excitant. J’aime voir la réaction de
+										l’autre sans lui toucher le sexe. Le
+										meilleur conseil, c’est de le caresser
+										dans le creux de la main. Chez les
+										hommes, c’est aussi
+										<a
+											href="https://lepointq.com/articles/21-10/jouir-sans-stimulation-genitale-est-ce-possible/"
+											>une zone érogène sous-estimée</a
+										>. Il y a pas mal de terminaisons
+										nerveuses et je pense que le côté
+										féminin qui y est culturellement associé
+										est à déconstruire. »
+									</p>
+									<ul>
+										<li>
+											<strong
+												><em>Manon*</em> — 24 ans,
+												célibataire,
+												hétérosexuelle</strong
+											>
+										</li>
+									</ul>
+									<p>
+										« Très honnêtement, ce n’est pas une
+										zone érogène, ça ne me procure pas plus
+										de plaisir que ça. J’ai une forte
+										poitrine, qui ne se voit pas forcément
+										car je n’assume pas tout le temps. Lors
+										d’un rapport, les hommes les découvrent
+										et prennent du plaisir. Ça m’excite un
+										peu plus. Mais c’est vrai que je préfère
+										pendant la phase de séduction qu’on me
+										regarde d’abord dans les yeux. »
+									</p>
+									<ul>
+										<li>
+											<strong
+												><em>Sophie*</em> — 24 ans,
+												célibataire,
+												hétérosexuelle</strong
+											>
+										</li>
+									</ul>
+									<p>
+										« Clairement oui, pour moi c’est une
+										zone érogène, qu’elle soit stimulée par
+										les mains ou la langue, que ce soit une
+										douce caresse ou une pression un peu
+										plus appuyée (pas trop non plus !) Ça
+										fait vraiment monter le plaisir, je
+										savoure toujours ce moment, d’autant
+										plus quand je constate que mon
+										partenaire prend autant de plaisir que
+										moi.
+									</p>
+									<p>
+										Ça m’a aussi fait décomplexer dessus,
+										moi qui ai toujours trouvé qu’ils
+										étaient vraiment petits, sans beaucoup
+										de forme... Je me suis rendu compte que
+										mes partenaires les aimaient quand même,
+										et qu’ils ne semblaient absolument pas
+										s’en formaliser. Ça me fait me sentir
+										belle et désirable, bien sûr uniquement
+										quand il y a consentement.
+									</p>
+									<p>
+										<strong>[TW attouchement]</strong> Je
+										dois dire qu’au début de ma vie sexuelle
+										j’étais super inquiète, car une fois un
+										encadrant de sport a eu un geste en trop
+										à mon égard. Quand j’avais 19 ans, il
+										m’a saisi un sein à pleine main, à
+										travers le soutien-gorge et a commencé à
+										le presser doucement. Ça n’a duré que
+										quelques secondes mais je m’étais
+										toujours demandée si ça allait
+										m’empêcher de prendre du plaisir
+										lorsqu’un de mes partenaires aurait ce
+										geste. Fort heureusement, grâce à des
+										partenaires prévenants, aujourd’hui je
+										peux dissocier ces deux choses et
+										prendre quand même du plaisir… Même si
+										je continue d’avoir un peu peur qu’un
+										jour, le souvenir me revienne en pleine
+										face et me gâche cette belle
+										sensation… »
+									</p>
+									<p>
+										<em>* Les prénoms ont été modifiés</em>
+									</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<p
+							style="
+								color: #f47b67 !important;
+								font-size: 16px;
+								text-align: center;
+								margin-bottom: 40px;
+								font-family: 'Lato', 'Roboto', sans-serif;
+							"
+						>
+							● ● ●
+						</p>
+						<img
+							src="https://lepointq.com/media/uploads/a_lady_in_her_bath_1961-9-13-768x874.jpg"
+							width="600"
+							height=""
+							alt="alt_text"
+							border="0"
+							style="
+								width: 100%;
+								max-width: 600px;
+								height: auto;
+								background: #dddddd;
+								margin: auto;
+								display: block;
+							"
+							class="g-img"
+						/>
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<table
+							role="presentation"
+							cellspacing="0"
+							cellpadding="0"
+							border="0"
+							width="100%"
+						>
+							<tr>
+								<td
+									style="
+										padding: 20px 20px 10px 20px;
+										font-family: 'Lato', 'Roboto',
+											sans-serif;
+										font-size: 16px;
+										line-height: 20px;
+										color: #000000;
+										text-align: justify;
+									"
+								>
+									<h2
+										style="
+											margin: 0 0 10px;
+											font-size: 24px;
+											line-height: 28px;
+											color: #000000;
+											font-weight: 900;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										<img
+											src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+											width="40"
+											height="40"
+											style="vertical-align: middle"
+										/>
+										Vu d&rsquo;ailleurs
+									</h2>
+									<h3
+										style="
+											margin: 10px 0 10px;
+											font-size: 18px;
+											line-height: 20px;
+											color: #555555;
+											font-weight: normal;
+											font-style: italic;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										<img
+											src="https://lepointq.com/media/team/Thaïs.jpg"
+											width="40"
+											height="40"
+											style="
+												vertical-align: middle;
+												border-radius: 50%;
+												margin-right: 5px;
+											"
+										/>
+
+										<span> Par Thaïs </span>
+									</h3>
+
+									<h4
+										style="
+											margin: 20px 0 10px;
+											font-size: 20px;
+											line-height: 20px;
+											color: #000000;
+											font-weight: bold;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										Hypersexualisation des seins&nbsp;: une
+										histoire pas si universelle
+									</h4>
+
+									<p>
+										<strong
+											><em
+												>« Couvrez ce sein que je ne
+												saurais voir ».</em
+											></strong
+										>
+									</p>
+									<p>
+										Ce célèbre extrait du
+										<em>Tartuffe</em> de Molière, pièce du
+										XVIIe siècle, sonne encore bien
+										d’actualité aujourd’hui. À la plage, sur
+										les réseaux sociaux ou encore dans la
+										rue, pour allaiter son enfant : les
+										seins des femmes doivent être cachés
+										pour les préserver des regards désireux.
+										Sans cela, elles prennent le risque
+										d’être considérées comme des
+										exhibitionnistes, voire insultées.
+									</p>
+									<p>
+										Les seins semblent de nos jours
+										indissociables de la sexualité, mais ça
+										n’a pas toujours été le cas.
+									</p>
+									<p>
+										L’anthropologue Clellan Ford et
+										l’ethnologue Frank Beach s’étaient en
+										effet déjà posé la question en 1951 dans
+										leur livre
+										<em>Patterns of Sexual Behavior.</em>
+										Sur 191 cultures étudiées, de l’Océanie
+										à l’Amérique Latine, les hommes
+										associaient les seins à un désir sexuel
+										dans seulement 13 d’entre elles.
+									</p>
+									<p>
+										Selon Margaret Meads, une autre célèbre
+										anthropologue du siècle dernier, la
+										poitrine est en outre bien moins
+										sexualisée dans les cultures où les
+										femmes les montrent en permanence. Dans
+										notre société, elle est très vite cachée
+										aux jeunes enfants.
+									</p>
+									<h3>
+										<strong
+											>Les pieds avant les seins</strong
+										>
+									</h3>
+									<p>
+										Il y a plusieurs siècles, d’autres
+										parties du corps ont été largement plus
+										sexualisées que les seins des femmes à
+										travers le monde.
+									</p>
+									<p>
+										En Chine par exemple, les pieds ont
+										longtemps été considérés comme la partie
+										la plus intime du corps. Les hommes les
+										fantasmaient petits et recourbés. Et
+										sous la dynastie Qing (1644-1911), les
+										manuels sexuels présentent même
+										<a
+											href="https://historycollection.com/excruciating-process-bound-feet-considered-extremely-erotic-china/2/"
+											>48 façons de les incorporer dans le
+											rapport sexuel.</a
+										>
+										Une représentation qui a encouragé la
+										pratique du bandage des pieds — à
+										l’origine de terribles souffrances pour
+										des générations de femmes.
+									</p>
+									<p>
+										En Angleterre, sous l’ère Victorienne
+										(XIXe siècle), ce sont les chevilles des
+										femmes que l’on cache. Montrer un
+										décolleté est alors perçu comme moins
+										impudique qu’une cheville nue.
+									</p>
+									<p>
+										Longtemps associés à la maternité, ce
+										n’est qu’au XIVe siècle que les seins
+										auraient commencé à être
+										particulièrement sexualisés en France,
+										notamment
+										<a
+											href="https://www.franceculture.fr/societe/a-lorigine-du-topless"
+											>avec l’arrivée des corsages</a
+										>. Dans la peinture, les poitrines de
+										femmes apparaissent alors sans qu’elles
+										soient en train d’allaiter, comme sur
+										cette peinture en illustration, signée
+										François Clouet.
+									</p>
+									<p>
+										C’est au XXe siècle que se renforce
+										cette hypersexualisation systématique,
+										avec le développement des magazines et
+										des films porno. On promeut la figure de
+										la Pin-up, et la taille des seins
+										devient particulièrement importante.
+									</p>
+									<p>
+										Aujourd’hui, cette hypersexualisation
+										vaut aux femmes françaises d’être
+										embarrassées lorsqu’elles utilisent leur
+										poitrine pour allaiter. Selon une étude
+										de 2014,
+										<a
+											href="http://www.slate.fr/story/92373/allaiter-publiquement-turquie-france"
+											>seulement 34 % d’entre elles
+											estiment qu’il est normal de donner
+											le sein en public</a
+										>, contre 57 % aux États-Unis ou encore
+										38 % en Turquie.
+									</p>
+									<p>
+										Une hypersexualisation associée à un
+										<em>« male gaze »</em> (regard masculin)
+										et que cherchent à déconstruire de
+										nombreuses féministes. En tête, le
+										mouvement américain
+										<a
+											href="https://www.instagram.com/freethenipple/?hl=fr"
+											><em>Free the Nipple</em></a
+										>, qui lutte contre la censure des
+										poitrines et des tétons dans l’espace
+										public.
+									</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<p
+							style="
+								color: #f47b67 !important;
+								font-size: 16px;
+								text-align: center;
+								margin-bottom: 40px;
+								font-family: 'Lato', 'Roboto', sans-serif;
+							"
+						>
+							● ● ●
+						</p>
+						<img
+							src="https://lepointq.com/media/uploads/dainis-graveris-jkpddlfy2qe-unsplash.jpg"
+							width="600"
+							height=""
+							alt="alt_text"
+							border="0"
+							style="
+								width: 100%;
+								max-width: 600px;
+								height: auto;
+								background: #dddddd;
+								margin: auto;
+								display: block;
+							"
+							class="g-img"
+						/>
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<table
+							role="presentation"
+							cellspacing="0"
+							cellpadding="0"
+							border="0"
+							width="100%"
+						>
+							<tr>
+								<td
+									style="
+										padding: 20px 20px 10px 20px;
+										font-family: 'Lato', 'Roboto',
+											sans-serif;
+										font-size: 16px;
+										line-height: 20px;
+										color: #000000;
+										text-align: justify;
+									"
+								>
+									<h2
+										style="
+											margin: 0 0 10px;
+											font-size: 24px;
+											line-height: 28px;
+											color: #000000;
+											font-weight: 900;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										<img
+											src="https://lepointq.com/media/icons/on_debunke.png"
+											width="40"
+											height="40"
+											style="vertical-align: middle"
+										/>
+										On débunke&nbsp;!
+									</h2>
+									<h3
+										style="
+											margin: 10px 0 10px;
+											font-size: 18px;
+											line-height: 20px;
+											color: #555555;
+											font-weight: normal;
+											font-style: italic;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										<img
+											src="https://lepointq.com/media/team/Valentin.jpg"
+											width="40"
+											height="40"
+											style="
+												vertical-align: middle;
+												border-radius: 50%;
+												margin-right: 5px;
+											"
+										/>
+
+										<span> Par Valentin </span>
+									</h3>
+
+									<h4
+										style="
+											margin: 20px 0 10px;
+											font-size: 20px;
+											line-height: 20px;
+											color: #000000;
+											font-weight: bold;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										&laquo;&nbsp;Porter un soutien-gorge
+										favorise le cancer du sein&nbsp;&raquo;
+									</h4>
+
+									<p
+										style="
+											margin: 0 0 10px;
+											font-size: 18px;
+											line-height: 25px;
+											color: crimson;
+											font-weight: bold;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											border: 4px solid crimson;
+											display: table;
+											text-align: left;
+											margin-left: auto;
+											margin-right: auto;
+										"
+									>
+										&nbsp;FAUX&nbsp;
+									</p>
+
+									<p>
+										Le soutien-gorge suscite beaucoup de
+										fantasmes. Symbole d’oppression
+										patriarcale pour les militantes du
+										Mouvement de Libération des Femmes,
+										<a
+											href="https://www.lemonde.fr/m-styles/article/2013/04/11/le-soutien-gorge-serait-il-inutile_3158156_4497319.html"
+											>finalement accusé de ne pas
+											soutenir la poitrine</a
+										>
+										mais de faire s’affaisser les seins, le
+										soutien-gorge favoriserait même le
+										développement du cancer du sein.
+									</p>
+									<p>
+										Une rumeur qui date des années 90,
+										d’après l’<a
+											href="https://leseclairages.e-cancer.fr/porter-un-soutien-gorge-favorise-t-il-le-cancer-du-sein/"
+											>Institut national du cancer</a
+										>. À l’origine de cette infox, une
+										lecture hâtive de
+										<a
+											href="https://pubmed.ncbi.nlm.nih.gov/1827274/"
+											>cette étude</a
+										>. Elle indique que les femmes ne
+										portant pas de soutien-gorge ont moitié
+										moins de risque de développer un cancer
+										du sein que les utilisatrices de soutif.
+										Or les chercheur·euse·s le précisent
+										bien :
+										<strong
+											>ces femmes n’utilisant pas de
+											soutien-gorge sont en général plus
+											minces, avec un bonnet plus petit
+											que les autres !</strong
+										>
+										C’est donc plutôt de ce côté qu’il faut
+										chercher les causes du cancer du sein.
+									</p>
+									<p>
+										Aujourd’hui, on sait que le surpoids,
+										une consommation importante d’alcool, un
+										manque de pratique sportive ou d’autres
+										facteurs génétiques
+										<a
+											href="https://cancer.ca/fr/cancer-information/cancer-types/breast/risks"
+											>peuvent favoriser ce type de
+											cancer</a
+										>.
+									</p>
+									<p>
+										Mais la rumeur ne s’arrête pas là. En
+										2002, un livre,
+										<em>Dressed to Kill</em>,
+										<a
+											href="https://information.tv5monde.com/terriennes/jeter-ou-ne-pas-jeter-son-soutien-gorge-aux-orties-359182"
+											>remet le sujet sur la table</a
+										>, en affirmant que le soutien-gorge
+										bloquerait la
+										<a
+											href="https://cancer.ca/fr/cancer-information/what-is-cancer/lymphatic-system"
+											>circulation lymphatique</a
+										>, donc, pour faire court, la
+										purification du système immunitaire et
+										sa lutte contre les maladies. Une
+										affirmation sans fondement, mais
+										<a
+											href="https://factuel.afp.com/non-il-nexiste-pas-de-lien-etabli-entre-le-port-du-soutien-gorge-et-le-cancer-du-sein"
+											>qui trouve depuis un écho sur les
+											réseaux sociaux</a
+										>.
+									</p>
+									<p>
+										Aujourd’hui, les facteurs de risque de
+										cancer du sein — cancer le plus fréquent
+										et le plus meurtrier chez la
+										femme — sont bien connus. Mais de
+										nouvelles études peuvent toujours
+										révéler la dangerosité de certains
+										produits répandus, comme
+										<a
+											href="https://www.lci.fr/sante/recherche-cancer-du-sein-des-chercheurs-suisses-appellent-a-l-interdiction-des-sels-d-aluminium-dans-les-deodorants-anti-transpirants-apres-une-nouvelle-etude-2198858.html"
+											>les sels d’aluminium dans les
+											déodorants</a
+										>.
+									</p>
+									<p>
+										Alors on fait attention, on n’oublie pas
+										son autopalpation mammaire, et le
+										<a
+											href="https://www.has-sante.fr/jcms/pprd_2974746/fr/cancer-du-sein"
+											>rendez-vous chez son médecin</a
+										>
+										pour s’assurer que tout va bien !
+									</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<p
+							style="
+								color: #f47b67 !important;
+								font-size: 16px;
+								text-align: center;
+								margin-bottom: 40px;
+								font-family: 'Lato', 'Roboto', sans-serif;
+							"
+						>
+							● ● ●
+						</p>
+						<img
+							src="https://lepointq.com/media/uploads/taboob.jpg"
+							width="600"
+							height=""
+							alt="alt_text"
+							border="0"
+							style="
+								width: 100%;
+								max-width: 600px;
+								height: auto;
+								background: #dddddd;
+								margin: auto;
+								display: block;
+							"
+							class="g-img"
+						/>
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<table
+							role="presentation"
+							cellspacing="0"
+							cellpadding="0"
+							border="0"
+							width="100%"
+						>
+							<tr>
+								<td
+									style="
+										padding: 20px 20px 10px 20px;
+										font-family: 'Lato', 'Roboto',
+											sans-serif;
+										font-size: 16px;
+										line-height: 20px;
+										color: #000000;
+										text-align: justify;
+									"
+								>
+									<h2
+										style="
+											margin: 0 0 10px;
+											font-size: 24px;
+											line-height: 28px;
+											color: #000000;
+											font-weight: 900;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										<img
+											src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+											width="40"
+											height="40"
+											style="vertical-align: middle"
+										/>
+										La bonne nouvelle
+									</h2>
+									<h3
+										style="
+											margin: 10px 0 10px;
+											font-size: 18px;
+											line-height: 20px;
+											color: #555555;
+											font-weight: normal;
+											font-style: italic;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										<img
+											src="https://lepointq.com/media/team/Ophélie.jpg"
+											width="40"
+											height="40"
+											style="
+												vertical-align: middle;
+												border-radius: 50%;
+												margin-right: 5px;
+											"
+										/>
+
+										<span> Par Ophélie </span>
+									</h3>
+
+									<h4
+										style="
+											margin: 20px 0 10px;
+											font-size: 20px;
+											line-height: 20px;
+											color: #000000;
+											font-weight: bold;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										Boobs out&nbsp;! En croisade contre la
+										censure d’Instagram
+									</h4>
+
+									<p>
+										Sur Instagram, il fait meilleur être une
+										vulve qu’un sein. Il y a trois semaines,
+										je vous parlais du compte
+										<a
+											href="https://lepointq.com/articles/21-09/cheres-vulves-vous-etes-toutes-belles/"
+											>The Vulva Gallery</a
+										>, qui en présente de toutes sortes pour
+										<a
+											href="https://lepointq.com/newsletters/decomplexons/"
+											>décomplexer</a
+										>
+										les femmes. Cette semaine, place aux
+										seins ! J’ai fait des petites recherches
+										sur les comptes Instagram qui les
+										abordent sous toutes leurs facettes.
+										Voici une sélection :
+									</p>
+									<ul>
+										<li>
+											<a
+												href="https://www.instagram.com/thebodyoptimist"
+												><strong
+													>The Body Optimist</strong
+												></a
+											>
+											<strong
+												>: un recueil de plusieurs
+												comptes féministes et engagés,
+												célébrant tous les corps</strong
+											>
+										</li>
+									</ul>
+									<p>
+										Le compte a notamment partagé les
+										illustrations du graphiste pop
+										Alexsandro Palombo avec
+										<a
+											href="https://www.instagram.com/p/CUzuBGPI8YD/"
+											>des personnages de Disney arborant
+											un sein ablaté</a
+										>
+										et un ruban rose sur l’autre. Tu peux
+										aussi y trouver un long témoignage de
+										Sara Puhto sur la diversité des
+										poitrines intitulé
+										<a
+											href="https://www.instagram.com/p/CU6qm8JtbMY/"
+											>« Tous les seins sont différents et
+											c’est normal ! »</a
+										>. Son récit est accompagné d’une petite
+										vidéo dynamique. Ce compte est une
+										mosaïque de confiance en soi et d’amour
+										de son corps.
+									</p>
+									<ul>
+										<li>
+											<a
+												href="https://www.instagram.com/slowbra.fr"
+												><strong>Slow Bra</strong></a
+											>
+											<strong
+												><em>:</em> un compte pour les
+												fortes poitrines</strong
+											>
+										</li>
+									</ul>
+									<p>
+										Ce compte réunit des témoignages et des
+										anecdotes de femmes dont les seins sont
+										généralement au-dessus du bonnet D. Le
+										but est de déconstruire les idées reçues
+										sur les gros seins.
+									</p>
+									<ul>
+										<li>
+											<a
+												href="https://www.instagram.com/taboobofficial/"
+												><strong>Taboob</strong></a
+											>
+											<strong
+												>: des seins de toute
+												beauté</strong
+											>
+										</li>
+									</ul>
+									<p>
+										Un mamelon recouvert de pétales de
+										roses, un autre recouvert de plumes, ou
+										encore pris dans un sandwich... Le
+										compte Taboob met au défi la censure des
+										seins sur Instagram. Créé le 1er juillet
+										par deux artistes belges, Jasper
+										Decklercq et Noortje Palmers, leurs
+										mises en scène de différents tétons
+										réunissent près de 14.000 followers.
+									</p>
+									<p>
+										Et puis pour finir, une recommandation
+										d’application. Comme tu le sais,
+										l’autopalpation des seins est importante
+										pour essayer de détecter les anomalies.
+										<strong>Keep A Breast</strong>
+										(disponible sur
+										<a
+											href="https://play.google.com/store/apps/details?id=org.keep_a_breast.kabapp&amp;hl=fr&amp;gl=US"
+											>Android</a
+										>
+										et
+										<a
+											href="https://apps.apple.com/us/app/keep-a-breast/id1518953075"
+											>iPhone</a
+										>) te permet de t’auto-diagnostiquer en
+										te montrant les bons gestes.
+									</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<table
+							role="presentation"
+							cellspacing="0"
+							cellpadding="0"
+							border="0"
+							width="100%"
+						>
+							<tr>
+								<td
+									style="
+										padding: 20px 20px 10px 20px;
+										font-family: 'Lato', 'Roboto',
+											sans-serif;
+										font-size: 16px;
+										line-height: 20px;
+										color: #000000;
+										text-align: justify;
+									"
+								>
+									<p
+										style="
+											color: #f47b67 !important;
+											font-size: 16px;
+											text-align: center;
+											margin-bottom: 40px;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+										"
+									>
+										● ● ●
+									</p>
+									<h2
+										style="
+											margin: 0 0 10px;
+											font-size: 24px;
+											line-height: 28px;
+											color: #000000;
+											font-weight: 900;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											text-align: center;
+										"
+									>
+										<img
+											src="https://lepointq.com/media/icons/plume_morgan.png"
+											width="40"
+											height="40"
+											style="vertical-align: middle"
+										/>
+										Sous la plume de Morgan
+									</h2>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<!-- Hero Image, Flush : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<img
+							src="https://lepointq.com/media/uploads/strip-morgan-sein.jpg"
+							width="600"
+							height=""
+							alt="alt_text"
+							border="0"
+							style="
+								width: 100%;
+								max-width: 600px;
+								height: auto;
+								background: #dddddd;
+								margin: auto;
+								display: block;
+							"
+							class="g-img"
+						/>
+					</td>
+				</tr>
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<table
+							role="presentation"
+							cellspacing="0"
+							cellpadding="0"
+							border="0"
+							width="100%"
+						>
+							<tr>
+								<td
+									style="
+										padding: 10px 20px 10px;
+										font-family: 'Lato', 'Roboto',
+											sans-serif;
+										font-size: 16px;
+										line-height: 20px;
+										color: #555555;
+										text-align: justify;
+									"
+								>
+									<p
+										style="
+											color: #f47b67 !important;
+											font-size: 16px;
+											text-align: center;
+											margin-bottom: 40px;
+										"
+									>
+										● ● ●
+									</p>
+									<p>
+										Le Point Q sur les seins, c’est fini !
+										Mais il y a tant à dire que nous y
+										reviendrons sûrement dans un prochain
+										numéro, plus spécifiquement dédié au
+										cancer du sein. D’ailleurs, si vous
+										voulez nous proposer un sujet, n’hésitez
+										pas, il sera inscrit sur notre liste de
+										thèmes à traiter ! Pour cela, un petit
+										message par mail (<a
+											href="contact@lepointq.com"
+											>mailto:contact@lepointq.com</a
+										>) ou sur nos réseaux sociaux (<a
+											href="https://www.instagram.com/lepoint.q/"
+											>Instagram</a
+										>,
+										<a href="https://twitter.com/LePointQ"
+											>Twitter</a
+										>,
+										<a
+											href="https://www.facebook.com/lepointq.news"
+											>Facebook</a
+										>) suffit !
+									</p>
+									<p>
+										Et si vous nous aimez très fort, vous
+										pouvez toujours passer par
+										<a
+											href="https://fr.tipeee.com/le-point-q"
+											>Tipeee</a
+										>
+										pour nous faire un petit don !
+									</p>
+									<p>
+										Merci à celleux qui le font, et aux
+										personnes qui lisent ces lignes, vous
+										êtes doux·ces comme des cachous.
+									</p>
+									<button
+										style="
+											background: #f47b67;
+											border: none;
+											border-radius: 4px;
+											padding: 8px 16px;
+											cursor: pointer;
+											color: white;
+											font-weight: bold;
+											margin-left: auto;
+											margin-right: auto;
+											margin-bottom: 8px;
+											display: table;
+										"
+									>
+										<a
+											href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}"
+											target="_blank"
+											style="
+												color: white !important;
+												font-size: 18px;
+											"
+										>
+											Je parraine mes potes !
+										</a>
+									</button>
+									<p
+										style="
+											text-align: center;
+											margin-top: 0;
+										"
+									>
+										Si le bouton ne fonctionne pas,
+										<a
+											href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}"
+											target="_blank"
+											>clique ici</a
+										>
+									</p>
+									<p>À la semaine prochaine,</p>
+									<p>
+										Julien, Juliette, Ophélie, Orianne, Tom,
+										Thaïs et Valentin, aka Le Point Q.
+									</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<!-- 1 Column Text : END -->
+
+				<!-- 1 Column Text : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff">
+						<table
+							role="presentation"
+							cellspacing="0"
+							cellpadding="0"
+							border="0"
+							width="100%"
+						>
+							<tr>
+								<td
+									style="
+										font-family: 'Lato', 'Roboto',
+											sans-serif;
+										font-size: 16px;
+										color: #555555;
+										text-align: center;
+									"
+								>
+									<b>Le Point Q</b> a reçu le soutien du
+									<br />
+									fonds d’intervention associatif de
+									<img
+										src="https://lepointq.com/media/logo-scpo.png"
+										style="
+											display: block;
+											width: 128px;
+											margin: 8px auto;
+										"
+									/>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<!-- 1 Column Text : END -->
+
+				<!-- Clear Spacer : BEGIN -->
+				<tr>
+					<td
+						aria-hidden="true"
+						height="40"
+						style="font-size: 0px; line-height: 0px"
+					>
+						&nbsp;
+					</td>
+				</tr>
+				<!-- Clear Spacer : END -->
+			</table>
+			<!-- Email Body : END -->
+
+			<!-- Email Footer : BEGIN -->
+			<!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+			<!-- Email Footer : END -->
+
+			<!-- Full Bleed Background Section : BEGIN -->
+			<table
+				role="presentation"
+				cellspacing="0"
+				cellpadding="0"
+				border="0"
+				width="100%"
+				style="background-color: #f47b67"
+			>
+				<tr>
+					<td>
+						<div
+							align="center"
+							style="max-width: 600px; margin: auto"
+							class="email-container"
+						>
+							<!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+							<table
+								role="presentation"
+								cellspacing="0"
+								cellpadding="0"
+								border="0"
+								width="100%"
+							>
+								<tr>
+									<td
+										style="
+											padding: 20px;
+											text-align: center;
+											font-family: 'Lato', 'Roboto',
+												sans-serif;
+											font-size: 15px;
+											line-height: 20px;
+											color: #ffffff;
+										"
+									>
+										<p>
+											<a
+												href="https://facebook.com/lepointq.news"
+												target="_blank"
+											>
+												<img
+													src="https://lepointq.com/media/fa-facebook-f.png"
+													style="margin: 0 5px"
+												/>
+											</a>
+											<a
+												href="https://instagram.com/lepoint.q/"
+												target="_blank"
+											>
+												<img
+													src="https://lepointq.com/media/fa-instagram.png"
+													style="margin: 0 5px"
+												/>
+											</a>
+											<a
+												href="https://twitter.com/LePointQ"
+												target="_blank"
+											>
+												<img
+													src="https://lepointq.com/media/fa-twitter.png"
+													style="margin: 0 5px"
+												/>
+											</a>
+										</p>
+										<p style="margin: 10px 0 10px">
+											<b>Le Point Q</b>
+										</p>
+										<p style="margin: 0 0 10px">
+											211 rue de la Convention<br />75&thinsp;015
+											PARIS
+										</p>
+									</td>
+								</tr>
+							</table>
+							<!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+						</div>
+					</td>
+				</tr>
+			</table>
+			<!-- Full Bleed Background Section : END -->
+
+			<table
+				role="presentation"
+				cellspacing="0"
+				cellpadding="0"
+				border="0"
+				width="100%"
+			>
+				<!-- Clear Spacer : BEGIN -->
+				<tr>
+					<td
+						aria-hidden="true"
+						height="40"
+						style="font-size: 0px; line-height: 0px"
+					>
+						&nbsp;
+					</td>
+				</tr>
+				<!-- Clear Spacer : END -->
+			</table>
+
+			<!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+		</center>
+	</body>
+</html>
