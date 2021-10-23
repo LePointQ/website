@@ -430,26 +430,30 @@ main article .veracity.trueish {
 main article blockquote:not(.tiktok-embed):not(.instagram-media) {
 	display: table;
 	border-collapse: separate;
-	margin: 2rem auto 2rem 2rem;
-	padding: 0.25rem 0.5rem;
-	background: var(--main-color);
 	max-width: 80%;
+	/* margin: 2rem auto 2rem 2rem; */
+	/* padding: 0.25rem 0.5rem; */
+	/* background: var(--main-color); */
+	margin: 2rem auto 2rem 1rem;
+	padding: 0.5rem 0.25rem 0.5rem 1rem;
+	border-left: 0.25rem solid var(--main-color);
 }
 
-main article blockquote:not(.tiktok-embed):not(.instagram-media):nth-child(2n+1) {
+/* main article blockquote:not(.tiktok-embed):not(.instagram-media):nth-child(2n+1) {
 	margin: 2rem 2rem 2rem auto;
-}
+} */
 
 main article blockquote:not(.tiktok-embed):not(.instagram-media) p {
 	text-align: left;
 	font-size: 1.3rem;
 	font-weight: bold;
-	color: white;
+	/* color: white; */
+	color: var(--main-color);
 }
 
-main article blockquote:not(.tiktok-embed):not(.instagram-media):nth-child(2n+1) p {
+/* main article blockquote:not(.tiktok-embed):not(.instagram-media):nth-child(2n+1) p {
 	text-align: right;
-}
+} */
 
 main article li {
 	list-style-type: disc;
