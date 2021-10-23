@@ -1,7 +1,7 @@
 +++
 date = 2021-10-22T15:13:00Z
 draft = true
-edito = "Bienvenue dans ce nouveau numéro du **Point Q** !"
+edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nVous vous apprêtez à lire un numéro spécial, réalisé dans le cadre d'Octobre Rose. [La semaine dernière, on parlait du sein](https://lepointq.com/newsletters/sein-bolique-sein-pathique/), de votre rapport à cet organe, de son inclusion dans l'espace public et sur les réseaux sociaux. On a même retracé l'histoire d'une _fake news_ sur le cancer du sein.\n\nC'est de "
 la_bonne_nouvelle = []
 numero = 39
 on_debunke = []
