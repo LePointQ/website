@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🎃 Halloween&nbsp;: Jack your lanterns?</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			display: table;
+			border-collapse: separate;
+			max-width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			margin: 2rem auto 2rem 1rem !important;
+			padding: 0.5rem 0.25rem 0.5rem 1rem !important;
+			border-left: 0.25rem solid #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: #F47B67;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Un numéro placé sous le signe de la fête, mais aussi du sang, des citrouilles et de la peur. On va parler fantômes, zombies et déguisements... Êtes-vous prêt·e·s à affronter vos angoisses les plus profondes au lit ? C’est ce que nous allons voir !</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Halloween&nbsp;: Jack your lanterns?
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong>...</p>
+<p>Un numéro placé sous le signe de la fête, mais aussi du sang, des citrouilles et de la peur. On va parler fantômes, zombies et déguisements... Êtes-vous prêt·e·s à affronter vos angoisses les plus profondes au lit ? C’est ce que nous allons voir !</p>
+<p>Pas de témoignages cette semaine, mais un peu de pop culture. Dans les séries comme dans les films, on aime se déguiser pour s’amuser au lit ! <strong>Thaïs vous a compilé quelques œuvres dans lesquelles les personnages se déguisent.</strong> De quoi vous donner des idées lors de votre prochaine partie de jambes en l’air ! Mais à la différence d’autres fêtes costumées, à Halloween, on se déguise aussi de manière sexy. Depuis quand les sorcières, les infirmières et les chats (?) sont devenu·e·s sexy ? <strong>Valentin s’est posé la question, la réponse est à découvrir dans le Vu d’ailleurs !</strong> Est-ce que vous avez peur des fantômes ? <strong>Si oui, ne lisez pas le débunk de Julien : il nous apprend qu’il est possible de coucher avec un spectre...</strong> Comment est-ce possible ? Derrière cette idée quelque peu loufoque, il existe des explications bien rationnelles à ce phénomène. <strong>Ophélie ferme la marche (funèbre)</strong> <strong>avec d’autres recommandations : celles de films qui vous feront vous blottir contre votre crush en soirée.</strong> Car soyons honnêtes : c’est aussi (un peu) pour ça qu’on aime les films d’horreur !</p>
+<p>Halloweenement vôtre,</p>
+<p>Le Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/lily-ola.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Fantaisies déguisées à l’écran 
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+											<span>
+												Par Le Point Q
+											</span>
+										</h3>
+					
+					
+					<p>Comme vous n’aviez pas l’air d’avoir beaucoup de fantaisies autour des costumes d’Halloween, on est allé chercher du côté de notre pop culture G.</p>
+<p>Dans le petit écran, les rapports sexuels costumés, ça en fait rêver plus d’un⋅e !</p>
+<p><strong>À commencer du côté de notre série fétiche, qu’on ne saurait qu’encore et toujours vous recommander : <em>Sex Education</em>.</strong> Le truc de Lily, passionnée d’aliens et de cosplay, c’est d’écrire des histoires érotiques impliquant des extra-terrestres et des voyages intergalactiques. Des histoires fantaisistes qui finissent par prendre vie grâce à des accessoires et des costumes élaborés lors de ses rapports avec sa petite amie Ola, qui joue également le jeu, même si elle finira pas avouer à sa petite amie qu’elle voudrait également des relations sexuelles « normales ». Heureusement, les deux ados finissent par trouver un équilibre.</p>
+<p>Certains déguisements plus classiques s’invitent également sous la couette. <strong>Dans la série <em>Friends</em>, c’est Rachel qui s’habille en princesse Leia de Star Wars pour réaliser un des fantasmes de Ross</strong> (avant le fameux « <em>break</em> »). Selon Phoebe, tous les hommes de leur génération partagent ce fantasme de Leia en bikini : <em>« C’est le moment où elle a arrêté d’être une princesse pour devenir une femme »</em>. Mais à chacun d’ailleurs son fantasme costumé : quelques saisons plus tard, Monica demande à Chandler de garder son costume de Père Noël avant d’aller dans la chambre. <em>« Santa, really ? »</em></p>
+<p><img src="http://lepointq.com/media/uploads/leia.gif" style="width: 100%;" /></p>
+<p>Loin de l’univers des sitcoms, l’issue de ces rapports déguisés n’est pas forcément (ré)jouissante : de nombreuses séries et films horrifiques sont l’occasion de rapports sexuels de ce genre, avec un personnage aux intentions plutôt... meurtrières. <strong>C’est le cas de quasi-toutes les saisons d’<em>American Horror Story</em></strong>, à commencer par l’homme recouvert de cuir noir des pieds au visage qui hante la maison — et les nuits — des Harmon.</p>
+<p><strong>Et puisqu’on parle d’Halloween, il est impossible de passer à côté du film éponyme de 2007, réalisé par Rob Zombie.</strong> Vous l’avez peut-être vu lors de votre soirée du 31 octobre. Dans cette version d’<em>Halloween</em>, le masque iconique de Michael Myers est d’abord porté par le copain de sa sœur, qui, pour faire une surprise à celle-ci, l’enfile quand elle a les yeux fermés... Et il insiste pour faire l’amour avec elle en le portant. Le masque, tout en dissimulant le visage du jeune tueur, révèle aussi ses intentions les plus noires... Terrifiant, n’est-ce pas ?</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/1a4c42a0fac8ff5563e5628eb4480c5d.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Quand Halloween est devenu sexy
+										</h4>
+									
+					
+					<p>Si Halloween n’est pas une fête très répandue en France — ce qui est bien dommage —, son nom ne manque pas d’évoquer des images marquantes. Citrouilles, bonbons, bougies, films d’horreur et déguisements... sexy ou non !</p>
+<p>Ils sont principalement destinés aux femmes, même si les choses changent. Vous vous dites sûrement que vos arrière-grands-mères ne s’habillaient pas en sorcière à porte-jarretelles à leur époque. Alors comment est-on passé d’une fête païenne autour du culte des esprits, à <a href="https://www.youtube.com/watch?v=NjWX6fITeW0"><em>« la seule nuit de l’année où une fille peut s’habiller comme la pire des chiennes [sans que] personne n’y trouve à redire »</em></a> (<em>Mean Girl</em>) ?</p>
+<p>À l’origine, rien de sexy dans la fête d’Halloween. Chez les Celtes, la fête (alors appelée Samain) est l’équivalent du Nouvel An. Un moment où les esprits malins peuvent passer dans le monde réel. Pour s’en protéger, les vivants se déguisent.</p>
+<p>Jusqu’au XIXe siècle, la tradition d’Halloween perdure localement dans le monde anglo-saxon, et reste une célébration folklorique. <a href="https://www.bustle.com/articles/189967-the-history-of-sexy-halloween-costumes-from-crepe-paper-to-snapchat-filters">Dans le même temps, les fêtes et bals costumés se multiplient.</a> Avec le développement des transports, on s’intéresse par ailleurs de plus en plus en plus aux autres cultures. <a href="https://time.com/3547024/sexy-halloween-costumes-history/">Les déguisements deviennent plus exotiques, un peu plus révélateurs</a> — toujours dans le respect des bonnes mœurs — et s’inspirent par exemple de l’Égypte antique.</p>
+<p>C’est au cours du XXe siècle que le <em>sexy Halloween</em> explose. Dès les années 1940, des studios d’Hollywood produisent des publicités mettant en scène <a href="https://www.huffpost.com/archive/ca/entry/sexy-halloween-costume-history_ca_5db5ff07e4b05df62ec163c8">leurs actrices déguisées en sorcières dans un décor sur le thème d’Halloween.</a></p>
+<p>Le phénomène s’ancre dans les années 1970... grâce au mouvement LGBTQ+ ! C’est le moment de la révolution sexuelle aux États-Unis : les communautés commencent à parader et à exposer dans l’espace public une autre sexualité, <em>drag</em> et osée. Une transgression qui a vite trouvé son écho le 31 octobre.</p>
+<p>Aujourd’hui, l’industrie du déguisement, et la sexualisation du corps féminin, ont fait flamber l’offre de déguisements sexy. Au point que sexy, tout peut le devenir : qui n’a jamais rêvé d’être attirant·e, <a href="https://time.com/3524369/halloween-sexy-costumes-lobster-yandy/">déguisé·e en tranche de pizza, en tacos ou homard</a> ? Pour certain·e·s, cette sexualisation d’Halloween est simplement <a href="https://scholarspace.library.gwu.edu/concern/file_sets/2b88qc32v?locale=fr">la suite logique des costumes genrés dès l’enfance</a>, où les filles doivent être belles.</p>
+<p>Mais c’est aussi une manière de gagner en confiance en soi, par exemple pour tester de nouvelles choses au lit ! <a href="https://www.nytimes.com/2006/10/19/fashion/19costume.html?_r=2&amp;">Avec un déguisement, on peut être qui on veut...</a> et Halloween ne dure qu’une nuit par an.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/syarafina-yusof-idtwhegenv4-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Julien
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Coucher avec un fantôme, est-ce possible&nbsp;?
+										</h4>
+									
+					
+					<p>Faire l’amour avec des êtres de chair serait-il devenu banal ? Certaines personnes affirment avoir eu des relations sexuelles... avec des fantômes. Oui, des fantômes.</p>
+<p>C’est le cas de l’actrice Natasha Blasick, visible dans <em>Paranoid Activity 2</em> (vous ne le connaissez pas, c’est normal, c’est un film de série B). La comédienne d’origine ukrainienne aurait expérimenté deux rapports intimes avec un esprit, a-t-elle expliqué <a href="https://www.huffpost.com/entry/natasha-blasick-ghost-sex_n_5240566">en 2014</a>.</p>
+<p>Allongée dans son lit, la comédienne aurait <em>« senti quelque chose entrer dans la pièce »</em> sans voir personne, avant de sentir le toucher d’un être, <em>« le poids de son corps »</em> sur elle et sa <em>« chaleur »</em>. Une expérience <em>« plaisante »,</em> conclut-elle, même si se pose évidemment la question du consentement.</p>
+<p>Des récits d’expériences similaires remonteraient même à la civilisation mésopotamienne, explique <a href="https://www.vice.com/fr/article/9bpzj3/interview-spectrophile-088">Vice</a>, qui raconte que les « incubes » seraient des démons jouissant des femmes durant leur sommeil — leurs homologues féminines seraient quant à elles appelées « succubes ». <em>« La spectrophilie est plus répandue que ce que l’on pense ! »</em>, explique à Vice une certaine Aude, victime dans les années 2010 de ces apparentes visites nocturnes.</p>
+<p>Le mystère plane sur ce phénomène. Mais des scientifiques ont émis une hypothèse bien cartésienne derrière ces ébats aériens : ces personnes pourrait être victimes de paralysie du sommeil.</p>
+<p>Si vous n’avez jamais subi cela, tant mieux pour vous : cela peut être traumatique — j’en sais quelque chose.</p>
+<p>Coincés quelques secondes entre les états d’éveil et de sommeil, les sujets se trouvent enfermés dans leur propre corps et en proie à <a href="https://www.mic.com/articles/126513/ghost-sex-is-a-thing-and-its-not-as-weird-or-creepy-as-you-think">des hallucinations auditives et visuelles</a> possiblement cauchemardesques. <a href="https://www.sbs.com.au/topics/voices/health/article/2016/10/12/when-ghost-creeps-your-bed-sleep-paralysis">Une porte ouverte pour ces expériences paranormales</a>.</p>
+<p>Mais pas d’inquiétude : <a href="https://sante.lefigaro.fr/article/paralysie-du-sommeil-a-quoi-est-du-ce-phenomene/">ce phénomène est courant et sans gravité</a>, sauf lorsque sa répétition est le symptôme d’une maladie sous-jacente, la narcolepsie.</p>
+<p>Alors n’hésitez pas à nous partager vos expériences fantômatiques si vous en avez connues !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/horror-cinema.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Ophélie.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Ophélie
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Dites-le avec un film d’horreur
+										</h4>
+									
+					
+					<p>Une des grandes scènes classiques de flirt représentée dans les films est le moment du rendez-vous amoureux au cinéma. L’un⋅e des deux prétendant⋅e⋅s choisit d’amener son/sa partenaire voir un film, souvent de genre « épouvante-horreur », dans l’espoir de se blottir l’un⋅e contre l’autre au moment des scènes fatidiques de peur.</p>
+<p>Partager des émotions fortes peut rapprocher et de faire monter la tension. Regarder des films d’horreur a des effets hormonaux sur le corps, avec une libération de dopamine et également un boost du taux d’adrénaline. En cette période d’Halloween, Le Point Q t’a concocté une liste de films d’horreur à partager avec ta moitié :</p>
+<ul>
+<li><strong>Une histoire d’amour sur un fond d’apocalypse et de science-fiction : <a href="https://www.youtube.com/watch?v=ZKJ6yPY16kc"><em>Cloverfield</em></a> de Matt Reves</strong> — Rob organise une fête pour son départ prochain vers le Japon. La célébration a lieu à New York et parmi les invité⋅e⋅s se trouve Hub, vidéaste d’un soir, qui veut immortaliser le moment. Alors que la sauterie bat son plein, c’est le moment où l’attaque du siècle commence sur la ville.</li>
+<li><strong>La transmission d’une malédiction après une expérience sexuelle :</strong> <a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=228463.html"><strong>It Follows</strong></a> <strong>de David Robert Mitchell</strong> — Jay a une expérience sexuelle d’apparence anodine qui va changer le reste de sa vie. Elle se retrouve confrontée à des visions et, surtout, elle a la sensation d’être suivie.</li>
+<li><strong>Un récit de tension sexuelle entre passionné⋅e⋅s de voitures : <a href="https://www.youtube.com/watch?v=aKvck-t_t3s"><em>Crash</em></a> de David Cronenberg</strong> — James et Catherine sont un couple avec une sexualité qui n’est plus très trépidante pour eux. Ils décident de se lancer dans l’expérience des accidents de voitures pour raviver le désir et deviennent des adeptes de violentes collisions. Attention, le film est à réserver aux plus averti⋅e⋅s d’entre vous.</li>
+</ul>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Le Point Q, c’est fini pour aujourd’hui !</p>
+<p>On espère que ce numéro d’Halloween vous aura permis de prolonger un peu les frissons d’hier soir... ou vous aura donné des idées pour la prochaine fois !</p>
+<p>Autre nouvelle terrifiante : Le Point Q prend un peu de repos. Ne vous en faites pas, on ne parle pas de repos éternel ! Juste une petite pause, histoire de recharger les batteries de tout le monde, et pour revenir en pleine forme vous parler de sexualité.</p>
+<p>On reste tout de même connecté·e·s, sur <a href="https://www.facebook.com/lepointq.news/">Facebook</a>, <a href="https://twitter.com/LePointQ">Twitter </a>et <a href="https://www.instagram.com/lepoint.q/?hl=fr">Instagram</a>, et toutes nos newsletters sont accessibles sur <a href="https://lepointq.com/">lepointq.com</a> !</p>
+<button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; margin-bottom: 8px; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center; margin-top: 0;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p>
+<p>Si vous souhaitez nous permettre de nous acheter des bonbons (on plaisante, ce sera plutôt pour payer l’envoi hebdomadaire de la newsletter), vous pouvez nous faire un petit don sur <a href="https://fr.tipeee.com/le-point-q">Tipeee</a>. C’est prouvé scientifiquement : Le Point Q, c’est bon pour la santé !</p>
+<p>On revient très vite,</p>
+<p>Julien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q.</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
