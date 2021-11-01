@@ -5,7 +5,7 @@ edito = "Bienvenue dans ce nouveau numéro du **Point Q**...\n\nUn numéro plac�
 la_bonne_nouvelle = "articles/21-10/dites-le-avec-un-film-d-horreur.md"
 numero = 40
 on_debunke = "articles/21-10/coucher-avec-un-fantome-est-ce-possible.md"
-outro = ""
+outro = "Le Point Q, c'est fini pour aujourd'hui !\n\nOn espère que ce numéro d'Halloween vous aura permis de prolonger un peu les frissons d'hier soir... ou vous aura donné des idées pour la prochaine fois !\n\nAutre nouvelle terrifiante : Le Point Q prend un peu de repos. Ne vous en faites pas, on ne parle pas de repos éternel ! Juste une petite pause, histoire de recharger les batteries de tout le monde, et pour revenir en pleine forme vous parler de sexualité.\n\nOn reste tout de même connecté·e·s, sur [Facebook](https://www.facebook.com/lepointq.news/), [Twitter ](https://twitter.com/LePointQ)et [Instagram](https://www.instagram.com/lepoint.q/?hl=fr), et toutes nos newsletters sont accessibles sur lepointq.com !\n\nSi vous souhaitez nous permettre de nous acheter des bonbons (on plaisante, ce sera plutôt pour payer l'envoi hebdomadaire de la newsletter), vous pouvez nous faire un petit don sur [Tipeee](https://fr.tipeee.com/le-point-q). C'est prouvé scientifiquement : Le Point Q, c'est bon pour la santé !\n\nOn revient très vite,\n\nJulien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q."
 plume_morgan = ""
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
 temoignages = "articles/21-10/fantaisies-deguisees-a-l-ecran.md"
