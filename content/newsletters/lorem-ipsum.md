@@ -7,9 +7,9 @@ numero = 40
 on_debunke = "articles/21-10/coucher-avec-un-fantome-est-ce-possible.md"
 outro = "Le Point Q, c'est fini pour aujourd'hui !\n\nOn espère que ce numéro d'Halloween vous aura permis de prolonger un peu les frissons d'hier soir... ou vous aura donné des idées pour la prochaine fois !\n\nAutre nouvelle terrifiante : Le Point Q prend un peu de repos. Ne vous en faites pas, on ne parle pas de repos éternel ! Juste une petite pause, histoire de recharger les batteries de tout le monde, et pour revenir en pleine forme vous parler de sexualité.\n\nOn reste tout de même connecté·e·s, sur [Facebook](https://www.facebook.com/lepointq.news/), [Twitter ](https://twitter.com/LePointQ)et [Instagram](https://www.instagram.com/lepoint.q/?hl=fr), et toutes nos newsletters sont accessibles sur lepointq.com !\n\nSi vous souhaitez nous permettre de nous acheter des bonbons (on plaisante, ce sera plutôt pour payer l'envoi hebdomadaire de la newsletter), vous pouvez nous faire un petit don sur [Tipeee](https://fr.tipeee.com/le-point-q). C'est prouvé scientifiquement : Le Point Q, c'est bon pour la santé !\n\nOn revient très vite,\n\nJulien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q."
 plume_morgan = ""
-preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
+preview = "Un numéro placé sous le signe de la fête, mais aussi du sang, des citrouilles et de la peur. On va parler fantômes, zombies et déguisements... Êtes-vous prêt·e·s à affronter vos angoisses les plus profondes au lit ? C'est ce que nous allons voir !"
 temoignages = "articles/21-10/fantaisies-deguisees-a-l-ecran.md"
-title = "Lorem ipsum"
+title = "Halloween : Jack your lanterns ?"
 vu_d_ailleurs = "articles/21-10/quand-halloween-est-devenu-sexy.md"
 
 +++
