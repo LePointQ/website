@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>👄 &laquo;&nbsp;Le Rocky c’est&nbsp;: sois qui tu es, fais ce que tu veux, tout le monde s’en fout.&nbsp;&raquo;</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			display: table;
+			border-collapse: separate;
+			max-width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			margin: 2rem auto 2rem 1rem !important;
+			padding: 0.5rem 0.25rem 0.5rem 1rem !important;
+			border-left: 0.25rem solid #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: #F47B67;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Vous le savez, dans l’équipe, on aime bien le cinéma. Cette semaine, on a décidé de se rendre au Studio Galande, où chaque semaine depuis 40 ans, on projette The Rocky Horror Picture Show.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									&laquo;&nbsp;Le Rocky c’est&nbsp;: sois qui tu es, fais ce que tu veux, tout le monde s’en fout.&nbsp;&raquo;
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q !</strong></p>
+<p>Toute l’équipe vous souhaite une superbe année, et espère que 2022 sera remplie de bonnes choses pour vous tou·te·s.</p>
+<p>On revient après une longue pause, mais elle était nécessaire pour recharger nos batteries. Pour notre grand retour, Le Point Q vous propose cette semaine un numéro reportage !</p>
+<p>Vous le savez, dans l’équipe, on aime bien le <a href="https://lepointq.com/newsletters/sex-and-the-cine/">cinéma</a>. Particulièrement le <a href="https://lepointq.com/newsletters/les-fiertes-a-l-affiche/">cinéma LGBT</a>. Du coup, on a décidé de se rendre au Studio Galande, dans le Ve arrondissement de Paris. Particularité de cette petite salle indépendante : <strong>tous les vendredis et samedis soir, on y projette <em>The Rocky Horror Picture Show</em>.</strong> Un film culte américain, qu’on regarde avec une troupe d’acteur·rice·s devant l’écran, qui rejouent le scénario en live ! C’est interactif et déconcertant.</p>
+<p>Le lien avec Le Point Q ? Le <em>Rocky Horror</em> (ou le <em>Rocky</em>, de son petit nom), est <a href="https://www.huffpost.com/entry/rocky-horror-picture-show-musical-matt-baume_n_5bc63c51e4b0a8f17ee6be26">un monument culturel de la culture queer</a>.</p>
+<p>Alors installez-vous confortablement, et préparez-vous à en prendre plein les yeux !</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/rocky-1.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Dans l’antre du Rocky Horror Picture Show&nbsp;: sexualité, débauche et affirmation de soi
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+											<span>
+												Par Tom & Valentin
+											</span>
+										</h3>
+					
+					
+					<p>Au 42 rue Galande, à Paris, en plein cœur du quartier latin, deux pancartes noires encadrées de rouge flashy contrastent avec les trois piliers en bois qui les soutiennent. Sur celle de droite : « Studio Galande ». Sur l’autre, des lèvres rouges, pulpeuses, <strong>comme une invitation à venir goûter le fruit défendu</strong>.</p>
+<p>Il est 21h. Dans la file d’attente, une classe de lycéen⋅ne⋅s option « théâtre », des parisien⋅ne⋅s curieux⋅ses et des habitué⋅e⋅s. Déguisé⋅e⋅s et maquillé⋅e⋅s, on les reconnaît à leur sac à dos rempli d’intrigantes poches de riz cru. Les portes s’ouvrent et nous nous faufilons jusqu’au sous-sol, où se situe l’unique salle de ce cinéma indépendant.</p>
+<p>Nous sommes tou⋅te⋅s réuni⋅e⋅s pour assister à la représentation, mi-cinématographique, mi-théâtrale, du <em>Rocky Horror Picture Show</em> : le film culte de Jim Sharman, sorti en 1975. La majorité du public, comme nous, ne sait pas à quoi s’attendre.</p>
+<p>Et ça commence fort. Dans la petite salle d’une soixantaine de places, pas question de rester religieusement assis⋅es. Devant l’écran, la troupe de comédien·ne·s bénévoles <em>No Good Kids</em> s’active sur la scène en sous-vêtements. Iels rejouent le film qui défile derrière elleux (et dont on ne comprend pas grand-chose), enchaînent les vannes, et nous font interpréter la chorégraphie tendancieuse du <em>Time Warp</em>. Les mains sur les hanches et les fesses en arrière, c’est déconcertant ! Mais quel est ce film excentrique ?</p>
+<img src='http://localhost:1313/media/uploads/rocky-7.jpg' style='width: 100%;' />
+<h3><strong>Le pitch du film</strong></h3>
+<p>Brad Majors et Janet Weiss (Barry Bostwick et Susan Sarandon dans le film) viennent tout juste de se fiancer. En chemin pour annoncer la nouvelle à un ami, iels tombent en panne et trouvent refuge dans le château du Docteur Frank-N-Furter (Tim Curry), un « transsexuel travesti de Transylvanie », comme il se désigne lui-même. Dans son logis, se tient un véritable festival de débauche et de dépravation. À partir de là, les événements deviennent de plus en plus étranges.</p>
+<p>À la fois grand classique et film de série B, le <em>Rocky</em> a eu, dès ses débuts, ses passionné⋅e⋅s. Aux États-Unis, où les spectateur⋅rice⋅s sont plus dissipé⋅e⋅s qu’en France, certain⋅e⋅s se sont mis à faire des jeux de mots et à rejouer le film, devenant le spectacle. Le phénomène s’est exporté partout dans le monde, et notamment au Studio Galande à Paris.</p>
+<h3><strong>Prendre le public par la main</strong></h3>
+<p>Jugulus, 39 ans, joue ce soir le rôle de Frank-N-Furter. En appliquant son mascara, il reconnaît que la représentation est une expérience à part entière. <em>« La manière dont on propose le spectacle, c’est assez unique. Le</em> Rocky <em>animé, ça existe partout dans le monde, mais pas de cette manière. Nous on prend par la main les spectateur⋅rice⋅s, alors que dans la culture anglo-saxonne, ce sont elleux qui font le show. »</em></p>
+<img src='http://localhost:1313/media/uploads/rocky-9.jpg' style='width: 100%;' />
+<p>Quelques dizaines de minutes plus tard, il parcourt la scène, en porte-jarretelles. Voilà quatorze ans que ce fou du <em>Rocky</em> vient presque tous les vendredis danser le <em>Time Warp</em> sur les planches du Studio. Comment en est-il arrivé là ? Comme pour les autres membres de la troupe, le hasard est aux manettes. <em>« Tout le monde arrive un peu de la même manière,</em> explique Maëlle, 26 ans, une autre comédienne. <em>Un jour tu es dans la salle, à la fin de la séance tu donnes ton numéro, et la fois d’après tu es sur scène ! »</em></p>
+<h3><strong>Jouer presque nu</strong></h3>
+<p>Pour Thomas, dans la peau de Brad Majors ce soir, c’est une première fois. Première fois qu’il interprète le « héros » du film, après avoir enfilé le costume de Rocky (le body-buildé un peu bêta), puis celui de Riff-Raff (le majordome incestueux). Lui se retrouve en slip blanc sur scène. <em>« Le moment le plus compliqué, c’est lorsqu’on doit se dénuder. Assumer le premier regard des autres. Après, ça va mieux. »</em></p>
+<img src='http://localhost:1313/media/uploads/rocky-3.jpg' style='width: 100%;' />
+<p>Il avoue avoir eu du mal à assumer son corps, mais l’expérience de jeu est pour lui une libération. <em>« Ça permet de se rendre compte qu’un corps est un corps, qu’il est socialement construit. »</em> Curieux, le jeune homme de 23 ans exprime même le désir d’essayer d’autres rôles. <em>« J’aimerais bien jouer Janet, parce que c’est une femme forte qui se découvre une certaine liberté sexuelle dans le film. C’est rare d’avoir des personnages aussi forts dans les années 70. »</em> Au Rocky, le genre n’est pas une question, tout le monde peut jouer tous les rôles.</p>
+<h3><strong>Un show féministe ?</strong></h3>
+<p>Marine, 29 ans, est justement la Janet de ce soir. Arrivée dans la troupe il y a trois ans, son incarnation du personnage a évolué avec le temps. <em>« Avant, je faisais une Janet classique, comme celle du film, sans profondeur. Mais aujourd’hui je joue une Janet beaucoup plus féministe, qui a confiance en elle, et qui assume d’être une “salope”. Quand on demande au public de l’insulter, je veux montrer qu’être une salope c’est OK en fait ! »</em></p>
+<p>Féministe, le <em>Rocky</em> ? Pour Marine, cela ne fait aucun doute. <em>« Janet, c’est un peu un transfert de la nana hétéro cisgenre de base qu’on nous demande d’être en tant que “demoiselles”, mais qui prend conscience au cours du film que la sexualité c’est chouette, et que ça peut se faire avec des personnes chouettes, et pas seulement avec un Brad hétéro chiant. Elle s’accepte comme elle est, et assume ses envies et ses besoins. »</em></p>
+<img src='http://localhost:1313/media/uploads/rocky-4.jpg' style='width: 100%;' />
+<h3><strong>Ode à la libération sexuelle</strong></h3>
+<p>Vous l’aurez compris : le <em>Rocky Horror Picture Show</em> est une ode à la libération des mœurs, à la curiosité sexuelle et au rejet des normes sociales. Transidentité, travestissement, et bisexualité/pansexualité sont au cœur du film.</p>
+<p>L’hétérosexualité exclusive est remise en question. Le public est invité à se moquer ouvertement des deux « héros ». De Brad et son côté « trou du cul », coincé dans son carcan social. De Janet « Vice », cette femme qui a osé se laisser aller aux plaisirs de la chair avant le mariage, et, pire encore, tromper l’homme auquel elle s’est promise. Et en général, de nous-mêmes, coincé·e·s dans nos règles arbitraires, comme celle qui dit qu’on ne doit pas faire de bruit, jeter de riz ou danser au cinéma.</p>
+<p><em>« Le</em> Rocky <em>c’est : sois qui tu es, fais ce que tu veux, tout le monde s’en fout »</em>, résume Maëlle. En mettant en scène côte à côte des personnages qui découvrent leur sexualité, et d’autres qui s’affranchissent des diktats de l’époque, il invite les spectateur⋅rice⋅s à découvrir une autre forme de sexualité.</p>
+<h3><strong>Un film <em>queer</em></strong></h3>
+<p>C’est aussi, et surtout, une mise en scène de la communauté <em>queer</em> (au sens propre du terme : « étrange », « bizarre ») présentée comme celle qui, peut-être, détient le secret d’une vie épanouie. <em>« Don’t dream it, be it »</em>, chante Frank-N-Furter, alors que les personnages se livrent à une orgie aquatique dans sa piscine. <em>« Give yourself to absolute pleasure »</em>, commande-t-il encore.</p>
+<p>Dans cette immense débauche qu’est le <em>Rocky</em>, on n’est jamais plus heureux·se qu’en se laissant aller. <em>« C’est une bulle intemporelle, une bulle d’amour et de paillettes</em>, s’enthousiasme Marine. <em>Quand on ressort du spectacle, on a la banane. »</em> Tout n’est pourtant pas rose dans le film, et certains passages laissent penser que le consentement n’est pas toujours au centre des préoccupations des personnages. Néanmoins, le message général est louable, et l’appel lancé aux spectateur·rice·s par le film, et plus encore par les comédien·ne·s, ne demande qu’à être propagé !</p>
+<p><strong><em>Pour vous faire votre propre idée du spectacle, un show est assuré tous les vendredis et samedis à 21h, au Studio Galande (42 rue Galande à Paris). Réservation conseillée !</em></strong></p>
+<p><br /><img src='http://localhost:1313/media/uploads/rocky-2.jpg' style='width: 100%;' /></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			
+
+			
+
+			
+
+			
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Le Point Q, c’est (déjà) fini pour aujourd’hui ! On espère que ce numéro reportage vous a plu. N’hésitez pas à nous envoyer un message sur nos réseaux sociaux pour nous donner votre avis ou nous proposer d’autres thèmes (<a href="https://www.instagram.com/lepoint.q/?hl=fr">Instagram</a>, <a href="https://twitter.com/LePointQ">Twitter</a>, <a href="https://www.facebook.com/lepointq.news/">Facebook</a>) ! Si vous voulez en lire plus sur le <em>Rocky Horror Picture Show</em> au Studio Galande, <a href="https://medium.com/@tomfevrier/au-studio-galande-le-time-warp-se-danse-depuis-quarante-ans-b65f8841f246">Tom avait déjà assisté à une représentation il y a trois ans</a>.</p>
+<p>On profite de ce nouveau numéro pour vous informer d’un changement de rythme : à partir de la semaine prochaine, Le Point Q paraîtra toutes les deux semaines, et non plus chaque semaine. Pour faire simple, un nouveau numéro arrivera dans vos boîtes mail le 10 janvier, et le suivant le 24 !</p>
+<p><button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; margin-bottom: 8px; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center; margin-top: 0;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p></p>
+<p>Le Point Q vous souhaite une très belle année, pleine de communication, de plaisir et de bons moments passés à deux (ou plus !).</p>
+<p>À la semaine prochaine,</p>
+<p>Julien, Juliette, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q.</p>
+<p><br /><img src='https://lepointq.com/media/uploads/tumblr_lzmch6ehwd1r1.gif' style='width: 100%;' /></p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

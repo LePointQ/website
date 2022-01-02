@@ -24,7 +24,8 @@ exports.typografix = (html, { omitGuillemets = false } = {}) => {
 		.replace(/ \?/g, "&nbsp;?")
 		.replace(/ - /g, "&nbsp;&mdash;&nbsp;")		// Tirets cadratins
 		.replace(/ -,/g, "&nbsp;&mdash;,")
-		.replace(/ \%/g, "&nbsp;%");				// Pourcentages
+		.replace(/ \%/g, "&nbsp;%")					// Pourcentages
+		.replace(/(src|style)=’[^’]+’/g, (str) => str.replace(/’/g, '\''));
 
 	return output;
 }
