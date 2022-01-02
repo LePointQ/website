@@ -5,7 +5,7 @@ edito = "Bienvenue dans ce nouveau numéro du **Point Q !**\n\nToute l’équipe
 la_bonne_nouvelle = []
 numero = 41
 on_debunke = []
-outro = ""
+outro = "Le Point Q, c'est (déjà) fini pour aujourd'hui ! On espère que ce numéro reportage vous aura plu. N'hésitez pas à nous envoyer un message sur nos réseaux sociaux pour nous en parler ([Instagram](https://www.instagram.com/lepoint.q/?hl=fr), [Twitter](https://twitter.com/LePointQ), [Facebook](https://www.facebook.com/lepointq.news/)) !\n\nOn profite de ce nouveau numéro pour vous informer d'un changement de rythme : à partir de la semaine prochaine, Le Point Q paraîtra toutes les deux semaines, et non plus chaque semaine. Pour faire simple, un nouveau numéro arrivera dans vos boîtes mail le 10 janvier, et le suivant le 24 !"
 plume_morgan = ""
 preview = "A COMPLETER"
 temoignages = "articles/21-10/lorem-ipsum.md"
