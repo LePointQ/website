@@ -31,6 +31,12 @@ const TIPEEE_BUTTON = outdent`
 	</a>
 `;
 
+const UTIP_BUTTON = outdent`
+	<a href="https://utip.io/lepointq/">
+		<img src="https://lepointq.com/media/uploads/utip-rocket.gif" style="max-width: 450px; margin: 0 auto; display: block;" />
+	</a>
+`;
+
 const { readFilePromise, writeFilePromise } = require('./utils');
 const { typografix } = require('./typografix');
 
@@ -54,8 +60,9 @@ const build = async () => {
 			.replace('{{ PREVIEW }}', md.render(typografix(data.preview || '')))
 			.replace('{{ EDITO }}', md.render(typografix(data.edito)))
 			.replace('{{ OUTRO }}', md.render(typografix(data.outro)))
-			.replace('{{ SHARE }}', SHARE_BUTTON)
-			.replace('{{ TIPEEE }}', TIPEEE_BUTTON);
+			.replace('<p>{{ SHARE }}</p>', SHARE_BUTTON)
+			.replace('<p>{{ TIPEEE }}</p>', TIPEEE_BUTTON)
+			.replace('<p>{{ UTIP }}</p>', UTIP_BUTTON);
 
 		for (const section of ['temoignages', 'vu_d_ailleurs', 'on_debunke', 'la_bonne_nouvelle']) {
 			if (!data[section] || data[section].length === 0) {
