@@ -1,7 +1,7 @@
 +++
 date = 2022-01-22T15:37:56Z
 draft = true
-edito = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis justo sed sem lobortis lacinia sed sed erat. Proin ultrices eleifend sem, id maximus massa fringilla volutpat. Praesent et leo porta arcu bibendum viverra."
+edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nSi vous vous êtes déjà posé des questions sur votre désir sexuel, ou pensé que le sexe, c'est quand même très surfait, alors cette newsletter vous est dédiée. Aujourd'hui, on parle d'asexualité !\n\nL'asexualité désigne l'absence "
 la_bonne_nouvelle = []
 numero = 42
 on_debunke = []
