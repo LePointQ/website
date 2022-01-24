@@ -1,7 +1,6 @@
 +++
 authors = ["Ophélie"]
 date = 2022-01-22T12:35:20Z
-draft = true
 image = "/media/uploads/bojack-horseman.gif"
 preview = "L’asexualité reste encore faiblement représentée à l’écran. Toutefois, il semble que les choses soient en train d’évoluer dans le bon sens. Merci Netflix et France TV Slash notamment&nbsp;!"
 section = "La bonne nouvelle"
