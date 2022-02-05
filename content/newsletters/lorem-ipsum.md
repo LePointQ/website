@@ -7,9 +7,9 @@ numero = 44
 on_debunke = []
 outro = "[Le numéro précédent](https://lepointq.com/newsletters/free-from-desire-parlons-asexualite/) était une introduction à l'asexualité, selon les mots de certain·e·s de nos lecteur·rice·s. On espère que celui-ci l'a bien complété ! Si c'est le cas (et même si ça ne l'est pas), n'hésite pas à nous le dire sur nos réseaux sociaux !\n\nLe Point Q est présent sur [Facebook](https://www.facebook.com/lepointq.news/), [Twitter](https://twitter.com/LePointQ), et [Instagram](). Et pssst... On est même sur [Utip](https://www.utip.io/lepointq), si tu veux nous envoyer le plus beau des cadeaux, quelques euros pour garantir la pérennité de cette newsletter.\n\nOn te dit à très vite pour un nouveau numéro,\n\nJulien, Juliette, Maëlle, Ophélie, Orianne, Tom, Thaïs et Valentin, pour le Point Q."
 plume_morgan = ""
-preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
+preview = "Cette semaine, on continue de parler d'asexualité, et pas avec n'importe qui ! Orianne a interviewé Anna, qui raconte sa vie d'asexuelle de 23 ans sur son compte TikTok, @anna_inparis. Avec 60 000 abonné·e·s, c'est le premier compte français sur l'asexualité !"
 temoignages = []
-title = "Lorem ipsum"
+title = "\"Un jour viendra, où ce ne sera plus anormal de ne pas faire l'amour\""
 vu_d_ailleurs = []
 
 +++
