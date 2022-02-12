@@ -1,7 +1,7 @@
 +++
 date = 2022-02-12T17:38:46Z
 draft = true
-edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nUn numéro spécial 14 février, évidemment. Mais en ce jour si particulier (pour de bonnes ou de mauvaises raisons), l'équipe a voulu s'adresser à celles et ceux d'entre vous qui ont déjà connu "
+edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nEn ce 14 février, cette newsletter est évidemment placée sous le signe de Cupidon... Ou plutôt de ses échecs. Eh oui, même le petit dieu de l'Amour "
 la_bonne_nouvelle = []
 numero = 45
 on_debunke = []
