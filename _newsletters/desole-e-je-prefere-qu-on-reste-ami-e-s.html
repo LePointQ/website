@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🧹 &laquo;&nbsp;Désolé·e, je préfère qu’on reste ami·e·s...&nbsp;&raquo;</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			display: table;
+			border-collapse: separate;
+			max-width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			margin: 2rem auto 2rem 1rem !important;
+			padding: 0.5rem 0.25rem 0.5rem 1rem !important;
+			border-left: 0.25rem solid #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: #F47B67;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Qui dit 14 février, dit Saint Val... Vous l’avez ? Une occasion parfaite pour parler de ces petites soirées qu’on a passé solo quand les autres étaient au resto... Cette semaine, on aborde le râteau !</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									&laquo;&nbsp;Désolé·e, je préfère qu’on reste ami·e·s...&nbsp;&raquo;
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>En ce 14 février, cette newsletter est évidemment placée sous le signe de Cupidon... Ou plutôt de ses échecs. Eh oui, même le petit dieu de l’Amour peut manquer ses tirs ! Tu as probablement déjà vécu ce fameux moment : porté·e par de petites ailes, tu déclares ta flamme à l’être aimé... qui ne partage pas ce sentiment. Le râteau, c’est bien de lui que nous allons parler !</p>
+<p>Pour commencer, big up à vous tou·te·s qui avez un jour osé avouer vos sentiments à voix haute ! On sait à quel point c’est difficile.</p>
+<p>Qu’il date de l’enfance, ou de 2022, <strong>le râteau, ça construit une personne !</strong> C’est ce qui ressort des témoignages que vous avez confiés à Maëlle. Mais pourquoi donc se prend-on un râteau ? Ailleurs dans le monde, il parait qu’on ramène plutôt une citrouille ou qu’on pioche un 2 de pique. <strong>Thaïs vous le raconte dans le Vu d’ailleurs !</strong> Quant au moment même du refus, vous vous êtes peut-être déjà demandé·e·s si vous étiez condamné·e·s à l’échec amoureux, coincé·e·s dans la <em>« friendzone »</em>. Mais existe-t-elle vraiment ? <strong>Julien répond à cette question dans le débunk !</strong> Pour finir cette newsletter en beauté, on rebondit sur vos témoignages. <strong>Orianne vous invite à changer de perspective sur cette expérience, pour (enfin) voir le râteau comme une bonne chose.</strong></p>
+<p>De son côté, <strong><a href="https://www.instagram.com/morgan.comicstrip/?hl=fr">Morgan</a> s’est souvenu de son premier râteau</strong>, et il vous le raconte dans la BD de la semaine. Comme d’habitude, elle est à découvrir en bas de la newsletter !</p>
+<p>Que vous lisiez ce numéro en solo, avant un date, avec votre crush ou même après un râteau, toute l’équipe vous souhaite, au-delà d’une belle Saint-Valentin, une excellente journée. Que l’amour remplisse votre vie !</p>
+<p>Bonne lecture,</p>
+<p>Le Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/rateau.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Le râteau, ça te parle&nbsp;?
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Maëlle.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Maëlle
+											</span>
+										</h3>
+					
+					
+					<p>Traumatisme, bonne surprise ou passage obligé ? Et toi, tu l’as vécu comment ton râteau ?</p>
+<ul>
+<li><strong><em>Ali*</em> — 21 ans, hétérosexuel, en couple</strong></li>
+</ul>
+<p>« Un des râteaux qui m’a le plus marqué, c’est un que je n’avais pas demandé. Pour l’expliquer brièvement, la personne voulait clarifier notre relation ; il n’y avait rien à clarifier. Ça pique toujours de se prendre un “recale”, peu importe qu’il soit accompagné d’attentes ou non. Je trouve que cet épisode montre bien que le râteau va au-delà des sentiments, c’est plus une question d’égo. Il y a une partie de toi qui est définie par l’approbation des autres et c’est celle qui est touchée. »</p>
+<ul>
+<li><strong><em>Joyce*</em> — 20 ans, bisexuelle, célibataire</strong></li>
+</ul>
+<p>« Pour moi, celui qui fait mal, ce n’est pas le premier, mais plutôt celui où tu es sûre de toi. »</p>
+<ul>
+<li><strong><em>Élisa*</em> — 20 ans, bisexuelle, célibataire</strong></li>
+</ul>
+<p>« Le dernier en date, c’était il y a 3 mois. Quand quelqu’un me plaît, je n’ai aucun problème à y aller, mais ça ne marche pas toujours, ça fait partie du jeu. J’avais échangé quelques messages avec la personne, le courant passait plutôt bien, on avait des centres d’intérêts communs. Et ensuite, il ne m’a juste plus jamais répondu. Plus précisément, je suis en “remis” <em>[la personne n’a pas ouvert son dernier message]</em> depuis 3 mois.</p>
+<p>Grâce ou à cause des réseaux sociaux, se faire “recale” ça se résume surtout à ne plus avoir de nouvelles, à être “ghosté·e” en somme. Il y a un côté moins engageant, ça se passe derrière l’écran mais c’est aussi assez frustrant parce que tu n’as aucune idée de ce qui ne va pas. »</p>
+<ul>
+<li><strong><em>Jules*</em> — 37ans, hétérosexuel, marié</strong></li>
+</ul>
+<p>« J’étais en quatrième et je suis tombé amoureux d’une fille. Sa meilleure amie m’a laissé croire que je pouvais lui plaire. Au petit matin, tout anxieux, la fille en question m’a rejeté et m’a fait comprendre que c’était mieux de rester ami·e·s. Le gros choc et la perte totale de confiance en moi. Je n’osais plus dès lors exprimer mes sentiments, j’avais l’impression que je ne pouvais pas être apprécié ou aimé. Et ça m’a poursuivi durant toute mon adolescence et ma vie de jeune adulte.</p>
+<p>Le plus dingue c’est que l’an dernier, j’ai reparlé sur Insta avec celle qui m’avait fait vivre mon râteau d’enfance. On a bien discuté et je me suis permis de me livrer sur le manque de confiance en moi qu’avait provoqué cet épisode. Elle ne s’en était pas rendue compte, elle m’a expliqué qu’à cette époque elle se sentait particulièrement mal dans sa peau. C’était étrange mais aussi thérapeutique de partager sur ce sujet vingt ans plus tard. Ça peut rassurer beaucoup de personnes qui perdent confiance en elles : quoiqu’il arrive, il ne faut pas perdre son <em>self love</em>, la vie est une longue aventure et une mésaventure d’un jour en apprend beaucoup sur soi. Le temps est une incroyable mise en perspective et un enseignant patient. »</p>
+<ul>
+<li><strong><em>Tom*</em> — 21 ans, homosexuel, célibataire</strong></li>
+</ul>
+<p>« Je pense que m’être pris un râteau, c’est un des évènements qui m’a fait le plus avancer dans mon rapport à l’autre. J’avais eu des propos lors d’un date qui avaient franchement déçu mon partenaire potentiel. S’il ne m’avait pas dit non, je pense que je ne me serais pas remis en question. Parfois, tu as simplement besoin d’un choc. Et même si ça m’a pris du temps de prendre du recul, je pense aujourd’hui que c’était une bonne chose. »</p>
+<ul>
+<li><strong><em>Chloé*</em> — 30 ans, bisexuelle, célibataire</strong></li>
+</ul>
+<p>« J’avais dans les 17-18 ans et il m’a largué juste avant la Saint-Valentin, avec des prétextes bidons du style <em>“il faut que je m’occupe de ma tortue malade”.</em> Ça me faisait peur de passer la Saint-Valentin toute seule toute jeune. Aujourd’hui, à 30 ans je m’en fous, mais je souhaite du bonheur aux amoureux ! »</p>
+<p><em>* Les prénoms ont été modifiés</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/simpsons-sideshow-bob.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Se prendre un râteau, ramener une citrouille ou tendre un panier&nbsp;? Le rejet amoureux à travers le monde
+										</h4>
+									
+					
+					<p>« Se prendre un râteau » : voilà une expression qui illustre bien la douleur — pour l’égo comme pour le cœur — de se faire rejeter par la personne qu’on aime. Ce manche pris en plein visage alors qu’on marchait d’un pas décidé vers un avenir amoureux radieux. Mais saviez-vous que cette formule française a ses équivalents dans plusieurs langues ? Des expressions toutes plus imagées les unes que les autres.</p>
+<ul>
+<li><strong>Gare aux citrouilles en Argentine,</strong> et dans le monde hispanophone en général. L’expression <a href="https://www.muyinteresante.es/cultura/arte-cultura/articulo/ide-donde-viene-la-expresion-qdar-calabazasq#:~:text=Dar%20calabazas%20a%20alguien%20significa%20%22rechazarle%20cuando%20requiere%20de%20amores%22."><em>“dar/llevarse una calabaza”</em></a> (« donner/ramener une citrouille ») est utilisée pour désigner un râteau. Il semblerait que la pauvre cucurbitacée soit associée depuis longtemps dans la langue à quelque chose d’inutile — tel le carrosse de Cendrillon qui se révèle être un légume. La citrouille, d’apparence riche et juteuse, apporte en réalité peu de nourriture : elle représente donc des attentes hautes, mais un résultat décevant. Le légume est ainsi invoqué en cas d’échecs en tout genre.</li>
+<li><strong>À Prague, on reçoit plutôt du pain</strong> : en tchèque, l’expression <a href="https://francais.radio.cz/donner-du-pain-a-un-assoiffe-ou-comment-se-prendre-un-rateau-8267755"><em>“darovat chléb žíznivému”</em></a> (« donner du pain à un assoiffé ») signifie « éconduire » ou, dans des termes plus actuels, « se faire friend-zoner ».</li>
+<li><strong>En Tunisie</strong>, l’expression <em>“kla ala rassou”</em> signifie « se prendre quelque chose sur la tête ». Un manche de râteau, peut-être ?</li>
+<li><strong>Malheureux en amour, malheureux au jeu en Italie</strong>, où quand on se fait rejeter (ou larguer) on « se prend un deux de pique » — <a href="https://timgate.it/lifestyle/costumeesocieta/perche-si-dice-prendere-il-due-di-picche.vum#:~:text=%22Prendere%20il%202%20di%20picche,situazioni%20lavorative%20e%20nel%20quotidiano."><em>“prendere il due di picche”</em></a>. Plus précisément, l’expression décrit une situation où une personne est follement amoureuse et l’autre ne ressent vraiment rien, étant même gênée par la situation. Le deux de pic est considéré comme la plus mauvaise carte qu’on puisse recevoir aux jeux : le deux est le chiffre le plus bas et le pique la couleur la plus faible : dans une bataille, celui qui a cette carte n’a donc aucune chance.</li>
+<li><strong>« Donner un panier »</strong> ou <a href="https://de.wikipedia.org/wiki/Einen_Korb_geben"><em>“einen Korb geben”</em></a>, est une expression allemande qui traduit le rejet exprimé par une femme. L’image pourrait venir des courtisanes médiévales qui faisaient descendre un panier depuis leur fenêtre pour y hisser un prétendant. Un panier desserré traduisait alors le rejet, car le prétendant serait alors passé « à travers le panier », une autre variable de l’expression.</li>
+</ul>
+<p>Toutes ces expressions ont un point commun : le râteau est un moment désagréable, mais il faut y passer. Alors, que tu te sois pris une carte à jouer vraiment pourrie ou un outil de jardinage sur la tête, ça ira !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/felipe-bustillo-4vdrconuve0-unsplash-1.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Julien
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											La &laquo;&nbsp;friend-zone&nbsp;&raquo; existe-t-elle vraiment&nbsp;?
+										</h4>
+									
+					
+					<p>Imaginez deux personnes se rencontrant, ou se connaissant depuis quelque temps déjà. À cette relation quelconque, l’une d’entre elles souhaiterait mêler le sexe ou l’amour. Mais l’autre ne le souhaite pas.</p>
+<p>Verbalisée ou non, cette situation parfois inconfortable pour les concerné·e·s, c’est cela que l’on surnomme habituellement la <em>« friend-zone »</em>. Mais existe-t-elle vraiment ? À y regarder de plus près, la friend-zone serait purement misogyne, d’autant plus au sein des relations hétérosexuelles.</p>
+<p>En 2017, des étudiant·e·s de <a href="https://orb.binghamton.edu/cgi/viewcontent.cgi?article=1003&amp;context=research_days_posters">l’université de Binghamton</a> dans l’Etat de New York ont interrogé plusieurs centaines de leurs camarades de licence sur ce terme, à des fins de recherche. Résultat : les trois quarts des hommes exclusivement hétérosexuels affirmaient avoir été <em>« friend-zonés »</em> dans leur vie, contre près de 40 % des étudiantes hétéro. Pire : plus de 92 % des femmes <em>« straight »</em> sondées reconnaissaient avoir friend-zoné quelqu’un dans leur vie, bien plus que leurs camarades garçons (66 %).</p>
+<p>Les garçons seraient-ils donc les malheureuses victimes de cette friend-zone ? En réalité, les mouvements féministes y identifient une thèse particulièrement problématique. <em>« La sexualité des femmes n’est pas un trophée que l’on obtient à condition de gentillesse et de temps consacré »</em>, <a href="http://www.slate.fr/story/123695/lfriendzone-sexiste">expliquait en 2016 à <em>Slate</em></a> Diane Saint-Réquier, militante pour la cause féministe. En clair : les femmes ne doivent rien aux hommes, tout simplement.</p>
+<p>Autre écueil : la friend-zone dévalue l’importance de l’amitié. Et se prendre un râteau ne signifie pas nécessairement que l’on va devenir ou rester ami·e·s, <em>« friends »</em> : là non plus, personne ne doit rien à l’autre. Vu autrement, être ami·e·s n’implique pas qu’une relation amoureuse ou sexuelle devienne à tout jamais impossible — combien d’exemples connaissez-vous autour de vous ? De quoi mettre à mal le nom même de ce concept.</p>
+<p>Bref, les fondations de la friend-zone semblent bien fragiles. Pire : derrière elle, on décèle de sombres corollaires. <em>« Incel »</em> (pour <em>« célibataires involontaires »</em>), <em>« nice guy »</em>, « <em>ladder theory »</em>... <a href="https://www.numerama.com/politique/350463-ce-que-le-vocabulaire-des-masculinistes-montre-de-leur-ideologie.html">Selon ces idées masculinistes et misogynes</a>, des hommes seraient soi-disant victimes du rejet des femmes et placés dans cette hypothétique « friend-zone » à leurs dépens. De dangereuses thèses <a href="https://www.lemonde.fr/pixels/article/2018/04/24/attaque-de-toronto-qui-sont-les-incels-ce-groupe-de-celibataires-auquel-se-refere-le-suspect_5290048_4408996.html">à l’origine de plusieurs tueries</a> et <a href="https://ici.radio-canada.ca/nouvelle/1844611/polytechnique-antifeminisme-melissa-blais-lutte-femmes-violence">féminicides</a>.</p>
+<p>Alors, comme le résumait l’éditorialiste Andrea Carlo au <a href="https://www.huffingtonpost.co.uk/entry/friend-zone_uk_5bf7e5fde4b0589e5006f124"><em>HuffPost</em></a>, <em>« tout ce concept de “friend-zone”, il est temps de le jeter à la poubelle, là où il mérite de rester. C’est une idée dégradante, dépassée et, honnêtement, souvent misogyne qui n’a plus sa place en 2018. »</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/date-le-pointq.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Tomber pour mieux se relever
+										</h4>
+									
+					
+					<p>Il/elle est parti·e en plein milieu d’un date ? Il/elle t’a friendzoné·e ? Il/elle veut seulement un plan cul et pas toi ? Des fails en amour ça nous arrive à tou·te·s. Et pourtant tu l’as remarqué, on s’en remet à chaque fois. Et si finalement, c’était bénéfique de se prendre des râteaux ?</p>
+<p>Si tu t’es pris un râteau, c’est que tu as osé faire un premier pas ! Félicite-toi d’avoir écouté ton cœur et tes envies du moment. C’est important de ne pas avoir de regrets. Un râteau ce n’est pas la fin du monde, tu l’auras compris. Cet échec de début de rencontre peut t’éviter bien des tracas et des désillusions par la suite. Parfois, ce genre de situation en dit beaucoup sur la personne que tu es. Peut-être que les prémices de tes relations ne fonctionnent pas, car tu ne te connais pas assez et tu ne sais pas ce qui te convient ou non. D’où l’importance de se confronter à plusieurs échecs pour en apprendre sur soi.</p>
+<p>Pour te faire relativiser, <a href="%22https://www.standard.co.uk/lifestyle/london-life/looking-for-love-apparently-you-meet-the-one-three-times-in-your-lifetime-a3234466.html%22">une étude britannique</a> menée par Vashi (label diamantaire) auprès de 3000 hommes et femmes, révèle qu’on tombe amoureux trois fois dans sa vie. Il y a d’abord l’amour idéaliste, puis l’amour qui découle d’une nécessité et l’amour inattendu. Ces phases façonnent tout au long de notre existence notre perception de nous-même, de l’autre, du couple et de l’amour. Donc pas de panique, tu peux enchaîner les dates… et les râteaux, et finir par tomber follement amoureux·se. Tu trouveras ton âme-sœur le jour où tu seras prêt·e !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-rateau.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>Pssst... Retrouvez la suite de cette BD directement sur <a href="https://www.instagram.com/p/CVibUaRNXba/">le compte Instagram</a> de notre illustrateur Morgan ! Pour (re)lire toutes les précédentes, c’est ici aussi ou sur <a href="https://www.instagram.com/lepoint.q/?hl=fr">le compte Insta du Point Q</a> ! On vous y attend nombreux·ses !</p>
+<p>Quelle que soit ta situation amoureuse au moment où tu lis ce numéro, on espère que tu l’as apprécié !</p>
+<p>Si c’est le cas, n’hésite pas à nous soutenir en faisant un petit tour sur notre compte <a href="https://www.utip.io/lepointq">uTip</a> ! Un coup de pouce en monnaie, c’est sûrement la plus belle déclaration d’amour que tu puisses nous faire (et la plus utile pour la suite).</p>
+<p>Tu peux aussi partager ce numéro à tes ami·e·s en cliquant juste en-dessous :</p>
+<button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; margin-bottom: 8px; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center; margin-top: 0;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p>
+<p><em>Share the love!</em> Tu peux aussi leur montrer notre page <a href="https://www.instagram.com/lepoint.q/?hl=fr">Instagram</a>, on y est plus de 1500 ! L’amour de leur vie s’y trouve peut-être, qui sait ?</p>
+<p>De notre côté, on te dit à très vite pour un prochain numéro, et merci pour ta fidélité !</p>
+<p>Julien, Juliette, Maëlle, Ophélie, Orianne, Tom, Thaïs et Valentin, pour Le Point Q.</p>
+<a href="https://utip.io/lepointq/">
+	<img src="https://lepointq.com/media/uploads/utip-rocket.gif" style="max-width: 450px; margin: 0 auto; display: block;" />
+</a>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			 <!-- Clear Spacer : BEGIN -->
+			 <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
