@@ -9,6 +9,6 @@ plume_morgan = "/media/uploads/strip-morgan-polyamour.jpg"
 preview = "Cette semaine, on parle du polyamour. C’est avant tout une philosophie, selon laquelle on peut aimer plusieurs personnes à la fois, ceci nous rendant plus heureux. En pratique, le polyamour consiste à avoir différentes relations sentimentales et/ou sexuelles en même temps, de manière honnête, libre et consentie."
 temoignages = "articles/21-03/le-polyamour-ma-fait-realiser-a-quel-point-aimer-dautres-personnes-ne-remettait-pas-en-cause-tous-nos-sentiments.md"
 title = "Amours plurielles"
-vu_d_ailleurs = "articles/21-03/menages-a-trois.md"
+vu_d_ailleurs = "articles/21-03/en-colombie-mariage-a-trois.md"
 
 +++
