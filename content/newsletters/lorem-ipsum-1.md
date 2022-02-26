@@ -1,7 +1,7 @@
 +++
 date = 2022-02-26T17:03:19Z
 draft = true
-edito = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis justo sed sem lobortis lacinia sed sed erat. Proin ultrices eleifend sem, id maximus massa fringilla volutpat. Praesent et leo porta arcu bibendum viverra."
+edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nN'y voyez pas de signe : ce numéro n'a pas été préparé "
 la_bonne_nouvelle = "articles/22-02/parlez-d-argent-quand-la-parole-se-libere.md"
 numero = 46
 on_debunke = "articles/22-02/matcher-a-l-infini-c-est-gratuit.md"
