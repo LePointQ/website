@@ -9,7 +9,7 @@ outro = ""
 plume_morgan = ""
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
 temoignages = "articles/22-02/et-vous-vous-depensez-combien-pour-le-cul.md"
-title = "Money money money"
+title = "\"Bitch better have my money\""
 vu_d_ailleurs = "articles/22-02/se-proteger-gratuitement-des-benefices-deja-observes-en-europe.md"
 
 +++
