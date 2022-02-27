@@ -6,8 +6,8 @@ la_bonne_nouvelle = "articles/22-02/parlez-d-argent-quand-la-parole-se-libere.md
 numero = 46
 on_debunke = "articles/22-02/matcher-a-l-infini-c-est-gratuit.md"
 outro = "\"Les bons comptes font les bon·ne·s (petit·e·s) ami·e·s !\" On espère que ce numéro t'aura permis de ressortir ta calculette pour rééquilibrer la balance...\n\nTu l'auras peut-être deviné, si on sort un numéro sur ce sujet aujourd'hui, c'est parce que des choses se préparent de notre côté. [Clique ici](https://fr.ulule.com/le-point-q/coming-soon/), tu comprendras sûrement mieux ! N'hésite pas à rentrer ton adresse mail, pour être tenu·e au courant de l'ouverture de la campagne. Sinon, tu peux toujours faire un tour sur notre page [uTip](https://www.utip.io/lepointq), on y est super bien ! Nos réseaux sociaux sont aussi ouverts à de nouvelles rencontres : abonne-toi sur [Instagram](https://www.instagram.com/lepoint.q/?hl=fr), [Facebook](https://www.facebook.com/lepointq.news/) ou [Twitter](https://twitter.com/LePointQ) pour suivre toute notre actu !\n\nOn revient plus vite que tu ne le crois dans ta boîte mail,\n\nJulien, Juliette, Maëlle, Ophélie, Orianne, Tom, Thaïs et Valentin, pour Le Point Q."
-plume_morgan = ""
-preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
+plume_morgan = "/media/uploads/strip-morgan-argent.jpg"
+preview = "Cette semaine, on parle de moula, de thune, de flouze, bref : d'argent. C'est un aspect de nos vies sexuelles qui est assez peu abordé. Pourtant, la sexualité, ça coûte cher !"
 temoignages = "articles/22-02/et-vous-vous-depensez-combien-pour-le-cul.md"
 title = "\"Bitch better have my money\""
 vu_d_ailleurs = "articles/22-02/se-proteger-gratuitement-des-benefices-deja-observes-en-europe.md"
