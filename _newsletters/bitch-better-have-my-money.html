@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>💸 “Bitch better have my money”</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			display: table;
+			border-collapse: separate;
+			max-width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			margin: 2rem auto 2rem 1rem !important;
+			padding: 0.5rem 0.25rem 0.5rem 1rem !important;
+			border-left: 0.25rem solid #F47B67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: #F47B67;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #F47B67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Cette semaine, on parle de moula, de thune, de flouze, bref : d’argent. Un aspect de nos vies sexuelles assez tabou, et pourtant la sexualité peut coûter cher.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo.png" width="200" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									“Bitch better have my money”
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>N’y voyez pas de signe : ce numéro n’est pas le deuxième volet de notre <a href="https://lepointq.com/newsletters/desole-e-je-prefere-qu-on-reste-ami-e-s/">newsletter sur la Saint-Valentin</a>... Quoique !</p>
+<p>Cette semaine, on parle de moula, de thune, de flouze, bref : d’argent. Et pour une bonne raison, vous allez voir... On vous prépare du lourd !</p>
+<p>D’ici quelques jours, <strong>on lance une giga grande et sexy levée de fond !</strong> L’objectif est simple : pouvoir continuer à vous envoyer, tous les quinze jours, une newsletter aux petits oignons, safe, fun, inclusive et GRATUITE. En effet, si notre travail est bénévole, l’envoi de la newsletter n’est pas sans frais, il nous coûte environ 30 euros par mois !</p>
+<p>Alors on compte sur vous, abonné·e·s de toujours ou de deux jours, qui aimez Le Point Q, pour nous soutenir ! Notre crowdfunding <a href="https://fr.ulule.com/le-point-q/coming-soon/">sera lancé ici</a>, sur Ulule, dans quelques jours... Il paraît qu’il y aura des dingueries en contrepartie, mais ça, c’est la surprise...</p>
+<p>La thune, c’est donc un aspect de nos vies sexuelles assez tabou. Pourtant, la sexualité peut coûter cher. On a essayé d’estimer avec vous combien pouvaient nous coûter nos ébats chaque mois, TTC. <strong>Merci à celles et ceux qui se sont prêté·e·s au jeu, en répondant aux questions d’Orianne.</strong> En comptant l’épilation, la lingerie et la contraception, l’addition monte vite ! <strong>Julien, lui, s’est intéressé aux politiques européennes de gratuité de la contraception.</strong> Argent jeté en l’air ou vrai investissement ? Les chiffres parlent d’eux-mêmes... C’est à découvrir dans le Vu d’ailleurs ! De son côté, Ophélie s’est penchée sur les <em>pay-to-win</em>. Non, pas ces jeux mobiles où il faut sortir la carte bleue pour être sûr de gagner... <strong>On vous parle des applis de rencontre</strong>, rendez-vous dans le débunk ! D’ailleurs, vous est-il déjà arrivé de vous sentir redevable parce que votre date vous avait payé un verre ? <strong>Bonne nouvelle, vous n’êtes pas seul·e·s : Maëlle vous parle de la « dette sexuelle » et de sa médiatisation sur les réseaux !</strong></p>
+<p><strong>Et pour finir, si vous aussi vous trouvez que les capotes ça coûte super cher, Morgan, notre dessinateur adoré, a un message pour vous !</strong> Découvrez sa BD de la semaine tout en bas de la newsletter, comme d’habitude.</p>
+<p>Bonne lecture à toutes et à tous,</p>
+<p>Le Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/mathieu-stern-1mjqoddd804-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Et vous, vous dépensez combien pour le cul&nbsp;? 
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+					
+					<ul>
+<li><strong><em>Marissa*</em> — 27 ans, célibataire, hétérosexuelle</strong></li>
+</ul>
+<p><em>Épilation : 100 €<br />Gommage et crèmes : 360 €<br />Préservatifs : 10 € (sinon sur ordonnance)<br /><strong>soit un total de 470 € par an</strong></em></p>
+<p>« Je n’ai pas de gros moyens donc je me restreins. Pour l’épilation, par exemple, je la fais à la cire. J’achète des bandes de cire ou de la cire chaude. Ça reste hyper rare, car ça coûte tellement cher. C’est aux alentours de 6 € les bandes de cire. Et si tu veux t’épiler intégralement le maillot et tout le reste ça part super vite, tu passes ta vie à en acheter. Sinon quand je dois coucher avec un mec un soir, je le fais au rasoir. Le rasoir, je le garde jusqu’à temps qu’il s’use bien. Je n’utilise pas de rasoirs jetables, c’est un rasoir avec un manche où il suffit de changer la lame. Les lames, je les achète en lot. Le manche c’est 15 € et les lames en lot de 6 reviennent à moins de 10 €.</p>
+<p>Pour les préservatifs, souvent ce sont les mecs qui les amènent. Récemment, je me suis quand même achetée un paquet, mais ça faisait très longtemps. J’ai appris depuis peu qu’ils pouvaient être remboursés. J’ai une ordonnance sur un an pour en avoir gratuitement. Il faut se renseigner auprès de son médecin ou de son gynécologue.</p>
+<p>Là où je dépense le plus, c’est pour la partie soin pour le corps : les gommages, les crèmes, etc. Je vais être honnête, je n’en utilise que quand je sais que je vais coucher avec un mec. J’ai une crème spécifique qui coûte environ 20 € et ça part super vite. Le gommage, je le fais maison, j’achète les produits tous les deux mois quand même. »</p>
+<ul>
+<li><strong><em>Juliette*</em> — 21 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p><em>Épilation : 180 €<br />Soins du corps : 50 €<br />Préservatifs : 20 €<br />Lingerie : 50 €<br /><strong>soit un total de 300 € par an</strong></em></p>
+<p>« Je trouve ça excessif, mais surtout je trouve que c’est un coût ultra “invisibilisé”, dans le sens où c’est super rare qu’un partenaire reconnaisse les efforts financiers derrière. Finalement, ça contribue à entretenir ce qui est attendu d’office des femmes, en dépit de leurs conditions socio-économiques ou de leurs envies. Je suis convaincue que ce sont les femmes qui dépensent le plus de ce côté-là : dans mes expériences, on fait presque systématiquement 50/50 pour les verres, les dîners, etc (et tant mieux !), mais ce qui reste “non partagé” ce sont ces frais invisibles.</p>
+<p>Pour moi, être en couple c’est être certaine que ces dépenses seront maintenues dans le temps. À titre personnel, j’ai toujours utilisé des préservatifs, même en couple pendant presque 3 ans, et c’était une contrainte de devoir toujours faire ces efforts (physiques et financiers) permanents pour continuer de plaire à quelqu’un. Quand on est célibataire, on fait ce qu’on veut de son corps et on peut échapper à certaines dépenses. En couple, il y a des “attendus sociaux” auxquels il est difficile d’échapper. »</p>
+<ul>
+<li><strong>Louis — 23 ans, célibataire, gay</strong></li>
+</ul>
+<p><em>Préservatifs : 50 €<br />Lubrifiant : 30 €<br />Poppers : 20 €<br /><strong>soit un total de 100 € par an</strong></em></p>
+<p>« Il faut compter la boite de préservatifs standards à 7 €. En taille XL, c’est généralement 2 € de plus — c’est vraiment abusé, puisqu’il y en a moins dans la boîte. Selon le rapport, ça peut être deux capotes d’un coup aussi (une chacun) et ça peut arriver de faire une pause et de recommencer. Le tube de lubrifiant, c’est entre 8 et 10 €. Il peut couvrir jusqu’à 20 rapports. Pour l’épilation et les lavements, je ne dépense rien. Il faut compter une tondeuse/rasoir et une poire à lavement, c’est tout. Ça ne se change pas tous les mois. Le poppers <em>[substance à inhaler, communément utilisée dans la communauté gay pour son effet euphorisant et vasodilatateur, ndlr]</em>, ça arrive aussi d’en utiliser : c’est 10 € la fiole et ça dure environ 5-6 mois.</p>
+<p>Sincèrement, si je pars du principe que j’ai entre 5 à 7 rapports par mois, je dois être à approximativement 10 € au total. C’est vraiment si je fournis tout à chaque fois, ce qui arrive très souvent parce que beaucoup s’en fichent. J’ai toujours l’impression que c’est moi qui gère ça ; c’est rarement l’autre qui apporte ce qu’il faut et c’est pénible. De temps en temps, je dis même que je n’ai rien chez moi pour forcer un peu. Si j’ai la flemme de fournir et qu’ils n’ont pas, ça m’arrive d’annuler. Je l’ai déjà fait une fois. »</p>
+<ul>
+<li><strong><em>Ambre*</em> — 23 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p><em>Épilation : 100 €<br />Lingerie : 150 €<br /><strong>soit un total de 250 € par an</strong></em></p>
+<p>« Dans notre couple, nous ne sommes pas spécialement “jouets”. Je pense que cette dépense varie selon les personnes et les couples. En termes de soins pour le corps, avec mon copain, on est un peu pareil là aussi. Nous ne sommes pas très crème, gommage, etc. Ce qui est peut-être une erreur, mais je pense que la flemme l’emporte.</p>
+<p>En revanche, on s’épile tous les deux : rasoirs, crème dépilatoire et cire. En dépense, j’aurais du mal à estimer, mais à deux sur un an, je pense qu’on est bien à 100 €. Moi, en tant que femme, je dépense plus que lui... La contraception est pour moi également. J’utilise un anneau contraceptif. Il est rarement remboursé, mais pour moi c’est le cas donc 0 €. Pour ce qui est de la lingerie, je dois dépenser autour de 150 € par an je pense. »</p>
+<p><em>* Les prénoms ont été modifiés.</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/reproductive-health-supplies-coalition-fgqlioknju8-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Vu d&rsquo;ailleurs
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Julien.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Julien
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Se protéger gratuitement&nbsp;: des bénéfices déjà observés en Europe
+										</h4>
+									
+					
+					<p>Un petit pas de plus. <a href="https://www.service-public.fr/particuliers/actualites/A15158">Depuis le 1er janvier 2022</a>, plusieurs moyens de contraception sont devenus gratuits pour les femmes de moins de 26 ans : les pilules de 1re et 2e génération, les implants contraceptifs ou encore le stérilet — mais pas la capote.</p>
+<p>Une avancée supplémentaire pour lutter contre les inégalités d’accès à la contraception, quand on sait qu’une femme touchant de faibles revenus a cinq fois plus de risques de vivre une grossesse non désirée qu’une femme aisée, <a href="https://www.brookings.edu/blog/social-mobility-memos/2015/02/26/the-implications-of-inequalities-in-contraception-and-abortion/">faute d’accès à la contraception</a>.</p>
+<p>En Europe, certains pays n’ont pas attendu pour agir. En Finlande, depuis 2013, toutes les habitantes de Vantaa disposent gratuitement d’une méthode de contraception réversible de longue durée (par exemple, d’un implant). Résultat : l’utilisation de la contraception s’est accrue significativement parmi toutes les classes d’âge. Le nombre d’avortements, lui, a diminué, et principalement parmi les jeunes femmes, ce qui suggère que cette classe d’âge était particulièrement touchée par des difficultés d’accès à la contraception, indique <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5844404/">cette étude finlandaise</a>.</p>
+<p>Aux Pays-Bas, la mise à disposition gratuite de préservatifs dans les bars, <em>darkrooms</em> et saunas gays à partir de la fin des années 2000 a elle aussi été couronnée de succès. Elle a permis d’éviter chaque année des centaines d’infections transmises sexuellement.</p>
+<p>De l’argent public dépensé généreusement ? Oui et non ! Des <a href="https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-019-3839-0">chercheurs néerlandais</a> ont montré que pour un euro de capotes financées aux Pays-Bas, ce sont 5,51 € économisés, grâce à ces infections empêchées. Sinon, cet argent aurait été versé pour des traitements contre le VIH, expliquent-ils.</p>
+<p>Ces résultats font écho à <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/730292/contraception_return_on_investment_report.pdf#page=36">un autre rapport</a>, cette fois-ci anglais : 9 livres sterling pourraient être économisées sur 10 ans pour une livre dépensée en contraception, notamment grâce aux avortements évités.</p>
+<p>Selon cet <a href="https://www.epfweb.org/sites/default/files/2022-02/CCeptionInfoA3_EN%202022%20v10_0.pdf">atlas annuel européen</a>, les Pays-Bas, le Royaume-Uni et la Finlande figurent ainsi parmi les leaders de l’accès à la contraception en Europe en 2022 — même si la marge de progression est encore importante.</p>
+<p>Toutefois, rendre la contraception gratuite, notamment pour les jeunes femmes, ne suffit pas toujours : l’Albanie, bien positionnée <a href="https://www.epfweb.org/sites/default/files/2022-02/CCeptionInfoA3_EN%202022%20v10_0.pdf">sur ce même atlas annuel européen</a>, n’utilise pourtant que <em>« très faiblement »</em> la contraception, <em>« en partie »</em> en raison de <em>« mythes persistants et d’un manque d’information »</em>, explique <a href="https://www.epfweb.org/node/714">le Forum parlementaire européen pour les droits sexuels et reproductifs</a> à l’origine de ce classement.</p>
+<p>Une situation qui toucherait particulièrement la contraception d’urgence, gratuite en Albanie, mais que <em>« la stigmatisation et la peur du jugement »</em> n’encouragent pas à utiliser, expliquent <a href="https://pubmed.ncbi.nlm.nih.gov/29654750/">ces chercheuses canadiennes</a>.</p>
+<p>La contraception gratuite est donc nécessaire et bénéfique, oui, mais l’information aussi !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/good-faces-agency-cunhxu8dxdc-unsplash.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/on_debunke.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						On débunke&nbsp;!
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Ophélie.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Ophélie
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Matcher à l’infini, c’est gratuit&nbsp;&raquo;
+										</h4>
+									
+					
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+									
+					<p>L’amour a un prix, y compris lorsqu’on le cherche en ligne ! Si les applications qui foisonnent sur nos téléphones tentent de nous le cacher, elles tirent un bénéfice très important des swipes à tout va de leurs utilisateur·rice·s.</p>
+<p>En 2020, le magazine <a href="https://www.60millions-mag.com/2020/02/13/sites-de-rencontre-7-combines-pour-vous-faire-raquer-17197">60 Millions de consommateurs</a> a mené une enquête sur les techniques commerciales utilisées par les sites de rencontres les plus populaires. Au moins sept techniques marketing ont été identifiées pour faire payer le ou la consommateur·rice, et cela démarre dès l’inscription.</p>
+<p>Généralement, les applications attirent leur public en rendant gratuit le téléchargement et la création d’un compte... mais celui-ci n’est jamais pleinement accessible sans rémunération.</p>
+<p>Pour Bumble et Tinder par exemple, il faut payer une somme supplémentaire pour voir les profils des personnes qui ont « matché » avec soi (sans avoir encore matché avec elles) ou pour que son profil soit mis en avant.</p>
+<p>Cela peut aller plus loin, comme avec le site de rencontre Badoo, épinglé par 60 Millions de consommateurs pour son utilisation de la frustration comme « rançon de la gratuité ». Sur ce site, il est obligatoire de souscrire un abonnement premium facturé 2,09 € la journée pour découvrir l’identité d’un·e utilisateur·rice qui vous a envoyé un « like ». Sans cette transaction, il est quasiment impossible d’entrer en communication avec son admirateur·rice.</p>
+<p>Autre stratégie : les photos floues notamment sur Tinder, Bumble, ou Vivaflirt, utilisées pour aiguiser la curiosité des utilisateur·rice·s. Ces images laissent miroiter des profils « sexy » qui ne peuvent être aperçus que contre de l’argent. Certains sites, comme Vivaflirt, vont même jusqu’à utiliser une fausse photo floue, pour illustrer le profil d’une personne qui n’a pas encore téléchargé d’image. De quoi complètement berner les utilisateur·rice·s qui matchent !</p>
+<p>Il y a également des messageries qui ne peuvent être débloquées qu’en sortant la carte bancaire. Et tout ça pour, au final, un simple message de bienvenue envoyé par le site. Une méthode de vente rapportée par les utilisateur·rice·s du site AdopteUnMec, qui joue ainsi avec les émotions des nouveaux·elles venu·e·s.</p>
+<p>Technique encore plus pernicieuse, certains sites tentent de faire payer leurs usagers sans leur consentement. L’association rapporte que plusieurs utilisateur·rice·s de l’application Badoo ont été abonné·e·s sans le savoir à un compte « premium » (en cliquant sur un bouton trompeur) après à un premier achat sur le site. Celui-ci leur « offrait » un abonnement « à vie ». N’ayant pas été prévenu·e·s de leur erreur, ni informé·e·s du nouveau montant, iels ont été prélevé·e·s de 129,99 euros. Pour éviter les mauvaises surprises, le magazine recommande aux inscrit·e·s sur ces applications de ne pas communiquer leurs coordonnées bancaires.</p>
+<p>Toutes ces techniques servent un juteux business. Le groupe Bumble Inc.- Blackstone (Bumble, Badoo, Chappy, Lumen) a réalisé un chiffre d’affaires de 582 millions de dollars en 2020, quand celui de Match Group (Meetic, Tinder, OkCupid, Hinge, etc.) s’élève à 2,9 milliards selon le site spécialisé <a href="https://www.rencontrecelibataire-fr.com/marche-rencontres">Rencontre Célibataire</a>.</p>
+<p>Un modèle économique qui fonctionne donc auprès du public, particulièrement quand il est masculin. Selon la chercheuse Marie Bergström, de l’Institut national d’études démographiques (Ined), <a href="https://epic.site.ined.fr/">45 % des hommes ont déjà payé</a> pour la rencontre en ligne, contre seulement 18 % côté féminin (étude publiée en 2014). Cet écart s’explique selon elle par le fait que <em>« c’est souvent au partenaire masculin de prendre en charge les frais liés à la rencontre »</em>.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/capture-d-ecran-2022-02-17-a-14-17-43.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						La bonne nouvelle
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Maëlle.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Maëlle
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Parlez d’argent&nbsp;!&nbsp;&raquo; Quand la parole se libère.
+										</h4>
+									
+					
+					<p>Mêler amour, sexualité et argent, c’est parfois compliqué et ça peut amener à se sentir redevable. Tu as déjà entendu parler de la dette sexuelle ? C’est quand tu as le sentiment de devoir quelque chose à la personne qui t’invite. Chloé — 21 ans, hétérosexuelle — raconte : <em>« Je ne peux pas laisser un homme me payer un verre, je ne veux pas qu’il s’imagine quelque chose. »</em></p>
+<p>Du point de vue masculin, c’est tout un imaginaire collectif qu’il faut repenser. Dans les films et séries, inviter une femme fait partie intégrante du jeu de séduction. Pour Emi, 20 ans, hétérosexuel, l’acte de payer n’est pas anodin : <em>« Moi je paye l’addition seulement si j’ai possibilité de conclure. Dans l’idée même d’offrir un verre, il y a une dimension, peut-être pas sexuelle, mais romantique. Parce que je ne me verrais pas offrir un verre à un·e ami·e, sauf occasion particulière. »</em></p>
+<p>Bien souvent, lorsqu’on discute de la place de l’argent dans la sexualité, on se cantonne au travail du sexe. Or parler d’argent et d’intimité devrait être à la portée de tou·te·s, puisque cela concerne tout le monde ! Heureusement, des initiatives se multiplient dans ce sens.</p>
+<p><em>« Parlez d’argent ! Oui, c’est tabou, encore plus en amour, mais c’est essentiel »</em>, explique <a href="https://www.instagram.com/mashasexplique/">@mashasexplique</a> à sa communauté Instagram. <em>« Quand dans une relation, on peut parler cul et argent, on a franchi un sacré cap. »</em> Connue comme l’une des premières blogueuses sexo à avoir démocratisé le post-partum, les fluctuations de la libido et l’utilisation de sextoys, Masha s’est récemment attaquée à la problématique de l’argent et du couple.</p>
+<p>Pour elle, hors de question que l’argent serve à justifier un ascendant sur son·sa partenaire. <em>« Ce n’est pas parce qu’iel gagne plus d’argent que tu lui dois du sexe. »</em> C’est une super nouvelle, que de jeunes créateur·rice·s s’emparent de ces sujets et participent à libérer la parole. Alors rappelle-toi, tu peux offrir et recevoir sans culpabiliser, l’essentiel c’est d’en parler !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/plume_morgan.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						Sous la plume de Morgan
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<img src="https://lepointq.com/media/uploads/strip-morgan-argent.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px;">● ● ●</p>
+								<p>« Les bons comptes font les bon·ne·s (petit·e·s) ami·e·s ! » On espère que ce numéro t’aura éclairé·e, voire incité·e à ressortir ta calculette, pour rééquilibrer la balance...</p>
+<p>Comme on te le disait plus haut, un mois de mars immense et très enthousiasmant s’ouvre pour nous. Une nouvelle aventure aussi, celle du crowdfunding ! <strong>Si tu es arrivé·e jusque-là, on se dit qu’on a peut-être une petite place dans ton cœur.</strong> Si c’est le cas, si tu aimes nous lire et si tu souhaites que ça continue, ce sera à toi de jouer dans quelques jours...</p>
+<p>Tu peux commencer à en parler autour de toi et visiter <a href="https://fr.ulule.com/le-point-q/coming-soon/">notre page Ulule</a>. N’hésite pas à rentrer ton adresse mail, pour être tenu·e au courant de l’ouverture de la campagne. Dans tous les cas ne t’inquiète pas, on risque d’inonder <em>soon</em> ton flux Instagram.</p>
+<p>On trépigne d’impatience, et dans l’attente de ce moment, nos réseaux sociaux sont aussi ouverts à de nouvelles rencontres : abonne-toi sur <a href="https://www.instagram.com/lepoint.q/?hl=fr">Instagram</a>, <a href="https://www.facebook.com/lepointq.news/">Facebook</a> ou <a href="https://twitter.com/LePointQ">Twitter</a> pour suivre toute notre actu !</p>
+<p>À très vite dans ta boîte mail, et d’ici là, on te souhaite une semaine la plus douce possible,</p>
+<p>Julien, Juliette, Maëlle, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q !</p>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+
+			 <!-- Clear Spacer : BEGIN -->
+			 <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+			<!-- 1 Column Text : BEGIN -->
+			<!-- <tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; color: #555555; text-align: center;">
+								<b>Le Point Q</b> a reçu le soutien du
+								<br />
+								fonds d’intervention associatif de
+								<img src="https://lepointq.com/media/logo-scpo.png" style="display: block; width: 128px; margin: 8px auto;" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr> -->
+			<!-- 1 Column Text : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr>
+	        <!-- Clear Spacer : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+	                <webversion style="color: #ffffff; text-decoration: underline; font-weight: bold;">View as a Web Page</webversion>
+	                <br><br>
+	                Company Name<br><span class="unstyle-auto-detected-links">123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890</span>
+	                <br><br>
+	                <unsubscribe style="color: #ffffff; text-decoration: underline;">unsubscribe</unsubscribe>
+	            </td>
+	        </tr>
+	    </table> -->
+	    <!-- Email Footer : END -->
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F47B67;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
