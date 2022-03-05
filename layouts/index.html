@@ -6,36 +6,41 @@
 
 {{ define "main"}}
 	<main class='homepage'>
-		<h2 style="text-align: center; margin-top: 0; margin-bottom: 1rem;">La newsletter qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée &laquo;&nbsp;plaisir&nbsp;&raquo;</h2>
-		<img src="{{ .Site.BaseURL }}/media/illu2-01.png" class='us' />
-		<form id="subscribe" style="margin-bottom: 2rem;">
+		<!-- <h2 class='tagline balance-text'>
+			La newsletter qui te plonge dans l’univers du sexe et démystifie l’inconnue nommée &laquo;&nbsp;plaisir&nbsp;&raquo;
+		</h2> -->
+		<h2 class='tagline balance-text'>
+			La newsletter qui raconte les sexualités des 18-30 ans, sans tabou&nbsp;!
+		</h2>
+		<img src='{{ .Site.BaseURL }}/media/lepointq_groupe_10.png' class='group-illustration' />
+		<form id='subscribe' style='margin-bottom: 2rem;'>
 			<input
-				type="email"
-				name="email"
-				placeholder="Entre ton adresse email"
+				type='email'
+				name='email'
+				placeholder='Entre ton adresse email'
 				required
 			/>
-			<input type="submit" value="Je m’abonne !">
+			<input type='submit' value='Je m’abonne !'>
 		</form>
-		<ul class="testimonials">
+		<ul class='testimonials'>
 			<li>
-				<p class="text">À la fin, on a plein de réponses à des questions qu’on ne se posait pas forcément, et on a aussi plein de nouvelles questions soulevées par la lecture. C’est un pari réussi&nbsp;! Bravo, j’espère que vous allez continuer, j’adore.</p>
-				<p class="name">Léa</p>
+				<p class='text'>À la fin, on a plein de réponses à des questions qu’on ne se posait pas forcément, et on a aussi plein de nouvelles questions soulevées par la lecture. C’est un pari réussi&nbsp;! Bravo, j’espère que vous allez continuer, j’adore.</p>
+				<p class='name'>Léa</p>
 			</li>
 			<li>
-				<p class="text">C’est cool de lire des contenus qui concernent les femmes, les hommes ou les deux. Ça permet d’en apprendre plus sur des questions qui touchent l’autre sexe&nbsp;!</p>
-				<p class="name">Dany</p>
+				<p class='text'>C’est cool de lire des contenus qui concernent les femmes, les hommes ou les deux. Ça permet d’en apprendre plus sur des questions qui touchent l’autre sexe&nbsp;!</p>
+				<p class='name'>Dany</p>
 			</li>
 			<li>
-				<p class="text">Ça m’a donné le sourire du début à la fin, j’ai même ri. Il y a un peu d’humour, ce sont des thèmes sérieux pris avec un langage léger. Ça donne envie d’en discuter avec les autres, de montrer que ce n’est pas tabou.</p>
-				<p class="name">Katy</p>
+				<p class='text'>Ça m’a donné le sourire du début à la fin, j’ai même ri. Il y a un peu d’humour, ce sont des thèmes sérieux pris avec un langage léger. Ça donne envie d’en discuter avec les autres, de montrer que ce n’est pas tabou.</p>
+				<p class='name'>Katy</p>
 			</li>
 		</ul>
 		<h2>Les dernières newsletters</h2>
-		<ul style="width: auto;">
+		<ul style='width: auto;'>
 			{{ range first 10 (where .Site.RegularPages.ByDate.Reverse "Section" "newsletters") }}
-				<li style="font-size: 1.1rem; margin: 0.5rem;">
-					<a href="{{ .Permalink }}" target='_self'>
+				<li style='font-size: 1.1rem; margin: 0.5rem;'>
+					<a href='{{ .Permalink }}' target='_self'>
 						#{{ .Params.numero}} &middot; {{ .Title | replaceRE "\"[^\"]*\"" "&laquo;&nbsp;$0&nbsp;&raquo;" | replaceRE "\"" "" | markdownify }}
 					</a>
 				</li>

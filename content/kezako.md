@@ -14,8 +14,8 @@ Tu l’as peut-être remarqué en discutant (une fois ?) avec ta famille, les r
 
 ## Et les petites mains du Point Q, c’est qui ?
 
-Orianne, Thaïs, Juliette et Tom, et depuis peu Julien, Valentin et Ophélie. On a entre 22 et 25 ans et comme vous, on se pose mille questions sur nos sexualités. On est aussi journalistes, et on aime bien se poser des questions (et tenter de trouver des réponses !)
+Orianne, Thaïs, Juliette, Tom, Julien, Valentin, Ophélie et, depuis peu, Maëlle. On a entre 20 et 26 ans et comme vous, on se pose mille questions sur nos sexualités. On est aussi journalistes, et on aime bien se poser des questions (et tenter de trouver des réponses !)
 
-Le Point Q c’est aussi vous toutes et tous, vous qui nous suivez, répondez à nos sondages et à nos témoignages. Ensemble, on fait vivre un espace _safe_, on libère la parole et on partage un bon moment, chaque lundi dans vos boîtes mail. Merci d’être là et de faire vivre ce média, on n’existe que par vos belles voix.
+Le Point Q c’est aussi vous toutes et tous, vous qui nous suivez, répondez à nos sondages et à nos témoignages. Ensemble, on fait vivre un espace _safe_, on libère la parole et on partage un bon moment, le lundi dans vos boîtes mail. Merci d’être là et de faire vivre ce média, on n’existe que par vos belles voix.
 
 <a href='mailto:contact@lepointq.com'> <button class='inverted' style='display: block; margin: 1rem auto;'>Nous contacter</button> </a>

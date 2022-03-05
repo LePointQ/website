@@ -32,6 +32,12 @@
 		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css' integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp' crossorigin='anonymous'>
 		<link rel='stylesheet' href='/css/styles.css'>
 
+		<script src='https://cdn.jsdelivr.net/npm/balance-text@3.3.0/balancetext.min.js'></script>
+
+		<script>
+			balanceText();
+		</script>
+
 		{{ block "head" . }}{{ end }}
 
 		<base target='_blank'>
@@ -61,9 +67,5 @@
 
 		{{ block "page-script" . }}{{ end }}
 		{{ block "page-style" . }}{{ end }}
-
-		<script>
-			balanceText();
-		</script>
 	</body>
 </html>

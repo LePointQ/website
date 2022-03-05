@@ -1,10 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Sans+Pro&family=Fira+Code:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Fira+Code:wght@600&display=swap');
+
+* {
+	box-sizing: border-box;
+}
 
 body {
 	font-family: 'Lato', sans-serif;
-	--main-color: #F47B67;
-	--secondary-color: #E51127;
+	--main-color: #FF8A82;
+	--secondary-color: #FF3B50;
 	--grey: #555555;
+	--beige: #FFF3F1;
+	--red-dark: #E23E67;
+	--red-light: #FF5162;
+	--purple-dark: #5E017D;
+	--purple-light: #C1B6FF;
+	margin: 0;
 }
 
 hr {
@@ -19,6 +29,8 @@ p {
 h1, h2, h3, h4 {
 	margin: 1rem 0 0.5rem;
 	scroll-margin-top: 6rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
 }
 
 h1 {
@@ -27,7 +39,6 @@ h1 {
 
 h2 {
 	font-size: 1.6rem;
-	font-weight: bold;
 }
 
 h3 {
@@ -80,7 +91,7 @@ header #logo:hover {
 
 header #logo img {
 	padding: 1rem 0;
-	width: 8rem;
+	width: 6rem;
 	transition: all 0.3s ease;
 }
 
@@ -161,16 +172,22 @@ main {
 
 main.homepage {
 	width: 75%;
-	max-width: 60rem;
+	max-width: 48rem;
 }
 
-main.homepage h2 {
-	max-width: 600px;
-}
-
-main.homepage img.us {
+main.homepage .tagline {
 	width: 100%;
-	border-radius: 100% 100% 0 0;
+	max-width: 36rem;
+	color: white;
+	background-color: var(--purple-dark);
+	padding: 0.5rem 1rem;
+	margin: 0;
+	text-align: center;
+	transform: rotate(-1deg);
+}
+
+main.homepage img.group-illustration {
+	width: 100%;
 }
 
 #subscribe, #unlock {
@@ -184,12 +201,13 @@ main.homepage img.us {
 
 input {
 	margin: 0.5rem;
+	padding: 0.25rem;
 	outline: none;
 	/* border: 1px solid var(--main-color); */
 }
 
 input[type='submit'], button {
-	background: var(--main-color);
+	background: transparent;
 	border: 2px solid white;
 	border-radius: 0.25rem;
 	padding: 0.5rem 1rem;
@@ -403,8 +421,9 @@ main article .author-pic {
 }
 
 main article .veracity {
+	font-family: 'Montserrat', sans-serif;
 	font-size: 1.2rem;
-	font-weight: bold;
+	font-weight: 600;
 	padding: 2px 4px;
 	border-width: 0.25rem;
 	border-style: solid;
