@@ -348,7 +348,7 @@ main li a {
 }
 
 main .icon {
-	vertical-align: middle;
+	vertical-align: bottom;
 }
 
 main article {
@@ -389,14 +389,19 @@ main .edito, main .outro {
 
 main article h2 {
 	font-size: 1.6rem;
+	line-height: 2.5rem;
 	text-align: center;
 }
 
 main article h3, main .edito h3 {
 	font-size: 1.2rem;
 	font-style: normal;
-	font-weight: bold;
+	font-weight: 600;
 	text-align: left;
+}
+
+main article h3 strong, main article h3 b {
+	font-weight: inherit;
 }
 
 main article h4 {
@@ -412,6 +417,7 @@ main article .authors {
 	font-size: 1.2rem;
 	color: var(--grey);
 	text-align: center;
+	font-weight: 500;
 }
 
 main article .author-pic {
