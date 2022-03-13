@@ -9,7 +9,7 @@ outro = "Hey !\n\nMerci à toi d'avoir lu cette newsletter ! On espère de tout 
 plume_morgan = ""
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
 temoignages = "articles/22-02/rencontre-avec-mashasexplique-pionniere-de-l-education-sexuelle-sur-les-reseaux-sociaux.md"
-title = "“J’ai compris que j’adorais parler de cul, et partager avec les autres.”"
+title = "“J’ai compris que j’adorais parler de cul, et le partager avec les autres” : Rencontre avec Mashasexplique, pionnière de l’éducation sexuelle sur Instagram"
 vu_d_ailleurs = []
 
 +++
