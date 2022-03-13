@@ -253,7 +253,7 @@ input[type='submit'].inverted:hover, button.inverted:hover {
 	color: var(--grey);
 	max-width: 30rem;
 	margin: 2rem auto;
-	text-align: justify;
+	/* text-align: justify; */
 	display: inline-block;
 }
 
@@ -354,7 +354,7 @@ main .icon {
 main article {
 	width: 100%;
 	padding: 0 1rem;
-	text-align: justify;
+	/* text-align: justify; */
 }
 
 main article ul, main .outro ul,
@@ -384,7 +384,7 @@ main h1 {
 main .edito, main .outro {
 	color: var(--grey);
 	font-size: 1.1rem;
-	text-align: justify;
+	/* text-align: justify; */
 }
 
 main article h2 {
