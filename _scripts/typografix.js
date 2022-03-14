@@ -29,6 +29,9 @@ exports.typografix = (html, { omitGuillemets = false } = {}) => {
 		.replace(/⋅/g, '·')							// Points médians
 		.replace(/«\s/g, '&laquo;&nbsp;')			// Guillemets déjà formatés
 		.replace(/\s»/g, '&nbsp;&raquo;')
+		.replace(/“/g, '&laquo;&nbsp;')
+		.replace(/”/g, '&nbsp;&raquo;')
+		.replace(/Le Point Q/g, 'Le&nbsp;Point&nbsp;Q')
 		.replace(/(src|style)=’[^’]+’/g, (str) => str.replace(/’/g, '\''));
 
 	return output;

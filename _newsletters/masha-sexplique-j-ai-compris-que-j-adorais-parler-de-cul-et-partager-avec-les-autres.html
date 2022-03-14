@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>📢 Masha Sexplique&nbsp;: &laquo;&nbsp;J’ai compris que j’adorais parler de cul, et le partager avec les autres&nbsp;&raquo;</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			display: table;
+			border-collapse: separate;
+			max-width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			margin: 2rem auto 2rem 1rem !important;
+			padding: 0.5rem 0.25rem 0.5rem 1rem !important;
+			border-left: 0.25rem solid #E23E67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: #E23E67 !important;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #E23E67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Vous la connaissez sûrement, elle fait partie de ces pionnières qui ont lancé le mouvement de libération de la parole sur Instagram. Aujourd’hui, elle compte plus de 100.000 abonné·e·s, et brise les tabous sur la sexualité au quotidien.</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo-v2.png" width="150" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<h1 style="margin: 0 0 30px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 700; font-family: 'Montserrat', sans-serif; text-align: center;">
+									Masha Sexplique&nbsp;: &laquo;&nbsp;J’ai compris que j’adorais parler de cul, et le partager avec les autres&nbsp;&raquo;
+								</h1>
+								<p>Bienvenue dans ce premier numéro du <strong>Point Q</strong> depuis le <a href="https://fr.ulule.com/le-point-q/">lancement de notre crowdfunding</a> !</p>
+<p>Vous avez explosé les compteurs ! À l’heure où on écrit ces lignes, on est à deux doigts d’atteindre le double de notre objectif initial, soit 600 euros, c’est absolument fou ! Si vous voulez donner le petit coup de pouce nécessaire, être celui ou celle qui nous fait entrer dans une nouvelle dimension, <a href="https://fr.ulule.com/le-point-q/">c’est par ici</a> ! Et en plus, vous débloquerez de nouveaux modèles de cartes ! Si ce n’est pas fantastique, ça !</p>
+<p>On en profite pour faire un gros big up à Lisa et à toutes les personnes qui ont déjà donné, vous êtes nos super-héro·ïne·s ! Pour les autres, d’<a href="https://fr.ulule.com/le-point-q/#rewards/">incroyables contreparties</a> illustrées par Camille et Morgan vous attendent sur Ulule en échange de vos dons (stickers, carnets, mugs, T-shirts à l’effigie du Point Q, et première BD de Morgan !)</p>
+<p>Pour ce premier numéro spécial crowdfunding, il nous fallait une invitée de marque. Vous la connaissez sûrement, elle est l’une des premières créatrices de contenu qui a parlé de sexualité sur Instagram. Elle fait partie de ces pionnières qui ont lancé le mouvement de libération de la parole, aux côtés de <a href="https://www.instagram.com/jemenbatsleclito/">@jemenbatsleclito</a>, <a href="https://www.instagram.com/jouissance.club/">@jouissance.club</a> et de beaucoup d’autres. Elle s’est d’abord fait connaître en parlant à coeur ouvert du post-partum. Aujourd’hui, elle compte plus de 100.000 abonné·e·s, et brise les tabous sur la sexualité au quotidien, dans des posts et vidéos toujours plus déculpabilisants. L’une de ses spécialités ? Les sextoys ! <strong>C’est <a href="https://www.instagram.com/mashasexplique/">@mashasexplique</a>, bien sûr !</strong></p>
+<p><strong>Elle a accepté de se prêter au jeu des questions-réponses avec notre journaliste Maëlle, et elle revient en détail pour Le Point Q sur ses débuts sur les réseaux sociaux. Elle nous raconte ce qui l’a poussée à faire de cette activité son métier à plein temps. Du lourd !</strong></p>
+<p>Le Point Q vous souhaite une bonne lecture !</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/img-20220310-wa0005.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Montserrat', sans-serif; text-align: center;">
+						<img
+							src="https://lepointq.com/media/icons/temoignages.png"
+							width="40" height="40"
+							style="vertical-align: middle;"
+						/>
+						&laquo;&nbsp;Le savoir, c’est le pouvoir&nbsp;&raquo;&nbsp;: Rencontre avec Masha Sexplique, pionnière de l’éducation sexuelle sur Instagram
+					</h2>
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-family: 'Montserrat', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Maëlle.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Maëlle
+											</span>
+										</h3>
+					
+					
+					<p><a href="https://www.instagram.com/mashasexplique/">Masha Sexplique</a> est aujourd’hui l’une des créatrices de contenu françaises les plus influentes en matière de sexualité(s) sur Instagram. Dans sa bio, elle écrit <em>« le savoir, c’est le pouvoir »</em> : un mantra qui anime tous ses projets depuis plus d’un an.</p>
+<p>Le 18 février sortait <a href="https://livre.fnac.com/a16367822/Masha-Sexplique-Nos-post-partum-un-guide-pour-accompagner-en-douceur-les-mois-de-l-apres-accouchement?Origin=fnac_google"><em>Nos post-partum</em></a>, un ouvrage collectif pour instruire les générations futures et <em>« accompagner en douceur les mois de l’après-accouchement »</em>. Dans quelques mois, elle publiera son quatrième livre <em>Sexplorer 2</em>, un guide bienveillant et pédagogique sur le désir, à dévorer seul·e ou accompagné·e.</p>
+<p>Mais comment en est-elle arrivée là ? Qu’avait-elle en tête au départ, lorsqu’elle s’est lancée en 2018, alors tout juste âgée de 20 ans ? Elle nous raconte avec franchise et authenticité, ce qui l’anime au quotidien : transmettre.</p>
+<h3><strong>Corps et anormalité supposée</strong></h3>
+<blockquote>
+<p><strong>« J’ai grandi avec l’idée que j’avais une vulve monstrueuse, mal formée. »</strong></p>
+</blockquote>
+<p>Masha s’est très tôt intéressée à la sexualité. Dès le lycée, elle parcourt les forums féminins à la recherche d’informations sur son corps. La confiance qu’elle affiche aujourd’hui sur ses vidéos TikTok n’a pas toujours été présente chez elle : <em>« J’ai vécu des trucs pas très cool, je cherchais à sortir du complexe de la vulve pas comme les autres. J’ai grandi, malgré moi, avec l’idée que j’avais une vulve monstrueuse et mal formée. »</em></p>
+<p>Elle explique que ce mal-être vient en grande partie du manque de représentations autour d’elle : <em>« Dans le porno, dans les encyclopédies, on voit toujours les mêmes vulves — blanches avec des petites lèvres roses qui ne dépassent jamais — or elles ne représentent peut-être même pas la moitié des personnes concernées. »</em> C’est ce qui l’amène au sujet de la sexualité : <em>« J’ai cherché à comprendre si j’avais une maladie. »</em></p>
+<p><img src='https://lepointq.com/media/uploads/IMG-20220310-WA0007.jpg' style='width: 100%;' /></p>
+<h3><strong>De la découverte de la sexualité à l’envie de contribuer</strong></h3>
+<p>Avec ces premières recherches, elle en apprend de plus en plus sur son corps. Mais neuf années en arrière, parler de sexualité de façon bienveillante était encore loin de constituer la norme : <em>« Trouver du contenu safe sur la sexualité, c’était très compliqué. Mes seules sources étaient le site Madmoizelle, le podcast En toute intimité et la chaîne cul Pouhiou, fermée à cause du harcèlement de masse. »</em> De forum en forum, Masha part à la découverte de sa sexualité mais aussi d’elle-même : <em>« J’ai compris que j’adorais parler de cul, et partager avec les autres. »</em></p>
+<blockquote>
+<p><strong>« Trouver du contenu safe sur la sexualité, c’était très compliqué. »</strong></p>
+</blockquote>
+<p>Lorsqu’elle tombe enceinte, Masha se met à passer beaucoup de temps chez elle. C’est là qu’elle lance son blog <em>Tout Sexplique</em> avec l’idée de contribuer à la production d’information dans le vaste champ de la sexualité : <em>« Je cherchais un domaine dont je ne me lasserais jamais. »</em> La machine est lancée. Dans les mois qui suivent, elle ouvre un compte Twitter.</p>
+<h3><strong>Premier enfant et lancement de #monpostpartum</strong></h3>
+<p>Son premier tweet viral porte sur l’accouchement. Au moment de la cérémonie des Oscars de 2020 aux États-Unis, une publicité pour des protections hygiéniques dédiées à la période du post-partum est censurée. La publicité avait, selon elle, sa place dans l’espace public : <em>« On est tellement dans une vision glamourisée de la maternité et du post-partum qu’en parler honnêtement, pour certains, c’est dégoûter les femmes du désir d’avoir des enfants. »</em> Masha défend, quant à elle, le droit au savoir. <em>« Les lochies, c’est-à-dire les règles en continu après le post-partum, c’est tout à fait normal. »</em></p>
+<blockquote>
+<p><strong><em>« On est dans une vision tellement glamourisée de la maternité que pour certains, en parler, c’est dégouter les femmes du désir d’avoir des enfants. »</em></strong></p>
+</blockquote>
+<p>À la suite de cette censure, la mannequin Ashley Graham publie une photo d’elle le 11 février 2020 <a href="https://www.instagram.com/p/B8aNFTygbr6/">en couche post-partum sur Instagram</a>. <em>« Ce post nous a inspirées, et avec deux autres créatrices de contenu, on a lancé le #postpartum en postant des photos de nous, au naturel. »</em> Rapidement, le hashtag est relayé à grande échelle : <em>« Le mot post-partum n’a jamais été aussi utilisé en cinq ans que depuis ce lancement. Depuis, il y a plein de livres sur le post-partum qui sont sortis, c’est une très bonne chose. »</em></p>
+<p><img src='https://lepointq.com/media/uploads/Capture%20d%E2%80%99%C3%A9cran%202022-03-08%20%C3%A0%2020.40.15.png' style='width: 100%;' /></p>
+<h3><strong>Libido et maternité</strong></h3>
+<p>Sur les réseaux sociaux, Masha se définit comme une <em>« maman sans filtres »</em> : <em>« Avoir un bébé implique un processus physiologique : on saigne, on a des cicatrices, notre vision du corps change elle aussi. »</em> On lui pose souvent la question du désir après l’accouchement sur les réseaux sociaux ; elle y répond avec du contenu qu’elle souhaite rassurant et éducatif. <em>« Il ne faut pas avoir peur de l’impact sur le couple de l’accouchement, car si l’impact est réel, il n’est pas pour autant négatif. Il ne signe ni la fin définitive du désir, ni la fin du couple. »</em></p>
+<blockquote>
+<p><strong><em>« Il faut neuf mois pour faire un bébé et neuf mois pour s’en remettre. »</em></strong></p>
+</blockquote>
+<p>Toujours avec cette volonté de transmettre, elle lance avec une autre instagrameuse, <a href="https://www.instagram.com/wicul_/">Edwige</a>, un atelier en ligne pour reconnecter avec sa libido : <em>« Les principaux inhibiteurs de la libido, ce sont le stress et la fatigue. Ce qu’on constate, c’est que lorsque les parents sont investi·e·s dans l’accueil de l’enfant, la libido baisse. Seulement, souvent le modèle patriarcal fait que la femme est la seule investie, et qu’elle est donc la seule à connaître une baisse de libido. »</em> Ces ateliers sont l’occasion de répondre aux questions de ses abonné·e·s, mais aussi d’être plus indépendante dans son mode de financement.</p>
+<h3><strong>Parler de sexualité sur les réseaux sociaux</strong></h3>
+<p>Ancienne étudiante en lettres modernes, Masha se définit aujourd’hui comme une « créatrice de contenu » : <em>« Pour moi, être influenceuse c’est partager sa vie, créer un espace de divertissement, mais le terme est souvent utilisé dans les médias pour minimiser le travail des femmes sur les réseaux sociaux. Être créatrice de contenu, c’est vulgariser les informations, transmettre des connaissances, c’est ce que j’aime faire au quotidien. »</em></p>
+<p>Entre pression des marques, censure et vagues de critiques, parler de sexualité sur les réseaux sociaux n’est pas chose aisée. Masha se souvient de son premier shadow ban* sur Twitter alors qu’elle avait 35.000 abonné·e·s : <em>« Les réseaux sociaux mettent tout ce qui a trait à la sexualité dans le registre de la pornographie, ils ne conçoivent pas que ça puisse être éducatif. »</em> Récemment, son compte Instagram a été supprimé durant plusieurs jours, avant qu’elle puisse le réutiliser : <em>« Tu te retrouves à t’autocensurer parce que quand ton compte saute, c’est comme si on te licenciait sans aucune explication. »</em></p>
+<p>Heureusement, des solidarités se développent dans ce milieu : <em>« Entre créatrices de contenu, on parle énormément de nos relations avec les marques, de rémunération, de contrat. C’est essentiel pour savoir comment t’organiser, avec qui collaborer. »</em> Masha peut produire un contenu accessible gratuitement sur les réseaux sociaux grâce aux marques avec lesquelles elle collabore. Elle offre régulièrement à ses abonné·e·s des réductions sur différentes marques de sextoys. Elle ne cache pas que derrière l’écran, c’est un travail souvent solitaire, réalisé dans sa chambre. D’où le plaisir de travailler à plusieurs : <em>« C’est important de sortir un peu de la solitude. Je me suis fait une grande amie, Edwige, sur les réseaux sociaux, c’est ce qui me permet de tenir et d’être soutenue. »</em></p>
+<p><em>* La plateforme décide de ne plus mettre en avant le contenu d’un·e créateur·rice.</em></p>
+<p><img src='https://lepointq.com/media/uploads/IMG-20220310-WA0006.jpg' style='width: 100%;' /></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			
+
+			
+
+			
+
+			
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+								<p>Hey !</p>
+<p>Merci à toi d’avoir lu cette newsletter ! On espère de tout coeur qu’elle t’a plu. N’hésite pas à nous donner ton avis sur <a href="https://www.instagram.com/lepoint.q/">Instagram</a>, <a href="https://www.facebook.com/lepointq.news">Facebook</a> ou <a href="https://twitter.com/LePointQ">Twitter</a>. Tu peux nous suggérer d’autres personnes que tu aimerais qu’on interviewe.</p>
+<p>Comme Masha, nous aussi on contribue à libérer la parole et à briser les tabous — gratuitement et bénévolement. Alors si tu aimes Le Point Q et que tu souhaites nous soutenir, c’est possible durant tout le mois de mars sur <a href="https://fr.ulule.com/le-point-q/">notre crowdfunding</a>.</p>
+<p>Excellente semaine à toi,</p>
+<p>Julien, Juliette, Maëlle, Ophélie, Orianne, Tom, Thaïs et Valentin, aka Le Point Q !</p>
+
+							</td>
+						</tr>
+						<tr>
+                            <td>
+                                <a href="https://fr.ulule.com/le-point-q" target="_blank">
+                                    <img src="https://lepointq.com/media/lepointq_groupe_10.png" style="width: 100%; vertical-align: bottom;" />
+                                </a>
+                            </td>
+                        </tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+	    </table>
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #FF5162;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

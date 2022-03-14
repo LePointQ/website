@@ -51,7 +51,7 @@ const build = async () => {
 		const { text: markdown } = await readFilePromise(`./content/newsletters/${slug}.md`);
 		const data = TOML.parse(markdown.replace(/\+\+\+/g, ''));
 
-		const { text: html } = await readFilePromise('./_templates/template.html');
+		const { text: html } = await readFilePromise('./_templates/template-v2.html');
 
 		let output = html
 			.replace(/{{ BASE_URL }}/g, BASE_URL)
@@ -77,7 +77,7 @@ const build = async () => {
 				<!-- Hero Image, Flush : BEGIN -->
 				<tr>
 					<td style="background-color: #ffffff;">
-						<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+						<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
 						<img src="${BASE_URL}${content.image}" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
 					</td>
 				</tr>
@@ -89,7 +89,7 @@ const build = async () => {
 						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 							<tr>
 								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
-									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Montserrat', sans-serif; text-align: center;">
 										<img
 											src="${BASE_URL}/media/icons/${section}.png"
 											width="40" height="40"
@@ -98,7 +98,7 @@ const build = async () => {
 										${section === 'temoignages' ? `${typografix(content.title)}` : TITLES[section]}
 									</h2>
 									${content.authors && content.authors.length > 0 ?
-										`<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-style: italic; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+										`<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-family: 'Montserrat', sans-serif; text-align: center;">
 											${content.authors.length === 1 && content.authors[0] !== 'Le Point Q' ? `
 												<img
 													src="${BASE_URL}/media/team/${content.authors[0]}.jpg"
@@ -140,7 +140,7 @@ const build = async () => {
 					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 						<tr>
 							<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
-								<p style="color: #F47B67 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Lato', 'Roboto', sans-serif;">● ● ●</p>
+								<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
 								<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
 									<img
 										src="${BASE_URL}/media/icons/plume_morgan.png"
