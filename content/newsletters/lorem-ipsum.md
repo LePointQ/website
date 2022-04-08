@@ -5,7 +5,7 @@ edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nOn ne pouvait pas
 la_bonne_nouvelle = []
 numero = 49
 on_debunke = []
-outro = ""
+outro = "Quelle que soit ton opinion politique, on espère que ce numéro t'aura plu !\n\nN'hésite pas à nous le faire savoir sur nos réseaux ! On est sur [Instagram](https://www.instagram.com/lepoint.q/?hl=fr) (principalement), mais aussi sur [Twitter ](https://twitter.com/LePointQ)et [Facebook](https://www.facebook.com/lepointq.news/).\n\nSi tu veux en lire plus, tu peux toujours te rendre sur notre site web, [lepointq.com](lepointq.com) ! Il a pris les couleurs de notre nouvelle charte graphique ! Tu vas voir comme c'est beau !\n\nEt si tu as participé à notre crowdfunding, ne t'en fais pas, on ne t'a pas oublié·e ! Tes contreparties sont en cours de préparation par l'équipe, on te tiendra au courant dès que possible.\n\nEn attendant, si tu aimes ce projet, n'hésite pas à le partager à tes copain·ine·s qui ne sont pas abonné·e·s, ça nous aide beaucoup !\n\nOn te dit à très vite pour un nouveau numéro,\n\nJulien, Juliette, Maëlle, Ophélie, Orianne, Tom, Thaïs et Valentin !"
 plume_morgan = ""
 preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend blandit fermentum. In quis mauris turpis."
 temoignages = "articles/22-04/pourriez-vous-relationner-avec-une-personne-qui-n-est-pas-du-meme-bord-politique-que-vous.md"
