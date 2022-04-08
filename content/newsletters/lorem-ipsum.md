@@ -1,7 +1,7 @@
 +++
 date = 2022-04-08T20:56:04Z
 draft = true
-edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nVous l'aurez compris, impossible de passer à côté de l'actualité présidentielle"
+edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nOn ne pouvait pas passer à côté de l'actualité, pour ce numéro au lendemain de l'élection présidentielle. C'est pourquoi on vous propose un numéro entièrement dédié aux liens qui unissent sexe et politique. Et ils sont nombreux, vous allez le voir...\n\nVous vous êtes peut-être déjà "
 la_bonne_nouvelle = []
 numero = 49
 on_debunke = []
