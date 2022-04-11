@@ -13,11 +13,11 @@ const TITLES = {
 const COLORS = {
 	'Vrai': 'forestgreen',
 	'Faux': 'crimson',
-	'Pas exactement': '#F47B67'
+	'Pas exactement': '#FFC8C0'
 };
 
 const SHARE_BUTTON = outdent`
-	<button style="background: #F47B67; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; margin-bottom: 8px; display: table;">
+	<button style="background: #FF5162; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; margin-bottom: 8px; display: table;">
 		<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
 			Je parraine mes potes !
 		</a>
@@ -89,14 +89,28 @@ const build = async () => {
 						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 							<tr>
 								<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
-									<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Montserrat', sans-serif; text-align: center;">
-										<img
-											src="${BASE_URL}/media/icons/${section}.png"
-											width="40" height="40"
-											style="vertical-align: middle;"
-										/>
-										${section === 'temoignages' ? `${typografix(content.title)}` : TITLES[section]}
-									</h2>
+									${section === 'temoignages'
+										? `
+											<img
+												src="${BASE_URL}/media/icons/${section}.png"
+												width="64" height="64"
+												style="display: block; margin: 0 auto;" />
+											<h4 style="margin: 0 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+												${typografix(content.title)}
+											</h4>
+										`
+										: `
+											<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Montserrat', sans-serif; text-align: center;">
+												<img
+													src="${BASE_URL}/media/icons/${section}.png"
+													width="40" height="40"
+													style="vertical-align: middle;"
+												/>
+												${TITLES[section]}
+											</h2>
+										`
+									}
+									
 									${content.authors && content.authors.length > 0 ?
 										`<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-family: 'Montserrat', sans-serif; text-align: center;">
 											${content.authors.length === 1 && content.authors[0] !== 'Le Point Q' ? `

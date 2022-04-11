@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🗳 Et toi, tu coucherais aux extrêmes ?</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			display: table;
+			border-collapse: separate;
+			max-width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			margin: 2rem auto 2rem 1rem !important;
+			padding: 0.5rem 0.25rem 0.5rem 1rem !important;
+			border-left: 0.25rem solid #E23E67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: #E23E67 !important;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #E23E67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>On ne pouvait pas passer à côté de l’actualité, au lendemain du premier tour de l’élection présidentielle. C’est pourquoi on vous propose un numéro entièrement dédié aux liens entre sexe et politique. Et on en a trouvé beaucoup...</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo-v2.png" width="150" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<h1 style="margin: 0 0 30px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 700; font-family: 'Montserrat', sans-serif; text-align: center;">
+									Et toi, tu coucherais aux extrêmes&nbsp;?
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>À période exceptionnelle, horaire exceptionnel. On vous a laissé tranquille hier matin, débattre de politique au bureau, pour vous garder le meilleur pour aujourd’hui. Un numéro entièrement dédié aux liens entre sexe et politique ! Et ils sont nombreux, vous allez le voir...</p>
+<p>Selon une <a href="https://www.ifop.com/publication/enquete-sur-le-poids-de-la-politique-dans-la-vie-de-couple-des-francais-a-une-semaine-du-premier-tour/">enquête de l’Ifop pour Gleeden</a> parue début avril, près d’un·e jeune Français·e sur deux (48 %) a déjà rompu avec un·e partenaire en raison d’une divergence politique. Une majorité refuserait par ailleurs d’avoir une relation avec une personne proche de l’extrême droite.</p>
+<p>Et vous ? <strong>Maëlle a recueilli vos témoignages, et vos avis divergent ! Si certain·e·s ont besoin de connaitre le bulletin de l’autre avant de se déshabiller, d’autre vivent en couple de part et d’autre de l’échiquier politique, sans problème !</strong> Côté Vu d’ailleurs cette semaine, un peu de chronologie. De Dominique Strauss-Kahn à Bill Clinton, en passant par Lucrèce, <strong>Valentin vous propose une courte histoire des scandales sexuels du monde politique.</strong> Ceux où les hommes sont agresseurs (souvent), mais aussi parfois victimes. Dans le débunk, <strong>Tom s’empare d’une question que tout le monde se pose : « le sexe est-il politique » ?</strong> Les études de l’IFOP sont formelles : OUI OUI et OUI ! Même les positions le sont, vous verrez... Enfin, dans la bonne nouvelle, <strong>Ophélie s’est penchée sur le podcast Président·iel, qui interroge les candidat·e·s à la présidentielle sur leurs mesures pour les droits des femmes et des personnes LGBTQIA+.</strong> Certes, il n’y a plus que Macron et Le Pen qui nous intéressent... Mais les réponses des dix éliminé·e·s sont intéressantes pour les années à venir !</p>
+<p>Numéro fourni, instructif, pour se Qltiver, quel que soit le mood de votre journée !</p>
+<p>Excellente lecture,</p>
+<p>Le Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/aKQtccFUtFAYnjhDme.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					
+											<img
+												src="https://lepointq.com/media/icons/temoignages.png"
+												width="64" height="64"
+												style="display: block; margin: 0 auto;" />
+											<h4 style="margin: 0 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+												Pourriez-vous avoir une relation avec une personne qui n’est pas du même bord politique que vous&nbsp;?
+											</h4>
+										
+					
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-family: 'Montserrat', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Maëlle.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Maëlle
+											</span>
+										</h3>
+					
+					
+					<ul>
+<li><strong><em>Malo*</em> — 21 ans, célibataire, hétérosexuel</strong></li>
+</ul>
+<p><em>« Ça dépend de ce qu’on entend par “relation”. Avec un coup d’un soir, c’est beaucoup moins bizarre et complexe qu’en couple ou même avec un plan cul par exemple. Si c’est juste une fois comme ça, bon, je m’en fiche que tu votes pour telle ou telle personne, parce que mon objectif n’est pas du tout là. »</em></p>
+<ul>
+<li><strong><em>Yasmine*</em> — 21 ans, célibataire, hétérosexuelle</strong></li>
+</ul>
+<p><em>« Si je ne suis pas au courant et qu’on ne me fait pas d’allusion problématique (raciste ou sexiste par exemple), ce n’est pas un problème. Mais oui, si je le sais et que je ne partage pas cet avis, ça mettra un blocage. Je ne pourrais pas. C’est pareil pour les amitiés d’ailleurs. »</em></p>
+<ul>
+<li><strong><em>Morgan</em>* — 28 ans, en couple, hétérosexuel</strong></li>
+</ul>
+<p><em>« Oui, complètement, je pourrais. Je ne me mets pas en couple en fonction du parti politique de mon·ma concubin·e. »</em></p>
+<ul>
+<li><strong><em>Nino*</em> — 21 ans, en couple libre, hétérosexuel</strong></li>
+</ul>
+<p><em>« Ça dépend : si c’est une relation sérieuse sûrement pas, c’est un obstacle insurmontable. Si c’est juste une relation physique, en vrai, pourquoi pas. En réalité, même juste pour du sexe (occasionnel ou à plusieurs reprises), ça doit être bizarre. »</em></p>
+<ul>
+<li><strong><em>Assia*</em> — 20 ans, en couple, bisexuelle</strong></li>
+</ul>
+<p><em>« Oui je pourrais, je suis pour la différence de point de vue. Après, c’est sûr qu’il y a différents degrés de différence. »</em></p>
+<ul>
+<li><strong><em>Calista*</em> — 20 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p><em>« Impossible, parce que ça va plus loin qu’un simple bord politique, c’est dur d’avancer avec quelqu’un qui a une conception totalement différente de la société et de ses problèmes.</em></p>
+<p><em>Pour l’amitié, c’est un peu différent. Mes meilleures amies ont la même vision des choses que moi et on pense de façon assez similaire. En revanche, j’ai certaines amies qui soutiennent Macron par exemple, moi non, mais ça ne me dérange pas car je ne passe pas ma vie avec. Et encore, c’est le maximum que je tolère dans mon entourage. Si on parle d’extrême droite, c’est plus compliqué — même pour des personnes que tu vois peu. »</em></p>
+<ul>
+<li><strong><em>Adriana*</em> — 24 ans, en couple, hétérosexuelle</strong></li>
+</ul>
+<p><em>« Oui et c’est le cas. On est tou·te·s les deux ouvert·e·s et capables de comprendre que l’autre pense autrement. On partage des valeurs à peu près similaires sur le fond et on débat calmement donc ça passe, mais j’avoue avoir eu des doutes au début sur la faisabilité de la chose. »</em></p>
+<ul>
+<li><strong><em>Chloé*</em> — 22 ans, célibataire, hétérosexuelle jusque-là</strong></li>
+</ul>
+<p><em>« Je pourrais et je trouverais même ça excitant... sauf si la personne remet en cause mon identité en elle-même. »</em></p>
+<p><em>* Les prénoms ont été modifiés</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/bill-clinton-relations.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					
+											<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Montserrat', sans-serif; text-align: center;">
+												<img
+													src="https://lepointq.com/media/icons/vu_d_ailleurs.png"
+													width="40" height="40"
+													style="vertical-align: middle;"
+												/>
+												Vu d&rsquo;ailleurs
+											</h2>
+										
+					
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-family: 'Montserrat', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Valentin.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Valentin
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Quand les politiques dérivent
+										</h4>
+									
+					
+					<p>Il y a deux ans, le candidat LREM aux élections municipales à Paris, Benjamin Griveaux, se retirait de la course après la diffusion de vidéos privées à caractère sexuel sur les réseaux sociaux. Si l’affaire a fait grand bruit, notamment en raison de son caractère nouveau (le partage non consenti d’images intimes), l’affaire Griveaux n’est pas le premier scandale sexuel en France, encore moins dans le monde. Courte histoire.</p>
+<p><em>Attention : certains extraits peuvent choquer.</em></p>
+<ul>
+<li><strong>2011 : Dominique Strauss-Kahn, le Sofitel et le Carlton</strong></li>
+</ul>
+<p>En 2011, le président du FMI est le grand favori du Parti socialiste pour l’élection présidentielle de 2012 (qui verra finalement l’élection de François Hollande). La même année, il est pourtant au cœur de deux scandales sexuels. <strong>Le premier, celui du Sofitel de New York</strong>, on s’en souvient pour deux choses. Un nom : Nafissatou Diallo, la femme de chambre qui l’accuse de viol, et un numéro : la suite 2806, où se sont déroulés les faits. <strong>La seconde affaire prend place à Lille.</strong> Il est révélé que DSK, alors présidentiable, a été invité par l’un des membres de l’hôtel Carlton à des soirées auxquelles participaient des prostituées. Il est finalement relaxé dans cette seconde affaire, tandis que celle du Sofitel se clôt avec le versement d’une grosse somme d’argent à la plaignante : entre 1,5 et 6 millions de dollars.</p>
+<ul>
+<li><strong>2011 : Georges Tron et ses massages plantaires</strong></li>
+</ul>
+<p>Georges Tron fut le maire RPR, puis UMP et enfin LR de Draveil, en Essonne, de 1995 à 2021. En pleine affaire Strauss-Kahn, cet adepte des massages plantaires est accusé par deux anciennes employées de la ville, Virginie Ettel et Éva Loubrieu, <strong>d’agressions sexuelles et de viols perpétrés pendant des séances qu’il leur prodiguait</strong>. Il comparaît en 2017 et est défendu par l’actuel ministre de la Justice, Éric Dupond-Moretti. Acquitté l’année suivante, il est finalement condamné en appel trois ans plus tard, en 2021, à cinq ans de prison et six ans d’inéligibilité.</p>
+<ul>
+<li><strong>2010 : Berlusconi, « <em>bunga-bunga</em> » et l’affaire Ruby</strong></li>
+</ul>
+<p>Le président du Conseil des ministres italiens a été impliqué dans un grand nombre de scandales, tant financiers que sexuels. L’homme politique est notamment connu pour <strong>ses soirées « <em>bunga bunga</em> », réunissant de nombreuses escorts dans l’une de ses villas près de Milan.</strong> En 2010, il est accusé d’avoir incité à la prostitution Karima El Mahroug, surnommée « Ruby », âgée de seulement 17 ans au moment des faits. Condamné à sept ans de prison ainsi qu’à une peine d’inéligibilité à vie en 2013, Silvio Berlusconi est pourtant acquitté l’année suivante. Celui qui a largement contribué à décrédibiliser la politique aux yeux des Italiens est actuellement député européen.</p>
+<ul>
+<li><strong>1998 : Le « Lewinskygate »</strong></li>
+</ul>
+<p>Il s’agit probablement du scandale politique et sexuel le plus célèbre des États-Unis. Le démocrate Bill Clinton, époux d’Hillary Clinton, devient le 42e président du pays en 1993. À la Maison-Blanche, <strong>il entretient une relation avec l’une des stagiaires, Monica Lewinsky</strong>. Pendant son mandat, Bill Clinton est accusé de harcèlement sexuel en tant qu’ancien gouverneur de l’Arkansas. Monica Lewinsky, convoquée pour témoigner lors du procès, nie toute relation avec le Président. Un mensonge qui se retourne contre elle quelques mois plus tard. Elle est contrainte de révéler la vérité. Une robe bleue tachée de sperme devient le symbole de cette relation, alors que Bill Cliton nie toute <em>« relation sexuelle »</em> avec Monica Lewinsky. Le président est visé par une procédure d’<em>impeachment</em> qui échoue en 1999. Vingt ans plus tard, en 2021, Monica Lewinsky participe à produire la troisième saison d’<a href="https://www.imdb.com/title/tt2788432/"><em>American Crime Story</em></a>, qui porte sur cette histoire.</p>
+<ul>
+<li><strong>Adultères et décès à l’Élysée</strong></li>
+</ul>
+<p>Vous avez probablement tou·te·s en tête l’image de <strong>François Hollande sur son scooter,</strong> apportant des croissants à la réalisatrice Julie Gayet, pendant son mandat. Mais le pénultième président français n’est pas le seul à avoir été impliqué dans des histoires de cœur... et plus. On pourrait évoquer la <strong>relation entre Mitterrand et la chanteuse Dalida</strong>, jamais exposée publiquement. Mais revenons plutôt à la Troisième République. En 1899, précisément, année du <strong>décès de Félix Faure</strong>. Président pendant l’affaire Dreyfus notamment, il est surtout connu pour avoir perdu la vie, selon la presse, en plein ébat avec sa maîtresse, Marguerite Steinheil, à l’Élysée. Il serait mort d’un AVC. On attribue à Clemenceau cette citation célèbre à propos de ce président adepte du faste : « <em>Il voulait être César, il ne fut que Pompée.</em> »</p>
+<ul>
+<li><strong>Un mythe de l’Antiquité : le viol de Lucrèce</strong></li>
+</ul>
+<p>Une fois n’est pas coutume, les femmes portent souvent les conséquences des actes des hommes. Pour finir cette liste, retour sur un récit légendaire, <strong>celui du viol de Lucrèce.</strong> Cette Romaine du VIe siècle, renommée pour sa vertu, est violée par le fils du roi Tarquin, qui la menace de faire passer cet épisode pour un adultère. Elle choisit de se suicider plutôt que de vivre dans le déshonneur. Par cet acte, qui serait à l’origine de la chute de la monarchie à Rome et du passage à la République, elle devint un <em>« exemplum »</em>, littéralement un exemple de vertu et de droiture morale. À méditer...</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/goche-usul.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					
+											<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Montserrat', sans-serif; text-align: center;">
+												<img
+													src="https://lepointq.com/media/icons/on_debunke.png"
+													width="40" height="40"
+													style="vertical-align: middle;"
+												/>
+												On débunke&nbsp;!
+											</h2>
+										
+					
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-family: 'Montserrat', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Tom.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Tom
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;La politique, ça n’a rien à voir avec le sexe&nbsp;&raquo;
+										</h4>
+									
+					
+										<p style="margin: 0 0 10px; font-size: 18px; line-height: 25px; color: crimson; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; border: 4px solid crimson; display: table; text-align: left; margin-left: auto; margin-right: auto;">
+											&nbsp;FAUX&nbsp;
+										</p>
+									
+					<p>Détrompe-toi ! Car comme l’explique Calista dans les témoignages ci-dessus, être de gauche ou de droite n’est pas une simple question d’opinion. Cela définit une conception de la société et des rapports sociaux — y compris dans l’intime.</p>
+<p><strong>Pour espérer séduire, mieux vaut ne pas voter à l’extrême droite.</strong> Selon <a href="https://www.ifop.com/wp-content/uploads/2022/04/118964_Rapport_Ifop_Gleeden_2022.04.04.pdf">une enquête de l’Ifop pour le site de rencontres extra-conjugales Gleeden</a>, parue le 1er avril dernier, les deux tiers des Français·e·s refuseraient de se mettre en couple avec une personne d’extrême droite (et 58 % refuseraient même un « coup d’un soir » avec cette personne). La proportion est plus élevée encore chez les femmes, et sans surprise, chez les répondant·e·s féministes et votant à gauche.</p>
+<p><strong>Les électeur·rice·s d’Éric Zemmour sont particulièrement ciblés</strong> : selon la même étude, 7 Françaises sur 10 ne se mettraient en couple pour rien au monde avec un électeur du candidat d’extrême droite, dont la base électorale est perçue comme <strong>la plus misogyne et la plus homophobe,</strong> par près de la moitié des répondant·e·s. À noter que ce sont chez les jeunes que les divergences politiques entraînent le plus de tensions : <strong>près de la moitié des 18-24 ans ont déjà rompu avec un·e partenaire pour un désaccord politique</strong>, contre un·e Français·e sur cinq tous âges confondus.</p>
+<p>Mais l’influence de la politique sur le sexe ne s’arrête pas au couple et à la séduction : <strong>les pratiques sexuelles elles-mêmes sont marquées politiquement</strong>. D’après une autre enquête de l’Ifop publiée en février dernier, cette fois-ci pour le site de rencontres libertins Wyylde et <a href="https://www.ifop.com/wp-content/uploads/2022/03/Ifop_Decons-rapport-complet.pdf">s’intéressant à la déconstruction des hommes</a>, 80 % des jeunes Français hétérosexuels votant à droite ou à l’extrême droite refuseraient d’inverser les rôles sexuels avec leur partenaire — et de, par exemple, expérimenter le plaisir prostatique en pratiquant l’anulingus ou le <em>pegging</em>. Une proportion qui tombe à 55 % chez les électeurs d’extrême gauche.</p>
+<p>Si l’on s’intéresse à la prise de conscience du plaisir féminin chez les jeunes hommes, ce sont cette fois-ci les électeurs centristes (de gauche comme de droite) qui semblent les moins déconstruits : près de la moitié d’entre eux refuseraient d’utiliser un sextoy pour faire jouir leur partenaire ou d’abandonner la pénétration dans la majorité de leurs rapports — contre moins d’un tiers des électeurs d’extrême gauche.</p>
+<p><a href="https://www.ifop.com/wp-content/uploads/2018/03/3737-1-annexe_file.pdf">Une dernière étude de l’Ifop, toujours pour Wyylde</a>, réalisée en avril 2017 à l’occasion de la dernière élection présidentielle, rentre encore plus dans le détail. Si certaines pratiques comme la sodomie, l’anulingus et la fessée (et autres jeux de domination) semblent être l’apanage des extrêmes, de gauche comme de droite, d’autres positions et pratiques sont plus orientées. <strong>C’est le cas de la biffle et de l’éjaculation faciale, issues de la culture du porno et bien plus pratiquées à l’extrême droite</strong>, tandis que, fidèles à leurs valeurs de partage, le plan à trois et l’échangisme ont plutôt les faveurs des électeur·rice·s d’extrême gauche...</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/presidentiel.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					
+											<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Montserrat', sans-serif; text-align: center;">
+												<img
+													src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+													width="40" height="40"
+													style="vertical-align: middle;"
+												/>
+												La bonne nouvelle
+											</h2>
+										
+					
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-family: 'Montserrat', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Ophélie.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Ophélie
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Président·iel&nbsp;: les candidat·e·s répondent aux questions LGBTQI+ sur Spotify
+										</h4>
+									
+					
+					<p>Durant l’élection présidentielle, on débat de tout, mais finalement très peu des droits des femmes, de ceux des personnes LGBTQIA+, et d’égalité. Disponible sur Spotify, <a href="https://open.spotify.com/show/2qIUwhAXn6EKw50pPp5T3M?go=1&amp;sp_cid=1e345be4b448da577858cfd961069cd5">le podcast « Président·iel » </a>propose, pour la première fois en France, un lieu d’échange avec les candidat·e·s, uniquement consacré à ces sujets.</p>
+<p>Après leur précédent podcast <a href="https://open.spotify.com/show/59UuXPmc80CN2YsRAFsqVP?si=e31867b82fce4ed3">« Coming out »</a> qui avait rencontré un joli succès, Élise Goldfarb et Julia Layani, entrepreneuses, créatrices de contenu et lesbiennes elles-mêmes, voulaient aborder une nouvelle fois ces questions, au centre des préoccupations des jeunes notamment.</p>
+<p>Depuis le 21 mars, sur les 12 candidat·e·s en course pour l’Élysée, 10 se sont présenté·e·s et ont pu développer leur point de vue sur des questions centrales mais pourtant quasi-absentes des médias généralistes pendant cette campagne, telles que la PMA pour tou·te·s, la GPA et la lutte contre les LGBT-phobies. Dans <a href="https://www.forbes.fr/politique/president-iel-le-podcast-qui-met-la-question-de-legalite-femmes-hommes-et-des-lgbtqia-au-coeur-du-debat/">une interview accordée à Forbes</a>, les deux animatrices ont expliqué avoir eu envie de faire ce projet parce qu’elles font partie de cette génération qui s’interroge sur la manière d’exprimer et de vivre son orientation sexuelle en 2022 : <em>« Avec Président·iel, nous proposons un nouvel espace d’expression autour des femmes et des LGBTQIA+, afin qu’ils ne soient pas les grands oubliés de cette campagne. »</em></p>
+<p>Nathalie Arthaud, Valérie Pécresse, Éric Zemmour... Tou·te·s se sont prêté·e·s à l’exercice — à l’exception de Marine Le Pen et d’Emmanuel Macron. Néanmoins, l’invitation des candidat·e·s de droite et d’extrême droite a fait débat : le magazine <a href="https://tetu.com/2022/03/23/election-presidentielle-2022-podcast-president-iel-lgbt-spotify-invite-candidat-eric-zemmour-billet-critique/">têtu·</a> a ainsi regretté la présence d’Éric Zemmour, dénonçant une mise en lumière de ses positions LGBT-phobes. D’autant que, comme le déplore le magazine, le fact-checking est relégué à deux minutes en fin d’émission, après trois quarts d’heure d’entretien où les deux animatrices — qui ne sont pas journalistes — peinent à démonter la propagande anti-LGBT du candidat. Mais malgré ces réserves, et même si les jeux sont faits pour le second tour, ça vaut le coup d’œil (ou plutôt d’oreille) !</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+								<p>Quelle que soit ton opinion politique, on espère que ce numéro t’aura plu !</p>
+<p>N’hésite pas à nous le faire savoir sur nos réseaux ! On est sur <a href="https://www.instagram.com/lepoint.q/?hl=fr">Instagram</a> (principalement), mais aussi sur <a href="https://twitter.com/LePointQ">Twitter </a>et <a href="https://www.facebook.com/lepointq.news/">Facebook</a>.</p>
+<p>Si tu veux en lire plus, tu peux retrouver tous nos anciens numéros sur notre site web, <a href="https://lepointq.com">lepointq.com</a> ! Il s’est refait une jeunesse avec une nouvelle charte graphique signée <a href="https://www.instagram.com/camillejoblin/">@camillejoblin</a>, c’est magnifique !</p>
+<p>Et si tu as participé à notre crowdfunding, les contreparties arrivent ! Elles sont en cours de préparation par l’équipe, et tu devrais bientôt recevoir un mail de notre part.</p>
+<p>En attendant, si tu aimes ce projet, n’hésite pas à le partager à tes copain·ine·s qui ne sont pas encore abonné·e·s (quoiiiii ?) :</p>
+<button style="background: #FF5162; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; color: white; font-weight: bold; margin-left: auto; margin-right: auto; margin-bottom: 8px; display: table;">
+	<a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank" style="color: white !important; font-size: 18px;">
+		Je parraine mes potes !
+	</a>
+</button>
+<p style="text-align: center; margin-top: 0;">Si le bouton ne fonctionne pas, <a href="https://lepointq.com/partage/?referrer={{ contact.EMAIL }}" target="_blank">clique ici</a></p>
+<p>On te dit à très vite pour un nouveau numéro,</p>
+<p>Julien, Juliette, Maëlle, Ophélie, Orianne, Tom, Thaïs et Valentin !</p>
+
+							</td>
+						</tr>
+						<tr>
+                            <td>
+                                <a href="https://fr.ulule.com/le-point-q" target="_blank">
+                                    <img src="https://lepointq.com/media/lepointq_groupe_10.png" style="width: 100%; vertical-align: bottom;" />
+                                </a>
+                            </td>
+                        </tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+	    </table>
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #FF5162;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
