@@ -9,7 +9,7 @@ outro = "Quelle que soit ton opinion politique, on espère que ce numéro t'aura
 plume_morgan = ""
 preview = "On ne pouvait pas passer à côté de l'actualité, au lendemain du premier tour de l'élection présidentielle. C'est pourquoi on vous propose un numéro entièrement dédié aux liens entre sexe et politique. Et on en a trouvé beaucoup..."
 temoignages = "articles/22-04/pourriez-vous-relationner-avec-une-personne-qui-n-est-pas-du-meme-bord-politique-que-vous.md"
-title = "Sexe et politique sont indissociables"
+title = "Le sexe est absolument politique"
 vu_d_ailleurs = "articles/22-04/quand-les-politiques-derivent.md"
 
 +++
