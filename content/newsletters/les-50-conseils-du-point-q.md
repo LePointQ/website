@@ -1,7 +1,7 @@
 +++
 date = 2022-05-19T14:12:10Z
 draft = true
-edito = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis justo sed sem lobortis lacinia sed sed erat. Proin ultrices eleifend sem, id maximus massa fringilla volutpat. Praesent et leo porta arcu bibendum viverra."
+edito = "Bienvenue dans ce nouveau numéro du **Point Q** !\n\nAprès une longue attente, on revient dans vos boîtes mail, avec de belles surprises...\n\nEh oui, qui dit numéro 50, dit forcément numéro spécial ! Impossible pour nous de laisser passer une telle occasion de vous concocter un numéro qui change de l'ordinaire."
 la_bonne_nouvelle = []
 numero = 50
 on_debunke = []
