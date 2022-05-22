@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
-    <title>{{ EMOJI }} {{ TITLE }}</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <title>🎉 Les 50 conseils du Point Q&nbsp;!</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
     <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
     <!--[if gte mso 9]>
@@ -37,7 +37,7 @@
     <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
     <!--<![endif]-->
 
-	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800" rel="stylesheet" type="text/css">
 
     <!-- Web Font / @font-face : END -->
 
@@ -64,31 +64,6 @@
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
         }
-
-		ul {
-			margin: 8px 0 8px 16px !important;
-			padding: 0;
-		}
-
-		blockquote {
-			display: table;
-			border-collapse: separate;
-			max-width: 80%;
-			font-size: 1.3rem;
-			font-weight: bold;
-			font-style: italic;
-			margin: 2rem auto 2rem 1rem !important;
-			padding: 0.5rem 0.25rem 0.5rem 1rem !important;
-			border-left: 0.25rem solid #E23E67;
-		}
-
-		blockquote p {
-			margin: 8px 0;
-			font-size: 1.3rem;
-			font-weight: bold;
-			color: #E23E67 !important;
-			text-align: left;
-		}
 
         /* What it does: Centers email on Android 4.4 */
         div[style*="margin: 16px 0"] {
@@ -122,7 +97,7 @@
 
         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
 		a {
-			font-weight: bold !important;
+			font-weight: 700 !important;
 			text-decoration: none !important;
 			color: #E23E67 !important;
 		}
@@ -145,10 +120,6 @@
             font-weight: inherit !important;
             line-height: inherit !important;
         }
-
-		h3 {
-			text-align: left;
-		}
 
         /* What it does: Prevents Gmail from changing the text color in conversation threads. */
         .im {
@@ -192,19 +163,6 @@
 
     <!-- Progressive Enhancements : BEGIN -->
     <style>
-		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800");
-
-        /* What it does: Hover styles for buttons */
-        .button-td,
-        .button-a {
-            transition: all 100ms ease-in;
-        }
-	    .button-td-primary:hover,
-	    .button-a-primary:hover {
-	        background: coral !important;
-	        border-color: coral !important;
-	    }
-
         /* Media Queries */
         @media screen and (max-width: 600px) {
 
@@ -265,8 +223,7 @@
         <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
         <!-- Preview Text Spacing Hack : BEGIN -->
         <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-			{{ PREVIEW }}
-            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+            Qui dit numéro 50, dit numéro spécial&nbsp;! Impossible pour nous de laisser passer une telle occasion de vous concocter un numéro qui change de l’ordinaire.
         </div>
         <!-- Preview Text Spacing Hack : END -->
 
@@ -275,8 +232,8 @@
 	        <!-- Email Header : BEGIN -->
             <tr>
                 <td style="padding: 20px 0; text-align: center">
-					<a href="{{ BASE_URL }}" target="_blank">
-						<img src="{{ BASE_URL }}/media/logo-v2.png" width="150" style="vertical-align: middle;" />
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo-v2.png" width="150" style="vertical-align: middle;" />
 					</a>
                 </td>
             </tr>
@@ -287,36 +244,37 @@
                 <td style="background-color: #ffffff;">
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
-                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
-								<h1 style="margin: 0 0 30px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 700; font-family: 'Montserrat', sans-serif; text-align: center;">
-									{{ TITLE }}
+                            <td style="padding: 20px 20px 0; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #333333; text-align: justify;">
+                                <h1 style="margin: 0 0 30px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 700; font-family: 'Montserrat', 'Lato', 'Roboto', sans-serif; text-align: center;">
+									Les 50 conseils du Point Q&nbsp;!
 								</h1>
-								{{ EDITO }}
+
+								<p>Bienvenue dans ce nouveau numéro du <b>Point Q</b>&nbsp;!
+
+								<p>Après une longue attente, on revient dans vos boîtes mail, avec de belles surprises...</p>
+									
+								<p>Eh oui, qui dit numéro 50, dit forcément numéro spécial&nbsp;! Impossible pour nous de laisser passer une telle occasion de vous concocter un numéro qui change de l’ordinaire.</p>
+									
+								<p>Pour ce numéro 50, quoi de mieux que les <b>50 conseils du Point&nbsp;Q</b> en vidéo&nbsp;? L’occasion pour vous d’apprendre quelques petites choses tout en découvrant nos bouilles, si vous ne les connaissez pas déjà&nbsp;! Big up à Maëlle pour le montage.
+									
+								<p>Mais impossible pour nous de nous contenter de ça. On vous prépare un prochain numéro inédit pour revenir sur le chemin qu’on a parcouru tou·te·s ensemble. On ne vous en dit pas plus, restez connecté·e·s...</p>
+									
+								<p>À très vite pour le prochain numéro,</p>
+									
+								<p>L’équipe du Point&nbsp;Q.</p>
+
+								<a href="https://www.youtube.com/watch?v=sxdQTJBKmTU&ab_channel=LePointQ" target="_blank">
+									<img src="" style="width: 100%;" />
+								</a>
                             </td>
                         </tr>
-                    </table>
-                </td>
-            </tr>
-            <!-- 1 Column Text : END -->
-
-			{{ TEMOIGNAGES }}
-
-			{{ VU_D_AILLEURS }}
-
-			{{ ON_DEBUNKE }}
-
-			{{ LA_BONNE_NOUVELLE }}
-
-			{{ PLUME_MORGAN }}
-
-			<!-- 1 Column Text : BEGIN -->
-			<tr>
-				<td style="background-color: #ffffff;">
-					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 						<tr>
 							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
 								<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
-								{{ OUTRO }}
+								<p>On espère que cette vidéo t’aura plu&nbsp;!</p>
+								<p>Tu peux déjà en retrouver des extraits sur <a href="https://www.instagram.com/lepoint.q/?hl=fr" target="_blank">notre page Instagram</a>, si tu veux la partager avec tes ami·e·s&nbsp;! On est aussi sur <a href="https://twitter.com/LePointQ" target="_blank">Twitter</a> et <a href="https://www.facebook.com/lepointq.news/" target="_blank">Facebook</a>, évidemment. Tu peux nous y suivre pour retrouver toute l’actualité de ta newsletter préférée&nbsp;!</p>
+								<p>Et si tu attends tes contreparties pour notre crowdfunding, encore un peu de patience, elles sont en route&nbsp;!</p>
+								<p>Julien, Juliette, Maëlle, Ophélie, Orianne, Tom, Thaïs et Valentin.</p>
 							</td>
 						</tr>
 						<tr>
@@ -326,11 +284,19 @@
                                 </a>
                             </td>
                         </tr>
-					</table>
-				</td>
-			</tr>
-			<!-- 1 Column Text : END -->
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+            <!-- <tr>
+                <td>
+                    <img src="https://lepointq.com/media/lepointq_groupe_10.png" style="width: 100%;" />
+                </td>
+            </tr> -->
+
 	    </table>
+	    <!-- Email Body : END -->
 
 	    <!-- Full Bleed Background Section : BEGIN -->
 	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #FF5162;">
@@ -356,7 +322,7 @@
 											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
 										</a>
 									</p>
-									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 10px 0 10px;"><b>Le Point&nbsp;Q</b></p>
 									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
 	                            </td>
 	                        </tr>
@@ -375,7 +341,7 @@
 		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 			<!-- Clear Spacer : BEGIN -->
 			<tr>
-				<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+				<td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
 					&nbsp;
 				</td>
 			</tr>
