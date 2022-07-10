@@ -1,0 +1,13 @@
++++
+authors = ["Thaïs"]
+date = 2022-07-10T15:48:40Z
+draft = true
+image = ""
+preview = "Deux ans et demi de pandémie et trois confinements vont-ils transformer notre rapport à l'amour et au sexe ? On a posé la question à Marie-Carmen Garcia, sociologue qui a travaillé sur l'évolution des relations amoureuses."
+section = "On débunke"
+text = "Deux ans et demi de pandémie et trois confinements vont-ils transformer notre rapport à l'amour et au sexe ? On a posé la question à Marie-Carmen Garcia, sociologue qui a travaillé sur l'évolution des relations amoureuses.\n\n**Le Point Q : Ces trois dernières années, le Covid-19 a compliqué nos rencontres, nos sorties et notre vie sociale : peut-on s'attendre à ce que la pandémie entraîne des transformations durables dans notre rapport à l'amour, au sexe, au couple ?**\n\nMarie-Carmen Garcia : D'un point de vue sociologique, il est encore tôt pour savoir si cela va mener à des transformations structurelles (durables) des comportements amoureux et sexuels.\n\nC’est surtout le confinement qui a joué, plus que la pandémie en tant que telle, durant lequel on a pu observer par exemple beaucoup de séparations de couples. Mais cela découle d'un procédé déjà entamé avant le Covid.   C’est un grand classique des crises sociales : ce n'est pas cet épisode qui va entraîner des changements de la vie privée, ce sont des problèmes qui étaient déjà là (et cela va agir comme un catalyseur) accélérer les choses\n\n**Qu’en est-il des plus jeunes, qui ont découvert l’amour et la sexualité pendant cette crise ?**\n\nCette période  a peut-être renforcé un effet qui était déjà là avant : les rencontres virtuelles. On observe depuis longtemps une transformation des modalités de rencontre et de drague, ou même des rapports sexuels à distance chez les adolescents et jeunes adultes.\n\nPour toute une génération, l'entrée dans la vie affective-sexuelle au sens large s’est fait par la force des choses de manière virtuelle à cause du confinement.  Ils ont ainsi eu une socialisation différente, c'est-à-dire qu'ils acquièrent des comportements, des manières d’être liés à la crise \n\nPour cette population qui en 2019 avait entre 14-19 ans environ, en pleine construction de leur  vie sexuelle et amoureuse, ça peut être déterminant : Ils sont rentrés de manière différente dans l’amour et la sexualité différemment que d’autres générations. \n\nC'est une transformation qui reste à observer, pour savoir ce que cela va donner dans leur vie adulte.\n\n "
+themes = []
+title = "CITATION"
+veracity = "Faux"
+
++++
