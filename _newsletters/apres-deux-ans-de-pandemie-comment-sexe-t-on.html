@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>🫶 Après deux ans de pandémie, comment sexe-t-on&nbsp;?</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+	<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+	<style>
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+		ul {
+			margin: 8px 0 8px 16px !important;
+			padding: 0;
+		}
+
+		blockquote {
+			display: table;
+			border-collapse: separate;
+			max-width: 80%;
+			font-size: 1.3rem;
+			font-weight: bold;
+			font-style: italic;
+			margin: 2rem auto 2rem 1rem !important;
+			padding: 0.5rem 0.25rem 0.5rem 1rem !important;
+			border-left: 0.25rem solid #E23E67;
+		}
+
+		blockquote p {
+			margin: 8px 0;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: #E23E67 !important;
+			text-align: left;
+		}
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			font-weight: bold !important;
+			text-decoration: none !important;
+			color: #E23E67 !important;
+		}
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+		h3 {
+			text-align: left;
+		}
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+		@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800");
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: coral !important;
+	        border-color: coral !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+			<p>Vous le savez, on est né en plein milieu de la pandémie de Covid. Deux ans après, où en est-on ? La pandémie a-t-elle durablement influencé nos sexualités ? C’est l’heure du bilan !</p>
+
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding: 20px 0; text-align: center">
+					<a href="https://lepointq.com" target="_blank">
+						<img src="https://lepointq.com/media/logo-v2.png" width="150" style="vertical-align: middle;" />
+					</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<h1 style="margin: 0 0 30px; font-size: 25px; line-height: 30px; color: #000000; font-weight: 700; font-family: 'Montserrat', sans-serif; text-align: center;">
+									Après deux ans de pandémie, comment sexe-t-on&nbsp;?
+								</h1>
+								<p>Bienvenue dans ce nouveau numéro du <strong>Point Q</strong> !</p>
+<p>C’est le 50<sup>ème</sup> épisode de votre saga préférée, et le dernier de cette deuxième saison. Eh oui, cela fait plus de deux ans que Le Point Q vous parle de sexualité(s) et de plaisir(s).</p>
+<p>On en aura vécu, des choses, tou·te·s ensemble ! C’est pourquoi ce numéro est un peu spécial… Vous le savez, on est né en plein milieu de la pandémie de Covid. Autant dire que dans vos vies comme dans les nôtres, pas mal de choses ont changé, dans nos relations intimes et sur l’oreiller. <strong>Deux ans après, où en est-on ?</strong> La pandémie a-t-elle durablement influencé, voire transformer nos sexualités ? C’est l’heure du bilan !</p>
+<p>On commence avec vos témoignages, recueillis, une fois n’est pas coutume, par notre chère Orianne ! Pour ce numéro spécial, elle a retrouvé <strong>deux de nos plus anciennes lectrices, qui nous avaient déjà ouvert leur cœur dans les tous premiers numéros de cette newsletter !</strong> Big up à elles, et merci d’avoir répondu à nos questions ! On enchaîne avec le débunk, par Thaïs. Elle a échangé avec <strong>Marie-Carmen Garcia, une sociologue spécialiste de l’évolution des relations amoureuses.</strong> L’interlocutrice parfaite pour ce numéro retour aux origines. On termine avec un point statistiques proposé par Ophélie. <strong>Fait-on aujourd’hui plus l’amour qu’hier… Ou le fait-on moins mais mieux ?</strong> Comment évoluent les mentalités autour de la sexualité ? La réponse en bas de cette newsletter !</p>
+<p>Le Point Q saison 2, c’est (déjà) fini ! Eh oui, il fallait bien terminer cette année pleine d’émotions… 50 numéros qu’on essaie de libérer la parole autour des <a href="https://lepointq.com/newsletters/du-rouge-aux-levres/">règles</a>, des <a href="https://lepointq.com/newsletters/decomplexons/">complexes</a>, des <a href="https://lepointq.com/newsletters/au-bout-de-nos-reves/">fantasmes</a>, du <a href="https://lepointq.com/newsletters/tes-gestes-lentement-diriges-sensualite/">désir</a> (ou de <a href="https://lepointq.com/newsletters/free-from-desire-parlons-asexualite/">son absence</a> !)… Bref, de tout ce qui nous concerne les jeunes (et moins jeunes) adultes de 2022.</p>
+<p>On vous souhaite de savourer ce numéro comme s’il s’agissait d’une boule de glace (parfum vanille), la bruit des vagues dans les oreilles...</p>
+<p>Bonnes vacances à toutes et à tous !</p>
+<p>Le Point Q.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text : END -->
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/couple.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					
+											<img
+												src="https://lepointq.com/media/icons/temoignages.png"
+												width="64" height="64"
+												style="display: block; margin: 0 auto;" />
+											<h4 style="margin: 0 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+												Comment la pandémie a-t-elle influencé vos relations&nbsp;?
+											</h4>
+										
+					
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-family: 'Montserrat', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Orianne.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Orianne
+											</span>
+										</h3>
+					
+					
+					<ul>
+<li><strong>Inès — 24 ans, hétérosexuelle, en couple</strong></li>
+</ul>
+<p><em>« J’ai rencontré mon mec pendant le Covid. Ce n’était pas le confinement mais on devait être masqué. On s’est rencontré pendant une soirée à Bruxelles, alors qu’on n’avait plus vraiment le droit de faire de soirées… On était cinq et on devait rentrer assez tôt. Je dois avouer que c’était un contexte un peu étrange. On a vécu la première partie de notre relation chez nous, on n’allait pas dehors, on n’allait pas au resto. On s’est vu chez lui, et c’est allé très vite. Puis on a vécu ensemble, vite aussi. Et ça m’allait très bien, mais c’est vrai que ça a tout accéléré.</em></p>
+<p><em>Là, ça fait un an et demi qu’on est ensemble. Maintenant, on profite encore plus. Ça se passe très bien et on adore bouger et faire plein d’activités. Je ne sais pas si c’est lié au Covid, mais en tout cas je sais que je prends plus soin de ma vie sexuelle et de mon corps. C’est peut-être lié à l’âge. Les filles comprennent enfin qu’elles ont le droit au plaisir. En tout cas depuis le Covid, j’ai l’impression que ma sexualité a un peu changé. Elle est plus tournée vers mon plaisir, elle est dans le partage. Et maintenant, je pense que je ne pourrai plus aller coucher avec des gens comme ça, ça me dégoûte un peu. »</em></p>
+<ul>
+<li><strong>Garance — 24 ans, hétérosexuelle, en couple</strong></li>
+</ul>
+<p><em>« J’ai découvert le télétravail avec mon copain, on a fait le premier confinement ensemble. C’était marrant d’avoir des rapports sexuels au hasard au milieu de l’après-midi, en plein travail. De le faire avec la pression d’avoir un appel à tout moment, ou avant une réunion. C’est la petite découverte marrante. »</em></p>
+<ul>
+<li><strong>Tiphaine et <em>Léo*</em>, en couple depuis deux ans</strong></li>
+</ul>
+<p><em>Ils se sont mis ensemble le 14 février 2020, soit un mois avant le premier confinement. Ils vont avoir un bébé cet été.</em></p>
+<p>Léo : <em>« Le Covid a principalement servi d’accélérateur. Il est arrivé assez vite dans la relation. Dès les premières semaines, on s’est mis ensemble dans le même logement. On est entré directement dans la routine d’un couple qui emménage ensemble, donc on a sauté beaucoup d’étapes. Finalement, il n’y a pas eu d’avant-Covid. Il y a moins eu ce côté séduction, ces premiers rendez-vous où l’on se cherche. On s’est découvert un peu différemment, dans une vie de tous les jours. Et de manière générale, au niveau séduction, on n’avait pas l’occasion de faire de surprise de la même manière. Ça passait plutôt des petites attentions, à travers des petits gestes du quotidien. Et côté sexe, le fait d’être toujours ensemble fait qu’il y a pas forcément d’attente. Quand l’envie de faire l’amour vient, on le fait directement, il n’y a pas tout ce côté montée en pression. »</em></p>
+<p>Tiphaine : <em>« Il fallait faire confiance de suite. Du coup, je me suis moins posée de questions. Ça force à prendre plus de recul, on prend les choses avec plus de légèreté. En même temps, c’était risqué. Emménager ensemble, c’est soit ça passe, soit ça casse. Aujourd’hui, notre relation n’a pas tant changé. On est resté dans nos habitudes, on a gardé la même routine. On est devenu un vieux couple dès le départ. À la sortie du Covid, c’était très bizarre parce que ça faisait déjà très longtemps qu’on était ensemble et en même temps il y avait plein de premiers rendez-vous qu’on n’avait jamais eus. Je pense que pendant les confinements, on s’est beaucoup projetés parce que c’était le seul échappatoire. Ça permettait de garder espoir. C’est pour ça qu’on a emménagé ensemble, qu’on a eu un chien, que maintenant on a une maison et qu’on va avoir un bébé. Ces projets qu’on a développés sur une courte durée, auraient pris beaucoup plus d’années en temps normal. Et c’est vrai que sexuellement, cette période nous a poussés à être inventifs un peu plus vite. »</em></p>
+<p><em>* Le prénom a été modifié</em></p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/dating-g2e378b510_1280.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					
+											<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Montserrat', sans-serif; text-align: center;">
+												<img
+													src="https://lepointq.com/media/icons/on_debunke.png"
+													width="40" height="40"
+													style="vertical-align: middle;"
+												/>
+												On débunke&nbsp;!
+											</h2>
+										
+					
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-family: 'Montserrat', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Thaïs.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Thaïs
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											&laquo;&nbsp;Pour toute une génération, l’entrée dans la vie affective et sexuelle s’est faite, par la force des choses, de manière virtuelle&nbsp;&raquo;
+										</h4>
+									
+					
+					<p><em>Deux ans et demi de pandémie et trois confinements vont-ils transformer notre rapport à l’amour et au sexe ? On a posé la question à Marie-Carmen Garcia, sociologue qui a travaillé sur l’évolution des relations amoureuses.</em></p>
+<h3><strong>Ces trois dernières années, le Covid-19 a compliqué nos rencontres, nos sorties et notre vie sociale : peut-on s’attendre à ce que la pandémie entraîne des transformations durables dans notre rapport à l’amour, au sexe, au couple ?</strong></h3>
+<p>D’un point de vue sociologique, il est encore tôt pour savoir si cela va mener à des transformations structurelles (durables) des comportements amoureux et sexuels.</p>
+<p>Plus que la pandémie en tant que telle, c’est surtout le confinement qui a joué, durant lequel on a pu observer par exemple beaucoup de séparations de couples. Mais cela découle d’un procédé déjà entamé avant le Covid. C’est un grand classique des crises sociales : ce n’est pas cet épisode qui va entraîner des changements de la vie privée, ce sont des problèmes qui étaient déjà là et le confinement va agir comme un catalyseur.</p>
+<h3><strong>Qu’en est-il des plus jeunes, qui ont découvert l’amour et la sexualité pendant cette crise ?</strong></h3>
+<p>Cette période a peut-être renforcé un effet qui était déjà là avant : les rencontres virtuelles. On observe depuis longtemps une transformation des modalités de rencontre et de drague, ou même des rapports sexuels à distance chez les adolescents et jeunes adultes.</p>
+<p>Pour toute une génération, l’entrée dans la vie affective et sexuelle au sens large s’est faite, par la force des choses, de manière virtuelle à cause du confinement. Ils ont ainsi eu une socialisation différente, c’est-à-dire qu’ils acquièrent des comportements, des manières d’être liés à la crise</p>
+<p>Cette population, qui en 2019 avait entre 14 et 19 ans environ, est en pleine construction de leur vie sexuelle et amoureuse. Cela peut donc être déterminant : iels sont rentré·e·s dans l’amour et la sexualité de manière différente par rapport aux autres générations.</p>
+<p>C’est une transformation qui reste à observer, pour savoir ce que cela va donner dans leur vie adulte.</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			<!-- Hero Image, Flush : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+		<img src="https://lepointq.com/media/uploads/image-bonne-nouvelle-ophelie.jpeg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; margin: auto; display: block;" class="g-img">
+	</td>
+</tr>
+<!-- Hero Image, Flush : END -->
+
+<!-- 1 Column Text : BEGIN -->
+<tr>
+	<td style="background-color: #ffffff;">
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td style="padding: 20px 20px 10px 20px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #000000; text-align: justify;">
+					
+											<h2 style="margin: 0 0 10px; font-size: 24px; line-height: 28px; color: #000000; font-weight: 900; font-family: 'Montserrat', sans-serif; text-align: center;">
+												<img
+													src="https://lepointq.com/media/icons/la_bonne_nouvelle.png"
+													width="40" height="40"
+													style="vertical-align: middle;"
+												/>
+												La bonne nouvelle
+											</h2>
+										
+					
+					<h3 style="margin: 10px 0 10px; font-size: 18px; line-height: 20px; color: #555555; font-weight: normal; font-family: 'Montserrat', sans-serif; text-align: center;">
+											
+												<img
+													src="https://lepointq.com/media/team/Ophélie.jpg"
+													width="40" height="40"
+													style="vertical-align: middle; border-radius: 50%; margin-right: 5px;"
+												/>
+											
+											<span>
+												Par Ophélie
+											</span>
+										</h3>
+					
+										<h4 style="margin: 20px 0 10px; font-size: 20px; line-height: 20px; color: #000000; font-weight: bold; font-family: 'Lato', 'Roboto', sans-serif; text-align: center;">
+											Sexualité chez les jeunes&nbsp;: moins de quantité, plus de qualité&nbsp;?
+										</h4>
+									
+					
+					<p>Pour terminer cette saison 2 du Point Q, un point sur les chiffres ! Durant ces deux ans et demi de pandémie, les rencontres et l’activité sexuelle ont ralenti chez de nombreux·ses Français·e·s, et particulièrement chez les 18-24 ans. Selon <a href="https://www.datapressepremium.com/rmdiff/2012459/PresentationSondage16.pdf">le baromètre annuel réalisé pour le Sidaction en février 2022</a> et publié par Le Monde : en 2021, sur un millier de jeunes, <strong>43 % n’ont pas eu de rapport sexuel</strong>, soit près d’un sur deux. Par ailleurs, 44 % n’en ont eu qu’avec un·e seul·e partenaire.</p>
+<p>Comme l’évoquait Marie-Carmen Garcia juste au-dessus, la crise sanitaire n’a certes pas aidé, mais ce n’est pas la seule raison. Une nouvelle génération <em>“no sex”</em> émerge chez les jeunes, dont certain·e·s ne veulent plus être soumi·e·s aux diktats de la performance sexuelle, ni enchaîner les partenaires. La sociologue Maryse Jaspard, auteure de <em>Sociologie des comportements sexuels</em>, <a href="http://Maryse%20Jaspard,%20autrice%20de%20%C2%AB%20Sociologie%20des%20comportements%20sexuels%20%C2%BB.%20Cette%20sociod%C3%A9mographe%20estime%20que%20la%20%C2%AB%20d%C3%A9mocratisation%20%C2%BB%20d%E2%80%99une%20sexualit%C3%A9%20lib%C3%A9r%C3%A9e%20ne%20suffit%20pas%20%C3%A0%20d%C3%A9brider%20les%20pratiques,%20au%20contraire.%20%C2%AB%20Les%20ann%C3%A9es%201980%20ont%20marqu%C3%A9%20une%20hypersexualisation%20de%20la%20soci%C3%A9t%C3%A9.%20Mais%20comme%20pour%20tout%20ph%C3%A9nom%C3%A8ne%20social,%20il%20y%20a%20des%20m%C3%A9canismes%20cycliques%20d%E2%80%99aller-retour.%20Aujourd%E2%80%99hui,%20on%20est%20dans%20une%20phase%20diff%C3%A9rente%20o%C3%B9%20c%E2%80%99est%20l%E2%80%99importance%20du%20choix%20qui%20est%20mise%20en%20avant.%20%C2%BB">expliquait au Parisien</a> dès 2019 que la libération sexuelle ne suffit pas à débrider les pratiques : <em>« Comme tout phénomène social, il y a des mécanismes cycliques d’aller-retour. »</em> Même bilan pour la jeunesse outre-Atlantique, où <strong>28 % des jeunes Américain·e·s n’ont pas eu de rapport sexuel l’année dernière</strong>, selon l’<em>International Academy of Sex Research</em>.</p>
+<p>Un autre élément d’explication peut être la recherche de la stabilité financière et professionnelle. « <em>Dans un monde de plus en plus anxiogène où tout semble s’effondrer, les plus jeunes préféreraient favoriser la préservation de leur santé mentale et la recherche de stabilité financière plutôt que la poursuite d’ébats échevelés »,</em> <a href="https://www.ladn.eu/nouveaux-usages/sexe-jeunes-nont-eu-aucune-relation-en-2021/">explique le média L’ADN.</a></p>
+<p>Si les jeunes font bien moins l’amour qu’avant, en revanche ils en parleraient mieux ! La génération Z se plairait à expérimenter des nouvelles pratiques sortant des schémas traditionnels comme vivre en trouple (couple de trois personnes) ou encore se marier avec un·e ami·e. La parole se libère également sur les réseaux sociaux : sur <a href="https://www.instagram.com/p/B37fpQDC2YL/?hl=fr">Instagram</a>, sur <a href="https://www.tiktok.com/discover/Au-lit-avec-Anne-Marie?lang=fr">TikTok</a> et... il paraît, dans l’intimité de certaines newsletters ;)</p>
+
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+			
+
+			<!-- 1 Column Text : BEGIN -->
+			<tr>
+				<td style="background-color: #ffffff;">
+					<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td style="padding: 10px 20px 10px; font-family: 'Lato', 'Roboto', sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: justify;">
+								<p style="color: #FFC8C0 !important; font-size: 16px; text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">● ● ●</p>
+								<p>Hey, bravo à toi d’être arrivé·e jusque ici ! Ce n’est pas sans une pointe d’émotion que nous écrivons ces derniers mots. Toute l’équipe te remercie encore de ta fidélité, que tu sois abonné·e d’hier ou d’aujourd’hui.</p>
+<p>Je profite de cet espace (moi, Val) pour remercier tous les membres du Point Q pour ce superbe travail d’équipe. C’est un plaisir d’écrire et de coopérer avec vous, les copain·ine·s !</p>
+<p>Merci à Juliette d’avoir coordonné l’équipe à travers tous ces numéros, et d’avoir trouvé les mots pour nous motiver ; à Tom pour sa patience et son (long) travail de mise en forme de la newsletter, malgré les double espaces et les mauvais guillemets ; à Orianne, l’oreille qui recueille vos témoignages, pour sa gestion hors pair d’Instagram ; à Thaïs, inauguratrice du service reportage, pour ses Vus d’ailleurs entre le Japon et la Corée du Sud ; à Ophélie pour ses bonnes nouvelles qui donnent vraiment le smile, et pour ses superbes recommandations culturelles. Et bien sûr, on embrasse fort Julien et Maëlle, et on leur souhaite plein de bonnes choses dans leurs nouvelles aventures !</p>
+<p>Ce n’est qu’un au revoir ! Le Point Q reviendra en force, tu nous connais.</p>
+<p>N’hésite pas à nous suivre sur <a href="https://www.instagram.com/lepoint.q/?hl=fr">Instagram</a>, <a href="https://twitter.com/LePointQ">Twitter</a> ou <a href="https://www.facebook.com/lepointq.news/">Facebook</a> pour être tenu·e au courant de toutes nos actualités. Et si on te manque vraiment, tu peux toujours relire nos anciens numéros. Ils sont tous disponibles sur <a href="https://lepointq.com/">lepointq.com</a> !</p>
+<p>We’ll be back,</p>
+<p>Julien, Juliette, Maëlle, Ophélie, Orianne, Tom, Thaïs et Valentin.</p>
+
+							</td>
+						</tr>
+						<tr>
+                            <td>
+                                <a href="https://lepointq.com" target="_blank">
+                                    <img src="https://lepointq.com/media/lepointq_groupe_10.png" style="width: 100%; vertical-align: bottom;" />
+                                </a>
+                            </td>
+                        </tr>
+					</table>
+				</td>
+			</tr>
+			<!-- 1 Column Text : END -->
+	    </table>
+
+	    <!-- Full Bleed Background Section : BEGIN -->
+	    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #FF5162;">
+	        <tr>
+	            <td>
+	                <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
+	                    <!--[if mso]>
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+	                    <tr>
+	                    <td>
+	                    <![endif]-->
+	                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                        <tr>
+	                            <td style="padding: 20px; text-align: center; font-family: 'Lato', 'Roboto', sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+									<p>
+										<a href='https://facebook.com/lepointq.news' target='_blank'>
+											<img src='https://lepointq.com/media/fa-facebook-f.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://instagram.com/lepoint.q/' target='_blank'>
+											<img src='https://lepointq.com/media/fa-instagram.png' style="margin: 0 5px;" />
+										</a>
+										<a href='https://twitter.com/LePointQ' target='_blank'>
+											<img src='https://lepointq.com/media/fa-twitter.png' style="margin: 0 5px;" />
+										</a>
+									</p>
+									<p style="margin: 10px 0 10px;"><b>Le Point Q</b></p>
+									<p style="margin: 0 0 10px;">211 rue de la Convention<br />75&thinsp;015 PARIS</p>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                    <!--[if mso]>
+	                    </td>
+	                    </tr>
+	                    </table>
+	                    <![endif]-->
+	                </div>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Full Bleed Background Section : END -->
+
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+			<!-- Clear Spacer : BEGIN -->
+			<tr>
+				<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Clear Spacer : END -->
+		</table>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

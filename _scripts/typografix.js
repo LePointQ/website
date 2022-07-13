@@ -32,6 +32,7 @@ exports.typografix = (html, { omitGuillemets = false } = {}) => {
 		.replace(/“/g, '&laquo;&nbsp;')
 		.replace(/”/g, '&nbsp;&raquo;')
 		.replace(/Le Point Q/g, 'Le&nbsp;Point&nbsp;Q')
+		.replace(/Point Q/g, 'Point&nbsp;Q')
 		.replace(/(src|style)=’[^’]+’/g, (str) => str.replace(/’/g, '\''));
 
 	return output;
